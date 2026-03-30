@@ -128,9 +128,9 @@ body > * { position: relative; z-index: 1; }
   transition: all 0.3s;
 }
 .cat-btn.active {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  color: var(--accent);
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
 }
 
 /* ===== Panels ===== */
@@ -226,13 +226,13 @@ body > * { position: relative; z-index: 1; }
   background: linear-gradient(160deg, #fff 0%, #fdf8f5 100%);
 }
 .card-back {
-  background: linear-gradient(160deg, var(--accent-light) 0%, #fff 100%);
+  background: linear-gradient(160deg, var(--primary-light) 0%, #fff8f5 100%);
   transform: rotateY(180deg);
 }
 .card-word { font-size: 36px; font-weight: 800; margin-bottom: 8px; }
 .card-hint { font-size: 14px; color: var(--text-secondary); }
 .card-reading { font-size: 18px; color: var(--primary); margin-bottom: 8px; }
-.card-meaning { font-size: 24px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.card-meaning { font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; }
 .card-example { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-top: 8px; }
 
 .study-actions { display: flex; gap: 12px; width: 100%; max-width: 400px; }
@@ -270,7 +270,7 @@ body > * { position: relative; z-index: 1; }
 .quiz-answer { margin-top: 20px; display: none; }
 .quiz-answer.show { display: block; animation: fadeUp 0.3s ease; }
 .quiz-answer-reading { font-size: 16px; color: var(--primary); margin-bottom: 4px; }
-.quiz-answer-meaning { font-size: 22px; font-weight: 700; color: var(--accent); }
+.quiz-answer-meaning { font-size: 22px; font-weight: 700; color: var(--primary-dark); }
 .quiz-answer-example { font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.6; }
 
 .quiz-actions { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
@@ -329,7 +329,7 @@ body > * { position: relative; z-index: 1; }
   text-align: center;
 }
 .stat-num { font-size: 32px; font-weight: 800; }
-.stat-num.green { color: var(--accent); }
+.stat-num.green { color: var(--primary); }
 .stat-num.orange { color: var(--primary); }
 .stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
 .stat-section {
