@@ -3116,6 +3116,32 @@ function saveStats(s) {
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
+function getItemCounts() {
+  return JSON.parse(localStorage.getItem('jp_item_counts') || '{}');
+}
+function saveItemCounts(c) {
+  localStorage.setItem('jp_item_counts', JSON.stringify(c));
+}
+const MASTERED_THRESHOLD = 50;
+function recordItemSeen(cat, id) {
+  const c = getItemCounts();
+  const key = cat + ':' + id;
+  c[key] = (c[key] || 0) + 1;
+  saveItemCounts(c);
+  return c[key];
+}
+function getActiveItems(cat) {
+  const c = getItemCounts();
+  return DATA[cat].filter(it => (c[cat + ':' + it.id] || 0) < MASTERED_THRESHOLD);
+}
+function isMastered(cat, id) {
+  const c = getItemCounts();
+  return (c[cat + ':' + id] || 0) >= MASTERED_THRESHOLD;
+}
+function getItemCount(cat, id) {
+  const c = getItemCounts();
+  return c[cat + ':' + id] || 0;
+}
 function recordStudy() {
   const s = getStats();
   const d = todayKey();
@@ -3798,6 +3824,7 @@ function renderListPage() {
         ${it.example ? '<div class="list-example">' + escHtml(it.example) + (it.exampleCn ? '<br><span style="color:var(--accent)">' + escHtml(it.exampleCn) + '</span>' : '') + '</div>' : ''}
       </div>
       <button class="speak-btn" onclick="event.stopPropagation();speakWithExample('${escHtml(it.word)}','${ex}')">🔊</button>
+      ${isMastered(currentCat, it.id) ? '<div style="position:absolute;top:8px;right:8px;background:var(--accent);color:white;font-size:10px;padding:2px 8px;border-radius:10px">已掌握</div>' : '<div style="position:absolute;top:8px;right:8px;color:var(--text-secondary);font-size:10px">' + getItemCount(currentCat, it.id) + '/50</div>'}
     </div>`;
   }
   if (listFiltered.length === 0) {
@@ -3827,10 +3854,12 @@ function escHtml(s) {
 
 // ===== STUDY =====
 function renderStudyCard() {
-  const items = DATA[currentCat];
-  if (!items.length) return;
+  const items = getActiveItems(currentCat);
+  if (!items.length) { document.getElementById('studyProgress').textContent = '全部掌握！'; document.getElementById('cardFrontWord').textContent = '🎉'; document.getElementById('cardBackReading').textContent = ''; document.getElementById('cardBackMeaning').textContent = ''; document.getElementById('cardBackExample').innerHTML = ''; return; }
+  if (studyIndex >= items.length) studyIndex = 0;
   const it = items[studyIndex];
-  document.getElementById('studyProgress').textContent = `${studyIndex + 1} / ${items.length}`;
+  recordItemSeen(currentCat, it.id);
+  document.getElementById('studyProgress').textContent = `${studyIndex + 1} / ${items.length} (剩余未掌握)`;
   document.getElementById('cardFrontWord').textContent = it.word;
   document.getElementById('cardBackReading').textContent = it.reading;
   document.getElementById('cardBackMeaning').textContent = it.meaning;
@@ -3842,7 +3871,7 @@ function flipCard() {
   document.getElementById('cardInner').classList.toggle('flipped');
 }
 function studyNav(dir) {
-  const items = DATA[currentCat];
+  const items = getActiveItems(currentCat);
   studyIndex = (studyIndex + dir + items.length) % items.length;
   renderStudyCard();
 }
@@ -3853,7 +3882,7 @@ function speakCurrent() {
 
 // ===== QUIZ =====
 function startQuiz() {
-  quizItems = [...DATA[currentCat]].sort(() => Math.random() - 0.5);
+  quizItems = [...getActiveItems(currentCat)].sort(() => Math.random() - 0.5);
   quizIndex = 0;
   renderQuiz();
 }
@@ -3880,6 +3909,7 @@ function showQuizAnswer() {
   quizAnswered = true;
 }
 function quizAnswer(correct) {
+  recordItemSeen(currentCat, quizItems[quizIndex].id);
   recordQuiz(quizItems[quizIndex], correct);
   quizIndex++;
   renderQuiz();
@@ -3970,6 +4000,7 @@ function renderStats() {
 function resetStats() {
   if (confirm('确定要清除所有学习数据吗？此操作不可恢复。')) {
     localStorage.removeItem('jp_stats');
+    localStorage.removeItem('jp_item_counts');
     renderStats();
   }
 }
