@@ -1120,18 +1120,20 @@ function recordQuiz(item, correct) {
   saveStats(s);
 }
 
-let currentAudio = null;
+// Single persistent <audio> element — reusing one element is essential on iOS:
+// creating new Audio() objects exhausts audio channels and breaks onended chains.
+const _audioEl = new Audio();
+_audioEl.setAttribute('playsinline', '');
 
-// ===== Silent audio keepalive (prevents iOS from releasing audio session) =====
-// Uses <audio> element instead of AudioContext — iOS suspends AudioContext on lock screen,
-// but continues playing <audio> elements, keeping the AVAudioSession alive.
+// ===== Silent audio keepalive =====
+// Holds the iOS AVAudioSession open during gaps between words.
 const SILENT_WAV = 'data:audio/wav;base64,UklGRjQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YRAAAAAAAAAAAAAAAAAAAAAAAAAA';
 let silentAudio = null;
 function startSilentKeepAlive() {
   if (silentAudio) return;
   silentAudio = new Audio(SILENT_WAV);
   silentAudio.loop = true;
-  silentAudio.volume = 0.001;
+  silentAudio.volume = 0.01;
   silentAudio.play().catch(() => {});
 }
 function stopSilentKeepAlive() {
@@ -1143,25 +1145,22 @@ function stopSilentKeepAlive() {
 
 // ===== TTS =====
 function speak(text) {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   const fn = AUDIO_MAP[text];
-  if (fn) {
-    currentAudio = new Audio('audio/' + fn);
-    currentAudio.play().catch(() => {});
-  }
+  if (!fn) return;
+  _audioEl.onended = null;
+  _audioEl.src = 'audio/' + fn;
+  _audioEl.play().catch(() => {});
 }
 function speakWithExample(word, example) {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   const fn1 = AUDIO_MAP[word];
   if (!fn1) return;
-  currentAudio = new Audio('audio/' + fn1);
-  currentAudio.play().catch(() => {});
-  if (example && AUDIO_MAP[example]) {
-    currentAudio.onended = () => {
-      currentAudio = new Audio('audio/' + AUDIO_MAP[example]);
-      currentAudio.play().catch(() => {});
-    };
-  }
+  _audioEl.onended = (example && AUDIO_MAP[example]) ? () => {
+    _audioEl.onended = null;
+    _audioEl.src = 'audio/' + AUDIO_MAP[example];
+    _audioEl.play().catch(() => {});
+  } : null;
+  _audioEl.src = 'audio/' + fn1;
+  _audioEl.play().catch(() => {});
 }
 
 
@@ -1223,8 +1222,10 @@ function startLoop() {
   // Setup Media Session for lock screen
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: '日本語学習', artist: '循环播放中'
+      title: '日本語学習', artist: '循环播放中',
+      artwork: [{ src: 'apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
     });
+    navigator.mediaSession.playbackState = 'playing';
     navigator.mediaSession.setActionHandler('play', () => toggleLoopPlay());
     navigator.mediaSession.setActionHandler('pause', () => toggleLoopPlay());
     navigator.mediaSession.setActionHandler('nexttrack', () => { loopIndex = (loopIndex + 1) % loopPlaylist.length; playLoopItem(); });
@@ -1238,38 +1239,37 @@ function playLoopItem() {
   const it = loopPlaylist[loopIndex];
   document.getElementById('loopNow').textContent = it.word + ' - ' + it.meaning;
   document.getElementById('loopRound').textContent = loopRound;
-  
+
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: it.word + ' - ' + it.meaning, artist: '第' + loopRound + '轮 · ' + (loopIndex+1) + '/' + loopPlaylist.length
+      title: it.word + ' - ' + it.meaning,
+      artist: '第' + loopRound + '轮 · ' + (loopIndex+1) + '/' + loopPlaylist.length,
+      artwork: [{ src: 'apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
     });
+    navigator.mediaSession.playbackState = 'playing';
   }
 
-  // Play word audio, then example, then next
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   const fn1 = AUDIO_MAP[it.word];
   if (!fn1) { nextLoopItem(); return; }
-  
-  currentAudio = new Audio('audio/' + fn1);
-  currentAudio.play().catch(() => {});
-  
-  currentAudio.onended = () => {
+
+  _audioEl.onended = () => {
     if (!loopPlaying || loopPaused) return;
-    // Small pause between word and example
     setTimeout(() => {
       if (!loopPlaying || loopPaused) return;
       if (it.example && AUDIO_MAP[it.example]) {
-        currentAudio = new Audio('audio/' + AUDIO_MAP[it.example]);
-        currentAudio.play().catch(() => {});
-        currentAudio.onended = () => {
+        _audioEl.onended = () => {
           if (!loopPlaying || loopPaused) return;
           setTimeout(() => nextLoopItem(), 800);
         };
+        _audioEl.src = 'audio/' + AUDIO_MAP[it.example];
+        _audioEl.play().catch(() => {});
       } else {
         setTimeout(() => nextLoopItem(), 800);
       }
     }, 500);
   };
+  _audioEl.src = 'audio/' + fn1;
+  _audioEl.play().catch(() => {});
 }
 
 function nextLoopItem() {
@@ -1287,18 +1287,22 @@ function toggleLoopPlay() {
   if (loopPaused) {
     loopPaused = false;
     document.getElementById('loopPlayBtn').textContent = '⏸';
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
     playLoopItem();
   } else {
     loopPaused = true;
     document.getElementById('loopPlayBtn').textContent = '▶';
-    if (currentAudio) currentAudio.pause();
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+    _audioEl.pause();
   }
 }
 
 function stopLoop() {
   loopPlaying = false;
   loopPaused = false;
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  _audioEl.onended = null;
+  _audioEl.pause();
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
   stopSilentKeepAlive();
   document.getElementById('loopBar').classList.remove('show');
   document.getElementById('listSpeakStop').style.display = 'none';
@@ -1323,7 +1327,11 @@ function speakAllList() {
   document.getElementById('listSpeakStop').style.display = 'block';
   
   if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({ title: '日本語学習', artist: '列表朗读' });
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: '日本語学習', artist: '列表朗读',
+      artwork: [{ src: 'apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
+    });
+    navigator.mediaSession.playbackState = 'playing';
     navigator.mediaSession.setActionHandler('play', () => toggleLoopPlay());
     navigator.mediaSession.setActionHandler('pause', () => toggleLoopPlay());
     navigator.mediaSession.setActionHandler('nexttrack', () => { loopIndex = (loopIndex + 1) % loopPlaylist.length; playLoopItem(); });
