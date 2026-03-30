@@ -644,12 +644,15 @@ function handleLogin() {
       localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
     } else {
       msg.textContent = '新ID，开始学习吧！'; msg.className = 'login-msg success';
-      localStats = JSON.parse(localStorage.getItem('jp_stats') || '{}');
-      localCounts = JSON.parse(localStorage.getItem('jp_item_counts') || '{}');
-      syncToCloud();
+      localStats = {};
+      localCounts = {};
+      localStorage.setItem('jp_stats', '{}');
+      localStorage.setItem('jp_item_counts', '{}');
+      localStorage.setItem('jp_delays', '{}');
     }
     userId = input;
     localStorage.setItem('jp_user_id', userId);
+    btn.disabled = false;
     setTimeout(() => {
       document.getElementById('loginOverlay').style.display = 'none';
       updateHeaderUser();
@@ -663,7 +666,10 @@ function handleLogin() {
 
 function syncToCloud() {
   if (!userId || !db) return;
-  db.ref('users/' + userId).set({ stats: localStats, counts: localCounts, delays: JSON.parse(localStorage.getItem('jp_delays') || '{}') });
+  const data = { stats: localStats, counts: localCounts, delays: JSON.parse(localStorage.getItem('jp_delays') || '{}') };
+  // Only sync if there's actual data, never overwrite with empty
+  if (Object.keys(localStats).length === 0 && Object.keys(localCounts).length === 0) return;
+  db.ref('users/' + userId).set(data);
 }
 
 function debouncedSync() {
@@ -1438,7 +1444,7 @@ function renderStats() {
     const d = new Date(); d.setDate(d.getDate() - i);
     days.push(d.toISOString().slice(0, 10));
   }
-  let maxVal = 1;
+  let maxVal = 50; // minimum scale so small numbers don't appear full
   for (const d of days) {
     const dd = stats[d] || {};
     maxVal = Math.max(maxVal, (dd.studied || 0) + (dd.quizzed || 0));
