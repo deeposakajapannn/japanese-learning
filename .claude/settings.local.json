@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(pip3 install:*)",
+      "Bash(awk '{ print NR, length }' \"/Users/user1/Desktop/japanese learning/日本語学習.html\")",
+      "Bash(sort -k2 -rn)",
+      "Bash(gh repo:*)",
+      "Bash(npm list:*)",
+      "Bash(ffprobe \"/Users/user1/Desktop/japanese learning/audio/000478ee58a7.mp3\")"
+    ]
+  }
+}
