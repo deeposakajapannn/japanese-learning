@@ -3649,6 +3649,7 @@ function initFirebase() {
   firebase.initializeApp(firebaseConfig);
   db = firebase.database();
 }
+initFirebase();
 
 function handleLogin() {
   const input = document.getElementById('loginId').value.trim().toLowerCase();
@@ -3808,7 +3809,7 @@ const LANG = {
     quizLabel: '测试',
     wrongTitle: '易错词 TOP 20',
     resetBtn: '清除所有数据',
-    resetConfirm: t('resetConfirm'),
+    resetConfirm: '确定要清除所有学习数据吗？此操作不可恢复。',
     noData: '暂无数据',
     notFound: '未找到匹配结果',
     allMastered: '全部掌握！',
@@ -5099,7 +5100,6 @@ function resetStats() {
 
 // ===== INIT =====
 window.addEventListener('load', () => {
-  initFirebase();
   const saved = localStorage.getItem('jp_user_id');
   if (saved) {
     userId = saved;
