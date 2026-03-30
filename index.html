@@ -3964,7 +3964,7 @@ function applyLang() {
     b.textContent = [t('tabList'), t('tabStudy'), t('tabQuiz'), t('tabStats')][i];
   });
   document.querySelectorAll('.cat-btn').forEach((b, i) => {
-    const cats = [t('catVerbs'), t('catNouns'), t('catAdj'), t('catSent'), t('catMix')];
+    const cats = [t('catNouns'), t('catSent')];
     if (i < cats.length) b.textContent = cats[i];
   });
   document.getElementById('searchInput').placeholder = t('search');
