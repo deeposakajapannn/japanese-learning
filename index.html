@@ -434,7 +434,7 @@ body {
 </div>
 <div class="header">
   <h1>日本語学習</h1>
-  <div class="header-sub" id="headerSub">动词 · 名词 · 形容词 · 句子</div>
+  <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center"><span>动词 · 名词 · 形容词 · 句子</span><span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:10px;font-size:11px"></span></div>
 </div>
 
 <!-- Mode Navigation -->
@@ -3234,6 +3234,7 @@ function handleLogin() {
     localStorage.setItem('jp_user_id', userId);
     setTimeout(() => {
       document.getElementById('loginOverlay').style.display = 'none';
+      updateHeaderUser();
       renderList();
     }, 600);
   }).catch(err => {
@@ -4001,6 +4002,18 @@ function speakWithExample(word, example) {
 }
 
 
+
+function switchUser() {
+  if (loopPlaying) stopLoop();
+  document.getElementById('loginOverlay').style.display = 'flex';
+  document.getElementById('loginId').value = '';
+  document.getElementById('loginMsg').textContent = '当前ID: ' + userId;
+  document.getElementById('loginMsg').className = 'login-msg';
+}
+function updateHeaderUser() {
+  const el = document.getElementById('headerUser');
+  if (el && userId) el.textContent = '👤 ' + userId;
+}
 // ===== LOOP PLAYER =====
 let loopSelected = new Set();
 let loopPlaylist = [];
@@ -4399,6 +4412,7 @@ window.addEventListener('load', () => {
   if (saved) {
     document.getElementById('loginOverlay').style.display = 'none';
     userId = saved;
+    updateHeaderUser();
     // Pull latest from cloud
     db.ref('users/' + userId).once('value').then(snap => {
       if (snap.exists()) {
