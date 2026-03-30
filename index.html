@@ -412,11 +412,7 @@ body {
 }
 .loop-btn-play { background: var(--primary); color: white; }
 .loop-btn-stop { background: var(--border); color: var(--text); }
-.select-all-bar {
-  display: none; padding: 8px 16px; gap: 10px; align-items: center;
-  background: var(--primary-light); border-radius: var(--radius-sm); margin: 0 16px 8px;
-}
-.select-all-bar.show { display: flex; }
+
 
 .lang-btn { background: rgba(255,255,255,0.15); transition: background 0.2s; }
 .lang-btn.active { background: rgba(255,255,255,0.45); font-weight: 700; }
@@ -472,11 +468,7 @@ body {
     <input type="text" id="searchInput" placeholder="搜索日语、读音、中文..." oninput="renderList()" style="padding-right:60px">
     <button onclick="toggleSelectMode()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);border:none;background:var(--primary-light);color:var(--primary);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600">选择</button>
   </div>
-  <div class="select-all-bar" id="selectAllBar">
-    <input type="checkbox" class="select-cb" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
-    <span style="font-size:13px;flex:1">全选 (<span id="selectedCount">0</span>条已选)</span>
-    <button class="loop-btn loop-btn-play" onclick="startLoop()" style="padding:6px 14px;font-size:13px">▶ 循环播放</button>
-  </div>
+
   <div id="listSpeakBar" style="padding:0 16px 8px;display:flex;gap:8px">
     <button onclick="speakAllList()" style="flex:1;padding:10px;border:none;background:var(--primary);color:white;border-radius:var(--radius-sm);font-size:14px;font-weight:600;cursor:pointer">▶ 列表朗读</button>
     <button onclick="stopLoop()" id="listSpeakStop" style="display:none;padding:10px 16px;border:none;background:var(--border);color:var(--text);border-radius:var(--radius-sm);font-size:14px;cursor:pointer">停止</button>
