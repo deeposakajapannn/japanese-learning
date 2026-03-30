@@ -7,7 +7,13 @@
       "Bash(sort -k2 -rn)",
       "Bash(gh repo:*)",
       "Bash(npm list:*)",
-      "Bash(ffprobe \"/Users/user1/Desktop/japanese learning/audio/000478ee58a7.mp3\")"
+      "Bash(ffprobe \"/Users/user1/Desktop/japanese learning/audio/000478ee58a7.mp3\")",
+      "Bash(python3:*)",
+      "Bash(node -e \":*)",
+      "Bash(curl -s -X DELETE \"https://jp-learn-e01bd-default-rtdb.asia-southeast1.firebasedatabase.app/users.json\")",
+      "Bash(curl -s -X DELETE \"https://jp-learn-e01bd-default-rtdb.asia-southeast1.firebasedatabase.app/users/deep.json\")",
+      "Bash(curl -s -X DELETE \"https://jp-learn-e01bd-default-rtdb.asia-southeast1.firebasedatabase.app/users/depp.json\")",
+      "Read(//private/tmp/**)"
     ]
   }
 }
