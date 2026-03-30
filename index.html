@@ -474,18 +474,18 @@ body {
 
 <div class="login-overlay" id="loginOverlay">
   <div class="login-box">
-    <h2 id="loginTitle">日本語学習</h2>
-    <p>输入一个专属ID，用于跨设备记住你的学习进度<br>随便起一个就行，不同设备用同一个ID即可</p>
-    <input class="login-input" id="loginId" placeholder="输入ID（如：deeposaka）" maxlength="30" autocomplete="off">
-    <button class="login-btn" id="loginBtn" onclick="handleLogin()">开始学习</button>
+    <h2 id="loginTitle">恢复学习进度</h2>
+    <p>输入你在其他设备上的ID，恢复学习进度</p>
+    <input class="login-input" id="loginId" placeholder="输入已有ID" maxlength="30" autocomplete="off">
+    <button class="login-btn" id="loginBtn" onclick="handleLogin()">恢复</button>
     <div class="login-msg" id="loginMsg"></div>
-    <button id="loginCancel" onclick="document.getElementById('loginOverlay').style.display='none'" style="display:none;margin-top:12px;border:none;background:none;color:var(--text-secondary);font-size:13px;cursor:pointer;text-decoration:underline">取消</button>
+    <button id="loginCancel" onclick="document.getElementById('loginOverlay').style.display='none'" style="margin-top:12px;border:none;background:none;color:var(--text-secondary);font-size:13px;cursor:pointer;text-decoration:underline">取消</button>
   </div>
 </div>
 <div class="header">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <h1><ruby style="ruby-position:over">日本語学習<rp>(</rp><rt style="font-size:10px;font-weight:400;letter-spacing:2px">にほんご がくしゅう</rt><rp>)</rp></ruby></h1>
-    <span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.25);padding:4px 12px;border-radius:12px;font-size:12px;letter-spacing:0.5px"></span>
+    <span id="headerUser" style="background:rgba(255,255,255,0.25);padding:4px 12px;border-radius:12px;font-size:12px;letter-spacing:0.5px"></span>
   </div>
   <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
     <span></span>
@@ -502,7 +502,7 @@ body {
   <button class="nav-btn active" data-mode="list" onclick="switchMode('list')">📋 列表</button>
   <button class="nav-btn" data-mode="study" onclick="switchMode('study')">📖 学习</button>
   <button class="nav-btn" data-mode="quiz" onclick="switchMode('quiz')">✏️ 考试</button>
-  <button class="nav-btn" data-mode="stats" onclick="switchMode('stats')">📊 统计</button>
+  <button class="nav-btn" data-mode="stats" onclick="switchMode('stats')">👤 我</button>
 </div>
 
 <!-- Category Tabs -->
@@ -579,6 +579,12 @@ body {
 
 <!-- Stats Panel -->
 <div class="panel" id="panelStats">
+  <div class="stat-section" style="text-align:center;margin-top:16px">
+    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">我的ID（在其他设备输入此ID可同步进度）</div>
+    <div id="profileId" style="font-size:24px;font-weight:800;letter-spacing:2px;color:var(--primary);user-select:all"></div>
+    <button onclick="copyId()" style="margin-top:10px;padding:6px 16px;border:1px solid var(--border);border-radius:50px;background:var(--card);font-size:13px;cursor:pointer;color:var(--text-secondary)">复制ID</button>
+    <button onclick="showRestoreOverlay()" style="margin-top:10px;margin-left:8px;padding:6px 16px;border:1px solid var(--border);border-radius:50px;background:var(--card);font-size:13px;cursor:pointer;color:var(--text-secondary)">恢复其他设备进度</button>
+  </div>
   <div class="stats-grid" id="statsGrid"></div>
   <div class="stat-section" id="chartSection">
     <h3>📈 最近7天学习记录</h3>
@@ -648,6 +654,14 @@ function initFirebase() {
 }
 initFirebase();
 
+function generateId() {
+  // Generate short readable ID like "kaze-3827"
+  const words = ['sakura','kaze','yama','umi','sora','hana','tsuki','hoshi','kumo','ame','yuki','mori','kawa','take','ishi'];
+  const word = words[Math.floor(Math.random() * words.length)];
+  const num = Math.floor(1000 + Math.random() * 9000);
+  return word + '-' + num;
+}
+
 function handleLogin() {
   const input = document.getElementById('loginId').value.trim().toLowerCase();
   const msg = document.getElementById('loginMsg');
@@ -655,37 +669,54 @@ function handleLogin() {
   if (!input || input.length < 2) { msg.textContent = 'ID至少2个字符'; msg.className = 'login-msg error'; return; }
   if (!/^[a-z0-9_-]+$/.test(input)) { msg.textContent = '只能用英文小写、数字、-、_'; msg.className = 'login-msg error'; return; }
   btn.disabled = true;
-  msg.textContent = '正在连接...'; msg.className = 'login-msg';
+  msg.textContent = '正在查找...'; msg.className = 'login-msg';
 
   db.ref('users/' + input).once('value').then(snap => {
     if (snap.exists()) {
-      msg.textContent = '找到已有数据，正在恢复...'; msg.className = 'login-msg success';
+      msg.textContent = '找到数据，正在恢复...'; msg.className = 'login-msg success';
       const data = snap.val();
       localStats = data.stats || {};
       localCounts = data.counts || {};
       localStorage.setItem('jp_stats', JSON.stringify(localStats));
       localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
       localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
+      userId = input;
+      localStorage.setItem('jp_user_id', userId);
+      btn.disabled = false;
+      setTimeout(() => {
+        document.getElementById('loginOverlay').style.display = 'none';
+        updateHeaderUser();
+        updateProfileId();
+        renderList();
+        if (currentMode === 'stats') renderStats();
+      }, 600);
     } else {
-      msg.textContent = '新ID，开始学习吧！'; msg.className = 'login-msg success';
-      localStats = {};
-      localCounts = {};
-      localStorage.setItem('jp_stats', '{}');
-      localStorage.setItem('jp_item_counts', '{}');
-      localStorage.setItem('jp_delays', '{}');
+      msg.textContent = '未找到此ID的数据'; msg.className = 'login-msg error';
+      btn.disabled = false;
     }
-    userId = input;
-    localStorage.setItem('jp_user_id', userId);
-    btn.disabled = false;
-    setTimeout(() => {
-      document.getElementById('loginOverlay').style.display = 'none';
-      updateHeaderUser();
-      renderList();
-    }, 600);
   }).catch(err => {
     msg.textContent = '连接失败，请检查网络'; msg.className = 'login-msg error';
     btn.disabled = false;
   });
+}
+
+function showRestoreOverlay() {
+  document.getElementById('loginOverlay').style.display = 'flex';
+  document.getElementById('loginId').value = '';
+  document.getElementById('loginMsg').textContent = '';
+}
+
+function copyId() {
+  navigator.clipboard.writeText(userId).then(() => {
+    const btn = event.target;
+    btn.textContent = '已复制!';
+    setTimeout(() => btn.textContent = '复制ID', 1500);
+  });
+}
+
+function updateProfileId() {
+  const el = document.getElementById('profileId');
+  if (el) el.textContent = userId;
 }
 
 function syncToCloud() {
@@ -781,7 +812,7 @@ const LANG = {
     tabList: '列表',
     tabStudy: '学习',
     tabQuiz: '考试',
-    tabStats: '统计',
+    tabStats: '我',
     catVerbs: '动词',
     catNouns: '名词',
     catAdj: '形容词',
@@ -840,7 +871,7 @@ const LANG = {
     tabList: 'List',
     tabStudy: 'Study',
     tabQuiz: 'Quiz',
-    tabStats: 'Stats',
+    tabStats: 'Me',
     catVerbs: 'Verbs',
     catNouns: 'Nouns',
     catAdj: 'Adjectives',
@@ -899,7 +930,7 @@ const LANG = {
     tabList: 'Lista',
     tabStudy: 'Estudio',
     tabQuiz: 'Examen',
-    tabStats: 'Estadísticas',
+    tabStats: 'Yo',
     catVerbs: 'Verbos',
     catNouns: 'Sustantivos',
     catAdj: 'Adjetivos',
@@ -1071,14 +1102,6 @@ function speakWithExample(word, example) {
 
 
 
-function switchUser() {
-  document.getElementById('loginCancel').style.display = 'block';
-  if (loopPlaying) stopLoop();
-  document.getElementById('loginOverlay').style.display = 'flex';
-  document.getElementById('loginId').value = '';
-  document.getElementById('loginMsg').textContent = '当前ID: ' + userId;
-  document.getElementById('loginMsg').className = 'login-msg';
-}
 function updateHeaderUser() {
   const el = document.getElementById('headerUser');
   if (el && userId) el.textContent = userId;
@@ -1546,24 +1569,26 @@ window.addEventListener('load', async () => {
   const saved = localStorage.getItem('jp_user_id');
   if (saved) {
     userId = saved;
-    updateHeaderUser();
-    applyLang();
-    // Pull latest from cloud
-    db.ref('users/' + userId).once('value').then(snap => {
-      if (snap.exists()) {
-        const data = snap.val();
-        localStats = data.stats || {};
-        localCounts = data.counts || {};
-        localStorage.setItem('jp_stats', JSON.stringify(localStats));
-        localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
-        localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
-      }
-      renderList();
-    }).catch(() => { renderList(); });
   } else {
-    document.getElementById('loginOverlay').style.display = 'flex';
-    renderList();
+    // Auto-generate a new ID
+    userId = generateId();
+    localStorage.setItem('jp_user_id', userId);
   }
+  updateHeaderUser();
+  updateProfileId();
+  applyLang();
+  // Pull latest from cloud
+  db.ref('users/' + userId).once('value').then(snap => {
+    if (snap.exists()) {
+      const data = snap.val();
+      localStats = data.stats || {};
+      localCounts = data.counts || {};
+      localStorage.setItem('jp_stats', JSON.stringify(localStats));
+      localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
+      localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
+    }
+    renderList();
+  }).catch(() => { renderList(); });
 });
 
 // Swipe support for study mode
