@@ -447,9 +447,7 @@ body {
 
 <!-- Category Tabs -->
 <div class="cat-tabs" id="catTabs">
-  <button class="cat-btn active" onclick="switchCat('verbs')">动词 (222)</button>
-  <button class="cat-btn" onclick="switchCat('nouns')">名词 (948)</button>
-  <button class="cat-btn" onclick="switchCat('adjectives')">形容词 (221)</button>
+  <button class="cat-btn active" onclick="switchCat('nouns')">名词 (948)</button>
   <button class="cat-btn" onclick="switchCat('sentences')">句子 (1680)</button>
   <button class="cat-btn" onclick="switchCat('mix')">混合</button>
 </div>
@@ -464,6 +462,10 @@ body {
     <input type="checkbox" class="select-cb" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
     <span style="font-size:13px;flex:1">全选 (<span id="selectedCount">0</span>条已选)</span>
     <button class="loop-btn loop-btn-play" onclick="startLoop()" style="padding:6px 14px;font-size:13px">▶ 循环播放</button>
+  </div>
+  <div id="listSpeakBar" style="padding:0 16px 8px;display:flex;gap:8px">
+    <button onclick="speakAllList()" style="flex:1;padding:10px;border:none;background:var(--primary);color:white;border-radius:var(--radius-sm);font-size:14px;font-weight:600;cursor:pointer">▶ 列表朗读</button>
+    <button onclick="stopLoop()" id="listSpeakStop" style="display:none;padding:10px 16px;border:none;background:var(--border);color:var(--text);border-radius:var(--radius-sm);font-size:14px;cursor:pointer">停止</button>
   </div>
   <div id="listContainer"></div>
 </div>
@@ -3619,7 +3621,7 @@ const DATA = {
 
 // ===== STATE =====
 let currentMode = 'list';
-let currentCat = 'verbs';
+let currentCat = 'nouns';
 let studyIndex = 0;
 let quizIndex = 0;
 let quizItems = [];
@@ -3728,7 +3730,7 @@ function getActiveItems(cat) {
   const today = new Date().toISOString().slice(0, 10);
   if (cat === 'mix') {
     let all = [];
-    for (const k of ['verbs', 'nouns', 'adjectives', 'sentences']) {
+    for (const k of ['nouns', 'sentences']) {
       DATA[k].forEach(it => {
         const key = k + ':' + it.id;
         if ((c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today)) {
@@ -4794,8 +4796,35 @@ function stopLoop() {
   loopPaused = false;
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   document.getElementById('loopBar').classList.remove('show');
+  document.getElementById('listSpeakStop').style.display = 'none';
 }
 
+
+function speakAllList() {
+  // Play all items currently in the filtered list
+  loopPlaylist = [];
+  for (const it of listFiltered) {
+    loopPlaylist.push({...it, _cat: it._cat || currentCat});
+  }
+  if (!loopPlaylist.length) return;
+  loopIndex = 0;
+  loopRound = 1;
+  loopPlaying = true;
+  loopPaused = false;
+  document.getElementById('loopBar').classList.add('show');
+  document.getElementById('loopCount').textContent = loopPlaylist.length;
+  document.getElementById('loopPlayBtn').textContent = '⏸';
+  document.getElementById('listSpeakStop').style.display = 'block';
+  
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: '日本語学習', artist: '列表朗读' });
+    navigator.mediaSession.setActionHandler('play', () => toggleLoopPlay());
+    navigator.mediaSession.setActionHandler('pause', () => toggleLoopPlay());
+    navigator.mediaSession.setActionHandler('nexttrack', () => { loopIndex = (loopIndex + 1) % loopPlaylist.length; playLoopItem(); });
+    navigator.mediaSession.setActionHandler('previoustrack', () => { loopIndex = (loopIndex - 1 + loopPlaylist.length) % loopPlaylist.length; playLoopItem(); });
+  }
+  playLoopItem();
+}
 // ===== MODE & CATEGORY SWITCHING =====
 function switchMode(mode) {
   currentMode = mode;
@@ -4820,7 +4849,7 @@ function switchCat(cat) {
   currentCat = cat;
   document.querySelectorAll('.cat-btn').forEach(b => {
     b.classList.toggle('active', b.textContent.includes(
-      cat === 'verbs' ? '动词' : cat === 'nouns' ? '名词' : cat === 'adjectives' ? '形容词' : cat === 'mix' ? '混合' : '句子'
+      cat === 'nouns' ? '名词' : cat === 'mix' ? '混合' : '句子'
     ));
   });
   if (currentMode === 'list') renderList();
@@ -4835,9 +4864,7 @@ let listFiltered = [];
 
 function renderList() {
   const items = currentCat === 'mix' ? [].concat(
-    DATA.verbs.map(it => ({...it, _cat: 'verbs'})),
     DATA.nouns.map(it => ({...it, _cat: 'nouns'})),
-    DATA.adjectives.map(it => ({...it, _cat: 'adjectives'})),
     DATA.sentences.map(it => ({...it, _cat: 'sentences'}))
   ) : DATA[currentCat];
   const q = document.getElementById('searchInput').value.toLowerCase();
