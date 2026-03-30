@@ -5127,6 +5127,16 @@ function resetStats() {
 
 此操作不可恢复，确定继续吗？')) {
     if (confirm('再次确认：真的要删除所有数据吗？')) {
+      // Backup data before delete
+      const backup = {
+        id: userId,
+        stats: localStats,
+        counts: JSON.parse(localStorage.getItem('jp_item_counts') || '{}'),
+        delays: JSON.parse(localStorage.getItem('jp_delays') || '{}'),
+        deletedAt: new Date().toISOString()
+      };
+      db.ref('backups/' + userId + '/' + Date.now()).set(backup);
+      // Clear local and cloud
       localStorage.removeItem('jp_stats');
       localStorage.removeItem('jp_item_counts');
       localStorage.removeItem('jp_delays');
