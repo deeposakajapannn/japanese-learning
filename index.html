@@ -425,7 +425,7 @@ body {
 
 <div class="login-overlay" id="loginOverlay">
   <div class="login-box">
-    <h2>日本語学習</h2>
+    <h2 id="loginTitle">日本語学習</h2>
     <p>输入一个专属ID，用于跨设备记住你的学习进度<br>随便起一个就行，不同设备用同一个ID即可</p>
     <input class="login-input" id="loginId" placeholder="输入ID（如：deeposaka）" maxlength="30" autocomplete="off">
     <button class="login-btn" id="loginBtn" onclick="handleLogin()">开始学习</button>
@@ -434,7 +434,7 @@ body {
 </div>
 <div class="header">
   <h1>日本語学習</h1>
-  <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center"><span>动词 · 名词 · 形容词 · 句子</span><span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:10px;font-size:11px"></span></div>
+  <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center"><span>动词 · 名词 · 形容词 · 句子</span><span style="display:flex;gap:6px;align-items:center"><span id="langSwitcher" style="display:flex;gap:2px"><button onclick="switchLang('zh')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">中</button><button onclick="switchLang('en')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">EN</button><button onclick="switchLang('es')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">ES</button></span><span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:10px;font-size:11px"></span></span></div>
 </div>
 
 <!-- Mode Navigation -->
@@ -3314,6 +3314,215 @@ function getItemCount(cat, id) {
   const c = getItemCounts();
   return c[cat + ':' + id] || 0;
 }
+
+// ===== I18N =====
+const LANG = {
+  zh: {
+    title: '日本語学習',
+    loginTitle: '日本語学習',
+    loginDesc: '输入一个专属ID，用于跨设备记住你的学习进度<br>随便起一个就行，不同设备用同一个ID即可',
+    loginPlaceholder: '输入ID（如：deeposaka）',
+    loginBtn: '开始学习',
+    loginConnecting: '正在连接...',
+    loginFound: '找到已有数据，正在恢复...',
+    loginNew: '新ID，开始学习吧！',
+    loginFail: '连接失败，请检查网络',
+    loginMinLen: 'ID至少2个字符',
+    loginFormat: '只能用英文小写、数字、-、_',
+    loginCurrent: '当前ID: ',
+    tabList: '列表',
+    tabStudy: '学习',
+    tabQuiz: '考试',
+    tabStats: '统计',
+    catVerbs: '动词',
+    catNouns: '名词',
+    catAdj: '形容词',
+    catSent: '句子',
+    catMix: '混合',
+    search: '搜索日语、读音、中文...',
+    select: '选择',
+    selectAll: '全选',
+    selected: '条已选',
+    loopPlay: '▶ 循环播放',
+    loopInfo: '循环播放',
+    loopItems: '条',
+    loopRound: '第',
+    loopRoundSuffix: '轮',
+    flipHint: '点击翻转查看释义',
+    prev: '◀ 上一个',
+    next: '下一个 ▶',
+    speak: '🔊 朗读',
+    know3: '认识了 (3天后)',
+    know7: '很熟了 (7天后)',
+    showAnswer: '显示答案',
+    correct: '✓ 认识',
+    wrong: '✗ 不认识',
+    todayStudy: '今日学习',
+    todayQuiz: '今日测试',
+    totalDays: '累计学习天数',
+    studyLabel: '学习',
+    quizLabel: '测试',
+    wrongTitle: '易错词 TOP 20',
+    resetBtn: '清除所有数据',
+    resetConfirm: t('resetConfirm'),
+    noData: '暂无数据',
+    notFound: '未找到匹配结果',
+    allMastered: '全部掌握！',
+    remaining: '剩余未掌握',
+    mastered: '已掌握',
+    statusLazy: '懒惰 · 你这样永远学不完',
+    statusOk: '凑合 · 比不学强点不多',
+    statusGood: '还不错 · 请保持这个状态',
+    statusHard: '勤奋 · 挺厉害的',
+    statusOver: '过量 · 这么学不可持续',
+  },
+  en: {
+    title: '日本語学習',
+    loginTitle: 'Japanese Learning',
+    loginDesc: 'Enter a unique ID to sync your progress across devices<br>Just make one up, use the same ID on all devices',
+    loginPlaceholder: 'Enter ID (e.g. deeposaka)',
+    loginBtn: 'Start Learning',
+    loginConnecting: 'Connecting...',
+    loginFound: 'Data found, restoring...',
+    loginNew: 'New ID, let\'s start!',
+    loginFail: 'Connection failed, check network',
+    loginMinLen: 'ID must be at least 2 characters',
+    loginFormat: 'Only lowercase letters, numbers, - and _',
+    loginCurrent: 'Current ID: ',
+    tabList: 'List',
+    tabStudy: 'Study',
+    tabQuiz: 'Quiz',
+    tabStats: 'Stats',
+    catVerbs: 'Verbs',
+    catNouns: 'Nouns',
+    catAdj: 'Adjectives',
+    catSent: 'Sentences',
+    catMix: 'Mix',
+    search: 'Search Japanese, reading, meaning...',
+    select: 'Select',
+    selectAll: 'Select All',
+    selected: ' selected',
+    loopPlay: '▶ Loop Play',
+    loopInfo: 'Loop Play',
+    loopItems: ' items',
+    loopRound: 'Round ',
+    loopRoundSuffix: '',
+    flipHint: 'Tap to flip and see meaning',
+    prev: '◀ Prev',
+    next: 'Next ▶',
+    speak: '🔊 Play',
+    know3: 'Known (3 days)',
+    know7: 'Well known (7 days)',
+    showAnswer: 'Show Answer',
+    correct: '✓ Correct',
+    wrong: '✗ Wrong',
+    todayStudy: 'Today\'s Study',
+    todayQuiz: 'Today\'s Quiz',
+    totalDays: 'Total Days',
+    studyLabel: 'Study',
+    quizLabel: 'Quiz',
+    wrongTitle: 'Most Missed TOP 20',
+    resetBtn: 'Reset All Data',
+    resetConfirm: 'Are you sure you want to reset all data? This cannot be undone.',
+    noData: 'No data yet',
+    notFound: 'No results found',
+    allMastered: 'All mastered!',
+    remaining: 'remaining',
+    mastered: 'Mastered',
+    statusLazy: 'Lazy · You\'ll never finish like this',
+    statusOk: 'So-so · Barely better than nothing',
+    statusGood: 'Good · Keep it up!',
+    statusHard: 'Diligent · Impressive!',
+    statusOver: 'Overload · This pace isn\'t sustainable',
+  },
+  es: {
+    title: '日本語学習',
+    loginTitle: 'Aprender Japonés',
+    loginDesc: 'Ingresa un ID único para sincronizar tu progreso<br>Inventa uno y usa el mismo en todos tus dispositivos',
+    loginPlaceholder: 'Ingresa ID (ej: deeposaka)',
+    loginBtn: 'Empezar',
+    loginConnecting: 'Conectando...',
+    loginFound: 'Datos encontrados, restaurando...',
+    loginNew: 'Nuevo ID, ¡a estudiar!',
+    loginFail: 'Error de conexión, verifica tu red',
+    loginMinLen: 'El ID debe tener al menos 2 caracteres',
+    loginFormat: 'Solo minúsculas, números, - y _',
+    loginCurrent: 'ID actual: ',
+    tabList: 'Lista',
+    tabStudy: 'Estudio',
+    tabQuiz: 'Examen',
+    tabStats: 'Estadísticas',
+    catVerbs: 'Verbos',
+    catNouns: 'Sustantivos',
+    catAdj: 'Adjetivos',
+    catSent: 'Frases',
+    catMix: 'Mezcla',
+    search: 'Buscar japonés, lectura, significado...',
+    select: 'Elegir',
+    selectAll: 'Todos',
+    selected: ' elegidos',
+    loopPlay: '▶ Repetir',
+    loopInfo: 'Reproducción en bucle',
+    loopItems: ' elementos',
+    loopRound: 'Ronda ',
+    loopRoundSuffix: '',
+    flipHint: 'Toca para ver el significado',
+    prev: '◀ Anterior',
+    next: 'Siguiente ▶',
+    speak: '🔊 Audio',
+    know3: 'Lo sé (3 días)',
+    know7: 'Muy bien (7 días)',
+    showAnswer: 'Ver Respuesta',
+    correct: '✓ Correcto',
+    wrong: '✗ Incorrecto',
+    todayStudy: 'Estudio Hoy',
+    todayQuiz: 'Examen Hoy',
+    totalDays: 'Días Totales',
+    studyLabel: 'Estudio',
+    quizLabel: 'Examen',
+    wrongTitle: 'Más Errores TOP 20',
+    resetBtn: 'Borrar Todos los Datos',
+    resetConfirm: '¿Seguro que quieres borrar todos los datos? No se puede deshacer.',
+    noData: 'Sin datos',
+    notFound: 'Sin resultados',
+    allMastered: '¡Todo dominado!',
+    remaining: 'restantes',
+    mastered: 'Dominado',
+    statusLazy: 'Perezoso · Así nunca vas a terminar',
+    statusOk: 'Regular · Apenas mejor que nada',
+    statusGood: 'Bien · ¡Sigue así!',
+    statusHard: 'Aplicado · ¡Impresionante!',
+    statusOver: 'Exceso · Este ritmo no es sostenible',
+  }
+};
+
+let currentLang = localStorage.getItem('jp_lang') || 'zh';
+function t(key) { return LANG[currentLang][key] || LANG.zh[key] || key; }
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('jp_lang', lang);
+  applyLang();
+}
+
+function applyLang() {
+  // Update all UI text
+  document.querySelectorAll('.nav-btn').forEach((b, i) => {
+    b.textContent = [t('tabList'), t('tabStudy'), t('tabQuiz'), t('tabStats')][i];
+  });
+  document.querySelectorAll('.cat-btn').forEach((b, i) => {
+    const cats = [t('catVerbs'), t('catNouns'), t('catAdj'), t('catSent'), t('catMix')];
+    if (i < cats.length) b.textContent = cats[i];
+  });
+  document.getElementById('searchInput').placeholder = t('search');
+  document.querySelector('.card-hint').textContent = t('flipHint');
+  // Study buttons
+  const studyBtns = document.querySelectorAll('.study-nav .study-btn');
+  // Re-render current mode
+  if (currentMode === 'list') renderList();
+  if (currentMode === 'stats') renderStats();
+}
+
 // ===== SPACED REPETITION DELAY =====
 function getDelays() {
   return JSON.parse(localStorage.getItem('jp_delays') || '{}');
@@ -4251,11 +4460,11 @@ function escHtml(s) {
 // ===== STUDY =====
 function renderStudyCard() {
   const items = getActiveItems(currentCat);
-  if (!items.length) { document.getElementById('studyProgress').textContent = '全部掌握！'; document.getElementById('cardFrontWord').textContent = '🎉'; document.getElementById('cardBackReading').textContent = ''; document.getElementById('cardBackMeaning').textContent = ''; document.getElementById('cardBackExample').innerHTML = ''; return; }
+  if (!items.length) { document.getElementById('studyProgress').textContent = t('allMastered'); document.getElementById('cardFrontWord').textContent = '🎉'; document.getElementById('cardBackReading').textContent = ''; document.getElementById('cardBackMeaning').textContent = ''; document.getElementById('cardBackExample').innerHTML = ''; return; }
   if (studyIndex >= items.length) studyIndex = 0;
   const it = items[studyIndex];
   recordItemSeen(it._cat || currentCat, it.id);
-  document.getElementById('studyProgress').textContent = `${studyIndex + 1} / ${items.length} (剩余未掌握)`;
+  document.getElementById('studyProgress').textContent = `${studyIndex + 1} / ${items.length} (${t('remaining')})`;
   document.getElementById('cardFrontWord').textContent = it.word;
   document.getElementById('cardBackReading').textContent = it.reading;
   document.getElementById('cardBackMeaning').textContent = it.meaning;
@@ -4340,17 +4549,17 @@ function renderStats() {
   }
   const dailyAvg = weekTotal / 7;
   let studyStatus;
-  if (dailyAvg < 10) studyStatus = { emoji: '🦥', label: '懒惰 · 你这样永远学不完', color: '#e74c3c' };
-  else if (dailyAvg < 30) studyStatus = { emoji: '🐢', label: '凑合 · 比不学强点不多', color: '#e67e22' };
-  else if (dailyAvg < 80) studyStatus = { emoji: '👍', label: '还不错 · 请保持这个状态', color: 'var(--accent)' };
-  else if (dailyAvg < 150) studyStatus = { emoji: '🔥', label: '勤奋 · 挺厉害的', color: 'var(--primary)' };
-  else studyStatus = { emoji: '⚠️', label: '过量 · 这么学不可持续', color: '#e74c3c' };
+  if (dailyAvg < 10) studyStatus = { emoji: '🦥', label: t('statusLazy'), color: '#e74c3c' };
+  else if (dailyAvg < 30) studyStatus = { emoji: '🐢', label: t('statusOk'), color: '#e67e22' };
+  else if (dailyAvg < 80) studyStatus = { emoji: '👍', label: t('statusGood'), color: 'var(--accent)' };
+  else if (dailyAvg < 150) studyStatus = { emoji: '🔥', label: t('statusHard'), color: 'var(--primary)' };
+  else studyStatus = { emoji: '⚠️', label: t('statusOver'), color: '#e74c3c' };
 
   document.getElementById('statsGrid').innerHTML = `
-    <div class="stat-card"><div class="stat-num green">${todayData.studied}</div><div class="stat-label">今日学习</div></div>
-    <div class="stat-card"><div class="stat-num orange">${todayData.quizzed}</div><div class="stat-label">今日测试</div></div>
+    <div class="stat-card"><div class="stat-num green">${todayData.studied}</div><div class="stat-label">${t('todayStudy')}</div></div>
+    <div class="stat-card"><div class="stat-num orange">${todayData.quizzed}</div><div class="stat-label">${t('todayQuiz')}</div></div>
     <div class="stat-card"><div class="stat-num" style="font-size:18px;color:${studyStatus.color}">${studyStatus.emoji}</div><div class="stat-label">${studyStatus.label}</div></div>
-    <div class="stat-card"><div class="stat-num orange">${Object.keys(stats).length}</div><div class="stat-label">累计学习天数</div></div>
+    <div class="stat-card"><div class="stat-num orange">${Object.keys(stats).length}</div><div class="stat-label">${t('totalDays')}</div></div>
   `;
 
   // Last 7 days chart
@@ -4394,7 +4603,7 @@ function renderStats() {
   const wrongArr = Object.entries(wrongMap).sort((a, b) => b[1] - a[1]).slice(0, 20);
   let wrongHtml = '';
   if (wrongArr.length === 0) {
-    wrongHtml = '<div style="color:var(--text-secondary);font-size:14px;text-align:center;padding:20px">暂无数据</div>';
+    wrongHtml = '<div style="color:var(--text-secondary);font-size:14px;text-align:center;padding:20px">' + t('noData') + '</div>';
   }
   for (const [key, count] of wrongArr) {
     const [cat, id] = key.split(':');
@@ -4410,7 +4619,7 @@ function renderStats() {
 }
 
 function resetStats() {
-  if (confirm('确定要清除所有学习数据吗？此操作不可恢复。')) {
+  if (confirm(t('resetConfirm'))) {
     localStorage.removeItem('jp_stats');
     localStorage.removeItem('jp_item_counts');
     localStorage.removeItem('jp_delays');
@@ -4427,6 +4636,7 @@ window.addEventListener('load', () => {
     document.getElementById('loginOverlay').style.display = 'none';
     userId = saved;
     updateHeaderUser();
+    applyLang();
     // Pull latest from cloud
     db.ref('users/' + userId).once('value').then(snap => {
       if (snap.exists()) {
