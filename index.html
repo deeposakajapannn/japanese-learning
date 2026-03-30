@@ -52,11 +52,18 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
-  background: var(--bg);
+  background: var(--bg) url('bg.jpg') center / 600px repeat;
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
 }
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(245,240,235,0.75);
+  z-index: 0; pointer-events: none;
+}
+body > * { position: relative; z-index: 1; }
 /* ===== Header ===== */
 .header {
   background: linear-gradient(135deg, var(--primary) 0%, #e8a05a 100%);
