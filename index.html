@@ -250,6 +250,9 @@ body > * { position: relative; z-index: 1; }
 .btn-prev { background: var(--card); color: var(--text); box-shadow: var(--shadow); }
 .btn-speak { background: var(--primary-light); color: var(--primary); }
 .btn-next { background: var(--primary); color: white; box-shadow: 0 4px 16px rgba(232,115,90,0.3); }
+.study-nav { display: flex; gap: 12px; width: 100%; max-width: 400px; }
+.btn-know3 { background: var(--primary-light); color: var(--primary); }
+.btn-know7 { background: var(--primary); color: white; box-shadow: 0 4px 16px rgba(232,115,90,0.3); font-size: 16px; }
 
 /* ===== Quiz Mode ===== */
 .quiz-card {
@@ -610,8 +613,8 @@ body > * { position: relative; z-index: 1; }
       <button class="study-btn btn-next" onclick="studyNav(1)">下一个 ▶</button>
     </div>
     <div class="study-nav" style="margin-top:8px">
-      <button class="study-btn" onclick="markKnown(3)" style="background:var(--accent);color:white;flex:1">认识了 (3天后)</button>
-      <button class="study-btn" onclick="markKnown(7)" style="background:var(--accent-light);color:var(--accent);flex:1">很熟了 (7天后)</button>
+      <button class="study-btn btn-know3" onclick="markKnown(3)">认识了 (3天后)</button>
+      <button class="study-btn btn-know7" onclick="markKnown(7)">很熟了 (7天后)</button>
     </div>
   </div>
 </div>
