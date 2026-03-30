@@ -87,7 +87,7 @@ body {
 
 /* ===== List View ===== */
 .search-box {
-  position: sticky; top: 72px; z-index: 50;
+  position: sticky; position: relative; top: 72px; z-index: 50;
   padding: 8px 0 12px;
   background: var(--bg);
 }
@@ -391,6 +391,32 @@ body {
 .login-msg { font-size: 13px; margin-top: 12px; min-height: 20px; }
 .login-msg.error { color: #e74c3c; }
 .login-msg.success { color: var(--accent); }
+
+/* ===== Loop Player ===== */
+.select-cb { width: 20px; height: 20px; accent-color: var(--primary); flex-shrink: 0; margin-right: 8px; }
+.loop-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--card); border-top: 1px solid var(--border);
+  padding: 12px 16px; display: none; z-index: 200;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.loop-bar.show { display: block; }
+.loop-bar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.loop-bar-info { font-size: 13px; color: var(--text-secondary); }
+.loop-bar-now { font-size: 15px; font-weight: 600; margin-top: 4px; }
+.loop-bar-btns { display: flex; gap: 8px; }
+.loop-btn {
+  padding: 8px 16px; border: none; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.loop-btn-play { background: var(--primary); color: white; }
+.loop-btn-stop { background: var(--border); color: var(--text); }
+.select-all-bar {
+  display: none; padding: 8px 16px; gap: 10px; align-items: center;
+  background: var(--primary-light); border-radius: var(--radius-sm); margin: 0 16px 8px;
+}
+.select-all-bar.show { display: flex; }
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
@@ -430,8 +456,14 @@ body {
 
 <!-- List Panel -->
 <div class="panel active" id="panelList">
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="搜索日语、读音、中文..." oninput="renderList()">
+  <div class="search-box" style="position:relative">
+    <input type="text" id="searchInput" placeholder="搜索日语、读音、中文..." oninput="renderList()" style="padding-right:60px">
+    <button onclick="toggleSelectMode()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);border:none;background:var(--primary-light);color:var(--primary);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600">选择</button>
+  </div>
+  <div class="select-all-bar" id="selectAllBar">
+    <input type="checkbox" class="select-cb" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
+    <span style="font-size:13px;flex:1">全选 (<span id="selectedCount">0</span>条已选)</span>
+    <button class="loop-btn loop-btn-play" onclick="startLoop()" style="padding:6px 14px;font-size:13px">▶ 循环播放</button>
   </div>
   <div id="listContainer"></div>
 </div>
@@ -3968,6 +4000,138 @@ function speakWithExample(word, example) {
   }
 }
 
+
+// ===== LOOP PLAYER =====
+let loopSelected = new Set();
+let loopPlaylist = [];
+let loopIndex = 0;
+let loopRound = 1;
+let loopPlaying = false;
+let loopPaused = false;
+let selectMode = false;
+
+function toggleSelectMode() {
+  selectMode = !selectMode;
+  loopSelected.clear();
+  document.getElementById('selectAllBar').classList.toggle('show', selectMode);
+  document.getElementById('selectAllCb').checked = false;
+  updateSelectedCount();
+  renderListPage();
+}
+
+function toggleSelectItem(cat, id, checked) {
+  const key = cat + ':' + id;
+  if (checked) loopSelected.add(key); else loopSelected.delete(key);
+  updateSelectedCount();
+}
+
+function toggleSelectAll(checked) {
+  const items = document.querySelectorAll('.item-cb');
+  items.forEach(cb => { cb.checked = checked; toggleSelectItem(cb.dataset.cat, cb.dataset.id, checked); });
+}
+
+function updateSelectedCount() {
+  document.getElementById('selectedCount').textContent = loopSelected.size;
+}
+
+function startLoop() {
+  if (loopSelected.size === 0) return;
+  loopPlaylist = [];
+  for (const key of loopSelected) {
+    const [cat, id] = key.split(':');
+    const item = DATA[cat]?.find(it => it.id === parseInt(id));
+    if (item) loopPlaylist.push({...item, _cat: cat});
+  }
+  loopIndex = 0;
+  loopRound = 1;
+  loopPlaying = true;
+  loopPaused = false;
+  document.getElementById('loopBar').classList.add('show');
+  document.getElementById('loopCount').textContent = loopPlaylist.length;
+  document.getElementById('loopPlayBtn').textContent = '⏸';
+  
+  // Setup Media Session for lock screen
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: '日本語学習', artist: '循环播放中'
+    });
+    navigator.mediaSession.setActionHandler('play', () => toggleLoopPlay());
+    navigator.mediaSession.setActionHandler('pause', () => toggleLoopPlay());
+    navigator.mediaSession.setActionHandler('nexttrack', () => { loopIndex = (loopIndex + 1) % loopPlaylist.length; playLoopItem(); });
+    navigator.mediaSession.setActionHandler('previoustrack', () => { loopIndex = (loopIndex - 1 + loopPlaylist.length) % loopPlaylist.length; playLoopItem(); });
+  }
+  playLoopItem();
+}
+
+function playLoopItem() {
+  if (!loopPlaying) return;
+  const it = loopPlaylist[loopIndex];
+  document.getElementById('loopNow').textContent = it.word + ' - ' + it.meaning;
+  document.getElementById('loopRound').textContent = loopRound;
+  
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: it.word + ' - ' + it.meaning, artist: '第' + loopRound + '轮 · ' + (loopIndex+1) + '/' + loopPlaylist.length
+    });
+  }
+
+  // Play word audio, then example, then next
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  const fn1 = AUDIO_MAP[it.word];
+  if (!fn1) { nextLoopItem(); return; }
+  
+  currentAudio = new Audio('audio/' + fn1);
+  currentAudio.play().catch(() => {});
+  
+  currentAudio.onended = () => {
+    if (!loopPlaying || loopPaused) return;
+    // Small pause between word and example
+    setTimeout(() => {
+      if (!loopPlaying || loopPaused) return;
+      if (it.example && AUDIO_MAP[it.example]) {
+        currentAudio = new Audio('audio/' + AUDIO_MAP[it.example]);
+        currentAudio.play().catch(() => {});
+        currentAudio.onended = () => {
+          if (!loopPlaying || loopPaused) return;
+          setTimeout(() => nextLoopItem(), 800);
+        };
+      } else {
+        setTimeout(() => nextLoopItem(), 800);
+      }
+    }, 500);
+  };
+}
+
+function nextLoopItem() {
+  if (!loopPlaying) return;
+  loopIndex++;
+  if (loopIndex >= loopPlaylist.length) {
+    loopIndex = 0;
+    loopRound++;
+    document.getElementById('loopRound').textContent = loopRound;
+  }
+  playLoopItem();
+}
+
+function toggleLoopPlay() {
+  if (loopPaused) {
+    loopPaused = false;
+    document.getElementById('loopPlayBtn').textContent = '⏸';
+    playLoopItem();
+  } else {
+    loopPaused = true;
+    document.getElementById('loopPlayBtn').textContent = '▶';
+    if (currentAudio) currentAudio.pause();
+  }
+}
+
+function stopLoop() {
+  loopPlaying = false;
+  loopPaused = false;
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  document.getElementById('loopBar').classList.remove('show');
+}
+
 // ===== MODE & CATEGORY SWITCHING =====
 function switchMode(mode) {
   currentMode = mode;
@@ -4032,7 +4196,9 @@ function renderListPage() {
   let html = '';
   for (const it of show) {
     const ex = it.example ? escHtml(it.example) : '';
-    html += `<div class="list-item" onclick="speakWithExample('${escHtml(it.word)}','${ex}')">
+    const itemCat = it._cat || currentCat;
+    html += `<div class="list-item" onclick="speakWithExample('${escHtml(it.word)}','${ex}')" style="display:flex;align-items:center">
+      ${selectMode ? '<input type="checkbox" class="select-cb item-cb" data-cat="' + itemCat + '" data-id="' + it.id + '" ' + (loopSelected.has(itemCat + ':' + it.id) ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSelectItem(\'' + itemCat + '\',' + it.id + ',this.checked)" style="margin-left:-4px">' : ''}
       <div class="list-num">${it.id}</div>
       <div class="list-body">
         <div class="list-word">${escHtml(it.word)}</div>
@@ -4273,5 +4439,18 @@ document.addEventListener('keydown', e => {
   }
 });
 </script>
+
+<div class="loop-bar" id="loopBar">
+  <div class="loop-bar-top">
+    <div>
+      <div class="loop-bar-info">循环播放 · <span id="loopCount">0</span>条 · 第<span id="loopRound">1</span>轮</div>
+      <div class="loop-bar-now" id="loopNow"></div>
+    </div>
+    <div class="loop-bar-btns">
+      <button class="loop-btn loop-btn-play" id="loopPlayBtn" onclick="toggleLoopPlay()">⏸</button>
+      <button class="loop-btn loop-btn-stop" onclick="stopLoop()">✕</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
