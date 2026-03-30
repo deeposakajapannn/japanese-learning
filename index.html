@@ -1123,23 +1123,21 @@ function recordQuiz(item, correct) {
 let currentAudio = null;
 
 // ===== Silent audio keepalive (prevents iOS from releasing audio session) =====
+// Uses <audio> element instead of AudioContext — iOS suspends AudioContext on lock screen,
+// but continues playing <audio> elements, keeping the AVAudioSession alive.
+const SILENT_WAV = 'data:audio/wav;base64,UklGRjQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YRAAAAAAAAAAAAAAAAAAAAAAAAAA';
 let silentAudio = null;
 function startSilentKeepAlive() {
   if (silentAudio) return;
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const bufferSize = ctx.sampleRate * 2; // 2 seconds of silence
-  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-  const source = ctx.createBufferSource();
-  source.buffer = buffer;
-  source.loop = true;
-  source.connect(ctx.destination);
-  source.start();
-  silentAudio = { ctx, source };
+  silentAudio = new Audio(SILENT_WAV);
+  silentAudio.loop = true;
+  silentAudio.volume = 0.001;
+  silentAudio.play().catch(() => {});
 }
 function stopSilentKeepAlive() {
   if (!silentAudio) return;
-  silentAudio.source.stop();
-  silentAudio.ctx.close();
+  silentAudio.pause();
+  silentAudio.src = '';
   silentAudio = null;
 }
 
