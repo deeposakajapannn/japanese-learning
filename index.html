@@ -3941,7 +3941,7 @@ const LANG = {
 };
 
 let currentLang = localStorage.getItem('jp_lang') || 'zh';
-function t(key) { return LANG[currentLang][key] || LANG.zh[key] || key; }
+function t(key) { if (typeof LANG === 'undefined') return key; return LANG[currentLang]?.[key] || LANG.zh?.[key] || key; }
 
 function switchLang(lang) {
   currentLang = lang;
