@@ -425,6 +425,7 @@ body {
   <button class="cat-btn" onclick="switchCat('nouns')">名词 (948)</button>
   <button class="cat-btn" onclick="switchCat('adjectives')">形容词 (221)</button>
   <button class="cat-btn" onclick="switchCat('sentences')">句子 (1238)</button>
+  <button class="cat-btn" onclick="switchCat('mix')">混合</button>
 </div>
 
 <!-- List Panel -->
@@ -3243,6 +3244,22 @@ function recordItemSeen(cat, id) {
 }
 function getActiveItems(cat) {
   const c = getItemCounts();
+  if (cat === 'mix') {
+    let all = [];
+    for (const k of ['verbs', 'nouns', 'adjectives', 'sentences']) {
+      DATA[k].forEach(it => {
+        if ((c[k + ':' + it.id] || 0) < MASTERED_THRESHOLD) {
+          all.push({...it, _cat: k});
+        }
+      });
+    }
+    // Shuffle
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    return all;
+  }
   return DATA[cat].filter(it => (c[cat + ':' + it.id] || 0) < MASTERED_THRESHOLD);
 }
 function isMastered(cat, id) {
@@ -3935,7 +3952,7 @@ function switchCat(cat) {
   currentCat = cat;
   document.querySelectorAll('.cat-btn').forEach(b => {
     b.classList.toggle('active', b.textContent.includes(
-      cat === 'verbs' ? '动词' : cat === 'nouns' ? '名词' : cat === 'adjectives' ? '形容词' : '句子'
+      cat === 'verbs' ? '动词' : cat === 'nouns' ? '名词' : cat === 'adjectives' ? '形容词' : cat === 'mix' ? '混合' : '句子'
     ));
   });
   if (currentMode === 'list') renderList();
@@ -3949,7 +3966,12 @@ const PAGE_SIZE = 50;
 let listFiltered = [];
 
 function renderList() {
-  const items = DATA[currentCat];
+  const items = currentCat === 'mix' ? [].concat(
+    DATA.verbs.map(it => ({...it, _cat: 'verbs'})),
+    DATA.nouns.map(it => ({...it, _cat: 'nouns'})),
+    DATA.adjectives.map(it => ({...it, _cat: 'adjectives'})),
+    DATA.sentences.map(it => ({...it, _cat: 'sentences'}))
+  ) : DATA[currentCat];
   const q = document.getElementById('searchInput').value.toLowerCase();
   listFiltered = q ? items.filter(it =>
     it.word.toLowerCase().includes(q) ||
@@ -3979,7 +4001,7 @@ function renderListPage() {
         ${it.example ? '<div class="list-example">' + escHtml(it.example) + (it.exampleCn ? '<br><span style="color:var(--accent)">' + escHtml(it.exampleCn) + '</span>' : '') + '</div>' : ''}
       </div>
       <button class="speak-btn" onclick="event.stopPropagation();speakWithExample('${escHtml(it.word)}','${ex}')">🔊</button>
-      ${isMastered(currentCat, it.id) ? '<div style="position:absolute;top:8px;right:8px;background:var(--accent);color:white;font-size:10px;padding:2px 8px;border-radius:10px">已掌握</div>' : '<div style="position:absolute;top:8px;right:8px;color:var(--text-secondary);font-size:10px">' + getItemCount(currentCat, it.id) + '/50</div>'}
+      ${isMastered(it._cat || currentCat, it.id) ? '<div style="position:absolute;top:8px;right:8px;background:var(--accent);color:white;font-size:10px;padding:2px 8px;border-radius:10px">已掌握</div>' : '<div style="position:absolute;top:8px;right:8px;color:var(--text-secondary);font-size:10px">' + getItemCount(it._cat || currentCat, it.id) + '/50</div>'}
     </div>`;
   }
   if (listFiltered.length === 0) {
@@ -4013,7 +4035,7 @@ function renderStudyCard() {
   if (!items.length) { document.getElementById('studyProgress').textContent = '全部掌握！'; document.getElementById('cardFrontWord').textContent = '🎉'; document.getElementById('cardBackReading').textContent = ''; document.getElementById('cardBackMeaning').textContent = ''; document.getElementById('cardBackExample').innerHTML = ''; return; }
   if (studyIndex >= items.length) studyIndex = 0;
   const it = items[studyIndex];
-  recordItemSeen(currentCat, it.id);
+  recordItemSeen(it._cat || currentCat, it.id);
   document.getElementById('studyProgress').textContent = `${studyIndex + 1} / ${items.length} (剩余未掌握)`;
   document.getElementById('cardFrontWord').textContent = it.word;
   document.getElementById('cardBackReading').textContent = it.reading;
@@ -4064,7 +4086,7 @@ function showQuizAnswer() {
   quizAnswered = true;
 }
 function quizAnswer(correct) {
-  recordItemSeen(currentCat, quizItems[quizIndex].id);
+  recordItemSeen(quizItems[quizIndex]._cat || currentCat, quizItems[quizIndex].id);
   recordQuiz(quizItems[quizIndex], correct);
   quizIndex++;
   renderQuiz();
