@@ -68,26 +68,43 @@ body {
 .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 1px; }
 .header-sub { font-size: 12px; opacity: 0.85; margin-top: 2px; }
 
-/* ===== Nav Tabs ===== */
-.nav { display: flex; gap: 6px; padding: 12px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* ===== Layout ===== */
+.app-layout { display: flex; min-height: 100vh; }
+.main-content { flex: 1; min-width: 0; padding-bottom: 80px; }
+.nav-logo { display: none; }
+
+/* ===== Nav (mobile: bottom bar) ===== */
+.nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  display: flex; gap: 0; padding: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+  padding-bottom: env(safe-area-inset-bottom);
+}
 .nav::-webkit-scrollbar { display: none; }
 .nav-btn {
-  flex-shrink: 0;
-  padding: 10px 20px;
+  flex: 1;
+  padding: 10px 0 8px;
   border: none;
-  border-radius: 50px;
-  font-size: 14px;
+  border-radius: 0;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
-  background: var(--card);
+  transition: all 0.2s;
+  background: transparent;
   color: var(--text-secondary);
-  box-shadow: var(--shadow);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
+.nav-btn .nav-icon { font-size: 22px; }
 .nav-btn.active {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 16px rgba(232,115,90,0.35);
+  color: var(--primary);
+  background: transparent;
+  box-shadow: none;
 }
 
 /* ===== Category Tabs ===== */
@@ -110,7 +127,7 @@ body {
 }
 
 /* ===== Panels ===== */
-.panel { display: none; padding: 0 16px 100px; }
+.panel { display: none; padding: 0 16px 20px; }
 .panel.active { display: block; }
 
 /* ===== List Toolbar ===== */
@@ -349,13 +366,46 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive: PC sidebar ===== */
 @media (min-width: 768px) {
+  .nav {
+    position: fixed; top: 0; left: 0; bottom: 0; right: auto;
+    width: 200px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px 12px;
+    border-top: none;
+    border-right: 1px solid var(--border);
+    box-shadow: 2px 0 12px rgba(0,0,0,0.04);
+    z-index: 200;
+  }
+  .nav-logo {
+    font-size: 18px; font-weight: 700; color: var(--primary);
+    padding: 8px 12px 20px; display: block;
+  }
+  .nav-btn {
+    flex: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    text-align: left;
+  }
+  .nav-btn .nav-icon { font-size: 20px; }
+  .nav-btn.active {
+    background: var(--primary-light);
+    color: var(--primary);
+  }
+  .main-content { margin-left: 200px; padding-bottom: 40px; }
   .header { padding: 24px 40px 20px; }
-  .nav, .cat-tabs { padding-left: 40px; padding-right: 40px; }
-  .panel { padding: 0 40px 100px; max-width: 800px; margin: 0 auto; }
+  .cat-tabs { padding-left: 40px; padding-right: 40px; }
+  .panel { padding: 0 40px 40px; max-width: 800px; margin: 0 auto; }
+  .list-toolbar { padding-left: 40px; padding-right: 40px; }
   .card-word { font-size: 44px; }
   .quiz-word { font-size: 40px; }
+  .loop-bar { left: 200px; }
 }
 
 /* loading overlay */
@@ -497,14 +547,17 @@ body {
   </div>
 </div>
 
-<!-- Mode Navigation -->
+<div class="app-layout">
+<!-- Sidebar / Bottom Nav -->
 <div class="nav">
-  <button class="nav-btn active" data-mode="list" onclick="switchMode('list')">📋 列表</button>
-  <button class="nav-btn" data-mode="study" onclick="switchMode('study')">📖 学习</button>
-  <button class="nav-btn" data-mode="quiz" onclick="switchMode('quiz')">✏️ 考试</button>
-  <button class="nav-btn" data-mode="stats" onclick="switchMode('stats')">👤 我</button>
+  <div class="nav-logo">日本語学習</div>
+  <button class="nav-btn active" data-mode="list" onclick="switchMode('list')"><span class="nav-icon">📋</span><span class="nav-label">列表</span></button>
+  <button class="nav-btn" data-mode="study" onclick="switchMode('study')"><span class="nav-icon">📖</span><span class="nav-label">学习</span></button>
+  <button class="nav-btn" data-mode="quiz" onclick="switchMode('quiz')"><span class="nav-icon">✏️</span><span class="nav-label">考试</span></button>
+  <button class="nav-btn" data-mode="stats" onclick="switchMode('stats')"><span class="nav-icon">👤</span><span class="nav-label">我</span></button>
 </div>
 
+<div class="main-content">
 <!-- Category Tabs -->
 <div class="cat-tabs" id="catTabs">
   <button class="cat-btn active" data-cat="nouns" onclick="switchCat('nouns')">名词 (948)</button>
@@ -596,6 +649,9 @@ body {
   </div>
   <button class="reset-btn" onclick="resetStats()">清除所有学习数据</button>
 </div>
+
+</div><!-- /.main-content -->
+</div><!-- /.app-layout -->
 
 <script>
 // ===== DATA (loaded from JSON) =====
@@ -990,7 +1046,8 @@ function applyLang() {
   // Update all UI text
   const modeLabels = { list: t('tabList'), study: t('tabStudy'), quiz: t('tabQuiz'), stats: t('tabStats') };
   document.querySelectorAll('.nav-btn').forEach(b => {
-    if (b.dataset.mode && modeLabels[b.dataset.mode]) b.textContent = modeLabels[b.dataset.mode];
+    const label = b.querySelector('.nav-label');
+    if (label && b.dataset.mode && modeLabels[b.dataset.mode]) label.textContent = modeLabels[b.dataset.mode];
   });
   const catLabels = { nouns: t('catNouns'), sentences: t('catSent') };
   document.querySelectorAll('.cat-btn').forEach(b => {
