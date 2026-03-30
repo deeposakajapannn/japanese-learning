@@ -499,6 +499,8 @@ body > * { position: relative; z-index: 1; }
 }
 .loop-btn-play { background: var(--primary); color: white; }
 .loop-btn-stop { background: var(--border); color: var(--text); }
+.loop-btn-repeat { background: var(--border); color: var(--text-secondary); }
+.loop-btn-repeat.on { background: var(--primary-light); color: var(--primary); border: 1.5px solid var(--primary); }
 
 
 .lang-btn { background: rgba(255,255,255,0.15); transition: background 0.2s; }
@@ -1193,6 +1195,7 @@ let loopIndex = 0;
 let loopRound = 1;
 let loopPlaying = false;
 let loopPaused = false;
+let loopRepeat = false;
 let selectMode = false;
 
 function toggleSelectMode() {
@@ -1291,13 +1294,20 @@ function playLoopItem() {
 
 function nextLoopItem() {
   if (!loopPlaying) return;
-  loopIndex++;
-  if (loopIndex >= loopPlaylist.length) {
-    loopIndex = 0;
-    loopRound++;
-    document.getElementById('loopRound').textContent = loopRound;
+  if (!loopRepeat) {
+    loopIndex++;
+    if (loopIndex >= loopPlaylist.length) {
+      loopIndex = 0;
+      loopRound++;
+      document.getElementById('loopRound').textContent = loopRound;
+    }
   }
   playLoopItem();
+}
+
+function toggleLoopRepeat() {
+  loopRepeat = !loopRepeat;
+  document.getElementById('loopRepeatBtn').classList.toggle('on', loopRepeat);
 }
 
 function toggleLoopPlay() {
@@ -1317,12 +1327,14 @@ function toggleLoopPlay() {
 function stopLoop() {
   loopPlaying = false;
   loopPaused = false;
+  loopRepeat = false;
   _audioEl.onended = null;
   _audioEl.pause();
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
   stopSilentKeepAlive();
   document.getElementById('loopBar').classList.remove('show');
   document.getElementById('listSpeakStop').style.display = 'none';
+  document.getElementById('loopRepeatBtn').classList.remove('on');
 }
 
 
@@ -1713,6 +1725,7 @@ document.addEventListener('keydown', e => {
       <div class="loop-bar-now" id="loopNow"></div>
     </div>
     <div class="loop-bar-btns">
+      <button class="loop-btn loop-btn-repeat" id="loopRepeatBtn" onclick="toggleLoopRepeat()">单曲</button>
       <button class="loop-btn loop-btn-play" id="loopPlayBtn" onclick="toggleLoopPlay()">⏸</button>
       <button class="loop-btn loop-btn-stop" onclick="stopLoop()">✕</button>
     </div>
