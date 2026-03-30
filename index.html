@@ -322,12 +322,15 @@ body > * { position: relative; z-index: 1; }
   margin-bottom: 20px;
 }
 .stat-card {
-  background: var(--card);
   border-radius: var(--radius);
   padding: 20px 16px;
   box-shadow: var(--shadow);
   text-align: center;
+  color: white;
 }
+.stat-card-a { background: linear-gradient(135deg, #e8735a 0%, #f0a06a 100%); box-shadow: 0 4px 16px rgba(232,115,90,0.3); }
+.stat-card-b { background: linear-gradient(135deg, #e8924a 0%, #f0b860 100%); box-shadow: 0 4px 16px rgba(232,146,74,0.3); }
+.stat-card-c { background: linear-gradient(135deg, #c9563f 0%, #e8735a 100%); box-shadow: 0 4px 16px rgba(201,86,63,0.3); }
 .stat-card-status {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, var(--primary) 0%, #e8a05a 100%);
@@ -340,9 +343,9 @@ body > * { position: relative; z-index: 1; }
 .stat-card-status .stat-num { font-size: 40px; }
 .stat-card-status .stat-label { font-size: 15px; font-weight: 600; opacity: 0.92; margin-top: 6px; }
 .stat-num { font-size: 32px; font-weight: 800; }
-.stat-num.green { color: var(--primary); }
-.stat-num.orange { color: var(--primary); }
-.stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+.stat-num.green { color: white; }
+.stat-num.orange { color: white; }
+.stat-label { font-size: 12px; opacity: 0.88; margin-top: 4px; }
 .stat-section {
   background: var(--card);
   border-radius: var(--radius);
@@ -1566,9 +1569,9 @@ function renderStats() {
 
   document.getElementById('statsGrid').innerHTML = `
     <div class="stat-card-status"><div class="stat-num">${studyStatus.emoji}</div><div class="stat-label">${studyStatus.label}</div></div>
-    <div class="stat-card"><div class="stat-num green">${todayData.studied}</div><div class="stat-label">${t('todayStudy')}</div></div>
-    <div class="stat-card"><div class="stat-num orange">${todayData.quizzed}</div><div class="stat-label">${t('todayQuiz')}</div></div>
-    <div class="stat-card"><div class="stat-num orange">${Object.keys(stats).length}</div><div class="stat-label">${t('totalDays')}</div></div>
+    <div class="stat-card stat-card-a"><div class="stat-num">${todayData.studied}</div><div class="stat-label">${t('todayStudy')}</div></div>
+    <div class="stat-card stat-card-b"><div class="stat-num">${todayData.quizzed}</div><div class="stat-label">${t('todayQuiz')}</div></div>
+    <div class="stat-card stat-card-c"><div class="stat-num">${Object.keys(stats).length}</div><div class="stat-label">${t('totalDays')}</div></div>
   `;
 
   // Last 7 days chart
