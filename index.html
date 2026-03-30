@@ -5121,12 +5121,8 @@ function renderStats() {
 }
 
 function resetStats() {
-  if (confirm('⚠️ 警告：这将清除所有设备上的全部学习数据！
-
-包括：学习进度、掌握记录、延迟复习计划
-
-此操作不可恢复，确定继续吗？')) {
-    if (confirm('再次确认：真的要删除所有数据吗？')) {
+  if (confirm("⚠️ 警告：这将清除所有设备上的全部学习数据！\n\n包括：学习进度、掌握记录、延迟复习计划\n\n此操作不可恢复，确定继续吗？")) {
+    if (confirm("再次确认：真的要删除所有数据吗？")) {
       // Backup data before delete
       const backup = {
         id: userId,
