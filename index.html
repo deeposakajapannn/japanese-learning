@@ -4330,12 +4330,26 @@ function renderStats() {
     totalQuizzed += d.quizzed || 0;
     totalCorrect += d.correct || 0;
   }
-  const todayRate = todayData.quizzed ? Math.round(todayData.correct / todayData.quizzed * 100) : 0;
+  // Study status based on last 7 days
+  let weekTotal = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const key = d.toISOString().slice(0, 10);
+    const dd = stats[key] || {};
+    weekTotal += (dd.studied || 0) + (dd.quizzed || 0);
+  }
+  const dailyAvg = weekTotal / 7;
+  let studyStatus;
+  if (dailyAvg < 10) studyStatus = { emoji: '🦥', label: '懒惰 · 你这样永远学不完', color: '#e74c3c' };
+  else if (dailyAvg < 30) studyStatus = { emoji: '🐢', label: '凑合 · 比不学强点不多', color: '#e67e22' };
+  else if (dailyAvg < 80) studyStatus = { emoji: '👍', label: '还不错 · 请保持这个状态', color: 'var(--accent)' };
+  else if (dailyAvg < 150) studyStatus = { emoji: '🔥', label: '勤奋 · 挺厉害的', color: 'var(--primary)' };
+  else studyStatus = { emoji: '⚠️', label: '过量 · 这么学不可持续', color: '#e74c3c' };
 
   document.getElementById('statsGrid').innerHTML = `
     <div class="stat-card"><div class="stat-num green">${todayData.studied}</div><div class="stat-label">今日学习</div></div>
     <div class="stat-card"><div class="stat-num orange">${todayData.quizzed}</div><div class="stat-label">今日测试</div></div>
-    <div class="stat-card"><div class="stat-num green">${todayRate}%</div><div class="stat-label">今日正确率</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:18px;color:${studyStatus.color}">${studyStatus.emoji}</div><div class="stat-label">${studyStatus.label}</div></div>
     <div class="stat-card"><div class="stat-num orange">${Object.keys(stats).length}</div><div class="stat-label">累计学习天数</div></div>
   `;
 
