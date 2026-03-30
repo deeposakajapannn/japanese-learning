@@ -583,6 +583,406 @@ async function loadData() {
   AUDIO_MAP = audioMap;
 }
 
+// ===== STATE =====
+let currentMode = 'list';
+let currentCat = 'nouns';
+let studyIndex = 0;
+let quizIndex = 0;
+let quizItems = [];
+let quizAnswered = false;
+
+// ===== LOCAL STORAGE STATS =====
+// ===== FIREBASE INIT =====
+const firebaseConfig = {
+  apiKey: "AIzaSyBCZa2CyskF8bM_CU0l2UaT7Wwq25cz30Q",
+  authDomain: "jp-learn-e01bd.firebaseapp.com",
+  databaseURL: "https://jp-learn-e01bd-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "jp-learn-e01bd",
+  storageBucket: "jp-learn-e01bd.firebasestorage.app",
+  messagingSenderId: "1055060519096",
+  appId: "1:1055060519096:web:ed0421d0a6938186c6ec4d"
+};
+
+let userId = localStorage.getItem('jp_user_id') || '';
+let db = null;
+let syncTimer = null;
+let localStats = {};
+let localCounts = {};
+
+function initFirebase() {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.database();
+}
+initFirebase();
+
+function handleLogin() {
+  const input = document.getElementById('loginId').value.trim().toLowerCase();
+  const msg = document.getElementById('loginMsg');
+  const btn = document.getElementById('loginBtn');
+  if (!input || input.length < 2) { msg.textContent = 'ID至少2个字符'; msg.className = 'login-msg error'; return; }
+  if (!/^[a-z0-9_-]+$/.test(input)) { msg.textContent = '只能用英文小写、数字、-、_'; msg.className = 'login-msg error'; return; }
+  btn.disabled = true;
+  msg.textContent = '正在连接...'; msg.className = 'login-msg';
+
+  db.ref('users/' + input).once('value').then(snap => {
+    if (snap.exists()) {
+      msg.textContent = '找到已有数据，正在恢复...'; msg.className = 'login-msg success';
+      const data = snap.val();
+      localStats = data.stats || {};
+      localCounts = data.counts || {};
+      localStorage.setItem('jp_stats', JSON.stringify(localStats));
+      localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
+      localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
+    } else {
+      msg.textContent = '新ID，开始学习吧！'; msg.className = 'login-msg success';
+      localStats = JSON.parse(localStorage.getItem('jp_stats') || '{}');
+      localCounts = JSON.parse(localStorage.getItem('jp_item_counts') || '{}');
+      syncToCloud();
+    }
+    userId = input;
+    localStorage.setItem('jp_user_id', userId);
+    setTimeout(() => {
+      document.getElementById('loginOverlay').style.display = 'none';
+      updateHeaderUser();
+      renderList();
+    }, 600);
+  }).catch(err => {
+    msg.textContent = '连接失败，请检查网络'; msg.className = 'login-msg error';
+    btn.disabled = false;
+  });
+}
+
+function syncToCloud() {
+  if (!userId || !db) return;
+  db.ref('users/' + userId).set({ stats: localStats, counts: localCounts, delays: JSON.parse(localStorage.getItem('jp_delays') || '{}') });
+}
+
+function debouncedSync() {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncToCloud, 2000);
+}
+
+function getStats() {
+  return JSON.parse(localStorage.getItem('jp_stats') || '{}');
+}
+function saveStats(s) {
+  localStorage.setItem('jp_stats', JSON.stringify(s));
+  localStats = s;
+  debouncedSync();
+}
+function todayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+function getItemCounts() {
+  return JSON.parse(localStorage.getItem('jp_item_counts') || '{}');
+}
+function saveItemCounts(c) {
+  localStorage.setItem('jp_item_counts', JSON.stringify(c));
+  localCounts = c;
+  debouncedSync();
+}
+const MASTERED_THRESHOLD = 50;
+function recordItemSeen(cat, id) {
+  const c = getItemCounts();
+  const key = cat + ':' + id;
+  c[key] = (c[key] || 0) + 1;
+  saveItemCounts(c);
+  return c[key];
+}
+function getActiveItems(cat) {
+  const c = getItemCounts();
+  const delays = getDelays();
+  const today = new Date().toISOString().slice(0, 10);
+  if (cat === 'mix') {
+    let all = [];
+    for (const k of ['nouns', 'sentences']) {
+      DATA[k].forEach(it => {
+        const key = k + ':' + it.id;
+        if ((c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today)) {
+          all.push({...it, _cat: k});
+        }
+      });
+    }
+    // Shuffle
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    return all;
+  }
+  return DATA[cat].filter(it => {
+    const key = cat + ':' + it.id;
+    return (c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today);
+  });
+}
+function isMastered(cat, id) {
+  const c = getItemCounts();
+  return (c[cat + ':' + id] || 0) >= MASTERED_THRESHOLD;
+}
+function getItemCount(cat, id) {
+  const c = getItemCounts();
+  return c[cat + ':' + id] || 0;
+}
+
+// ===== I18N =====
+const LANG = {
+  zh: {
+    title: '日本語学習',
+    loginTitle: '日本語学習',
+    loginDesc: '输入一个专属ID，用于跨设备记住你的学习进度<br>随便起一个就行，不同设备用同一个ID即可',
+    loginPlaceholder: '输入ID（如：deeposaka）',
+    loginBtn: '开始学习',
+    loginConnecting: '正在连接...',
+    loginFound: '找到已有数据，正在恢复...',
+    loginNew: '新ID，开始学习吧！',
+    loginFail: '连接失败，请检查网络',
+    loginMinLen: 'ID至少2个字符',
+    loginFormat: '只能用英文小写、数字、-、_',
+    loginCurrent: '当前ID: ',
+    tabList: '列表',
+    tabStudy: '学习',
+    tabQuiz: '考试',
+    tabStats: '统计',
+    catVerbs: '动词',
+    catNouns: '名词',
+    catAdj: '形容词',
+    catSent: '句子',
+    catMix: '混合',
+    search: '搜索日语、读音、中文...',
+    select: '选择',
+    selectAll: '全选',
+    selected: '条已选',
+    loopPlay: '▶ 循环播放',
+    loopInfo: '循环播放',
+    loopItems: '条',
+    loopRound: '第',
+    loopRoundSuffix: '轮',
+    flipHint: '点击翻转查看释义',
+    prev: '◀ 上一个',
+    next: '下一个 ▶',
+    speak: '🔊 朗读',
+    know3: '认识了 (3天后)',
+    know7: '很熟了 (7天后)',
+    showAnswer: '显示答案',
+    correct: '✓ 认识',
+    wrong: '✗ 不认识',
+    todayStudy: '今日学习',
+    todayQuiz: '今日测试',
+    totalDays: '累计学习天数',
+    studyLabel: '学习',
+    quizLabel: '测试',
+    wrongTitle: '易错词 TOP 20',
+    resetBtn: '清除所有数据',
+    resetConfirm: '确定要清除所有学习数据吗？此操作不可恢复。',
+    noData: '暂无数据',
+    notFound: '未找到匹配结果',
+    allMastered: '全部掌握！',
+    remaining: '剩余未掌握',
+    mastered: '已掌握',
+    statusLazy: '懒惰 · 你这样永远学不完',
+    statusOk: '凑合 · 比不学强点不多',
+    statusGood: '还不错 · 请保持这个状态',
+    statusHard: '勤奋 · 挺厉害的',
+    statusOver: '过量 · 这么学不可持续',
+  },
+  en: {
+    title: '日本語学習',
+    loginTitle: 'Japanese Learning',
+    loginDesc: 'Enter a unique ID to sync your progress across devices<br>Just make one up, use the same ID on all devices',
+    loginPlaceholder: 'Enter ID (e.g. deeposaka)',
+    loginBtn: 'Start Learning',
+    loginConnecting: 'Connecting...',
+    loginFound: 'Data found, restoring...',
+    loginNew: 'New ID, let\'s start!',
+    loginFail: 'Connection failed, check network',
+    loginMinLen: 'ID must be at least 2 characters',
+    loginFormat: 'Only lowercase letters, numbers, - and _',
+    loginCurrent: 'Current ID: ',
+    tabList: 'List',
+    tabStudy: 'Study',
+    tabQuiz: 'Quiz',
+    tabStats: 'Stats',
+    catVerbs: 'Verbs',
+    catNouns: 'Nouns',
+    catAdj: 'Adjectives',
+    catSent: 'Sentences',
+    catMix: 'Mix',
+    search: 'Search Japanese, reading, meaning...',
+    select: 'Select',
+    selectAll: 'Select All',
+    selected: ' selected',
+    loopPlay: '▶ Loop Play',
+    loopInfo: 'Loop Play',
+    loopItems: ' items',
+    loopRound: 'Round ',
+    loopRoundSuffix: '',
+    flipHint: 'Tap to flip and see meaning',
+    prev: '◀ Prev',
+    next: 'Next ▶',
+    speak: '🔊 Play',
+    know3: 'Known (3 days)',
+    know7: 'Well known (7 days)',
+    showAnswer: 'Show Answer',
+    correct: '✓ Correct',
+    wrong: '✗ Wrong',
+    todayStudy: 'Today\'s Study',
+    todayQuiz: 'Today\'s Quiz',
+    totalDays: 'Total Days',
+    studyLabel: 'Study',
+    quizLabel: 'Quiz',
+    wrongTitle: 'Most Missed TOP 20',
+    resetBtn: 'Reset All Data',
+    resetConfirm: 'Are you sure you want to reset all data? This cannot be undone.',
+    noData: 'No data yet',
+    notFound: 'No results found',
+    allMastered: 'All mastered!',
+    remaining: 'remaining',
+    mastered: 'Mastered',
+    statusLazy: 'Lazy · You\'ll never finish like this',
+    statusOk: 'So-so · Barely better than nothing',
+    statusGood: 'Good · Keep it up!',
+    statusHard: 'Diligent · Impressive!',
+    statusOver: 'Overload · This pace isn\'t sustainable',
+  },
+  es: {
+    title: '日本語学習',
+    loginTitle: 'Aprender Japonés',
+    loginDesc: 'Ingresa un ID único para sincronizar tu progreso<br>Inventa uno y usa el mismo en todos tus dispositivos',
+    loginPlaceholder: 'Ingresa ID (ej: deeposaka)',
+    loginBtn: 'Empezar',
+    loginConnecting: 'Conectando...',
+    loginFound: 'Datos encontrados, restaurando...',
+    loginNew: 'Nuevo ID, ¡a estudiar!',
+    loginFail: 'Error de conexión, verifica tu red',
+    loginMinLen: 'El ID debe tener al menos 2 caracteres',
+    loginFormat: 'Solo minúsculas, números, - y _',
+    loginCurrent: 'ID actual: ',
+    tabList: 'Lista',
+    tabStudy: 'Estudio',
+    tabQuiz: 'Examen',
+    tabStats: 'Estadísticas',
+    catVerbs: 'Verbos',
+    catNouns: 'Sustantivos',
+    catAdj: 'Adjetivos',
+    catSent: 'Frases',
+    catMix: 'Mezcla',
+    search: 'Buscar japonés, lectura, significado...',
+    select: 'Elegir',
+    selectAll: 'Todos',
+    selected: ' elegidos',
+    loopPlay: '▶ Repetir',
+    loopInfo: 'Reproducción en bucle',
+    loopItems: ' elementos',
+    loopRound: 'Ronda ',
+    loopRoundSuffix: '',
+    flipHint: 'Toca para ver el significado',
+    prev: '◀ Anterior',
+    next: 'Siguiente ▶',
+    speak: '🔊 Audio',
+    know3: 'Lo sé (3 días)',
+    know7: 'Muy bien (7 días)',
+    showAnswer: 'Ver Respuesta',
+    correct: '✓ Correcto',
+    wrong: '✗ Incorrecto',
+    todayStudy: 'Estudio Hoy',
+    todayQuiz: 'Examen Hoy',
+    totalDays: 'Días Totales',
+    studyLabel: 'Estudio',
+    quizLabel: 'Examen',
+    wrongTitle: 'Más Errores TOP 20',
+    resetBtn: 'Borrar Todos los Datos',
+    resetConfirm: '¿Seguro que quieres borrar todos los datos? No se puede deshacer.',
+    noData: 'Sin datos',
+    notFound: 'Sin resultados',
+    allMastered: '¡Todo dominado!',
+    remaining: 'restantes',
+    mastered: 'Dominado',
+    statusLazy: 'Perezoso · Así nunca vas a terminar',
+    statusOk: 'Regular · Apenas mejor que nada',
+    statusGood: 'Bien · ¡Sigue así!',
+    statusHard: 'Aplicado · ¡Impresionante!',
+    statusOver: 'Exceso · Este ritmo no es sostenible',
+  }
+};
+
+let currentLang = localStorage.getItem('jp_lang') || 'zh';
+function t(key) { if (typeof LANG === 'undefined') return key; return LANG[currentLang]?.[key] || LANG.zh?.[key] || key; }
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('jp_lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  applyLang();
+}
+
+function applyLang() {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+  // Update all UI text
+  document.querySelectorAll('.nav-btn').forEach((b, i) => {
+    b.textContent = [t('tabList'), t('tabStudy'), t('tabQuiz'), t('tabStats')][i];
+  });
+  document.querySelectorAll('.cat-btn').forEach((b, i) => {
+    const cats = [t('catNouns'), t('catSent')];
+    if (i < cats.length) b.textContent = cats[i];
+  });
+  document.getElementById('searchInput').placeholder = t('search');
+  document.querySelector('.card-hint').textContent = t('flipHint');
+  // Study buttons
+  const studyBtns = document.querySelectorAll('.study-nav .study-btn');
+  // Re-render current mode
+  if (currentMode === 'list') renderList();
+  if (currentMode === 'stats') renderStats();
+}
+
+// ===== SPACED REPETITION DELAY =====
+function getDelays() {
+  return JSON.parse(localStorage.getItem('jp_delays') || '{}');
+}
+function saveDelays(d) {
+  localStorage.setItem('jp_delays', JSON.stringify(d));
+  debouncedSync();
+}
+function delayItem(cat, id, days) {
+  const d = getDelays();
+  const until = new Date();
+  until.setDate(until.getDate() + days);
+  d[cat + ':' + id] = until.toISOString().slice(0, 10);
+  saveDelays(d);
+}
+function isDelayed(cat, id) {
+  const d = getDelays();
+  const until = d[cat + ':' + id];
+  if (!until) return false;
+  return until > new Date().toISOString().slice(0, 10);
+}
+function markKnown(days) {
+  const items = getActiveItems(currentCat);
+  if (!items.length) return;
+  const it = items[studyIndex];
+  delayItem(it._cat || currentCat, it.id, days || 3);
+  renderStudyCard();
+}
+
+function recordStudy() {
+  const s = getStats();
+  const d = todayKey();
+  if (!s[d]) s[d] = { studied: 0, quizzed: 0, correct: 0, wrong: {} };
+  s[d].studied++;
+  saveStats(s);
+}
+function recordQuiz(item, correct) {
+  const s = getStats();
+  const d = todayKey();
+  if (!s[d]) s[d] = { studied: 0, quizzed: 0, correct: 0, wrong: {} };
+  s[d].quizzed++;
+  if (correct) s[d].correct++;
+  else {
+    const key = currentCat + ':' + item.id;
+    s[d].wrong[key] = (s[d].wrong[key] || 0) + 1;
+  }
+  saveStats(s);
+}
+
 let currentAudio = null;
 
 // ===== TTS =====
