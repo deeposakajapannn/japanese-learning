@@ -458,6 +458,10 @@ body {
       <button class="study-btn btn-speak" onclick="speakCurrent()">🔊 朗读</button>
       <button class="study-btn btn-next" onclick="studyNav(1)">下一个 ▶</button>
     </div>
+    <div class="study-nav" style="margin-top:8px">
+      <button class="study-btn" onclick="markKnown(3)" style="background:var(--accent);color:white;flex:1">认识了 (3天后)</button>
+      <button class="study-btn" onclick="markKnown(7)" style="background:var(--accent-light);color:var(--accent);flex:1">很熟了 (7天后)</button>
+    </div>
   </div>
 </div>
 
@@ -3187,6 +3191,7 @@ function handleLogin() {
       localCounts = data.counts || {};
       localStorage.setItem('jp_stats', JSON.stringify(localStats));
       localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
+      localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
     } else {
       msg.textContent = '新ID，开始学习吧！'; msg.className = 'login-msg success';
       localStats = JSON.parse(localStorage.getItem('jp_stats') || '{}');
@@ -3207,7 +3212,7 @@ function handleLogin() {
 
 function syncToCloud() {
   if (!userId || !db) return;
-  db.ref('users/' + userId).set({ stats: localStats, counts: localCounts });
+  db.ref('users/' + userId).set({ stats: localStats, counts: localCounts, delays: JSON.parse(localStorage.getItem('jp_delays') || '{}') });
 }
 
 function debouncedSync() {
@@ -3244,11 +3249,14 @@ function recordItemSeen(cat, id) {
 }
 function getActiveItems(cat) {
   const c = getItemCounts();
+  const delays = getDelays();
+  const today = new Date().toISOString().slice(0, 10);
   if (cat === 'mix') {
     let all = [];
     for (const k of ['verbs', 'nouns', 'adjectives', 'sentences']) {
       DATA[k].forEach(it => {
-        if ((c[k + ':' + it.id] || 0) < MASTERED_THRESHOLD) {
+        const key = k + ':' + it.id;
+        if ((c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today)) {
           all.push({...it, _cat: k});
         }
       });
@@ -3260,7 +3268,10 @@ function getActiveItems(cat) {
     }
     return all;
   }
-  return DATA[cat].filter(it => (c[cat + ':' + it.id] || 0) < MASTERED_THRESHOLD);
+  return DATA[cat].filter(it => {
+    const key = cat + ':' + it.id;
+    return (c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today);
+  });
 }
 function isMastered(cat, id) {
   const c = getItemCounts();
@@ -3270,6 +3281,35 @@ function getItemCount(cat, id) {
   const c = getItemCounts();
   return c[cat + ':' + id] || 0;
 }
+// ===== SPACED REPETITION DELAY =====
+function getDelays() {
+  return JSON.parse(localStorage.getItem('jp_delays') || '{}');
+}
+function saveDelays(d) {
+  localStorage.setItem('jp_delays', JSON.stringify(d));
+  debouncedSync();
+}
+function delayItem(cat, id, days) {
+  const d = getDelays();
+  const until = new Date();
+  until.setDate(until.getDate() + days);
+  d[cat + ':' + id] = until.toISOString().slice(0, 10);
+  saveDelays(d);
+}
+function isDelayed(cat, id) {
+  const d = getDelays();
+  const until = d[cat + ':' + id];
+  if (!until) return false;
+  return until > new Date().toISOString().slice(0, 10);
+}
+function markKnown(days) {
+  const items = getActiveItems(currentCat);
+  if (!items.length) return;
+  const it = items[studyIndex];
+  delayItem(it._cat || currentCat, it.id, days || 3);
+  renderStudyCard();
+}
+
 function recordStudy() {
   const s = getStats();
   const d = todayKey();
@@ -4086,8 +4126,10 @@ function showQuizAnswer() {
   quizAnswered = true;
 }
 function quizAnswer(correct) {
-  recordItemSeen(quizItems[quizIndex]._cat || currentCat, quizItems[quizIndex].id);
-  recordQuiz(quizItems[quizIndex], correct);
+  const qit = quizItems[quizIndex];
+  recordItemSeen(qit._cat || currentCat, qit.id);
+  if (correct) delayItem(qit._cat || currentCat, qit.id, 1);
+  recordQuiz(qit, correct);
   quizIndex++;
   renderQuiz();
 }
@@ -4178,6 +4220,7 @@ function resetStats() {
   if (confirm('确定要清除所有学习数据吗？此操作不可恢复。')) {
     localStorage.removeItem('jp_stats');
     localStorage.removeItem('jp_item_counts');
+    localStorage.removeItem('jp_delays');
     localStats = {}; localCounts = {}; syncToCloud();
     renderStats();
   }
@@ -4198,6 +4241,7 @@ window.addEventListener('load', () => {
         localCounts = data.counts || {};
         localStorage.setItem('jp_stats', JSON.stringify(localStats));
         localStorage.setItem('jp_item_counts', JSON.stringify(localCounts));
+        localStorage.setItem('jp_delays', JSON.stringify(data.delays || {}));
       }
       renderList();
     }).catch(() => { renderList(); });
