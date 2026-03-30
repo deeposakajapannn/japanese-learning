@@ -434,7 +434,7 @@ body {
 </div>
 <div class="header">
   <h1>日本語学習</h1>
-  <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center"><span>动词 · 名词 · 形容词 · 句子</span><span style="display:flex;gap:6px;align-items:center"><span id="langSwitcher" style="display:flex;gap:2px"><button onclick="switchLang('zh')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">中</button><button onclick="switchLang('en')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">EN</button><button onclick="switchLang('es')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">ES</button></span><span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:10px;font-size:11px"></span></span></div>
+  <div class="header-sub" id="headerSub" style="display:flex;justify-content:space-between;align-items:center"><span>动词 · 名词 · 形容词 · 句子</span><span style="display:flex;gap:6px;align-items:center"><span id="langSwitcher" style="display:flex;gap:2px"><button onclick="switchLang('zh')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">中</button><button onclick="switchLang('en')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">EN</button><button onclick="switchLang('es')" style="border:none;background:rgba(255,255,255,0.2);color:white;padding:2px 6px;border-radius:6px;font-size:10px;cursor:pointer">ES</button></span><span id="headerUser" onclick="switchUser()" style="cursor:pointer;background:rgba(255,255,255,0.25);padding:3px 10px;border-radius:12px;font-size:11px;letter-spacing:0.5px;backdrop-filter:blur(4px)"></span></span></div>
 </div>
 
 <!-- Mode Navigation -->
@@ -4665,7 +4665,7 @@ function switchUser() {
 }
 function updateHeaderUser() {
   const el = document.getElementById('headerUser');
-  if (el && userId) el.textContent = '👤 ' + userId;
+  if (el && userId) el.textContent = userId;
 }
 // ===== LOOP PLAYER =====
 let loopSelected = new Set();
