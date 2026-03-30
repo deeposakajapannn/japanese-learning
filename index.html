@@ -317,7 +317,7 @@ body > * { position: relative; z-index: 1; }
 /* ===== Stats ===== */
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -328,6 +328,17 @@ body > * { position: relative; z-index: 1; }
   box-shadow: var(--shadow);
   text-align: center;
 }
+.stat-card-status {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--primary) 0%, #e8a05a 100%);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: 0 4px 20px rgba(232,115,90,0.3);
+  text-align: center;
+  color: white;
+}
+.stat-card-status .stat-num { font-size: 40px; }
+.stat-card-status .stat-label { font-size: 15px; font-weight: 600; opacity: 0.92; margin-top: 6px; }
 .stat-num { font-size: 32px; font-weight: 800; }
 .stat-num.green { color: var(--primary); }
 .stat-num.orange { color: var(--primary); }
@@ -1554,9 +1565,9 @@ function renderStats() {
   else studyStatus = { emoji: '⚠️', label: t('statusOver'), color: '#e74c3c' };
 
   document.getElementById('statsGrid').innerHTML = `
+    <div class="stat-card-status"><div class="stat-num">${studyStatus.emoji}</div><div class="stat-label">${studyStatus.label}</div></div>
     <div class="stat-card"><div class="stat-num green">${todayData.studied}</div><div class="stat-label">${t('todayStudy')}</div></div>
     <div class="stat-card"><div class="stat-num orange">${todayData.quizzed}</div><div class="stat-label">${t('todayQuiz')}</div></div>
-    <div class="stat-card"><div class="stat-num" style="font-size:18px;color:${studyStatus.color}">${studyStatus.emoji}</div><div class="stat-label">${studyStatus.label}</div></div>
     <div class="stat-card"><div class="stat-num orange">${Object.keys(stats).length}</div><div class="stat-label">${t('totalDays')}</div></div>
   `;
 
