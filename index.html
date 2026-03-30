@@ -471,16 +471,16 @@ body {
 
 <!-- Mode Navigation -->
 <div class="nav">
-  <button class="nav-btn active" onclick="switchMode('list')">📋 列表</button>
-  <button class="nav-btn" onclick="switchMode('study')">📖 学习</button>
-  <button class="nav-btn" onclick="switchMode('quiz')">✏️ 考试</button>
-  <button class="nav-btn" onclick="switchMode('stats')">📊 统计</button>
+  <button class="nav-btn active" data-mode="list" onclick="switchMode('list')">📋 列表</button>
+  <button class="nav-btn" data-mode="study" onclick="switchMode('study')">📖 学习</button>
+  <button class="nav-btn" data-mode="quiz" onclick="switchMode('quiz')">✏️ 考试</button>
+  <button class="nav-btn" data-mode="stats" onclick="switchMode('stats')">📊 统计</button>
 </div>
 
 <!-- Category Tabs -->
 <div class="cat-tabs" id="catTabs">
-  <button class="cat-btn active" onclick="switchCat('nouns')">名词 (948)</button>
-  <button class="cat-btn" onclick="switchCat('sentences')">句子 (1680)</button>
+  <button class="cat-btn active" data-cat="nouns" onclick="switchCat('nouns')">名词 (948)</button>
+  <button class="cat-btn" data-cat="sentences" onclick="switchCat('sentences')">句子 (1680)</button>
 
 </div>
 
@@ -569,18 +569,23 @@ const DATA = { verbs: [], nouns: [], adjectives: [], sentences: [] };
 let AUDIO_MAP = {};
 
 async function loadData() {
-  const [verbs, nouns, adjectives, sentences, audioMap] = await Promise.all([
-    fetch('data/verbs.json').then(r => r.json()),
-    fetch('data/nouns.json').then(r => r.json()),
-    fetch('data/adjectives.json').then(r => r.json()),
-    fetch('data/sentences.json').then(r => r.json()),
-    fetch('data/audio_map.json').then(r => r.json())
-  ]);
-  DATA.verbs = verbs;
-  DATA.nouns = nouns;
-  DATA.adjectives = adjectives;
-  DATA.sentences = sentences;
-  AUDIO_MAP = audioMap;
+  try {
+    const [verbs, nouns, adjectives, sentences, audioMap] = await Promise.all([
+      fetch('data/verbs.json').then(r => r.json()),
+      fetch('data/nouns.json').then(r => r.json()),
+      fetch('data/adjectives.json').then(r => r.json()),
+      fetch('data/sentences.json').then(r => r.json()),
+      fetch('data/audio_map.json').then(r => r.json())
+    ]);
+    DATA.verbs = verbs;
+    DATA.nouns = nouns;
+    DATA.adjectives = adjectives;
+    DATA.sentences = sentences;
+    AUDIO_MAP = audioMap;
+  } catch (e) {
+    document.getElementById('listContainer').innerHTML = '<div class="loading" style="color:#e74c3c">数据加载失败，请刷新页面重试</div>';
+    throw e;
+  }
 }
 
 // ===== STATE =====
@@ -918,12 +923,13 @@ function switchLang(lang) {
 function applyLang() {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
   // Update all UI text
-  document.querySelectorAll('.nav-btn').forEach((b, i) => {
-    b.textContent = [t('tabList'), t('tabStudy'), t('tabQuiz'), t('tabStats')][i];
+  const modeLabels = { list: t('tabList'), study: t('tabStudy'), quiz: t('tabQuiz'), stats: t('tabStats') };
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    if (b.dataset.mode && modeLabels[b.dataset.mode]) b.textContent = modeLabels[b.dataset.mode];
   });
-  document.querySelectorAll('.cat-btn').forEach((b, i) => {
-    const cats = [t('catNouns'), t('catSent')];
-    if (i < cats.length) b.textContent = cats[i];
+  const catLabels = { nouns: t('catNouns'), sentences: t('catSent') };
+  document.querySelectorAll('.cat-btn').forEach(b => {
+    if (b.dataset.cat && catLabels[b.dataset.cat]) b.textContent = catLabels[b.dataset.cat];
   });
   document.getElementById('searchInput').placeholder = t('search');
   document.querySelector('.card-hint').textContent = t('flipHint');
@@ -1183,10 +1189,8 @@ function speakAllList() {
 // ===== MODE & CATEGORY SWITCHING =====
 function switchMode(mode) {
   currentMode = mode;
-  document.querySelectorAll('.nav-btn').forEach((b, i) => {
-    b.classList.toggle('active', b.textContent.includes(
-      mode === 'list' ? '列表' : mode === 'study' ? '学习' : mode === 'quiz' ? '考试' : '统计'
-    ));
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === mode);
   });
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   const panelMap = { list: 'panelList', study: 'panelStudy', quiz: 'panelQuiz', stats: 'panelStats' };
@@ -1204,9 +1208,7 @@ function switchMode(mode) {
 function switchCat(cat) {
   currentCat = cat;
   document.querySelectorAll('.cat-btn').forEach(b => {
-    b.classList.toggle('active', b.textContent.includes(
-      cat === 'nouns' ? '名词' : cat === 'mix' ? '混合' : '句子'
-    ));
+    b.classList.toggle('active', b.dataset.cat === cat);
   });
   if (currentMode === 'list') renderList();
   if (currentMode === 'study') { studyIndex = 0; renderStudyCard(); }
@@ -1244,8 +1246,8 @@ function renderListPage() {
   for (const it of show) {
     const ex = it.example ? escHtml(it.example) : '';
     const itemCat = it._cat || currentCat;
-    html += `<div class="list-item" onclick="speakWithExample('${escHtml(it.word)}','${ex}')" style="display:flex;align-items:center">
-      ${selectMode ? '<input type="checkbox" class="select-cb item-cb" data-cat="' + itemCat + '" data-id="' + it.id + '" ' + (loopSelected.has(itemCat + ':' + it.id) ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSelectItem(\'' + itemCat + '\',' + it.id + ',this.checked)" style="margin-left:-4px">' : ''}
+    html += `<div class="list-item" data-word="${escHtml(it.word)}" data-example="${ex}" style="display:flex;align-items:center;position:relative">
+      ${selectMode ? '<input type="checkbox" class="select-cb item-cb" data-cat="' + itemCat + '" data-id="' + it.id + '" ' + (loopSelected.has(itemCat + ':' + it.id) ? 'checked' : '') + ' style="margin-left:-4px">' : ''}
       <div class="list-num">${it.id}</div>
       <div class="list-body">
         <div class="list-word">${escHtml(it.word)}</div>
@@ -1253,7 +1255,7 @@ function renderListPage() {
         <div class="list-meaning">${escHtml(it.meaning)}</div>
         ${it.example ? '<div class="list-example">' + escHtml(it.example) + (it.exampleCn ? '<br><span style="color:var(--accent)">' + escHtml(it.exampleCn) + '</span>' : '') + '</div>' : ''}
       </div>
-      <button class="speak-btn" onclick="event.stopPropagation();speakWithExample('${escHtml(it.word)}','${ex}')">🔊</button>
+      <button class="speak-btn">🔊</button>
       ${isMastered(it._cat || currentCat, it.id) ? '<div style="position:absolute;top:8px;right:8px;background:var(--accent);color:white;font-size:10px;padding:2px 8px;border-radius:10px">已掌握</div>' : '<div style="position:absolute;top:8px;right:8px;color:var(--text-secondary);font-size:10px">' + getItemCount(it._cat || currentCat, it.id) + '/50</div>'}
     </div>`;
   }
@@ -1270,6 +1272,19 @@ function renderListPage() {
   }
   container.innerHTML = html;
 }
+
+// Event delegation for list items
+document.getElementById('listContainer').addEventListener('click', function(e) {
+  const cb = e.target.closest('.item-cb');
+  if (cb) {
+    e.stopPropagation();
+    toggleSelectItem(cb.dataset.cat, cb.dataset.id, cb.checked);
+    return;
+  }
+  const item = e.target.closest('.list-item');
+  if (!item) return;
+  speakWithExample(item.dataset.word, item.dataset.example);
+});
 
 function goPage(dir) {
   const totalPages = Math.ceil(listFiltered.length / PAGE_SIZE);
@@ -1306,7 +1321,9 @@ function studyNav(dir) {
   renderStudyCard();
 }
 function speakCurrent() {
-  const it = DATA[currentCat][studyIndex];
+  const items = getActiveItems(currentCat);
+  if (!items.length) return;
+  const it = items[studyIndex];
   speakWithExample(it.word, it.example);
 }
 
