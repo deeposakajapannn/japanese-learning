@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>日本語学習</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
 <style>
 :root {
   --bg: #f5f0eb;
@@ -991,6 +995,27 @@ function recordQuiz(item, correct) {
 
 let currentAudio = null;
 
+// ===== Silent audio keepalive (prevents iOS from releasing audio session) =====
+let silentAudio = null;
+function startSilentKeepAlive() {
+  if (silentAudio) return;
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const bufferSize = ctx.sampleRate * 2; // 2 seconds of silence
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  source.loop = true;
+  source.connect(ctx.destination);
+  source.start();
+  silentAudio = { ctx, source };
+}
+function stopSilentKeepAlive() {
+  if (!silentAudio) return;
+  silentAudio.source.stop();
+  silentAudio.ctx.close();
+  silentAudio = null;
+}
+
 // ===== TTS =====
 function speak(text) {
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
@@ -1063,6 +1088,7 @@ function updateSelectedCount() {
 
 function startLoop() {
   if (loopSelected.size === 0) return;
+  startSilentKeepAlive();
   loopPlaylist = [];
   for (const key of loopSelected) {
     const [cat, id] = key.split(':');
@@ -1156,12 +1182,14 @@ function stopLoop() {
   loopPlaying = false;
   loopPaused = false;
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  stopSilentKeepAlive();
   document.getElementById('loopBar').classList.remove('show');
   document.getElementById('listSpeakStop').style.display = 'none';
 }
 
 
 function speakAllList() {
+  startSilentKeepAlive();
   // Play all items currently in the filtered list
   loopPlaylist = [];
   for (const it of listFiltered) {
