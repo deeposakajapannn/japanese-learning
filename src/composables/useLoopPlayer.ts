@@ -58,8 +58,7 @@ function setupMediaSession() {
     title: it.word + ' - ' + it.meaning,
     artist: t('loopRound') + loopRound.value + t('loopRoundSuffix') + ' · ' + (loopIndex.value + 1) + '/' + loopPlaylist.value.length,
     artwork: [
-      { src: 'android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-      { src: 'android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { src: 'cover.jpg', sizes: '1024x1024', type: 'image/jpeg' },
     ],
   })
   navigator.mediaSession.playbackState = loopPaused.value ? 'paused' : 'playing'
