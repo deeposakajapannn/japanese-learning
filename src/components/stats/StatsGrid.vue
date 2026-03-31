@@ -36,7 +36,7 @@ const studyStatus = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-3 mt-4">
+  <div class="grid grid-cols-2 gap-3 mt-4">
     <StudyStatusCard v-bind="studyStatus" />
 
     <div class="rounded-xl p-4 text-center text-white stat-card stat-card--practice">
