@@ -58,6 +58,8 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
   )
 })
 
+const canUseRange = computed(() => selectedTopic.value === '')
+
 const totalPages = computed(() => Math.ceil(filteredItems.value.length / PAGE_SIZE))
 
 const pagedItems = computed(() => {
@@ -109,6 +111,7 @@ defineExpose({ stopSpeaking: () => { isSpeaking.value = false } })
     <ListToolbar
       :total-items="filteredItems.length"
       :is-speaking="isSpeaking"
+      :can-use-range="canUseRange"
       @search="onSearch"
       @speak="onSpeak"
       @stop="onStop"

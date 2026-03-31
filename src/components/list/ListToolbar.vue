@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useLang } from '@/i18n'
 
 const { t } = useLang()
@@ -7,6 +7,7 @@ const { t } = useLang()
 const props = defineProps<{
   totalItems: number
   isSpeaking: boolean
+  canUseRange: boolean
 }>()
 
 const emit = defineEmits<{
@@ -20,6 +21,13 @@ const listenFrom = ref(1)
 const listenTo = ref<number | undefined>(undefined)
 const showRange = ref(false)
 
+watch(
+  () => props.canUseRange,
+  (canUseRange) => {
+    if (!canUseRange) showRange.value = false
+  }
+)
+
 function onSearch() {
   emit('search', searchQuery.value)
 }
@@ -28,11 +36,14 @@ function onToggleSpeak() {
   if (props.isSpeaking) {
     emit('stop')
     showRange.value = false
+  } else if (!props.canUseRange) {
+    emit('speak', 1, props.totalItems)
   } else if (!showRange.value) {
     showRange.value = true
   } else {
-    const from = Math.max(1, Math.min(listenFrom.value || 1, props.totalItems))
-    const to = Math.max(from, Math.min(listenTo.value || props.totalItems, props.totalItems))
+    const rangeMax = Math.max(1, props.totalItems)
+    const from = Math.max(1, Math.min(listenFrom.value || 1, rangeMax))
+    const to = Math.max(from, Math.min(listenTo.value || rangeMax, rangeMax))
     emit('speak', from, to)
   }
 }
@@ -57,18 +68,19 @@ function onToggleSpeak() {
         class="w-full py-3 border-0 text-white text-[15px] font-semibold cursor-pointer transition-all"
         :class="[
           isSpeaking ? 'bg-[#c9563f]' : 'bg-[#e8735a] shadow-[0_4px_16px_rgba(232,115,90,0.3)]',
-          showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
+          canUseRange && showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
         ]"
         @click="onToggleSpeak"
       >
         {{ isSpeaking ? t('listStop') : t('listSpeak') }}
       </button>
-      <div v-if="showRange" class="flex items-center justify-center gap-2 px-3 py-2.5 bg-white border border-t-0 border-[#e8e2dc] rounded-b-[10px]">
+      <div v-if="canUseRange && showRange" class="flex items-center justify-center gap-2 px-3 py-2.5 bg-white border border-t-0 border-[#e8e2dc] rounded-b-[10px]">
         <span class="text-[13px] text-[#777] whitespace-nowrap">{{ t('from') }}</span>
         <input
           v-model.number="listenFrom"
           type="number"
           min="1"
+          :max="totalItems"
           class="w-14 py-1 px-1 border border-[#e8e2dc] rounded-lg text-sm text-center bg-white text-[#2d2d2d] outline-none focus:border-[#e8735a]"
         />
         <span class="text-[13px] text-[#777] whitespace-nowrap">{{ t('to') }}</span>
@@ -76,6 +88,7 @@ function onToggleSpeak() {
           v-model.number="listenTo"
           type="number"
           min="1"
+          :max="totalItems"
           :placeholder="String(totalItems)"
           class="w-14 py-1 px-1 border border-[#e8e2dc] rounded-lg text-sm text-center bg-white text-[#2d2d2d] outline-none focus:border-[#e8735a]"
         />
