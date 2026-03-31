@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import StudyStatusCard from './StudyStatusCard.vue'
-import { getStats, todayKey } from '../../composables/useStats'
+import { getStats, todayKey, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
 
 const { t } = useLang()
 
-const stats = computed(() => getStats())
+const stats = computed(() => { statsVersion.value; return getStats() })
 const today = computed(() => todayKey())
 const todayData = computed(() => stats.value[today.value] || { studied: 0, quizzed: 0, correct: 0, wrong: {}, listened: 0 })
 

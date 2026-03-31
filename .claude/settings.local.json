@@ -6,7 +6,12 @@
       "Bash(node -e \":*)",
       "Bash(gh repo:*)",
       "Bash(npm list:*)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(git push:*)",
+      "Read(//Users/ewan/.ssh/**)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx vue-tsc:*)"
     ]
   }
 }

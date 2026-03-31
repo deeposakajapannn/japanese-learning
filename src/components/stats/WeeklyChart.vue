@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { getStats } from '../../composables/useStats'
+import { getStats, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
 
 const { t } = useLang()
 
-const stats = computed(() => getStats())
+const stats = computed(() => { statsVersion.value; return getStats() })
 
 const days = computed(() => {
   const result: string[] = []

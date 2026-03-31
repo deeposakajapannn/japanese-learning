@@ -36,6 +36,8 @@ body {
   --primary: #ef8f79;
   --primary-light: #3b2a25;
   --primary-dark: #cf6b56;
+  --accent: #7ec9a0;
+  --accent-light: #2a3d32;
   --header-grad: linear-gradient(135deg, #2c3237 0%, #22272c 100%);
   --header-title: rgba(235, 232, 228, 0.9);
 }
@@ -47,6 +49,10 @@ body::before {
   background: rgba(245, 240, 235, 0.75);
   z-index: 0;
   pointer-events: none;
+}
+
+:root.theme-dark body {
+  background-image: none;
 }
 
 :root.theme-dark body::before {

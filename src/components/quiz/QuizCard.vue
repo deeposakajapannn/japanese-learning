@@ -37,7 +37,8 @@ defineEmits<{
     <template v-if="mode === 'audio'">
       <div v-if="!isAnswered" class="flex flex-col items-center gap-4">
         <button
-          class="w-20 h-20 rounded-full border-2 border-[#e8735a] bg-[#fff5f3] text-3xl cursor-pointer transition-all hover:bg-[#fce8e4] active:scale-95"
+          class="w-20 h-20 rounded-full border-2 text-3xl cursor-pointer transition-all active:scale-95"
+          style="border-color: var(--primary); background: var(--primary-light)"
           @click.stop="$emit('speak')"
         >🔊</button>
         <span class="text-sm theme-muted">{{ t('quizHintAudio') }}</span>
@@ -47,7 +48,7 @@ defineEmits<{
     <!-- MODE: meaning — show Chinese meaning, recall Japanese word + reading -->
     <template v-if="mode === 'meaning'">
       <div v-if="!isAnswered">
-        <div class="text-2xl font-bold text-[#5b8a72] mb-3">{{ item ? localMeaning(item, lang) : '' }}</div>
+        <div class="text-2xl font-bold mb-3" style="color: var(--accent)">{{ item ? localMeaning(item, lang) : '' }}</div>
         <div class="text-sm theme-muted">{{ t('quizHintMeaning') }}</div>
       </div>
     </template>
@@ -55,12 +56,12 @@ defineEmits<{
     <!-- ANSWER (all modes) -->
     <template v-if="isAnswered && item">
       <div v-if="mode !== 'word'" class="text-3xl font-bold theme-text mb-2">{{ item.word }}</div>
-      <div class="text-lg text-[#e8735a] font-semibold mb-2">{{ item.reading }}</div>
+      <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ item.reading }}</div>
       <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(item, lang) }}</div>
       <div v-if="item.example" class="text-sm theme-muted leading-relaxed">
         {{ item.example }}
         <br v-if="item.exampleCn" />
-        <span v-if="item.exampleCn" class="text-[#5b8a72] text-[13px]">{{ item.exampleCn }}</span>
+        <span v-if="item.exampleCn" class="text-[13px]" style="color: var(--accent)">{{ item.exampleCn }}</span>
       </div>
       <button
         v-if="mode !== 'word'"

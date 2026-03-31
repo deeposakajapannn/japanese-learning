@@ -1,6 +1,10 @@
+import { ref } from 'vue'
 import { useFirebase } from './useFirebase'
 
 const { debouncedSync } = useFirebase()
+
+/** Bump this to trigger reactive re-reads of stats */
+export const statsVersion = ref(0)
 
 export function todayKey(): string {
   return new Date().toISOString().slice(0, 10)
@@ -12,6 +16,7 @@ export function getStats(): Record<string, any> {
 
 export function saveStats(s: Record<string, any>) {
   localStorage.setItem('jp_stats', JSON.stringify(s))
+  statsVersion.value++
   debouncedSync()
 }
 

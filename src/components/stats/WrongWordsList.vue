@@ -18,6 +18,7 @@ const wrongWords = computed(() => {
     }
   }
   return Object.entries(wrongMap)
+    .filter(([, v]) => v >= 7)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 20)
     .map(([key, count]) => {

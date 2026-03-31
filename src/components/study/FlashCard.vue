@@ -41,12 +41,12 @@ defineEmits<{
         class="absolute inset-0 flex flex-col items-center justify-center rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.10)] theme-surface p-10"
         style="backface-visibility: hidden; transform: rotateY(180deg)"
       >
-        <div class="text-lg text-[#e8735a] font-semibold mb-2">{{ item?.reading ?? '' }}</div>
+        <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ item?.reading ?? '' }}</div>
         <div class="text-xl font-bold theme-text mb-4">{{ item ? localMeaning(item, currentLang) : '' }}</div>
         <div v-if="item?.example" class="text-sm theme-muted text-center leading-relaxed">
           {{ item.example }}
           <br v-if="item.exampleCn" />
-          <span v-if="item.exampleCn" class="text-[#5b8a72] text-[13px]">{{ item.exampleCn }}</span>
+          <span v-if="item.exampleCn" class="text-[13px]" style="color: var(--accent)">{{ item.exampleCn }}</span>
         </div>
       </div>
     </div>

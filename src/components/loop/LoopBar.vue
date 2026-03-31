@@ -49,21 +49,21 @@ function clearDebugLogs() {
     <div class="w-[90%] max-w-sm theme-loop-panel rounded-2xl overflow-hidden">
       <!-- Info bar -->
       <div class="flex items-center justify-between px-5 pt-4 pb-2">
-        <span class="text-[13px] text-[#999]">
-          {{ loopIndex + 1 }} / {{ loopPlaylist.length }} · {{ t('loopRound') }}{{ loopRound }}{{ t('loopRoundSuffix') }}
+        <span class="text-[13px]" style="color: var(--text-secondary)">
+          {{ loopIndex + 1 }} / {{ loopPlaylist.length }}
         </span>
         <button
-          class="w-7 h-7 flex items-center justify-center rounded-full text-[#999] hover:bg-gray-100 cursor-pointer text-sm"
+          class="w-7 h-7 flex items-center justify-center rounded-full cursor-pointer text-sm" style="color: var(--text-secondary)"
           @click="stop"
         >✕</button>
       </div>
 
       <!-- Word card -->
       <div v-if="currentItem" class="px-5 py-6 text-center">
-        <div class="text-3xl font-bold text-[#2d2d2d] leading-snug">{{ currentItem.word }}</div>
-        <div class="text-lg text-[#e8735a] mt-2">{{ currentItem.reading }}</div>
-        <div class="text-[15px] text-[#555] mt-2">{{ localMeaning(currentItem, currentLang) }}</div>
-        <div v-if="currentItem.example" class="text-[13px] text-[#999] mt-3 leading-relaxed">{{ currentItem.example }}</div>
+        <div class="text-3xl font-bold leading-snug theme-text">{{ currentItem.word }}</div>
+        <div class="text-lg mt-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
+        <div class="text-[15px] theme-muted mt-2">{{ localMeaning(currentItem, currentLang) }}</div>
+        <div v-if="currentItem.example" class="text-[13px] mt-3 leading-relaxed" style="color: var(--text-secondary)">{{ currentItem.example }}</div>
       </div>
 
       <!-- Controls -->
@@ -71,9 +71,9 @@ function clearDebugLogs() {
         <!-- Repeat -->
         <button
           class="w-10 h-10 flex items-center justify-center rounded-full border cursor-pointer transition-colors"
-          :class="loopRepeat
-            ? 'bg-[#fdf0ed] text-[#e8735a] border-[#e8735a]'
-            : 'bg-white text-[#999] border-[#e8e2dc]'"
+          :style="loopRepeat
+            ? { background: 'var(--primary-light)', color: 'var(--primary)', borderColor: 'var(--primary)' }
+            : { background: 'var(--card)', color: 'var(--text-secondary)', borderColor: 'var(--border)' }"
           @click="toggleRepeat"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -87,12 +87,13 @@ function clearDebugLogs() {
 
         <!-- Prev -->
         <button
-          class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#555] text-lg cursor-pointer hover:bg-gray-50"
+          class="w-10 h-10 flex items-center justify-center rounded-full border text-lg cursor-pointer"
+          style="border-color: var(--border); background: var(--card); color: var(--text-secondary)"
           @click="prevTrack"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="5" x2="19" y2="19"/>
-            <polygon points="17 12 7 19 7 5 17 12"/>
+            <line x1="5" y1="5" x2="5" y2="19"/>
+            <polygon points="7 12 17 19 17 5 7 12"/>
           </svg>
         </button>
 
@@ -112,18 +113,20 @@ function clearDebugLogs() {
 
         <!-- Next -->
         <button
-          class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#555] text-lg cursor-pointer hover:bg-gray-50"
+          class="w-10 h-10 flex items-center justify-center rounded-full border text-lg cursor-pointer"
+          style="border-color: var(--border); background: var(--card); color: var(--text-secondary)"
           @click="nextTrack"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="5" x2="5" y2="19"/>
-            <polygon points="7 12 17 19 17 5 7 12"/>
+            <line x1="19" y1="5" x2="19" y2="19"/>
+            <polygon points="17 12 7 19 7 5 17 12"/>
           </svg>
         </button>
 
         <!-- Stop -->
         <button
-          class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#999] text-sm cursor-pointer hover:bg-gray-50"
+          class="w-10 h-10 flex items-center justify-center rounded-full border text-sm cursor-pointer"
+          style="border-color: var(--border); background: var(--card); color: var(--text-secondary)"
           @click="stop"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -134,11 +137,13 @@ function clearDebugLogs() {
 
       <div class="flex items-center justify-end gap-2 px-5 pb-4">
         <button
-          class="px-3 py-1.5 rounded-lg border border-[#e8e2dc] bg-white text-[#666] text-xs cursor-pointer hover:bg-gray-50"
+          class="px-3 py-1.5 rounded-lg border text-xs cursor-pointer theme-surface"
+          style="border-color: var(--border); color: var(--text-secondary)"
           @click="copyDebugLogs"
         >{{ t('copyDebugLogs') }}</button>
         <button
-          class="px-3 py-1.5 rounded-lg border border-[#f1cfc7] bg-[#fff7f5] text-[#c16a57] text-xs cursor-pointer hover:bg-[#ffece7]"
+          class="px-3 py-1.5 rounded-lg border text-xs cursor-pointer"
+          style="border-color: var(--primary); background: var(--primary-light); color: var(--primary)"
           @click="clearDebugLogs"
         >{{ t('clearDebugLogs') }}</button>
       </div>
