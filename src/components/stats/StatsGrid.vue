@@ -27,9 +27,8 @@ const studyStatus = computed(() => {
   const days = Math.max(activeDays, 1)
   const dailyAvg = weekTotal / days
   if (dailyAvg < 20) return { emoji: '🦥', label: t('statusLazy'), color: '#cf5a4a' }
-  if (dailyAvg < 40) return { emoji: '👍', label: t('statusOk'), color: '#b9793b' }
-  if (dailyAvg < 80) return { emoji: '🔥', label: t('statusGood'), color: '#4f8a6f' }
-  if (dailyAvg < 100) return { emoji: '💪', label: t('statusHard'), color: '#d86e55' }
+  if (dailyAvg < 50) return { emoji: '👍', label: t('statusOk'), color: '#b9793b' }
+  if (dailyAvg < 100) return { emoji: '🏆', label: t('statusGood'), color: '#4f8a6f' }
   return { emoji: '⚠️', label: t('statusOver'), color: '#cf5a4a' }
 })
 
