@@ -18,10 +18,27 @@ const {
   toggleRepeat,
   prevTrack,
   nextTrack,
+  exportLoopDebugLogs,
+  clearLoopDebugLogs,
 } = useLoopPlayer()
 
 const visible = computed(() => loopPlaying.value || loopPaused.value)
 const currentItem = computed(() => loopPlaylist.value[loopIndex.value])
+
+async function copyDebugLogs() {
+  const text = exportLoopDebugLogs()
+  try {
+    await navigator.clipboard.writeText(text)
+    alert(t('debugCopied'))
+  } catch {
+    alert(text)
+  }
+}
+
+function clearDebugLogs() {
+  clearLoopDebugLogs()
+  alert(t('debugCleared'))
+}
 </script>
 
 <template>
@@ -72,25 +89,58 @@ const currentItem = computed(() => loopPlaylist.value[loopIndex.value])
         <button
           class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#555] text-lg cursor-pointer hover:bg-gray-50"
           @click="prevTrack"
-        >⏮</button>
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="5" x2="19" y2="19"/>
+            <polygon points="17 12 7 19 7 5 17 12"/>
+          </svg>
+        </button>
 
         <!-- Play/Pause -->
         <button
-          class="w-14 h-14 flex items-center justify-center rounded-full bg-[#e8735a] text-white text-2xl cursor-pointer shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
+          class="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-b from-[#f38a73] to-[#e8735a] text-white cursor-pointer shadow-[0_8px_22px_rgba(232,115,90,0.35)] active:scale-[0.98] transition-transform"
           @click="togglePlay"
-        >{{ loopPaused ? '▶' : '⏸' }}</button>
+        >
+          <svg v-if="loopPaused" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="8,6 18,12 8,18"/>
+          </svg>
+          <svg v-else width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+            <line x1="9" y1="6" x2="9" y2="18"/>
+            <line x1="15" y1="6" x2="15" y2="18"/>
+          </svg>
+        </button>
 
         <!-- Next -->
         <button
           class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#555] text-lg cursor-pointer hover:bg-gray-50"
           @click="nextTrack"
-        >⏭</button>
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="5" x2="5" y2="19"/>
+            <polygon points="7 12 17 19 17 5 7 12"/>
+          </svg>
+        </button>
 
         <!-- Stop -->
         <button
           class="w-10 h-10 flex items-center justify-center rounded-full border border-[#e8e2dc] bg-white text-[#999] text-sm cursor-pointer hover:bg-gray-50"
           @click="stop"
-        >■</button>
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="6" width="12" height="12" rx="1.5"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 px-5 pb-4">
+        <button
+          class="px-3 py-1.5 rounded-lg border border-[#e8e2dc] bg-white text-[#666] text-xs cursor-pointer hover:bg-gray-50"
+          @click="copyDebugLogs"
+        >{{ t('copyDebugLogs') }}</button>
+        <button
+          class="px-3 py-1.5 rounded-lg border border-[#f1cfc7] bg-[#fff7f5] text-[#c16a57] text-xs cursor-pointer hover:bg-[#ffece7]"
+          @click="clearDebugLogs"
+        >{{ t('clearDebugLogs') }}</button>
       </div>
     </div>
   </div>

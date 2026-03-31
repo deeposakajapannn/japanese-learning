@@ -135,6 +135,10 @@ export const messages: Record<LangKey, Record<string, string>> = {
     topicThinkingDiscussion: '思考议论',
     topicDailyLife: '日常生活',
     topicDailyScenes: '日常场景',
+    copyDebugLogs: '复制播放日志',
+    clearDebugLogs: '清空播放日志',
+    debugCopied: '播放日志已复制，可直接发给我排查',
+    debugCleared: '播放日志已清空',
   },
   en: {
     title: '日本語学習',
@@ -270,5 +274,9 @@ export const messages: Record<LangKey, Record<string, string>> = {
     topicThinkingDiscussion: 'Thinking & Discussion',
     topicDailyLife: 'Daily Life',
     topicDailyScenes: 'Daily Scenes',
+    copyDebugLogs: 'Copy playback logs',
+    clearDebugLogs: 'Clear playback logs',
+    debugCopied: 'Playback logs copied',
+    debugCleared: 'Playback logs cleared',
   },
 }
