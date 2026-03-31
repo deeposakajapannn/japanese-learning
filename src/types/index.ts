@@ -4,6 +4,7 @@ export interface VocabItem {
   reading: string
   meaning: string
   meaningEn?: string
+  meaningEs?: string
   example?: string
   exampleCn?: string
   topic?: string
@@ -13,7 +14,7 @@ export interface VocabItemWithCat extends VocabItem {
   _cat: CategoryKey
 }
 
-export type CategoryKey = 'nouns' | 'sentences'
+export type CategoryKey = 'nouns' | 'sentences' | 'kana'
 export type ModeKey = 'list' | 'practice' | 'stats'
 export type LangKey = 'zh' | 'en'
 

@@ -22,6 +22,7 @@ const progressText = computed(() => {
     <QuizCard
       :item="currentItem"
       :is-answered="isAnswered"
+      mode="word"
     />
     <button
       v-if="!isAnswered"
