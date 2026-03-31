@@ -57,7 +57,10 @@ function setupMediaSession() {
   navigator.mediaSession.metadata = new MediaMetadata({
     title: it.word + ' - ' + it.meaning,
     artist: t('loopRound') + loopRound.value + t('loopRoundSuffix') + ' · ' + (loopIndex.value + 1) + '/' + loopPlaylist.value.length,
-    artwork: [{ src: 'apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    artwork: [
+      { src: 'android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { src: 'android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
   })
   navigator.mediaSession.playbackState = loopPaused.value ? 'paused' : 'playing'
   navigator.mediaSession.setActionHandler('play', () => {
