@@ -13,28 +13,26 @@ const todayData = computed(() => stats.value[today.value] || { studied: 0, quizz
 
 const studyStatus = computed(() => {
   let weekTotal = 0
+  let activeDays = 0
   for (let i = 0; i < 7; i++) {
     const d = new Date()
     d.setDate(d.getDate() - i)
     const key = d.toISOString().slice(0, 10)
-    const dd = stats.value[key] || {}
-    weekTotal += (dd.studied || 0) + (dd.quizzed || 0)
+    const dd = stats.value[key]
+    if (dd) {
+      activeDays++
+      weekTotal += (dd.studied || 0) + (dd.quizzed || 0)
+    }
   }
-  const dailyAvg = weekTotal / 7
-  if (dailyAvg < 10) return { emoji: '🦥', label: t('statusLazy'), color: '#cf5a4a' }
-  if (dailyAvg < 30) return { emoji: '🐢', label: t('statusOk'), color: '#b9793b' }
-  if (dailyAvg < 80) return { emoji: '👍', label: t('statusGood'), color: '#4f8a6f' }
-  if (dailyAvg < 150) return { emoji: '🔥', label: t('statusHard'), color: '#d86e55' }
+  const days = Math.max(activeDays, 1)
+  const dailyAvg = weekTotal / days
+  if (dailyAvg < 20) return { emoji: '🦥', label: t('statusLazy'), color: '#cf5a4a' }
+  if (dailyAvg < 40) return { emoji: '👍', label: t('statusOk'), color: '#b9793b' }
+  if (dailyAvg < 80) return { emoji: '🔥', label: t('statusGood'), color: '#4f8a6f' }
+  if (dailyAvg < 100) return { emoji: '💪', label: t('statusHard'), color: '#d86e55' }
   return { emoji: '⚠️', label: t('statusOver'), color: '#cf5a4a' }
 })
 
-const totalListen = computed(() => {
-  let sum = 0
-  for (const d of Object.values(stats.value)) {
-    sum += (d?.listened || 0)
-  }
-  return sum
-})
 </script>
 
 <template>
@@ -51,9 +49,5 @@ const totalListen = computed(() => {
       <div class="text-xs opacity-90">{{ t('todayListen') }}</div>
     </div>
 
-    <div class="rounded-xl p-4 text-center text-white stat-card stat-card--days">
-      <div class="text-2xl font-bold">{{ formatListenTime(totalListen, t) }}</div>
-      <div class="text-xs opacity-90">{{ t('totalListenTime') }}</div>
-    </div>
   </div>
 </template>
