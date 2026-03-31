@@ -9,7 +9,6 @@ const { t, currentLang } = useLang()
 const {
   loopPlaylist,
   loopIndex,
-  loopRound,
   loopPlaying,
   loopPaused,
   loopRepeat,
