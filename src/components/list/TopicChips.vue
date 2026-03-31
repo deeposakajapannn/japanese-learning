@@ -68,7 +68,7 @@ function getTopicLabel(topic: string): string {
       class="shrink-0 px-3 py-1.5 rounded-full text-[13px] font-medium border transition-all cursor-pointer whitespace-nowrap"
       :class="selected === ''
         ? 'bg-[#e8735a] text-white border-[#e8735a] shadow-[0_2px_8px_rgba(232,115,90,0.3)]'
-        : 'bg-white text-[#555] border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
+        : 'theme-surface theme-text border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
       @click="emit('select', '')"
     >
       {{ t('allTopics') }}
@@ -79,7 +79,7 @@ function getTopicLabel(topic: string): string {
       class="shrink-0 px-3 py-1.5 rounded-full text-[13px] font-medium border transition-all cursor-pointer whitespace-nowrap"
       :class="selected === topic
         ? 'bg-[#e8735a] text-white border-[#e8735a] shadow-[0_2px_8px_rgba(232,115,90,0.3)]'
-        : 'bg-white text-[#555] border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
+        : 'theme-surface theme-text border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
       @click="emit('select', topic)"
     >
       {{ TOPIC_ICONS[topic] || '📝' }} {{ getTopicLabel(topic) }}

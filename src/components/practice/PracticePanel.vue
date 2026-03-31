@@ -32,14 +32,14 @@ watch([quizIndex, quizMode], () => {
         class="flex-1 py-2 rounded-lg text-sm font-medium transition-all border-2"
         :class="quizMode === m
           ? 'border-[#e8735a] bg-[#e8735a] text-white'
-          : 'border-[#e8e2dc] bg-white text-[#666] hover:border-[#e8735a]'"
+          : 'theme-surface theme-muted hover:border-[#e8735a]'"
         @click="setQuizMode(m)"
       >
         {{ t('quizMode_' + m) }}
       </button>
     </div>
 
-    <div class="text-sm text-[#777] font-medium">{{ progressText }}</div>
+    <div class="text-sm theme-muted font-medium">{{ progressText }}</div>
     <QuizCard
       :item="currentItem"
       :is-answered="isAnswered"

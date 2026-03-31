@@ -18,7 +18,7 @@ defineProps<{
       :item="item"
       :cat="item._cat"
     />
-    <div v-if="items.length === 0" class="text-center text-[#777] py-12 text-sm">
+    <div v-if="items.length === 0" class="text-center theme-muted py-12 text-sm">
       {{ t('notFound') }}
     </div>
   </div>

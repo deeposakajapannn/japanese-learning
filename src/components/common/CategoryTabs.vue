@@ -23,8 +23,8 @@ const categories = [
       class="px-4 py-[7px] border-2 rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
       :class="
         store.currentCat === cat.key
-          ? 'border-[#e8735a] bg-[#fdf0ed] text-[#e8735a]'
-          : 'border-[#e8e2dc] bg-transparent text-[#777]'
+          ? 'theme-tab-active'
+          : 'border-[#e8e2dc] theme-surface theme-muted'
       "
       @click="store.switchCat(cat.key)"
     >

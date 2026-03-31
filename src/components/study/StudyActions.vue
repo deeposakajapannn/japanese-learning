@@ -13,13 +13,13 @@ defineEmits<{
 <template>
   <div class="flex items-center gap-3 w-full max-w-[400px] mx-auto">
     <button
-      class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] bg-white text-[#2d2d2d] text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
+      class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] theme-surface text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
       @click="$emit('prev')"
     >
       {{ t('prev') }}
     </button>
     <button
-      class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] bg-white text-[#2d2d2d] text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
+      class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] theme-surface text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
       @click="$emit('speak')"
     >
       {{ t('speak') }}

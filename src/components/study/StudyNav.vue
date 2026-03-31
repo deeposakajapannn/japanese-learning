@@ -16,7 +16,7 @@ defineEmits<{
 <template>
   <div class="flex flex-col gap-2 w-full max-w-[400px] mx-auto mt-1">
     <button
-      class="w-full py-3 rounded-[10px] border-2 border-[#e8e2dc] bg-white text-[#2d2d2d] text-sm font-semibold cursor-pointer transition-all"
+      class="w-full py-3 rounded-[10px] border-2 border-[#e8e2dc] theme-surface text-sm font-semibold cursor-pointer transition-all"
       :style="{ opacity: autoRead ? 1 : 0.7 }"
       @click="$emit('toggleAutoRead')"
     >
@@ -24,7 +24,7 @@ defineEmits<{
     </button>
     <div class="flex items-center gap-3 mt-1">
       <button
-        class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] bg-white text-[#2d2d2d] text-sm font-semibold cursor-pointer transition-all hover:border-[#5b8a72]"
+        class="flex-1 py-3 rounded-[10px] border-2 border-[#e8e2dc] theme-surface text-sm font-semibold cursor-pointer transition-all hover:border-[#5b8a72]"
         @click="$emit('markKnown', 3)"
       >
         {{ t('know3') }}

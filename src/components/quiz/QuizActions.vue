@@ -24,7 +24,7 @@ defineEmits<{
         {{ t('correct') }}
       </button>
       <button
-        class="py-3 px-5 rounded-[10px] border-2 border-[#e8e2dc] bg-white text-[#2d2d2d] text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
+        class="py-3 px-5 rounded-[10px] border-2 border-[#e8e2dc] theme-surface text-sm font-semibold cursor-pointer transition-all hover:border-[#e8735a]"
         @click="$emit('speak')"
       >
         🔊
@@ -36,7 +36,7 @@ defineEmits<{
         {{ t('wrong') }}
       </button>
     </div>
-    <div class="text-xs text-[#777] text-center leading-relaxed">
+    <div class="text-xs theme-muted text-center leading-relaxed">
       {{ t('quizTip') }}
     </div>
   </div>

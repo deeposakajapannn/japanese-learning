@@ -7,9 +7,11 @@ import WrongWordsList from './WrongWordsList.vue'
 import LoginOverlay from '../auth/LoginOverlay.vue'
 import { useFirebase } from '../../composables/useFirebase'
 import { useLang } from '@/i18n'
+import { useTheme } from '@/composables/useTheme'
 
 const { t } = useLang()
 const { syncToCloud, SYNCED_KEYS } = useFirebase()
+const { themeMode, toggleTheme } = useTheme()
 const showLogin = ref(false)
 const confirmStep = ref<0 | 1 | 2>(0)
 
@@ -39,13 +41,28 @@ function resetStats() {
 
 <template>
   <div class="pb-8">
+    <div class="theme-card mt-4 p-4 flex items-center justify-between">
+      <div>
+        <div class="text-sm font-semibold">{{ t('darkMode') }}</div>
+        <div class="text-xs opacity-75">{{ themeMode === 'dark' ? t('darkModeOn') : t('darkModeOff') }}</div>
+      </div>
+      <button
+        class="theme-switch"
+        :class="{ 'theme-switch--on': themeMode === 'dark' }"
+        @click="toggleTheme"
+        :aria-label="t('darkMode')"
+      >
+        <span class="theme-switch__thumb" />
+      </button>
+    </div>
     <ProfileSection @login="showLogin = true" />
     <StatsGrid />
     <WeeklyChart />
     <WrongWordsList />
 
     <button
-      class="w-full mt-6 py-3 rounded-xl border border-red-300 text-red-500 bg-white text-sm hover:bg-red-50 cursor-pointer"
+      type="button"
+      class="btn-soft-danger"
       @click="resetStats"
     >
       {{ t('resetBtn2') }}
@@ -58,25 +75,27 @@ function resetStats() {
       class="fixed inset-0 z-[9998] flex items-center justify-center bg-black/35 backdrop-blur-[2px]"
       @click.self="closeResetConfirm"
     >
-      <div class="w-[90%] max-w-md rounded-2xl bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
+      <div class="w-[90%] max-w-md rounded-2xl theme-card p-5 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
         <div class="mb-3 flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-500">!</span>
-          <h3 class="text-[15px] font-semibold text-[#2d2d2d]">{{ t('resetBtn2') }}</h3>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-full text-[#8a4a48] theme-soft" style="border: 1px solid color-mix(in srgb, #7a4444 25%, var(--border))">!</span>
+          <h3 class="text-[15px] font-semibold theme-text">{{ t('resetBtn2') }}</h3>
         </div>
 
-        <p class="whitespace-pre-line text-sm leading-6 text-[#666]">
+        <p class="whitespace-pre-line text-sm leading-6 theme-muted">
           {{ confirmStep === 1 ? t('resetConfirm1') : t('resetConfirm2') }}
         </p>
 
         <div class="mt-4 flex items-center justify-end gap-2">
           <button
-            class="px-4 py-2 rounded-lg border border-[#e8e2dc] text-[#666] text-sm hover:bg-[#f8f8f8] cursor-pointer"
+            type="button"
+            class="px-4 py-2 rounded-lg border border-[var(--border)] theme-muted text-sm theme-surface cursor-pointer hover:opacity-90"
             @click="closeResetConfirm"
           >
             {{ t('cancel') }}
           </button>
           <button
-            class="px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-semibold hover:bg-red-600 cursor-pointer"
+            type="button"
+            class="btn-soft-danger-solid"
             @click="onConfirmReset"
           >
             {{ t('confirm') }}

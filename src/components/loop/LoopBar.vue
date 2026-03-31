@@ -46,7 +46,7 @@ function clearDebugLogs() {
     v-if="visible"
     class="fixed inset-0 z-[200] flex items-center justify-center bg-black/30"
   >
-    <div class="w-[90%] max-w-sm bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] overflow-hidden">
+    <div class="w-[90%] max-w-sm theme-loop-panel rounded-2xl overflow-hidden">
       <!-- Info bar -->
       <div class="flex items-center justify-between px-5 pt-4 pb-2">
         <span class="text-[13px] text-[#999]">

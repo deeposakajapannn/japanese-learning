@@ -31,20 +31,20 @@ const wrongWords = computed(() => {
 </script>
 
 <template>
-  <div class="rounded-xl border border-[#e8e2dc] bg-white p-4 mt-4">
-    <h3 class="text-base font-semibold text-[#2d2d2d] mb-3">🔴 {{ t('wrongTitle') }}</h3>
+  <div class="theme-card p-4 mt-4">
+    <h3 class="text-base font-semibold theme-text mb-3">🔴 {{ t('wrongTitle') }}</h3>
 
-    <div v-if="wrongWords.length === 0" class="text-[#777] text-sm text-center py-5">
+    <div v-if="wrongWords.length === 0" class="theme-muted text-sm text-center py-5">
       {{ t('noData') }}
     </div>
 
     <div
       v-for="(item, idx) in wrongWords"
       :key="idx"
-      class="flex items-center justify-between py-2 border-b border-[#e8e2dc] last:border-b-0"
+      class="flex items-center justify-between py-2 border-b border-[var(--border)] last:border-b-0"
     >
-      <span class="font-semibold text-[#2d2d2d]">{{ item.word }}</span>
-      <span class="text-sm text-[#777] flex-1 mx-3 truncate">{{ localMeaning(item, currentLang) }}</span>
+      <span class="font-semibold theme-text">{{ item.word }}</span>
+      <span class="text-sm theme-muted flex-1 mx-3 truncate">{{ localMeaning(item, currentLang) }}</span>
       <span class="text-xs text-white bg-[#e74c3c] rounded-full px-2 py-0.5 shrink-0">
         ×{{ item.count }}
       </span>

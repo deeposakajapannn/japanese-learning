@@ -19,17 +19,17 @@ function onSpeak() {
 
 <template>
   <div
-    class="flex items-center relative bg-white rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-4 cursor-pointer transition-all hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] animate-fadeUp"
+    class="flex items-center relative theme-surface rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-4 cursor-pointer transition-all hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] animate-fadeUp"
     @click="onSpeak"
   >
-    <div class="w-9 h-9 rounded-full bg-[#fdf0ed] text-[#e8735a] flex items-center justify-center text-xs font-bold shrink-0 mr-3">
+    <div class="w-9 h-9 rounded-full theme-soft text-[#e8735a] flex items-center justify-center text-xs font-bold shrink-0 mr-3">
       {{ item.id }}
     </div>
     <div class="flex-1 min-w-0">
-      <div class="text-base font-bold text-[#2d2d2d]">{{ item.word }}</div>
-      <div class="text-sm text-[#777]">{{ item.reading }}</div>
-      <div class="text-sm text-[#2d2d2d] mt-0.5">{{ localMeaning(item, currentLang) }}</div>
-      <div v-if="item.example" class="text-xs text-[#777] mt-1 leading-relaxed">
+      <div class="text-base font-bold theme-text">{{ item.word }}</div>
+      <div class="text-sm theme-muted">{{ item.reading }}</div>
+      <div class="text-sm theme-text mt-0.5">{{ localMeaning(item, currentLang) }}</div>
+      <div v-if="item.example" class="text-xs theme-muted mt-1 leading-relaxed">
         {{ item.example }}
         <br v-if="item.exampleCn" />
         <span v-if="item.exampleCn" class="text-[#5b8a72]">{{ item.exampleCn }}</span>
@@ -49,7 +49,7 @@ function onSpeak() {
     </div>
     <div
       v-else
-      class="absolute top-2 right-2 text-[#777] text-[10px]"
+      class="absolute top-2 right-2 theme-muted text-[10px]"
     >
       {{ getItemCount(cat, item.id) }}/50
     </div>

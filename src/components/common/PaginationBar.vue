@@ -34,19 +34,19 @@ function onInputConfirm() {
 <template>
   <div class="flex items-center justify-center gap-3 py-4">
     <button
-      class="px-4 py-2 rounded-full border-2 border-[#e8e2dc] bg-white text-[#777] text-sm font-semibold cursor-pointer transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+      class="px-4 py-2 rounded-full border-2 border-[#e8e2dc] theme-surface theme-muted text-sm font-semibold cursor-pointer transition-all disabled:opacity-40 disabled:cursor-not-allowed"
       style="box-shadow: 0 2px 8px rgba(0,0,0,0.06)"
       :disabled="currentPage <= 1"
       @click="emit('page-change', -1)"
     >
       {{ t('prevPage') }}
     </button>
-    <span class="flex items-center gap-1.5 text-sm text-[#777] font-medium">
+    <span class="flex items-center gap-1.5 text-sm theme-muted font-medium">
       <input
         v-model="pageInput"
         type="text"
         inputmode="numeric"
-        class="w-10 text-center border-2 border-[#e8e2dc] rounded-lg py-1 text-sm font-semibold text-[#555] outline-none focus:border-[#e8735a] transition-colors"
+        class="w-10 text-center border-2 border-[#e8e2dc] rounded-lg py-1 text-sm font-semibold theme-text theme-surface outline-none focus:border-[#e8735a] transition-colors"
         @keydown.enter="onInputConfirm"
         @blur="onInputConfirm"
       />

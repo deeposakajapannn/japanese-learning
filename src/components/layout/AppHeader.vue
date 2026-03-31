@@ -13,15 +13,15 @@ const langs = [
 
 <template>
   <header
-    class="sticky top-0 z-[400] text-white px-6 pt-5 pb-4 md:px-10 md:pt-6 md:pb-5"
-    style="background: linear-gradient(135deg, #e8735a 0%, #e8a05a 100%); box-shadow: 0 4px 20px rgba(232,115,90,0.3)"
+    class="sticky top-0 z-[400] px-6 pt-5 pb-4 md:px-10 md:pt-6 md:pb-5 theme-header"
+    style="box-shadow: 0 4px 20px rgba(0,0,0,0.22)"
   >
     <div class="flex justify-between items-center">
       <h1 class="text-[22px] font-bold tracking-wider">
         <ruby style="ruby-position: over">
           日本語学習
           <rp>(</rp>
-          <rt class="text-[10px] font-normal tracking-[2px]">にほんご がくしゅう</rt>
+          <rt class="text-[10px] font-normal tracking-[2px] opacity-90">にほんご がくしゅう</rt>
           <rp>)</rp>
         </ruby>
       </h1>
@@ -38,7 +38,7 @@ const langs = [
         <button
           v-for="lang in langs"
           :key="lang.key"
-          class="border-none text-white px-2 py-[3px] rounded-lg text-[10px] cursor-pointer transition-opacity"
+          class="border-none px-2 py-[3px] rounded-lg text-[10px] cursor-pointer transition-opacity"
           :class="currentLang === lang.key ? 'bg-white/40' : 'bg-white/15'"
           @click="switchLang(lang.key)"
         >

@@ -12,6 +12,7 @@ import StatsPanel from '@/components/stats/StatsPanel.vue'
 import LoopBar from '@/components/loop/LoopBar.vue'
 import KanaGrid from '@/components/kana/KanaGrid.vue'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
+import { useTheme } from '@/composables/useTheme'
 
 const store = useAppStore()
 const { loopPlaying, startListPlayback, stop: stopLoop } = useLoopPlayer()
@@ -22,12 +23,14 @@ watch(loopPlaying, (val) => {
 })
 const { userId, initFirebase, pullAndMerge } = useFirebase()
 const { isAnswered, showAnswer, submitAnswer, startQuiz } = useQuiz()
+const { initTheme } = useTheme()
 
 watch(() => [store.currentMode, store.currentCat], () => {
   if (store.currentMode === 'practice') startQuiz()
 })
 
 onMounted(async () => {
+  initTheme()
   initFirebase()
   await store.loadData()
 
