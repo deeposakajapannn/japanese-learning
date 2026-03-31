@@ -596,6 +596,12 @@ body > * { position: relative; z-index: 1; }
 <!-- List Toolbar (outside panel) -->
 <div class="list-toolbar" id="listToolbar">
   <input type="text" id="searchInput" placeholder="搜索日语、读音、中文..." oninput="renderList()">
+  <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+    <span style="font-size:13px;color:var(--text-secondary);white-space:nowrap">从</span>
+    <input type="number" id="listenFrom" min="1" value="1" style="width:56px;padding:6px 4px;border:1px solid var(--border);border-radius:8px;font-size:14px;text-align:center;background:var(--card);color:var(--text)">
+    <span style="font-size:13px;color:var(--text-secondary);white-space:nowrap">到</span>
+    <input type="number" id="listenTo" min="1" value="" placeholder="末尾" style="width:56px;padding:6px 4px;border:1px solid var(--border);border-radius:8px;font-size:14px;text-align:center;background:var(--card);color:var(--text)">
+  </div>
   <div style="display:flex;gap:8px;margin-top:8px">
     <button class="toolbar-btn toolbar-btn-play" onclick="speakAllList()" style="flex:1;padding:12px;font-size:15px">▶ 列表朗读</button>
     <button class="toolbar-btn toolbar-btn-stop" id="listSpeakStop" onclick="stopLoop()" style="display:none;padding:12px 16px;font-size:15px">■ 停止</button>
@@ -1383,9 +1389,13 @@ function stopLoop() {
 
 function speakAllList() {
   startSilentKeepAlive();
-  // Play all items currently in the filtered list
+  const fromVal = parseInt(document.getElementById('listenFrom').value) || 1;
+  const toVal = parseInt(document.getElementById('listenTo').value) || listFiltered.length;
+  const from = Math.max(1, Math.min(fromVal, listFiltered.length));
+  const to = Math.max(from, Math.min(toVal, listFiltered.length));
   loopPlaylist = [];
-  for (const it of listFiltered) {
+  for (let i = from - 1; i < to; i++) {
+    const it = listFiltered[i];
     loopPlaylist.push({...it, _cat: it._cat || currentCat});
   }
   if (!loopPlaylist.length) return;
@@ -1459,6 +1469,9 @@ function renderList() {
     (it.example && it.example.includes(q))
   ) : items;
   listPage = 1;
+  document.getElementById('listenFrom').value = 1;
+  document.getElementById('listenTo').placeholder = listFiltered.length;
+  document.getElementById('listenTo').value = '';
   renderListPage();
 }
 
