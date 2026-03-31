@@ -16,11 +16,16 @@ defineProps<{
 
 defineEmits<{
   speak: []
+  cardClick: []
 }>()
 </script>
 
 <template>
-  <div class="w-full max-w-[400px] mx-auto rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.10)] theme-surface p-10 text-center animate-fadeUp">
+  <div
+    class="w-full max-w-[400px] mx-auto rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.10)] theme-surface p-10 text-center animate-fadeUp"
+    :class="isAnswered ? 'cursor-pointer active:scale-[0.98]' : ''"
+    @click="isAnswered && $emit('cardClick')"
+  >
     <!-- MODE: word (original) — show Japanese word, recall meaning + reading -->
     <template v-if="mode === 'word'">
       <div class="text-3xl font-bold theme-text mb-4">{{ item?.word ?? '' }}</div>
@@ -63,11 +68,6 @@ defineEmits<{
         <br v-if="item.exampleCn" />
         <span v-if="item.exampleCn" class="text-[13px]" style="color: var(--accent)">{{ item.exampleCn }}</span>
       </div>
-      <button
-        v-if="mode !== 'word'"
-        class="mt-4 inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#e8e2dc] theme-surface text-lg cursor-pointer transition-all hover:border-[#e8735a]"
-        @click.stop="$emit('speak')"
-      >🔊</button>
     </template>
   </div>
 </template>

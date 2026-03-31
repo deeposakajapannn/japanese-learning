@@ -1,3 +1,4 @@
+import { ref } from 'vue'
 import { useAppStore } from '../stores/app'
 import { recordListenTime } from './useStats'
 
@@ -47,6 +48,46 @@ export function speakWithExample(word: string, example?: string) {
   audioEl.play().catch(() => {})
 }
 
+export const looping = ref(false)
+export const loopingWord = ref('')
+
+export function speakLoop(word: string, example?: string) {
+  const store = useAppStore()
+  looping.value = true
+  loopingWord.value = word
+  function playOnce() {
+    if (!looping.value) return
+    const fn1 = store.audioMap[word]
+    if (!fn1) { looping.value = false; return }
+    audioEl.onended = () => {
+      recordListenTime(audioEl.duration)
+      if (!looping.value) return
+      if (example && store.audioMap[example]) {
+        audioEl.onended = () => {
+          recordListenTime(audioEl.duration)
+          if (!looping.value) return
+          setTimeout(playOnce, 800)
+        }
+        audioEl.src = audioPath(store.audioMap[example])
+        audioEl.play().catch(() => {})
+      } else {
+        setTimeout(playOnce, 800)
+      }
+    }
+    audioEl.src = audioPath(fn1)
+    audioEl.play().catch(() => {})
+  }
+  playOnce()
+}
+
+export function stopLoop() {
+  looping.value = false
+  loopingWord.value = ''
+  audioEl.onended = null
+  audioEl.pause()
+}
+
+
 export function pause() {
   audioEl.pause()
 }
@@ -60,6 +101,9 @@ export function useAudio() {
     audioEl,
     speak,
     speakWithExample,
+    speakLoop,
+    stopLoop,
+    looping,
     pause,
     resume,
   }

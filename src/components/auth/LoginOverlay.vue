@@ -16,6 +16,7 @@ const password = ref('')
 const message = ref('')
 const isError = ref(false)
 const loading = ref(false)
+const showPwd = ref(false)
 
 function reset() {
   username.value = ''
@@ -82,15 +83,25 @@ async function onSubmit() {
         @keyup.enter="onSubmit"
       />
 
-      <input
-        v-model="password"
-        type="password"
-        class="w-full mt-3 px-4 py-3 border border-[#e8e2dc] rounded-xl text-base text-[#2d2d2d] outline-none focus:border-[#e8735a] transition-colors"
-        :placeholder="tab === 'register' ? t('passwordPlaceholder') : t('passwordInput')"
-        maxlength="50"
-        autocomplete="current-password"
-        @keyup.enter="onSubmit"
-      />
+      <div class="relative mt-3">
+        <input
+          v-model="password"
+          :type="showPwd ? 'text' : 'password'"
+          class="w-full px-4 py-3 pr-12 border border-[#e8e2dc] rounded-xl text-base text-[#2d2d2d] outline-none focus:border-[#e8735a] transition-colors"
+          :placeholder="tab === 'register' ? t('passwordPlaceholder') : t('passwordInput')"
+          maxlength="50"
+          autocomplete="current-password"
+          @keyup.enter="onSubmit"
+        />
+        <button
+          type="button"
+          class="absolute right-3 top-1/2 -translate-y-1/2 bg-transparent border-none cursor-pointer text-[#999] hover:text-[#e8735a] transition-colors"
+          @click="showPwd = !showPwd"
+        >
+          <svg v-if="showPwd" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M14.12 14.12a3 3 0 11-4.24-4.24"/></svg>
+        </button>
+      </div>
 
       <button
         class="w-full mt-4 py-3 rounded-xl bg-[#e8735a] text-white font-semibold text-base cursor-pointer hover:bg-[#c9563f] transition-colors disabled:opacity-50"

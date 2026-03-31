@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { useAppStore } from '../stores/app'
-import { speakWithExample } from './useAudio'
+import { speakWithExample, stopLoop } from './useAudio'
 import { recordQuiz } from './useStats'
 import { getActiveItems, recordItemSeen, delayItem, getListenedCount } from './useSpacedRepetition'
 
@@ -31,6 +31,7 @@ function showAnswer() {
 }
 
 function submitAnswer(correct: boolean) {
+  stopLoop()
   const store = useAppStore()
   const it = quizItems.value[quizIndex.value]
   if (!it) return

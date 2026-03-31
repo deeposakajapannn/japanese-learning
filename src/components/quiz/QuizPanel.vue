@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useQuiz } from '../../composables/useQuiz'
+import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 
 const { t } = useLang()
@@ -8,6 +9,15 @@ import QuizCard from './QuizCard.vue'
 import QuizActions from './QuizActions.vue'
 
 const { quizItems, quizIndex, isAnswered, showAnswer, submitAnswer, speakQuizCurrent } = useQuiz()
+
+function toggleLoop() {
+  if (looping.value) {
+    stopLoop()
+  } else {
+    const it = quizItems.value[quizIndex.value]
+    if (it) speakLoop(it.word, it.example)
+  }
+}
 
 const currentItem = computed(() => quizItems.value[quizIndex.value] ?? null)
 const progressText = computed(() => {
@@ -23,6 +33,7 @@ const progressText = computed(() => {
       :item="currentItem"
       :is-answered="isAnswered"
       mode="word"
+      @card-click="speakQuizCurrent"
     />
     <button
       v-if="!isAnswered"
@@ -33,9 +44,10 @@ const progressText = computed(() => {
     </button>
     <QuizActions
       :visible="isAnswered"
+      :is-looping="looping"
       @correct="submitAnswer(true)"
       @wrong="submitAnswer(false)"
-      @speak="speakQuizCurrent"
+      @loop="toggleLoop"
     />
   </div>
 </template>
