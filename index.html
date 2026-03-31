@@ -317,7 +317,7 @@ body > * { position: relative; z-index: 1; }
 /* ===== Stats ===== */
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -588,8 +588,8 @@ body > * { position: relative; z-index: 1; }
 <div class="main-content">
 <!-- Category Tabs -->
 <div class="cat-tabs" id="catTabs">
-  <button class="cat-btn active" data-cat="nouns" onclick="switchCat('nouns')">名词 (948)</button>
-  <button class="cat-btn" data-cat="sentences" onclick="switchCat('sentences')">句子 (1680)</button>
+  <button class="cat-btn active" data-cat="sentences" onclick="switchCat('sentences')">句子 (1680)</button>
+  <button class="cat-btn" data-cat="nouns" onclick="switchCat('nouns')">名词 (948)</button>
 
 </div>
 
@@ -603,8 +603,7 @@ body > * { position: relative; z-index: 1; }
     <input type="number" id="listenTo" min="1" value="" placeholder="末尾" style="width:56px;padding:6px 4px;border:1px solid var(--border);border-radius:8px;font-size:14px;text-align:center;background:var(--card);color:var(--text)">
   </div>
   <div style="display:flex;gap:8px;margin-top:8px">
-    <button class="toolbar-btn toolbar-btn-play" onclick="speakAllList()" style="flex:1;padding:12px;font-size:15px">▶ 列表朗读</button>
-    <button class="toolbar-btn toolbar-btn-stop" id="listSpeakStop" onclick="stopLoop()" style="display:none;padding:12px 16px;font-size:15px">■ 停止</button>
+    <button class="toolbar-btn toolbar-btn-play" id="listSpeakBtn" onclick="toggleSpeakList()" style="flex:1;padding:12px;font-size:15px">▶ 列表朗读</button>
   </div>
 </div>
 
@@ -718,7 +717,7 @@ async function loadData() {
 
 // ===== STATE =====
 let currentMode = 'list';
-let currentCat = 'nouns';
+let currentCat = 'sentences';
 let studyIndex = 0;
 let quizIndex = 0;
 let quizItems = [];
@@ -1382,10 +1381,22 @@ function stopLoop() {
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
   stopSilentKeepAlive();
   document.getElementById('loopBar').classList.remove('show');
-  document.getElementById('listSpeakStop').style.display = 'none';
+  listSpeaking = false;
+  document.getElementById('listSpeakBtn').textContent = '▶ 列表朗读';
+  document.getElementById('listSpeakBtn').classList.remove('toolbar-btn-stop');
+  document.getElementById('listSpeakBtn').classList.add('toolbar-btn-play');
   document.getElementById('loopRepeatBtn').classList.remove('on');
 }
 
+let listSpeaking = false;
+
+function toggleSpeakList() {
+  if (listSpeaking) {
+    stopLoop();
+  } else {
+    speakAllList();
+  }
+}
 
 function speakAllList() {
   startSilentKeepAlive();
@@ -1406,7 +1417,10 @@ function speakAllList() {
   document.getElementById('loopBar').classList.add('show');
   document.getElementById('loopCount').textContent = loopPlaylist.length;
   document.getElementById('loopPlayBtn').textContent = '⏸';
-  document.getElementById('listSpeakStop').style.display = 'block';
+  listSpeaking = true;
+  document.getElementById('listSpeakBtn').textContent = '■ 停止朗读';
+  document.getElementById('listSpeakBtn').classList.remove('toolbar-btn-play');
+  document.getElementById('listSpeakBtn').classList.add('toolbar-btn-stop');
   
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
