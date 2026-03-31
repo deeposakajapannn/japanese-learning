@@ -38,14 +38,16 @@ function onToggleSpeak() {
     showRange.value = false
   } else if (!props.canUseRange) {
     emit('speak', 1, props.totalItems)
-  } else if (!showRange.value) {
-    showRange.value = true
   } else {
-    const rangeMax = Math.max(1, props.totalItems)
-    const from = Math.max(1, Math.min(listenFrom.value || 1, rangeMax))
-    const to = Math.max(from, Math.min(listenTo.value || rangeMax, rangeMax))
-    emit('speak', from, to)
+    showRange.value = !showRange.value
   }
+}
+
+function onSpeakRange() {
+  const rangeMax = Math.max(1, props.totalItems)
+  const from = Math.max(1, Math.min(listenFrom.value || 1, rangeMax))
+  const to = Math.max(from, Math.min(listenTo.value || rangeMax, rangeMax))
+  emit('speak', from, to)
 }
 </script>
 
@@ -74,7 +76,8 @@ function onToggleSpeak() {
       >
         {{ isSpeaking ? t('listStop') : t('listSpeak') }}
       </button>
-      <div v-if="canUseRange && showRange" class="flex items-center justify-center gap-2 px-3 py-2.5 bg-white border border-t-0 border-[#e8e2dc] rounded-b-[10px]">
+      <div v-if="canUseRange && showRange" class="flex flex-col gap-2 px-3 py-2.5 bg-white border border-t-0 border-[#e8e2dc] rounded-b-[10px]">
+        <div class="flex items-center justify-center gap-2">
         <span class="text-[13px] text-[#777] whitespace-nowrap">{{ t('from') }}</span>
         <input
           v-model.number="listenFrom"
@@ -92,6 +95,21 @@ function onToggleSpeak() {
           :placeholder="String(totalItems)"
           class="w-14 py-1 px-1 border border-[#e8e2dc] rounded-lg text-sm text-center bg-white text-[#2d2d2d] outline-none focus:border-[#e8735a]"
         />
+        </div>
+        <div class="flex items-center justify-end gap-2">
+          <button
+            class="px-3 py-1.5 rounded-lg border border-[#e8e2dc] text-[#666] text-xs font-medium hover:border-[#d8d2cc]"
+            @click="showRange = false"
+          >
+            {{ t('cancel') }}
+          </button>
+          <button
+            class="px-3 py-1.5 rounded-lg bg-[#e8735a] text-white text-xs font-semibold"
+            @click="onSpeakRange"
+          >
+            {{ t('confirm') }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
