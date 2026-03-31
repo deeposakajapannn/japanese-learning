@@ -1,12 +1,38 @@
 <script setup lang="ts">
+import { useLang } from '@/i18n'
+
 defineProps<{
   topics: string[]
   selected: string
 }>()
 
+const { t } = useLang()
+
 const emit = defineEmits<{
   select: [topic: string]
 }>()
+
+const TOPIC_I18N_KEYS: Record<string, string> = {
+  '问候寒暄': 'topicGreetings',
+  '饮食餐厅': 'topicFoodDining',
+  '购物': 'topicShopping',
+  '交通出行': 'topicTransportation',
+  '住宿旅行': 'topicAccommodationTravel',
+  '工作职场': 'topicWorkplace',
+  '健康医疗': 'topicHealthMedical',
+  '情绪心理': 'topicEmotionsPsychology',
+  '日语学习': 'topicJapaneseLearning',
+  '日本文化': 'topicJapaneseCulture',
+  '科技网络': 'topicTechInternet',
+  '天气自然': 'topicWeatherNature',
+  '兴趣娱乐': 'topicHobbiesEntertainment',
+  '人际关系': 'topicRelationships',
+  '家庭亲子': 'topicFamilyParenting',
+  '励志感悟': 'topicMotivationInsights',
+  '思考议论': 'topicThinkingDiscussion',
+  '日常生活': 'topicDailyLife',
+  '日常场景': 'topicDailyScenes',
+}
 
 const TOPIC_ICONS: Record<string, string> = {
   '问候寒暄': '👋',
@@ -29,6 +55,11 @@ const TOPIC_ICONS: Record<string, string> = {
   '日常生活': '🏠',
   '日常场景': '💬',
 }
+
+function getTopicLabel(topic: string): string {
+  const key = TOPIC_I18N_KEYS[topic]
+  return key ? t(key) : topic
+}
 </script>
 
 <template>
@@ -40,7 +71,7 @@ const TOPIC_ICONS: Record<string, string> = {
         : 'bg-white text-[#555] border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
       @click="emit('select', '')"
     >
-      全部
+      {{ t('allTopics') }}
     </button>
     <button
       v-for="topic in topics"
@@ -51,7 +82,7 @@ const TOPIC_ICONS: Record<string, string> = {
         : 'bg-white text-[#555] border-[#e8e2dc] hover:border-[#e8735a] hover:text-[#e8735a]'"
       @click="emit('select', topic)"
     >
-      {{ TOPIC_ICONS[topic] || '📝' }} {{ topic }}
+      {{ TOPIC_ICONS[topic] || '📝' }} {{ getTopicLabel(topic) }}
     </button>
   </div>
 </template>
