@@ -244,8 +244,8 @@
   },
   {
     "id": 28,
-    "word": "ビールを一つください。",
-    "reading": "ビールをひとつください。",
+    "word": "ビールを一杯ください。",
+    "reading": "ビールをいっぱいください。",
     "meaning": "请给我一杯啤酒。",
     "level": "N5",
     "meaningEn": "Please give me a beer.",
@@ -316,11 +316,11 @@
   },
   {
     "id": 36,
-    "word": "サイズはありますか。",
-    "reading": "サイズはありますか。",
-    "meaning": "有合适的尺码吗？",
+    "word": "このサイズはありますか。",
+    "reading": "このサイズはありますか。",
+    "meaning": "有这个尺码吗？",
     "level": "N5",
-    "meaningEn": "Do you have the right size?",
+    "meaningEn": "Do you have this size?",
     "topic": "购物"
   },
   {
@@ -478,8 +478,8 @@
   },
   {
     "id": 54,
-    "word": "予約をしています。",
-    "reading": "よやくをしています。",
+    "word": "予約しています。",
+    "reading": "よやくしています。",
     "meaning": "我有预约。",
     "level": "N5",
     "meaningEn": "I have an appointment.",
@@ -681,7 +681,7 @@
     "meaning": "在吃药。",
     "level": "N5",
     "meaningEn": "Taking medicine.",
-    "topic": "饮食餐厅"
+    "topic": "健康医疗"
   },
   {
     "id": 77,
@@ -690,7 +690,7 @@
     "meaning": "这个药每天吃三次。",
     "level": "N5",
     "meaningEn": "Take this medicine three times a day.",
-    "topic": "饮食餐厅"
+    "topic": "健康医疗"
   },
   {
     "id": 78,
@@ -1509,7 +1509,7 @@
     "meaning": "这家店总是很拥挤。",
     "level": "N4",
     "meaningEn": "This store is always crowded.",
-    "topic": "交通出行"
+    "topic": "饮食餐厅"
   },
   {
     "id": 169,
@@ -1770,7 +1770,7 @@
     "meaning": "在哪里买票？",
     "level": "N4",
     "meaningEn": "Where do I buy a ticket?",
-    "topic": "购物"
+    "topic": "交通出行"
   },
   {
     "id": 198,
@@ -1873,11 +1873,11 @@
   },
   {
     "id": 209,
-    "word": "信号を渡ってください。",
-    "reading": "しんごうをわたってください。",
-    "meaning": "请过红绿灯。",
+    "word": "信号が青になったら渡ってください。",
+    "reading": "しんごうがあおになったらわたってください。",
+    "meaning": "绿灯亮时请过马路。",
     "level": "N4",
-    "meaningEn": "Please go through the traffic lights.",
+    "meaningEn": "Please cross when the light turns green.",
     "topic": "交通出行"
   },
   {
@@ -1914,7 +1914,7 @@
     "meaning": "加油站在哪里？",
     "level": "N4",
     "meaningEn": "Where is the gas station?",
-    "topic": "励志感悟"
+    "topic": "交通出行"
   },
   {
     "id": 214,
@@ -1955,7 +1955,7 @@
   {
     "id": 218,
     "word": "ロッカーに荷物を入れたいです。",
-    "reading": "ロッカーにのもつをいれたいです。",
+    "reading": "ロッカーににもつをいれたいです。",
     "meaning": "我想把行李放在储物柜里。",
     "level": "N4",
     "meaningEn": "I want to put my luggage in the locker.",
@@ -2028,9 +2028,9 @@
     "id": 226,
     "word": "始発に乗ります。",
     "reading": "しはつにのります。",
-    "meaning": "坐始发车。",
+    "meaning": "我坐首班车。",
     "level": "N4",
-    "meaningEn": "Take the first train.",
+    "meaningEn": "I'll take the first train.",
     "topic": "日常场景"
   },
   {
@@ -2085,7 +2085,7 @@
     "meaning": "到机场大概多少钱？",
     "level": "N4",
     "meaningEn": "How much does it cost to get to the airport?",
-    "topic": "购物"
+    "topic": "交通出行"
   },
   {
     "id": 233,
@@ -2310,7 +2310,7 @@
     "meaning": "预约了会议室。",
     "level": "N4",
     "meaningEn": "Reserved a conference room.",
-    "topic": "饮食餐厅"
+    "topic": "工作职场"
   },
   {
     "id": 258,
@@ -2656,8 +2656,8 @@
   },
   {
     "id": 296,
-    "word": "友達でいましょう。",
-    "reading": "ともだちでいましょう。",
+    "word": "友達になりましょう。",
+    "reading": "ともだちになりましょう。",
     "meaning": "我们做朋友吧。",
     "level": "N4",
     "meaningEn": "Let's be friends.",
@@ -2795,7 +2795,7 @@
     "reading": "きょうもいちにちがんばろう。",
     "meaning": "今天也要努力一天。",
     "level": "N4",
-    "meaningEn": "I have to work hard today too.",
+    "meaningEn": "Let's give it our all today too.",
     "topic": "励志感悟"
   },
   {
@@ -2841,7 +2841,7 @@
     "meaning": "饭后服用。",
     "level": "N4",
     "meaningEn": "Take after meals.",
-    "topic": "饮食餐厅"
+    "topic": "健康医疗"
   },
   {
     "id": 317,
@@ -2850,7 +2850,7 @@
     "meaning": "想做检查。",
     "level": "N4",
     "meaningEn": "Want to get checked out.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 318,
@@ -2859,7 +2859,7 @@
     "meaning": "请静养。",
     "level": "N4",
     "meaningEn": "Please rest.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 319,
@@ -2877,7 +2877,7 @@
     "meaning": "祝你早日康复。",
     "level": "N4",
     "meaningEn": "I wish you a speedy recovery.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 321,
@@ -2895,7 +2895,7 @@
     "meaning": "眼睛很疲劳。",
     "level": "N4",
     "meaningEn": "Eyes are tired.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 323,
@@ -2913,7 +2913,7 @@
     "meaning": "烫伤了。",
     "level": "N4",
     "meaningEn": "Burned.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 325,
@@ -2931,7 +2931,7 @@
     "meaning": "体重增加了。",
     "level": "N4",
     "meaningEn": "Weight gain.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 327,
@@ -2949,7 +2949,7 @@
     "meaning": "请让身体暖和。",
     "level": "N4",
     "meaningEn": "Please keep your body warm.",
-    "topic": "天气自然"
+    "topic": "健康医疗"
   },
   {
     "id": 329,
@@ -4236,7 +4236,7 @@
     "meaning": "吃了药之后好了一些。",
     "level": "N4",
     "meaningEn": "I feel better after taking medicine.",
-    "topic": "饮食餐厅"
+    "topic": "健康医疗"
   },
   {
     "id": 472,
@@ -4394,29 +4394,29 @@
   {
     "word": "新しい趣味を発見してから、毎日が楽しくなりました。",
     "reading": "あたらしいしゅみをはっけんしてから、まいにちがたのしくなりました。",
-    "meaning": "没想到家附近竟然有这么好吃的店。",
+    "meaning": "发现新爱好之后，每天都变得更开心了。",
     "level": "N4",
     "id": 489,
-    "meaningEn": "I didn't expect there to be such a delicious restaurant near my home.",
-    "topic": "饮食餐厅"
+    "meaningEn": "Since I found a new hobby, every day has become more enjoyable.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "一人で解決しようとしないで、みんなで考えましょう。",
     "reading": "ひとりでかいけつしようとしないで、みんなでかんがえましょう。",
-    "meaning": "为了实现梦想，先迈出一小步很重要。",
+    "meaning": "别一个人硬扛，大家一起商量吧。",
     "level": "N4",
     "id": 490,
-    "meaningEn": "In order to achieve your dreams, it’s important to take a small step first.",
+    "meaningEn": "Don't try to solve it alone—let's think it through together.",
     "topic": "励志感悟"
   },
   {
     "word": "全ての仕事を終えた後のビールが、一番美味しいです。",
     "reading": "すべてのしごとをおえたあとのビールが、いちばんおいしいです。",
-    "meaning": "连续下了一周雨，心情越来越低落。",
+    "meaning": "干完所有工作之后的那杯啤酒最好喝。",
     "level": "N4",
     "id": 491,
-    "meaningEn": "It rained continuously for a week, and I felt increasingly depressed.",
-    "topic": "情绪心理"
+    "meaningEn": "Beer after finishing all your work tastes the best.",
+    "topic": "饮食餐厅"
   },
   {
     "word": "最近、体調が悪くてずっと家にいるんだ。",
@@ -4506,7 +4506,7 @@
     "level": "N4",
     "id": 501,
     "meaningEn": "Although this apartment is old, I like it because it's close to the station.",
-    "topic": "交通出行"
+    "topic": "日常生活"
   },
   {
     "word": "あの先生、見た目より若いらしいよ。もう50歳だって。",
@@ -4515,7 +4515,7 @@
     "level": "N4",
     "id": 502,
     "meaningEn": "The teacher seems to be younger than he looks. It is said that he is 50 years old.",
-    "topic": "日语学习"
+    "topic": "日常场景"
   },
   {
     "word": "新幹線って速いよね、大阪まで2時間半で着くんだもん。",
@@ -4560,7 +4560,7 @@
     "level": "N4",
     "id": 507,
     "meaningEn": "Although this room is a bit small, it is enough for one person.",
-    "topic": "励志感悟"
+    "topic": "日常生活"
   },
   {
     "word": "冬はやっぱり厚いコートがないとつらいよね。",
@@ -4667,7 +4667,7 @@
     "meaning": "还能用呢就扔掉？太浪费了。",
     "level": "N4",
     "id": 519,
-    "meaningEn": "Throw it away if it can still be used? What a waste.",
+    "meaningEn": "You're going to throw it away even though it still works? What a waste.",
     "topic": "日常场景"
   },
   {
@@ -4703,7 +4703,7 @@
     "meaning": "今天闲着没事，要不要去看个电影？",
     "level": "N4",
     "id": 523,
-    "meaningEn": "You have nothing to do today, would you like to go see a movie?",
+    "meaningEn": "I'm free today—want to go see a movie or something?",
     "topic": "兴趣娱乐"
   },
   {
@@ -4712,7 +4712,7 @@
     "meaning": "这个APP查电车换乘超方便的。",
     "level": "N4",
     "id": 524,
-    "meaningEn": "This app is very convenient for checking tram transfers.",
+    "meaningEn": "This app is really handy for checking train transfers.",
     "topic": "交通出行"
   },
   {
@@ -4722,7 +4722,7 @@
     "level": "N4",
     "id": 525,
     "meaningEn": "There is no convenience store nearby, which is a bit inconvenient.",
-    "topic": "交通出行"
+    "topic": "日常场景"
   },
   {
     "word": "彼女はいつも丁寧に説明してくれるから、分かりやすい。",
@@ -4730,7 +4730,7 @@
     "meaning": "她总是很仔细地给我解释，所以很容易懂。",
     "level": "N4",
     "id": 526,
-    "meaningEn": "She always explained it to me very carefully, so it was easy to understand.",
+    "meaningEn": "She always explains things carefully, so they're easy to understand.",
     "topic": "日常场景"
   },
   {
@@ -4776,7 +4776,7 @@
     "level": "N4",
     "id": 531,
     "meaningEn": "I feel like I have a cold, but I've taken medicine so it's fine.",
-    "topic": "饮食餐厅"
+    "topic": "健康医疗"
   },
   {
     "word": "普通のカレーでいいよ、辛口はちょっと苦手だから。",
@@ -4974,7 +4974,7 @@
     "meaning": "请给我冷水。",
     "level": "N3",
     "meaningEn": "Please give me cold water.",
-    "topic": "天气自然"
+    "topic": "饮食餐厅"
   },
   {
     "id": 554,
@@ -5090,7 +5090,7 @@
     "reading": "おかわりじゆうですか。",
     "meaning": "可以免费续吗？",
     "level": "N3",
-    "meaningEn": "Can it be renewed for free?",
+    "meaningEn": "Are refills free?",
     "topic": "日常场景"
   },
   {
@@ -5289,7 +5289,7 @@
     "meaning": "需要冷藏保存吗？",
     "level": "N3",
     "meaningEn": "Does it need to be kept refrigerated?",
-    "topic": "天气自然"
+    "topic": "购物"
   },
   {
     "id": 589,
@@ -5298,7 +5298,7 @@
     "meaning": "常温保存没问题吗？",
     "level": "N3",
     "meaningEn": "Is it okay to store it at room temperature?",
-    "topic": "思考议论"
+    "topic": "购物"
   },
   {
     "id": 590,
@@ -5315,8 +5315,8 @@
     "reading": "かくえきていしゃはどのホームですか。",
     "meaning": "每站都停的车在哪个站台？",
     "level": "N3",
-    "meaningEn": "At which platform does the bus stop at every stop?",
-    "topic": "日常场景"
+    "meaningEn": "Which platform is the local train (all-stops service)?",
+    "topic": "交通出行"
   },
   {
     "id": 592,
@@ -5343,7 +5343,7 @@
     "meaning": "我想买定期票。",
     "level": "N3",
     "meaningEn": "I want to buy a commuter ticket.",
-    "topic": "购物"
+    "topic": "交通出行"
   },
   {
     "id": 595,
@@ -5388,7 +5388,7 @@
     "meaning": "我想预订机票。",
     "level": "N3",
     "meaningEn": "I want to book a flight ticket.",
-    "topic": "日常场景"
+    "topic": "交通出行"
   },
   {
     "id": 600,
@@ -5405,8 +5405,8 @@
     "reading": "ちえんしていますか。",
     "meaning": "延误了吗？",
     "level": "N3",
-    "meaningEn": "Delayed?",
-    "topic": "日常场景"
+    "meaningEn": "Is it delayed?",
+    "topic": "交通出行"
   },
   {
     "id": 602,
@@ -5414,7 +5414,7 @@
     "reading": "けっこうになりました。",
     "meaning": "停航了。",
     "level": "N3",
-    "meaningEn": "No sailing.",
+    "meaningEn": "The flight (or ferry) has been cancelled.",
     "topic": "交通出行"
   },
   {
@@ -5423,8 +5423,8 @@
     "reading": "グリーンしゃにのりたいです。",
     "meaning": "我想坐头等车厢。",
     "level": "N3",
-    "meaningEn": "I want to take a first-class carriage.",
-    "topic": "日常场景"
+    "meaningEn": "I'd like to ride in the Green Car.",
+    "topic": "交通出行"
   },
   {
     "id": 604,
@@ -5433,7 +5433,7 @@
     "meaning": "检票口在哪里？",
     "level": "N3",
     "meaningEn": "Where is the ticket gate?",
-    "topic": "日常场景"
+    "topic": "交通出行"
   },
   {
     "id": 605,
@@ -5441,8 +5441,8 @@
     "reading": "まんいんでんしゃがつらいです。",
     "meaning": "挤电车好痛苦。",
     "level": "N3",
-    "meaningEn": "It's so painful to squeeze into the tram.",
-    "topic": "饮食餐厅"
+    "meaningEn": "Crowded trains are brutal.",
+    "topic": "交通出行"
   },
   {
     "id": 606,
@@ -5451,7 +5451,7 @@
     "meaning": "能坐到位子就算幸运了。",
     "level": "N3",
     "meaningEn": "You'll be lucky to get a seat.",
-    "topic": "日常场景"
+    "topic": "交通出行"
   },
   {
     "id": 607,
@@ -5487,7 +5487,7 @@
     "meaning": "能多给我几条毛巾吗？",
     "level": "N3",
     "meaningEn": "Can you give me a few more towels?",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 611,
@@ -5496,7 +5496,7 @@
     "meaning": "能换个房间吗？",
     "level": "N3",
     "meaningEn": "Can I change rooms?",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 612,
@@ -5505,7 +5505,7 @@
     "meaning": "能帮我寄存行李吗？",
     "level": "N3",
     "meaningEn": "Can you store my luggage for me?",
-    "topic": "交通出行"
+    "topic": "住宿旅行"
   },
   {
     "id": 613,
@@ -5522,8 +5522,8 @@
     "reading": "モーニングコールをおねがいします。",
     "meaning": "请叫早。",
     "level": "N3",
-    "meaningEn": "Please wake up early.",
-    "topic": "日常场景"
+    "meaningEn": "Please give me a wake-up call.",
+    "topic": "住宿旅行"
   },
   {
     "id": 615,
@@ -5532,7 +5532,7 @@
     "meaning": "我想续住。",
     "level": "N3",
     "meaningEn": "I want to extend my stay.",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 616,
@@ -5540,8 +5540,8 @@
     "reading": "だいよくじょうはなんじまでつかえますか。",
     "meaning": "大浴场开到几点？",
     "level": "N3",
-    "meaningEn": "What time does the public bath open until?",
-    "topic": "日常场景"
+    "meaningEn": "Until what time can I use the large public bath?",
+    "topic": "住宿旅行"
   },
   {
     "id": 617,
@@ -5559,7 +5559,7 @@
     "meaning": "能给我观光地图吗？",
     "level": "N3",
     "meaningEn": "Can you give me a sightseeing map?",
-    "topic": "交通出行"
+    "topic": "住宿旅行"
   },
   {
     "id": 619,
@@ -5568,7 +5568,7 @@
     "meaning": "有机场接送吗？",
     "level": "N3",
     "meaningEn": "Is there any airport transfer?",
-    "topic": "交通出行"
+    "topic": "住宿旅行"
   },
   {
     "id": 620,
@@ -5577,7 +5577,7 @@
     "meaning": "有洗衣服务吗？",
     "level": "N3",
     "meaningEn": "Is there laundry service?",
-    "topic": "日常生活"
+    "topic": "住宿旅行"
   },
   {
     "id": 621,
@@ -5586,7 +5586,7 @@
     "meaning": "请送餐到房间。",
     "level": "N3",
     "meaningEn": "Please have meals delivered to the room.",
-    "topic": "饮食餐厅"
+    "topic": "住宿旅行"
   },
   {
     "id": 622,
@@ -5594,7 +5594,7 @@
     "reading": "このりょかんはふんいきがいいですね。",
     "meaning": "这家旅馆氛围很好。",
     "level": "N3",
-    "meaningEn": "This hotel has a great atmosphere.",
+    "meaningEn": "This ryokan has a great atmosphere.",
     "topic": "住宿旅行"
   },
   {
@@ -5604,7 +5604,7 @@
     "meaning": "可以在房间里吃吗？",
     "level": "N3",
     "meaningEn": "Can I eat in the room?",
-    "topic": "饮食餐厅"
+    "topic": "住宿旅行"
   },
   {
     "id": 624,
@@ -5613,7 +5613,7 @@
     "meaning": "住着很舒服。",
     "level": "N3",
     "meaningEn": "Very comfortable stay.",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 625,
@@ -5622,7 +5622,7 @@
     "meaning": "成为了美好的回忆。",
     "level": "N3",
     "meaningEn": "It became a beautiful memory.",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 626,
@@ -5631,7 +5631,7 @@
     "meaning": "承蒙照顾了。",
     "level": "N3",
     "meaningEn": "Thank you for taking care of me.",
-    "topic": "日常场景"
+    "topic": "住宿旅行"
   },
   {
     "id": 627,
@@ -5639,8 +5639,8 @@
     "reading": "ここにとまってよかったです。",
     "meaning": "住在这里真好。",
     "level": "N3",
-    "meaningEn": "It's great to live here.",
-    "topic": "日常场景"
+    "meaningEn": "I'm glad I stayed here.",
+    "topic": "住宿旅行"
   },
   {
     "id": 628,
@@ -5666,7 +5666,7 @@
     "reading": "おみやげをかわなきゃ。",
     "meaning": "得买伴手礼。",
     "level": "N3",
-    "meaningEn": "You have to buy souvenirs.",
+    "meaningEn": "I've got to buy souvenirs.",
     "topic": "购物"
   },
   {
@@ -5702,7 +5702,7 @@
     "reading": "たいきんします。",
     "meaning": "下班了。",
     "level": "N3",
-    "meaningEn": "get off work.",
+    "meaningEn": "I'm clocking out now.",
     "topic": "工作职场"
   },
   {
@@ -5802,7 +5802,7 @@
     "meaning": "必须削减成本。",
     "level": "N3",
     "meaningEn": "Costs must be cut.",
-    "topic": "日常场景"
+    "topic": "工作职场"
   },
   {
     "id": 646,
@@ -5811,7 +5811,7 @@
     "meaning": "销售额在增长。",
     "level": "N3",
     "meaningEn": "Sales are growing.",
-    "topic": "日常场景"
+    "topic": "工作职场"
   },
   {
     "id": 647,
@@ -5847,7 +5847,7 @@
     "meaning": "有新员工培训。",
     "level": "N3",
     "meaningEn": "There is new employee training.",
-    "topic": "日常场景"
+    "topic": "工作职场"
   },
   {
     "id": 651,
@@ -5864,8 +5864,8 @@
     "reading": "いどうになりました。",
     "meaning": "被调动了。",
     "level": "N3",
-    "meaningEn": "was mobilized.",
-    "topic": "日常场景"
+    "meaningEn": "I've been transferred to a different role (or office).",
+    "topic": "工作职场"
   },
   {
     "id": 653,
@@ -5891,7 +5891,7 @@
     "reading": "オンラインミーティングにさんかします。",
     "meaning": "参加线上会议。",
     "level": "N3",
-    "meaningEn": "Attend online meetings.",
+    "meaningEn": "I'll join the online meeting.",
     "topic": "工作职场"
   },
   {
@@ -6017,8 +6017,8 @@
     "reading": "スケジュールをちょうせいしましょう。",
     "meaning": "调整一下日程吧。",
     "level": "N3",
-    "meaningEn": "Adjust your schedule.",
-    "topic": "日常场景"
+    "meaningEn": "Let's adjust our schedules.",
+    "topic": "工作职场"
   },
   {
     "id": 670,
@@ -6026,8 +6026,8 @@
     "reading": "ストレスがたまっています。",
     "meaning": "压力太大了。",
     "level": "N3",
-    "meaningEn": "The pressure is too much.",
-    "topic": "购物"
+    "meaningEn": "Stress is building up.",
+    "topic": "情绪心理"
   },
   {
     "id": 671,
@@ -6324,7 +6324,7 @@
     "meaning": "鼻涕止不住。",
     "level": "N3",
     "meaningEn": "I can't stop the runny nose.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 704,
@@ -6333,7 +6333,7 @@
     "meaning": "有副作用吗？",
     "level": "N3",
     "meaningEn": "Are there any side effects?",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 705,
@@ -6342,7 +6342,7 @@
     "meaning": "能打点滴吗？",
     "level": "N3",
     "meaningEn": "Can I get an IV drip?",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 706,
@@ -6351,7 +6351,7 @@
     "meaning": "验血结果怎么样？",
     "level": "N3",
     "meaningEn": "What were the blood test results?",
-    "topic": "思考议论"
+    "topic": "健康医疗"
   },
   {
     "id": 707,
@@ -6360,7 +6360,7 @@
     "meaning": "肩膀酸。",
     "level": "N3",
     "meaningEn": "Sore shoulders.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 708,
@@ -6369,7 +6369,7 @@
     "meaning": "可能骨折了。",
     "level": "N3",
     "meaningEn": "Possibly a broken bone.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 709,
@@ -6378,7 +6378,7 @@
     "meaning": "有创可贴吗？",
     "level": "N3",
     "meaningEn": "Is there a Band-Aid?",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 710,
@@ -6423,7 +6423,7 @@
     "meaning": "运动不足。",
     "level": "N3",
     "meaningEn": "Not enough exercise.",
-    "topic": "兴趣娱乐"
+    "topic": "健康医疗"
   },
   {
     "id": 715,
@@ -6432,7 +6432,7 @@
     "meaning": "睡眠不足。",
     "level": "N3",
     "meaningEn": "Lack of sleep.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 716,
@@ -6441,7 +6441,7 @@
     "meaning": "很难入睡。",
     "level": "N3",
     "meaningEn": "Hard to sleep.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 717,
@@ -6449,7 +6449,7 @@
     "reading": "けんこうにはきをつけています。",
     "meaning": "注意健康。",
     "level": "N3",
-    "meaningEn": "Pay attention to your health.",
+    "meaningEn": "I try to take care of my health.",
     "topic": "健康医疗"
   },
   {
@@ -6459,7 +6459,7 @@
     "meaning": "均衡饮食很重要。",
     "level": "N3",
     "meaningEn": "A balanced diet is important.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 719,
@@ -6468,7 +6468,7 @@
     "meaning": "请深呼吸。",
     "level": "N3",
     "meaningEn": "Please take a deep breath.",
-    "topic": "日常场景"
+    "topic": "健康医疗"
   },
   {
     "id": 720,
@@ -6476,8 +6476,8 @@
     "reading": "むりをしないでください。",
     "meaning": "请不要勉强。",
     "level": "N3",
-    "meaningEn": "Please don't force it.",
-    "topic": "日常场景"
+    "meaningEn": "Please don't push yourself too hard.",
+    "topic": "健康医疗"
   },
   {
     "id": 721,
@@ -6485,8 +6485,8 @@
     "reading": "タバコをやめたほうがいいですよ。",
     "meaning": "最好戒烟。",
     "level": "N3",
-    "meaningEn": "Better to quit smoking.",
-    "topic": "日常场景"
+    "meaningEn": "You'd better quit smoking.",
+    "topic": "健康医疗"
   },
   {
     "id": 722,
@@ -6656,7 +6656,7 @@
     "reading": "きのせいだよ。",
     "meaning": "是你的错觉。",
     "level": "N3",
-    "meaningEn": "It's your illusion.",
+    "meaningEn": "You're imagining it.",
     "topic": "日常场景"
   },
   {
@@ -6683,7 +6683,7 @@
     "reading": "はなしがちがう。",
     "meaning": "说的不一样。",
     "level": "N3",
-    "meaningEn": "Said differently.",
+    "meaningEn": "That's not what we agreed on.",
     "topic": "情绪心理"
   },
   {
@@ -6728,7 +6728,7 @@
     "reading": "まにあった。",
     "meaning": "赶上了。",
     "level": "N3",
-    "meaningEn": "Caught up.",
+    "meaningEn": "I made it in time.",
     "topic": "日常场景"
   },
   {
@@ -6755,7 +6755,7 @@
     "reading": "うんがよかった。",
     "meaning": "运气好。",
     "level": "N3",
-    "meaningEn": "Good luck.",
+    "meaningEn": "That was lucky. / I got lucky.",
     "topic": "日常场景"
   },
   {
@@ -6764,7 +6764,7 @@
     "reading": "じつははなしがあるんだ。",
     "meaning": "其实有话要说。",
     "level": "N3",
-    "meaningEn": "Actually there is something to say.",
+    "meaningEn": "Actually, I need to talk to you about something.",
     "topic": "日常场景"
   },
   {
@@ -6791,7 +6791,7 @@
     "reading": "これはないしょだ。",
     "meaning": "这是秘密。",
     "level": "N3",
-    "meaningEn": "This is the secret.",
+    "meaningEn": "This is just between us.",
     "topic": "人际关系"
   },
   {
@@ -6836,7 +6836,7 @@
     "reading": "ルームシェアをしています。",
     "meaning": "合租。",
     "level": "N3",
-    "meaningEn": "Sharing.",
+    "meaningEn": "I live in a share house / flatshare.",
     "topic": "日常生活"
   },
   {
@@ -6863,8 +6863,8 @@
     "reading": "ぶんべつしなければなりません。",
     "meaning": "必须分类。",
     "level": "N3",
-    "meaningEn": "Must be classified.",
-    "topic": "日常场景"
+    "meaningEn": "I have to sort the trash (properly).",
+    "topic": "日常生活"
   },
   {
     "id": 764,
@@ -6881,7 +6881,7 @@
     "reading": "さいはいたつをおねがいします。",
     "meaning": "请重新配送。",
     "level": "N3",
-    "meaningEn": "Please reship.",
+    "meaningEn": "Please schedule a redelivery.",
     "topic": "日常场景"
   },
   {
@@ -6917,8 +6917,8 @@
     "reading": "こうしんのてつづきをしなきゃ。",
     "meaning": "得办续签手续。",
     "level": "N3",
-    "meaningEn": "You have to go through the renewal procedures.",
-    "topic": "日常场景"
+    "meaningEn": "I need to get the renewal paperwork done.",
+    "topic": "日常生活"
   },
   {
     "id": 770,
@@ -6926,7 +6926,7 @@
     "reading": "だんしゃりをしたいです。",
     "meaning": "想断舍离。",
     "level": "N3",
-    "meaningEn": "Want to break away from others.",
+    "meaningEn": "I want to declutter (danshari).",
     "topic": "日常生活"
   },
   {
@@ -6962,7 +6962,7 @@
     "reading": "おしがさいこうです。",
     "meaning": "我的推是最棒的。",
     "level": "N3",
-    "meaningEn": "My push is the best.",
+    "meaningEn": "My fave is the absolute best.",
     "topic": "兴趣娱乐"
   },
   {
@@ -6980,7 +6980,7 @@
     "reading": "おんせんめぐりをしたいです。",
     "meaning": "想去泡温泉巡游。",
     "level": "N3",
-    "meaningEn": "I want to go on a hot spring cruise.",
+    "meaningEn": "I want to go on a hot spring tour (visit several onsen).",
     "topic": "住宿旅行"
   },
   {
@@ -7043,7 +7043,7 @@
     "reading": "ところで。",
     "meaning": "话说回来/对了。",
     "level": "N3",
-    "meaningEn": "Having said that/right.",
+    "meaningEn": "By the way.",
     "topic": "日常场景"
   },
   {
@@ -7160,7 +7160,7 @@
     "reading": "きょうかんできます。",
     "meaning": "能产生共鸣。",
     "level": "N3",
-    "meaningEn": "Can resonate.",
+    "meaningEn": "I can relate to that.",
     "topic": "日常场景"
   },
   {
@@ -7196,8 +7196,8 @@
     "reading": "しょうらいのことをかんがえなければなりません。",
     "meaning": "必须考虑将来。",
     "level": "N3",
-    "meaningEn": "The future must be considered.",
-    "topic": "日常场景"
+    "meaningEn": "We need to think about the future.",
+    "topic": "思考议论"
   },
   {
     "id": 801,
@@ -7304,7 +7304,7 @@
     "reading": "せいちょうできたとおもいます。",
     "meaning": "我觉得成长了。",
     "level": "N3",
-    "meaningEn": "I feel grown up.",
+    "meaningEn": "I feel I've grown (from this).",
     "topic": "励志感悟"
   },
   {
@@ -7313,7 +7313,7 @@
     "reading": "もっとどりょくしなければなりません。",
     "meaning": "必须更加努力。",
     "level": "N3",
-    "meaningEn": "Must work harder.",
+    "meaningEn": "I need to work harder.",
     "topic": "励志感悟"
   },
   {
@@ -7322,7 +7322,7 @@
     "reading": "もくひょうにむかってがんばります。",
     "meaning": "朝着目标努力。",
     "level": "N3",
-    "meaningEn": "Work towards your goals.",
+    "meaningEn": "I'll keep working toward my goal.",
     "topic": "励志感悟"
   },
   {
@@ -7331,7 +7331,7 @@
     "reading": "ゆめをかなえたいです。",
     "meaning": "想实现梦想。",
     "level": "N3",
-    "meaningEn": "Want to realize the dream.",
+    "meaningEn": "I want to make my dream come true.",
     "topic": "励志感悟"
   },
   {
@@ -7394,7 +7394,7 @@
     "reading": "きどくスルーされた。",
     "meaning": "已读不回。",
     "level": "N3",
-    "meaningEn": "Cannot read back.",
+    "meaningEn": "They left me on read.",
     "topic": "日常场景"
   },
   {
@@ -7403,8 +7403,8 @@
     "reading": "ギガがたりない。",
     "meaning": "流量不够了。",
     "level": "N3",
-    "meaningEn": "There is not enough traffic.",
-    "topic": "日常场景"
+    "meaningEn": "I don't have enough mobile data left.",
+    "topic": "科技网络"
   },
   {
     "id": 824,
@@ -7412,7 +7412,7 @@
     "reading": "おりかえしでんわします。",
     "meaning": "我回电话。",
     "level": "N3",
-    "meaningEn": "I called back.",
+    "meaningEn": "I'll call you back.",
     "topic": "日常场景"
   },
   {
@@ -7421,8 +7421,8 @@
     "reading": "くちコミをさんこうにしました。",
     "meaning": "参考了评价。",
     "level": "N3",
-    "meaningEn": "Refer to reviews.",
-    "topic": "工作职场"
+    "meaningEn": "I used the reviews as a reference.",
+    "topic": "购物"
   },
   {
     "id": 826,
@@ -7449,7 +7449,7 @@
     "meaning": "数据不见了。",
     "level": "N3",
     "meaningEn": "The data is gone.",
-    "topic": "思考议论"
+    "topic": "科技网络"
   },
   {
     "id": 829,
@@ -7475,7 +7475,7 @@
     "reading": "はいそうじょうきょうをかくにんします。",
     "meaning": "确认配送状况。",
     "level": "N3",
-    "meaningEn": "Confirm delivery status.",
+    "meaningEn": "I'll check the delivery status.",
     "topic": "日常场景"
   },
   {
@@ -7584,7 +7584,7 @@
     "meaning": "湿度高很不舒服。",
     "level": "N3",
     "meaningEn": "High humidity is uncomfortable.",
-    "topic": "健康医疗"
+    "topic": "天气自然"
   },
   {
     "id": 844,
@@ -7646,7 +7646,7 @@
     "reading": "かんじがおぼえられません。",
     "meaning": "记不住汉字。",
     "level": "N3",
-    "meaningEn": "Can't remember Chinese characters.",
+    "meaningEn": "I can't memorize the kanji.",
     "topic": "日语学习"
   },
   {
@@ -7772,7 +7772,7 @@
     "reading": "やるきがでてきました。",
     "meaning": "干劲上来了。",
     "level": "N3",
-    "meaningEn": "The energy is up.",
+    "meaningEn": "I'm feeling motivated now.",
     "topic": "日常场景"
   },
   {
@@ -7817,8 +7817,8 @@
     "reading": "おみくじをひきました。",
     "meaning": "抽了签。",
     "level": "N3",
-    "meaningEn": "Lots were drawn.",
-    "topic": "日常场景"
+    "meaningEn": "I drew an omikuji (fortune slip).",
+    "topic": "日本文化"
   },
   {
     "id": 870,
@@ -7826,7 +7826,7 @@
     "reading": "としこしそばをたべます。",
     "meaning": "吃跨年荞麦面。",
     "level": "N3",
-    "meaningEn": "Eating New Year’s Eve soba noodles.",
+    "meaningEn": "We eat toshikoshi soba (New Year’s Eve noodles).",
     "topic": "饮食餐厅"
   },
   {
@@ -7853,7 +7853,7 @@
     "reading": "たなばたにねがいごとをかきます。",
     "meaning": "七夕写愿望。",
     "level": "N3",
-    "meaningEn": "Write wishes on Chinese Valentine’s Day.",
+    "meaningEn": "On Tanabata, we write our wishes (on strips of paper).",
     "topic": "日本文化"
   },
   {
@@ -7880,7 +7880,7 @@
     "reading": "ひっこしのあいさつにいきました。",
     "meaning": "去做了搬家的问候。",
     "level": "N3",
-    "meaningEn": "Went to do the moving greetings.",
+    "meaningEn": "I went around to greet my new neighbors after moving.",
     "topic": "日常生活"
   },
   {
@@ -7943,7 +7943,7 @@
     "reading": "これからもずっとともだちでいてね。",
     "meaning": "以后也一直做朋友哦。",
     "level": "N3",
-    "meaningEn": "We will always be friends from now on.",
+    "meaningEn": "Let's stay friends forever, okay?",
     "topic": "人际关系"
   },
   {
@@ -7970,7 +7970,7 @@
     "reading": "ダイエットちゅうなのに、ケーキをたべてしまいました。",
     "meaning": "明明在减肥，却吃了蛋糕。",
     "level": "N3",
-    "meaningEn": "I was obviously losing weight, but I ate cake.",
+    "meaningEn": "I'm on a diet, but I ended up eating cake anyway.",
     "topic": "饮食餐厅"
   },
   {
@@ -8078,7 +8078,7 @@
     "reading": "でんしゃがこんでいたから、いっぽんみおくりました。",
     "meaning": "因为电车太挤了，放过了一班。",
     "level": "N3",
-    "meaningEn": "Because the tram was too crowded, I missed one.",
+    "meaningEn": "The train was so crowded I let one go and waited for the next.",
     "topic": "交通出行"
   },
   {
@@ -8087,8 +8087,8 @@
     "reading": "ひとでがたりないので、だれかてつだってもらえませんか。",
     "meaning": "因为人手不够，能找谁来帮忙吗？",
     "level": "N3",
-    "meaningEn": "Because there are not enough manpower, can anyone help me?",
-    "topic": "人际关系"
+    "meaningEn": "We're short on staff—could someone help out?",
+    "topic": "工作职场"
   },
   {
     "id": 900,
@@ -8096,8 +8096,8 @@
     "reading": "コロナのえいきょうで、にねんかんきこくできませんでした。",
     "meaning": "受疫情影响，两年没能回国。",
     "level": "N3",
-    "meaningEn": "Affected by the epidemic, I was unable to return to China for two years.",
-    "topic": "日本文化"
+    "meaningEn": "Because of COVID, I couldn't return to my home country for two years.",
+    "topic": "日常场景"
   },
   {
     "id": 901,
@@ -8114,7 +8114,7 @@
     "reading": "やすければかいたいけど、このねだんだとちょっときびしいです。",
     "meaning": "便宜的话想买，但这个价格有点勉强。",
     "level": "N3",
-    "meaningEn": "I would buy it if it was cheap, but the price is a bit reluctant.",
+    "meaningEn": "I'd buy it if it were cheaper, but at this price it's a stretch.",
     "topic": "购物"
   },
   {
@@ -8231,7 +8231,7 @@
     "reading": "あのふたり、どうやらつきあっているみたいですよ。",
     "meaning": "那两个人，好像在交往。",
     "level": "N3",
-    "meaningEn": "Those two people seemed to be dating.",
+    "meaningEn": "Those two seem to be dating.",
     "topic": "人际关系"
   },
   {
@@ -8249,7 +8249,7 @@
     "reading": "このあたりはむかし、うみだったらしいですよ。",
     "meaning": "这一带以前好像是海。",
     "level": "N3",
-    "meaningEn": "This area seemed to be the sea before.",
+    "meaningEn": "Apparently this area used to be ocean.",
     "topic": "日常场景"
   },
   {
@@ -8276,7 +8276,7 @@
     "reading": "ことしこそにほんごのうりょくしけんにごうかくしようとおもっています。",
     "meaning": "今年一定要通过日语能力考试。",
     "level": "N3",
-    "meaningEn": "You must pass the Japanese Language Proficiency Test this year.",
+    "meaningEn": "I'm determined to pass the JLPT this year.",
     "topic": "日语学习"
   },
   {
@@ -8285,7 +8285,7 @@
     "reading": "てんしょくするかどうか、もうすこしかんがえてからきめるつもりです。",
     "meaning": "要不要跳槽，打算再想想再决定。",
     "level": "N3",
-    "meaningEn": "Whether you want to change jobs or not, I plan to think about it again before deciding.",
+    "meaningEn": "I'll decide whether to change jobs after I've thought it over a bit more.",
     "topic": "工作职场"
   },
   {
@@ -8312,7 +8312,7 @@
     "reading": "もうまよわない、じぶんのみちはじぶんできめようとおもいます。",
     "meaning": "不再犹豫了，自己的路自己决定。",
     "level": "N3",
-    "meaningEn": "No more hesitation, decide your own path.",
+    "meaningEn": "No more wavering—I'll choose my own path.",
     "topic": "思考议论"
   },
   {
@@ -8357,7 +8357,7 @@
     "reading": "でんしゃのなかであしをふまれて、すごくいたかったです。",
     "meaning": "在电车上被踩了脚，好疼。",
     "level": "N3",
-    "meaningEn": "My foot was stepped on on the tram and it hurt so much.",
+    "meaningEn": "Someone stepped on my foot on the train and it really hurt.",
     "topic": "交通出行"
   },
   {
@@ -8384,7 +8384,7 @@
     "reading": "かれにきゅうにキャンセルされて、ほんとうにこまりました。",
     "meaning": "被他突然取消了，真的很为难。",
     "level": "N3",
-    "meaningEn": "It was really embarrassing to be canceled suddenly by him.",
+    "meaningEn": "He canceled on me at the last minute, and I was really stuck.",
     "topic": "日常场景"
   },
   {
@@ -8402,7 +8402,7 @@
     "reading": "せんぱいにしごとのやりかたをていねいにおしえてもらいました。",
     "meaning": "前辈耐心地教了我工作方法。",
     "level": "N3",
-    "meaningEn": "The seniors patiently taught me how to work.",
+    "meaningEn": "A senior colleague patiently showed me how to do the work.",
     "topic": "工作职场"
   },
   {
@@ -8573,7 +8573,7 @@
     "reading": "あのみせ、ぎょうれつができているからおいしいのかとおもったら、ふつうでした。",
     "meaning": "那家店在排队，以为会好吃，结果一般。",
     "level": "N3",
-    "meaningEn": "I was queuing up at that store, thinking it would be delicious, but the result was mediocre.",
+    "meaningEn": "That place had a line, so I thought the food must be good—but it was only so-so.",
     "topic": "饮食餐厅"
   },
   {
@@ -8672,7 +8672,7 @@
     "reading": "そんなこといわれても、こっちだってこまるんだけど。",
     "meaning": "你那样说我也很为难啊。",
     "level": "N3",
-    "meaningEn": "It’s very difficult for me to say that.",
+    "meaningEn": "Even if you say that, I'm in a tough spot too.",
     "topic": "日常场景"
   },
   {
@@ -8717,7 +8717,7 @@
     "reading": "ちりもつもればやまとなるから、まいにちすこしずつでもちょきんしています。",
     "meaning": "积少成多，所以每天都存一点钱。",
     "level": "N3",
-    "meaningEn": "Little adds up, so save a little money every day.",
+    "meaningEn": "Small amounts add up over time, so I save a little every day.",
     "topic": "日常场景"
   },
   {
@@ -8780,7 +8780,7 @@
     "reading": "さいしょははんたいされたけど、けっかをだしたらみとめてもらえました。",
     "meaning": "一开始被反对，但拿出成果后就被认可了。",
     "level": "N3",
-    "meaningEn": "It was opposed at first, but was accepted after the results were produced.",
+    "meaningEn": "They were against it at first, but once I showed results they came around.",
     "topic": "思考议论"
   },
   {
@@ -8835,7 +8835,7 @@
     "meaning": "很感谢父母，但面对面说不出口。",
     "level": "N3",
     "meaningEn": "I'm very grateful to my parents, but I can't say it face to face.",
-    "topic": "交通出行"
+    "topic": "家庭亲子"
   },
   {
     "id": 983,
@@ -8852,7 +8852,7 @@
     "reading": "あのひとはおこっているようにみえるけど、じつはてれているだけなんですよ。",
     "meaning": "那个人看起来在生气，其实只是害羞了。",
     "level": "N3",
-    "meaningEn": "The man looked angry, but in fact he was just shy.",
+    "meaningEn": "They look angry, but they're really just embarrassed.",
     "topic": "情绪心理"
   },
   {
@@ -8861,7 +8861,7 @@
     "reading": "えんりょしないでなんでもいってくださいね、ちからになれることがあればうれしいです。",
     "meaning": "别客气什么都可以说，能帮上忙的话我很高兴。",
     "level": "N3",
-    "meaningEn": "You're welcome, you can say anything, I'll be happy if I can help.",
+    "meaningEn": "Don't hold back—tell me anything. I'd be glad to help if I can.",
     "topic": "情绪心理"
   },
   {
@@ -8879,7 +8879,7 @@
     "reading": "やりたいことがありすぎて、じかんがいくらあってもたりないです。",
     "meaning": "想做的事太多，时间再多也不够用。",
     "level": "N3",
-    "meaningEn": "There are so many things you want to do and no amount of time is enough.",
+    "meaningEn": "There are so many things I want to do—there's never enough time.",
     "topic": "日常场景"
   },
   {
@@ -8888,7 +8888,7 @@
     "reading": "しらないとちでひとりでせいかつするのはたいへんだけど、せいちょうできるとおもいます。",
     "meaning": "在陌生的地方独自生活虽然辛苦，但能成长。",
     "level": "N3",
-    "meaningEn": "Living alone in a strange place is hard, but you can grow.",
+    "meaningEn": "Living alone in an unfamiliar place is tough, but I think it helps you grow.",
     "topic": "饮食餐厅"
   },
   {
@@ -8906,7 +8906,7 @@
     "reading": "コンビニによろうとおもったんだけど、さいふをわすれたことにきづいてけっきょくやめました。",
     "meaning": "本想顺路去便利店，发现忘了钱包最后算了。",
     "level": "N3",
-    "meaningEn": "I wanted to drop by a convenience store, but I realized I forgot my wallet and ended up forgetting it.",
+    "meaningEn": "I was going to stop by a convenience store, but I realized I'd forgotten my wallet, so I gave up.",
     "topic": "情绪心理"
   },
   {
@@ -8915,7 +8915,7 @@
     "reading": "せんたくものをそとにほしたままでかけたら、きゅうにあめがふってきてぜんぶぬれてしまいました。",
     "meaning": "衣服晾在外面就出门了，结果突然下雨全淋湿了。",
     "level": "N3",
-    "meaningEn": "I hung my clothes outside to dry and went out, but suddenly it started to rain and I got all wet.",
+    "meaningEn": "I went out leaving laundry hanging outside, and when it suddenly rained, everything got soaked.",
     "topic": "问候寒暄"
   },
   {
@@ -8942,7 +8942,7 @@
     "reading": "エレベーターがこんでいたので、かいだんであがったらいきがきれてしまいました。",
     "meaning": "电梯太挤了走楼梯上去，结果喘不上气来了。",
     "level": "N3",
-    "meaningEn": "The elevator was so crowded that I couldn't breathe when I took the stairs to go up.",
+    "meaningEn": "The elevator was packed, so I took the stairs and ended up out of breath.",
     "topic": "思考议论"
   },
   {
@@ -8996,8 +8996,8 @@
     "reading": "たくはいびんがとどくよていだったからいちにちじゅういえにいたのに、けっきょくこなくてじかんをむだにしました。",
     "meaning": "快递说要送到所以在家待了一天，结果没来白等了。",
     "level": "N3",
-    "meaningEn": "The courier said it would be delivered, so I stayed at home for a day, but it didn't come and I waited in vain.",
-    "topic": "思考议论"
+    "meaningEn": "A delivery was supposed to arrive, so I stayed home all day—but it never came and I wasted the day.",
+    "topic": "日常场景"
   },
   {
     "id": 1001,
@@ -9006,7 +9006,7 @@
     "meaning": "虫子飞进房间大惊小怪的，结果让它跑了没找到。",
     "level": "N3",
     "meaningEn": "The bug flew into the room and made a fuss, but it escaped and was not found.",
-    "topic": "思考议论"
+    "topic": "日常场景"
   },
   {
     "id": 1002,
@@ -9023,7 +9023,7 @@
     "reading": "かいぎがながびいてひるごはんをたべるじかんがなかったから、おにぎりをデスクでたべました。",
     "meaning": "会议开太久没时间吃午饭，在桌上吃了饭团。",
     "level": "N3",
-    "meaningEn": "The meeting lasted too long and I didn’t have time to have lunch, so I ate rice balls on the table.",
+    "meaningEn": "The meeting ran long and I didn’t have time for lunch, so I ate onigiri at my desk.",
     "topic": "饮食餐厅"
   },
   {
@@ -9039,9 +9039,9 @@
     "id": 1005,
     "word": "やっと休みが取れると思ったら、急な出張が入ってしまいました。",
     "reading": "やっとやすみがとれるとおもったら、きゅうなしゅっちょうがはいってしまいました。",
-    "meaning": "好不容易能休息了，结果突然要出差。",
+    "meaning": "本以为终于能休到假了，结果突然要出差。",
     "level": "N3",
-    "meaningEn": "I finally got some rest, but suddenly I had to go on a business trip.",
+    "meaningEn": "I thought I’d finally get some time off, but a sudden business trip came up.",
     "topic": "工作职场"
   },
   {
@@ -9050,8 +9050,8 @@
     "reading": "どうりょうにしごとをたのんだら、おもっていたのとぜんぜんちがうものができあがってきてこまりました。",
     "meaning": "拜托同事做的工作，出来的东西和想的完全不一样，很为难。",
     "level": "N3",
-    "meaningEn": "I asked my colleagues to do the work, but what came out was completely different from what I expected, which was very embarrassing.",
-    "topic": "问候寒暄"
+    "meaningEn": "I asked a coworker to handle the task, but what came back was nothing like what I’d expected, and I didn’t know what to do.",
+    "topic": "工作职场"
   },
   {
     "id": 1007,
@@ -9086,8 +9086,8 @@
     "reading": "ともだちにそうだんしたかったんだけど、しんぱいさせたくなくてけっきょくいえませんでした。",
     "meaning": "想找朋友商量，但不想让人担心最终没说出口。",
     "level": "N3",
-    "meaningEn": "I want to discuss it with a friend, but I don’t want people to worry about not saying anything in the end.",
-    "topic": "交通出行"
+    "meaningEn": "I wanted to talk to a friend about it, but I didn’t want to worry them, so in the end I couldn’t bring myself to say anything.",
+    "topic": "人际关系"
   },
   {
     "id": 1011,
@@ -9122,8 +9122,8 @@
     "reading": "このみせ、くちコミではひょうかがたかかったけど、じっさいにきてみたらふつうでちょっとがっかりしました。",
     "meaning": "这家店评价很高，但实际来了觉得一般有点失望。",
     "level": "N3",
-    "meaningEn": "This store has high reviews, but I was a bit disappointed when I actually came here.",
-    "topic": "工作职场"
+    "meaningEn": "This place had great reviews online, but when I actually came, it was just average and I was a little let down.",
+    "topic": "饮食餐厅"
   },
   {
     "id": 1015,
@@ -9140,7 +9140,7 @@
     "reading": "たべほうだいにきたからにはもとをとろうとおもってたべすぎて、かえりのでんしゃできもちわるくなりました。",
     "meaning": "既然来了自助就想吃回本，吃太多在回去的电车上恶心了。",
     "level": "N3",
-    "meaningEn": "Since I came to the buffet, I wanted to eat back, but I felt sick on the train back after eating too much.",
+    "meaningEn": "Since I’d come to an all-you-can-eat place, I tried to get my money’s worth and overate, then felt sick on the train home.",
     "topic": "饮食餐厅"
   },
   {
@@ -9158,7 +9158,7 @@
     "reading": "ダイエットしようとおもってやさいばかりたべていたら、ちからがでなくてしごとにしゅうちゅうできませんでした。",
     "meaning": "想减肥光吃蔬菜，结果没力气工作集中不了。",
     "level": "N3",
-    "meaningEn": "If you want to lose weight and only eat vegetables, you will have no energy and cannot concentrate at work.",
+    "meaningEn": "I tried to diet by eating mostly vegetables and ended up with no energy—I couldn’t focus at work.",
     "topic": "饮食餐厅"
   },
   {
@@ -9167,7 +9167,7 @@
     "reading": "れいぞうこのおくからしょうみきげんがはんとしもきれたヨーグルトがでてきて、じぶんでもひきました。",
     "meaning": "冰箱深处发现了过期半年的酸奶，自己都吓到了。",
     "level": "N3",
-    "meaningEn": "I was shocked to find yogurt that was half a year old and expired deep in the refrigerator.",
+    "meaningEn": "I found yogurt at the back of the fridge that had been expired for six months—even I was grossed out.",
     "topic": "饮食餐厅"
   },
   {
@@ -9185,7 +9185,7 @@
     "reading": "まんいんでんしゃであしをふまれたのに、こみすぎてだれにふまれたかもわかりませんでした。",
     "meaning": "在满员电车上被踩了脚，但太挤了连是谁踩的都不知道。",
     "level": "N3",
-    "meaningEn": "I was stepped on on a crowded tram, but it was so crowded that I didn’t even know who stepped on it.",
+    "meaningEn": "Someone stepped on my foot on a packed train, but it was so crowded I couldn’t tell who it was.",
     "topic": "交通出行"
   },
   {
@@ -9203,8 +9203,8 @@
     "reading": "しゅうでんをのがしてしまって、しかたなくまんがきっさであさまですごしました。",
     "meaning": "错过末班车了，没办法在漫画咖啡厅待到天亮。",
     "level": "N3",
-    "meaningEn": "I missed the last train and couldn't stay at the comic cafe until dawn.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I missed the last train, so I had no choice but to kill time at a manga café until morning.",
+    "topic": "住宿旅行"
   },
   {
     "id": 1024,
@@ -9212,7 +9212,7 @@
     "reading": "みちをきいたらていねいにおしえてくれたんだけど、ほうこうおんちだからやっぱりまよいました。",
     "meaning": "问了路人家很仔细地告诉我了，但因为路痴还是迷路了。",
     "level": "N3",
-    "meaningEn": "I asked the passersby and they told me carefully, but I still got lost because I was crazy about the road.",
+    "meaningEn": "Someone kindly gave me directions, but I’m hopeless with directions and I still got lost.",
     "topic": "交通出行"
   },
   {
@@ -9221,8 +9221,8 @@
     "reading": "ネットでみたときはよさそうだったのに、とどいてみたらしゃしんとぜんぜんちがってがっかりしました。",
     "meaning": "网上看着挺好的，收到发现和照片完全不一样很失望。",
     "level": "N3",
-    "meaningEn": "It looked good online, but I was disappointed when I received it and found it was completely different from the photo.",
-    "topic": "情绪心理"
+    "meaningEn": "It looked good online, but when it arrived it looked nothing like the photos—I was really disappointed.",
+    "topic": "购物"
   },
   {
     "id": 1026,
@@ -9248,8 +9248,8 @@
     "reading": "ホテルのよやくをまちがえていちにちはやくとってしまって、とうじつはあきがなくてたいへんでした。",
     "meaning": "酒店预约搞错了早订了一天，当天没有空房很狼狈。",
     "level": "N3",
-    "meaningEn": "I made a mistake in making a hotel reservation and booked it a day early. It was very embarrassing when there was no vacancy on the same day.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I messed up the hotel booking and reserved a day too early, so on the day I actually needed a room there was no availability—it was a mess.",
+    "topic": "住宿旅行"
   },
   {
     "id": 1029,
@@ -9257,8 +9257,8 @@
     "reading": "スーツケースがこわれてあかなくなって、ホテルのフロントにたすけてもらいました。",
     "meaning": "行李箱坏了打不开，让酒店前台帮忙了。",
     "level": "N3",
-    "meaningEn": "The suitcase was broken and could not be opened, so I asked the hotel front desk to help.",
-    "topic": "饮食餐厅"
+    "meaningEn": "My suitcase broke and wouldn’t open, so I got help at the hotel front desk.",
+    "topic": "住宿旅行"
   },
   {
     "id": 1030,
@@ -9275,8 +9275,8 @@
     "reading": "くすりをのんだらねむくなるっていわれたけど、ほんとうにすぐねむくなってしごとにならなかったです。",
     "meaning": "被告知吃了药会犯困，果然一吃就困得没法工作。",
     "level": "N3",
-    "meaningEn": "I was told that taking the medicine would make me sleepy, but as soon as I took it, I was so sleepy that I couldn't work.",
-    "topic": "饮食餐厅"
+    "meaningEn": "They said the medicine might make me drowsy, and it really did—I got sleepy right away and couldn’t get any work done.",
+    "topic": "健康医疗"
   },
   {
     "id": 1032,
@@ -9293,8 +9293,8 @@
     "reading": "まいにちはちじかんねているのにつかれがとれないから、すいみんのしつがわるいのかもしれません。",
     "meaning": "每天睡八小时还是累，可能是睡眠质量不好。",
     "level": "N3",
-    "meaningEn": "If you are still tired after sleeping eight hours a day, it may be because your sleep quality is not good.",
-    "topic": "购物"
+    "meaningEn": "I sleep eight hours a night but still feel tired—maybe my sleep quality is poor.",
+    "topic": "健康医疗"
   },
   {
     "id": 1034,
@@ -9329,8 +9329,8 @@
     "reading": "さいしょははずかしくてにほんごをつかえなかったけど、まちがってもいいやとおもったららくになりました。",
     "meaning": "一开始不好意思用日语，但想着错了也没关系就轻松多了。",
     "level": "N3",
-    "meaningEn": "I was embarrassed to use Japanese at first, but it made me feel more relaxed after thinking that it’s okay if I’m wrong.",
-    "topic": "问候寒暄"
+    "meaningEn": "I was embarrassed to use Japanese at first, but once I decided it was okay to make mistakes, I felt a lot better.",
+    "topic": "日语学习"
   },
   {
     "id": 1038,
@@ -9347,8 +9347,8 @@
     "reading": "てんきよほうをしんじてうすぎででかけたら、ごごからきゅうにひえこんでこうかいしました。",
     "meaning": "相信天气预报穿得少出门了，下午突然变冷后悔了。",
     "level": "N3",
-    "meaningEn": "I believed the weather forecast and went out wearing less clothes, but regretted it when it suddenly got cold in the afternoon.",
-    "topic": "问候寒暄"
+    "meaningEn": "I trusted the forecast and dressed light, but it suddenly turned cold in the afternoon and I regretted it.",
+    "topic": "天气自然"
   },
   {
     "id": 1040,
@@ -9356,7 +9356,7 @@
     "reading": "つゆのじきはせんたくものがかわかないし、へやもジメジメするし、ほんとうにいやになります。",
     "meaning": "梅雨季衣服晾不干屋子也潮乎乎的，真讨厌。",
     "level": "N3",
-    "meaningEn": "During the rainy season, the house will be damp even if the clothes are not dried, which is really annoying.",
+    "meaningEn": "During the rainy season, laundry won’t dry and the room feels clammy—it really gets to me.",
     "topic": "天气自然"
   },
   {
@@ -9374,7 +9374,7 @@
     "reading": "さくらがさいたとおもったら、あっというまにちってしまって、ことしもおはなみできませんでした。",
     "meaning": "刚开了樱花转眼就落了，今年又没赏成花。",
     "level": "N3",
-    "meaningEn": "The cherry blossoms just bloomed and fell in a blink of an eye, and they didn’t bloom this year.",
+    "meaningEn": "The cherry blossoms seemed to bloom and then scatter in no time—I missed hanami again this year.",
     "topic": "天气自然"
   },
   {
@@ -9410,7 +9410,7 @@
     "reading": "がんばっているひとをみると、じぶんもがんばろうというきもちになれるからふしぎです。",
     "meaning": "看到努力的人自己也会想加油，真是不可思议。",
     "level": "N3",
-    "meaningEn": "It’s incredible to see people who are working hard and want to work hard themselves.",
+    "meaningEn": "Seeing someone give their all makes me want to try harder too—it’s funny how that works.",
     "topic": "励志感悟"
   },
   {
@@ -9419,7 +9419,7 @@
     "reading": "あしたはやいのにめがさえてねむれなくて、けっきょくスマホをいじってよけいにめがさめてしまいました。",
     "meaning": "明天要早起却精神得睡不着，结果刷手机越刷越清醒了。",
     "level": "N3",
-    "meaningEn": "I had to get up early tomorrow but I was too energetic to fall asleep. As a result, I became more and more awake as I scrolled through my phone.",
+    "meaningEn": "I had to get up early the next day but couldn’t sleep, so I scrolled on my phone and only felt more awake.",
     "topic": "科技网络"
   },
   {
@@ -9437,7 +9437,7 @@
     "reading": "ともだちとりょこうのけいかくをたてるのはたのしいけど、よていがあわなさすぎてまいかいじつげんしません。",
     "meaning": "和朋友策划旅行很开心，但时间总是对不上每次都没实现。",
     "level": "N3",
-    "meaningEn": "It’s fun to plan a trip with friends, but the time doesn’t always come true.",
+    "meaningEn": "It’s fun to plan trips with friends, but our schedules hardly ever line up, so it never works out.",
     "topic": "住宿旅行"
   },
   {
@@ -9455,8 +9455,8 @@
     "reading": "つうきんラッシュをさけるためにはやくでたのに、みんなおなじことをかんがえていてやっぱりこんでいました。",
     "meaning": "为了避开通勤高峰早出门了，结果大家想法一样还是挤。",
     "level": "N3",
-    "meaningEn": "I went out early to avoid the rush hour, but everyone had the same idea and it was still crowded.",
-    "topic": "问候寒暄"
+    "meaningEn": "I left early to beat the commute crush, but everyone else thought the same way and it was still packed.",
+    "topic": "交通出行"
   },
   {
     "id": 1052,
@@ -9500,7 +9500,7 @@
     "reading": "かのじょに「おこってないよ」といわれたけど、あきらかにおこっているかおだったのでこわかったです。",
     "meaning": "女朋友说'我没生气'，但明显是生气的脸所以很害怕。",
     "level": "N3",
-    "meaningEn": "My girlfriend said 'I'm not angry', but her face was obviously angry so she was scared.",
+    "meaningEn": "My girlfriend said she wasn’t mad, but her face clearly said otherwise—it was scary.",
     "topic": "情绪心理"
   },
   {
@@ -9555,7 +9555,7 @@
     "level": "N3",
     "id": 1062,
     "meaningEn": "I really regret asking.",
-    "topic": "励志感悟"
+    "topic": "情绪心理"
   },
   {
     "word": "言おうかどうか迷ったけど、やっぱり正直に言うことにしました。",
@@ -9662,7 +9662,7 @@
     "meaning": "想休息但没有替代的人所以不能休息。",
     "level": "N3",
     "id": 1074,
-    "meaningEn": "People who want to rest but don’t have a replacement so they can’t.",
+    "meaningEn": "I want to take time off, but there’s no one to cover for me, so I can’t.",
     "topic": "日常场景"
   },
   {
@@ -9689,7 +9689,7 @@
     "meaning": "不住住看的话不知道的事情，还挺多的吧。",
     "level": "N3",
     "id": 1077,
-    "meaningEn": "There are quite a lot of things you wouldn’t know if you kept watching.",
+    "meaningEn": "There’s a lot you don’t know until you’ve actually lived somewhere.",
     "topic": "日常场景"
   },
   {
@@ -9698,8 +9698,8 @@
     "meaning": "想进去结果满座，被告知要等三十分钟。",
     "level": "N3",
     "id": 1078,
-    "meaningEn": "I wanted to go in but it was full and I was told that I would have to wait for thirty minutes.",
-    "topic": "思考议论"
+    "meaningEn": "When I tried to go in, they were full and told me it would be a thirty-minute wait.",
+    "topic": "饮食餐厅"
   },
   {
     "word": "家を出ようとした瞬間に雨が降り出して、結局出かけるのをやめました。",
@@ -9716,8 +9716,8 @@
     "meaning": "忘了交报告，被老师骂了。",
     "level": "N3",
     "id": 1080,
-    "meaningEn": "I forgot to hand in the report and was scolded by the teacher.",
-    "topic": "工作职场"
+    "meaningEn": "I forgot to turn in my report and got scolded by the teacher.",
+    "topic": "日常场景"
   },
   {
     "word": "確かにカバンに入れたはずなのに、いくら探しても見つかりません。",
@@ -9761,8 +9761,8 @@
     "meaning": "不知道想过多少次要放弃，但结果现在还在继续着。",
     "level": "N3",
     "id": 1085,
-    "meaningEn": "I don’t know how many times I thought about giving up, but the result is still going on.",
-    "topic": "思考议论"
+    "meaningEn": "I’ve lost count of how many times I’ve wanted to quit, but I’m still going.",
+    "topic": "励志感悟"
   },
   {
     "word": "走ったのに間に合わなくて、次の電車を待つことにしました。",
@@ -9770,7 +9770,7 @@
     "meaning": "跑了还是没赶上，只好等下一班电车。",
     "level": "N3",
     "id": 1086,
-    "meaningEn": "I ran but still didn't catch up, so I had to wait for the next tram.",
+    "meaningEn": "I ran but still missed it, so I waited for the next train.",
     "topic": "交通出行"
   },
   {
@@ -9779,7 +9779,7 @@
     "meaning": "不小心坐上了反方向的电车。",
     "level": "N3",
     "id": 1087,
-    "meaningEn": "I accidentally got on a tram going in the opposite direction.",
+    "meaningEn": "I accidentally got on a train going the wrong way.",
     "topic": "交通出行"
   },
   {
@@ -9788,8 +9788,8 @@
     "meaning": "坐过了站，一直坐到了终点站。",
     "level": "N3",
     "id": 1088,
-    "meaningEn": "I sat past the station and all the way to the terminal.",
-    "topic": "日常场景"
+    "meaningEn": "I slept through my stop and ended up riding all the way to the last stop.",
+    "topic": "交通出行"
   },
   {
     "word": "やっと座れたと思ったら、次の駅で降りなきゃいけませんでした。",
@@ -9797,8 +9797,8 @@
     "meaning": "好不容易坐下了，结果下一站就得下车。",
     "level": "N3",
     "id": 1089,
-    "meaningEn": "I finally sat down, but I had to get off at the next stop.",
-    "topic": "思考议论"
+    "meaningEn": "I’d finally gotten a seat, but I had to get off at the very next station.",
+    "topic": "交通出行"
   },
   {
     "word": "雨が降りそうだったから念のため傘を持っていったら、大正解でした。",
@@ -9806,7 +9806,7 @@
     "meaning": "天看着要下雨就带了伞，果然带对了。",
     "level": "N3",
     "id": 1090,
-    "meaningEn": "It looked like it was going to rain, so I brought an umbrella. Sure enough, I brought the right umbrella.",
+    "meaningEn": "It looked like rain, so I brought an umbrella just in case—and that turned out to be exactly the right call.",
     "topic": "天气自然"
   },
   {
@@ -9824,8 +9824,8 @@
     "meaning": "想请假但一直说不出口。",
     "level": "N3",
     "id": 1092,
-    "meaningEn": "I wanted to take a leave of absence but couldn't say it.",
-    "topic": "交通出行"
+    "meaningEn": "I want to request time off, but I can’t bring myself to ask.",
+    "topic": "工作职场"
   },
   {
     "word": "メールを送ったつもりだったのに、送れていなかったみたいです。",
@@ -9842,8 +9842,8 @@
     "meaning": "该到的包裹还没到，很担心。",
     "level": "N3",
     "id": 1094,
-    "meaningEn": "The package that was supposed to arrive hasn't arrived yet, so I'm worried.",
-    "topic": "情绪心理"
+    "meaningEn": "The package that should have arrived still hasn’t shown up, and I’m worried.",
+    "topic": "购物"
   },
   {
     "word": "プレゼントをもらったのは嬉しいけど、正直どこに置くか困っています。",
@@ -9878,8 +9878,8 @@
     "meaning": "借了之后忘了还，感到非常抱歉。",
     "level": "N3",
     "id": 1098,
-    "meaningEn": "I borrowed it and forgot to return it. I feel very sorry.",
-    "topic": "问候寒暄"
+    "meaningEn": "I borrowed it and forgot to give it back—I felt awful about it.",
+    "topic": "人际关系"
   },
   {
     "word": "返さなきゃと思いながら、もう三ヶ月経ってしまいました。",
@@ -9887,8 +9887,8 @@
     "meaning": "心想着必须还，结果已经过了三个月了。",
     "level": "N3",
     "id": 1099,
-    "meaningEn": "I thought I had to pay it back, but it turned out that it had already been three months.",
-    "topic": "思考议论"
+    "meaningEn": "I kept telling myself I had to return it, but three months have already gone by.",
+    "topic": "日常场景"
   },
   {
     "word": "探しても探しても見つからなくて、結局新しいのを買いました。",
@@ -9951,7 +9951,7 @@
     "level": "N3",
     "id": 1106,
     "meaningEn": "After coming to Japan, my thoughts changed a lot.",
-    "topic": "日常场景"
+    "topic": "日本文化"
   },
   {
     "word": "指を切ってしまったけど、絆創膏を貼ったら大丈夫でした。",
@@ -9995,7 +9995,7 @@
     "meaning": "改了多少次还是在同一个地方出错。",
     "level": "N3",
     "id": 1111,
-    "meaningEn": "No matter how many times I changed it, I still made an error in the same place.",
+    "meaningEn": "No matter how many times I correct myself, I keep making the same mistake in the same spot.",
     "topic": "日常场景"
   },
   {
@@ -10040,7 +10040,7 @@
     "meaning": "低头道了歉，对方也就原谅了。",
     "level": "N3",
     "id": 1116,
-    "meaningEn": "He bowed his head and apologized, and the other party forgave him.",
+    "meaningEn": "I apologized with a bow, and they forgave me.",
     "topic": "日常场景"
   },
   {
@@ -10067,8 +10067,8 @@
     "meaning": "大家好久不见聚在一起，非常开心。",
     "level": "N3",
     "id": 1119,
-    "meaningEn": "It’s been a long time since we all got together and we were very happy.",
-    "topic": "问候寒暄"
+    "meaningEn": "It’s been a long time since we all got together and we had a great time.",
+    "topic": "人际关系"
   },
   {
     "word": "二時間も並んだのに売り切れで、がっかりしました。",
@@ -10094,8 +10094,8 @@
     "meaning": "赶时间却碰上红灯，结果还是迟到了。",
     "level": "N3",
     "id": 1122,
-    "meaningEn": "I was in a hurry but ran into a red light, and ended up being late.",
-    "topic": "思考议论"
+    "meaningEn": "I was in a hurry but kept hitting red lights, and ended up late.",
+    "topic": "交通出行"
   },
   {
     "word": "子供の頃はよく遊んだのに、大人になると遊ぶ時間がなくなりますね。",
@@ -10103,7 +10103,7 @@
     "meaning": "小时候经常玩，长大后就没时间玩了。",
     "level": "N3",
     "id": 1123,
-    "meaningEn": "I used to play it a lot when I was a kid, but when I grew up, I had no time to play.",
+    "meaningEn": "I used to play all the time as a kid, but as an adult there’s hardly any time to play.",
     "topic": "日常场景"
   },
   {
@@ -10121,7 +10121,7 @@
     "meaning": "被说笑的时候最好看，不好意思了。",
     "level": "N3",
     "id": 1125,
-    "meaningEn": "I look best when I'm being laughed at, I'm sorry.",
+    "meaningEn": "Someone told me I look best when I smile, and I got embarrassed.",
     "topic": "日常场景"
   },
   {
@@ -10148,7 +10148,7 @@
     "meaning": "突然被那样说，我这边也很为难。",
     "level": "N3",
     "id": 1128,
-    "meaningEn": "Being said like that suddenly made me feel embarrassed.",
+    "meaningEn": "When you suddenly say something like that, I’m at a loss too.",
     "topic": "日常场景"
   },
   {
@@ -10157,7 +10157,7 @@
     "meaning": "突然被那样说也很困扰啊。",
     "level": "N3",
     "id": 1129,
-    "meaningEn": "It's very troublesome to be said that suddenly.",
+    "meaningEn": "It’s hard to respond when you bring that up out of nowhere.",
     "topic": "日常场景"
   },
   {
@@ -10175,7 +10175,7 @@
     "meaning": "累到连洗澡的力气都没有了。",
     "level": "N3",
     "id": 1131,
-    "meaningEn": "I was so tired that I didn’t even have the energy to take a shower.",
+    "meaningEn": "I was so tired I didn’t even have the energy to take a bath.",
     "topic": "日常生活"
   },
   {
@@ -10193,8 +10193,8 @@
     "meaning": "本来今天一定要打扫的，结果不知不觉就傍晚了。",
     "level": "N3",
     "id": 1133,
-    "meaningEn": "I had to clean it today, but it was already evening before I knew it.",
-    "topic": "思考议论"
+    "meaningEn": "I’d meant to clean today, but before I knew it it was evening.",
+    "topic": "日常生活"
   },
   {
     "word": "片付けたばかりなのに、もう散らかっているのはなぜですか。",
@@ -10220,8 +10220,8 @@
     "meaning": "犹豫穿什么去，结果还是穿了一样的衣服。",
     "level": "N3",
     "id": 1136,
-    "meaningEn": "I hesitated about what to wear, but ended up wearing the same clothes.",
-    "topic": "思考议论"
+    "meaningEn": "I couldn’t decide what to wear and ended up in my usual outfit.",
+    "topic": "日常场景"
   },
   {
     "word": "靴を脱ぐのを忘れて家に入りそうになって、慌てて戻りました。",
@@ -10238,8 +10238,8 @@
     "meaning": "拜托你早上叫我起来的，结果你没叫我啊。",
     "level": "N3",
     "id": 1138,
-    "meaningEn": "Please wake me up in the morning, but you didn’t wake me up.",
-    "topic": "问候寒暄"
+    "meaningEn": "I asked you to wake me up in the morning, but you didn’t.",
+    "topic": "家庭亲子"
   },
   {
     "word": "雪道で転んでしまって、恥ずかしくて周りを見れませんでした。",
@@ -10256,7 +10256,7 @@
     "meaning": "明明想扔掉的，因为有回忆怎么也扔不了。",
     "level": "N3",
     "id": 1140,
-    "meaningEn": "I obviously want to throw it away, but I can’t throw it away because I have memories.",
+    "meaningEn": "I’ve been meaning to get rid of it, but the memories make it hard to let go.",
     "topic": "日常场景"
   },
   {
@@ -10287,13 +10287,13 @@
     "topic": "日常场景"
   },
   {
-    "word": "信号を渡ろうとしたら急に変わって、走って渡りました。",
-    "reading": "しんごうをわたろうとしたらきゅうにかわって、はしってわたりました。",
-    "meaning": "正要过马路信号灯突然变了，只好跑着过去。",
+    "word": "横断歩道を渡ろうとしたら信号が急に変わって、走って渡りました。",
+    "reading": "おうだんほどうをわたろうとしたらしんごうがきゅうにかわって、はしってわたりました。",
+    "meaning": "正要过斑马线信号灯突然变了，只好跑着过去。",
     "level": "N3",
     "id": 1144,
-    "meaningEn": "When I was about to cross the road, the traffic light suddenly changed, so I had to run across.",
-    "topic": "日常场景"
+    "meaningEn": "I was about to use the crosswalk when the light changed suddenly, so I ran across.",
+    "topic": "交通出行"
   },
   {
     "word": "戻ろうとしたけど、もう遅すぎて引き返せませんでした。",
@@ -10328,8 +10328,8 @@
     "meaning": "追逐梦想虽然很辛苦，但不想放弃。",
     "level": "N3",
     "id": 1148,
-    "meaningEn": "Although chasing your dreams is hard, you don’t want to give up.",
-    "topic": "饮食餐厅"
+    "meaningEn": "Chasing your dream is tough, but I don’t want to give up.",
+    "topic": "励志感悟"
   },
   {
     "word": "電話がなかなかつながらなくて、三十分もかけ直しました。",
@@ -10337,7 +10337,7 @@
     "meaning": "电话一直打不通，打了三十分钟才接上。",
     "level": "N3",
     "id": 1149,
-    "meaningEn": "The call never got through, and it took thirty minutes to get through.",
+    "meaningEn": "I couldn’t get through for ages and kept redialing for thirty minutes.",
     "topic": "日常场景"
   },
   {
@@ -10346,8 +10346,8 @@
     "meaning": "不擅长表达自己的感受，总是事后后悔。",
     "level": "N3",
     "id": 1150,
-    "meaningEn": "He is not good at expressing his feelings and always regrets them afterwards.",
-    "topic": "励志感悟"
+    "meaningEn": "I’m bad at putting my feelings into words and I always regret it afterward.",
+    "topic": "情绪心理"
   },
   {
     "word": "間に合わないかと思ったけど、ギリギリ間に合ってほっとしました。",
@@ -10355,8 +10355,8 @@
     "meaning": "以为赶不上了，结果刚好赶上了松了口气。",
     "level": "N3",
     "id": 1151,
-    "meaningEn": "I thought I couldn't catch up, but I was relieved that I just caught up.",
-    "topic": "思考议论"
+    "meaningEn": "I thought I wouldn’t make it, but I got there just in time—what a relief.",
+    "topic": "交通出行"
   },
   {
     "word": "電車が遅れたせいで、大事な約束に遅れてしまいました。",
@@ -10364,7 +10364,7 @@
     "meaning": "因为电车晚点，重要的约定也迟到了。",
     "level": "N3",
     "id": 1152,
-    "meaningEn": "Because the train was late, important appointments were also late.",
+    "meaningEn": "The train was delayed, so I ended up late for an important appointment.",
     "topic": "交通出行"
   },
   {
@@ -10400,8 +10400,8 @@
     "meaning": "用这个服务的话可以更高效哦。",
     "level": "N3",
     "id": 1156,
-    "meaningEn": "It will be more efficient if you use this service.",
-    "topic": "日常场景"
+    "meaningEn": "Using this service lets you work much more efficiently.",
+    "topic": "科技网络"
   },
   {
     "word": "連絡しようと思っているうちに、一ヶ月も経ってしまいました。",
@@ -10409,8 +10409,8 @@
     "meaning": "想着要联系结果一个月就过去了。",
     "level": "N3",
     "id": 1157,
-    "meaningEn": "After thinking about contacting me, a month passed.",
-    "topic": "思考议论"
+    "meaningEn": "I kept meaning to reach out, and a whole month slipped by.",
+    "topic": "人际关系"
   },
   {
     "word": "時間が全然足りなくて、最後は適当にマークしてしまいました。",
@@ -10418,7 +10418,7 @@
     "meaning": "时间完全不够，最后随便涂了答题卡。",
     "level": "N3",
     "id": 1158,
-    "meaningEn": "There was not enough time at all, so I ended up scribbling on the answer sheet.",
+    "meaningEn": "I ran out of time and ended up guessing on the last questions.",
     "topic": "日常场景"
   },
   {
@@ -10481,7 +10481,7 @@
     "meaning": "那件衣服超适合你，买对了。",
     "level": "N3",
     "id": 1165,
-    "meaningEn": "That dress suits you perfectly, you bought it right.",
+    "meaningEn": "That outfit looks amazing on you—good call buying it.",
     "topic": "购物"
   },
   {
@@ -10508,196 +10508,196 @@
     "meaning": "嘴上说着想瘦，半夜还是吃了冰淇淋。",
     "level": "N3",
     "id": 1168,
-    "meaningEn": "She said she wanted to lose weight, but she still ate ice cream in the middle of the night.",
+    "meaningEn": "I say I want to lose weight, but I still end up eating ice cream late at night.",
     "topic": "饮食餐厅"
   },
   {
     "word": "暑すぎて死にそうだったけど、アイスを食べたら生き返りました。",
     "reading": "あつすぎてしにそうだったけど、あいすをたべたらいきかえりました。",
-    "meaning": "最近觉得活出自己才是最重要的。",
+    "meaning": "热得要命，吃了冰淇淋才缓过来。",
     "level": "N3",
     "id": 1169,
-    "meaningEn": "Recently, I feel that living your own life is the most important thing.",
-    "topic": "日常场景"
+    "meaningEn": "It was so hot I thought I’d die, but ice cream brought me back to life.",
+    "topic": "饮食餐厅"
   },
   {
     "word": "この町で生まれ育ったので、ここ以外に住むことは考えられません。",
     "reading": "このまちでうまれそだったので、ここいがいにすむことはかんがえられません。",
-    "meaning": "热得要死，但吃了冰淇淋就活过来了。",
+    "meaning": "在这座城镇出生长大，从没想过住在别处。",
     "level": "N3",
     "id": 1170,
-    "meaningEn": "It was so hot, but I came back to life with the ice cream.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I was born and raised in this town; I can’t imagine living anywhere else.",
+    "topic": "日常场景"
   },
   {
     "word": "子供を育てながら仕事を続けるのは、想像以上に大変です。",
     "reading": "こどもをそだてながらしごとをつづけるのは、そうぞういじょうにたいへんです。",
-    "meaning": "在这个城镇出生长大，从没想过住在别的地方。",
+    "meaning": "一边带孩子一边工作，比想象中辛苦多了。",
     "level": "N3",
     "id": 1171,
-    "meaningEn": "Born and raised in this town, never imagined living anywhere else.",
-    "topic": "日常场景"
+    "meaningEn": "Keeping your job while raising kids is harder than you’d think.",
+    "topic": "家庭亲子"
   },
   {
     "word": "名前を間違えて呼んでしまって、すごく気まずかったです。",
     "reading": "なまえをまちがえてよんでしまって、すごくきまずかったです。",
-    "meaning": "刚开始不习惯，但习惯了就没什么大不了的。",
+    "meaning": "叫错了名字，特别尴尬。",
     "level": "N3",
     "id": 1172,
-    "meaningEn": "It's not a big deal at first, but once you get used to it, it's not a big deal.",
-    "topic": "日本文化"
+    "meaningEn": "I called them the wrong name and it was really awkward.",
+    "topic": "人际关系"
   },
   {
     "word": "迷惑をかけたくないから、なかなか人に頼れないんです。",
     "reading": "めいわくをかけたくないから、なかなかひとにたよれないんです。",
-    "meaning": "叫错了名字，超级尴尬。",
+    "meaning": "不想给别人添麻烦，所以很难开口求人。",
     "level": "N3",
     "id": 1173,
-    "meaningEn": "Called by the wrong name, super embarrassing.",
-    "topic": "问候寒暄"
+    "meaningEn": "I don’t want to bother people, so it’s hard for me to ask for help.",
+    "topic": "情绪心理"
   },
   {
     "word": "自分には関係ないと思っていたけど、実は深く関係していました。",
     "reading": "じぶんにはかんけいないとおもっていたけど、じつはふかくかんけいしていました。",
-    "meaning": "因为不想给别人添麻烦，所以很难向人求助。",
+    "meaning": "本以为和自己无关，其实牵扯很深。",
     "level": "N3",
     "id": 1174,
-    "meaningEn": "It’s hard to ask for help because I don’t want to cause trouble to others.",
+    "meaningEn": "I thought it had nothing to do with me, but I was more involved than I realized.",
     "topic": "日常场景"
   },
   {
     "word": "努力しているのに結果が出ないのが、一番つらいです。",
     "reading": "どりょくしているのにけっかがでないのが、いちばんつらいです。",
-    "meaning": "提醒了多少次也不改，因为本人不觉得有问题。",
+    "meaning": "明明在努力却没有结果，这最难受。",
     "level": "N3",
     "id": 1175,
-    "meaningEn": "No matter how many times I was reminded, I didn’t change it because I didn’t think there was a problem.",
-    "topic": "思考议论"
+    "meaningEn": "The hardest part is trying your best and still not seeing results.",
+    "topic": "励志感悟"
   },
   {
     "word": "集中しようとしても、隣の人の話し声が気になって集中できません。",
     "reading": "しゅうちゅうしようとしても、となりのひとのはなしごえがきになってしゅうちゅうできません。",
-    "meaning": "明明在努力却没有成果，这最痛苦了。",
+    "meaning": "想集中精神，但旁边人说话的声音很让人分心。",
     "level": "N3",
     "id": 1176,
-    "meaningEn": "The most painful thing is that you are obviously trying hard but have no results.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I try to focus, but the person next to me talking keeps distracting me.",
+    "topic": "日常场景"
   },
   {
     "word": "やっと完成したと思ったのに、ミスが見つかってやり直しです。",
     "reading": "やっとかんせいしたとおもったのに、みすがみつかってやりなおしです。",
-    "meaning": "想集中精力但旁边有人说话没法集中。",
+    "meaning": "以为终于完成了，却发现错误要重做。",
     "level": "N3",
     "id": 1177,
-    "meaningEn": "I want to concentrate but I can't when someone is talking next to me.",
-    "topic": "日常场景"
+    "meaningEn": "I thought I was finally done, but I found a mistake and have to redo it.",
+    "topic": "工作职场"
   },
   {
     "word": "予定より一時間遅れて到着して、迎えに来てくれた人に申し訳なかったです。",
     "reading": "よていよりいちじかんおくれてとうちゃくして、むかえにきてくれたひとにもうしわけなかったです。",
-    "meaning": "出发前一刻找不到票了，慌得不行。",
+    "meaning": "比预定晚到了一小时，对接我的人很过意不去。",
     "level": "N3",
     "id": 1178,
-    "meaningEn": "I couldn't find my ticket just before departure, and I was so panicked.",
-    "topic": "日常场景"
+    "meaningEn": "I arrived an hour late and felt awful toward the person who came to meet me.",
+    "topic": "交通出行"
   },
   {
     "word": "卒業してから十年経つけど、あの頃の友達とはまだ連絡を取っています。",
     "reading": "そつぎょうしてからじゅうねんたつけど、あのころのともだちとはまだれんらくをとっています。",
-    "meaning": "比预定晚了一小时到，对来接我的人很抱歉。",
+    "meaning": "毕业十年了，还和那时的朋友保持着联系。",
     "level": "N3",
     "id": 1179,
-    "meaningEn": "I arrived an hour later than scheduled, so sorry to the person who came to pick me up.",
-    "topic": "问候寒暄"
+    "meaningEn": "It’s been ten years since graduation, and I’m still in touch with friends from back then.",
+    "topic": "人际关系"
   },
   {
     "word": "結婚したいけど、まず相手を見つけないと始まりませんよね。",
     "reading": "けっこんしたいけど、まずあいてをみつけないとはじまりませんよね。",
-    "meaning": "工作之后才深刻体会到学生时代有多自由。",
+    "meaning": "想结婚，但得先找到对象才行呢。",
     "level": "N3",
     "id": 1180,
-    "meaningEn": "It was only after I started working that I realized how free I was as a student.",
-    "topic": "工作职场"
+    "meaningEn": "I want to get married, but nothing starts until you find someone, right?",
+    "topic": "人际关系"
   },
   {
     "word": "こんなに美味しい店が近所に存在していたなんて、今まで知りませんでした。",
     "reading": "こんなにおいしいみせがきんじょにそんざいしていたなんて、いままでしりませんでした。",
-    "meaning": "听到退役的消息时很震惊，但支持新的挑战。",
+    "meaning": "这么好吃的店就在附近，我以前居然不知道。",
     "level": "N3",
     "id": 1181,
-    "meaningEn": "Shocked to hear the news of retirement, but supportive of the new challenge.",
-    "topic": "励志感悟"
+    "meaningEn": "I had no idea such a great restaurant was right in my neighborhood.",
+    "topic": "饮食餐厅"
   },
   {
     "word": "夢を実現するためには、まず小さな一歩を踏み出すことが大事です。",
     "reading": "ゆめをじつげんするためには、まずちいさないっぽをふみだすことがだいじです。",
-    "meaning": "发现了新爱好之后每天都变得开心了。",
+    "meaning": "要实现梦想，重要的是先迈出小小的一步。",
     "level": "N3",
     "id": 1182,
-    "meaningEn": "I feel happier every day after discovering a new hobby.",
-    "topic": "情绪心理"
+    "meaningEn": "To make your dream come true, what matters is taking a small first step.",
+    "topic": "励志感悟"
   },
   {
     "word": "連絡先を交換したのに、結局一度も連絡しないまま終わりました。",
     "reading": "れんらくさきをこうかんしたのに、けっきょくいちども れんらくしないままおわりました。",
-    "meaning": "能冷静应对突发状况的人，由衷地佩服。",
+    "meaning": "明明交换了联系方式，最后却再也没联系过。",
     "level": "N3",
     "id": 1183,
-    "meaningEn": "I sincerely admire people who can calmly respond to emergencies.",
-    "topic": "日常场景"
+    "meaningEn": "We swapped contact info but never messaged each other—not once.",
+    "topic": "人际关系"
   },
   {
     "word": "彼の代わりができる人は誰もいないと思っていたけど、意外と何とかなりました。",
     "reading": "かれのかわりができるひとはだれもいないとおもっていたけど、いがいとなんとかなりました。",
-    "meaning": "AI翻译虽然方便，但细微的语感有时会偏差。",
+    "meaning": "本以为没人能替代他，结果意外地撑过来了。",
     "level": "N3",
     "id": 1184,
-    "meaningEn": "Although AI translation is convenient, the subtle sense of language may sometimes be biased.",
-    "topic": "科技网络"
+    "meaningEn": "I didn’t think anyone could replace him, but we managed somehow.",
+    "topic": "工作职场"
   },
   {
     "word": "雨が一週間も続いて、気分がどんどん沈んでいきます。",
     "reading": "あめがいっしゅうかんもつづいて、きぶんがどんどんしずんでいきます。",
-    "meaning": "以为没人能替代他，但意外地还是撑过来了。",
+    "meaning": "雨下了一周，心情越来越低落。",
     "level": "N3",
     "id": 1185,
-    "meaningEn": "I thought no one could replace him, but surprisingly I managed to survive.",
-    "topic": "饮食餐厅"
+    "meaningEn": "It’s been raining for a week and my mood keeps sinking.",
+    "topic": "天气自然"
   },
   {
     "word": "何もしないで過ごす休日が、実は一番贅沢なのかもしれません。",
     "reading": "なにもしないですごすきゅうじつが、じつはいちばんぜいたくなのかもしれません。",
-    "meaning": "做完所有工作后的啤酒是最好喝的。",
+    "meaning": "什么都不做的假日，说不定其实最奢侈。",
     "level": "N3",
     "id": 1186,
-    "meaningEn": "Beer tastes best after all the work is done.",
-    "topic": "饮食餐厅"
+    "meaningEn": "A holiday where you do nothing might actually be the greatest luxury.",
+    "topic": "日常场景"
   },
   {
     "word": "日本で暮らしてみて初めて分かったことがたくさんあります。",
     "reading": "にほんでくらしてみてはじめてわかったことがたくさんあります。",
-    "meaning": "什么都不做的休息日，可能其实是最奢侈的。",
+    "meaning": "在日本生活以后，才明白了很多事。",
     "level": "N3",
     "id": 1187,
-    "meaningEn": "A day off when you do nothing may actually be the most luxurious.",
-    "topic": "日常场景"
+    "meaningEn": "There’s a lot I only understood after living in Japan.",
+    "topic": "日本文化"
   },
   {
     "word": "一年を振り返ってみると、思ったより成長できたなと思います。",
     "reading": "いちねんをふりかえってみると、おもったよりせいちょうできたなとおもいます。",
-    "meaning": "直面问题虽然很难，但逃避的话迟早也会追上来。",
+    "meaning": "回顾这一年，觉得自己比预想中成长了。",
     "level": "N3",
     "id": 1188,
-    "meaningEn": "Although it is difficult to face the problem head-on, if you avoid it, you will catch up with it sooner or later.",
+    "meaningEn": "Looking back on the year, I feel I’ve grown more than I expected.",
     "topic": "励志感悟"
   },
   {
     "word": "この壁を乗り越えられたら、きっともっと強くなれるはずです。",
     "reading": "このかべをのりこえられたら、きっともっとつよくなれるはずです。",
-    "meaning": "回顾这一年，觉得自己成长了不少。",
+    "meaning": "要是能跨过这道坎，一定会变得更强。",
     "level": "N3",
     "id": 1189,
-    "meaningEn": "Looking back on this year, I feel that I have grown a lot.",
+    "meaningEn": "If I can get past this hurdle, I’m sure I’ll come out stronger.",
     "topic": "励志感悟"
   },
   {
@@ -10706,16 +10706,16 @@
     "meaning": "这家店氛围很好，我都来了好多次了。",
     "level": "N3",
     "id": 1190,
-    "meaningEn": "This store has a great atmosphere and I have been here many times.",
-    "topic": "日常场景"
+    "meaningEn": "This place has such a nice vibe—I keep coming back.",
+    "topic": "饮食餐厅"
   },
   {
     "word": "給料日前だから、手持ちのお金が少ないんだ。",
     "reading": "きゅうりょうびまえだから、てもちのおかねがすくないんだ。",
-    "meaning": "快到发工资的日子了，手头的钱不多。",
+    "meaning": "还没到发薪日，手头钱不多。",
     "level": "N3",
     "id": 1191,
-    "meaningEn": "It's almost salary day, and I don't have much money on hand.",
+    "meaningEn": "It’s before payday, so I don’t have much cash on me.",
     "topic": "工作职场"
   },
   {
@@ -10787,8 +10787,8 @@
     "meaning": "她总是很开朗，和她在一起会被感染到正能量。",
     "level": "N3",
     "id": 1199,
-    "meaningEn": "She is always cheerful and you will be infected with positive energy when you are with her.",
-    "topic": "日常场景"
+    "meaningEn": "She’s always upbeat—being around her lifts my spirits.",
+    "topic": "人际关系"
   },
   {
     "word": "この道、夜になると暗いから一人で歩くのはちょっと怖いよ。",
@@ -10796,8 +10796,8 @@
     "meaning": "这条路晚上很暗，一个人走有点害怕。",
     "level": "N3",
     "id": 1200,
-    "meaningEn": "This road is very dark at night, and it's a bit scary to walk alone.",
-    "topic": "情绪心理"
+    "meaningEn": "This street gets really dark at night—it’s a little scary walking alone.",
+    "topic": "日常场景"
   },
   {
     "word": "白いTシャツってすぐ汚れるから困るんだよね。",
@@ -10806,7 +10806,7 @@
     "level": "N3",
     "id": 1201,
     "meaningEn": "White T-shirts get dirty easily, which is a real headache.",
-    "topic": "健康医疗"
+    "topic": "日常场景"
   },
   {
     "word": "黒い服ばっかり着てると、なんか地味に見えちゃうかな。",
@@ -10892,7 +10892,7 @@
   {
     "word": "このお味噌汁、ちょっとしょっぱくない？お湯足そうか。",
     "reading": "このおみそしる、ちょっとしょっぱくない？おゆたそうか。",
-    "meaning": "这个味增汤是不是有点咸？加点热水吧。",
+    "meaning": "这个味噌汤是不是有点咸？加点热水吧。",
     "level": "N3",
     "id": 1211,
     "meaningEn": "Is this miso soup a little salty? Add some hot water.",
@@ -10922,7 +10922,7 @@
     "meaning": "这个图书馆很安静能集中精神，所以我经常在这里学习。",
     "level": "N3",
     "id": 1214,
-    "meaningEn": "This library is very quiet and can help me concentrate, so I often study here.",
+    "meaningEn": "This library is quiet enough to focus in, so I often study here.",
     "topic": "日语学习"
   },
   {
@@ -10940,7 +10940,7 @@
     "meaning": "今天有空，好久没看了，去看场电影怎么样？",
     "level": "N3",
     "id": 1216,
-    "meaningEn": "I have free time today. I haven’t watched one in a long time. How about going to see a movie?",
+    "meaningEn": "I’m free today—want to go see a movie? It’s been forever.",
     "topic": "兴趣娱乐"
   },
   {
@@ -10949,8 +10949,8 @@
     "meaning": "那个人说话太有趣了，忍不住就笑了。",
     "level": "N3",
     "id": 1217,
-    "meaningEn": "The man's words were so interesting that I couldn't help but laugh.",
-    "topic": "情绪心理"
+    "meaningEn": "The way they talk is so funny I can’t help laughing.",
+    "topic": "日常场景"
   },
   {
     "word": "この映画、評判良かったけど、正直つまらなかった。",
@@ -10958,8 +10958,8 @@
     "meaning": "这部电影口碑不错，但说实话很无聊。",
     "level": "N3",
     "id": 1218,
-    "meaningEn": "This movie has good reviews, but it's honestly pretty boring.",
-    "topic": "情绪心理"
+    "meaningEn": "This movie has good reviews, but honestly it was boring.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "プレゼント気に入ってもらえて、本当に嬉しい。",
@@ -10967,8 +10967,8 @@
     "meaning": "礼物你能喜欢，我真的很高兴。",
     "level": "N3",
     "id": 1219,
-    "meaningEn": "I'm really happy that you like the gift.",
-    "topic": "情绪心理"
+    "meaningEn": "I’m so glad you like the gift.",
+    "topic": "人际关系"
   },
   {
     "word": "ずっと一緒にいた猫がいなくなって、悲しくてたまらない。",
@@ -11030,7 +11030,7 @@
     "meaning": "早上起来脖子好疼，估计是落枕了。",
     "level": "N3",
     "id": 1226,
-    "meaningEn": "My neck hurts when I wake up this morning, I guess it's due to a stiff neck.",
+    "meaningEn": "I woke up with a sore neck—I must have slept on it wrong.",
     "topic": "健康医疗"
   },
   {
@@ -11057,8 +11057,8 @@
     "meaning": "那个前辈对谁都很温柔，大家都喜欢他。",
     "level": "N3",
     "id": 1229,
-    "meaningEn": "That senior was gentle to everyone and everyone liked him.",
-    "topic": "励志感悟"
+    "meaningEn": "That senpai is kind to everyone, and everyone likes them.",
+    "topic": "人际关系"
   },
   {
     "word": "この本は説明が易しくて、初心者でもわかりやすいよ。",
@@ -11067,7 +11067,7 @@
     "level": "N3",
     "id": 1230,
     "meaningEn": "The explanations in this book are very simple and easy to understand, even for beginners.",
-    "topic": "兴趣娱乐"
+    "topic": "日语学习"
   },
   {
     "word": "自分が正しいと思っても、相手の意見もちゃんと聞いたほうがいいよ。",
@@ -11084,8 +11084,8 @@
     "meaning": "这个时间有客人来，真少见啊。",
     "level": "N3",
     "id": 1232,
-    "meaningEn": "It's really rare to have guests come at this time.",
-    "topic": "工作职场"
+    "meaningEn": "Pretty unusual to get a visitor at this hour.",
+    "topic": "日常场景"
   },
   {
     "word": "初めて富士山を見たとき、素晴らしい景色に感動した。",
@@ -11094,7 +11094,7 @@
     "level": "N3",
     "id": 1233,
     "meaningEn": "When I saw Mount Fuji for the first time, I was moved by the magnificent scenery.",
-    "topic": "情绪心理"
+    "topic": "日本文化"
   },
   {
     "word": "桜が満開で、本当に美しい景色だったよ。",
@@ -11111,7 +11111,7 @@
     "meaning": "穿上新西装，超帅的嘛。",
     "level": "N3",
     "id": 1235,
-    "meaningEn": "He looks so handsome in his new suit.",
+    "meaningEn": "That new suit looks amazing on you.",
     "topic": "日常场景"
   },
   {
@@ -11120,8 +11120,8 @@
     "meaning": "这冰箱是不是有点臭？里面可能有什么东西坏了。",
     "level": "N3",
     "id": 1236,
-    "meaningEn": "Does this refrigerator smell a little bit? Something might be broken inside.",
-    "topic": "饮食餐厅"
+    "meaningEn": "Does this fridge smell off? Something in it might have gone bad.",
+    "topic": "日常生活"
   },
   {
     "word": "夜道は一人で歩くと危ないから、タクシーで帰りな。",
@@ -11147,8 +11147,8 @@
     "meaning": "这个月钱花太多了，糟了，可能撑不到下周。",
     "level": "N3",
     "id": 1239,
-    "meaningEn": "I spent too much money this month. Oops, I might not be able to survive next week.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I blew my budget this month—I might not make it to next week.",
+    "topic": "日常场景"
   },
   {
     "word": "風邪がひどくて、三日間ずっと寝込んでた。",
@@ -11192,8 +11192,8 @@
     "meaning": "今年的队伍防守很强，也许能夺冠。",
     "level": "N3",
     "id": 1244,
-    "meaningEn": "This year's team has a strong defense and may be able to win the championship.",
-    "topic": "日常场景"
+    "meaningEn": "This year’s team is strong on defense—they might take the title.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "お酒に弱いから、一杯で顔が真っ赤になるんだよね。",
@@ -11219,7 +11219,7 @@
     "meaning": "知识还很浅薄，必须更加努力学习。",
     "level": "N3",
     "id": 1247,
-    "meaningEn": "The knowledge is still very shallow and we must study harder.",
+    "meaningEn": "My knowledge is still shallow, so I need to study more.",
     "topic": "日语学习"
   },
   {
@@ -11237,8 +11237,8 @@
     "meaning": "办手续虽然很麻烦，但不做就没法往下走。",
     "level": "N3",
     "id": 1249,
-    "meaningEn": "Although it is troublesome to go through the formalities, there is no way to proceed if you don’t do it.",
-    "topic": "励志感悟"
+    "meaningEn": "The paperwork is a pain, but nothing moves forward until you do it.",
+    "topic": "日常生活"
   },
   {
     "word": "虫がいっぱいついてるの見ちゃって、気持ち悪かった。",
@@ -11300,8 +11300,8 @@
     "meaning": "我弟弟很认真，每天都坚持学习。",
     "level": "N3",
     "id": 1256,
-    "meaningEn": "My brother is very serious and insists on studying every day.",
-    "topic": "日语学习"
+    "meaningEn": "My brother’s a serious student—he never skips a day of studying.",
+    "topic": "家庭亲子"
   },
   {
     "word": "あの子は素直だから、注意するとすぐ直してくれる。",
@@ -11309,7 +11309,7 @@
     "meaning": "那孩子很坦诚，一提醒马上就改。",
     "level": "N3",
     "id": 1257,
-    "meaningEn": "The child was very frank and would immediately change his mind as soon as he was reminded.",
+    "meaningEn": "They’re quick to listen—point something out and they fix it right away.",
     "topic": "家庭亲子"
   },
   {
@@ -11318,7 +11318,7 @@
     "meaning": "准备已经很充分了，接下来就等正式上场了。",
     "level": "N3",
     "id": 1258,
-    "meaningEn": "The preparations are complete, and now it’s time to officially go on stage.",
+    "meaningEn": "We’re fully prepared—all that’s left is the real thing.",
     "topic": "日常场景"
   },
   {
@@ -11336,8 +11336,8 @@
     "meaning": "这个地区晚上也很安全，一个人走也没问题。",
     "level": "N3",
     "id": 1260,
-    "meaningEn": "This area is also very safe at night, so it’s no problem to walk alone.",
-    "topic": "思考议论"
+    "meaningEn": "This neighborhood is safe even at night, so walking alone is fine.",
+    "topic": "日常场景"
   },
   {
     "word": "台風の日に外に出るのは危険だから、家にいたほうがいい。",
@@ -11346,7 +11346,7 @@
     "level": "N3",
     "id": 1261,
     "meaningEn": "It's dangerous to go out during a typhoon, so it's better to stay home.",
-    "topic": "情绪心理"
+    "topic": "天气自然"
   },
   {
     "word": "大学生になったら、自由な時間が増えると思ってたのに。",
@@ -11372,8 +11372,8 @@
     "meaning": "为了健康，我尽量多吃蔬菜。",
     "level": "N3",
     "id": 1264,
-    "meaningEn": "For health reasons, I try to eat as many vegetables as possible.",
-    "topic": "饮食餐厅"
+    "meaningEn": "For my health, I try to eat plenty of vegetables.",
+    "topic": "健康医疗"
   },
   {
     "word": "毎日好きなことができて、本当に幸せだなって思う。",
@@ -11399,8 +11399,8 @@
     "meaning": "一直期待的演唱会取消了，真的太遗憾了。",
     "level": "N3",
     "id": 1267,
-    "meaningEn": "The concert I have been looking forward to has been cancelled, which is really a pity.",
-    "topic": "情绪心理"
+    "meaningEn": "The concert I’d been looking forward to was canceled—such a shame.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "明日の面接、ちゃんとできるか心配で眠れなかった。",
@@ -11408,7 +11408,7 @@
     "meaning": "担心明天面试能不能好好发挥，都睡不着了。",
     "level": "N3",
     "id": 1268,
-    "meaningEn": "I can't sleep because I'm worried about whether I can perform well in the interview tomorrow.",
+    "meaningEn": "I lay awake worrying whether I’d do okay in tomorrow’s interview.",
     "topic": "工作职场"
   },
   {
@@ -11417,8 +11417,8 @@
     "meaning": "这周之内全部完成，怎么想都不太可能吧。",
     "level": "N3",
     "id": 1269,
-    "meaningEn": "It’s impossible to complete it all within this week, no matter how you think about it.",
-    "topic": "日常场景"
+    "meaningEn": "Finishing everything this week is asking too much, honestly.",
+    "topic": "工作职场"
   },
   {
     "word": "来月なら予定を調整できるから、参加は可能だと思う。",
@@ -11480,7 +11480,7 @@
     "meaning": "随便回答的话，后来就出大事了。",
     "level": "N3",
     "id": 1276,
-    "meaningEn": "If you answer casually, something big will happen later.",
+    "meaningEn": "I brushed off the question and it came back to bite me later.",
     "topic": "日常场景"
   },
   {
@@ -11489,8 +11489,8 @@
     "meaning": "能帮我再确认一下这个数据准不准确吗？",
     "level": "N3",
     "id": 1277,
-    "meaningEn": "Can you help me confirm whether this data is accurate?",
-    "topic": "思考议论"
+    "meaningEn": "Could you double-check whether these figures are accurate?",
+    "topic": "工作职场"
   },
   {
     "word": "これは個人的な意見だけど、今のままでいいと思う。",
@@ -11525,7 +11525,7 @@
     "meaning": "确实是那样呢，你这么一说还真是。",
     "level": "N3",
     "id": 1281,
-    "meaningEn": "That's true. It's true what you said.",
+    "meaningEn": "You’re right—now that you mention it, I see what you mean.",
     "topic": "日常场景"
   },
   {
@@ -11534,8 +11534,8 @@
     "meaning": "居然住在这么气派的房子里，太厉害了。",
     "level": "N3",
     "id": 1282,
-    "meaningEn": "It's amazing to live in such a magnificent house.",
-    "topic": "情绪心理"
+    "meaningEn": "Wow, you live in such a beautiful house.",
+    "topic": "日常场景"
   },
   {
     "word": "このカフェ、雰囲気が素敵だね。また来たいな。",
@@ -11570,7 +11570,7 @@
     "meaning": "明天天气不太好说，带把伞比较好吧。",
     "level": "N3",
     "id": 1286,
-    "meaningEn": "The weather is not good tomorrow, so it would be better to bring an umbrella.",
+    "meaningEn": "Tomorrow’s weather looks iffy—you might want an umbrella.",
     "topic": "天气自然"
   },
   {
@@ -11588,8 +11588,8 @@
     "meaning": "穿着虽然朴素，但那个人其实很会打扮的。",
     "level": "N3",
     "id": 1288,
-    "meaningEn": "Although he is dressed simply, that person is actually very good at dressing up.",
-    "topic": "励志感悟"
+    "meaningEn": "Their outfits look plain, but they’re actually really stylish.",
+    "topic": "日常场景"
   },
   {
     "word": "今日のネイル、派手じゃない？何かいいことあった？",
@@ -11597,7 +11597,7 @@
     "meaning": "你今天的美甲好花哨啊，有什么好事吗？",
     "level": "N3",
     "id": 1289,
-    "meaningEn": "Your manicure looks really fancy today. Is there anything good you can do about it?",
+    "meaningEn": "Your nails are flashy today—something good happen?",
     "topic": "日常场景"
   },
   {
@@ -11615,8 +11615,8 @@
     "meaning": "这家酒店每次来都很干净，让人很舒服。",
     "level": "N3",
     "id": 1291,
-    "meaningEn": "This hotel is always clean and comfortable every time I come here.",
-    "topic": "饮食餐厅"
+    "meaningEn": "This hotel is always spotless and pleasant whenever I stay.",
+    "topic": "住宿旅行"
   },
   {
     "word": "緊急の連絡が入ったから、ちょっと先に失礼するね。",
@@ -11624,7 +11624,7 @@
     "meaning": "收到紧急联络了，我先走一步哈。",
     "level": "N3",
     "id": 1292,
-    "meaningEn": "I've received an emergency call. I'll take the first step.",
+    "meaningEn": "Something urgent came up—I’m going to head out first.",
     "topic": "日常场景"
   },
   {
@@ -11642,8 +11642,8 @@
     "meaning": "每天都在练习，变厉害是理所当然的。",
     "level": "N3",
     "id": 1294,
-    "meaningEn": "If you practice every day, it’s natural to become better.",
-    "topic": "日语学习"
+    "meaningEn": "You practiced every day—of course you got better.",
+    "topic": "励志感悟"
   },
   {
     "word": "あの人が転職するなんて意外だったなあ。ずっとあの会社にいると思ってた。",
@@ -11670,7 +11670,7 @@
     "level": "N3",
     "id": 1297,
     "meaningEn": "My dad is really stubborn and never changes his mind once he makes a decision.",
-    "topic": "思考议论"
+    "topic": "家庭亲子"
   },
   {
     "word": "彼女って器用だよね、何でもサッと作っちゃうんだもん。",
@@ -11696,8 +11696,8 @@
     "meaning": "今天早上风很清爽，正适合散步呢。",
     "level": "N3",
     "id": 1300,
-    "meaningEn": "The wind is very refreshing this morning, which is perfect for a walk.",
-    "topic": "兴趣娱乐"
+    "meaningEn": "The breeze feels great this morning—perfect weather for a walk.",
+    "topic": "天气自然"
   },
   {
     "word": "この辺りは自然が豊かだから、週末にキャンプに来る人が多いよ。",
@@ -11705,8 +11705,8 @@
     "meaning": "这一带自然资源丰富，周末来露营的人很多。",
     "level": "N3",
     "id": 1301,
-    "meaningEn": "This area is rich in natural resources and many people come to camp on weekends.",
-    "topic": "兴趣娱乐"
+    "meaningEn": "Nature’s beautiful around here, so lots of people camp here on weekends.",
+    "topic": "天气自然"
   },
   {
     "word": "子供の頃は貧しかったけど、家族みんな仲が良かった。",
@@ -11714,7 +11714,7 @@
     "meaning": "小时候虽然穷，但一家人感情都很好。",
     "level": "N3",
     "id": 1302,
-    "meaningEn": "Although I was poor when I was a child, my family had a good relationship.",
+    "meaningEn": "We didn’t have much when I was little, but we were a close family.",
     "topic": "家庭亲子"
   },
   {
@@ -11723,8 +11723,8 @@
     "meaning": "那孩子最近说话越来越粗暴了，有点担心。",
     "level": "N3",
     "id": 1303,
-    "meaningEn": "The child has been speaking more and more rudely recently, which makes me a little worried.",
-    "topic": "情绪心理"
+    "meaningEn": "They’ve been using rougher language lately—I’m a little worried.",
+    "topic": "家庭亲子"
   },
   {
     "word": "彼はどんな時でも冷静に判断できるから、頼りになる。",
@@ -11732,8 +11732,8 @@
     "meaning": "他不管什么时候都能冷静判断，很靠得住。",
     "level": "N3",
     "id": 1304,
-    "meaningEn": "He can make calm judgment at any time and is very reliable.",
-    "topic": "思考议论"
+    "meaningEn": "He stays calm and judges things clearly no matter what—you can count on him.",
+    "topic": "人际关系"
   },
   {
     "word": "最近ギターに夢中で、毎晩練習してるんだ。",
@@ -11750,8 +11750,8 @@
     "meaning": "每天做便当说实话挺麻烦的，但确实能省钱。",
     "level": "N3",
     "id": 1306,
-    "meaningEn": "To be honest, making bento every day is quite troublesome, but it does save money.",
-    "topic": "饮食餐厅"
+    "meaningEn": "Honestly, packing lunch every day is a hassle, but it saves money.",
+    "topic": "日常生活"
   },
   {
     "word": "セール中につい買いすぎて、結局無駄な出費が増えちゃった。",
@@ -11777,8 +11777,8 @@
     "meaning": "我想以全新的心情，从下个月开始重新努力。",
     "level": "N3",
     "id": 1309,
-    "meaningEn": "I want to start working hard again next month with a new mood.",
-    "topic": "情绪心理"
+    "meaningEn": "I’m going to get a fresh start and give it my all again from next month.",
+    "topic": "励志感悟"
   },
   {
     "word": "あの人、見た目はちょっと怖いけど、話してみたらまともな人だったよ。",
@@ -11786,7 +11786,7 @@
     "meaning": "那个人看着有点吓人，但聊了之后发现是个挺正经的人。",
     "level": "N3",
     "id": 1310,
-    "meaningEn": "That person looked a little scary, but after chatting with him, I found out that he was a pretty serious person.",
+    "meaningEn": "They looked a bit intimidating, but once we talked they turned out to be perfectly reasonable.",
     "topic": "日常场景"
   },
   {
@@ -11795,25 +11795,25 @@
     "reading": "こむぎのアレルギーがあるんですけど、だいじょうぶですか。",
     "meaning": "我对小麦过敏，没问题吗？",
     "level": "N2",
-    "meaningEn": "I'm allergic to wheat, is that okay?",
-    "topic": "思考议论"
+    "meaningEn": "I have a wheat allergy—is that okay?",
+    "topic": "健康医疗"
   },
   {
     "id": 1312,
     "word": "人身事故で電車が止まっています。",
     "reading": "じんしんじこででんしゃがとまっています。",
-    "meaning": "因为人身事故电车停了。",
+    "meaning": "因有人进入线路造成的事故，电车停运了。",
     "level": "N2",
-    "meaningEn": "The tram stopped because of a personal accident.",
+    "meaningEn": "Trains are stopped due to an incident on the tracks (person on the tracks).",
     "topic": "交通出行"
   },
   {
     "id": 1313,
     "word": "振替輸送を利用します。",
     "reading": "ふりかえゆそうをりようします。",
-    "meaning": "利用替代交通。",
+    "meaning": "将安排替代运输（接驳巴士等）。",
     "level": "N2",
-    "meaningEn": "Take advantage of alternative transportation.",
+    "meaningEn": "Replacement bus or other substitute service will be provided.",
     "topic": "交通出行"
   },
   {
@@ -11822,8 +11822,8 @@
     "reading": "ろてんぶろはありますか。",
     "meaning": "有露天浴池吗？",
     "level": "N2",
-    "meaningEn": "Is there an open-air bath?",
-    "topic": "日常场景"
+    "meaningEn": "Do you have an open-air bath?",
+    "topic": "住宿旅行"
   },
   {
     "id": 1315,
@@ -11831,8 +11831,8 @@
     "reading": "ごけんとうをおねがいします。",
     "meaning": "请您考虑一下。",
     "level": "N2",
-    "meaningEn": "Please consider this.",
-    "topic": "问候寒暄"
+    "meaningEn": "We would appreciate your consideration.",
+    "topic": "工作职场"
   },
   {
     "id": 1316,
@@ -11840,8 +11840,8 @@
     "reading": "まえむきにけんとういたします。",
     "meaning": "我们会积极考虑。",
     "level": "N2",
-    "meaningEn": "We will actively consider it.",
-    "topic": "日常场景"
+    "meaningEn": "We will give it positive consideration.",
+    "topic": "工作职场"
   },
   {
     "id": 1317,
@@ -11850,7 +11850,7 @@
     "meaning": "我会回电话给您。",
     "level": "N2",
     "meaningEn": "I'll call you back.",
-    "topic": "日常场景"
+    "topic": "工作职场"
   },
   {
     "id": 1318,
@@ -11858,8 +11858,8 @@
     "reading": "ごふめいなてんがございましたら。",
     "meaning": "如果有不明白的地方。",
     "level": "N2",
-    "meaningEn": "If there is anything you don’t understand.",
-    "topic": "日常场景"
+    "meaningEn": "If you have any questions.",
+    "topic": "工作职场"
   },
   {
     "id": 1319,
@@ -11867,8 +11867,8 @@
     "reading": "おきがるにおといあわせください。",
     "meaning": "请随时咨询。",
     "level": "N2",
-    "meaningEn": "Please feel free to inquire.",
-    "topic": "日常场景"
+    "meaningEn": "Please don’t hesitate to contact us.",
+    "topic": "工作职场"
   },
   {
     "id": 1320,
@@ -11876,17 +11876,17 @@
     "reading": "ひきつぎをおねがいします。",
     "meaning": "请做好交接。",
     "level": "N2",
-    "meaningEn": "Please make a good handover.",
-    "topic": "日常场景"
+    "meaningEn": "Please complete the handover.",
+    "topic": "工作职场"
   },
   {
     "id": 1321,
     "word": "内定をもらいました。",
     "reading": "ないていをもらいました。",
-    "meaning": "拿到了内定。",
+    "meaning": "拿到了内定（录用意向）。",
     "level": "N2",
-    "meaningEn": "Got an informal appointment.",
-    "topic": "日常场景"
+    "meaningEn": "I received an informal job offer.",
+    "topic": "工作职场"
   },
   {
     "id": 1322,
@@ -11894,8 +11894,8 @@
     "reading": "しきゅうたいおうをおねがいします。",
     "meaning": "请紧急处理。",
     "level": "N2",
-    "meaningEn": "Please handle it urgently.",
-    "topic": "日常场景"
+    "meaningEn": "Please address this as a matter of urgency.",
+    "topic": "工作职场"
   },
   {
     "id": 1323,
@@ -11903,8 +11903,8 @@
     "reading": "おてすうをおかけします。",
     "meaning": "给您添麻烦了。",
     "level": "N2",
-    "meaningEn": "Sorry for causing trouble to you.",
-    "topic": "日常场景"
+    "meaningEn": "Sorry to trouble you.",
+    "topic": "问候寒暄"
   },
   {
     "id": 1324,
@@ -11921,8 +11921,8 @@
     "reading": "かくにんがとれしだい、ごれんらくします。",
     "meaning": "确认后会联系您。",
     "level": "N2",
-    "meaningEn": "You will be contacted after confirmation.",
-    "topic": "问候寒暄"
+    "meaningEn": "I’ll get back to you as soon as it’s confirmed.",
+    "topic": "工作职场"
   },
   {
     "id": 1326,
@@ -11930,7 +11930,7 @@
     "reading": "こんごともよろしくおねがいいたします。",
     "meaning": "今后也请多关照。",
     "level": "N2",
-    "meaningEn": "Please look after me in the future.",
+    "meaningEn": "I look forward to continuing to work with you.",
     "topic": "问候寒暄"
   },
   {
@@ -11940,7 +11940,7 @@
     "meaning": "被拜托做忘年会的组织者了。",
     "level": "N2",
     "meaningEn": "I was asked to be the organizer of the year-end party.",
-    "topic": "问候寒暄"
+    "topic": "工作职场"
   },
   {
     "id": 1328,
@@ -11957,8 +11957,8 @@
     "reading": "うらぎられたきもちです。",
     "meaning": "感觉被背叛了。",
     "level": "N2",
-    "meaningEn": "Feeling betrayed.",
-    "topic": "日常场景"
+    "meaningEn": "I feel betrayed.",
+    "topic": "情绪心理"
   },
   {
     "id": 1330,
@@ -11985,7 +11985,7 @@
     "meaning": "互相尊重彼此的感受吧。",
     "level": "N2",
     "meaningEn": "Let's respect each other's feelings.",
-    "topic": "思考议论"
+    "topic": "人际关系"
   },
   {
     "id": 1333,
@@ -11993,8 +11993,8 @@
     "reading": "ほんねをいってほしいです。",
     "meaning": "希望你说真心话。",
     "level": "N2",
-    "meaningEn": "I hope you tell the truth.",
-    "topic": "日常场景"
+    "meaningEn": "I want you to tell me how you really feel.",
+    "topic": "人际关系"
   },
   {
     "id": 1334,
@@ -12002,8 +12002,8 @@
     "reading": "たてまえばかりいわないで。",
     "meaning": "别只说客套话。",
     "level": "N2",
-    "meaningEn": "Don't just say nice things.",
-    "topic": "日常场景"
+    "meaningEn": "Don’t hide behind polite platitudes.",
+    "topic": "人际关系"
   },
   {
     "id": 1335,
@@ -12011,8 +12011,8 @@
     "reading": "くうきをよんでください。",
     "meaning": "请看看气氛。",
     "level": "N2",
-    "meaningEn": "Please look at the atmosphere.",
-    "topic": "日常场景"
+    "meaningEn": "Read the room.",
+    "topic": "人际关系"
   },
   {
     "id": 1336,
@@ -12020,7 +12020,7 @@
     "reading": "よけいなおせわです。",
     "meaning": "多管闲事。",
     "level": "N2",
-    "meaningEn": "have a finger in the pie.",
+    "meaningEn": "Mind your own business.",
     "topic": "日常场景"
   },
   {
@@ -12038,8 +12038,8 @@
     "reading": "イライラします。",
     "meaning": "烦躁。",
     "level": "N2",
-    "meaningEn": "irritable.",
-    "topic": "日常场景"
+    "meaningEn": "I’m on edge.",
+    "topic": "情绪心理"
   },
   {
     "id": 1339,
@@ -12063,9 +12063,9 @@
     "id": 1341,
     "word": "懐かしいですね。",
     "reading": "なつかしいですね。",
-    "meaning": "好怀念啊。",
+    "meaning": "真让人怀念啊。",
     "level": "N2",
-    "meaningEn": "I miss you so much.",
+    "meaningEn": "That really brings back memories.",
     "topic": "日常场景"
   },
   {
@@ -12074,8 +12074,8 @@
     "reading": "こうかいしています。",
     "meaning": "后悔了。",
     "level": "N2",
-    "meaningEn": "Regret it.",
-    "topic": "励志感悟"
+    "meaningEn": "I regret it.",
+    "topic": "情绪心理"
   },
   {
     "id": 1343,
@@ -12110,8 +12110,8 @@
     "reading": "かんぺきじゃなくていいんだよ。",
     "meaning": "不用完美也没关系。",
     "level": "N2",
-    "meaningEn": "It doesn’t matter if you don’t have to be perfect.",
-    "topic": "问候寒暄"
+    "meaningEn": "You don’t have to be perfect.",
+    "topic": "励志感悟"
   },
   {
     "id": 1347,
@@ -12173,8 +12173,8 @@
     "reading": "ふざけるな！",
     "meaning": "别开玩笑！",
     "level": "N2",
-    "meaningEn": "No kidding!",
-    "topic": "日常场景"
+    "meaningEn": "Cut it out!",
+    "topic": "情绪心理"
   },
   {
     "id": 1354,
@@ -12209,8 +12209,8 @@
     "reading": "まけるもんか。",
     "meaning": "怎么能输。",
     "level": "N2",
-    "meaningEn": "How can you lose.",
-    "topic": "日常场景"
+    "meaningEn": "Like I’d lose.",
+    "topic": "励志感悟"
   },
   {
     "id": 1358,
@@ -12218,7 +12218,7 @@
     "reading": "かくごしろ。",
     "meaning": "做好觉悟。",
     "level": "N2",
-    "meaningEn": "Be aware.",
+    "meaningEn": "Prepare yourself.",
     "topic": "情绪心理"
   },
   {
@@ -12241,11 +12241,11 @@
   },
   {
     "id": 1361,
-    "word": "恩に着る。",
-    "reading": "おんにきる。",
-    "meaning": "承你的情。",
+    "word": "ここまで助けてくれて、本当に恩に着ます。",
+    "reading": "ここまでたすけてくれて、ほんとうにおんにきます。",
+    "meaning": "你帮到这个地步，我真欠你一份情。",
     "level": "N2",
-    "meaningEn": "Thank you for your kindness.",
+    "meaningEn": "You've helped me so much—I'm truly indebted to you.",
     "topic": "日常场景"
   },
   {
@@ -12263,8 +12263,8 @@
     "reading": "これからがほんばんだ。",
     "meaning": "从现在起才是正式的。",
     "level": "N2",
-    "meaningEn": "It's official from now on.",
-    "topic": "日常场景"
+    "meaningEn": "The real challenge starts now.",
+    "topic": "励志感悟"
   },
   {
     "id": 1364,
@@ -12272,8 +12272,8 @@
     "reading": "ちくしょう！",
     "meaning": "可恶！",
     "level": "N2",
-    "meaningEn": "hateful!",
-    "topic": "日常场景"
+    "meaningEn": "Damn it!",
+    "topic": "情绪心理"
   },
   {
     "id": 1365,
@@ -12281,8 +12281,8 @@
     "reading": "よっしゃー！",
     "meaning": "太棒了！",
     "level": "N2",
-    "meaningEn": "marvelous!",
-    "topic": "日常场景"
+    "meaningEn": "Yes!",
+    "topic": "情绪心理"
   },
   {
     "id": 1366,
@@ -12290,7 +12290,7 @@
     "reading": "ぎりぎりだった。",
     "meaning": "好险。",
     "level": "N2",
-    "meaningEn": "So risky.",
+    "meaningEn": "That was close.",
     "topic": "日常场景"
   },
   {
@@ -12317,7 +12317,7 @@
     "reading": "いやなよかんがする。",
     "meaning": "有不好的预感。",
     "level": "N2",
-    "meaningEn": "Have a bad feeling.",
+    "meaningEn": "I’ve got a bad feeling about this.",
     "topic": "情绪心理"
   },
   {
@@ -12333,10 +12333,10 @@
     "id": 1371,
     "word": "不在票が入っていました。",
     "reading": "ふざいひょうがはいっていました。",
-    "meaning": "有不在配送单。",
+    "meaning": "（邮箱里）有不在家配送通知单。",
     "level": "N2",
-    "meaningEn": "There is no delivery order.",
-    "topic": "日常场景"
+    "meaningEn": "There was a missed-delivery notice in the mailbox.",
+    "topic": "购物"
   },
   {
     "id": 1372,
@@ -12344,8 +12344,8 @@
     "reading": "かけいぼをつけています。",
     "meaning": "在记账。",
     "level": "N2",
-    "meaningEn": "Keeping accounts.",
-    "topic": "工作职场"
+    "meaningEn": "I keep a household budget.",
+    "topic": "日常生活"
   },
   {
     "id": 1373,
@@ -12353,8 +12353,8 @@
     "reading": "こんげつはちょっとピンチです。",
     "meaning": "这个月有点紧张。",
     "level": "N2",
-    "meaningEn": "This month is a bit stressful.",
-    "topic": "情绪心理"
+    "meaningEn": "Money’s tight this month.",
+    "topic": "日常生活"
   },
   {
     "id": 1374,
@@ -12362,7 +12362,7 @@
     "reading": "クレジットカードのせいきゅうがきました。",
     "meaning": "信用卡账单来了。",
     "level": "N2",
-    "meaningEn": "The credit card bill is coming.",
+    "meaningEn": "My credit card statement arrived.",
     "topic": "购物"
   },
   {
@@ -12380,8 +12380,8 @@
     "reading": "ごしゅいんをあつめています。",
     "meaning": "在收集朱印。",
     "level": "N2",
-    "meaningEn": "Collecting red seals.",
-    "topic": "日常场景"
+    "meaningEn": "I collect goshuin stamps from shrines and temples.",
+    "topic": "日本文化"
   },
   {
     "id": 1377,
@@ -12407,16 +12407,16 @@
     "reading": "それはいちりありますね。",
     "meaning": "那有一定道理。",
     "level": "N2",
-    "meaningEn": "There is some truth to that.",
-    "topic": "励志感悟"
+    "meaningEn": "You’ve got a point there.",
+    "topic": "思考议论"
   },
   {
     "id": 1380,
-    "word": "要するに。",
-    "reading": "ようするに。",
-    "meaning": "总而言之。",
+    "word": "要するに、予算が足りないということです。",
+    "reading": "ようするに、よさんがたりないということです。",
+    "meaning": "总而言之，就是预算不够。",
     "level": "N2",
-    "meaningEn": "all in all.",
+    "meaningEn": "In short, it means we don't have enough budget.",
     "topic": "思考议论"
   },
   {
@@ -12441,19 +12441,19 @@
     "id": 1383,
     "word": "それにしても。",
     "reading": "それにしても。",
-    "meaning": "即便如此。",
+    "meaning": "话虽如此；不过。",
     "level": "N2",
-    "meaningEn": "even so.",
-    "topic": "日常场景"
+    "meaningEn": "Even so.",
+    "topic": "思考议论"
   },
   {
     "id": 1384,
     "word": "それはさておき。",
     "reading": "それはさておき。",
-    "meaning": "那先放一边。",
+    "meaning": "那件事先不提。",
     "level": "N2",
-    "meaningEn": "Then put it aside.",
-    "topic": "日常场景"
+    "meaningEn": "That aside.",
+    "topic": "思考议论"
   },
   {
     "id": 1385,
@@ -12466,11 +12466,11 @@
   },
   {
     "id": 1386,
-    "word": "結局のところ。",
-    "reading": "けっきょくのところ。",
-    "meaning": "说到底。",
+    "word": "結局のところ、自分で決めるしかないんです。",
+    "reading": "けっきょくのところ、じぶんできめるしかないんです。",
+    "meaning": "说到底，只能自己决定。",
     "level": "N2",
-    "meaningEn": "After all.",
+    "meaningEn": "In the end, you just have to decide for yourself.",
     "topic": "思考议论"
   },
   {
@@ -12542,8 +12542,8 @@
     "reading": "リスクをこうりょするひつようがあります。",
     "meaning": "需要考虑风险。",
     "level": "N2",
-    "meaningEn": "Risks need to be considered.",
-    "topic": "日常场景"
+    "meaningEn": "We need to factor in the risks.",
+    "topic": "思考议论"
   },
   {
     "id": 1395,
@@ -12569,8 +12569,8 @@
     "reading": "おたがいゆずりあいましょう。",
     "meaning": "互相让步吧。",
     "level": "N2",
-    "meaningEn": "Let's give in to each other.",
-    "topic": "日常场景"
+    "meaningEn": "Let’s meet each other halfway.",
+    "topic": "思考议论"
   },
   {
     "id": 1398,
@@ -12596,8 +12596,8 @@
     "reading": "しゃかいてきなえいきょうをかんがえるべきです。",
     "meaning": "应该考虑社会影响。",
     "level": "N2",
-    "meaningEn": "Social impact should be considered.",
-    "topic": "日常场景"
+    "meaningEn": "We should consider the social impact.",
+    "topic": "思考议论"
   },
   {
     "id": 1401,
@@ -12605,8 +12605,8 @@
     "reading": "じだいのながれにあわせるべきです。",
     "meaning": "应该顺应时代潮流。",
     "level": "N2",
-    "meaningEn": "It should conform to the trend of the times.",
-    "topic": "日常场景"
+    "meaningEn": "We should move with the times.",
+    "topic": "思考议论"
   },
   {
     "id": 1402,
@@ -12632,8 +12632,8 @@
     "reading": "いろいろなかくどからかんがえるべきです。",
     "meaning": "应该从各种角度思考。",
     "level": "N2",
-    "meaningEn": "It should be thought of from various angles.",
-    "topic": "日常场景"
+    "meaningEn": "We ought to look at it from every angle.",
+    "topic": "思考议论"
   },
   {
     "id": 1405,
@@ -12651,7 +12651,7 @@
     "meaning": "有改善的余地。",
     "level": "N2",
     "meaningEn": "There is room for improvement.",
-    "topic": "日常场景"
+    "topic": "思考议论"
   },
   {
     "id": 1407,
@@ -12660,7 +12660,7 @@
     "meaning": "可能性是无限的。",
     "level": "N2",
     "meaningEn": "The possibilities are endless.",
-    "topic": "日常场景"
+    "topic": "思考议论"
   },
   {
     "id": 1408,
@@ -12668,8 +12668,8 @@
     "reading": "まだまだみじゅくです。",
     "meaning": "还很不成熟。",
     "level": "N2",
-    "meaningEn": "Still very immature.",
-    "topic": "日常场景"
+    "meaningEn": "I still have a long way to go.",
+    "topic": "励志感悟"
   },
   {
     "id": 1409,
@@ -12686,8 +12686,8 @@
     "reading": "バズっていますね。",
     "meaning": "火了呢。",
     "level": "N2",
-    "meaningEn": "It's on fire.",
-    "topic": "日常场景"
+    "meaningEn": "That’s going viral.",
+    "topic": "科技网络"
   },
   {
     "id": 1411,
@@ -12695,8 +12695,8 @@
     "reading": "もうしょびがつづいています。",
     "meaning": "连续酷暑天。",
     "level": "N2",
-    "meaningEn": "Continuous hot summer days.",
-    "topic": "日常场景"
+    "meaningEn": "We’ve had day after day of extreme heat.",
+    "topic": "天气自然"
   },
   {
     "id": 1412,
@@ -12704,8 +12704,8 @@
     "reading": "どうろがとうけつしています。",
     "meaning": "路面结冰了。",
     "level": "N2",
-    "meaningEn": "The road is icy.",
-    "topic": "日常场景"
+    "meaningEn": "The roads are frozen over.",
+    "topic": "天气自然"
   },
   {
     "id": 1413,
@@ -12722,8 +12722,8 @@
     "reading": "ころもがえのきせつですね。",
     "meaning": "到了换季的时候了。",
     "level": "N2",
-    "meaningEn": "It's time to change the seasons.",
-    "topic": "日本文化"
+    "meaningEn": "It’s time to swap out the seasonal wardrobe.",
+    "topic": "日常生活"
   },
   {
     "id": 1415,
@@ -12738,10 +12738,10 @@
     "id": 1416,
     "word": "タメ口で話してもいいですか。",
     "reading": "タメぐちではなしてもいいですか。",
-    "meaning": "可以用平语说话吗？",
+    "meaning": "可以用简体/随便一点的口气说话吗？",
     "level": "N2",
-    "meaningEn": "Can I speak in plain English?",
-    "topic": "日常场景"
+    "meaningEn": "Is it okay if I use casual language with you?",
+    "topic": "日本文化"
   },
   {
     "id": 1417,
@@ -12794,8 +12794,8 @@
     "reading": "グローバルなしやをもちましょう。",
     "meaning": "拥有全球视野吧。",
     "level": "N2",
-    "meaningEn": "Have a global perspective.",
-    "topic": "日常场景"
+    "meaningEn": "Let’s keep a global perspective.",
+    "topic": "思考议论"
   },
   {
     "id": 1423,
@@ -12803,7 +12803,7 @@
     "reading": "せっかくはやくおきたのに、でんしゃがおくれてちこくしました。",
     "meaning": "难得早起了，结果电车晚点迟到了。",
     "level": "N2",
-    "meaningEn": "It was rare to get up early, but the tram was late and late.",
+    "meaningEn": "I got up early for once, but the train was delayed and I ended up late.",
     "topic": "交通出行"
   },
   {
@@ -12812,8 +12812,8 @@
     "reading": "いやだとおもいつつも、ことわれなくてひきうけてしまいました。",
     "meaning": "虽然觉得不想做，但没法拒绝就接下了。",
     "level": "N2",
-    "meaningEn": "Although I felt I didn’t want to do it, I couldn’t refuse and took it.",
-    "topic": "励志感悟"
+    "meaningEn": "I didn’t want to do it, but I couldn’t say no and ended up agreeing.",
+    "topic": "情绪心理"
   },
   {
     "id": 1425,
@@ -12821,8 +12821,8 @@
     "reading": "はんたいするひともいたけど、さいしゅうてきにはみんなさんせいしてくれました。",
     "meaning": "虽然也有人反对，但最终大家都赞成了。",
     "level": "N2",
-    "meaningEn": "Although some people objected, in the end everyone agreed.",
-    "topic": "励志感悟"
+    "meaningEn": "Some people were against it, but in the end everyone came around.",
+    "topic": "思考议论"
   },
   {
     "id": 1426,
@@ -12857,7 +12857,7 @@
     "reading": "よさんがオーバーしてしまったため、けいかくをみなおすひつようがあります。",
     "meaning": "因为超预算了，有必要重新审视计划。",
     "level": "N2",
-    "meaningEn": "Because the budget was exceeded, it was necessary to review the plan.",
+    "meaningEn": "We went over budget, so we need to rethink the plan.",
     "topic": "工作职场"
   },
   {
@@ -12875,8 +12875,8 @@
     "reading": "せつめいしょをよまずにくみたてたから、ぶひんがあまってしまいました。",
     "meaning": "因为没看说明书就组装了，零件多出来了。",
     "level": "N2",
-    "meaningEn": "Because I assembled it without reading the instructions, there were extra parts.",
-    "topic": "兴趣娱乐"
+    "meaningEn": "I put it together without reading the manual and ended up with parts left over.",
+    "topic": "日常生活"
   },
   {
     "id": 1432,
@@ -12893,8 +12893,8 @@
     "reading": "えきをでると、めのまえにきれいなさくらなみきがひろがっていました。",
     "meaning": "一出车站，眼前就是美丽的樱花大道。",
     "level": "N2",
-    "meaningEn": "As soon as you exit the station, you will see the beautiful cherry blossom avenue in front of you.",
-    "topic": "交通出行"
+    "meaningEn": "When I stepped out of the station, a beautiful row of cherry trees stretched out before me.",
+    "topic": "天气自然"
   },
   {
     "id": 1434,
@@ -12902,8 +12902,8 @@
     "reading": "まんがいちにそなえて、ほけんにはいっておいたほうがいいですよ。",
     "meaning": "以防万一，还是买个保险比较好。",
     "level": "N2",
-    "meaningEn": "Just in case, it’s better to buy insurance.",
-    "topic": "购物"
+    "meaningEn": "You should have insurance—just in case.",
+    "topic": "日常生活"
   },
   {
     "id": 1435,
@@ -12911,8 +12911,8 @@
     "reading": "でんわしてくれれば、むかえにいったのに。",
     "meaning": "你要是打电话的话我就去接你了。",
     "level": "N2",
-    "meaningEn": "If you call, I will pick you up.",
-    "topic": "日常场景"
+    "meaningEn": "If you’d called, I would have come to get you.",
+    "topic": "人际关系"
   },
   {
     "id": 1436,
@@ -12965,8 +12965,8 @@
     "reading": "としをとるにつれて、けんこうのありがたさがわかるようになりました。",
     "meaning": "随着年龄增长，越来越能体会健康的可贵。",
     "level": "N2",
-    "meaningEn": "As we age, we become more and more aware of the value of health.",
-    "topic": "购物"
+    "meaningEn": "As I get older, I appreciate good health more and more.",
+    "topic": "健康医疗"
   },
   {
     "id": 1442,
@@ -12983,8 +12983,8 @@
     "reading": "じょうしにのみかいにつきあわされて、かえりがおそくなりました。",
     "meaning": "被上司拉去喝酒，回去晚了。",
     "level": "N2",
-    "meaningEn": "I was dragged to drink by my boss and came back late.",
-    "topic": "饮食餐厅"
+    "meaningEn": "My boss roped me into a drinking party and I got home late.",
+    "topic": "工作职场"
   },
   {
     "id": 1444,
@@ -12992,8 +12992,8 @@
     "reading": "おやにしんぱいさせたくないから、つらくてもえがおでいます。",
     "meaning": "不想让父母担心，所以再辛苦也笑着面对。",
     "level": "N2",
-    "meaningEn": "I didn’t want my parents to worry, so I faced it with a smile no matter how hard it was.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I don’t want my parents to worry, so I put on a smile even when it’s rough.",
+    "topic": "家庭亲子"
   },
   {
     "id": 1445,
@@ -13028,8 +13028,8 @@
     "reading": "あらしのようないちにちがやっとおわりました。",
     "meaning": "像暴风雨一样的一天终于结束了。",
     "level": "N2",
-    "meaningEn": "The stormy day was finally over.",
-    "topic": "天气自然"
+    "meaningEn": "That whirlwind of a day is finally over.",
+    "topic": "日常场景"
   },
   {
     "id": 1449,
@@ -13037,8 +13037,8 @@
     "reading": "どんなにつらくても、あきらめなければかならずみちはひらけるとしんじています。",
     "meaning": "无论多辛苦，只要不放弃一定会有出路的，我相信。",
     "level": "N2",
-    "meaningEn": "No matter how hard it is, there will be a way out as long as you don't give up, I believe.",
-    "topic": "饮食餐厅"
+    "meaningEn": "No matter how tough it gets, I believe a path opens up if you don’t give up.",
+    "topic": "励志感悟"
   },
   {
     "id": 1450,
@@ -13092,7 +13092,7 @@
     "meaning": "不是没有钱，但不想乱花。",
     "level": "N2",
     "meaningEn": "It’s not that I don’t have money, but I don’t want to spend it frivolously.",
-    "topic": "工作职场"
+    "topic": "日常场景"
   },
   {
     "id": 1456,
@@ -13109,8 +13109,8 @@
     "reading": "はじめてあったとはおもえないくらい、はなしがもりあがりました。",
     "meaning": "聊得很开心，简直不像是初次见面。",
     "level": "N2",
-    "meaningEn": "We had a great chat, it almost didn’t feel like we were meeting for the first time.",
-    "topic": "问候寒暄"
+    "meaningEn": "We hit it off so well it barely felt like a first meeting.",
+    "topic": "人际关系"
   },
   {
     "id": 1458,
@@ -13136,8 +13136,8 @@
     "reading": "しごとはたいへんだけど、やりがいがあるからつづけていられるんだとおもいます。",
     "meaning": "工作虽然辛苦，但因为有成就感才能坚持下来。",
     "level": "N2",
-    "meaningEn": "Although the work is hard, I can persevere because I have a sense of accomplishment.",
-    "topic": "饮食餐厅"
+    "meaningEn": "The job’s tough, but it’s rewarding—that’s why I can keep at it.",
+    "topic": "工作职场"
   },
   {
     "id": 1461,
@@ -13181,8 +13181,8 @@
     "reading": "あんなにれんしゅうしたのにほんばんでミスしてしまって、じぶんがなさけないです。",
     "meaning": "练了那么多正式上场却失误了，觉得自己很没用。",
     "level": "N2",
-    "meaningEn": "After practicing so much, I made a mistake and felt useless.",
-    "topic": "日常场景"
+    "meaningEn": "I practiced so hard and still messed up when it counted—I feel pathetic.",
+    "topic": "情绪心理"
   },
   {
     "id": 1466,
@@ -13199,7 +13199,7 @@
     "reading": "あいてのたちばになってかんがえてみたら、おこるきもちもすこしわかるきがしました。",
     "meaning": "站在对方的立场想想，好像也能理解生气的心情了。",
     "level": "N2",
-    "meaningEn": "If you think about it from the other person's point of view, you can understand the feeling of being angry.",
+    "meaningEn": "After putting myself in their shoes, I could kind of see why they were upset.",
     "topic": "情绪心理"
   },
   {
@@ -13208,8 +13208,8 @@
     "reading": "きたいしていたいじょうのけっかがでて、チームぜんいんでよろこびました。",
     "meaning": "出了超出期待的结果，全队都很高兴。",
     "level": "N2",
-    "meaningEn": "The results exceeded expectations and the whole team was very happy.",
-    "topic": "情绪心理"
+    "meaningEn": "We got a better result than we’d hoped for—the whole team was thrilled.",
+    "topic": "工作职场"
   },
   {
     "id": 1469,
@@ -13280,16 +13280,16 @@
     "reading": "ひょうめんじょうはわらっているけど、ほんとうはすごくつらいんじゃないかとしんぱいしています。",
     "meaning": "表面上在笑，但我担心其实很痛苦。",
     "level": "N2",
-    "meaningEn": "On the surface I was smiling, but I was afraid it was actually painful.",
-    "topic": "饮食餐厅"
+    "meaningEn": "They’re smiling on the outside, but I worry they’re hurting inside.",
+    "topic": "情绪心理"
   },
   {
     "id": 1477,
     "word": "石の上にも三年というように、何事も続けることが大切です。",
     "reading": "いしのうえにもさんねんというように、なにごともつづけることがたいせつです。",
-    "meaning": "正如'铁杵磨成针'所说，坚持做任何事都很重要。",
+    "meaning": "正如谚语「石头坐三年也会暖」所说，做什么事坚持都很重要。",
     "level": "N2",
-    "meaningEn": "As the saying goes, \"An iron pestle grinds into a needle\", persistence in anything is important.",
+    "meaningEn": "Like the proverb says—perseverance wins in the end—sticking with things is what matters.",
     "topic": "励志感悟"
   },
   {
@@ -13298,17 +13298,17 @@
     "reading": "ひゃくぶんはいっけんにしかずというから、じっさいにいってたしかめてみましょう。",
     "meaning": "百闻不如一见，实际去看看吧。",
     "level": "N2",
-    "meaningEn": "Seeing is better than hearing about it, so go and see it.",
-    "topic": "日常场景"
+    "meaningEn": "Seeing is believing—let’s go check it out in person.",
+    "topic": "思考议论"
   },
   {
     "id": 1479,
     "word": "出る杭は打たれると言いますが、それでも自分らしくいたいです。",
     "reading": "でるくいはうたれるといいますが、それでもじぶんらしくいたいです。",
-    "meaning": "虽说枪打出头鸟，但我还是想做自己。",
+    "meaning": "俗话说「出头的椽子先遭打」，但我还是想做自己。",
     "level": "N2",
-    "meaningEn": "Even though I was the first to succeed, I still wanted to be myself.",
-    "topic": "日常场景"
+    "meaningEn": "They say the nail that sticks up gets hammered—but I still want to live my way.",
+    "topic": "思考议论"
   },
   {
     "id": 1480,
@@ -13316,8 +13316,8 @@
     "reading": "いまはまだみじゅくですが、いつかかならずあなたにみとめられるようなにんげんになります。",
     "meaning": "现在还不够成熟，但总有一天会成为你认可的人。",
     "level": "N2",
-    "meaningEn": "He is not mature enough yet, but one day he will become someone you recognize.",
-    "topic": "日常场景"
+    "meaningEn": "I’m still rough around the edges, but someday I want to become someone you can be proud of.",
+    "topic": "励志感悟"
   },
   {
     "id": 1481,
@@ -13362,7 +13362,7 @@
     "meaning": "比起追求完美，先迈出第一步更重要。",
     "level": "N2",
     "meaningEn": "It is more important to take the first step than to pursue perfection.",
-    "topic": "日常场景"
+    "topic": "励志感悟"
   },
   {
     "id": 1486,
@@ -13406,8 +13406,8 @@
     "reading": "かれにたのまれるとことわれないせいかくなので、ついひきうけてしまいます。",
     "meaning": "被他拜托就没法拒绝的性格，总是接下来。",
     "level": "N2",
-    "meaningEn": "He has a character that cannot refuse when asked, and always comes next.",
-    "topic": "问候寒暄"
+    "meaningEn": "I can’t say no when he asks, so I always end up agreeing.",
+    "topic": "人际关系"
   },
   {
     "id": 1491,
@@ -13424,8 +13424,8 @@
     "reading": "すめばみやこというように、さいしょはいやだったばしょもなれたらすきになりました。",
     "meaning": "正如'日久生情'所说，一开始不喜欢的地方习惯了就喜欢上了。",
     "level": "N2",
-    "meaningEn": "As the saying goes, if you don't like something at first, you will like it once you get used to it.",
-    "topic": "日本文化"
+    "meaningEn": "Like they say—once you live somewhere, it becomes home—I ended up loving a place I disliked at first.",
+    "topic": "日常生活"
   },
   {
     "id": 1493,
@@ -13442,8 +13442,8 @@
     "reading": "としをとればとるほど、じかんのたいせつさがわかるようになりますね。",
     "meaning": "越年长越能体会时间的珍贵。",
     "level": "N2",
-    "meaningEn": "The older you get, the more you realize how precious time is.",
-    "topic": "购物"
+    "meaningEn": "The older you get, the more precious time feels.",
+    "topic": "思考议论"
   },
   {
     "id": 1495,
@@ -13460,7 +13460,7 @@
     "reading": "クライアントからのようぼうがきゅうにかわって、いちからつくりなおさなければならなくなりました。",
     "meaning": "客户的要求突然变了，不得不从头重做。",
     "level": "N2",
-    "meaningEn": "The client's requirements suddenly changed and had to be redone from scratch.",
+    "meaningEn": "The client suddenly changed the requirements, so we had to rebuild everything from scratch.",
     "topic": "工作职场"
   },
   {
@@ -13469,8 +13469,8 @@
     "reading": "こうはいがミスしたんですけど、じぶんのしじがわるかったのかなともおもって、あまりおこれませんでした。",
     "meaning": "后辈犯了错，但想想是不是自己指示不清，也没法太生气。",
     "level": "N2",
-    "meaningEn": "The junior made a mistake, but considering whether his instructions were unclear, he couldn't be too angry.",
-    "topic": "情绪心理"
+    "meaningEn": "A junior messed up, but I wondered if my directions were unclear, so I couldn’t get very angry.",
+    "topic": "工作职场"
   },
   {
     "id": 1498,
@@ -13478,8 +13478,8 @@
     "reading": "とりひきさきとののみかいで、ついのみすぎてつぎのひのしごとにえいきょうがでてしまいました。",
     "meaning": "和客户喝酒不小心喝多了，影响了第二天的工作。",
     "level": "N2",
-    "meaningEn": "I accidentally drank too much while drinking with a client, which affected my work the next day.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I overdid it at a dinner with a client and paid for it at work the next day.",
+    "topic": "工作职场"
   },
   {
     "id": 1499,
@@ -13487,17 +13487,17 @@
     "reading": "いどうのはなしがきたんですけど、いまのチームをはなれたくないからしょうじきまよっています。",
     "meaning": "被提出调动了，但不想离开现在的团队所以很纠结。",
     "level": "N2",
-    "meaningEn": "I was asked to be transferred, but I don’t want to leave my current team, so I’m very torn.",
-    "topic": "日常场景"
+    "meaningEn": "I heard talk of a transfer, but I don’t want to leave my team—I’m really torn.",
+    "topic": "工作职场"
   },
   {
     "id": 1500,
     "word": "あの人のことは嫌いじゃないけど、一緒にいると気を遣いすぎて疲れるんです。",
-    "reading": "あのひとのことはきらいじゃないけど、いっしょにいるときをつかいすぎてつかれるんです。",
-    "meaning": "不是讨厌那个人，但在一起太费心思会累。",
+    "reading": "あのひとのことはきらいじゃないけど、いっしょにいると、きをつかいすぎてつかれるんです。",
+    "meaning": "不是讨厌那个人，但在一起时总要顾虑太多，很累。",
     "level": "N2",
-    "meaningEn": "It’s not that I hate that person, but spending too much time together will make me tired.",
-    "topic": "日常场景"
+    "meaningEn": "It’s not that I dislike them—I just get drained from being on my guard the whole time we’re together.",
+    "topic": "人际关系"
   },
   {
     "id": 1501,
@@ -13542,7 +13542,7 @@
     "meaning": "本意是为对方着想才说的，好像却伤害了对方很抱歉。",
     "level": "N2",
     "meaningEn": "I meant to say it for the sake of the other person, but it seems that I hurt the other person and I'm sorry.",
-    "topic": "问候寒暄"
+    "topic": "人际关系"
   },
   {
     "id": 1506,
@@ -13559,7 +13559,7 @@
     "reading": "タクシーのうんてんしゅさんがすごくおしゃべりで、つかれていたけどねるわけにもいかなくてこまりました。",
     "meaning": "出租车司机特别爱聊天，虽然很累但也不好意思睡觉。",
     "level": "N2",
-    "meaningEn": "The taxi driver was very chatty. Although he was very tired, he was too embarrassed to sleep.",
+    "meaningEn": "The taxi driver was very chatty. Although I was exhausted, I couldn't very well sleep.",
     "topic": "交通出行"
   },
   {
@@ -13596,7 +13596,7 @@
     "meaning": "即使出现不认识的词，很多时候也能通过上下文猜出意思。",
     "level": "N2",
     "meaningEn": "Even if a word you don’t recognize appears, you can often guess the meaning from the context.",
-    "topic": "励志感悟"
+    "topic": "日语学习"
   },
   {
     "id": 1512,
@@ -13622,7 +13622,7 @@
     "reading": "けいごはむずかしいけど、つかえるようになるとにほんじんとのきょりがぐっとちぢまるきがします。",
     "meaning": "敬语虽然难，但学会了感觉和日本人的距离一下子拉近了。",
     "level": "N2",
-    "meaningEn": "Although it is difficult to use honorifics, I learned to feel that the distance between me and Japanese people has suddenly become closer.",
+    "meaningEn": "Honorifics are hard, but once you can use them, you feel the distance between you and Japanese people suddenly shrinks.",
     "topic": "日语学习"
   },
   {
@@ -13631,7 +13631,7 @@
     "reading": "にほんじんはほんねをいわないといわれるけど、それはあいてをきずつけたくないからだとおもいます。",
     "meaning": "都说日本人不说真心话，但那是因为不想伤害对方。",
     "level": "N2",
-    "meaningEn": "It is said that Japanese people do not tell the truth, but that is because they do not want to hurt the other person.",
+    "meaningEn": "People say Japanese don't speak their true feelings, but I think it's because they don't want to hurt others.",
     "topic": "日常场景"
   },
   {
@@ -13640,7 +13640,7 @@
     "reading": "「くうきをよむ」というぶんかは、がいこくじんにとっていちばんむずかしいところかもしれません。",
     "meaning": "'察言观色'这种文化，对外国人来说可能是最难的地方。",
     "level": "N2",
-    "meaningEn": "The culture of \"observing words and emotions\" may be the most difficult thing for foreigners.",
+    "meaningEn": "The culture of \"reading the air\" may be the hardest part for foreigners.",
     "topic": "日本文化"
   },
   {
@@ -13713,7 +13713,7 @@
     "meaning": "如果昨天不会的今天会了，光这一点就已经很了不起了。",
     "level": "N2",
     "meaningEn": "If something that was not possible yesterday is possible today, that alone is already remarkable.",
-    "topic": "日常场景"
+    "topic": "励志感悟"
   },
   {
     "id": 1525,
@@ -13838,7 +13838,7 @@
     "reading": "かさをもってでたのにふらなくて、ふらないひにかぎってもっていないというほうそくがあるきがします。",
     "meaning": "带了伞却没下雨，不下雨的时候偏偏没带，好像有这么个定律。",
     "level": "N2",
-    "meaningEn": "There seems to be a rule that I brought an umbrella but it didn’t rain, and I didn’t bring it when it didn’t rain.",
+    "meaningEn": "I feel like there's a law: I take an umbrella and it doesn't rain, but on clear days I'm the one without one.",
     "topic": "天气自然"
   },
   {
@@ -13847,7 +13847,7 @@
     "reading": "ひさしぶりにうんどうしたら、つぎのひにきんにくつうがくるかとおもったら、ふつかごにきてとしをかんじました。",
     "meaning": "好久没运动了，以为第二天会肌肉酸痛，结果两天后才来，感觉老了。",
     "level": "N2",
-    "meaningEn": "I haven’t exercised for a long time, and I thought my muscles would be sore the next day, but I came back two days later and felt old.",
+    "meaningEn": "After exercising for the first time in ages, I expected sore muscles the next day, but they hit two days later—I really felt my age.",
     "topic": "健康医疗"
   },
   {
@@ -13902,7 +13902,7 @@
     "level": "N2",
     "id": 1545,
     "meaningEn": "Even though I didn’t know it, I still did something rude.",
-    "topic": "问候寒暄"
+    "topic": "人际关系"
   },
   {
     "word": "頭では分かっているんだけど、気持ちがついていかないんです。",
@@ -13911,7 +13911,7 @@
     "level": "N2",
     "id": 1546,
     "meaningEn": "I understand the principles, but I can’t keep up emotionally.",
-    "topic": "励志感悟"
+    "topic": "情绪心理"
   },
   {
     "word": "勉強しなきゃと思いつつ、気づいたら二時間もスマホを見ていました。",
@@ -13920,7 +13920,7 @@
     "level": "N2",
     "id": 1547,
     "meaningEn": "Although I thought I must study, I unknowingly looked at my phone for two hours.",
-    "topic": "日语学习"
+    "topic": "日常场景"
   },
   {
     "word": "満員電車で一時間立ちっぱなしで、足がパンパンです。",
@@ -13955,7 +13955,7 @@
     "meaning": "借出去的钱迟迟不还，又不好意思催。",
     "level": "N2",
     "id": 1551,
-    "meaningEn": "The money I borrowed has not been repaid, and I am too embarrassed to ask for it.",
+    "meaningEn": "The money I lent still hasn’t come back, and it’s awkward to remind them.",
     "topic": "日常场景"
   },
   {
@@ -13973,7 +13973,7 @@
     "meaning": "被孩子弄坏了，又不好发火，很为难。",
     "level": "N2",
     "id": 1553,
-    "meaningEn": "It's very difficult to be broken by a child and not easy to get angry.",
+    "meaningEn": "My child broke it, but I couldn’t bring myself to get angry.",
     "topic": "家庭亲子"
   },
   {
@@ -13982,7 +13982,7 @@
     "meaning": "事情越来越多，做完一件又多两件的感觉。",
     "level": "N2",
     "id": 1554,
-    "meaningEn": "There are more and more things to do, and it feels like completing one and two more things.",
+    "meaningEn": "The to-do list only grows—for every one thing I finish, two more appear.",
     "topic": "日常场景"
   },
   {
@@ -14000,16 +14000,16 @@
     "meaning": "急忙出门结果电车在眼前开走了，只好等下一班。",
     "level": "N2",
     "id": 1556,
-    "meaningEn": "I hurriedly went out and the tram pulled away in front of me, so I had to wait for the next one.",
+    "meaningEn": "I hurried out, but the train left right in front of me, so I had to wait for the next one.",
     "topic": "交通出行"
   },
   {
     "word": "突然電車が止まって、車内アナウンスを聞いたら人身事故でした。",
     "reading": "とつぜんでんしゃがとまって、しゃないアナウンスをきいたらじんしんじこでした。",
-    "meaning": "电车突然停了，听到广播说是人身事故。",
+    "meaning": "电车突然停了，车内广播说是有人进入线路造成的事故。",
     "level": "N2",
     "id": 1557,
-    "meaningEn": "The tram suddenly stopped and I heard the announcement that it was a personal accident.",
+    "meaningEn": "The train stopped suddenly; the announcement said there was an incident involving a person on the tracks.",
     "topic": "交通出行"
   },
   {
@@ -14018,8 +14018,8 @@
     "meaning": "变化太大了，惊得说不出话来。",
     "level": "N2",
     "id": 1558,
-    "meaningEn": "The change was so great that I was shocked and speechless.",
-    "topic": "购物"
+    "meaningEn": "They had changed so much I was shocked into silence.",
+    "topic": "日常场景"
   },
   {
     "word": "迷いに迷って、結局一番最初に気になったものを選びました。",
@@ -14036,7 +14036,7 @@
     "meaning": "问要不要帮忙被说「没事」，气氛反而变微妙了。",
     "level": "N2",
     "id": 1560,
-    "meaningEn": "When I asked if I wanted to help, I was told \"it's okay\", and the atmosphere became more subtle.",
+    "meaningEn": "When I asked if they wanted help, they said \"I'm fine,\" and things got awkward.",
     "topic": "人际关系"
   },
   {
@@ -14054,8 +14054,8 @@
     "meaning": "被人拜托就没法拒绝，总是不知不觉就接下来了。",
     "level": "N2",
     "id": 1562,
-    "meaningEn": "I can't refuse when I'm asked, and I always follow suit without even realizing it.",
-    "topic": "问候寒暄"
+    "meaningEn": "I can't refuse when I'm asked, and I always end up saying yes.",
+    "topic": "人际关系"
   },
   {
     "word": "断りたいけど、関係が壊れるのが怖くて断れないんです。",
@@ -14090,8 +14090,8 @@
     "meaning": "有人不守规矩的话，认真做的人就吃亏了。",
     "level": "N2",
     "id": 1566,
-    "meaningEn": "If someone doesn't follow the rules, those who do it seriously will suffer.",
-    "topic": "饮食餐厅"
+    "meaningEn": "When some people break the rules, the ones playing fair lose out.",
+    "topic": "日常场景"
   },
   {
     "word": "ネットで調べてみたけど、情報が多すぎて逆に分からなくなりました。",
@@ -14108,7 +14108,7 @@
     "meaning": "明明信任的人却被背叛了，变得谁也不信了。",
     "level": "N2",
     "id": 1568,
-    "meaningEn": "The person you obviously trusted was betrayed, and you no longer trust anyone.",
+    "meaningEn": "I trusted them, but they betrayed me—now I can't trust anyone.",
     "topic": "人际关系"
   },
   {
@@ -14145,7 +14145,7 @@
     "level": "N2",
     "id": 1572,
     "meaningEn": "I didn’t know what to wear on a date, so I hesitated for an hour and ended up wearing my usual clothes.",
-    "topic": "思考议论"
+    "topic": "日常场景"
   },
   {
     "word": "準備は完璧だったのに、本番で緊張して頭が真っ白になりました。",
@@ -14181,7 +14181,7 @@
     "level": "N2",
     "id": 1576,
     "meaningEn": "I want to move but I can’t take this step because I find it too troublesome to pack.",
-    "topic": "饮食餐厅"
+    "topic": "住宿旅行"
   },
   {
     "word": "無理しすぎて倒れたと聞いて、飛んでいきました。",
@@ -14189,7 +14189,7 @@
     "meaning": "听说因为太勉强倒下了，我赶紧飞奔过去。",
     "level": "N2",
     "id": 1577,
-    "meaningEn": "I heard that he collapsed due to too much force, so I quickly ran over.",
+    "meaningEn": "When I heard they’d collapsed from pushing themselves too hard, I rushed right over.",
     "topic": "日常场景"
   },
   {
@@ -14198,7 +14198,7 @@
     "meaning": "在路上捡到钱包交到了派出所，后来收到了感谢信。",
     "level": "N2",
     "id": 1578,
-    "meaningEn": "I picked up my wallet on the road and handed it to the police station. I later received a thank you letter.",
+    "meaningEn": "I found a wallet on the street and turned it in at a police box; later I got a thank-you note.",
     "topic": "日常场景"
   },
   {
@@ -14216,7 +14216,7 @@
     "meaning": "没能按计划推进，只好重新排日程。",
     "level": "N2",
     "id": 1580,
-    "meaningEn": "It didn't go as planned and had to be rescheduled.",
+    "meaningEn": "Things didn’t go as planned, so I had to redo my schedule.",
     "topic": "日常场景"
   },
   {
@@ -14325,7 +14325,7 @@
     "level": "N2",
     "id": 1592,
     "meaningEn": "I was careless when I thought it was cured, and it relapsed again.",
-    "topic": "思考议论"
+    "topic": "健康医疗"
   },
   {
     "word": "我慢するのが当たり前だと思っていたけど、それは違うと気づきました。",
@@ -14370,7 +14370,7 @@
     "level": "N2",
     "id": 1597,
     "meaningEn": "It's super embarrassing to mix up similar names and call them wrong.",
-    "topic": "问候寒暄"
+    "topic": "人际关系"
   },
   {
     "word": "こんなことが起こるとは思ってもいなかったので、対応が遅れました。",
@@ -14388,7 +14388,7 @@
     "level": "N2",
     "id": 1599,
     "meaningEn": "I made too much and had a lot left over, so I gave some to my next-door neighbors.",
-    "topic": "日常生活"
+    "topic": "日常场景"
   },
   {
     "word": "翻訳アプリに頼りすぎて、自分の言葉で話す力がつかないなと反省しています。",
@@ -14396,178 +14396,178 @@
     "meaning": "太依赖翻译软件了，反省自己用自己的话说的能力没长进。",
     "level": "N2",
     "id": 1600,
-    "meaningEn": "I rely too much on translation software and reflect on my lack of improvement in my ability to speak in my own words.",
+    "meaningEn": "I rely too much on translation apps and worry I’m not building my own ability to express myself.",
     "topic": "科技网络"
   },
   {
     "word": "彼の代わりなんていないと思っていたけど、組織って意外と回るものですね。",
     "reading": "かれのかわりなんていないとおもっていたけど、そしきっていがいとまわるものですね。",
-    "meaning": "以为好了放松警惕结果又复发了。",
+    "meaning": "本以为没人能替代他，可组织照样运转。",
     "level": "N2",
     "id": 1601,
-    "meaningEn": "I thought I was fine and let my guard down, but it relapsed again.",
-    "topic": "情绪心理"
+    "meaningEn": "I thought nobody could replace him, but organizations have a way of carrying on.",
+    "topic": "工作职场"
   },
   {
     "word": "自分らしく生きることが、一番大事なんだと最近思うようになりました。",
     "reading": "じぶんらしくいきることが、いちばんだいじなんだとさいきんおもうようになりました。",
-    "meaning": "觉得谁也替代不了他，但组织意外地照常运转。",
+    "meaning": "最近觉得，按自己的方式生活才是最重要的。",
     "level": "N2",
     "id": 1602,
-    "meaningEn": "I felt that no one could replace him, but the organization surprisingly continued to operate as usual.",
-    "topic": "日常场景"
+    "meaningEn": "Lately I’ve come to feel that living true to yourself matters most.",
+    "topic": "励志感悟"
   },
   {
     "word": "苦労した分だけ成長できると信じて、今を頑張っています。",
     "reading": "くろうしたぶんだけせいちょうできるとしんじて、いまをがんばっています。",
-    "meaning": "一边带孩子一边工作，比想象中累多了。",
+    "meaning": "相信付出过的辛苦都会化为成长，所以正在努力过好当下。",
     "level": "N2",
     "id": 1603,
-    "meaningEn": "Taking care of children and working at the same time is much more tiring than imagined.",
-    "topic": "工作职场"
+    "meaningEn": "I believe we grow in proportion to what we go through, so I'm doing my best right now.",
+    "topic": "励志感悟"
   },
   {
     "word": "最初は戸惑ったけど、慣れてしまえばどうってことないです。",
     "reading": "さいしょはとまどったけど、なれてしまえばどうってことないです。",
-    "meaning": "相信吃过的苦都会让自己成长，所以现在加油。",
+    "meaning": "一开始不知所措，习惯了就没什么大不了。",
     "level": "N2",
     "id": 1604,
-    "meaningEn": "I believe that all the hardships you have experienced will make you grow, so work hard now.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I was unsure at first, but once you get used to it, it's no big deal.",
+    "topic": "日常场景"
   },
   {
     "word": "子供の頃に読んだ本が、今の自分の考え方に大きく影響しています。",
     "reading": "こどものころによんだほんが、いまのじぶんのかんがえかたにおおきくえいきょうしています。",
-    "meaning": "以为跟自己无关，其实有很深的关系。",
+    "meaning": "小时候读过的书，深深影响着现在的思维方式。",
     "level": "N2",
     "id": 1605,
-    "meaningEn": "I think it has nothing to do with me, but in fact it has a deep relationship.",
-    "topic": "日常场景"
+    "meaningEn": "The books I read as a child have greatly shaped how I think today.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "何度注意しても直らないのは、本人が問題だと思っていないからです。",
     "reading": "なんどちゅういしてもなおらないのは、ほんにんがもんだいだとおもっていないからです。",
-    "meaning": "小时候读过的书对现在的思维方式影响很大。",
+    "meaning": "提醒多少次都不改，是因为当事人没意识到问题在自己身上。",
     "level": "N2",
     "id": 1606,
-    "meaningEn": "The books I read as a child have a great influence on my current way of thinking.",
-    "topic": "兴趣娱乐"
+    "meaningEn": "They won't change no matter how often you warn them because they don't think they're the one at fault.",
+    "topic": "人际关系"
   },
   {
     "word": "出発する直前になって、チケットが見つからなくて大慌てしました。",
     "reading": "しゅっぱつするちょくぜんになって、ちけっとがみつからなくておおあわてしました。",
-    "meaning": "好不容易做完了结果发现有错误要重做。",
+    "meaning": "临出发才发现找不到票，慌得不行。",
     "level": "N2",
     "id": 1607,
-    "meaningEn": "After finally finishing it, I found that there were mistakes and I had to redo them.",
-    "topic": "思考议论"
+    "meaningEn": "Right before leaving I couldn't find my ticket and panicked.",
+    "topic": "交通出行"
   },
   {
     "word": "就職してから、学生時代がいかに自由だったか痛感しました。",
     "reading": "しゅうしょくしてから、がくせいじだいがいかにじゆうだったかつうかんしました。",
-    "meaning": "毕业十年了，当时的朋友还保持联系。",
+    "meaning": "工作以后才痛切体会到学生时代有多自由。",
     "level": "N2",
     "id": 1608,
-    "meaningEn": "Ten years after graduation, I still keep in touch with my friends from that time.",
-    "topic": "人际关系"
+    "meaningEn": "Since I started working, I've really felt how free my student days were.",
+    "topic": "工作职场"
   },
   {
     "word": "離婚する時は辛かったけど、今はあの決断をしてよかったと思っています。",
     "reading": "りこんするときはつらかったけど、いまはあのけつだんをしてよかったとおもっています。",
-    "meaning": "想结婚但得先找到对象才行啊。",
+    "meaning": "离婚时很痛苦，但现在觉得当时做了正确的决定。",
     "level": "N2",
     "id": 1609,
-    "meaningEn": "I want to get married but I have to find a partner first.",
+    "meaningEn": "The divorce was painful, but now I'm glad I made that decision.",
     "topic": "人际关系"
   },
   {
     "word": "引退すると聞いた時はショックだったけど、新しい挑戦を応援しています。",
     "reading": "いんたいするときいたときはしょっくだったけど、あたらしいちょうせんをおうえんしています。",
-    "meaning": "离婚的时候很痛苦，但现在觉得那个决定是对的。",
+    "meaning": "听说要引退时很受打击，但还是支持对方的新挑战。",
     "level": "N2",
     "id": 1610,
-    "meaningEn": "The divorce was very painful, but now I feel that the decision was the right one.",
-    "topic": "饮食餐厅"
+    "meaningEn": "I was shocked when I heard about the retirement, but I support the new challenge.",
+    "topic": "兴趣娱乐"
   },
   {
     "word": "トラブルに冷静に対応できる人を、心から尊敬します。",
     "reading": "トラブルにれいせいにたいおうできるひとを、こころからそんけいします。",
-    "meaning": "不要一个人解决，大家一起想吧。",
+    "meaning": "打心底里尊敬能在纠纷中冷静应对的人。",
     "level": "N2",
     "id": 1611,
-    "meaningEn": "Don't solve it alone, think about it together.",
-    "topic": "日常场景"
+    "meaningEn": "I truly respect people who can stay calm and handle trouble well.",
+    "topic": "励志感悟"
   },
   {
     "word": "AIで翻訳すると便利だけど、微妙なニュアンスがずれることがあります。",
     "reading": "エーアイでほんやくするとべんりだけど、びみょうなニュアンスがずれることがあります。",
-    "meaning": "交换了联系方式结果一次也没联系就结束了。",
+    "meaning": "用AI翻译很方便，但细微的语气有时会跑偏。",
     "level": "N2",
     "id": 1612,
-    "meaningEn": "We exchanged contact information but ended without even a single contact.",
-    "topic": "思考议论"
+    "meaningEn": "AI translation is handy, but subtle nuances can be off.",
+    "topic": "科技网络"
   },
   {
     "word": "問題から逃げずに向き合うのは大変だけど、逃げてもいつか追いつかれます。",
     "reading": "もんだいからにげずにむきあうのはたいへんだけど、にげてもいつかおいつかれます。",
-    "meaning": "在日本生活之后才明白了很多事情。",
+    "meaning": "不逃避、正面面对问题很难，但一味逃避总有一天会被问题追上。",
     "level": "N2",
     "id": 1613,
-    "meaningEn": "It was only after living in Japan that I understood many things.",
-    "topic": "日本文化"
+    "meaningEn": "Facing problems head-on is hard, but if you keep running away, they'll catch up with you someday.",
+    "topic": "励志感悟"
   },
   {
     "word": "落ち込んでもすぐ立ち直れる人が羨ましいです。",
     "reading": "おちこんでもすぐたちなおれるひとがうらやましいです。",
-    "meaning": "如果能翻过这堵墙，一定能变得更强。",
+    "meaning": "很羡慕那种情绪低落也能马上振作起来的人。",
     "level": "N2",
     "id": 1614,
-    "meaningEn": "If you can climb over this wall, you will definitely become stronger.",
-    "topic": "励志感悟"
+    "meaningEn": "I envy people who can bounce back quickly after feeling down.",
+    "topic": "情绪心理"
   },
   {
     "word": "何も言わずに見守ってくれた両親に、今は感謝しかありません。",
     "reading": "なにもいわずにみまもってくれたりょうしんに、いまはかんしゃしかありません。",
-    "meaning": "好羡慕那种低落了也能马上振作起来的人。",
+    "meaning": "对默默守护我、什么也没说的父母，如今只有感激。",
     "level": "N2",
     "id": 1615,
-    "meaningEn": "I envy people who can cheer up immediately when they are down.",
-    "topic": "情绪心理"
+    "meaningEn": "I'm nothing but grateful to my parents, who watched over me without a word.",
+    "topic": "家庭亲子"
   },
   {
     "word": "現実を受け入れるのに時間がかかったけど、やっと前を向けるようになりました。",
     "reading": "げんじつをうけいれるのにじかんがかかったけど、やっとまえをむけるようになりました。",
-    "meaning": "什么都没说只是默默守护我的父母，现在只有感激。",
+    "meaning": "接受现实花了很长时间，但终于能向前看了。",
     "level": "N2",
     "id": 1616,
-    "meaningEn": "I didn’t say anything but just protected my parents silently. Now I am only grateful.",
-    "topic": "家庭亲子"
+    "meaningEn": "It took a long time to accept reality, but I can finally face forward again.",
+    "topic": "情绪心理"
   },
   {
     "word": "引き受けたからには最後まで責任を持ってやり遂げます。",
     "reading": "ひきうけたからにはさいごまでせきにんをもってやりとげます。",
-    "meaning": "接受现实花了些时间，但终于能向前看了。",
+    "meaning": "既然接下了，就会负责到底、做到最后。",
     "level": "N2",
     "id": 1617,
-    "meaningEn": "It took some time to accept reality, but I was finally able to move on.",
-    "topic": "思考议论"
+    "meaningEn": "Now that I've taken it on, I'll take responsibility and see it through to the end.",
+    "topic": "工作职场"
   },
   {
     "word": "ずっと隠していたことを打ち明けたら、意外と受け入れてもらえました。",
     "reading": "ずっとかくしていたことをうちあけたら、いがいとうけいれてもらえました。",
-    "meaning": "既然接下了就要负责到底。",
+    "meaning": "把一直隐瞒的事说出来之后，意外地得到了接纳。",
     "level": "N2",
     "id": 1618,
-    "meaningEn": "Now that you have accepted it, you must be responsible to the end.",
-    "topic": "工作职场"
+    "meaningEn": "When I finally opened up about what I'd been hiding, people accepted me more easily than I expected.",
+    "topic": "人际关系"
   },
   {
     "word": "途中で何度もやめようと思ったけど、最後までやり遂げて本当によかったです。",
     "reading": "とちゅうでなんどもやめようとおもったけど、さいごまでやりとげてほんとうによかったです。",
-    "meaning": "鼓起勇气说出了一直隐瞒的事情，意外地被接受了。",
+    "meaning": "中途好几次想放弃，但坚持到最后真好。",
     "level": "N2",
     "id": 1619,
-    "meaningEn": "I mustered up the courage to tell me what I had been hiding, and was unexpectedly accepted.",
+    "meaningEn": "I wanted to quit many times along the way, but I'm really glad I saw it through.",
     "topic": "励志感悟"
   },
   {
@@ -14613,7 +14613,7 @@
     "level": "N2",
     "id": 1624,
     "meaningEn": "I was working overtime every day and it became very hard both physically and mentally.",
-    "topic": "问候寒暄"
+    "topic": "工作职场"
   },
   {
     "word": "息が苦しくなるほど走ったのは久しぶりだった。",
@@ -14621,7 +14621,7 @@
     "meaning": "好久没跑到喘不上气这么累了。",
     "level": "N2",
     "id": 1625,
-    "meaningEn": "It's been a while since I've been so tired that I couldn't breathe.",
+    "meaningEn": "It's been a while since I ran hard enough to be out of breath.",
     "topic": "日常场景"
   },
   {
@@ -14639,8 +14639,8 @@
     "meaning": "我们部长对时间要求很严格，绝对不能迟到。",
     "level": "N2",
     "id": 1627,
-    "meaningEn": "Our minister has strict time requirements and must not be late.",
-    "topic": "日常生活"
+    "meaningEn": "Our department head is strict about schedules—being late is a definite no.",
+    "topic": "工作职场"
   },
   {
     "word": "敬語の使い分けって本当に難しいよね。",
@@ -14702,7 +14702,7 @@
     "meaning": "队里有经验丰富的人，果然心里有底。",
     "level": "N2",
     "id": 1634,
-    "meaningEn": "There are experienced people in the team, so they really know what to do.",
+    "meaningEn": "Having someone experienced on the team really gives you peace of mind.",
     "topic": "日常场景"
   },
   {
@@ -14729,7 +14729,7 @@
     "meaning": "说了多少遍都不改，真的令人气愤。",
     "level": "N2",
     "id": 1637,
-    "meaningEn": "No matter how many times I say it, I still don’t change it, which is really irritating.",
+    "meaningEn": "No matter how many times I tell them, they still won't fix it—it's infuriating.",
     "topic": "日常场景"
   },
   {
@@ -14792,7 +14792,7 @@
     "meaning": "说的太抽象了，不太明白想表达什么。",
     "level": "N2",
     "id": 1644,
-    "meaningEn": "It's too abstract and I don't quite understand what I want to express.",
+    "meaningEn": "It was so abstract I couldn't really tell what you were trying to say.",
     "topic": "日常场景"
   },
   {
@@ -14828,8 +14828,8 @@
     "meaning": "朋友说这个保健品对皮肤粗糙很有效，所以我试了试。",
     "level": "N2",
     "id": 1648,
-    "meaningEn": "A friend said that this health product is very effective for rough skin, so I gave it a try.",
-    "topic": "人际关系"
+    "meaningEn": "A friend said this supplement helps with rough skin, so I gave it a try.",
+    "topic": "健康医疗"
   },
   {
     "word": "自炊した方が経済的だってわかってるけど、つい外食しちゃうんだよね。",
@@ -14873,8 +14873,8 @@
     "meaning": "离车站近租金又便宜，真是理想的房子啊。",
     "level": "N2",
     "id": 1653,
-    "meaningEn": "It's close to the station and the rent is cheap. It's an ideal house.",
-    "topic": "购物"
+    "meaningEn": "Close to the station and cheap rent—what a great place.",
+    "topic": "住宿旅行"
   },
   {
     "word": "夢を持つのはいいけど、もう少し現実的に考えた方がいいんじゃない？",
@@ -14891,7 +14891,7 @@
     "meaning": "那个人说话的方式特别有魅力，不知不觉就听入迷了。",
     "level": "N2",
     "id": 1655,
-    "meaningEn": "The way that man spoke was particularly charming, and I was fascinated by him without even realizing it.",
+    "meaningEn": "The way that person speaks is so engaging I can't help but listen.",
     "topic": "日常场景"
   },
   {
@@ -14900,17 +14900,17 @@
     "meaning": "再怎么生气，也不能动手吧。用常识想想啊。",
     "level": "N2",
     "id": 1656,
-    "meaningEn": "No matter how angry you are, you can't do anything. Think about it with common sense.",
+    "meaningEn": "No matter how angry you are, you can't use violence. Use your common sense.",
     "topic": "情绪心理"
   },
   {
-    "word": "富士山は日本を代表的な山として、世界中に知られている。",
-    "reading": "ふじさんはにほんをだいひょうてきなやまとして、せかいじゅうにしられている。",
+    "word": "富士山は日本の代表的な山として、世界中に知られている。",
+    "reading": "ふじさんはにほんのだいひょうてきなやまとして、せかいじゅうにしられている。",
     "meaning": "富士山作为日本代表性的山，闻名世界。",
     "level": "N2",
     "id": 1657,
     "meaningEn": "Mount Fuji is world-famous as Japan's representative mountain.",
-    "topic": "日常场景"
+    "topic": "日本文化"
   },
   {
     "word": "今回の選挙は圧倒的な差で与党が勝ったらしいよ。",
@@ -15026,8 +15026,8 @@
     "meaning": "有经验的人比较有利，但没经验也有机会。",
     "level": "N2",
     "id": 1670,
-    "meaningEn": "Those with experience are at an advantage, but there are opportunities for those without experience.",
-    "topic": "励志感悟"
+    "meaningEn": "Experience helps, but beginners still get a shot.",
+    "topic": "工作职场"
   },
   {
     "word": "彼女は肌が敏感だから、化粧品選びにはすごく気を使ってる。",
@@ -15080,7 +15080,7 @@
     "reading": "ごたぼうのところきょうしゅくですが、ごかくにんいただけますでしょうか。",
     "meaning": "百忙之中不好意思，能请您确认一下吗？",
     "level": "N1",
-    "meaningEn": "Sorry for my busy schedule, could you please confirm?",
+    "meaningEn": "Sorry to bother you when you're busy—could you please confirm?",
     "topic": "问候寒暄"
   },
   {
@@ -15089,7 +15089,7 @@
     "reading": "せんじつはおいそがしいなかおこしいただき、まことにありがとうございました。",
     "meaning": "前几天百忙之中前来，非常感谢。",
     "level": "N1",
-    "meaningEn": "I came here a few days ago despite my busy schedule, thank you very much.",
+    "meaningEn": "Thank you for visiting the other day despite your busy schedule.",
     "topic": "问候寒暄"
   },
   {
@@ -15116,7 +15116,7 @@
     "reading": "おさしつかえなければ、ごいけんをおきかせいただけませんか。",
     "meaning": "如果方便的话，能说说您的意见吗？",
     "level": "N1",
-    "meaningEn": "If it's convenient, could you share your opinion?",
-    "topic": "思考议论"
+    "meaningEn": "If you don't mind, could we hear your opinion?",
+    "topic": "工作职场"
   }
 ]
