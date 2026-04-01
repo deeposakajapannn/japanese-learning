@@ -1,5 +1,5 @@
 /**
- * 学习里程碑：听清了、练习·认识、（将来）掌握测验。
+ * 学习里程碑：听列表隐藏（遗留数据）、练习·认识、掌握测验。
  * 正式掌握测验的抽题范围以 `getQuizQueueKeys()`（`learning/quizQueue.ts`）为准，不得从全量词表抽题。
  */
 import { ref } from 'vue'
@@ -33,7 +33,7 @@ function writeTrueMap(storageKey: string, r: Record<string, true>) {
 
 export { listenDismissTick }
 
-// --- 听清了（听列表隐藏，数据仍在 jp_listen_dismissed）---
+// --- 听列表隐藏（jp_listen_dismissed；左滑「听清了」已下线，进入测验模式会清空并恢复列表展示）---
 
 export function hasListenCleared(cat: string, id: number): boolean {
   return isListenDismissed(cat, id)
@@ -80,9 +80,8 @@ export function markMasteryQuizPassed(cat: string, id: number): void {
 }
 
 /**
- * 已掌握：句子需「听清 + 练习认识 + 测验通过」；非句子分类不要求听清。
+ * 已掌握：练习认识 + 测验通过（句子「听清」左滑已下线，不再作为条件）。
  */
 export function isItemMastered(cat: string, id: number): boolean {
-  const listenOk = cat !== 'sentences' || hasListenCleared(cat, id)
-  return listenOk && hasPracticeRecognized(cat, id) && hasMasteryQuizPassed(cat, id)
+  return hasPracticeRecognized(cat, id) && hasMasteryQuizPassed(cat, id)
 }

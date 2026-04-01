@@ -1,4 +1,5 @@
 export { makeItemKey, parseItemKey } from './itemKey'
+export { restoreListenListHiddenOnTestMode } from '@/composables/useListenListDismiss'
 export {
   listenDismissTick,
   milestoneStateTick,

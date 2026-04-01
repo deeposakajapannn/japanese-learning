@@ -3,12 +3,12 @@ import { ref, computed } from 'vue'
 import type { VocabItem } from '../../types'
 import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick, recordItemListened } from '../../composables/useSpacedRepetition'
 import { speakWithExample } from '../../composables/useAudio'
-import { markListenCleared, isInQuizQueue, addToQuizQueue, quizQueueTick } from '@/learning'
+import { isInQuizQueue, addToQuizQueue, quizQueueTick } from '@/learning'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
 
-/** 左滑露出的操作区宽度（两个按钮） */
-const ACTION_W = 200
+/** 左滑露出的操作区宽度（仅「加入测验」） */
+const ACTION_W = 100
 
 const { t, currentLang } = useLang()
 
@@ -72,10 +72,6 @@ function onSpeak() {
   recordItemListened(cat, props.item.id)
 }
 
-function onClear() {
-  markListenCleared(cat, props.item.id)
-}
-
 const inQueue = computed(() => {
   quizQueueTick.value
   return isInQuizQueue(cat, props.item.id)
@@ -121,22 +117,15 @@ const cardTransitionClass = computed(() => {
 <template>
   <div class="flex flex-col rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] overflow-hidden animate-fadeUp">
     <div class="relative flex-1 min-w-0 overflow-hidden">
-      <div class="absolute inset-y-0 right-0 flex w-[200px] z-0" aria-hidden="true">
+      <div class="absolute inset-y-0 right-0 flex w-[100px] z-0" aria-hidden="true">
         <button
           type="button"
-          class="w-1/2 flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95"
+          class="w-full flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95"
           :class="inQueue ? 'bg-[#999] cursor-default' : 'btn-grad-primary btn-grad-primary--borderless'"
           :disabled="inQueue"
           @click.stop="onAddQuiz"
         >
           {{ inQueue ? t('quizQueueReady') : t('quizQueueAdd') }}
-        </button>
-        <button
-          type="button"
-          class="w-1/2 flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95 btn-grad-accent btn-grad-accent--borderless"
-          @click.stop="onClear"
-        >
-          {{ t('listenClear') }}
         </button>
       </div>
       <div

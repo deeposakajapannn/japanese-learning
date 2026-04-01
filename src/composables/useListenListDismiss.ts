@@ -26,10 +26,22 @@ export function isListenDismissed(cat: string, id: number): boolean {
   return !!readDismissed()[makeItemKey(cat, id)]
 }
 
-/** 听清了：从听列表隐藏（不改动练习/听过计数） */
+/** 听清了：从听列表隐藏（不改动练习/听过计数）；左滑入口已下线，保留供数据/同步兼容 */
 export function listenDismissClear(cat: string, id: number) {
   const r = readDismissed()
   r[makeItemKey(cat, id)] = true
   writeDismissed(r)
   listenDismissTick.value++
+}
+
+/**
+ * 用户进入「测验」模式时调用：清空听列表隐藏标记，
+ * 使先前因「听清了」从听/练列表隐藏的句子重新出现。
+ */
+export function restoreListenListHiddenOnTestMode() {
+  const r = readDismissed()
+  if (Object.keys(r).length === 0) return
+  writeDismissed({})
+  listenDismissTick.value++
+  debouncedSync()
 }

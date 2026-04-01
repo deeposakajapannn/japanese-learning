@@ -136,6 +136,10 @@ const progressText = computed(() => {
 
 <template>
   <div class="flex flex-col items-center gap-4 px-4 py-6">
+    <div class="w-full max-w-[420px] mx-auto text-[11px] theme-muted text-center leading-relaxed px-2 space-y-1.5">
+      <p>{{ t('masteryIntro') }}</p>
+      <p>{{ t('masteryGraduateHint') }}</p>
+    </div>
     <div v-if="progressText" class="text-sm theme-muted font-medium text-center px-1">{{ progressText }}</div>
 
     <!-- Phase indicator -->

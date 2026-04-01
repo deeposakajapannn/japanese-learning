@@ -15,6 +15,7 @@ import LoopBar from '@/components/loop/LoopBar.vue'
 import KanaGrid from '@/components/kana/KanaGrid.vue'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
 import { useTheme } from '@/composables/useTheme'
+import { restoreListenListHiddenOnTestMode } from '@/learning'
 
 const store = useAppStore()
 const { loopPlaying, startListPlayback, stop: stopLoop } = useLoopPlayer()
@@ -31,6 +32,13 @@ const { initTheme } = useTheme()
 watch(() => [store.currentMode, store.currentCat], () => {
   if (store.currentMode === 'practice') startQuiz()
 })
+
+watch(
+  () => store.currentMode,
+  (mode) => {
+    if (mode === 'test') restoreListenListHiddenOnTestMode()
+  },
+)
 
 function onGlobalKeydown(e: KeyboardEvent) {
   if (store.currentMode === 'practice') {
