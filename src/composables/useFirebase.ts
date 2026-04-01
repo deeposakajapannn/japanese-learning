@@ -4,6 +4,7 @@ import 'firebase/compat/database'
 import { t } from '@/i18n'
 import { mergeListenCountMaps } from '@/utils/listenCount'
 import { cloudSync } from '@/config/thresholds'
+import { milestoneStateTick } from '@/learning/milestones'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCZa2CyskF8bM_CU0l2UaT7Wwq25cz30Q",
@@ -86,6 +87,7 @@ function writeLocal(data: Record<string, any>) {
   for (const k of SYNCED_KEYS) {
     localStorage.setItem(k.local, JSON.stringify(data[k.cloud] || {}))
   }
+  milestoneStateTick.value++
 }
 
 function mergeData(local: Record<string, any>, cloud: Record<string, any>): Record<string, any> {

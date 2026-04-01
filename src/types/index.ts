@@ -1,3 +1,10 @@
+export interface GrammarPoint {
+  pattern: string
+  level: string
+  note: string
+  noteEn: string
+}
+
 export interface VocabItem {
   id: number
   word: string
@@ -9,6 +16,7 @@ export interface VocabItem {
   exampleCn?: string
   topic?: string
   level?: string
+  grammar?: GrammarPoint[]
 }
 
 export interface VocabItemWithCat extends VocabItem {

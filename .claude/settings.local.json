@@ -14,7 +14,9 @@
       "Bash(npx vue-tsc:*)",
       "Bash(npm run:*)",
       "Bash(node -e \"const s=require\\(''./public/data/sentences.json''\\); const levels=new Set\\(s.map\\(x=>x.level\\).filter\\(Boolean\\)\\); console.log\\([...levels].sort\\(\\)\\)\")",
-      "Bash(node -e \"const s=require\\(''./public/data/nouns.json''\\); const levels=new Set\\(s.map\\(x=>x.level\\).filter\\(Boolean\\)\\); console.log\\([...levels].sort\\(\\)\\)\")"
+      "Bash(node -e \"const s=require\\(''./public/data/nouns.json''\\); const levels=new Set\\(s.map\\(x=>x.level\\).filter\\(Boolean\\)\\); console.log\\([...levels].sort\\(\\)\\)\")",
+      "Bash(ls src/components/*/ -d)",
+      "Bash(grep -n 'grammar\\\\|语法' /Users/ewan/Desktop/japanese-learning/src/i18n/*.ts)"
     ]
   }
 }

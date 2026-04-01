@@ -184,6 +184,7 @@ export const messages: Record<LangKey, Record<string, string>> = {
     quizNewBatchKnown: '本组已认识 {known}/{total}',
     quizEmptyHeard: '暂无可练的「学习过」条目（需要至少听过或练过一次）。可先在「听」里播放，或在「全新的」里开始练习。',
     quizEmptyNew: '暂无可练的「全新」条目（从未听过且从未练过）。可先听列表，或切换到「学习过」。',
+    grammarTitle: '语法点',
   },
   en: {
     title: '日本語学習',
@@ -368,5 +369,6 @@ export const messages: Record<LangKey, Record<string, string>> = {
     quizNewBatchKnown: 'Known this round {known}/{total}',
     quizEmptyHeard: 'No “studied” items yet (need at least one listen or one practice). Try Listen, or practice in “Brand new” first.',
     quizEmptyNew: 'No “brand new” items (never listened and never practiced). Try Listen, or switch to “Studied”.',
+    grammarTitle: 'Grammar',
   },
 }

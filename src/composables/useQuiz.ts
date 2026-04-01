@@ -1,9 +1,9 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useAppStore } from '../stores/app'
 import { speakWithExample, stopLoop } from './useAudio'
 import { recordQuiz } from './useStats'
 import { makeItemKey } from '@/learning/itemKey'
-import { markPracticeAnswerKnown, markPracticeAnswerUnknown } from '@/learning/milestones'
+import { markPracticeAnswerKnown, markPracticeAnswerUnknown, milestoneStateTick, hasMasteryQuizPassed } from '@/learning/milestones'
 import {
   getActiveItems,
   getQuizProgressSnapshot,
@@ -155,7 +155,7 @@ function startQuiz() {
   // new
   const keys = newBatchKeysRef.value
   if (keys.length > 0 && !isNewBatchComplete()) {
-    let rebuilt = keysToItems(keys, cat)
+    let rebuilt = filterByLevel(keysToItems(keys, cat))
     if (rebuilt.length < keys.length) {
       newBatchKeysRef.value = rebuilt.map((it) => quizItemKey(it, cat))
     }
@@ -227,6 +227,7 @@ function submitAnswer(correct: boolean) {
 
 function setQuizLevels(levels: string[]) {
   quizLevels.value = levels
+  clearNewBatchState()
   startQuiz()
 }
 
@@ -240,6 +241,18 @@ function speakQuizCurrent() {
   if (!it) return
   speakWithExample(it.word, it.example)
 }
+
+// 云端同步后掌握数据可能变化，实时过滤掉已掌握的题目
+watch(milestoneStateTick, () => {
+  const before = quizItems.value.length
+  quizItems.value = quizItems.value.filter((it) => {
+    const cat = it._cat || useAppStore().currentCat
+    return !hasMasteryQuizPassed(cat, it.id)
+  })
+  if (quizItems.value.length !== before && quizIndex.value >= quizItems.value.length) {
+    quizIndex.value = Math.max(0, quizItems.value.length - 1)
+  }
+})
 
 export function useQuiz() {
   return {

@@ -94,6 +94,7 @@ const hasQuizItems = computed(() => quizItems.value.length > 0)
 
 const { recording, audioUrl, startRecording, stopRecording, clearRecording } = useVoiceRecorder()
 const playbackAudio = ref<HTMLAudioElement | null>(null)
+const playingBack = ref(false)
 
 function onRecordDown() {
   startRecording()
@@ -108,13 +109,18 @@ function playRecording() {
   if (playbackAudio.value) {
     playbackAudio.value.pause()
   }
+  playingBack.value = true
   playbackAudio.value = new Audio(audioUrl.value)
+  playbackAudio.value.onended = () => { playingBack.value = false }
+  playbackAudio.value.onerror = () => { playingBack.value = false }
   playbackAudio.value.play()
 }
 
 // 切题时清除录音
 watch(quizIndex, () => {
   clearRecording()
+  if (playbackAudio.value) playbackAudio.value.pause()
+  playingBack.value = false
 })
 
 // Auto-play audio when entering audio mode question
@@ -237,10 +243,14 @@ watch([quizIndex, quizMode], () => {
       <button
         v-if="audioUrl"
         type="button"
-        class="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#5b8a72] text-[#5b8a72] bg-transparent cursor-pointer transition-all hover:bg-[#5b8a72]/10 active:scale-95"
+        class="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border-2 cursor-pointer transition-all active:scale-95"
+        :class="playingBack
+          ? 'border-[#e8735a] text-white bg-[#e8735a]'
+          : 'border-[#5b8a72] text-[#5b8a72] bg-transparent hover:bg-[#5b8a72]/10'"
         @click="playRecording"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
+        <svg v-if="playingBack" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+        <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
       </button>
     </div>
 
