@@ -3,6 +3,7 @@ export interface GrammarPoint {
   level: string
   note: string
   noteEn: string
+  highlight?: number[]
 }
 
 export interface VocabItem {
@@ -17,6 +18,7 @@ export interface VocabItem {
   topic?: string
   level?: string
   grammar?: GrammarPoint[]
+  tokens?: string[]
 }
 
 export interface VocabItemWithCat extends VocabItem {

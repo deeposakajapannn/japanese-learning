@@ -15,6 +15,13 @@ const { t, currentLang } = useLang()
 
 const expandedGrammar = ref<GrammarPoint | null>(null)
 
+/** 当前展开的语法点高亮的 token indices */
+const highlightIndices = computed(() => {
+  const g = expandedGrammar.value
+  if (!g || !g.highlight) return new Set<number>()
+  return new Set(g.highlight)
+})
+
 function onGrammarTag(g: GrammarPoint, e: Event) {
   e.stopPropagation()
   expandedGrammar.value = expandedGrammar.value?.pattern === g.pattern ? null : g
@@ -150,7 +157,20 @@ const cardTransitionClass = computed(() => {
             {{ item.id }}
           </div>
           <div class="flex-1 min-w-0">
-            <div class="text-base font-bold theme-text">{{ item.word }}</div>
+            <div class="text-base font-bold theme-text leading-relaxed">
+              <template v-if="item.tokens && item.tokens.length">
+                <span
+                  v-for="(tk, i) in item.tokens"
+                  :key="i"
+                  class="inline-block transition-colors duration-200"
+                  :class="[
+                    highlightIndices.has(i) ? 'text-[#c45a3e] bg-[#e8735a]/10 rounded px-[1px]' : '',
+                    i > 0 ? 'ml-[3px]' : ''
+                  ]"
+                >{{ tk }}</span>
+              </template>
+              <template v-else>{{ item.word }}</template>
+            </div>
             <div class="text-sm theme-muted">{{ item.reading }}</div>
             <div class="text-sm theme-text mt-0.5">{{ localMeaning(item, currentLang) }}</div>
             <div v-if="item.grammar && item.grammar.length" class="flex flex-wrap gap-1 mt-1.5">
