@@ -42,12 +42,14 @@ function onGlobalKeydown(e: KeyboardEvent) {
     if (isAnswered.value && e.key === 'ArrowRight') submitAnswer(false)
   }
   if (store.currentMode === 'test') {
-    if (e.key === ' ' && !masteryTest.isAnswered.value) {
+    if (e.key === ' ' || e.key === 'ArrowRight') {
       e.preventDefault()
-      masteryTest.showAnswer()
+      if (masteryTest.isAnswered.value) {
+        masteryTest.nextAfterPass()
+      } else {
+        masteryTest.skip()
+      }
     }
-    if (masteryTest.isAnswered.value && e.key === 'ArrowLeft') masteryTest.pass()
-    if (masteryTest.isAnswered.value && e.key === 'ArrowRight') masteryTest.fail()
   }
 }
 

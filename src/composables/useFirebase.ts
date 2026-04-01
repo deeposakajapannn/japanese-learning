@@ -136,7 +136,10 @@ function syncToCloud() {
 /** 整包写入云端（含全空对象），用于清除本地后覆盖云端，避免下次拉取又恢复旧数据 */
 function flushDataToCloud() {
   if (!userId.value || !db) return
-  db.ref('users/' + userId.value + '/data').set(readLocal())
+  const payload = readLocal()
+  payload.resetAt = Date.now()
+  db.ref('users/' + userId.value + '/data').set(payload)
+  localStorage.setItem('jp_reset_at', String(payload.resetAt))
 }
 
 function debouncedSync() {
@@ -150,8 +153,19 @@ async function pullAndMerge(): Promise<boolean> {
     const snap = await db.ref('users/' + userId.value + '/data').once('value')
     if (!snap.exists()) return false
     const cloud = snap.val()
+    const localResetAt = Number(localStorage.getItem('jp_reset_at') || '0')
+    const cloudResetAt = Number(cloud.resetAt || 0)
+
+    // Cloud was reset after our last known reset → wipe local to match
+    if (cloudResetAt > localResetAt) {
+      writeLocal(cloud)
+      localStorage.setItem('jp_reset_at', String(cloudResetAt))
+      return true
+    }
+
     const local = readLocal()
     const merged = mergeData(local, cloud)
+    if (cloudResetAt) merged.resetAt = cloudResetAt
     writeLocal(merged)
     await db.ref('users/' + userId.value + '/data').set(merged)
     return true
@@ -229,10 +243,20 @@ async function login(username: string, password: string): Promise<{ success: boo
     const cloudSnap = await db.ref('users/' + name + '/data').once('value')
     if (cloudSnap.exists()) {
       const cloud = cloudSnap.val()
-      const local = readLocal()
-      const merged = mergeData(local, cloud)
-      writeLocal(merged)
-      await db.ref('users/' + name + '/data').set(merged)
+      const localResetAt = Number(localStorage.getItem('jp_reset_at') || '0')
+      const cloudResetAt = Number(cloud.resetAt || 0)
+
+      if (cloudResetAt > localResetAt) {
+        // Cloud was reset more recently → adopt cloud state (which is empty)
+        writeLocal(cloud)
+        localStorage.setItem('jp_reset_at', String(cloudResetAt))
+      } else {
+        const local = readLocal()
+        const merged = mergeData(local, cloud)
+        if (cloudResetAt) merged.resetAt = cloudResetAt
+        writeLocal(merged)
+        await db.ref('users/' + name + '/data').set(merged)
+      }
     }
 
     return { success: true, message: t('loginFound') }
