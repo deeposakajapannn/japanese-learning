@@ -28,7 +28,6 @@ const statsLine = computed(() => {
 
 const offsetPx = ref(0)
 const dragging = ref(false)
-const cardEl = ref<HTMLElement | null>(null)
 let touchStartX = 0
 let touchStartY = 0
 let touchStartOffset = 0
@@ -140,7 +139,6 @@ const cardTransitionClass = computed(() => {
         </button>
       </div>
       <div
-        ref="cardEl"
         class="relative z-10 theme-surface p-4 select-none touch-pan-y cursor-grab active:cursor-grabbing"
         :class="cardTransitionClass"
         :style="cardTransform"

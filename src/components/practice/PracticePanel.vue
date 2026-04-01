@@ -2,7 +2,7 @@
 import { computed, watch, ref } from 'vue'
 import { useAppStore } from '../../stores/app'
 import { useQuiz } from '../../composables/useQuiz'
-import { getActiveItems, itemCountsTick } from '../../composables/useSpacedRepetition'
+import { getActiveItems } from '../../composables/useSpacedRepetition'
 import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
 import { useVoiceRecorder } from '../../composables/useVoiceRecorder'
 import { useLang } from '@/i18n'
