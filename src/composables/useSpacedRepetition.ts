@@ -1,9 +1,16 @@
+import { ref } from 'vue'
 import { useAppStore, type DataItem } from '../stores/app'
 import { useFirebase } from './useFirebase'
+import { todayKey } from './useStats'
+import { coerceListenCount } from '@/utils/listenCount'
 
 const { debouncedSync } = useFirebase()
 
-export const MASTERED_THRESHOLD = 50
+/** 列表「练×」角标等依赖练习次数的 UI 刷新用 */
+export const itemCountsTick = ref(0)
+
+/** 听过次数变更时练页「加入测验」资格等刷新用 */
+export const listenedCountsTick = ref(0)
 
 function getItemCounts(): Record<string, number> {
   return JSON.parse(localStorage.getItem('jp_item_counts') || '{}')
@@ -14,17 +21,19 @@ function saveItemCounts(c: Record<string, number>) {
   debouncedSync()
 }
 
+/** 练习答题次数（仅统计，不用于「毕业/已掌握」） */
 export function recordItemSeen(cat: string, id: number): number {
   const c = getItemCounts()
   const key = cat + ':' + id
   c[key] = (c[key] || 0) + 1
   saveItemCounts(c)
+  itemCountsTick.value++
   return c[key]
 }
 
+/** 可练条目：该分类全部词条，仅排除未到期的「推迟复习」 */
 export function getActiveItems(cat: string): (DataItem & { _cat?: string })[] {
   const store = useAppStore()
-  const c = getItemCounts()
   const delays = getDelays()
   const today = new Date().toISOString().slice(0, 10)
 
@@ -33,12 +42,11 @@ export function getActiveItems(cat: string): (DataItem & { _cat?: string })[] {
     for (const k of ['nouns', 'sentences'] as const) {
       store.data[k].forEach((it: DataItem) => {
         const key = k + ':' + it.id
-        if ((c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today)) {
+        if (!(delays[key] > today)) {
           all.push({ ...it, _cat: k })
         }
       })
     }
-    // Shuffle
     for (let i = all.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
       ;[all[i], all[j]] = [all[j], all[i]]
@@ -50,20 +58,8 @@ export function getActiveItems(cat: string): (DataItem & { _cat?: string })[] {
   if (!items) return []
   return items.filter((it: DataItem) => {
     const key = cat + ':' + it.id
-    return (c[key] || 0) < MASTERED_THRESHOLD && !(delays[key] > today)
+    return !(delays[key] > today)
   })
-}
-
-export function isMastered(cat: string, id: number): boolean {
-  const c = getItemCounts()
-  return (c[cat + ':' + id] || 0) >= MASTERED_THRESHOLD
-}
-
-/** 直接标记为已掌握（用于听列表「听清了」等） */
-export function setItemMastered(cat: string, id: number) {
-  const c = getItemCounts()
-  c[cat + ':' + id] = MASTERED_THRESHOLD
-  saveItemCounts(c)
 }
 
 export function getItemCount(cat: string, id: number): number {
@@ -88,7 +84,6 @@ export function delayItem(cat: string, id: number, days: number) {
   saveDelays(d)
 }
 
-// --- Listened items tracking ---
 function getListenedItems(): Record<string, number> {
   return JSON.parse(localStorage.getItem('jp_listened') || '{}')
 }
@@ -98,16 +93,85 @@ function saveListenedItems(l: Record<string, number>) {
   debouncedSync()
 }
 
+const LISTENED_TODAY_KEY = 'jp_listened_today'
+
+type ListenedTodayStore = { date: string; keys: Record<string, true> }
+
+function loadListenedToday(): ListenedTodayStore {
+  const d = todayKey()
+  try {
+    const raw = localStorage.getItem(LISTENED_TODAY_KEY)
+    if (!raw) return { date: d, keys: {} }
+    const p = JSON.parse(raw) as ListenedTodayStore
+    if (!p || p.date !== d || !p.keys || typeof p.keys !== 'object') return { date: d, keys: {} }
+    return { date: d, keys: p.keys }
+  } catch {
+    return { date: d, keys: {} }
+  }
+}
+
+function saveListenedToday(p: ListenedTodayStore) {
+  localStorage.setItem(LISTENED_TODAY_KEY, JSON.stringify(p))
+}
+
+export function markListenedToday(cat: string, id: number) {
+  const d = todayKey()
+  let p = loadListenedToday()
+  if (p.date !== d) p = { date: d, keys: {} }
+  p.keys[cat + ':' + id] = true
+  saveListenedToday(p)
+}
+
+export function isListenedToday(cat: string, id: number): boolean {
+  return !!loadListenedToday().keys[cat + ':' + id]
+}
+
+/** 练页抽题、排序时一次性读取，避免对每个词条重复 JSON.parse */
+export type QuizProgressSnapshot = {
+  listened: Record<string, number>
+  counts: Record<string, number>
+  /** 仅当日 keys；与 listened 一致用于排序 */
+  listenedTodayKeys: Record<string, true>
+}
+
+export function getQuizProgressSnapshot(): QuizProgressSnapshot {
+  const today = loadListenedToday()
+  const d = todayKey()
+  return {
+    listened: getListenedItems(),
+    counts: getItemCounts(),
+    listenedTodayKeys: today.date === d ? today.keys : {},
+  }
+}
+
+function snapKey(cat: string, id: number) {
+  return `${cat}:${id}`
+}
+
+export function snapListenCount(s: QuizProgressSnapshot, cat: string, id: number): number {
+  return coerceListenCount(s.listened[snapKey(cat, id)])
+}
+
+export function snapItemCount(s: QuizProgressSnapshot, cat: string, id: number): number {
+  return s.counts[snapKey(cat, id)] || 0
+}
+
+export function snapIsListenedToday(s: QuizProgressSnapshot, cat: string, id: number): boolean {
+  return !!s.listenedTodayKeys[snapKey(cat, id)]
+}
+
 export function recordItemListened(cat: string, id: number) {
   const l = getListenedItems()
   const key = cat + ':' + id
-  l[key] = (l[key] || 0) + 1
+  l[key] = coerceListenCount(l[key]) + 1
   saveListenedItems(l)
+  markListenedToday(cat, id)
+  listenedCountsTick.value++
 }
 
 export function getListenedCount(cat: string, id: number): number {
   const l = getListenedItems()
-  return l[cat + ':' + id] || 0
+  return coerceListenCount(l[cat + ':' + id])
 }
 
 export function isDelayed(cat: string, id: number): boolean {
@@ -119,15 +183,17 @@ export function isDelayed(cat: string, id: number): boolean {
 
 export function useSpacedRepetition() {
   return {
-    MASTERED_THRESHOLD,
+    itemCountsTick,
+    listenedCountsTick,
     recordItemSeen,
     getActiveItems,
-    isMastered,
     getItemCount,
     delayItem,
     getDelays,
     isDelayed,
     recordItemListened,
     getListenedCount,
+    markListenedToday,
+    isListenedToday,
   }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { VocabItem, CategoryKey } from '../../types'
-import { isMastered, getItemCount } from '../../composables/useSpacedRepetition'
+import { getListenedCount, getItemCount, itemCountsTick } from '../../composables/useSpacedRepetition'
 import { speakWithExample, speakLoop, stopLoop, looping, loopingWord } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
@@ -27,6 +27,13 @@ function onToggleLoop() {
     speakLoop(props.item.word, props.item.example)
   }
 }
+
+const statsLine = computed(() => {
+  itemCountsTick.value
+  return t('listStatsCounts')
+    .replace('{listen}', String(getListenedCount(props.cat, props.item.id)))
+    .replace('{practice}', String(getItemCount(props.cat, props.item.id)))
+})
 </script>
 
 <template>
@@ -57,17 +64,8 @@ function onToggleLoop() {
       <svg v-if="isThisLooping" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
       <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 01-4 4H3"/></svg>
     </button>
-    <div
-      v-if="isMastered(cat, item.id)"
-      class="absolute top-2 right-2 bg-[#5b8a72] text-white text-[10px] px-2 py-0.5 rounded-[10px]"
-    >
-      {{ t('mastered') }}
-    </div>
-    <div
-      v-else
-      class="absolute top-2 right-2 theme-muted text-[10px]"
-    >
-      {{ getItemCount(cat, item.id) }}/50
+    <div class="absolute top-2 right-12 theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none">
+      {{ statsLine }}
     </div>
   </div>
 </template>

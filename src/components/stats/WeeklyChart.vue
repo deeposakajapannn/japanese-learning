@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { getStats, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
+import { weeklyChart } from '@/config/thresholds'
 
 const { t } = useLang()
 
@@ -10,7 +11,7 @@ const stats = computed(() => { statsVersion.value; return getStats() })
 
 const days = computed(() => {
   const result: string[] = []
-  for (let i = 6; i >= 0; i--) {
+  for (let i = weeklyChart.days - 1; i >= 0; i--) {
     const d = new Date()
     d.setDate(d.getDate() - i)
     result.push(d.toISOString().slice(0, 10))
@@ -19,7 +20,7 @@ const days = computed(() => {
 })
 
 const maxVal = computed(() => {
-  let m = 50
+  let m: number = weeklyChart.practiceScaleMin
   for (const d of days.value) {
     const dd = stats.value[d] || {}
     m = Math.max(m, (dd.studied || 0) + (dd.quizzed || 0))
@@ -28,18 +29,22 @@ const maxVal = computed(() => {
 })
 
 const maxListen = computed(() => {
-  let m = 30
+  let m: number = weeklyChart.listenScaleMin
   for (const d of days.value) {
     const dd = stats.value[d] || {}
     m = Math.max(m, dd.listened || 0)
   }
   return m
 })
+
+const chartTitleText = computed(() =>
+  t('chartTitle').replace('{n}', String(weeklyChart.days)),
+)
 </script>
 
 <template>
   <div class="theme-card p-4 mt-4">
-    <h3 class="text-base font-semibold theme-text mb-3">{{ t('chartTitle') }}</h3>
+    <h3 class="text-base font-semibold theme-text mb-3">{{ chartTitleText }}</h3>
 
     <div v-for="day in days" :key="day" class="mb-1">
       <!-- Study + Quiz row -->

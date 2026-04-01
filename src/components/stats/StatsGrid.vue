@@ -4,17 +4,35 @@ import StudyStatusCard from './StudyStatusCard.vue'
 import { getStats, todayKey, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
+import { studyStatus as studyStatusCfg } from '@/config/thresholds'
 
 const { t } = useLang()
+
+/** 与 jp_stats 键一致：UTC 日历日 YYYY-MM-DD */
+function inclusiveUtcDays(fromIso: string, toIso: string): number {
+  const a = Date.parse(`${fromIso}T00:00:00.000Z`)
+  const b = Date.parse(`${toIso}T00:00:00.000Z`)
+  return Math.floor((b - a) / 86400000) + 1
+}
 
 const stats = computed(() => { statsVersion.value; return getStats() })
 const today = computed(() => todayKey())
 const todayData = computed(() => stats.value[today.value] || { studied: 0, quizzed: 0, correct: 0, wrong: {}, listened: 0 })
 
 const studyStatus = computed(() => {
+  const dateKeys = Object.keys(stats.value).filter((k) => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort()
+  const todayStr = today.value
+  if (!dateKeys.length || inclusiveUtcDays(dateKeys[0]!, todayStr) < studyStatusCfg.minHistoryDays) {
+    return {
+      emoji: '📅',
+      label: t('statusWarmup').replace('{n}', String(studyStatusCfg.minHistoryDays)),
+      color: '#8a7040',
+    }
+  }
+
   let weekTotal = 0
   let activeDays = 0
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < studyStatusCfg.rollingDays; i++) {
     const d = new Date()
     d.setDate(d.getDate() - i)
     const key = d.toISOString().slice(0, 10)
@@ -26,9 +44,9 @@ const studyStatus = computed(() => {
   }
   const days = Math.max(activeDays, 1)
   const dailyAvg = weekTotal / days
-  if (dailyAvg < 20) return { emoji: '🦥', label: t('statusLazy'), color: '#cf5a4a' }
-  if (dailyAvg < 50) return { emoji: '👍', label: t('statusOk'), color: '#b9793b' }
-  if (dailyAvg < 100) return { emoji: '🏆', label: t('statusGood'), color: '#4f8a6f' }
+  if (dailyAvg < studyStatusCfg.dailyAvgLazyBelow) return { emoji: '🦥', label: t('statusLazy'), color: '#cf5a4a' }
+  if (dailyAvg < studyStatusCfg.dailyAvgOkBelow) return { emoji: '👍', label: t('statusOk'), color: '#b9793b' }
+  if (dailyAvg < studyStatusCfg.dailyAvgGoodBelow) return { emoji: '🏆', label: t('statusGood'), color: '#4f8a6f' }
   return { emoji: '⚠️', label: t('statusOver'), color: '#cf5a4a' }
 })
 

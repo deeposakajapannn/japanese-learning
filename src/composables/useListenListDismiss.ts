@@ -1,6 +1,6 @@
 import { ref } from 'vue'
+import { makeItemKey } from '@/learning/itemKey'
 import { useFirebase } from './useFirebase'
-import { setItemMastered } from './useSpacedRepetition'
 
 const STORAGE_KEY = 'jp_listen_dismissed'
 
@@ -22,27 +22,14 @@ function writeDismissed(r: Record<string, true>) {
   debouncedSync()
 }
 
-function itemKey(cat: string, id: number) {
-  return `${cat}:${id}`
-}
-
 export function isListenDismissed(cat: string, id: number): boolean {
-  return !!readDismissed()[itemKey(cat, id)]
+  return !!readDismissed()[makeItemKey(cat, id)]
 }
 
-/** 听清了：标记掌握并从听列表隐藏 */
+/** 听清了：从听列表隐藏（不改动练习/听过计数） */
 export function listenDismissClear(cat: string, id: number) {
-  setItemMastered(cat, id)
   const r = readDismissed()
-  r[itemKey(cat, id)] = true
-  writeDismissed(r)
-  listenDismissTick.value++
-}
-
-/** 删除：仅从听列表隐藏，不影响练习计数 */
-export function listenDismissHideOnly(cat: string, id: number) {
-  const r = readDismissed()
-  r[itemKey(cat, id)] = true
+  r[makeItemKey(cat, id)] = true
   writeDismissed(r)
   listenDismissTick.value++
 }

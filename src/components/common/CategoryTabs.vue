@@ -14,7 +14,7 @@ const categories = [
 
 <template>
   <div
-    v-if="store.currentMode !== 'stats'"
+    v-if="store.currentMode !== 'stats' && store.currentMode !== 'test'"
     class="flex gap-2 px-4 pt-1 pb-3 flex-wrap md:px-10"
   >
     <button

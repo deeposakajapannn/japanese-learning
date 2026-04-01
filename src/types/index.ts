@@ -15,7 +15,7 @@ export interface VocabItemWithCat extends VocabItem {
 }
 
 export type CategoryKey = 'nouns' | 'sentences' | 'kana'
-export type ModeKey = 'list' | 'practice' | 'stats'
+export type ModeKey = 'list' | 'practice' | 'test' | 'stats'
 export type LangKey = 'zh' | 'en'
 
 export interface DayStats {

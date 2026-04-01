@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useAppStore } from '@/stores/app'
 import { useFirebase } from '@/composables/useFirebase'
 import { useQuiz } from '@/composables/useQuiz'
+import { useMasteryTest } from '@/composables/useMasteryTest'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppNav from '@/components/layout/AppNav.vue'
 import CategoryTabs from '@/components/common/CategoryTabs.vue'
 import ListPanel from '@/components/list/ListPanel.vue'
 import PracticePanel from '@/components/practice/PracticePanel.vue'
+import MasteryTestPanel from '@/components/mastery/MasteryTestPanel.vue'
 import StatsPanel from '@/components/stats/StatsPanel.vue'
 import LoopBar from '@/components/loop/LoopBar.vue'
 import KanaGrid from '@/components/kana/KanaGrid.vue'
@@ -23,11 +25,31 @@ watch(loopPlaying, (val) => {
 })
 const { userId, initFirebase, pullAndMerge } = useFirebase()
 const { isAnswered, showAnswer, submitAnswer, startQuiz } = useQuiz()
+const masteryTest = useMasteryTest()
 const { initTheme } = useTheme()
 
 watch(() => [store.currentMode, store.currentCat], () => {
   if (store.currentMode === 'practice') startQuiz()
 })
+
+function onGlobalKeydown(e: KeyboardEvent) {
+  if (store.currentMode === 'practice') {
+    if (e.key === ' ' && !isAnswered.value) {
+      e.preventDefault()
+      showAnswer()
+    }
+    if (isAnswered.value && e.key === 'ArrowLeft') submitAnswer(true)
+    if (isAnswered.value && e.key === 'ArrowRight') submitAnswer(false)
+  }
+  if (store.currentMode === 'test') {
+    if (e.key === ' ' && !masteryTest.isAnswered.value) {
+      e.preventDefault()
+      masteryTest.showAnswer()
+    }
+    if (masteryTest.isAnswered.value && e.key === 'ArrowLeft') masteryTest.pass()
+    if (masteryTest.isAnswered.value && e.key === 'ArrowRight') masteryTest.fail()
+  }
+}
 
 onMounted(async () => {
   initTheme()
@@ -38,16 +60,11 @@ onMounted(async () => {
     pullAndMerge()
   }
 
-  document.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (store.currentMode === 'practice') {
-      if (e.key === ' ' && !isAnswered.value) {
-        e.preventDefault()
-        showAnswer()
-      }
-      if (isAnswered.value && e.key === 'ArrowLeft') submitAnswer(true)
-      if (isAnswered.value && e.key === 'ArrowRight') submitAnswer(false)
-    }
-  })
+  document.addEventListener('keydown', onGlobalKeydown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', onGlobalKeydown)
 })
 </script>
 
@@ -68,6 +85,9 @@ onMounted(async () => {
       </div>
       <div v-show="store.currentMode === 'practice'" class="px-4 pb-5 md:px-10 md:max-w-[800px] md:mx-auto">
         <PracticePanel />
+      </div>
+      <div v-show="store.currentMode === 'test'" class="px-4 pb-5 md:px-10 md:max-w-[800px] md:mx-auto">
+        <MasteryTestPanel />
       </div>
       <div v-show="store.currentMode === 'stats'" class="px-4 pb-5 md:px-10 md:max-w-[800px] md:mx-auto">
         <StatsPanel />

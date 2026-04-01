@@ -4,8 +4,8 @@ import { audioEl } from './useAudio'
 import { recordListenTime } from './useStats'
 import { recordItemListened } from './useSpacedRepetition'
 import { t } from '@/i18n'
+import { SILENT_KEEPALIVE_WAV, getGapWavUri } from '@/utils/silentWavGap'
 
-const SILENT_WAV = 'data:audio/wav;base64,UklGRjQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YRAAAAAAAAAAAAAAAAAAAAAAAAAA'
 const LOOP_DEBUG_KEY = 'loop_debug_logs_v1'
 const LOOP_DEBUG_MAX = 200
 
@@ -20,7 +20,9 @@ const listSpeaking = ref(false)
 let _loopTimers: ReturnType<typeof setTimeout>[] = []
 let silentAudio: HTMLAudioElement | null = null
 let gapAudio: HTMLAudioElement | null = null
-const gapWavCache = new Map<number, string>()
+
+/** 每次开始播一条（含切歌）递增，用于丢弃上一轨残留的 play().catch / 旧闭包 */
+let loopPlaySession = 0
 
 type LoopDebugEntry = {
   ts: string
@@ -81,100 +83,49 @@ function exportLoopDebugLogs(): string {
   ).join('\n')
 }
 
-function toBase64(bytes: Uint8Array): string {
-  let binary = ''
-  const chunkSize = 0x8000
-  for (let i = 0; i < bytes.length; i += chunkSize) {
-    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize))
-  }
-  return btoa(binary)
-}
-
-function createSilentWavDataUri(ms: number): string {
-  const clampedMs = Math.max(20, Math.min(2000, Math.floor(ms)))
-  const sampleRate = 8000
-  const channels = 1
-  const bitsPerSample = 16
-  const bytesPerSample = bitsPerSample / 8
-  const numSamples = Math.floor((sampleRate * clampedMs) / 1000)
-  const dataSize = numSamples * channels * bytesPerSample
-  const buffer = new ArrayBuffer(44 + dataSize)
-  const view = new DataView(buffer)
-
-  const writeString = (offset: number, text: string) => {
-    for (let i = 0; i < text.length; i++) view.setUint8(offset + i, text.charCodeAt(i))
-  }
-
-  writeString(0, 'RIFF')
-  view.setUint32(4, 36 + dataSize, true)
-  writeString(8, 'WAVE')
-  writeString(12, 'fmt ')
-  view.setUint32(16, 16, true)
-  view.setUint16(20, 1, true)
-  view.setUint16(22, channels, true)
-  view.setUint32(24, sampleRate, true)
-  view.setUint32(28, sampleRate * channels * bytesPerSample, true)
-  view.setUint16(32, channels * bytesPerSample, true)
-  view.setUint16(34, bitsPerSample, true)
-  writeString(36, 'data')
-  view.setUint32(40, dataSize, true)
-  // Fill with ultra-low-level signal instead of pure zero samples.
-  // Some mobile power policies may treat fully silent streams as expendable.
-  for (let i = 0; i < numSamples; i++) {
-    const sample = (i % 2 === 0 ? 1 : -1)
-    view.setInt16(44 + i * 2, sample, true)
-  }
-
-  return `data:audio/wav;base64,${toBase64(new Uint8Array(buffer))}`
-}
-
-function getGapWav(ms: number): string {
-  const key = Math.round(ms / 20) * 20
-  const cached = gapWavCache.get(key)
-  if (cached) return cached
-  const wav = createSilentWavDataUri(key)
-  gapWavCache.set(key, wav)
-  return wav
-}
-
-function playGapInBackground(delayMs: number, action: () => void) {
+function playGapInBackground(delayMs: number, session: number, action: () => void) {
   if (!loopPlaying.value || loopPaused.value) return
   if (delayMs <= 0) {
-    action()
+    if (session === loopPlaySession) action()
     return
   }
   if (!gapAudio) gapAudio = new Audio()
   gapAudio.onended = () => {
+    if (session !== loopPlaySession) return
     if (!loopPlaying.value || loopPaused.value) return
     action()
   }
-  gapAudio.src = getGapWav(delayMs)
+  gapAudio.src = getGapWavUri(delayMs)
   gapAudio.play().catch(() => {
     appendLoopDebug('gap_play_failed', `delayMs=${delayMs}`)
+    if (session !== loopPlaySession) return
     if (!loopPlaying.value || loopPaused.value) return
     action()
   })
 }
 
-function runNextStep(action: () => void, delayMs: number) {
+function runNextStep(session: number, action: () => void, delayMs: number) {
   if (!loopPlaying.value || loopPaused.value) return
   // Always schedule gaps via short silent audio — not setTimeout.
   // Timers are heavily throttled when the screen locks; list play feels OK when
   // lock happens mid-utterance, but 单曲循环 often hits the 500/800ms gaps while
   // locked and only continues after unlock.
   if (delayMs <= 0) {
-    action()
+    if (session === loopPlaySession) action()
     return
   }
   appendLoopDebug('run_next_gap', `delayMs=${delayMs}`)
-  playGapInBackground(delayMs, action)
+  playGapInBackground(delayMs, session, action)
 }
 
-function playCurrentAudio(src: string, onFail: () => void) {
+function playCurrentAudio(src: string, session: number, onFail: () => void) {
+  if (session !== loopPlaySession) return
+  audioEl.pause()
   audioEl.src = src
   appendLoopDebug('play_audio', safeAudioSrc(src))
   audioEl.play().catch(() => {
     appendLoopDebug('play_audio_failed', safeAudioSrc(src))
+    if (session !== loopPlaySession) return
     if (!loopPlaying.value || loopPaused.value) return
     onFail()
   })
@@ -218,7 +169,7 @@ function clearLoopScheduling() {
 
 function startSilentKeepAlive() {
   if (silentAudio) return
-  silentAudio = new Audio(SILENT_WAV)
+  silentAudio = new Audio(SILENT_KEEPALIVE_WAV)
   silentAudio.loop = true
   silentAudio.volume = 0.01
   silentAudio.play().catch(() => {
@@ -289,14 +240,15 @@ function setupMediaSession() {
 
 function playLoopItem() {
   if (!loopPlaying.value) return
+  const session = ++loopPlaySession
   const store = useAppStore()
   const it = loopPlaylist.value[loopIndex.value]
   if (!it) return
   appendLoopDebug('play_item', `${it.word}`)
 
-  setupMediaSession()
+  audioEl.onended = null
 
-  recordItemListened(it._cat, it.id)
+  setupMediaSession()
 
   const fn1 = store.audioMap[it.word]
   if (!fn1) {
@@ -305,23 +257,36 @@ function playLoopItem() {
     return
   }
 
+  // 「听过」仅在主词音频完整播完时 +1；部分环境会重复触发 ended，只计一次
+  let wordListenCounted = false
   audioEl.onended = () => {
+    if (session !== loopPlaySession) return
+    if (!wordListenCounted) {
+      wordListenCounted = true
+      recordItemListened(it._cat, it.id)
+    }
     recordListenTime(audioEl.duration)
     if (!loopPlaying.value || loopPaused.value) return
-    runNextStep(() => {
+    runNextStep(session, () => {
+      if (session !== loopPlaySession) return
       if (it.example && store.audioMap[it.example]) {
         audioEl.onended = () => {
+          if (session !== loopPlaySession) return
           recordListenTime(audioEl.duration)
           if (!loopPlaying.value || loopPaused.value) return
-          runNextStep(() => nextLoopItemInternal(), 800)
+          runNextStep(session, () => nextLoopItemInternal(), 800)
         }
-        playCurrentAudio(`${import.meta.env.BASE_URL}audio/` + store.audioMap[it.example], () => nextLoopItemInternal())
+        playCurrentAudio(
+          `${import.meta.env.BASE_URL}audio/` + store.audioMap[it.example],
+          session,
+          () => nextLoopItemInternal(),
+        )
       } else {
-        runNextStep(() => nextLoopItemInternal(), 800)
+        runNextStep(session, () => nextLoopItemInternal(), 800)
       }
     }, 500)
   }
-  playCurrentAudio(`${import.meta.env.BASE_URL}audio/` + fn1, () => nextLoopItemInternal())
+  playCurrentAudio(`${import.meta.env.BASE_URL}audio/` + fn1, session, () => nextLoopItemInternal())
 }
 
 function nextLoopItemInternal() {

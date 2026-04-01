@@ -10,7 +10,7 @@ import { useLang } from '@/i18n'
 import { useTheme } from '@/composables/useTheme'
 
 const { t } = useLang()
-const { syncToCloud, SYNCED_KEYS } = useFirebase()
+const { flushDataToCloud, SYNCED_KEYS } = useFirebase()
 const { themeMode, toggleTheme } = useTheme()
 const showLogin = ref(false)
 const confirmStep = ref<0 | 1 | 2>(0)
@@ -30,8 +30,10 @@ function onConfirmReset() {
   }
 
   for (const k of SYNCED_KEYS) localStorage.removeItem(k.local)
-  syncToCloud()
+  localStorage.removeItem('jp_listened_today')
+  flushDataToCloud()
   confirmStep.value = 0
+  window.location.reload()
 }
 
 function resetStats() {

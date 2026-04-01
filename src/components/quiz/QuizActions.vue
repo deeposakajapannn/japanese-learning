@@ -3,10 +3,21 @@ import { useLang } from '@/i18n'
 
 const { t } = useLang()
 
-defineProps<{
-  visible: boolean
-  isLooping: boolean
-}>()
+withDefaults(
+  defineProps<{
+    visible: boolean
+    isLooping: boolean
+    /** i18n key，默认 correct / wrong / quizTip */
+    correctKey?: string
+    wrongKey?: string
+    tipKey?: string | false
+  }>(),
+  {
+    correctKey: 'correct',
+    wrongKey: 'wrong',
+    tipKey: 'quizTip',
+  },
+)
 
 defineEmits<{
   correct: []
@@ -22,7 +33,7 @@ defineEmits<{
         class="flex-1 py-3 rounded-[10px] border-2 border-[#5b8a72] bg-[#5b8a72] text-white text-sm font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(91,138,114,0.3)]"
         @click="$emit('correct')"
       >
-        {{ t('correct') }}
+        {{ t(correctKey) }}
       </button>
       <button
         class="py-3 px-5 rounded-[10px] border-2 flex items-center justify-center cursor-pointer transition-all"
@@ -36,11 +47,14 @@ defineEmits<{
         class="flex-1 py-3 rounded-[10px] border-2 border-[#e8735a] bg-[#e8735a] text-white text-sm font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
         @click="$emit('wrong')"
       >
-        {{ t('wrong') }}
+        {{ t(wrongKey) }}
       </button>
     </div>
-    <div class="text-xs theme-muted text-center leading-relaxed">
-      {{ t('quizTip') }}
+    <div
+      v-if="tipKey !== false"
+      class="text-xs theme-muted text-center leading-relaxed"
+    >
+      {{ t(tipKey) }}
     </div>
   </div>
 </template>

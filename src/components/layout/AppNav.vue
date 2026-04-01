@@ -8,6 +8,7 @@ const { t } = useLang()
 const navItems = [
   { mode: 'list', icon: '👂', key: 'tabList' },
   { mode: 'practice', icon: '✏️', key: 'tabPractice' },
+  { mode: 'test', icon: '📝', key: 'tabTest' },
   { mode: 'stats', icon: '🤪', key: 'tabStats' },
 ] as const
 </script>

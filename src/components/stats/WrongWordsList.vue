@@ -4,6 +4,7 @@ import { useAppStore } from '../../stores/app'
 import { getStats } from '../../composables/useStats'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
+import { wrongWords as wrongWordsThresholds } from '@/config/thresholds'
 
 const { t, currentLang } = useLang()
 
@@ -18,9 +19,9 @@ const wrongWords = computed(() => {
     }
   }
   return Object.entries(wrongMap)
-    .filter(([, v]) => v >= 7)
+    .filter(([, v]) => v >= wrongWordsThresholds.minMissCount)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 20)
+    .slice(0, wrongWordsThresholds.topN)
     .map(([key, count]) => {
       const [cat, id] = key.split(':')
       const items = (store.data as any)[cat] as any[] | undefined
@@ -29,11 +30,15 @@ const wrongWords = computed(() => {
     })
     .filter(Boolean) as { word: string; meaning: string; meaningEn?: string; meaningEs?: string; count: number }[]
 })
+
+const wrongTitleText = computed(() =>
+  t('wrongTitle', { n: wrongWordsThresholds.topN }),
+)
 </script>
 
 <template>
   <div class="theme-card p-4 mt-4">
-    <h3 class="text-base font-semibold theme-text mb-3">🔴 {{ t('wrongTitle') }}</h3>
+    <h3 class="text-base font-semibold theme-text mb-3">🔴 {{ wrongTitleText }}</h3>
 
     <div v-if="wrongWords.length === 0" class="theme-muted text-sm text-center py-5">
       {{ t('noData') }}

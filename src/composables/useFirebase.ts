@@ -2,6 +2,8 @@ import { ref } from 'vue'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/database'
 import { t } from '@/i18n'
+import { mergeListenCountMaps } from '@/utils/listenCount'
+import { cloudSync } from '@/config/thresholds'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCZa2CyskF8bM_CU0l2UaT7Wwq25cz30Q",
@@ -24,6 +26,9 @@ const SYNCED_KEYS = [
   { local: 'jp_delays',             cloud: 'delays' },
   { local: 'jp_listened',           cloud: 'listened' },
   { local: 'jp_listen_dismissed',   cloud: 'listenDismissed' },
+  { local: 'jp_practice_recognized', cloud: 'practiceRecognized' },
+  { local: 'jp_mastery_quiz_passed', cloud: 'masteryQuizPassed' },
+  { local: 'jp_quiz_queue',          cloud: 'quizQueue' },
 ] as const
 
 // --- Merge utilities ---
@@ -36,12 +41,12 @@ function mergeMaxNumbers(a: Record<string, number>, b: Record<string, number>): 
   return merged
 }
 
-function mergeMaxStrings(a: Record<string, string>, b: Record<string, string>): Record<string, string> {
+/** 合并推迟复习日期：值为 YYYY-MM-DD（见 useSpacedRepetition），字典序与日期先后一致，取较晚一天 */
+function mergeLaterReviewDates(a: Record<string, string>, b: Record<string, string>): Record<string, string> {
   const merged = { ...a }
   for (const key in b) {
-    if (!merged[key] || b[key] > merged[key]) {
-      merged[key] = b[key]
-    }
+    const vb = b[key]
+    if (!merged[key] || vb > merged[key]) merged[key] = vb
   }
   return merged
 }
@@ -85,9 +90,12 @@ function mergeData(local: Record<string, any>, cloud: Record<string, any>): Reco
   return {
     stats:            mergeStats(local.stats || {}, cloud.stats || {}),
     counts:           mergeMaxNumbers(local.counts || {}, cloud.counts || {}),
-    delays:           mergeMaxStrings(local.delays || {}, cloud.delays || {}),
-    listened:         mergeMaxNumbers(local.listened || {}, cloud.listened || {}),
+    delays:           mergeLaterReviewDates(local.delays || {}, cloud.delays || {}),
+    listened:         mergeListenCountMaps(local.listened || {}, cloud.listened || {}),
     listenDismissed:  mergeDismissed(local.listenDismissed || {}, cloud.listenDismissed || {}),
+    practiceRecognized: mergeDismissed(local.practiceRecognized || {}, cloud.practiceRecognized || {}),
+    masteryQuizPassed: mergeDismissed(local.masteryQuizPassed || {}, cloud.masteryQuizPassed || {}),
+    quizQueue: mergeMaxNumbers(local.quizQueue || {}, cloud.quizQueue || {}),
   }
 }
 
@@ -115,14 +123,25 @@ function syncToCloud() {
   const hasPayload =
     Object.keys(data.stats).length > 0 ||
     Object.keys(data.counts).length > 0 ||
-    Object.keys(data.listenDismissed || {}).length > 0
+    Object.keys(data.delays || {}).length > 0 ||
+    Object.keys(data.listened || {}).length > 0 ||
+    Object.keys(data.listenDismissed || {}).length > 0 ||
+    Object.keys(data.practiceRecognized || {}).length > 0 ||
+    Object.keys(data.masteryQuizPassed || {}).length > 0 ||
+    Object.keys(data.quizQueue || {}).length > 0
   if (!hasPayload) return
   db.ref('users/' + userId.value + '/data').set(data)
 }
 
+/** 整包写入云端（含全空对象），用于清除本地后覆盖云端，避免下次拉取又恢复旧数据 */
+function flushDataToCloud() {
+  if (!userId.value || !db) return
+  db.ref('users/' + userId.value + '/data').set(readLocal())
+}
+
 function debouncedSync() {
   if (syncTimer) clearTimeout(syncTimer)
-  syncTimer = setTimeout(syncToCloud, 2000)
+  syncTimer = setTimeout(syncToCloud, cloudSync.debounceMs)
 }
 
 async function pullAndMerge(): Promise<boolean> {
@@ -231,6 +250,7 @@ export function useFirebase() {
   return {
     userId,
     syncToCloud,
+    flushDataToCloud,
     debouncedSync,
     register,
     login,

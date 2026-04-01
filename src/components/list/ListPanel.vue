@@ -2,15 +2,16 @@
 import { ref, computed } from 'vue'
 import { useAppStore } from '../../stores/app'
 import type { VocabItemWithCat } from '../../types'
-import { listenDismissTick, isListenDismissed } from '../../composables/useListenListDismiss'
+import { listenDismissTick, hasListenCleared } from '@/learning'
 import ListToolbar from './ListToolbar.vue'
 import ListContainer from './ListContainer.vue'
 import PaginationBar from '../common/PaginationBar.vue'
 import TopicChips from './TopicChips.vue'
+import { list as listThresholds } from '@/config/thresholds'
 
 const store = useAppStore()
 
-const PAGE_SIZE = 50
+const PAGE_SIZE = listThresholds.pageSize
 const searchQuery = ref('')
 const currentPage = ref(1)
 const isSpeaking = ref(false)
@@ -62,7 +63,7 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
 
   return items.filter(it => {
     if (it._cat !== 'sentences') return true
-    return !isListenDismissed('sentences', it.id)
+    return !hasListenCleared('sentences', it.id)
   })
 })
 

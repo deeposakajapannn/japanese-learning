@@ -1,29 +1,180 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useAppStore } from '../stores/app'
 import { speakWithExample, stopLoop } from './useAudio'
 import { recordQuiz } from './useStats'
-import { getActiveItems, recordItemSeen, delayItem, getListenedCount } from './useSpacedRepetition'
+import { makeItemKey } from '@/learning/itemKey'
+import { markPracticeAnswerKnown, markPracticeAnswerUnknown } from '@/learning/milestones'
+import {
+  getActiveItems,
+  getQuizProgressSnapshot,
+  snapIsListenedToday,
+  snapListenCount,
+  snapItemCount,
+  type QuizProgressSnapshot,
+} from './useSpacedRepetition'
+import { quiz as quizThresholds } from '@/config/thresholds'
 
 export type QuizMode = 'word' | 'audio' | 'meaning'
+export type QuizScope = 'heard' | 'new'
+
+const NEW_BATCH_SIZE = quizThresholds.newBatchSize
 
 const quizItems = ref<any[]>([])
 const quizIndex = ref(0)
 const isAnswered = ref(false)
 const quizMode = ref<QuizMode>((localStorage.getItem('jp_quiz_mode') as QuizMode) || 'word')
 
+function migrateQuizScope(): QuizScope {
+  const s = localStorage.getItem('jp_quiz_scope')
+  if (s === 'heard' || s === 'new') return s
+  if (s === 'today') return 'heard'
+  return 'new'
+}
+
+const quizScope = ref<QuizScope>(migrateQuizScope())
+if (localStorage.getItem('jp_quiz_scope') !== quizScope.value) {
+  localStorage.setItem('jp_quiz_scope', quizScope.value)
+}
+
+/** 新词本组 key 列表（cat:id） */
+const newBatchKeysRef = ref<string[]>([])
+/** 本组内点过「认识」的 key */
+const newBatchKnown = ref<Record<string, boolean>>({})
+/** 上一组（用于抽下一组时优先避开） */
+let lastCompletedNewBatchKeys: string[] = []
+/** 换分类时清空新词组 */
+let lastQuizCategory = ''
+
+function quizItemKey(it: { _cat?: string; id: number }, cat: string) {
+  return makeItemKey(it._cat || cat, it.id)
+}
+
+const newBatchKnownCount = computed(() =>
+  newBatchKeysRef.value.reduce((n, k) => n + (newBatchKnown.value[k] ? 1 : 0), 0),
+)
+
+function isNewBatchComplete(): boolean {
+  const keys = newBatchKeysRef.value
+  if (!keys.length) return true
+  return keys.every((k) => newBatchKnown.value[k])
+}
+
+function clearNewBatchState() {
+  newBatchKeysRef.value = []
+  newBatchKnown.value = {}
+  lastCompletedNewBatchKeys = []
+}
+
+/** 「学习过」池排序：优先今天听过，再按听过总次、练习次（用快照，避免排序比较器里反复 parse） */
+function sortStudiedPool(items: any[], cat: string, snap: QuizProgressSnapshot) {
+  const copy = [...items]
+  copy.sort(() => Math.random() - 0.5)
+  copy.sort((a, b) => {
+    const ca = a._cat || cat
+    const cb = b._cat || cat
+    const ta = snapIsListenedToday(snap, ca, a.id) ? 1 : 0
+    const tb = snapIsListenedToday(snap, cb, b.id) ? 1 : 0
+    if (tb !== ta) return tb - ta
+    const la = snapListenCount(snap, ca, a.id)
+    const lb = snapListenCount(snap, cb, b.id)
+    if (lb !== la) return lb - la
+    return snapItemCount(snap, cb, b.id) - snapItemCount(snap, ca, a.id)
+  })
+  return copy
+}
+
+function sortQuizPool(items: any[], cat: string, snap: QuizProgressSnapshot) {
+  const copy = [...items]
+  copy.sort(() => Math.random() - 0.5)
+  copy.sort((a, b) => {
+    const ca = a._cat || cat
+    const cb = b._cat || cat
+    const sa = snapListenCount(snap, ca, a.id) + snapItemCount(snap, ca, a.id)
+    const sb = snapListenCount(snap, cb, b.id) + snapItemCount(snap, cb, b.id)
+    return sb - sa
+  })
+  return copy
+}
+
+function keysToItems(keys: string[], cat: string): any[] {
+  const pool = new Map(getActiveItems(cat).map((it) => [quizItemKey(it, cat), it]))
+  return keys.map((k) => pool.get(k)).filter(Boolean) as any[]
+}
+
+function isBrandNewItem(it: { _cat?: string; id: number }, cat: string, snap: QuizProgressSnapshot) {
+  const c = it._cat || cat
+  return snapListenCount(snap, c, it.id) === 0 && snapItemCount(snap, c, it.id) === 0
+}
+
+function pickNewBatch(cat: string, snap: QuizProgressSnapshot) {
+  const poolAll = getActiveItems(cat).filter((it) => isBrandNewItem(it, cat, snap))
+  if (!poolAll.length) {
+    newBatchKeysRef.value = []
+    newBatchKnown.value = {}
+    quizItems.value = []
+    return
+  }
+  const exclude = new Set(lastCompletedNewBatchKeys)
+  const shuffled = [...poolAll].sort(() => Math.random() - 0.5)
+  let candidates = shuffled.filter((it) => !exclude.has(quizItemKey(it, cat)))
+  if (candidates.length < NEW_BATCH_SIZE) {
+    candidates = shuffled
+  }
+  const pick = candidates.slice(0, NEW_BATCH_SIZE)
+  newBatchKeysRef.value = pick.map((it) => quizItemKey(it, cat))
+  newBatchKnown.value = {}
+  quizItems.value = sortQuizPool(pick, cat, snap)
+  lastCompletedNewBatchKeys = []
+}
+
 function startQuiz() {
   const store = useAppStore()
-  const items = [...getActiveItems(store.currentCat)]
-  // Prioritize listened items: sort by listened count desc, then shuffle within each group
-  items.sort(() => Math.random() - 0.5) // shuffle first
-  items.sort((a, b) => {
-    const la = getListenedCount(a._cat || store.currentCat, a.id)
-    const lb = getListenedCount(b._cat || store.currentCat, b.id)
-    return (lb > 0 ? 1 : 0) - (la > 0 ? 1 : 0) // listened items first
-  })
-  quizItems.value = items
+  const cat = store.currentCat
+  const snap = getQuizProgressSnapshot()
+
+  if (quizScope.value === 'new') {
+    if (lastQuizCategory && lastQuizCategory !== cat) clearNewBatchState()
+  }
+  lastQuizCategory = cat
+
+  if (quizScope.value === 'heard') {
+    clearNewBatchState()
+    let items = [...getActiveItems(cat)].filter((it) => !isBrandNewItem(it, cat, snap))
+    quizItems.value = sortStudiedPool(items, cat, snap)
+    quizIndex.value = 0
+    isAnswered.value = false
+    return
+  }
+
+  // new
+  const keys = newBatchKeysRef.value
+  if (keys.length > 0 && !isNewBatchComplete()) {
+    let rebuilt = keysToItems(keys, cat)
+    if (rebuilt.length < keys.length) {
+      newBatchKeysRef.value = rebuilt.map((it) => quizItemKey(it, cat))
+    }
+    if (!rebuilt.length) {
+      clearNewBatchState()
+      pickNewBatch(cat, snap)
+    } else {
+      quizItems.value = sortQuizPool(rebuilt, cat, snap)
+    }
+  } else {
+    if (keys.length > 0 && isNewBatchComplete()) {
+      lastCompletedNewBatchKeys = [...keys]
+    }
+    pickNewBatch(cat, snap)
+  }
   quizIndex.value = 0
   isAnswered.value = false
+}
+
+function setQuizScope(scope: QuizScope) {
+  if (quizScope.value === scope) return
+  quizScope.value = scope
+  localStorage.setItem('jp_quiz_scope', scope)
+  if (scope === 'heard') clearNewBatchState()
+  startQuiz()
 }
 
 function showAnswer() {
@@ -36,20 +187,35 @@ function submitAnswer(correct: boolean) {
   const it = quizItems.value[quizIndex.value]
   if (!it) return
   const cat = it._cat || store.currentCat
-  recordItemSeen(cat, it.id)
-  if (correct) delayItem(cat, it.id, 1)
+  if (correct) markPracticeAnswerKnown(cat, it.id)
+  else markPracticeAnswerUnknown(cat, it.id)
   recordQuiz(it, correct, cat)
+
+  if (quizScope.value === 'new' && correct) {
+    const k = quizItemKey(it, cat)
+    if (newBatchKeysRef.value.includes(k)) {
+      newBatchKnown.value = { ...newBatchKnown.value, [k]: true }
+    }
+  }
+
   quizIndex.value++
   isAnswered.value = false
-  // Wrap around and reshuffle
+
   if (quizIndex.value >= quizItems.value.length) {
     quizIndex.value = 0
-    quizItems.value.sort(() => Math.random() - 0.5)
-    quizItems.value.sort((a, b) => {
-      const la = getListenedCount(a._cat || store.currentCat, a.id)
-      const lb = getListenedCount(b._cat || store.currentCat, b.id)
-      return (lb > 0 ? 1 : 0) - (la > 0 ? 1 : 0)
-    })
+    const c = store.currentCat
+    const snapAfter = getQuizProgressSnapshot()
+    if (quizScope.value === 'new') {
+      if (isNewBatchComplete() && newBatchKeysRef.value.length > 0) {
+        lastCompletedNewBatchKeys = [...newBatchKeysRef.value]
+        pickNewBatch(c, snapAfter)
+        quizIndex.value = 0
+      } else {
+        quizItems.value = sortQuizPool(quizItems.value, c, snapAfter)
+      }
+    } else {
+      quizItems.value = sortQuizPool(quizItems.value, c, snapAfter)
+    }
   }
 }
 
@@ -70,10 +236,14 @@ export function useQuiz() {
     quizIndex,
     isAnswered,
     quizMode,
+    quizScope,
+    newBatchKnownCount,
+    newBatchSize: computed(() => newBatchKeysRef.value.length),
     startQuiz,
     showAnswer,
     submitAnswer,
     setQuizMode,
+    setQuizScope,
     speakQuizCurrent,
   }
 }
