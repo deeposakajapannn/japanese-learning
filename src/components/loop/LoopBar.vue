@@ -61,7 +61,7 @@ function minimize() {
   <!-- 收起：底栏上方一行，z-[199] 低于移动底栏 z-[200]，不挡菜单 -->
   <div
     v-if="visible && collapsed"
-    class="fixed left-0 right-0 z-[199] flex items-center gap-2 px-3 py-2.5 theme-loop-panel border-t shadow-[0_-4px_18px_rgba(0,0,0,0.08)] max-md:bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:bottom-6 md:left-[200px] md:right-4 md:border-x md:border-b md:rounded-b-xl"
+    class="fixed left-0 right-0 z-[199] flex items-center gap-2 px-3 py-2.5 theme-loop-panel border-t shadow-[0_-4px_18px_rgba(0,0,0,0.08)] max-md:bottom-[calc(4rem+env(safe-area-inset-bottom,0px))] md:bottom-6 md:left-[200px] md:right-4 md:border-x md:border-b md:rounded-b-xl"
     style="border-color: var(--border)"
   >
     <button
