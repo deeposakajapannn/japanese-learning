@@ -1,0 +1,131 @@
+# 生活实用词汇补充
+# 格式: 单词|读音|中文|英文|分类
+
+# ── 厨房/食物 ──
+小麦粉|こむぎこ|面粉|wheat flour|食物料理
+片栗粉|かたくりこ|淀粉|potato starch|食物料理
+だし|だし|高汤|soup stock/broth|食物料理
+納豆|なっとう|纳豆|natto|食物料理
+漬物|つけもの|腌菜|pickles|食物料理
+おかず|おかず|菜/配菜|side dish|食物料理
+おやつ|おやつ|零食/点心|snack|食物料理
+弁当箱|べんとうばこ|便当盒|lunch box|食物料理
+フライパン|フライパン|平底锅|frying pan|食物料理
+包丁|ほうちょう|菜刀|kitchen knife|食物料理
+まな板|まないた|砧板|cutting board|食物料理
+炊飯器|すいはんき|电饭煲|rice cooker|食物料理
+
+# ── 家/生活用品 ──
+粗大ゴミ|そだいゴミ|大件垃圾|oversized trash|生活用品
+押入れ|おしいれ|壁橱|closet|生活用品
+物干し|ものほし|晾衣架|drying rack|生活用品
+ハンガー|ハンガー|衣架|hanger|生活用品
+蛇口|じゃぐち|水龙头|faucet|生活用品
+コンセント|コンセント|插座|outlet/socket|生活用品
+スイッチ|スイッチ|开关|switch|生活用品
+照明|しょうめい|照明|lighting|生活用品
+シンク|シンク|水槽|sink|生活用品
+
+# ── 买东西 ──
+レジ|レジ|收银台|register/checkout|购物消费
+半額|はんがく|半价|half price|购物消费
+タイムセール|タイムセール|限时特卖|time sale|购物消费
+まとめ買い|まとめがい|批量购买|bulk buying|购物消费
+日用品|にちようひん|日用品|daily necessities|购物消费
+
+# ── 身体/医疗 ──
+頭痛|ずつう|头痛|headache|健康医疗
+腹痛|ふくつう|肚子痛|stomachache|健康医疗
+処方箋|しょほうせん|处方|prescription|健康医疗
+保険証|ほけんしょう|保险证|insurance card|健康医疗
+診察|しんさつ|看诊|medical examination|健康医疗
+歯医者|はいしゃ|牙医|dentist|健康医疗
+眼科|がんか|眼科|ophthalmology|健康医疗
+皮膚科|ひふか|皮肤科|dermatology|健康医疗
+花粉症|かふんしょう|花粉症|hay fever|健康医疗
+体温計|たいおんけい|体温计|thermometer|健康医疗
+絆創膏|ばんそうこう|创可贴|band-aid|健康医疗
+消毒|しょうどく|消毒|disinfection|健康医疗
+
+# ── 交通 ──
+時刻表|じこくひょう|时刻表|timetable|交通出行
+始発|しはつ|首班车|first train|交通出行
+終電|しゅうでん|末班电车|last train|交通出行
+乗り遅れ|のりおくれ|没赶上车|missed the train|交通出行
+
+# ── 工作 ──
+有給|ゆうきゅう|带薪假|paid leave|工作职场
+シフト|シフト|排班|shift|工作职场
+承認|しょうにん|批准/审批|approval|工作职场
+申請|しんせい|申请|application|工作职场
+
+# ── 手续/行政 ──
+振込|ふりこみ|转账|bank transfer|行政手续
+暗証番号|あんしょうばんごう|密码|PIN number|行政手续
+届出|とどけで|申报/申请书|notification/report|行政手续
+身分証|みぶんしょう|身份证|ID card|行政手续
+住民票|じゅうみんひょう|住民票|residence certificate|行政手续
+転出届|てんしゅつとどけ|迁出申报|moving-out notice|行政手续
+転入届|てんにゅうとどけ|迁入申报|moving-in notice|行政手续
+確定申告|かくていしんこく|报税|tax return|行政手续
+源泉徴収|げんせんちょうしゅう|代扣代缴|tax withholding|行政手续
+マイナンバー|マイナンバー|个人编号|My Number|行政手续
+
+# ── 天气 ──
+梅雨|つゆ|梅雨季|rainy season|天气自然
+紫外線|しがいせん|紫外线|UV rays|天气自然
+日焼け|ひやけ|晒伤/晒黑|sunburn|天气自然
+猛暑|もうしょ|酷暑|extreme heat|天气自然
+真冬|まふゆ|隆冬|midwinter|天气自然
+
+# ── 通信/手机 ──
+充電|じゅうでん|充电|charging|通信数码
+電波|でんぱ|信号|radio wave/signal|通信数码
+圏外|けんがい|没信号|out of range|通信数码
+着信|ちゃくしん|来电|incoming call|通信数码
+不在着信|ふざいちゃくしん|未接来电|missed call|通信数码
+
+# ── 租房 ──
+敷金|しききん|押金|security deposit|住房租房
+礼金|れいきん|礼金|key money|住房租房
+仲介|ちゅうかい|中介|agent/broker|住房租房
+管理費|かんりひ|管理费|maintenance fee|住房租房
+更新料|こうしんりょう|续约费|renewal fee|住房租房
+退去|たいきょ|退房/搬出|moving out|住房租房
+
+# ── 学校/育儿 ──
+授業参観|じゅぎょうさんかん|教学观摩|class observation|学校教育
+保護者|ほごしゃ|监护人|guardian|学校教育
+学童|がくどう|课后托管|after-school care|学校教育
+
+# ── NHK EASY 新闻高频词 ──
+政府|せいふ|政府|government|社会新闻
+首相|しゅしょう|首相|prime minister|社会新闻
+大臣|だいじん|大臣|minister|社会新闻
+選挙|せんきょ|选举|election|社会新闻
+法律|ほうりつ|法律|law|社会新闻
+税金|ぜいきん|税|tax|社会新闻
+被害|ひがい|受灾/损害|damage|社会新闻
+復旧|ふっきゅう|恢复|restoration|社会新闻
+避難|ひなん|避难|evacuation|社会新闻
+感染|かんせん|感染|infection|社会新闻
+対策|たいさく|对策|countermeasure|社会新闻
+発表|はっぴょう|发表|announcement|社会新闻
+調査|ちょうさ|调查|investigation|社会新闻
+影響|えいきょう|影响|influence|社会新闻
+増加|ぞうか|增加|increase|社会新闻
+減少|げんしょう|减少|decrease|社会新闻
+物価|ぶっか|物价|prices|社会新闻
+輸出|ゆしゅつ|出口|export|社会新闻
+輸入|ゆにゅう|进口|import|社会新闻
+観光|かんこう|观光|tourism|社会新闻
+訪問|ほうもん|访问|visit|社会新闻
+協力|きょうりょく|合作|cooperation|社会新闻
+交渉|こうしょう|谈判|negotiation|社会新闻
+条約|じょうやく|条约|treaty|社会新闻
+地震|じしん|地震|earthquake|社会新闻
+津波|つなみ|海啸|tsunami|社会新闻
+噴火|ふんか|火山喷发|eruption|社会新闻
+洪水|こうずい|洪水|flood|社会新闻
+停電|ていでん|停电|power outage|社会新闻
+断水|だんすい|停水|water outage|社会新闻

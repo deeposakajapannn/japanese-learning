@@ -4,7 +4,7 @@ import 'firebase/compat/database'
 import { t } from '@/i18n'
 import { mergeListenCountMaps } from '@/utils/listenCount'
 import { cloudSync } from '@/config/thresholds'
-import { milestoneStateTick } from '@/learning/milestones'
+import { milestoneStateTick } from '@/learning/milestoneTick'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCZa2CyskF8bM_CU0l2UaT7Wwq25cz30Q",

@@ -1,1 +1,7439 @@
-[{"id": 1, "word": "人", "reading": "ひと", "meaning": "人"}, {"id": 2, "word": "私", "reading": "わたし", "meaning": "我"}, {"id": 3, "word": "僕", "reading": "ぼく", "meaning": "我（男性）"}, {"id": 4, "word": "俺", "reading": "おれ", "meaning": "我（男性口语）"}, {"id": 5, "word": "あなた", "reading": "あなた", "meaning": "你"}, {"id": 6, "word": "彼", "reading": "かれ", "meaning": "他/男朋友"}, {"id": 7, "word": "彼女", "reading": "かのじょ", "meaning": "她/女朋友"}, {"id": 8, "word": "皆", "reading": "みんな", "meaning": "大家"}, {"id": 9, "word": "皆さん", "reading": "みなさん", "meaning": "大家（礼貌）"}, {"id": 10, "word": "自分", "reading": "じぶん", "meaning": "自己"}, {"id": 11, "word": "相手", "reading": "あいて", "meaning": "对方"}, {"id": 12, "word": "友達", "reading": "ともだち", "meaning": "朋友"}, {"id": 13, "word": "親友", "reading": "しんゆう", "meaning": "挚友"}, {"id": 14, "word": "仲間", "reading": "なかま", "meaning": "伙伴"}, {"id": 15, "word": "知り合い", "reading": "しりあい", "meaning": "认识的人"}, {"id": 16, "word": "恋人", "reading": "こいびと", "meaning": "恋人"}, {"id": 17, "word": "夫婦", "reading": "ふうふ", "meaning": "夫妻"}, {"id": 18, "word": "夫", "reading": "おっと", "meaning": "丈夫"}, {"id": 19, "word": "妻", "reading": "つま", "meaning": "妻子"}, {"id": 20, "word": "旦那", "reading": "だんな", "meaning": "老公（口语）"}, {"id": 21, "word": "奥さん", "reading": "おくさん", "meaning": "太太"}, {"id": 22, "word": "家族", "reading": "かぞく", "meaning": "家人"}, {"id": 23, "word": "両親", "reading": "りょうしん", "meaning": "父母"}, {"id": 24, "word": "父", "reading": "ちち", "meaning": "父亲"}, {"id": 25, "word": "母", "reading": "はは", "meaning": "母亲"}, {"id": 26, "word": "お父さん", "reading": "おとうさん", "meaning": "爸爸"}, {"id": 27, "word": "お母さん", "reading": "おかあさん", "meaning": "妈妈"}, {"id": 28, "word": "兄", "reading": "あに", "meaning": "哥哥"}, {"id": 29, "word": "姉", "reading": "あね", "meaning": "姐姐"}, {"id": 30, "word": "弟", "reading": "おとうと", "meaning": "弟弟"}, {"id": 31, "word": "妹", "reading": "いもうと", "meaning": "妹妹"}, {"id": 32, "word": "お兄さん", "reading": "おにいさん", "meaning": "哥哥（称呼）"}, {"id": 33, "word": "お姉さん", "reading": "おねえさん", "meaning": "姐姐（称呼）"}, {"id": 34, "word": "息子", "reading": "むすこ", "meaning": "儿子"}, {"id": 35, "word": "娘", "reading": "むすめ", "meaning": "女儿"}, {"id": 36, "word": "子供", "reading": "こども", "meaning": "孩子"}, {"id": 37, "word": "赤ちゃん", "reading": "あかちゃん", "meaning": "婴儿"}, {"id": 38, "word": "孫", "reading": "まご", "meaning": "孙子/孙女"}, {"id": 39, "word": "祖父", "reading": "そふ", "meaning": "祖父/外祖父"}, {"id": 40, "word": "祖母", "reading": "そぼ", "meaning": "祖母/外祖母"}, {"id": 41, "word": "おじいさん", "reading": "おじいさん", "meaning": "爷爷（称呼）"}, {"id": 42, "word": "おばあさん", "reading": "おばあさん", "meaning": "奶奶（称呼）"}, {"id": 43, "word": "おじさん", "reading": "おじさん", "meaning": "叔叔/大叔"}, {"id": 44, "word": "おばさん", "reading": "おばさん", "meaning": "阿姨/大妈"}, {"id": 45, "word": "親戚", "reading": "しんせき", "meaning": "亲戚"}, {"id": 46, "word": "隣人", "reading": "りんじん", "meaning": "邻居"}, {"id": 47, "word": "大人", "reading": "おとな", "meaning": "大人"}, {"id": 48, "word": "若者", "reading": "わかもの", "meaning": "年轻人"}, {"id": 49, "word": "老人", "reading": "ろうじん", "meaning": "老人"}, {"id": 50, "word": "男性", "reading": "だんせい", "meaning": "男性"}, {"id": 51, "word": "女性", "reading": "じょせい", "meaning": "女性"}, {"id": 52, "word": "男の子", "reading": "おとこのこ", "meaning": "男孩"}, {"id": 53, "word": "女の子", "reading": "おんなのこ", "meaning": "女孩"}, {"id": 54, "word": "先輩", "reading": "せんぱい", "meaning": "前辈"}, {"id": 55, "word": "後輩", "reading": "こうはい", "meaning": "后辈"}, {"id": 56, "word": "上司", "reading": "じょうし", "meaning": "上司"}, {"id": 57, "word": "部下", "reading": "ぶか", "meaning": "下属"}, {"id": 58, "word": "同僚", "reading": "どうりょう", "meaning": "同事"}, {"id": 59, "word": "社長", "reading": "しゃちょう", "meaning": "社长"}, {"id": 60, "word": "部長", "reading": "ぶちょう", "meaning": "部长"}, {"id": 61, "word": "課長", "reading": "かちょう", "meaning": "课长"}, {"id": 62, "word": "社員", "reading": "しゃいん", "meaning": "员工"}, {"id": 63, "word": "客", "reading": "きゃく", "meaning": "客人"}, {"id": 64, "word": "お客様", "reading": "おきゃくさま", "meaning": "顾客（敬语）"}, {"id": 65, "word": "店員", "reading": "てんいん", "meaning": "店员"}, {"id": 66, "word": "先生", "reading": "せんせい", "meaning": "老师"}, {"id": 67, "word": "生徒", "reading": "せいと", "meaning": "学生（初高中）"}, {"id": 68, "word": "学生", "reading": "がくせい", "meaning": "学生"}, {"id": 69, "word": "留学生", "reading": "りゅうがくせい", "meaning": "留学生"}, {"id": 70, "word": "医者", "reading": "いしゃ", "meaning": "医生"}, {"id": 71, "word": "看護師", "reading": "かんごし", "meaning": "护士"}, {"id": 72, "word": "警察", "reading": "けいさつ", "meaning": "警察"}, {"id": 73, "word": "弁護士", "reading": "べんごし", "meaning": "律师"}, {"id": 74, "word": "政治家", "reading": "せいじか", "meaning": "政治家"}, {"id": 75, "word": "芸能人", "reading": "げいのうじん", "meaning": "艺人"}, {"id": 76, "word": "選手", "reading": "せんしゅ", "meaning": "选手"}, {"id": 77, "word": "監督", "reading": "かんとく", "meaning": "导演/教练"}, {"id": 78, "word": "作家", "reading": "さっか", "meaning": "作家"}, {"id": 79, "word": "歌手", "reading": "かしゅ", "meaning": "歌手"}, {"id": 80, "word": "運転手", "reading": "うんてんしゅ", "meaning": "司机"}, {"id": 81, "word": "通行人", "reading": "つうこうにん", "meaning": "路人"}, {"id": 82, "word": "犯人", "reading": "はんにん", "meaning": "犯人"}, {"id": 83, "word": "被害者", "reading": "ひがいしゃ", "meaning": "受害者"}, {"id": 84, "word": "担当者", "reading": "たんとうしゃ", "meaning": "负责人"}, {"id": 85, "word": "関係者", "reading": "かんけいしゃ", "meaning": "相关人员"}, {"id": 86, "word": "参加者", "reading": "さんかしゃ", "meaning": "参加者"}, {"id": 87, "word": "利用者", "reading": "りようしゃ", "meaning": "使用者"}, {"id": 88, "word": "消費者", "reading": "しょうひしゃ", "meaning": "消费者"}, {"id": 89, "word": "独身", "reading": "どくしん", "meaning": "单身"}, {"id": 90, "word": "体", "reading": "からだ", "meaning": "身体"}, {"id": 91, "word": "頭", "reading": "あたま", "meaning": "头"}, {"id": 92, "word": "顔", "reading": "かお", "meaning": "脸"}, {"id": 93, "word": "目", "reading": "め", "meaning": "眼睛"}, {"id": 94, "word": "耳", "reading": "みみ", "meaning": "耳朵"}, {"id": 95, "word": "鼻", "reading": "はな", "meaning": "鼻子"}, {"id": 96, "word": "口", "reading": "くち", "meaning": "嘴"}, {"id": 97, "word": "歯", "reading": "は", "meaning": "牙齿"}, {"id": 98, "word": "喉", "reading": "のど", "meaning": "喉咙"}, {"id": 99, "word": "首", "reading": "くび", "meaning": "脖子"}, {"id": 100, "word": "肩", "reading": "かた", "meaning": "肩膀"}, {"id": 101, "word": "腕", "reading": "うで", "meaning": "手臂"}, {"id": 102, "word": "手", "reading": "て", "meaning": "手"}, {"id": 103, "word": "指", "reading": "ゆび", "meaning": "手指"}, {"id": 104, "word": "爪", "reading": "つめ", "meaning": "指甲"}, {"id": 105, "word": "胸", "reading": "むね", "meaning": "胸"}, {"id": 106, "word": "腹", "reading": "はら", "meaning": "肚子"}, {"id": 107, "word": "お腹", "reading": "おなか", "meaning": "肚子（口语）"}, {"id": 108, "word": "背中", "reading": "せなか", "meaning": "后背"}, {"id": 109, "word": "腰", "reading": "こし", "meaning": "腰"}, {"id": 110, "word": "足", "reading": "あし", "meaning": "脚/腿"}, {"id": 111, "word": "膝", "reading": "ひざ", "meaning": "膝盖"}, {"id": 112, "word": "骨", "reading": "ほね", "meaning": "骨头"}, {"id": 113, "word": "血", "reading": "ち", "meaning": "血"}, {"id": 114, "word": "肌", "reading": "はだ", "meaning": "皮肤"}, {"id": 115, "word": "髪", "reading": "かみ", "meaning": "头发"}, {"id": 116, "word": "涙", "reading": "なみだ", "meaning": "眼泪"}, {"id": 117, "word": "汗", "reading": "あせ", "meaning": "汗"}, {"id": 118, "word": "息", "reading": "いき", "meaning": "呼吸"}, {"id": 119, "word": "声", "reading": "こえ", "meaning": "声音"}, {"id": 120, "word": "心", "reading": "こころ", "meaning": "心"}, {"id": 121, "word": "命", "reading": "いのち", "meaning": "生命"}, {"id": 122, "word": "病気", "reading": "びょうき", "meaning": "病"}, {"id": 123, "word": "風邪", "reading": "かぜ", "meaning": "感冒"}, {"id": 124, "word": "熱", "reading": "ねつ", "meaning": "发烧/热"}, {"id": 125, "word": "咳", "reading": "せき", "meaning": "咳嗽"}, {"id": 126, "word": "怪我", "reading": "けが", "meaning": "受伤"}, {"id": 127, "word": "傷", "reading": "きず", "meaning": "伤口"}, {"id": 128, "word": "痛み", "reading": "いたみ", "meaning": "疼痛"}, {"id": 129, "word": "症状", "reading": "しょうじょう", "meaning": "症状"}, {"id": 130, "word": "治療", "reading": "ちりょう", "meaning": "治疗"}, {"id": 131, "word": "手術", "reading": "しゅじゅつ", "meaning": "手术"}, {"id": 132, "word": "検査", "reading": "けんさ", "meaning": "检查"}, {"id": 133, "word": "薬", "reading": "くすり", "meaning": "药"}, {"id": 134, "word": "注射", "reading": "ちゅうしゃ", "meaning": "打针"}, {"id": 135, "word": "入院", "reading": "にゅういん", "meaning": "住院"}, {"id": 136, "word": "退院", "reading": "たいいん", "meaning": "出院"}, {"id": 137, "word": "健康", "reading": "けんこう", "meaning": "健康"}, {"id": 138, "word": "体力", "reading": "たいりょく", "meaning": "体力"}, {"id": 139, "word": "体重", "reading": "たいじゅう", "meaning": "体重"}, {"id": 140, "word": "身長", "reading": "しんちょう", "meaning": "身高"}, {"id": 141, "word": "視力", "reading": "しりょく", "meaning": "视力"}, {"id": 142, "word": "アレルギー", "reading": "アレルギー", "meaning": "过敏"}, {"id": 143, "word": "ストレス", "reading": "ストレス", "meaning": "压力"}, {"id": 144, "word": "疲れ", "reading": "つかれ", "meaning": "疲劳"}, {"id": 145, "word": "睡眠", "reading": "すいみん", "meaning": "睡眠"}, {"id": 146, "word": "栄養", "reading": "えいよう", "meaning": "营养"}, {"id": 147, "word": "運動", "reading": "うんどう", "meaning": "运动"}, {"id": 148, "word": "筋肉", "reading": "きんにく", "meaning": "肌肉"}, {"id": 149, "word": "ダイエット", "reading": "ダイエット", "meaning": "减肥"}, {"id": 150, "word": "時間", "reading": "じかん", "meaning": "时间"}, {"id": 151, "word": "今", "reading": "いま", "meaning": "现在"}, {"id": 152, "word": "昔", "reading": "むかし", "meaning": "以前/从前"}, {"id": 153, "word": "将来", "reading": "しょうらい", "meaning": "将来"}, {"id": 154, "word": "未来", "reading": "みらい", "meaning": "未来"}, {"id": 155, "word": "過去", "reading": "かこ", "meaning": "过去"}, {"id": 156, "word": "現在", "reading": "げんざい", "meaning": "现在/目前"}, {"id": 157, "word": "今日", "reading": "きょう", "meaning": "今天"}, {"id": 158, "word": "昨日", "reading": "きのう", "meaning": "昨天"}, {"id": 159, "word": "明日", "reading": "あした", "meaning": "明天"}, {"id": 160, "word": "一昨日", "reading": "おととい", "meaning": "前天"}, {"id": 161, "word": "明後日", "reading": "あさって", "meaning": "后天"}, {"id": 162, "word": "今朝", "reading": "けさ", "meaning": "今早"}, {"id": 163, "word": "今晩", "reading": "こんばん", "meaning": "今晚"}, {"id": 164, "word": "朝", "reading": "あさ", "meaning": "早上"}, {"id": 165, "word": "昼", "reading": "ひる", "meaning": "中午"}, {"id": 166, "word": "夕方", "reading": "ゆうがた", "meaning": "傍晚"}, {"id": 167, "word": "夜", "reading": "よる", "meaning": "晚上"}, {"id": 168, "word": "夜中", "reading": "よなか", "meaning": "半夜"}, {"id": 169, "word": "深夜", "reading": "しんや", "meaning": "深夜"}, {"id": 170, "word": "午前", "reading": "ごぜん", "meaning": "上午"}, {"id": 171, "word": "午後", "reading": "ごご", "meaning": "下午"}, {"id": 172, "word": "毎日", "reading": "まいにち", "meaning": "每天"}, {"id": 173, "word": "毎朝", "reading": "まいあさ", "meaning": "每天早上"}, {"id": 174, "word": "毎晩", "reading": "まいばん", "meaning": "每天晚上"}, {"id": 175, "word": "毎週", "reading": "まいしゅう", "meaning": "每周"}, {"id": 176, "word": "毎月", "reading": "まいつき", "meaning": "每月"}, {"id": 177, "word": "毎年", "reading": "まいとし", "meaning": "每年"}, {"id": 178, "word": "今週", "reading": "こんしゅう", "meaning": "这周"}, {"id": 179, "word": "来週", "reading": "らいしゅう", "meaning": "下周"}, {"id": 180, "word": "先週", "reading": "せんしゅう", "meaning": "上周"}, {"id": 181, "word": "今月", "reading": "こんげつ", "meaning": "这个月"}, {"id": 182, "word": "来月", "reading": "らいげつ", "meaning": "下个月"}, {"id": 183, "word": "先月", "reading": "せんげつ", "meaning": "上个月"}, {"id": 184, "word": "今年", "reading": "ことし", "meaning": "今年"}, {"id": 185, "word": "来年", "reading": "らいねん", "meaning": "明年"}, {"id": 186, "word": "去年", "reading": "きょねん", "meaning": "去年"}, {"id": 187, "word": "再来年", "reading": "さらいねん", "meaning": "后年"}, {"id": 188, "word": "一昨年", "reading": "おととし", "meaning": "前年"}, {"id": 189, "word": "平日", "reading": "へいじつ", "meaning": "工作日"}, {"id": 190, "word": "週末", "reading": "しゅうまつ", "meaning": "周末"}, {"id": 191, "word": "休日", "reading": "きゅうじつ", "meaning": "假日"}, {"id": 192, "word": "祝日", "reading": "しゅくじつ", "meaning": "法定假日"}, {"id": 193, "word": "連休", "reading": "れんきゅう", "meaning": "连休"}, {"id": 194, "word": "月曜日", "reading": "げつようび", "meaning": "星期一"}, {"id": 195, "word": "火曜日", "reading": "かようび", "meaning": "星期二"}, {"id": 196, "word": "水曜日", "reading": "すいようび", "meaning": "星期三"}, {"id": 197, "word": "木曜日", "reading": "もくようび", "meaning": "星期四"}, {"id": 198, "word": "金曜日", "reading": "きんようび", "meaning": "星期五"}, {"id": 199, "word": "土曜日", "reading": "どようび", "meaning": "星期六"}, {"id": 200, "word": "日曜日", "reading": "にちようび", "meaning": "星期日"}, {"id": 201, "word": "春", "reading": "はる", "meaning": "春天"}, {"id": 202, "word": "夏", "reading": "なつ", "meaning": "夏天"}, {"id": 203, "word": "秋", "reading": "あき", "meaning": "秋天"}, {"id": 204, "word": "冬", "reading": "ふゆ", "meaning": "冬天"}, {"id": 205, "word": "季節", "reading": "きせつ", "meaning": "季节"}, {"id": 206, "word": "時期", "reading": "じき", "meaning": "时期"}, {"id": 207, "word": "期間", "reading": "きかん", "meaning": "期间"}, {"id": 208, "word": "期限", "reading": "きげん", "meaning": "期限"}, {"id": 209, "word": "締め切り", "reading": "しめきり", "meaning": "截止日期"}, {"id": 210, "word": "瞬間", "reading": "しゅんかん", "meaning": "瞬间"}, {"id": 211, "word": "一瞬", "reading": "いっしゅん", "meaning": "一瞬间"}, {"id": 212, "word": "直前", "reading": "ちょくぜん", "meaning": "之前/紧接前"}, {"id": 213, "word": "直後", "reading": "ちょくご", "meaning": "之后/紧接后"}, {"id": 214, "word": "途中", "reading": "とちゅう", "meaning": "途中/中途"}, {"id": 215, "word": "最中", "reading": "さいちゅう", "meaning": "正当中"}, {"id": 216, "word": "始まり", "reading": "はじまり", "meaning": "开始"}, {"id": 217, "word": "終わり", "reading": "おわり", "meaning": "结束"}, {"id": 218, "word": "最初", "reading": "さいしょ", "meaning": "最初"}, {"id": 219, "word": "最後", "reading": "さいご", "meaning": "最后"}, {"id": 220, "word": "次", "reading": "つぎ", "meaning": "下一个"}, {"id": 221, "word": "前回", "reading": "ぜんかい", "meaning": "上次"}, {"id": 222, "word": "今回", "reading": "こんかい", "meaning": "这次"}, {"id": 223, "word": "次回", "reading": "じかい", "meaning": "下次"}, {"id": 224, "word": "当日", "reading": "とうじつ", "meaning": "当天"}, {"id": 225, "word": "前日", "reading": "ぜんじつ", "meaning": "前一天"}, {"id": 226, "word": "翌日", "reading": "よくじつ", "meaning": "第二天"}, {"id": 227, "word": "場所", "reading": "ばしょ", "meaning": "地方"}, {"id": 228, "word": "家", "reading": "いえ/うち", "meaning": "家"}, {"id": 229, "word": "部屋", "reading": "へや", "meaning": "房间"}, {"id": 230, "word": "台所", "reading": "だいどころ", "meaning": "厨房"}, {"id": 231, "word": "居間", "reading": "いま", "meaning": "客厅"}, {"id": 232, "word": "玄関", "reading": "げんかん", "meaning": "玄关"}, {"id": 233, "word": "トイレ", "reading": "トイレ", "meaning": "厕所"}, {"id": 234, "word": "風呂", "reading": "ふろ", "meaning": "浴室"}, {"id": 235, "word": "階段", "reading": "かいだん", "meaning": "楼梯"}, {"id": 236, "word": "廊下", "reading": "ろうか", "meaning": "走廊"}, {"id": 237, "word": "屋上", "reading": "おくじょう", "meaning": "楼顶"}, {"id": 238, "word": "地下", "reading": "ちか", "meaning": "地下"}, {"id": 239, "word": "庭", "reading": "にわ", "meaning": "院子"}, {"id": 240, "word": "ベランダ", "reading": "ベランダ", "meaning": "阳台"}, {"id": 241, "word": "駐車場", "reading": "ちゅうしゃじょう", "meaning": "停车场"}, {"id": 242, "word": "学校", "reading": "がっこう", "meaning": "学校"}, {"id": 243, "word": "大学", "reading": "だいがく", "meaning": "大学"}, {"id": 244, "word": "教室", "reading": "きょうしつ", "meaning": "教室"}, {"id": 245, "word": "図書館", "reading": "としょかん", "meaning": "图书馆"}, {"id": 246, "word": "病院", "reading": "びょういん", "meaning": "医院"}, {"id": 247, "word": "銀行", "reading": "ぎんこう", "meaning": "银行"}, {"id": 248, "word": "郵便局", "reading": "ゆうびんきょく", "meaning": "邮局"}, {"id": 249, "word": "交番", "reading": "こうばん", "meaning": "派出所"}, {"id": 250, "word": "役所", "reading": "やくしょ", "meaning": "政府办事处"}, {"id": 251, "word": "会社", "reading": "かいしゃ", "meaning": "公司"}, {"id": 252, "word": "事務所", "reading": "じむしょ", "meaning": "事务所"}, {"id": 253, "word": "工場", "reading": "こうじょう", "meaning": "工厂"}, {"id": 254, "word": "店", "reading": "みせ", "meaning": "店"}, {"id": 255, "word": "コンビニ", "reading": "コンビニ", "meaning": "便利店"}, {"id": 256, "word": "スーパー", "reading": "スーパー", "meaning": "超市"}, {"id": 257, "word": "デパート", "reading": "デパート", "meaning": "百货商店"}, {"id": 258, "word": "薬局", "reading": "やっきょく", "meaning": "药店"}, {"id": 259, "word": "本屋", "reading": "ほんや", "meaning": "书店"}, {"id": 260, "word": "花屋", "reading": "はなや", "meaning": "花店"}, {"id": 261, "word": "パン屋", "reading": "パンや", "meaning": "面包店"}, {"id": 262, "word": "レストラン", "reading": "レストラン", "meaning": "餐厅"}, {"id": 263, "word": "食堂", "reading": "しょくどう", "meaning": "食堂"}, {"id": 264, "word": "居酒屋", "reading": "いざかや", "meaning": "居酒屋"}, {"id": 265, "word": "喫茶店", "reading": "きっさてん", "meaning": "咖啡店"}, {"id": 266, "word": "カフェ", "reading": "カフェ", "meaning": "咖啡店"}, {"id": 267, "word": "美容院", "reading": "びよういん", "meaning": "美发店"}, {"id": 268, "word": "映画館", "reading": "えいがかん", "meaning": "电影院"}, {"id": 269, "word": "美術館", "reading": "びじゅつかん", "meaning": "美术馆"}, {"id": 270, "word": "博物館", "reading": "はくぶつかん", "meaning": "博物馆"}, {"id": 271, "word": "動物園", "reading": "どうぶつえん", "meaning": "动物园"}, {"id": 272, "word": "水族館", "reading": "すいぞくかん", "meaning": "水族馆"}, {"id": 273, "word": "遊園地", "reading": "ゆうえんち", "meaning": "游乐园"}, {"id": 274, "word": "公園", "reading": "こうえん", "meaning": "公园"}, {"id": 275, "word": "神社", "reading": "じんじゃ", "meaning": "神社"}, {"id": 276, "word": "寺", "reading": "てら", "meaning": "寺庙"}, {"id": 277, "word": "教会", "reading": "きょうかい", "meaning": "教会"}, {"id": 278, "word": "空港", "reading": "くうこう", "meaning": "机场"}, {"id": 279, "word": "港", "reading": "みなと", "meaning": "港口"}, {"id": 280, "word": "駅", "reading": "えき", "meaning": "车站"}, {"id": 281, "word": "ホーム", "reading": "ホーム", "meaning": "站台"}, {"id": 282, "word": "改札", "reading": "かいさつ", "meaning": "检票口"}, {"id": 283, "word": "出口", "reading": "でぐち", "meaning": "出口"}, {"id": 284, "word": "入口", "reading": "いりぐち", "meaning": "入口"}, {"id": 285, "word": "ホテル", "reading": "ホテル", "meaning": "酒店"}, {"id": 286, "word": "旅館", "reading": "りょかん", "meaning": "旅馆"}, {"id": 287, "word": "温泉", "reading": "おんせん", "meaning": "温泉"}, {"id": 288, "word": "プール", "reading": "プール", "meaning": "游泳池"}, {"id": 289, "word": "ジム", "reading": "ジム", "meaning": "健身房"}, {"id": 290, "word": "グラウンド", "reading": "グラウンド", "meaning": "操场"}, {"id": 291, "word": "スタジアム", "reading": "スタジアム", "meaning": "体育场"}, {"id": 292, "word": "市場", "reading": "いちば/しじょう", "meaning": "市场"}, {"id": 293, "word": "通り", "reading": "とおり", "meaning": "大街"}, {"id": 294, "word": "道", "reading": "みち", "meaning": "路"}, {"id": 295, "word": "交差点", "reading": "こうさてん", "meaning": "十字路口"}, {"id": 296, "word": "信号", "reading": "しんごう", "meaning": "红绿灯"}, {"id": 297, "word": "横断歩道", "reading": "おうだんほどう", "meaning": "人行横道"}, {"id": 298, "word": "歩道", "reading": "ほどう", "meaning": "人行道"}, {"id": 299, "word": "橋", "reading": "はし", "meaning": "桥"}, {"id": 300, "word": "坂", "reading": "さか", "meaning": "坡"}, {"id": 301, "word": "角", "reading": "かど", "meaning": "拐角"}, {"id": 302, "word": "隅", "reading": "すみ", "meaning": "角落"}, {"id": 303, "word": "真ん中", "reading": "まんなか", "meaning": "正中间"}, {"id": 304, "word": "向こう", "reading": "むこう", "meaning": "对面"}, {"id": 305, "word": "隣", "reading": "となり", "meaning": "旁边"}, {"id": 306, "word": "近所", "reading": "きんじょ", "meaning": "附近"}, {"id": 307, "word": "地元", "reading": "じもと", "meaning": "当地"}, {"id": 308, "word": "都会", "reading": "とかい", "meaning": "城市"}, {"id": 309, "word": "田舎", "reading": "いなか", "meaning": "乡下"}, {"id": 310, "word": "地域", "reading": "ちいき", "meaning": "地区"}, {"id": 311, "word": "地方", "reading": "ちほう", "meaning": "地方"}, {"id": 312, "word": "海外", "reading": "かいがい", "meaning": "海外"}, {"id": 313, "word": "国内", "reading": "こくない", "meaning": "国内"}, {"id": 314, "word": "天気", "reading": "てんき", "meaning": "天气"}, {"id": 315, "word": "天候", "reading": "てんこう", "meaning": "天候"}, {"id": 316, "word": "気温", "reading": "きおん", "meaning": "气温"}, {"id": 317, "word": "湿度", "reading": "しつど", "meaning": "湿度"}, {"id": 318, "word": "気候", "reading": "きこう", "meaning": "气候"}, {"id": 319, "word": "空", "reading": "そら", "meaning": "天空"}, {"id": 320, "word": "雲", "reading": "くも", "meaning": "云"}, {"id": 321, "word": "太陽", "reading": "たいよう", "meaning": "太阳"}, {"id": 322, "word": "月", "reading": "つき", "meaning": "月亮/月份"}, {"id": 323, "word": "星", "reading": "ほし", "meaning": "星星"}, {"id": 324, "word": "雨", "reading": "あめ", "meaning": "雨"}, {"id": 325, "word": "雪", "reading": "ゆき", "meaning": "雪"}, {"id": 326, "word": "風", "reading": "かぜ", "meaning": "风"}, {"id": 327, "word": "雷", "reading": "かみなり", "meaning": "雷"}, {"id": 328, "word": "台風", "reading": "たいふう", "meaning": "台风"}, {"id": 329, "word": "地震", "reading": "じしん", "meaning": "地震"}, {"id": 330, "word": "津波", "reading": "つなみ", "meaning": "海啸"}, {"id": 331, "word": "洪水", "reading": "こうずい", "meaning": "洪水"}, {"id": 332, "word": "災害", "reading": "さいがい", "meaning": "灾害"}, {"id": 333, "word": "虹", "reading": "にじ", "meaning": "彩虹"}, {"id": 334, "word": "霧", "reading": "きり", "meaning": "雾"}, {"id": 335, "word": "氷", "reading": "こおり", "meaning": "冰"}, {"id": 336, "word": "山", "reading": "やま", "meaning": "山"}, {"id": 337, "word": "川", "reading": "かわ", "meaning": "河"}, {"id": 338, "word": "海", "reading": "うみ", "meaning": "海"}, {"id": 339, "word": "湖", "reading": "みずうみ", "meaning": "湖"}, {"id": 340, "word": "池", "reading": "いけ", "meaning": "池塘"}, {"id": 341, "word": "島", "reading": "しま", "meaning": "岛"}, {"id": 342, "word": "森", "reading": "もり", "meaning": "森林"}, {"id": 343, "word": "林", "reading": "はやし", "meaning": "树林"}, {"id": 344, "word": "木", "reading": "き", "meaning": "树"}, {"id": 345, "word": "花", "reading": "はな", "meaning": "花"}, {"id": 346, "word": "桜", "reading": "さくら", "meaning": "樱花"}, {"id": 347, "word": "葉", "reading": "は", "meaning": "叶子"}, {"id": 348, "word": "草", "reading": "くさ", "meaning": "草"}, {"id": 349, "word": "石", "reading": "いし", "meaning": "石头"}, {"id": 350, "word": "砂", "reading": "すな", "meaning": "沙"}, {"id": 351, "word": "土", "reading": "つち", "meaning": "土"}, {"id": 352, "word": "火", "reading": "ひ", "meaning": "火"}, {"id": 353, "word": "水", "reading": "みず", "meaning": "水"}, {"id": 354, "word": "空気", "reading": "くうき", "meaning": "空气"}, {"id": 355, "word": "光", "reading": "ひかり", "meaning": "光"}, {"id": 356, "word": "影", "reading": "かげ", "meaning": "影子"}, {"id": 357, "word": "音", "reading": "おと", "meaning": "声音/响声"}, {"id": 358, "word": "色", "reading": "いろ", "meaning": "颜色"}, {"id": 359, "word": "匂い", "reading": "におい", "meaning": "气味"}, {"id": 360, "word": "景色", "reading": "けしき", "meaning": "景色"}, {"id": 361, "word": "風景", "reading": "ふうけい", "meaning": "风景"}, {"id": 362, "word": "自然", "reading": "しぜん", "meaning": "自然"}, {"id": 363, "word": "環境", "reading": "かんきょう", "meaning": "环境"}, {"id": 364, "word": "動物", "reading": "どうぶつ", "meaning": "动物"}, {"id": 365, "word": "犬", "reading": "いぬ", "meaning": "狗"}, {"id": 366, "word": "猫", "reading": "ねこ", "meaning": "猫"}, {"id": 367, "word": "鳥", "reading": "とり", "meaning": "鸟"}, {"id": 368, "word": "魚", "reading": "さかな", "meaning": "鱼"}, {"id": 369, "word": "虫", "reading": "むし", "meaning": "虫"}, {"id": 370, "word": "植物", "reading": "しょくぶつ", "meaning": "植物"}, {"id": 371, "word": "食べ物", "reading": "たべもの", "meaning": "食物"}, {"id": 372, "word": "飲み物", "reading": "のみもの", "meaning": "饮料"}, {"id": 373, "word": "料理", "reading": "りょうり", "meaning": "菜/料理"}, {"id": 374, "word": "食事", "reading": "しょくじ", "meaning": "餐/饭"}, {"id": 375, "word": "朝ご飯", "reading": "あさごはん", "meaning": "早餐"}, {"id": 376, "word": "昼ご飯", "reading": "ひるごはん", "meaning": "午餐"}, {"id": 377, "word": "晩ご飯", "reading": "ばんごはん", "meaning": "晚餐"}, {"id": 378, "word": "弁当", "reading": "べんとう", "meaning": "便当"}, {"id": 379, "word": "おやつ", "reading": "おやつ", "meaning": "零食"}, {"id": 380, "word": "ご飯", "reading": "ごはん", "meaning": "米饭/饭"}, {"id": 381, "word": "パン", "reading": "パン", "meaning": "面包"}, {"id": 382, "word": "麺", "reading": "めん", "meaning": "面条"}, {"id": 383, "word": "肉", "reading": "にく", "meaning": "肉"}, {"id": 384, "word": "牛肉", "reading": "ぎゅうにく", "meaning": "牛肉"}, {"id": 385, "word": "豚肉", "reading": "ぶたにく", "meaning": "猪肉"}, {"id": 386, "word": "鶏肉", "reading": "とりにく", "meaning": "鸡肉"}, {"id": 387, "word": "野菜", "reading": "やさい", "meaning": "蔬菜"}, {"id": 388, "word": "果物", "reading": "くだもの", "meaning": "水果"}, {"id": 389, "word": "卵", "reading": "たまご", "meaning": "鸡蛋"}, {"id": 390, "word": "豆腐", "reading": "とうふ", "meaning": "豆腐"}, {"id": 391, "word": "味噌", "reading": "みそ", "meaning": "味噌"}, {"id": 392, "word": "醤油", "reading": "しょうゆ", "meaning": "酱油"}, {"id": 393, "word": "塩", "reading": "しお", "meaning": "盐"}, {"id": 394, "word": "砂糖", "reading": "さとう", "meaning": "糖"}, {"id": 395, "word": "酢", "reading": "す", "meaning": "醋"}, {"id": 396, "word": "油", "reading": "あぶら", "meaning": "油"}, {"id": 397, "word": "ソース", "reading": "ソース", "meaning": "酱汁"}, {"id": 398, "word": "スープ", "reading": "スープ", "meaning": "汤"}, {"id": 399, "word": "味", "reading": "あじ", "meaning": "味道"}, {"id": 400, "word": "材料", "reading": "ざいりょう", "meaning": "材料"}, {"id": 401, "word": "レシピ", "reading": "レシピ", "meaning": "食谱"}, {"id": 402, "word": "寿司", "reading": "すし", "meaning": "寿司"}, {"id": 403, "word": "刺身", "reading": "さしみ", "meaning": "生鱼片"}, {"id": 404, "word": "天ぷら", "reading": "てんぷら", "meaning": "天妇罗"}, {"id": 405, "word": "ラーメン", "reading": "ラーメン", "meaning": "拉面"}, {"id": 406, "word": "うどん", "reading": "うどん", "meaning": "乌冬面"}, {"id": 407, "word": "そば", "reading": "そば", "meaning": "荞麦面"}, {"id": 408, "word": "カレー", "reading": "カレー", "meaning": "咖喱"}, {"id": 409, "word": "丼", "reading": "どんぶり", "meaning": "盖饭"}, {"id": 410, "word": "定食", "reading": "ていしょく", "meaning": "套餐"}, {"id": 411, "word": "おにぎり", "reading": "おにぎり", "meaning": "饭团"}, {"id": 412, "word": "餃子", "reading": "ぎょうざ", "meaning": "饺子"}, {"id": 413, "word": "焼肉", "reading": "やきにく", "meaning": "烤肉"}, {"id": 414, "word": "鍋", "reading": "なべ", "meaning": "火锅"}, {"id": 415, "word": "デザート", "reading": "デザート", "meaning": "甜点"}, {"id": 416, "word": "ケーキ", "reading": "ケーキ", "meaning": "蛋糕"}, {"id": 417, "word": "アイスクリーム", "reading": "アイスクリーム", "meaning": "冰淇淋"}, {"id": 418, "word": "チョコレート", "reading": "チョコレート", "meaning": "巧克力"}, {"id": 419, "word": "お菓子", "reading": "おかし", "meaning": "点心/零食"}, {"id": 420, "word": "お茶", "reading": "おちゃ", "meaning": "茶"}, {"id": 421, "word": "コーヒー", "reading": "コーヒー", "meaning": "咖啡"}, {"id": 422, "word": "紅茶", "reading": "こうちゃ", "meaning": "红茶"}, {"id": 423, "word": "ジュース", "reading": "ジュース", "meaning": "果汁"}, {"id": 424, "word": "牛乳", "reading": "ぎゅうにゅう", "meaning": "牛奶"}, {"id": 425, "word": "ビール", "reading": "ビール", "meaning": "啤酒"}, {"id": 426, "word": "ワイン", "reading": "ワイン", "meaning": "葡萄酒"}, {"id": 427, "word": "日本酒", "reading": "にほんしゅ", "meaning": "日本酒"}, {"id": 428, "word": "酒", "reading": "さけ", "meaning": "酒"}, {"id": 429, "word": "物", "reading": "もの", "meaning": "东西"}, {"id": 430, "word": "荷物", "reading": "にもつ", "meaning": "行李/物品"}, {"id": 431, "word": "鍵", "reading": "かぎ", "meaning": "钥匙"}, {"id": 432, "word": "財布", "reading": "さいふ", "meaning": "钱包"}, {"id": 433, "word": "傘", "reading": "かさ", "meaning": "伞"}, {"id": 434, "word": "鞄", "reading": "かばん", "meaning": "包"}, {"id": 435, "word": "靴", "reading": "くつ", "meaning": "鞋"}, {"id": 436, "word": "帽子", "reading": "ぼうし", "meaning": "帽子"}, {"id": 437, "word": "眼鏡", "reading": "めがね", "meaning": "眼镜"}, {"id": 438, "word": "時計", "reading": "とけい", "meaning": "钟/表"}, {"id": 439, "word": "携帯", "reading": "けいたい", "meaning": "手机"}, {"id": 440, "word": "スマホ", "reading": "スマホ", "meaning": "智能手机"}, {"id": 441, "word": "パソコン", "reading": "パソコン", "meaning": "电脑"}, {"id": 442, "word": "テレビ", "reading": "テレビ", "meaning": "电视"}, {"id": 443, "word": "エアコン", "reading": "エアコン", "meaning": "空调"}, {"id": 444, "word": "冷蔵庫", "reading": "れいぞうこ", "meaning": "冰箱"}, {"id": 445, "word": "洗濯機", "reading": "せんたくき", "meaning": "洗衣机"}, {"id": 446, "word": "掃除機", "reading": "そうじき", "meaning": "吸尘器"}, {"id": 447, "word": "電子レンジ", "reading": "でんしレンジ", "meaning": "微波炉"}, {"id": 448, "word": "カメラ", "reading": "カメラ", "meaning": "相机"}, {"id": 449, "word": "電池", "reading": "でんち", "meaning": "电池"}, {"id": 450, "word": "充電器", "reading": "じゅうでんき", "meaning": "充电器"}, {"id": 451, "word": "ティッシュ", "reading": "ティッシュ", "meaning": "纸巾"}, {"id": 452, "word": "タオル", "reading": "タオル", "meaning": "毛巾"}, {"id": 453, "word": "石鹸", "reading": "せっけん", "meaning": "肥皂"}, {"id": 454, "word": "シャンプー", "reading": "シャンプー", "meaning": "洗发水"}, {"id": 455, "word": "歯ブラシ", "reading": "はブラシ", "meaning": "牙刷"}, {"id": 456, "word": "ハンカチ", "reading": "ハンカチ", "meaning": "手帕"}, {"id": 457, "word": "マスク", "reading": "マスク", "meaning": "口罩"}, {"id": 458, "word": "ゴミ", "reading": "ゴミ", "meaning": "垃圾"}, {"id": 459, "word": "ゴミ袋", "reading": "ゴミぶくろ", "meaning": "垃圾袋"}, {"id": 460, "word": "袋", "reading": "ふくろ", "meaning": "袋子"}, {"id": 461, "word": "箱", "reading": "はこ", "meaning": "箱子"}, {"id": 462, "word": "瓶", "reading": "びん", "meaning": "瓶"}, {"id": 463, "word": "缶", "reading": "かん", "meaning": "罐"}, {"id": 464, "word": "皿", "reading": "さら", "meaning": "盘子"}, {"id": 465, "word": "茶碗", "reading": "ちゃわん", "meaning": "碗"}, {"id": 466, "word": "箸", "reading": "はし", "meaning": "筷子"}, {"id": 467, "word": "スプーン", "reading": "スプーン", "meaning": "勺子"}, {"id": 468, "word": "フォーク", "reading": "フォーク", "meaning": "叉子"}, {"id": 469, "word": "コップ", "reading": "コップ", "meaning": "杯子"}, {"id": 470, "word": "ナイフ", "reading": "ナイフ", "meaning": "刀"}, {"id": 471, "word": "布団", "reading": "ふとん", "meaning": "被褥"}, {"id": 472, "word": "枕", "reading": "まくら", "meaning": "枕头"}, {"id": 473, "word": "椅子", "reading": "いす", "meaning": "椅子"}, {"id": 474, "word": "机", "reading": "つくえ", "meaning": "桌子"}, {"id": 475, "word": "テーブル", "reading": "テーブル", "meaning": "桌子"}, {"id": 476, "word": "ベッド", "reading": "ベッド", "meaning": "床"}, {"id": 477, "word": "ソファ", "reading": "ソファ", "meaning": "沙发"}, {"id": 478, "word": "棚", "reading": "たな", "meaning": "架子"}, {"id": 479, "word": "引き出し", "reading": "ひきだし", "meaning": "抽屉"}, {"id": 480, "word": "ドア", "reading": "ドア", "meaning": "门"}, {"id": 481, "word": "窓", "reading": "まど", "meaning": "窗"}, {"id": 482, "word": "壁", "reading": "かべ", "meaning": "墙"}, {"id": 483, "word": "床", "reading": "ゆか", "meaning": "地板"}, {"id": 484, "word": "天井", "reading": "てんじょう", "meaning": "天花板"}, {"id": 485, "word": "カーテン", "reading": "カーテン", "meaning": "窗帘"}, {"id": 486, "word": "電気", "reading": "でんき", "meaning": "电/灯"}, {"id": 487, "word": "ガス", "reading": "ガス", "meaning": "煤气"}, {"id": 488, "word": "水道", "reading": "すいどう", "meaning": "自来水"}, {"id": 489, "word": "服", "reading": "ふく", "meaning": "衣服"}, {"id": 490, "word": "洋服", "reading": "ようふく", "meaning": "西式衣服"}, {"id": 491, "word": "着物", "reading": "きもの", "meaning": "和服"}, {"id": 492, "word": "浴衣", "reading": "ゆかた", "meaning": "浴衣"}, {"id": 493, "word": "シャツ", "reading": "シャツ", "meaning": "衬衫"}, {"id": 494, "word": "Tシャツ", "reading": "Tシャツ", "meaning": "T恤"}, {"id": 495, "word": "セーター", "reading": "セーター", "meaning": "毛衣"}, {"id": 496, "word": "ジャケット", "reading": "ジャケット", "meaning": "夹克"}, {"id": 497, "word": "コート", "reading": "コート", "meaning": "大衣"}, {"id": 498, "word": "スーツ", "reading": "スーツ", "meaning": "西装"}, {"id": 499, "word": "ズボン", "reading": "ズボン", "meaning": "裤子"}, {"id": 500, "word": "スカート", "reading": "スカート", "meaning": "裙子"}, {"id": 501, "word": "ワンピース", "reading": "ワンピース", "meaning": "连衣裙"}, {"id": 502, "word": "下着", "reading": "したぎ", "meaning": "内衣"}, {"id": 503, "word": "靴下", "reading": "くつした", "meaning": "袜子"}, {"id": 504, "word": "スニーカー", "reading": "スニーカー", "meaning": "运动鞋"}, {"id": 505, "word": "サンダル", "reading": "サンダル", "meaning": "凉鞋"}, {"id": 506, "word": "アクセサリー", "reading": "アクセサリー", "meaning": "饰品"}, {"id": 507, "word": "指輪", "reading": "ゆびわ", "meaning": "戒指"}, {"id": 508, "word": "ネックレス", "reading": "ネックレス", "meaning": "项链"}, {"id": 509, "word": "ボタン", "reading": "ボタン", "meaning": "纽扣"}, {"id": 510, "word": "ポケット", "reading": "ポケット", "meaning": "口袋"}, {"id": 511, "word": "サイズ", "reading": "サイズ", "meaning": "尺码"}, {"id": 512, "word": "電車", "reading": "でんしゃ", "meaning": "电车"}, {"id": 513, "word": "地下鉄", "reading": "ちかてつ", "meaning": "地铁"}, {"id": 514, "word": "新幹線", "reading": "しんかんせん", "meaning": "新干线"}, {"id": 515, "word": "バス", "reading": "バス", "meaning": "公交"}, {"id": 516, "word": "タクシー", "reading": "タクシー", "meaning": "出租车"}, {"id": 517, "word": "飛行機", "reading": "ひこうき", "meaning": "飞机"}, {"id": 518, "word": "船", "reading": "ふね", "meaning": "船"}, {"id": 519, "word": "車", "reading": "くるま", "meaning": "车"}, {"id": 520, "word": "自転車", "reading": "じてんしゃ", "meaning": "自行车"}, {"id": 521, "word": "バイク", "reading": "バイク", "meaning": "摩托车"}, {"id": 522, "word": "切符", "reading": "きっぷ", "meaning": "车票"}, {"id": 523, "word": "定期券", "reading": "ていきけん", "meaning": "月票"}, {"id": 524, "word": "片道", "reading": "かたみち", "meaning": "单程"}, {"id": 525, "word": "往復", "reading": "おうふく", "meaning": "往返"}, {"id": 526, "word": "乗り換え", "reading": "のりかえ", "meaning": "换乘"}, {"id": 527, "word": "運賃", "reading": "うんちん", "meaning": "车费"}, {"id": 528, "word": "終電", "reading": "しゅうでん", "meaning": "末班车"}, {"id": 529, "word": "始発", "reading": "しはつ", "meaning": "始发车"}, {"id": 530, "word": "急行", "reading": "きゅうこう", "meaning": "快车"}, {"id": 531, "word": "各駅停車", "reading": "かくえきていしゃ", "meaning": "各站停车"}, {"id": 532, "word": "特急", "reading": "とっきゅう", "meaning": "特快"}, {"id": 533, "word": "指定席", "reading": "していせき", "meaning": "指定席"}, {"id": 534, "word": "自由席", "reading": "じゆうせき", "meaning": "自由席"}, {"id": 535, "word": "通勤", "reading": "つうきん", "meaning": "通勤"}, {"id": 536, "word": "渋滞", "reading": "じゅうたい", "meaning": "堵车"}, {"id": 537, "word": "事故", "reading": "じこ", "meaning": "事故"}, {"id": 538, "word": "遅延", "reading": "ちえん", "meaning": "延迟/晚点"}, {"id": 539, "word": "ラッシュ", "reading": "ラッシュ", "meaning": "高峰"}, {"id": 540, "word": "信号無視", "reading": "しんごうむし", "meaning": "闯红灯"}, {"id": 541, "word": "免許", "reading": "めんきょ", "meaning": "驾照"}, {"id": 542, "word": "ガソリン", "reading": "ガソリン", "meaning": "汽油"}, {"id": 543, "word": "スピード", "reading": "スピード", "meaning": "速度"}, {"id": 544, "word": "距離", "reading": "きょり", "meaning": "距离"}, {"id": 545, "word": "道路", "reading": "どうろ", "meaning": "道路"}, {"id": 546, "word": "高速道路", "reading": "こうそくどうろ", "meaning": "高速公路"}, {"id": 547, "word": "パスポート", "reading": "パスポート", "meaning": "护照"}, {"id": 548, "word": "ビザ", "reading": "ビザ", "meaning": "签证"}, {"id": 549, "word": "荷物", "reading": "にもつ", "meaning": "行李"}, {"id": 550, "word": "スーツケース", "reading": "スーツケース", "meaning": "行李箱"}, {"id": 551, "word": "仕事", "reading": "しごと", "meaning": "工作"}, {"id": 552, "word": "職業", "reading": "しょくぎょう", "meaning": "职业"}, {"id": 553, "word": "会議", "reading": "かいぎ", "meaning": "会议"}, {"id": 554, "word": "打ち合わせ", "reading": "うちあわせ", "meaning": "碰头会"}, {"id": 555, "word": "プレゼン", "reading": "プレゼン", "meaning": "演示"}, {"id": 556, "word": "資料", "reading": "しりょう", "meaning": "资料"}, {"id": 557, "word": "書類", "reading": "しょるい", "meaning": "文件"}, {"id": 558, "word": "報告書", "reading": "ほうこくしょ", "meaning": "报告"}, {"id": 559, "word": "企画", "reading": "きかく", "meaning": "企划"}, {"id": 560, "word": "提案", "reading": "ていあん", "meaning": "提案"}, {"id": 561, "word": "契約", "reading": "けいやく", "meaning": "合同"}, {"id": 562, "word": "交渉", "reading": "こうしょう", "meaning": "谈判"}, {"id": 563, "word": "商談", "reading": "しょうだん", "meaning": "商谈"}, {"id": 564, "word": "取引", "reading": "とりひき", "meaning": "交易"}, {"id": 565, "word": "営業", "reading": "えいぎょう", "meaning": "销售/营业"}, {"id": 566, "word": "経理", "reading": "けいり", "meaning": "会计"}, {"id": 567, "word": "人事", "reading": "じんじ", "meaning": "人事"}, {"id": 568, "word": "総務", "reading": "そうむ", "meaning": "总务"}, {"id": 569, "word": "開発", "reading": "かいはつ", "meaning": "开发"}, {"id": 570, "word": "製造", "reading": "せいぞう", "meaning": "制造"}, {"id": 571, "word": "品質", "reading": "ひんしつ", "meaning": "品质"}, {"id": 572, "word": "管理", "reading": "かんり", "meaning": "管理"}, {"id": 573, "word": "プロジェクト", "reading": "プロジェクト", "meaning": "项目"}, {"id": 574, "word": "チーム", "reading": "チーム", "meaning": "团队"}, {"id": 575, "word": "メンバー", "reading": "メンバー", "meaning": "成员"}, {"id": 576, "word": "リーダー", "reading": "リーダー", "meaning": "领导"}, {"id": 577, "word": "スケジュール", "reading": "スケジュール", "meaning": "日程"}, {"id": 578, "word": "予定", "reading": "よてい", "meaning": "预定/计划"}, {"id": 579, "word": "目標", "reading": "もくひょう", "meaning": "目标"}, {"id": 580, "word": "成果", "reading": "せいか", "meaning": "成果"}, {"id": 581, "word": "実績", "reading": "じっせき", "meaning": "业绩"}, {"id": 582, "word": "売上", "reading": "うりあげ", "meaning": "销售额"}, {"id": 583, "word": "利益", "reading": "りえき", "meaning": "利润"}, {"id": 584, "word": "損失", "reading": "そんしつ", "meaning": "损失"}, {"id": 585, "word": "予算", "reading": "よさん", "meaning": "预算"}, {"id": 586, "word": "コスト", "reading": "コスト", "meaning": "成本"}, {"id": 587, "word": "経費", "reading": "けいひ", "meaning": "经费"}, {"id": 588, "word": "給料", "reading": "きゅうりょう", "meaning": "工资"}, {"id": 589, "word": "ボーナス", "reading": "ボーナス", "meaning": "奖金"}, {"id": 590, "word": "年収", "reading": "ねんしゅう", "meaning": "年收入"}, {"id": 591, "word": "残業", "reading": "ざんぎょう", "meaning": "加班"}, {"id": 592, "word": "有給休暇", "reading": "ゆうきゅうきゅうか", "meaning": "带薪休假"}, {"id": 593, "word": "出張", "reading": "しゅっちょう", "meaning": "出差"}, {"id": 594, "word": "転勤", "reading": "てんきん", "meaning": "调职"}, {"id": 595, "word": "異動", "reading": "いどう", "meaning": "调动"}, {"id": 596, "word": "昇進", "reading": "しょうしん", "meaning": "升职"}, {"id": 597, "word": "降格", "reading": "こうかく", "meaning": "降级"}, {"id": 598, "word": "転職", "reading": "てんしょく", "meaning": "跳槽"}, {"id": 599, "word": "退職", "reading": "たいしょく", "meaning": "辞职/退休"}, {"id": 600, "word": "解雇", "reading": "かいこ", "meaning": "解雇"}, {"id": 601, "word": "面接", "reading": "めんせつ", "meaning": "面试"}, {"id": 602, "word": "履歴書", "reading": "りれきしょ", "meaning": "简历"}, {"id": 603, "word": "内定", "reading": "ないてい", "meaning": "内定"}, {"id": 604, "word": "研修", "reading": "けんしゅう", "meaning": "培训"}, {"id": 605, "word": "引き継ぎ", "reading": "ひきつぎ", "meaning": "交接"}, {"id": 606, "word": "名刺", "reading": "めいし", "meaning": "名片"}, {"id": 607, "word": "印鑑", "reading": "いんかん", "meaning": "印章"}, {"id": 608, "word": "クレーム", "reading": "クレーム", "meaning": "投诉"}, {"id": 609, "word": "ミス", "reading": "ミス", "meaning": "失误"}, {"id": 610, "word": "トラブル", "reading": "トラブル", "meaning": "问题/麻烦"}, {"id": 611, "word": "ノルマ", "reading": "ノルマ", "meaning": "指标"}, {"id": 612, "word": "マニュアル", "reading": "マニュアル", "meaning": "操作手册"}, {"id": 613, "word": "やりがい", "reading": "やりがい", "meaning": "成就感/值得做"}, {"id": 614, "word": "授業", "reading": "じゅぎょう", "meaning": "课"}, {"id": 615, "word": "講義", "reading": "こうぎ", "meaning": "讲座"}, {"id": 616, "word": "科目", "reading": "かもく", "meaning": "科目"}, {"id": 617, "word": "試験", "reading": "しけん", "meaning": "考试"}, {"id": 618, "word": "テスト", "reading": "テスト", "meaning": "测验"}, {"id": 619, "word": "成績", "reading": "せいせき", "meaning": "成绩"}, {"id": 620, "word": "点数", "reading": "てんすう", "meaning": "分数"}, {"id": 621, "word": "合格", "reading": "ごうかく", "meaning": "及格/合格"}, {"id": 622, "word": "不合格", "reading": "ふごうかく", "meaning": "不及格"}, {"id": 623, "word": "卒業", "reading": "そつぎょう", "meaning": "毕业"}, {"id": 624, "word": "入学", "reading": "にゅうがく", "meaning": "入学"}, {"id": 625, "word": "進学", "reading": "しんがく", "meaning": "升学"}, {"id": 626, "word": "留学", "reading": "りゅうがく", "meaning": "留学"}, {"id": 627, "word": "奨学金", "reading": "しょうがくきん", "meaning": "奖学金"}, {"id": 628, "word": "学費", "reading": "がくひ", "meaning": "学费"}, {"id": 629, "word": "宿題", "reading": "しゅくだい", "meaning": "作业"}, {"id": 630, "word": "レポート", "reading": "レポート", "meaning": "报告"}, {"id": 631, "word": "論文", "reading": "ろんぶん", "meaning": "论文"}, {"id": 632, "word": "教科書", "reading": "きょうかしょ", "meaning": "教科书"}, {"id": 633, "word": "参考書", "reading": "さんこうしょ", "meaning": "参考书"}, {"id": 634, "word": "辞書", "reading": "じしょ", "meaning": "词典"}, {"id": 635, "word": "文法", "reading": "ぶんぽう", "meaning": "语法"}, {"id": 636, "word": "単語", "reading": "たんご", "meaning": "单词"}, {"id": 637, "word": "発音", "reading": "はつおん", "meaning": "发音"}, {"id": 638, "word": "会話", "reading": "かいわ", "meaning": "会话"}, {"id": 639, "word": "文章", "reading": "ぶんしょう", "meaning": "文章"}, {"id": 640, "word": "作文", "reading": "さくぶん", "meaning": "作文"}, {"id": 641, "word": "翻訳", "reading": "ほんやく", "meaning": "翻译"}, {"id": 642, "word": "通訳", "reading": "つうやく", "meaning": "口译"}, {"id": 643, "word": "知識", "reading": "ちしき", "meaning": "知识"}, {"id": 644, "word": "常識", "reading": "じょうしき", "meaning": "常识"}, {"id": 645, "word": "経験", "reading": "けいけん", "meaning": "经验"}, {"id": 646, "word": "能力", "reading": "のうりょく", "meaning": "能力"}, {"id": 647, "word": "才能", "reading": "さいのう", "meaning": "才能"}, {"id": 648, "word": "努力", "reading": "どりょく", "meaning": "努力"}, {"id": 649, "word": "練習", "reading": "れんしゅう", "meaning": "练习"}, {"id": 650, "word": "復習", "reading": "ふくしゅう", "meaning": "复习"}, {"id": 651, "word": "予習", "reading": "よしゅう", "meaning": "预习"}, {"id": 652, "word": "お金", "reading": "おかね", "meaning": "钱"}, {"id": 653, "word": "現金", "reading": "げんきん", "meaning": "现金"}, {"id": 654, "word": "小銭", "reading": "こぜに", "meaning": "零钱"}, {"id": 655, "word": "お釣り", "reading": "おつり", "meaning": "找零"}, {"id": 656, "word": "値段", "reading": "ねだん", "meaning": "价格"}, {"id": 657, "word": "価格", "reading": "かかく", "meaning": "价格"}, {"id": 658, "word": "費用", "reading": "ひよう", "meaning": "费用"}, {"id": 659, "word": "料金", "reading": "りょうきん", "meaning": "费用/资费"}, {"id": 660, "word": "手数料", "reading": "てすうりょう", "meaning": "手续费"}, {"id": 661, "word": "家賃", "reading": "やちん", "meaning": "房租"}, {"id": 662, "word": "光熱費", "reading": "こうねつひ", "meaning": "水电气费"}, {"id": 663, "word": "生活費", "reading": "せいかつひ", "meaning": "生活费"}, {"id": 664, "word": "交通費", "reading": "こうつうひ", "meaning": "交通费"}, {"id": 665, "word": "食費", "reading": "しょくひ", "meaning": "伙食费"}, {"id": 666, "word": "税金", "reading": "ぜいきん", "meaning": "税"}, {"id": 667, "word": "消費税", "reading": "しょうひぜい", "meaning": "消费税"}, {"id": 668, "word": "収入", "reading": "しゅうにゅう", "meaning": "收入"}, {"id": 669, "word": "支出", "reading": "ししゅつ", "meaning": "支出"}, {"id": 670, "word": "貯金", "reading": "ちょきん", "meaning": "存款"}, {"id": 671, "word": "借金", "reading": "しゃっきん", "meaning": "债务"}, {"id": 672, "word": "ローン", "reading": "ローン", "meaning": "贷款"}, {"id": 673, "word": "保険", "reading": "ほけん", "meaning": "保险"}, {"id": 674, "word": "口座", "reading": "こうざ", "meaning": "账户"}, {"id": 675, "word": "振り込み", "reading": "ふりこみ", "meaning": "转账"}, {"id": 676, "word": "引き落とし", "reading": "ひきおとし", "meaning": "自动扣款"}, {"id": 677, "word": "領収書", "reading": "りょうしゅうしょ", "meaning": "收据"}, {"id": 678, "word": "レシート", "reading": "レシート", "meaning": "小票"}, {"id": 679, "word": "割引", "reading": "わりびき", "meaning": "折扣"}, {"id": 680, "word": "セール", "reading": "セール", "meaning": "打折"}, {"id": 681, "word": "無料", "reading": "むりょう", "meaning": "免费"}, {"id": 682, "word": "有料", "reading": "ゆうりょう", "meaning": "收费"}, {"id": 683, "word": "経済", "reading": "けいざい", "meaning": "经济"}, {"id": 684, "word": "景気", "reading": "けいき", "meaning": "景气"}, {"id": 685, "word": "株", "reading": "かぶ", "meaning": "股票"}, {"id": 686, "word": "投資", "reading": "とうし", "meaning": "投资"}, {"id": 687, "word": "社会", "reading": "しゃかい", "meaning": "社会"}, {"id": 688, "word": "世界", "reading": "せかい", "meaning": "世界"}, {"id": 689, "word": "国", "reading": "くに", "meaning": "国家"}, {"id": 690, "word": "政府", "reading": "せいふ", "meaning": "政府"}, {"id": 691, "word": "法律", "reading": "ほうりつ", "meaning": "法律"}, {"id": 692, "word": "権利", "reading": "けんり", "meaning": "权利"}, {"id": 693, "word": "義務", "reading": "ぎむ", "meaning": "义务"}, {"id": 694, "word": "自由", "reading": "じゆう", "meaning": "自由"}, {"id": 695, "word": "平和", "reading": "へいわ", "meaning": "和平"}, {"id": 696, "word": "戦争", "reading": "せんそう", "meaning": "战争"}, {"id": 697, "word": "事件", "reading": "じけん", "meaning": "事件"}, {"id": 698, "word": "犯罪", "reading": "はんざい", "meaning": "犯罪"}, {"id": 699, "word": "裁判", "reading": "さいばん", "meaning": "审判"}, {"id": 700, "word": "選挙", "reading": "せんきょ", "meaning": "选举"}, {"id": 701, "word": "政策", "reading": "せいさく", "meaning": "政策"}, {"id": 702, "word": "制度", "reading": "せいど", "meaning": "制度"}, {"id": 703, "word": "規則", "reading": "きそく", "meaning": "规则"}, {"id": 704, "word": "ルール", "reading": "ルール", "meaning": "规则"}, {"id": 705, "word": "マナー", "reading": "マナー", "meaning": "礼仪"}, {"id": 706, "word": "文化", "reading": "ぶんか", "meaning": "文化"}, {"id": 707, "word": "伝統", "reading": "でんとう", "meaning": "传统"}, {"id": 708, "word": "歴史", "reading": "れきし", "meaning": "历史"}, {"id": 709, "word": "宗教", "reading": "しゅうきょう", "meaning": "宗教"}, {"id": 710, "word": "国際", "reading": "こくさい", "meaning": "国际"}, {"id": 711, "word": "人口", "reading": "じんこう", "meaning": "人口"}, {"id": 712, "word": "少子化", "reading": "しょうしか", "meaning": "少子化"}, {"id": 713, "word": "高齢化", "reading": "こうれいか", "meaning": "老龄化"}, {"id": 714, "word": "差別", "reading": "さべつ", "meaning": "歧视"}, {"id": 715, "word": "平等", "reading": "びょうどう", "meaning": "平等"}, {"id": 716, "word": "ボランティア", "reading": "ボランティア", "meaning": "志愿者"}, {"id": 717, "word": "寄付", "reading": "きふ", "meaning": "捐款"}, {"id": 718, "word": "ニュース", "reading": "ニュース", "meaning": "新闻"}, {"id": 719, "word": "新聞", "reading": "しんぶん", "meaning": "报纸"}, {"id": 720, "word": "記事", "reading": "きじ", "meaning": "报道/文章"}, {"id": 721, "word": "情報", "reading": "じょうほう", "meaning": "信息"}, {"id": 722, "word": "データ", "reading": "データ", "meaning": "数据"}, {"id": 723, "word": "統計", "reading": "とうけい", "meaning": "统计"}, {"id": 724, "word": "調査", "reading": "ちょうさ", "meaning": "调查"}, {"id": 725, "word": "報告", "reading": "ほうこく", "meaning": "报告"}, {"id": 726, "word": "発表", "reading": "はっぴょう", "meaning": "发表"}, {"id": 727, "word": "意見", "reading": "いけん", "meaning": "意见"}, {"id": 728, "word": "議論", "reading": "ぎろん", "meaning": "讨论"}, {"id": 729, "word": "賛成", "reading": "さんせい", "meaning": "赞成"}, {"id": 730, "word": "反対", "reading": "はんたい", "meaning": "反对"}, {"id": 731, "word": "批判", "reading": "ひはん", "meaning": "批判"}, {"id": 732, "word": "問題", "reading": "もんだい", "meaning": "问题"}, {"id": 733, "word": "課題", "reading": "かだい", "meaning": "课题"}, {"id": 734, "word": "対策", "reading": "たいさく", "meaning": "对策"}, {"id": 735, "word": "解決", "reading": "かいけつ", "meaning": "解决"}, {"id": 736, "word": "結果", "reading": "けっか", "meaning": "结果"}, {"id": 737, "word": "原因", "reading": "げんいん", "meaning": "原因"}, {"id": 738, "word": "理由", "reading": "りゆう", "meaning": "理由"}, {"id": 739, "word": "影響", "reading": "えいきょう", "meaning": "影响"}, {"id": 740, "word": "効果", "reading": "こうか", "meaning": "效果"}, {"id": 741, "word": "可能性", "reading": "かのうせい", "meaning": "可能性"}, {"id": 742, "word": "責任", "reading": "せきにん", "meaning": "责任"}, {"id": 743, "word": "気持ち", "reading": "きもち", "meaning": "心情/感觉"}, {"id": 744, "word": "気分", "reading": "きぶん", "meaning": "心情"}, {"id": 745, "word": "感情", "reading": "かんじょう", "meaning": "感情"}, {"id": 746, "word": "愛", "reading": "あい", "meaning": "爱"}, {"id": 747, "word": "恋", "reading": "こい", "meaning": "恋爱"}, {"id": 748, "word": "幸せ", "reading": "しあわせ", "meaning": "幸福"}, {"id": 749, "word": "不幸", "reading": "ふこう", "meaning": "不幸"}, {"id": 750, "word": "喜び", "reading": "よろこび", "meaning": "喜悦"}, {"id": 751, "word": "悲しみ", "reading": "かなしみ", "meaning": "悲伤"}, {"id": 752, "word": "怒り", "reading": "いかり", "meaning": "愤怒"}, {"id": 753, "word": "恐怖", "reading": "きょうふ", "meaning": "恐惧"}, {"id": 754, "word": "不安", "reading": "ふあん", "meaning": "不安"}, {"id": 755, "word": "心配", "reading": "しんぱい", "meaning": "担心"}, {"id": 756, "word": "安心", "reading": "あんしん", "meaning": "安心"}, {"id": 757, "word": "驚き", "reading": "おどろき", "meaning": "惊讶"}, {"id": 758, "word": "感動", "reading": "かんどう", "meaning": "感动"}, {"id": 759, "word": "後悔", "reading": "こうかい", "meaning": "后悔"}, {"id": 760, "word": "反省", "reading": "はんせい", "meaning": "反省"}, {"id": 761, "word": "我慢", "reading": "がまん", "meaning": "忍耐"}, {"id": 762, "word": "覚悟", "reading": "かくご", "meaning": "觉悟"}, {"id": 763, "word": "自信", "reading": "じしん", "meaning": "自信"}, {"id": 764, "word": "勇気", "reading": "ゆうき", "meaning": "勇气"}, {"id": 765, "word": "希望", "reading": "きぼう", "meaning": "希望"}, {"id": 766, "word": "絶望", "reading": "ぜつぼう", "meaning": "绝望"}, {"id": 767, "word": "期待", "reading": "きたい", "meaning": "期待"}, {"id": 768, "word": "失望", "reading": "しつぼう", "meaning": "失望"}, {"id": 769, "word": "興味", "reading": "きょうみ", "meaning": "兴趣"}, {"id": 770, "word": "関心", "reading": "かんしん", "meaning": "关心"}, {"id": 771, "word": "好奇心", "reading": "こうきしん", "meaning": "好奇心"}, {"id": 772, "word": "やる気", "reading": "やるき", "meaning": "干劲"}, {"id": 773, "word": "根性", "reading": "こんじょう", "meaning": "毅力/骨气"}, {"id": 774, "word": "プライド", "reading": "プライド", "meaning": "自尊心"}, {"id": 775, "word": "コンプレックス", "reading": "コンプレックス", "meaning": "自卑感"}, {"id": 776, "word": "ストレス", "reading": "ストレス", "meaning": "压力"}, {"id": 777, "word": "プレッシャー", "reading": "プレッシャー", "meaning": "压迫感"}, {"id": 778, "word": "リラックス", "reading": "リラックス", "meaning": "放松"}, {"id": 779, "word": "思い出", "reading": "おもいで", "meaning": "回忆"}, {"id": 780, "word": "記憶", "reading": "きおく", "meaning": "记忆"}, {"id": 781, "word": "印象", "reading": "いんしょう", "meaning": "印象"}, {"id": 782, "word": "イメージ", "reading": "イメージ", "meaning": "印象/形象"}, {"id": 783, "word": "夢", "reading": "ゆめ", "meaning": "梦/梦想"}, {"id": 784, "word": "目的", "reading": "もくてき", "meaning": "目的"}, {"id": 785, "word": "理想", "reading": "りそう", "meaning": "理想"}, {"id": 786, "word": "現実", "reading": "げんじつ", "meaning": "现实"}, {"id": 787, "word": "事実", "reading": "じじつ", "meaning": "事实"}, {"id": 788, "word": "真実", "reading": "しんじつ", "meaning": "真实"}, {"id": 789, "word": "嘘", "reading": "うそ", "meaning": "谎言"}, {"id": 790, "word": "秘密", "reading": "ひみつ", "meaning": "秘密"}, {"id": 791, "word": "約束", "reading": "やくそく", "meaning": "约定"}, {"id": 792, "word": "信頼", "reading": "しんらい", "meaning": "信赖"}, {"id": 793, "word": "裏切り", "reading": "うらぎり", "meaning": "背叛"}, {"id": 794, "word": "誤解", "reading": "ごかい", "meaning": "误解"}, {"id": 795, "word": "偏見", "reading": "へんけん", "meaning": "偏见"}, {"id": 796, "word": "常識", "reading": "じょうしき", "meaning": "常识"}, {"id": 797, "word": "価値観", "reading": "かちかん", "meaning": "价值观"}, {"id": 798, "word": "考え方", "reading": "かんがえかた", "meaning": "想法/思维方式"}, {"id": 799, "word": "生き方", "reading": "いきかた", "meaning": "生活方式"}, {"id": 800, "word": "人生", "reading": "じんせい", "meaning": "人生"}, {"id": 801, "word": "運命", "reading": "うんめい", "meaning": "命运"}, {"id": 802, "word": "運", "reading": "うん", "meaning": "运气"}, {"id": 803, "word": "チャンス", "reading": "チャンス", "meaning": "机会"}, {"id": 804, "word": "きっかけ", "reading": "きっかけ", "meaning": "契机"}, {"id": 805, "word": "タイミング", "reading": "タイミング", "meaning": "时机"}, {"id": 806, "word": "成功", "reading": "せいこう", "meaning": "成功"}, {"id": 807, "word": "失敗", "reading": "しっぱい", "meaning": "失败"}, {"id": 808, "word": "挑戦", "reading": "ちょうせん", "meaning": "挑战"}, {"id": 809, "word": "冒険", "reading": "ぼうけん", "meaning": "冒险"}, {"id": 810, "word": "成長", "reading": "せいちょう", "meaning": "成长"}, {"id": 811, "word": "変化", "reading": "へんか", "meaning": "变化"}, {"id": 812, "word": "進歩", "reading": "しんぽ", "meaning": "进步"}, {"id": 813, "word": "苦労", "reading": "くろう", "meaning": "辛苦"}, {"id": 814, "word": "工夫", "reading": "くふう", "meaning": "下工夫"}, {"id": 815, "word": "コツ", "reading": "コツ", "meaning": "诀窍"}, {"id": 816, "word": "限界", "reading": "げんかい", "meaning": "极限"}, {"id": 817, "word": "余裕", "reading": "よゆう", "meaning": "余裕/从容"}, {"id": 818, "word": "本音", "reading": "ほんね", "meaning": "真心话"}, {"id": 819, "word": "建前", "reading": "たてまえ", "meaning": "场面话"}, {"id": 820, "word": "空気", "reading": "くうき", "meaning": "氛围（比喻）"}, {"id": 821, "word": "雰囲気", "reading": "ふんいき", "meaning": "氛围"}, {"id": 822, "word": "存在", "reading": "そんざい", "meaning": "存在"}, {"id": 823, "word": "意味", "reading": "いみ", "meaning": "意思/意义"}, {"id": 824, "word": "目的", "reading": "もくてき", "meaning": "目的"}, {"id": 825, "word": "理由", "reading": "りゆう", "meaning": "理由"}, {"id": 826, "word": "状況", "reading": "じょうきょう", "meaning": "状况"}, {"id": 827, "word": "状態", "reading": "じょうたい", "meaning": "状态"}, {"id": 828, "word": "条件", "reading": "じょうけん", "meaning": "条件"}, {"id": 829, "word": "基準", "reading": "きじゅん", "meaning": "标准"}, {"id": 830, "word": "レベル", "reading": "レベル", "meaning": "水平"}, {"id": 831, "word": "程度", "reading": "ていど", "meaning": "程度"}, {"id": 832, "word": "割合", "reading": "わりあい", "meaning": "比例"}, {"id": 833, "word": "傾向", "reading": "けいこう", "meaning": "趋势"}, {"id": 834, "word": "特徴", "reading": "とくちょう", "meaning": "特征"}, {"id": 835, "word": "種類", "reading": "しゅるい", "meaning": "种类"}, {"id": 836, "word": "分野", "reading": "ぶんや", "meaning": "领域"}, {"id": 837, "word": "範囲", "reading": "はんい", "meaning": "范围"}, {"id": 838, "word": "立場", "reading": "たちば", "meaning": "立场"}, {"id": 839, "word": "役割", "reading": "やくわり", "meaning": "角色"}, {"id": 840, "word": "関係", "reading": "かんけい", "meaning": "关系"}, {"id": 841, "word": "つながり", "reading": "つながり", "meaning": "联系/纽带"}, {"id": 842, "word": "きずな", "reading": "きずな", "meaning": "羁绊"}, {"id": 843, "word": "出会い", "reading": "であい", "meaning": "相遇"}, {"id": 844, "word": "別れ", "reading": "わかれ", "meaning": "离别"}, {"id": 845, "word": "始まり", "reading": "はじまり", "meaning": "开始"}, {"id": 846, "word": "終わり", "reading": "おわり", "meaning": "结束"}, {"id": 847, "word": "過程", "reading": "かてい", "meaning": "过程"}, {"id": 848, "word": "結論", "reading": "けつろん", "meaning": "结论"}, {"id": 849, "word": "方針", "reading": "ほうしん", "meaning": "方针"}, {"id": 850, "word": "方法", "reading": "ほうほう", "meaning": "方法"}, {"id": 851, "word": "手段", "reading": "しゅだん", "meaning": "手段"}, {"id": 852, "word": "対応", "reading": "たいおう", "meaning": "对应/处理"}, {"id": 853, "word": "趣味", "reading": "しゅみ", "meaning": "爱好"}, {"id": 854, "word": "映画", "reading": "えいが", "meaning": "电影"}, {"id": 855, "word": "ドラマ", "reading": "ドラマ", "meaning": "电视剧"}, {"id": 856, "word": "アニメ", "reading": "アニメ", "meaning": "动漫"}, {"id": 857, "word": "漫画", "reading": "まんが", "meaning": "漫画"}, {"id": 858, "word": "小説", "reading": "しょうせつ", "meaning": "小说"}, {"id": 859, "word": "本", "reading": "ほん", "meaning": "书"}, {"id": 860, "word": "雑誌", "reading": "ざっし", "meaning": "杂志"}, {"id": 861, "word": "音楽", "reading": "おんがく", "meaning": "音乐"}, {"id": 862, "word": "歌", "reading": "うた", "meaning": "歌"}, {"id": 863, "word": "曲", "reading": "きょく", "meaning": "曲子"}, {"id": 864, "word": "楽器", "reading": "がっき", "meaning": "乐器"}, {"id": 865, "word": "ピアノ", "reading": "ピアノ", "meaning": "钢琴"}, {"id": 866, "word": "ギター", "reading": "ギター", "meaning": "吉他"}, {"id": 867, "word": "ライブ", "reading": "ライブ", "meaning": "现场演出"}, {"id": 868, "word": "コンサート", "reading": "コンサート", "meaning": "演唱会"}, {"id": 869, "word": "ゲーム", "reading": "ゲーム", "meaning": "游戏"}, {"id": 870, "word": "スポーツ", "reading": "スポーツ", "meaning": "运动"}, {"id": 871, "word": "サッカー", "reading": "サッカー", "meaning": "足球"}, {"id": 872, "word": "野球", "reading": "やきゅう", "meaning": "棒球"}, {"id": 873, "word": "テニス", "reading": "テニス", "meaning": "网球"}, {"id": 874, "word": "バスケ", "reading": "バスケ", "meaning": "篮球"}, {"id": 875, "word": "水泳", "reading": "すいえい", "meaning": "游泳"}, {"id": 876, "word": "スキー", "reading": "スキー", "meaning": "滑雪"}, {"id": 877, "word": "マラソン", "reading": "マラソン", "meaning": "马拉松"}, {"id": 878, "word": "試合", "reading": "しあい", "meaning": "比赛"}, {"id": 879, "word": "旅行", "reading": "りょこう", "meaning": "旅行"}, {"id": 880, "word": "観光", "reading": "かんこう", "meaning": "观光"}, {"id": 881, "word": "お祭り", "reading": "おまつり", "meaning": "节日/庙会"}, {"id": 882, "word": "花火", "reading": "はなび", "meaning": "烟花"}, {"id": 883, "word": "花見", "reading": "はなみ", "meaning": "赏花"}, {"id": 884, "word": "紅葉", "reading": "こうよう", "meaning": "红叶"}, {"id": 885, "word": "写真", "reading": "しゃしん", "meaning": "照片"}, {"id": 886, "word": "絵", "reading": "え", "meaning": "画"}, {"id": 887, "word": "芸術", "reading": "げいじゅつ", "meaning": "艺术"}, {"id": 888, "word": "作品", "reading": "さくひん", "meaning": "作品"}, {"id": 889, "word": "番組", "reading": "ばんぐみ", "meaning": "节目"}, {"id": 890, "word": "チャンネル", "reading": "チャンネル", "meaning": "频道"}, {"id": 891, "word": "推し", "reading": "おし", "meaning": "推/喜欢的偶像"}, {"id": 892, "word": "ファン", "reading": "ファン", "meaning": "粉丝"}, {"id": 893, "word": "SNS", "reading": "エスエヌエス", "meaning": "社交媒体"}, {"id": 894, "word": "動画", "reading": "どうが", "meaning": "视频"}, {"id": 895, "word": "配信", "reading": "はいしん", "meaning": "直播/发布"}, {"id": 896, "word": "アプリ", "reading": "アプリ", "meaning": "APP"}, {"id": 897, "word": "サイト", "reading": "サイト", "meaning": "网站"}, {"id": 898, "word": "ネット", "reading": "ネット", "meaning": "网络"}, {"id": 899, "word": "パスワード", "reading": "パスワード", "meaning": "密码"}, {"id": 900, "word": "アカウント", "reading": "アカウント", "meaning": "账号"}, {"id": 901, "word": "通知", "reading": "つうち", "meaning": "通知"}, {"id": 902, "word": "メッセージ", "reading": "メッセージ", "meaning": "消息"}, {"id": 903, "word": "メール", "reading": "メール", "meaning": "邮件"}, {"id": 904, "word": "LINE", "reading": "ライン", "meaning": "LINE"}, {"id": 905, "word": "電話", "reading": "でんわ", "meaning": "电话"}, {"id": 906, "word": "連絡", "reading": "れんらく", "meaning": "联系"}, {"id": 907, "word": "トラブル", "reading": "トラブル", "meaning": "问题/麻烦"}, {"id": 908, "word": "リスク", "reading": "リスク", "meaning": "风险"}, {"id": 909, "word": "メリット", "reading": "メリット", "meaning": "优点"}, {"id": 910, "word": "デメリット", "reading": "デメリット", "meaning": "缺点"}, {"id": 911, "word": "バランス", "reading": "バランス", "meaning": "平衡"}, {"id": 912, "word": "ポイント", "reading": "ポイント", "meaning": "要点/积分"}, {"id": 913, "word": "テーマ", "reading": "テーマ", "meaning": "主题"}, {"id": 914, "word": "ジャンル", "reading": "ジャンル", "meaning": "类型"}, {"id": 915, "word": "パターン", "reading": "パターン", "meaning": "模式"}, {"id": 916, "word": "ケース", "reading": "ケース", "meaning": "情况/案例"}, {"id": 917, "word": "タイプ", "reading": "タイプ", "meaning": "类型"}, {"id": 918, "word": "システム", "reading": "システム", "meaning": "系统"}, {"id": 919, "word": "サービス", "reading": "サービス", "meaning": "服务"}, {"id": 920, "word": "マナー", "reading": "マナー", "meaning": "礼仪"}, {"id": 921, "word": "ルール", "reading": "ルール", "meaning": "规则"}, {"id": 922, "word": "マニュアル", "reading": "マニュアル", "meaning": "手册"}, {"id": 923, "word": "コミュニケーション", "reading": "コミュニケーション", "meaning": "沟通"}, {"id": 924, "word": "モチベーション", "reading": "モチベーション", "meaning": "动力"}, {"id": 925, "word": "コスパ", "reading": "コスパ", "meaning": "性价比"}, {"id": 926, "word": "タイパ", "reading": "タイパ", "meaning": "时间性价比"}, {"id": 927, "word": "ライフスタイル", "reading": "ライフスタイル", "meaning": "生活方式"}, {"id": 928, "word": "ワークライフバランス", "reading": "ワークライフバランス", "meaning": "工作生活平衡"}, {"id": 929, "word": "リモートワーク", "reading": "リモートワーク", "meaning": "远程办公"}, {"id": 930, "word": "フリーランス", "reading": "フリーランス", "meaning": "自由职业"}, {"id": 931, "word": "キャリア", "reading": "キャリア", "meaning": "职业生涯"}, {"id": 932, "word": "スキル", "reading": "スキル", "meaning": "技能"}, {"id": 933, "word": "グローバル", "reading": "グローバル", "meaning": "全球化"}, {"id": 934, "word": "サステナブル", "reading": "サステナブル", "meaning": "可持续"}, {"id": 935, "word": "ダイバーシティ", "reading": "ダイバーシティ", "meaning": "多样性"}, {"id": 936, "word": "コンテンツ", "reading": "コンテンツ", "meaning": "内容"}, {"id": 937, "word": "プラットフォーム", "reading": "プラットフォーム", "meaning": "平台"}, {"id": 938, "word": "フィードバック", "reading": "フィードバック", "meaning": "反馈"}, {"id": 939, "word": "アップデート", "reading": "アップデート", "meaning": "更新"}, {"id": 940, "word": "インストール", "reading": "インストール", "meaning": "安装"}, {"id": 941, "word": "ダウンロード", "reading": "ダウンロード", "meaning": "下载"}, {"id": 942, "word": "クラウド", "reading": "クラウド", "meaning": "云"}, {"id": 943, "word": "AI", "reading": "エーアイ", "meaning": "人工智能"}, {"id": 944, "word": "エコ", "reading": "エコ", "meaning": "环保"}, {"id": 945, "word": "リサイクル", "reading": "リサイクル", "meaning": "回收利用"}, {"id": 946, "word": "サブスク", "reading": "サブスク", "meaning": "订阅制"}, {"id": 947, "word": "キャッシュレス", "reading": "キャッシュレス", "meaning": "无现金"}, {"id": 948, "word": "QRコード", "reading": "キューアールコード", "meaning": "二维码"}]
+[
+  {
+    "id": 1,
+    "word": "人",
+    "reading": "ひと",
+    "meaning": "人",
+    "level": "N5"
+  },
+  {
+    "id": 2,
+    "word": "私",
+    "reading": "わたし",
+    "meaning": "我",
+    "level": "N5"
+  },
+  {
+    "id": 3,
+    "word": "僕",
+    "reading": "ぼく",
+    "meaning": "我（男性）",
+    "level": "N4"
+  },
+  {
+    "id": 4,
+    "word": "俺",
+    "reading": "おれ",
+    "meaning": "我（男性口语）",
+    "level": "N1"
+  },
+  {
+    "id": 5,
+    "word": "あなた",
+    "reading": "あなた",
+    "meaning": "你",
+    "level": "N5"
+  },
+  {
+    "id": 6,
+    "word": "彼",
+    "reading": "かれ",
+    "meaning": "他/男朋友",
+    "level": "N4"
+  },
+  {
+    "id": 7,
+    "word": "彼女",
+    "reading": "かのじょ",
+    "meaning": "她/女朋友",
+    "level": "N4"
+  },
+  {
+    "id": 8,
+    "word": "皆",
+    "reading": "みんな",
+    "meaning": "大家",
+    "level": "N4"
+  },
+  {
+    "id": 9,
+    "word": "皆さん",
+    "reading": "みなさん",
+    "meaning": "大家（礼貌）",
+    "level": "N5"
+  },
+  {
+    "id": 10,
+    "word": "自分",
+    "reading": "じぶん",
+    "meaning": "自己",
+    "level": "N5"
+  },
+  {
+    "id": 11,
+    "word": "相手",
+    "reading": "あいて",
+    "meaning": "对方",
+    "level": "N3"
+  },
+  {
+    "id": 12,
+    "word": "友達",
+    "reading": "ともだち",
+    "meaning": "朋友",
+    "level": "N5"
+  },
+  {
+    "id": 13,
+    "word": "親友",
+    "reading": "しんゆう",
+    "meaning": "挚友",
+    "level": "N3"
+  },
+  {
+    "id": 14,
+    "word": "仲間",
+    "reading": "なかま",
+    "meaning": "伙伴",
+    "level": "N3"
+  },
+  {
+    "id": 15,
+    "word": "知り合い",
+    "reading": "しりあい",
+    "meaning": "认识的人",
+    "level": "N2"
+  },
+  {
+    "id": 16,
+    "word": "恋人",
+    "reading": "こいびと",
+    "meaning": "恋人",
+    "level": "N3"
+  },
+  {
+    "id": 17,
+    "word": "夫婦",
+    "reading": "ふうふ",
+    "meaning": "夫妻",
+    "level": "N3"
+  },
+  {
+    "id": 18,
+    "word": "夫",
+    "reading": "おっと",
+    "meaning": "丈夫",
+    "level": "N4"
+  },
+  {
+    "id": 19,
+    "word": "妻",
+    "reading": "つま",
+    "meaning": "妻子",
+    "level": "N4"
+  },
+  {
+    "id": 20,
+    "word": "旦那",
+    "reading": "だんな",
+    "meaning": "老公（口语）",
+    "level": "N1"
+  },
+  {
+    "id": 21,
+    "word": "奥さん",
+    "reading": "おくさん",
+    "meaning": "太太",
+    "level": "N5"
+  },
+  {
+    "id": 22,
+    "word": "家族",
+    "reading": "かぞく",
+    "meaning": "家人",
+    "level": "N5"
+  },
+  {
+    "id": 23,
+    "word": "両親",
+    "reading": "りょうしん",
+    "meaning": "父母",
+    "level": "N5"
+  },
+  {
+    "id": 24,
+    "word": "父",
+    "reading": "ちち",
+    "meaning": "父亲",
+    "level": "N5"
+  },
+  {
+    "id": 25,
+    "word": "母",
+    "reading": "はは",
+    "meaning": "母亲",
+    "level": "N5"
+  },
+  {
+    "id": 26,
+    "word": "お父さん",
+    "reading": "おとうさん",
+    "meaning": "爸爸",
+    "level": "N5"
+  },
+  {
+    "id": 27,
+    "word": "お母さん",
+    "reading": "おかあさん",
+    "meaning": "妈妈",
+    "level": "N5"
+  },
+  {
+    "id": 28,
+    "word": "兄",
+    "reading": "あに",
+    "meaning": "哥哥",
+    "level": "N5"
+  },
+  {
+    "id": 29,
+    "word": "姉",
+    "reading": "あね",
+    "meaning": "姐姐",
+    "level": "N5"
+  },
+  {
+    "id": 30,
+    "word": "弟",
+    "reading": "おとうと",
+    "meaning": "弟弟",
+    "level": "N5"
+  },
+  {
+    "id": 31,
+    "word": "妹",
+    "reading": "いもうと",
+    "meaning": "妹妹",
+    "level": "N5"
+  },
+  {
+    "id": 32,
+    "word": "お兄さん",
+    "reading": "おにいさん",
+    "meaning": "哥哥（称呼）",
+    "level": "N5"
+  },
+  {
+    "id": 33,
+    "word": "お姉さん",
+    "reading": "おねえさん",
+    "meaning": "姐姐（称呼）",
+    "level": "N5"
+  },
+  {
+    "id": 34,
+    "word": "息子",
+    "reading": "むすこ",
+    "meaning": "儿子",
+    "level": "N4"
+  },
+  {
+    "id": 35,
+    "word": "娘",
+    "reading": "むすめ",
+    "meaning": "女儿",
+    "level": "N4"
+  },
+  {
+    "id": 36,
+    "word": "子供",
+    "reading": "こども",
+    "meaning": "孩子",
+    "level": "N5"
+  },
+  {
+    "id": 37,
+    "word": "赤ちゃん",
+    "reading": "あかちゃん",
+    "meaning": "婴儿",
+    "level": "N4"
+  },
+  {
+    "id": 38,
+    "word": "孫",
+    "reading": "まご",
+    "meaning": "孙子/孙女",
+    "level": "N3"
+  },
+  {
+    "id": 39,
+    "word": "祖父",
+    "reading": "そふ",
+    "meaning": "祖父/外祖父",
+    "level": "N4"
+  },
+  {
+    "id": 40,
+    "word": "祖母",
+    "reading": "そぼ",
+    "meaning": "祖母/外祖母",
+    "level": "N4"
+  },
+  {
+    "id": 41,
+    "word": "おじいさん",
+    "reading": "おじいさん",
+    "meaning": "爷爷（称呼）",
+    "level": "N5"
+  },
+  {
+    "id": 42,
+    "word": "おばあさん",
+    "reading": "おばあさん",
+    "meaning": "奶奶（称呼）",
+    "level": "N5"
+  },
+  {
+    "id": 43,
+    "word": "おじさん",
+    "reading": "おじさん",
+    "meaning": "叔叔/大叔",
+    "level": "N5"
+  },
+  {
+    "id": 44,
+    "word": "おばさん",
+    "reading": "おばさん",
+    "meaning": "阿姨/大妈",
+    "level": "N5"
+  },
+  {
+    "id": 45,
+    "word": "親戚",
+    "reading": "しんせき",
+    "meaning": "亲戚",
+    "level": "N3"
+  },
+  {
+    "id": 46,
+    "word": "隣人",
+    "reading": "りんじん",
+    "meaning": "邻居",
+    "level": "N3"
+  },
+  {
+    "id": 47,
+    "word": "大人",
+    "reading": "おとな",
+    "meaning": "大人",
+    "level": "N5"
+  },
+  {
+    "id": 48,
+    "word": "若者",
+    "reading": "わかもの",
+    "meaning": "年轻人",
+    "level": "N4"
+  },
+  {
+    "id": 49,
+    "word": "老人",
+    "reading": "ろうじん",
+    "meaning": "老人",
+    "level": "N3"
+  },
+  {
+    "id": 50,
+    "word": "男性",
+    "reading": "だんせい",
+    "meaning": "男性",
+    "level": "N4"
+  },
+  {
+    "id": 51,
+    "word": "女性",
+    "reading": "じょせい",
+    "meaning": "女性",
+    "level": "N4"
+  },
+  {
+    "id": 52,
+    "word": "男の子",
+    "reading": "おとこのこ",
+    "meaning": "男孩",
+    "level": "N5"
+  },
+  {
+    "id": 53,
+    "word": "女の子",
+    "reading": "おんなのこ",
+    "meaning": "女孩",
+    "level": "N5"
+  },
+  {
+    "id": 54,
+    "word": "先輩",
+    "reading": "せんぱい",
+    "meaning": "前辈",
+    "level": "N4"
+  },
+  {
+    "id": 55,
+    "word": "後輩",
+    "reading": "こうはい",
+    "meaning": "后辈",
+    "level": "N3"
+  },
+  {
+    "id": 56,
+    "word": "上司",
+    "reading": "じょうし",
+    "meaning": "上司",
+    "level": "N3"
+  },
+  {
+    "id": 57,
+    "word": "部下",
+    "reading": "ぶか",
+    "meaning": "下属",
+    "level": "N1"
+  },
+  {
+    "id": 58,
+    "word": "同僚",
+    "reading": "どうりょう",
+    "meaning": "同事",
+    "level": "N3"
+  },
+  {
+    "id": 59,
+    "word": "社長",
+    "reading": "しゃちょう",
+    "meaning": "社长",
+    "level": "N4"
+  },
+  {
+    "id": 60,
+    "word": "部長",
+    "reading": "ぶちょう",
+    "meaning": "部长",
+    "level": "N4"
+  },
+  {
+    "id": 61,
+    "word": "課長",
+    "reading": "かちょう",
+    "meaning": "课长",
+    "level": "N4"
+  },
+  {
+    "id": 62,
+    "word": "社員",
+    "reading": "しゃいん",
+    "meaning": "员工",
+    "level": "N4"
+  },
+  {
+    "id": 63,
+    "word": "客",
+    "reading": "きゃく",
+    "meaning": "客人",
+    "level": "N4"
+  },
+  {
+    "id": 64,
+    "word": "お客様",
+    "reading": "おきゃくさま",
+    "meaning": "顾客（敬语）",
+    "level": "N4"
+  },
+  {
+    "id": 65,
+    "word": "店員",
+    "reading": "てんいん",
+    "meaning": "店员",
+    "level": "N4"
+  },
+  {
+    "id": 66,
+    "word": "先生",
+    "reading": "せんせい",
+    "meaning": "老师",
+    "level": "N5"
+  },
+  {
+    "id": 67,
+    "word": "生徒",
+    "reading": "せいと",
+    "meaning": "学生（初高中）",
+    "level": "N5"
+  },
+  {
+    "id": 68,
+    "word": "学生",
+    "reading": "がくせい",
+    "meaning": "学生",
+    "level": "N5"
+  },
+  {
+    "id": 69,
+    "word": "留学生",
+    "reading": "りゅうがくせい",
+    "meaning": "留学生",
+    "level": "N5"
+  },
+  {
+    "id": 70,
+    "word": "医者",
+    "reading": "いしゃ",
+    "meaning": "医生",
+    "level": "N5"
+  },
+  {
+    "id": 71,
+    "word": "看護師",
+    "reading": "かんごし",
+    "meaning": "护士",
+    "level": "N3"
+  },
+  {
+    "id": 72,
+    "word": "警察",
+    "reading": "けいさつ",
+    "meaning": "警察",
+    "level": "N4"
+  },
+  {
+    "id": 73,
+    "word": "弁護士",
+    "reading": "べんごし",
+    "meaning": "律师",
+    "level": "N3"
+  },
+  {
+    "id": 74,
+    "word": "政治家",
+    "reading": "せいじか",
+    "meaning": "政治家",
+    "level": "N3"
+  },
+  {
+    "id": 75,
+    "word": "芸能人",
+    "reading": "げいのうじん",
+    "meaning": "艺人",
+    "level": "N3"
+  },
+  {
+    "id": 76,
+    "word": "選手",
+    "reading": "せんしゅ",
+    "meaning": "选手",
+    "level": "N3"
+  },
+  {
+    "id": 77,
+    "word": "監督",
+    "reading": "かんとく",
+    "meaning": "导演/教练",
+    "level": "N3"
+  },
+  {
+    "id": 78,
+    "word": "作家",
+    "reading": "さっか",
+    "meaning": "作家",
+    "level": "N3"
+  },
+  {
+    "id": 79,
+    "word": "歌手",
+    "reading": "かしゅ",
+    "meaning": "歌手",
+    "level": "N3"
+  },
+  {
+    "id": 80,
+    "word": "運転手",
+    "reading": "うんてんしゅ",
+    "meaning": "司机",
+    "level": "N4"
+  },
+  {
+    "id": 81,
+    "word": "通行人",
+    "reading": "つうこうにん",
+    "meaning": "路人",
+    "level": "N3"
+  },
+  {
+    "id": 82,
+    "word": "犯人",
+    "reading": "はんにん",
+    "meaning": "犯人",
+    "level": "N3"
+  },
+  {
+    "id": 83,
+    "word": "被害者",
+    "reading": "ひがいしゃ",
+    "meaning": "受害者",
+    "level": "N3"
+  },
+  {
+    "id": 84,
+    "word": "担当者",
+    "reading": "たんとうしゃ",
+    "meaning": "负责人",
+    "level": "N3"
+  },
+  {
+    "id": 85,
+    "word": "関係者",
+    "reading": "かんけいしゃ",
+    "meaning": "相关人员",
+    "level": "N3"
+  },
+  {
+    "id": 86,
+    "word": "参加者",
+    "reading": "さんかしゃ",
+    "meaning": "参加者",
+    "level": "N3"
+  },
+  {
+    "id": 87,
+    "word": "利用者",
+    "reading": "りようしゃ",
+    "meaning": "使用者",
+    "level": "N3"
+  },
+  {
+    "id": 88,
+    "word": "消費者",
+    "reading": "しょうひしゃ",
+    "meaning": "消费者",
+    "level": "N3"
+  },
+  {
+    "id": 89,
+    "word": "独身",
+    "reading": "どくしん",
+    "meaning": "单身",
+    "level": "N3"
+  },
+  {
+    "id": 90,
+    "word": "体",
+    "reading": "からだ",
+    "meaning": "身体",
+    "level": "N5"
+  },
+  {
+    "id": 91,
+    "word": "頭",
+    "reading": "あたま",
+    "meaning": "头",
+    "level": "N5"
+  },
+  {
+    "id": 92,
+    "word": "顔",
+    "reading": "かお",
+    "meaning": "脸",
+    "level": "N5"
+  },
+  {
+    "id": 93,
+    "word": "目",
+    "reading": "め",
+    "meaning": "眼睛",
+    "level": "N5"
+  },
+  {
+    "id": 94,
+    "word": "耳",
+    "reading": "みみ",
+    "meaning": "耳朵",
+    "level": "N5"
+  },
+  {
+    "id": 95,
+    "word": "鼻",
+    "reading": "はな",
+    "meaning": "鼻子",
+    "level": "N5"
+  },
+  {
+    "id": 96,
+    "word": "口",
+    "reading": "くち",
+    "meaning": "嘴",
+    "level": "N5"
+  },
+  {
+    "id": 97,
+    "word": "歯",
+    "reading": "は",
+    "meaning": "牙齿",
+    "level": "N5"
+  },
+  {
+    "id": 98,
+    "word": "喉",
+    "reading": "のど",
+    "meaning": "喉咙",
+    "level": "N4"
+  },
+  {
+    "id": 99,
+    "word": "首",
+    "reading": "くび",
+    "meaning": "脖子",
+    "level": "N4"
+  },
+  {
+    "id": 100,
+    "word": "肩",
+    "reading": "かた",
+    "meaning": "肩膀",
+    "level": "N3"
+  },
+  {
+    "id": 101,
+    "word": "腕",
+    "reading": "うで",
+    "meaning": "手臂",
+    "level": "N4"
+  },
+  {
+    "id": 102,
+    "word": "手",
+    "reading": "て",
+    "meaning": "手",
+    "level": "N5"
+  },
+  {
+    "id": 103,
+    "word": "指",
+    "reading": "ゆび",
+    "meaning": "手指",
+    "level": "N4"
+  },
+  {
+    "id": 104,
+    "word": "爪",
+    "reading": "つめ",
+    "meaning": "指甲",
+    "level": "N2"
+  },
+  {
+    "id": 105,
+    "word": "胸",
+    "reading": "むね",
+    "meaning": "胸",
+    "level": "N3"
+  },
+  {
+    "id": 106,
+    "word": "腹",
+    "reading": "はら",
+    "meaning": "肚子",
+    "level": "N3"
+  },
+  {
+    "id": 107,
+    "word": "お腹",
+    "reading": "おなか",
+    "meaning": "肚子（口语）",
+    "level": "N5"
+  },
+  {
+    "id": 108,
+    "word": "背中",
+    "reading": "せなか",
+    "meaning": "后背",
+    "level": "N4"
+  },
+  {
+    "id": 109,
+    "word": "腰",
+    "reading": "こし",
+    "meaning": "腰",
+    "level": "N3"
+  },
+  {
+    "id": 110,
+    "word": "足",
+    "reading": "あし",
+    "meaning": "脚/腿",
+    "level": "N5"
+  },
+  {
+    "id": 111,
+    "word": "膝",
+    "reading": "ひざ",
+    "meaning": "膝盖",
+    "level": "N3"
+  },
+  {
+    "id": 112,
+    "word": "骨",
+    "reading": "ほね",
+    "meaning": "骨头",
+    "level": "N3"
+  },
+  {
+    "id": 113,
+    "word": "血",
+    "reading": "ち",
+    "meaning": "血",
+    "level": "N4"
+  },
+  {
+    "id": 114,
+    "word": "肌",
+    "reading": "はだ",
+    "meaning": "皮肤",
+    "level": "N3"
+  },
+  {
+    "id": 115,
+    "word": "髪",
+    "reading": "かみ",
+    "meaning": "头发",
+    "level": "N4"
+  },
+  {
+    "id": 116,
+    "word": "涙",
+    "reading": "なみだ",
+    "meaning": "眼泪",
+    "level": "N3"
+  },
+  {
+    "id": 117,
+    "word": "汗",
+    "reading": "あせ",
+    "meaning": "汗",
+    "level": "N3"
+  },
+  {
+    "id": 118,
+    "word": "息",
+    "reading": "いき",
+    "meaning": "呼吸",
+    "level": "N3"
+  },
+  {
+    "id": 119,
+    "word": "声",
+    "reading": "こえ",
+    "meaning": "声音",
+    "level": "N5"
+  },
+  {
+    "id": 120,
+    "word": "心",
+    "reading": "こころ",
+    "meaning": "心",
+    "level": "N4"
+  },
+  {
+    "id": 121,
+    "word": "命",
+    "reading": "いのち",
+    "meaning": "生命",
+    "level": "N3"
+  },
+  {
+    "id": 122,
+    "word": "病気",
+    "reading": "びょうき",
+    "meaning": "病",
+    "level": "N5"
+  },
+  {
+    "id": 123,
+    "word": "風邪",
+    "reading": "かぜ",
+    "meaning": "感冒",
+    "level": "N5"
+  },
+  {
+    "id": 124,
+    "word": "熱",
+    "reading": "ねつ",
+    "meaning": "发烧/热",
+    "level": "N4"
+  },
+  {
+    "id": 125,
+    "word": "咳",
+    "reading": "せき",
+    "meaning": "咳嗽",
+    "level": "N3"
+  },
+  {
+    "id": 126,
+    "word": "怪我",
+    "reading": "けが",
+    "meaning": "受伤",
+    "level": "N4"
+  },
+  {
+    "id": 127,
+    "word": "傷",
+    "reading": "きず",
+    "meaning": "伤口",
+    "level": "N3"
+  },
+  {
+    "id": 128,
+    "word": "痛み",
+    "reading": "いたみ",
+    "meaning": "疼痛",
+    "level": "N3"
+  },
+  {
+    "id": 129,
+    "word": "症状",
+    "reading": "しょうじょう",
+    "meaning": "症状",
+    "level": "N3"
+  },
+  {
+    "id": 130,
+    "word": "治療",
+    "reading": "ちりょう",
+    "meaning": "治疗",
+    "level": "N3"
+  },
+  {
+    "id": 131,
+    "word": "手術",
+    "reading": "しゅじゅつ",
+    "meaning": "手术",
+    "level": "N3"
+  },
+  {
+    "id": 132,
+    "word": "検査",
+    "reading": "けんさ",
+    "meaning": "检查",
+    "level": "N3"
+  },
+  {
+    "id": 133,
+    "word": "薬",
+    "reading": "くすり",
+    "meaning": "药",
+    "level": "N5"
+  },
+  {
+    "id": 134,
+    "word": "注射",
+    "reading": "ちゅうしゃ",
+    "meaning": "打针",
+    "level": "N4"
+  },
+  {
+    "id": 135,
+    "word": "入院",
+    "reading": "にゅういん",
+    "meaning": "住院",
+    "level": "N4"
+  },
+  {
+    "id": 136,
+    "word": "退院",
+    "reading": "たいいん",
+    "meaning": "出院",
+    "level": "N4"
+  },
+  {
+    "id": 137,
+    "word": "健康",
+    "reading": "けんこう",
+    "meaning": "健康",
+    "level": "N3"
+  },
+  {
+    "id": 138,
+    "word": "体力",
+    "reading": "たいりょく",
+    "meaning": "体力",
+    "level": "N1"
+  },
+  {
+    "id": 139,
+    "word": "体重",
+    "reading": "たいじゅう",
+    "meaning": "体重",
+    "level": "N3"
+  },
+  {
+    "id": 140,
+    "word": "身長",
+    "reading": "しんちょう",
+    "meaning": "身高",
+    "level": "N3"
+  },
+  {
+    "id": 141,
+    "word": "視力",
+    "reading": "しりょく",
+    "meaning": "视力",
+    "level": "N3"
+  },
+  {
+    "id": 142,
+    "word": "アレルギー",
+    "reading": "アレルギー",
+    "meaning": "过敏",
+    "level": "N3"
+  },
+  {
+    "id": 143,
+    "word": "ストレス",
+    "reading": "ストレス",
+    "meaning": "压力",
+    "level": "N3"
+  },
+  {
+    "id": 144,
+    "word": "疲れ",
+    "reading": "つかれ",
+    "meaning": "疲劳",
+    "level": "N3"
+  },
+  {
+    "id": 145,
+    "word": "睡眠",
+    "reading": "すいみん",
+    "meaning": "睡眠",
+    "level": "N3"
+  },
+  {
+    "id": 146,
+    "word": "栄養",
+    "reading": "えいよう",
+    "meaning": "营养",
+    "level": "N3"
+  },
+  {
+    "id": 147,
+    "word": "運動",
+    "reading": "うんどう",
+    "meaning": "运动",
+    "level": "N4"
+  },
+  {
+    "id": 148,
+    "word": "筋肉",
+    "reading": "きんにく",
+    "meaning": "肌肉",
+    "level": "N3"
+  },
+  {
+    "id": 149,
+    "word": "ダイエット",
+    "reading": "ダイエット",
+    "meaning": "减肥",
+    "level": "N4"
+  },
+  {
+    "id": 150,
+    "word": "時間",
+    "reading": "じかん",
+    "meaning": "时间",
+    "level": "N5"
+  },
+  {
+    "id": 151,
+    "word": "今",
+    "reading": "いま",
+    "meaning": "现在",
+    "level": "N5"
+  },
+  {
+    "id": 152,
+    "word": "昔",
+    "reading": "むかし",
+    "meaning": "以前/从前",
+    "level": "N4"
+  },
+  {
+    "id": 153,
+    "word": "将来",
+    "reading": "しょうらい",
+    "meaning": "将来",
+    "level": "N4"
+  },
+  {
+    "id": 154,
+    "word": "未来",
+    "reading": "みらい",
+    "meaning": "未来",
+    "level": "N3"
+  },
+  {
+    "id": 155,
+    "word": "過去",
+    "reading": "かこ",
+    "meaning": "过去",
+    "level": "N3"
+  },
+  {
+    "id": 156,
+    "word": "現在",
+    "reading": "げんざい",
+    "meaning": "现在/目前",
+    "level": "N3"
+  },
+  {
+    "id": 157,
+    "word": "今日",
+    "reading": "きょう",
+    "meaning": "今天",
+    "level": "N5"
+  },
+  {
+    "id": 158,
+    "word": "昨日",
+    "reading": "きのう",
+    "meaning": "昨天",
+    "level": "N5"
+  },
+  {
+    "id": 159,
+    "word": "明日",
+    "reading": "あした",
+    "meaning": "明天",
+    "level": "N5"
+  },
+  {
+    "id": 160,
+    "word": "一昨日",
+    "reading": "おととい",
+    "meaning": "前天",
+    "level": "N5"
+  },
+  {
+    "id": 161,
+    "word": "明後日",
+    "reading": "あさって",
+    "meaning": "后天",
+    "level": "N5"
+  },
+  {
+    "id": 162,
+    "word": "今朝",
+    "reading": "けさ",
+    "meaning": "今早",
+    "level": "N5"
+  },
+  {
+    "id": 163,
+    "word": "今晩",
+    "reading": "こんばん",
+    "meaning": "今晚",
+    "level": "N5"
+  },
+  {
+    "id": 164,
+    "word": "朝",
+    "reading": "あさ",
+    "meaning": "早上",
+    "level": "N5"
+  },
+  {
+    "id": 165,
+    "word": "昼",
+    "reading": "ひる",
+    "meaning": "中午",
+    "level": "N5"
+  },
+  {
+    "id": 166,
+    "word": "夕方",
+    "reading": "ゆうがた",
+    "meaning": "傍晚",
+    "level": "N5"
+  },
+  {
+    "id": 167,
+    "word": "夜",
+    "reading": "よる",
+    "meaning": "晚上",
+    "level": "N5"
+  },
+  {
+    "id": 168,
+    "word": "夜中",
+    "reading": "よなか",
+    "meaning": "半夜",
+    "level": "N3"
+  },
+  {
+    "id": 169,
+    "word": "深夜",
+    "reading": "しんや",
+    "meaning": "深夜",
+    "level": "N2"
+  },
+  {
+    "id": 170,
+    "word": "午前",
+    "reading": "ごぜん",
+    "meaning": "上午",
+    "level": "N5"
+  },
+  {
+    "id": 171,
+    "word": "午後",
+    "reading": "ごご",
+    "meaning": "下午",
+    "level": "N5"
+  },
+  {
+    "id": 172,
+    "word": "毎日",
+    "reading": "まいにち",
+    "meaning": "每天",
+    "level": "N5"
+  },
+  {
+    "id": 173,
+    "word": "毎朝",
+    "reading": "まいあさ",
+    "meaning": "每天早上",
+    "level": "N5"
+  },
+  {
+    "id": 174,
+    "word": "毎晩",
+    "reading": "まいばん",
+    "meaning": "每天晚上",
+    "level": "N5"
+  },
+  {
+    "id": 175,
+    "word": "毎週",
+    "reading": "まいしゅう",
+    "meaning": "每周",
+    "level": "N5"
+  },
+  {
+    "id": 176,
+    "word": "毎月",
+    "reading": "まいつき",
+    "meaning": "每月",
+    "level": "N5"
+  },
+  {
+    "id": 177,
+    "word": "毎年",
+    "reading": "まいとし",
+    "meaning": "每年",
+    "level": "N5"
+  },
+  {
+    "id": 178,
+    "word": "今週",
+    "reading": "こんしゅう",
+    "meaning": "这周",
+    "level": "N5"
+  },
+  {
+    "id": 179,
+    "word": "来週",
+    "reading": "らいしゅう",
+    "meaning": "下周",
+    "level": "N5"
+  },
+  {
+    "id": 180,
+    "word": "先週",
+    "reading": "せんしゅう",
+    "meaning": "上周",
+    "level": "N5"
+  },
+  {
+    "id": 181,
+    "word": "今月",
+    "reading": "こんげつ",
+    "meaning": "这个月",
+    "level": "N5"
+  },
+  {
+    "id": 182,
+    "word": "来月",
+    "reading": "らいげつ",
+    "meaning": "下个月",
+    "level": "N5"
+  },
+  {
+    "id": 183,
+    "word": "先月",
+    "reading": "せんげつ",
+    "meaning": "上个月",
+    "level": "N5"
+  },
+  {
+    "id": 184,
+    "word": "今年",
+    "reading": "ことし",
+    "meaning": "今年",
+    "level": "N5"
+  },
+  {
+    "id": 185,
+    "word": "来年",
+    "reading": "らいねん",
+    "meaning": "明年",
+    "level": "N5"
+  },
+  {
+    "id": 186,
+    "word": "去年",
+    "reading": "きょねん",
+    "meaning": "去年",
+    "level": "N5"
+  },
+  {
+    "id": 187,
+    "word": "再来年",
+    "reading": "さらいねん",
+    "meaning": "后年",
+    "level": "N5"
+  },
+  {
+    "id": 188,
+    "word": "一昨年",
+    "reading": "おととし",
+    "meaning": "前年",
+    "level": "N2"
+  },
+  {
+    "id": 189,
+    "word": "平日",
+    "reading": "へいじつ",
+    "meaning": "工作日",
+    "level": "N2"
+  },
+  {
+    "id": 190,
+    "word": "週末",
+    "reading": "しゅうまつ",
+    "meaning": "周末",
+    "level": "N4"
+  },
+  {
+    "id": 191,
+    "word": "休日",
+    "reading": "きゅうじつ",
+    "meaning": "假日",
+    "level": "N5"
+  },
+  {
+    "id": 192,
+    "word": "祝日",
+    "reading": "しゅくじつ",
+    "meaning": "法定假日",
+    "level": "N2"
+  },
+  {
+    "id": 193,
+    "word": "連休",
+    "reading": "れんきゅう",
+    "meaning": "连休",
+    "level": "N1"
+  },
+  {
+    "id": 194,
+    "word": "月曜日",
+    "reading": "げつようび",
+    "meaning": "星期一",
+    "level": "N5"
+  },
+  {
+    "id": 195,
+    "word": "火曜日",
+    "reading": "かようび",
+    "meaning": "星期二",
+    "level": "N5"
+  },
+  {
+    "id": 196,
+    "word": "水曜日",
+    "reading": "すいようび",
+    "meaning": "星期三",
+    "level": "N5"
+  },
+  {
+    "id": 197,
+    "word": "木曜日",
+    "reading": "もくようび",
+    "meaning": "星期四",
+    "level": "N5"
+  },
+  {
+    "id": 198,
+    "word": "金曜日",
+    "reading": "きんようび",
+    "meaning": "星期五",
+    "level": "N5"
+  },
+  {
+    "id": 199,
+    "word": "土曜日",
+    "reading": "どようび",
+    "meaning": "星期六",
+    "level": "N5"
+  },
+  {
+    "id": 200,
+    "word": "日曜日",
+    "reading": "にちようび",
+    "meaning": "星期日",
+    "level": "N5"
+  },
+  {
+    "id": 201,
+    "word": "春",
+    "reading": "はる",
+    "meaning": "春天",
+    "level": "N5"
+  },
+  {
+    "id": 202,
+    "word": "夏",
+    "reading": "なつ",
+    "meaning": "夏天",
+    "level": "N5"
+  },
+  {
+    "id": 203,
+    "word": "秋",
+    "reading": "あき",
+    "meaning": "秋天",
+    "level": "N5"
+  },
+  {
+    "id": 204,
+    "word": "冬",
+    "reading": "ふゆ",
+    "meaning": "冬天",
+    "level": "N5"
+  },
+  {
+    "id": 205,
+    "word": "季節",
+    "reading": "きせつ",
+    "meaning": "季节",
+    "level": "N4"
+  },
+  {
+    "id": 206,
+    "word": "時期",
+    "reading": "じき",
+    "meaning": "时期",
+    "level": "N3"
+  },
+  {
+    "id": 207,
+    "word": "期間",
+    "reading": "きかん",
+    "meaning": "期间",
+    "level": "N3"
+  },
+  {
+    "id": 208,
+    "word": "期限",
+    "reading": "きげん",
+    "meaning": "期限",
+    "level": "N3"
+  },
+  {
+    "id": 209,
+    "word": "締め切り",
+    "reading": "しめきり",
+    "meaning": "截止日期",
+    "level": "N2"
+  },
+  {
+    "id": 210,
+    "word": "瞬間",
+    "reading": "しゅんかん",
+    "meaning": "瞬间",
+    "level": "N3"
+  },
+  {
+    "id": 211,
+    "word": "一瞬",
+    "reading": "いっしゅん",
+    "meaning": "一瞬间",
+    "level": "N3"
+  },
+  {
+    "id": 212,
+    "word": "直前",
+    "reading": "ちょくぜん",
+    "meaning": "之前/紧接前",
+    "level": "N2"
+  },
+  {
+    "id": 213,
+    "word": "直後",
+    "reading": "ちょくご",
+    "meaning": "之后/紧接后",
+    "level": "N2"
+  },
+  {
+    "id": 214,
+    "word": "途中",
+    "reading": "とちゅう",
+    "meaning": "途中/中途",
+    "level": "N4"
+  },
+  {
+    "id": 215,
+    "word": "最中",
+    "reading": "さいちゅう",
+    "meaning": "正当中",
+    "level": "N3"
+  },
+  {
+    "id": 216,
+    "word": "始まり",
+    "reading": "はじまり",
+    "meaning": "开始",
+    "level": "N3"
+  },
+  {
+    "id": 217,
+    "word": "終わり",
+    "reading": "おわり",
+    "meaning": "结束",
+    "level": "N4"
+  },
+  {
+    "id": 218,
+    "word": "最初",
+    "reading": "さいしょ",
+    "meaning": "最初",
+    "level": "N4"
+  },
+  {
+    "id": 219,
+    "word": "最後",
+    "reading": "さいご",
+    "meaning": "最后",
+    "level": "N4"
+  },
+  {
+    "id": 220,
+    "word": "次",
+    "reading": "つぎ",
+    "meaning": "下一个",
+    "level": "N5"
+  },
+  {
+    "id": 221,
+    "word": "前回",
+    "reading": "ぜんかい",
+    "meaning": "上次",
+    "level": "N1"
+  },
+  {
+    "id": 222,
+    "word": "今回",
+    "reading": "こんかい",
+    "meaning": "这次",
+    "level": "N3"
+  },
+  {
+    "id": 223,
+    "word": "次回",
+    "reading": "じかい",
+    "meaning": "下次",
+    "level": "N4"
+  },
+  {
+    "id": 224,
+    "word": "当日",
+    "reading": "とうじつ",
+    "meaning": "当天",
+    "level": "N2"
+  },
+  {
+    "id": 225,
+    "word": "前日",
+    "reading": "ぜんじつ",
+    "meaning": "前一天",
+    "level": "N4"
+  },
+  {
+    "id": 226,
+    "word": "翌日",
+    "reading": "よくじつ",
+    "meaning": "第二天",
+    "level": "N3"
+  },
+  {
+    "id": 227,
+    "word": "場所",
+    "reading": "ばしょ",
+    "meaning": "地方",
+    "level": "N4"
+  },
+  {
+    "id": 228,
+    "word": "家",
+    "reading": "いえ/うち",
+    "meaning": "家",
+    "level": "N5"
+  },
+  {
+    "id": 229,
+    "word": "部屋",
+    "reading": "へや",
+    "meaning": "房间",
+    "level": "N5"
+  },
+  {
+    "id": 230,
+    "word": "台所",
+    "reading": "だいどころ",
+    "meaning": "厨房",
+    "level": "N5"
+  },
+  {
+    "id": 231,
+    "word": "居間",
+    "reading": "いま",
+    "meaning": "客厅",
+    "level": "N3"
+  },
+  {
+    "id": 232,
+    "word": "玄関",
+    "reading": "げんかん",
+    "meaning": "玄关",
+    "level": "N5"
+  },
+  {
+    "id": 233,
+    "word": "トイレ",
+    "reading": "トイレ",
+    "meaning": "厕所",
+    "level": "N5"
+  },
+  {
+    "id": 234,
+    "word": "風呂",
+    "reading": "ふろ",
+    "meaning": "浴室",
+    "level": "N5"
+  },
+  {
+    "id": 235,
+    "word": "階段",
+    "reading": "かいだん",
+    "meaning": "楼梯",
+    "level": "N5"
+  },
+  {
+    "id": 236,
+    "word": "廊下",
+    "reading": "ろうか",
+    "meaning": "走廊",
+    "level": "N5"
+  },
+  {
+    "id": 237,
+    "word": "屋上",
+    "reading": "おくじょう",
+    "meaning": "楼顶",
+    "level": "N4"
+  },
+  {
+    "id": 238,
+    "word": "地下",
+    "reading": "ちか",
+    "meaning": "地下",
+    "level": "N3"
+  },
+  {
+    "id": 239,
+    "word": "庭",
+    "reading": "にわ",
+    "meaning": "院子",
+    "level": "N5"
+  },
+  {
+    "id": 240,
+    "word": "ベランダ",
+    "reading": "ベランダ",
+    "meaning": "阳台",
+    "level": "N4"
+  },
+  {
+    "id": 241,
+    "word": "駐車場",
+    "reading": "ちゅうしゃじょう",
+    "meaning": "停车场",
+    "level": "N4"
+  },
+  {
+    "id": 242,
+    "word": "学校",
+    "reading": "がっこう",
+    "meaning": "学校",
+    "level": "N5"
+  },
+  {
+    "id": 243,
+    "word": "大学",
+    "reading": "だいがく",
+    "meaning": "大学",
+    "level": "N5"
+  },
+  {
+    "id": 244,
+    "word": "教室",
+    "reading": "きょうしつ",
+    "meaning": "教室",
+    "level": "N5"
+  },
+  {
+    "id": 245,
+    "word": "図書館",
+    "reading": "としょかん",
+    "meaning": "图书馆",
+    "level": "N5"
+  },
+  {
+    "id": 246,
+    "word": "病院",
+    "reading": "びょういん",
+    "meaning": "医院",
+    "level": "N5"
+  },
+  {
+    "id": 247,
+    "word": "銀行",
+    "reading": "ぎんこう",
+    "meaning": "银行",
+    "level": "N5"
+  },
+  {
+    "id": 248,
+    "word": "郵便局",
+    "reading": "ゆうびんきょく",
+    "meaning": "邮局",
+    "level": "N5"
+  },
+  {
+    "id": 249,
+    "word": "交番",
+    "reading": "こうばん",
+    "meaning": "派出所",
+    "level": "N5"
+  },
+  {
+    "id": 250,
+    "word": "役所",
+    "reading": "やくしょ",
+    "meaning": "政府办事处",
+    "level": "N2"
+  },
+  {
+    "id": 251,
+    "word": "会社",
+    "reading": "かいしゃ",
+    "meaning": "公司",
+    "level": "N5"
+  },
+  {
+    "id": 252,
+    "word": "事務所",
+    "reading": "じむしょ",
+    "meaning": "事务所",
+    "level": "N4"
+  },
+  {
+    "id": 253,
+    "word": "工場",
+    "reading": "こうじょう",
+    "meaning": "工厂",
+    "level": "N4"
+  },
+  {
+    "id": 254,
+    "word": "店",
+    "reading": "みせ",
+    "meaning": "店",
+    "level": "N5"
+  },
+  {
+    "id": 255,
+    "word": "コンビニ",
+    "reading": "コンビニ",
+    "meaning": "便利店",
+    "level": "N5"
+  },
+  {
+    "id": 256,
+    "word": "スーパー",
+    "reading": "スーパー",
+    "meaning": "超市",
+    "level": "N5"
+  },
+  {
+    "id": 257,
+    "word": "デパート",
+    "reading": "デパート",
+    "meaning": "百货商店",
+    "level": "N5"
+  },
+  {
+    "id": 258,
+    "word": "薬局",
+    "reading": "やっきょく",
+    "meaning": "药店",
+    "level": "N2"
+  },
+  {
+    "id": 259,
+    "word": "本屋",
+    "reading": "ほんや",
+    "meaning": "书店",
+    "level": "N4"
+  },
+  {
+    "id": 260,
+    "word": "花屋",
+    "reading": "はなや",
+    "meaning": "花店",
+    "level": "N4"
+  },
+  {
+    "id": 261,
+    "word": "パン屋",
+    "reading": "パンや",
+    "meaning": "面包店",
+    "level": "N4"
+  },
+  {
+    "id": 262,
+    "word": "レストラン",
+    "reading": "レストラン",
+    "meaning": "餐厅",
+    "level": "N5"
+  },
+  {
+    "id": 263,
+    "word": "食堂",
+    "reading": "しょくどう",
+    "meaning": "食堂",
+    "level": "N5"
+  },
+  {
+    "id": 264,
+    "word": "居酒屋",
+    "reading": "いざかや",
+    "meaning": "居酒屋",
+    "level": "N3"
+  },
+  {
+    "id": 265,
+    "word": "喫茶店",
+    "reading": "きっさてん",
+    "meaning": "咖啡店",
+    "level": "N5"
+  },
+  {
+    "id": 266,
+    "word": "カフェ",
+    "reading": "カフェ",
+    "meaning": "咖啡店",
+    "level": "N4"
+  },
+  {
+    "id": 267,
+    "word": "美容院",
+    "reading": "びよういん",
+    "meaning": "美发店",
+    "level": "N3"
+  },
+  {
+    "id": 268,
+    "word": "映画館",
+    "reading": "えいがかん",
+    "meaning": "电影院",
+    "level": "N5"
+  },
+  {
+    "id": 269,
+    "word": "美術館",
+    "reading": "びじゅつかん",
+    "meaning": "美术馆",
+    "level": "N4"
+  },
+  {
+    "id": 270,
+    "word": "博物館",
+    "reading": "はくぶつかん",
+    "meaning": "博物馆",
+    "level": "N3"
+  },
+  {
+    "id": 271,
+    "word": "動物園",
+    "reading": "どうぶつえん",
+    "meaning": "动物园",
+    "level": "N4"
+  },
+  {
+    "id": 272,
+    "word": "水族館",
+    "reading": "すいぞくかん",
+    "meaning": "水族馆",
+    "level": "N3"
+  },
+  {
+    "id": 273,
+    "word": "遊園地",
+    "reading": "ゆうえんち",
+    "meaning": "游乐园",
+    "level": "N2"
+  },
+  {
+    "id": 274,
+    "word": "公園",
+    "reading": "こうえん",
+    "meaning": "公园",
+    "level": "N5"
+  },
+  {
+    "id": 275,
+    "word": "神社",
+    "reading": "じんじゃ",
+    "meaning": "神社",
+    "level": "N4"
+  },
+  {
+    "id": 276,
+    "word": "寺",
+    "reading": "てら",
+    "meaning": "寺庙",
+    "level": "N4"
+  },
+  {
+    "id": 277,
+    "word": "教会",
+    "reading": "きょうかい",
+    "meaning": "教会",
+    "level": "N4"
+  },
+  {
+    "id": 278,
+    "word": "空港",
+    "reading": "くうこう",
+    "meaning": "机场",
+    "level": "N4"
+  },
+  {
+    "id": 279,
+    "word": "港",
+    "reading": "みなと",
+    "meaning": "港口",
+    "level": "N4"
+  },
+  {
+    "id": 280,
+    "word": "駅",
+    "reading": "えき",
+    "meaning": "车站",
+    "level": "N5"
+  },
+  {
+    "id": 281,
+    "word": "ホーム",
+    "reading": "ホーム",
+    "meaning": "站台",
+    "level": "N3"
+  },
+  {
+    "id": 282,
+    "word": "改札",
+    "reading": "かいさつ",
+    "meaning": "检票口",
+    "level": "N2"
+  },
+  {
+    "id": 283,
+    "word": "出口",
+    "reading": "でぐち",
+    "meaning": "出口",
+    "level": "N5"
+  },
+  {
+    "id": 284,
+    "word": "入口",
+    "reading": "いりぐち",
+    "meaning": "入口",
+    "level": "N5"
+  },
+  {
+    "id": 285,
+    "word": "ホテル",
+    "reading": "ホテル",
+    "meaning": "酒店",
+    "level": "N5"
+  },
+  {
+    "id": 286,
+    "word": "旅館",
+    "reading": "りょかん",
+    "meaning": "旅馆",
+    "level": "N4"
+  },
+  {
+    "id": 287,
+    "word": "温泉",
+    "reading": "おんせん",
+    "meaning": "温泉",
+    "level": "N2"
+  },
+  {
+    "id": 288,
+    "word": "プール",
+    "reading": "プール",
+    "meaning": "游泳池",
+    "level": "N5"
+  },
+  {
+    "id": 289,
+    "word": "ジム",
+    "reading": "ジム",
+    "meaning": "健身房",
+    "level": "N3"
+  },
+  {
+    "id": 290,
+    "word": "グラウンド",
+    "reading": "グラウンド",
+    "meaning": "操场",
+    "level": "N3"
+  },
+  {
+    "id": 291,
+    "word": "スタジアム",
+    "reading": "スタジアム",
+    "meaning": "体育场",
+    "level": "N3"
+  },
+  {
+    "id": 292,
+    "word": "市場",
+    "reading": "いちば/しじょう",
+    "meaning": "市场",
+    "level": "N3"
+  },
+  {
+    "id": 293,
+    "word": "通り",
+    "reading": "とおり",
+    "meaning": "大街",
+    "level": "N4"
+  },
+  {
+    "id": 294,
+    "word": "道",
+    "reading": "みち",
+    "meaning": "路",
+    "level": "N5"
+  },
+  {
+    "id": 295,
+    "word": "交差点",
+    "reading": "こうさてん",
+    "meaning": "十字路口",
+    "level": "N5"
+  },
+  {
+    "id": 296,
+    "word": "信号",
+    "reading": "しんごう",
+    "meaning": "红绿灯",
+    "level": "N3"
+  },
+  {
+    "id": 297,
+    "word": "横断歩道",
+    "reading": "おうだんほどう",
+    "meaning": "人行横道",
+    "level": "N3"
+  },
+  {
+    "id": 298,
+    "word": "歩道",
+    "reading": "ほどう",
+    "meaning": "人行道",
+    "level": "N3"
+  },
+  {
+    "id": 299,
+    "word": "橋",
+    "reading": "はし",
+    "meaning": "桥",
+    "level": "N5"
+  },
+  {
+    "id": 300,
+    "word": "坂",
+    "reading": "さか",
+    "meaning": "坡",
+    "level": "N4"
+  },
+  {
+    "id": 301,
+    "word": "角",
+    "reading": "かど",
+    "meaning": "拐角",
+    "level": "N5"
+  },
+  {
+    "id": 302,
+    "word": "隅",
+    "reading": "すみ",
+    "meaning": "角落",
+    "level": "N4"
+  },
+  {
+    "id": 303,
+    "word": "真ん中",
+    "reading": "まんなか",
+    "meaning": "正中间",
+    "level": "N4"
+  },
+  {
+    "id": 304,
+    "word": "向こう",
+    "reading": "むこう",
+    "meaning": "对面",
+    "level": "N5"
+  },
+  {
+    "id": 305,
+    "word": "隣",
+    "reading": "となり",
+    "meaning": "旁边",
+    "level": "N5"
+  },
+  {
+    "id": 306,
+    "word": "近所",
+    "reading": "きんじょ",
+    "meaning": "附近",
+    "level": "N4"
+  },
+  {
+    "id": 307,
+    "word": "地元",
+    "reading": "じもと",
+    "meaning": "当地",
+    "level": "N1"
+  },
+  {
+    "id": 308,
+    "word": "都会",
+    "reading": "とかい",
+    "meaning": "城市",
+    "level": "N3"
+  },
+  {
+    "id": 309,
+    "word": "田舎",
+    "reading": "いなか",
+    "meaning": "乡下",
+    "level": "N4"
+  },
+  {
+    "id": 310,
+    "word": "地域",
+    "reading": "ちいき",
+    "meaning": "地区",
+    "level": "N3"
+  },
+  {
+    "id": 311,
+    "word": "地方",
+    "reading": "ちほう",
+    "meaning": "地方",
+    "level": "N3"
+  },
+  {
+    "id": 312,
+    "word": "海外",
+    "reading": "かいがい",
+    "meaning": "海外",
+    "level": "N3"
+  },
+  {
+    "id": 313,
+    "word": "国内",
+    "reading": "こくない",
+    "meaning": "国内",
+    "level": "N4"
+  },
+  {
+    "id": 314,
+    "word": "天気",
+    "reading": "てんき",
+    "meaning": "天气",
+    "level": "N5"
+  },
+  {
+    "id": 315,
+    "word": "天候",
+    "reading": "てんこう",
+    "meaning": "天候",
+    "level": "N3"
+  },
+  {
+    "id": 316,
+    "word": "気温",
+    "reading": "きおん",
+    "meaning": "气温",
+    "level": "N3"
+  },
+  {
+    "id": 317,
+    "word": "湿度",
+    "reading": "しつど",
+    "meaning": "湿度",
+    "level": "N3"
+  },
+  {
+    "id": 318,
+    "word": "気候",
+    "reading": "きこう",
+    "meaning": "气候",
+    "level": "N3"
+  },
+  {
+    "id": 319,
+    "word": "空",
+    "reading": "そら",
+    "meaning": "天空",
+    "level": "N5"
+  },
+  {
+    "id": 320,
+    "word": "雲",
+    "reading": "くも",
+    "meaning": "云",
+    "level": "N4"
+  },
+  {
+    "id": 321,
+    "word": "太陽",
+    "reading": "たいよう",
+    "meaning": "太阳",
+    "level": "N3"
+  },
+  {
+    "id": 322,
+    "word": "月",
+    "reading": "つき",
+    "meaning": "月亮/月份",
+    "level": "N4"
+  },
+  {
+    "id": 323,
+    "word": "星",
+    "reading": "ほし",
+    "meaning": "星星",
+    "level": "N4"
+  },
+  {
+    "id": 324,
+    "word": "雨",
+    "reading": "あめ",
+    "meaning": "雨",
+    "level": "N5"
+  },
+  {
+    "id": 325,
+    "word": "雪",
+    "reading": "ゆき",
+    "meaning": "雪",
+    "level": "N5"
+  },
+  {
+    "id": 326,
+    "word": "風",
+    "reading": "かぜ",
+    "meaning": "风",
+    "level": "N5"
+  },
+  {
+    "id": 327,
+    "word": "雷",
+    "reading": "かみなり",
+    "meaning": "雷",
+    "level": "N3"
+  },
+  {
+    "id": 328,
+    "word": "台風",
+    "reading": "たいふう",
+    "meaning": "台风",
+    "level": "N4"
+  },
+  {
+    "id": 329,
+    "word": "地震",
+    "reading": "じしん",
+    "meaning": "地震",
+    "level": "N4"
+  },
+  {
+    "id": 330,
+    "word": "津波",
+    "reading": "つなみ",
+    "meaning": "海啸",
+    "level": "N1"
+  },
+  {
+    "id": 331,
+    "word": "洪水",
+    "reading": "こうずい",
+    "meaning": "洪水",
+    "level": "N1"
+  },
+  {
+    "id": 332,
+    "word": "災害",
+    "reading": "さいがい",
+    "meaning": "灾害",
+    "level": "N1"
+  },
+  {
+    "id": 333,
+    "word": "虹",
+    "reading": "にじ",
+    "meaning": "彩虹",
+    "level": "N2"
+  },
+  {
+    "id": 334,
+    "word": "霧",
+    "reading": "きり",
+    "meaning": "雾",
+    "level": "N3"
+  },
+  {
+    "id": 335,
+    "word": "氷",
+    "reading": "こおり",
+    "meaning": "冰",
+    "level": "N3"
+  },
+  {
+    "id": 336,
+    "word": "山",
+    "reading": "やま",
+    "meaning": "山",
+    "level": "N5"
+  },
+  {
+    "id": 337,
+    "word": "川",
+    "reading": "かわ",
+    "meaning": "河",
+    "level": "N5"
+  },
+  {
+    "id": 338,
+    "word": "海",
+    "reading": "うみ",
+    "meaning": "海",
+    "level": "N5"
+  },
+  {
+    "id": 339,
+    "word": "湖",
+    "reading": "みずうみ",
+    "meaning": "湖",
+    "level": "N4"
+  },
+  {
+    "id": 340,
+    "word": "池",
+    "reading": "いけ",
+    "meaning": "池塘",
+    "level": "N5"
+  },
+  {
+    "id": 341,
+    "word": "島",
+    "reading": "しま",
+    "meaning": "岛",
+    "level": "N4"
+  },
+  {
+    "id": 342,
+    "word": "森",
+    "reading": "もり",
+    "meaning": "森林",
+    "level": "N4"
+  },
+  {
+    "id": 343,
+    "word": "林",
+    "reading": "はやし",
+    "meaning": "树林",
+    "level": "N4"
+  },
+  {
+    "id": 344,
+    "word": "木",
+    "reading": "き",
+    "meaning": "树",
+    "level": "N5"
+  },
+  {
+    "id": 345,
+    "word": "花",
+    "reading": "はな",
+    "meaning": "花",
+    "level": "N5"
+  },
+  {
+    "id": 346,
+    "word": "桜",
+    "reading": "さくら",
+    "meaning": "樱花",
+    "level": "N3"
+  },
+  {
+    "id": 347,
+    "word": "葉",
+    "reading": "は",
+    "meaning": "叶子",
+    "level": "N4"
+  },
+  {
+    "id": 348,
+    "word": "草",
+    "reading": "くさ",
+    "meaning": "草",
+    "level": "N4"
+  },
+  {
+    "id": 349,
+    "word": "石",
+    "reading": "いし",
+    "meaning": "石头",
+    "level": "N4"
+  },
+  {
+    "id": 350,
+    "word": "砂",
+    "reading": "すな",
+    "meaning": "沙",
+    "level": "N4"
+  },
+  {
+    "id": 351,
+    "word": "土",
+    "reading": "つち",
+    "meaning": "土",
+    "level": "N3"
+  },
+  {
+    "id": 352,
+    "word": "火",
+    "reading": "ひ",
+    "meaning": "火",
+    "level": "N4"
+  },
+  {
+    "id": 353,
+    "word": "水",
+    "reading": "みず",
+    "meaning": "水",
+    "level": "N5"
+  },
+  {
+    "id": 354,
+    "word": "空気",
+    "reading": "くうき",
+    "meaning": "空气",
+    "level": "N4"
+  },
+  {
+    "id": 355,
+    "word": "光",
+    "reading": "ひかり",
+    "meaning": "光",
+    "level": "N4"
+  },
+  {
+    "id": 356,
+    "word": "影",
+    "reading": "かげ",
+    "meaning": "影子",
+    "level": "N3"
+  },
+  {
+    "id": 357,
+    "word": "音",
+    "reading": "おと",
+    "meaning": "声音/响声",
+    "level": "N4"
+  },
+  {
+    "id": 358,
+    "word": "色",
+    "reading": "いろ",
+    "meaning": "颜色",
+    "level": "N5"
+  },
+  {
+    "id": 359,
+    "word": "匂い",
+    "reading": "におい",
+    "meaning": "气味",
+    "level": "N4"
+  },
+  {
+    "id": 360,
+    "word": "景色",
+    "reading": "けしき",
+    "meaning": "景色",
+    "level": "N4"
+  },
+  {
+    "id": 361,
+    "word": "風景",
+    "reading": "ふうけい",
+    "meaning": "风景",
+    "level": "N3"
+  },
+  {
+    "id": 362,
+    "word": "自然",
+    "reading": "しぜん",
+    "meaning": "自然",
+    "level": "N3"
+  },
+  {
+    "id": 363,
+    "word": "環境",
+    "reading": "かんきょう",
+    "meaning": "环境",
+    "level": "N3"
+  },
+  {
+    "id": 364,
+    "word": "動物",
+    "reading": "どうぶつ",
+    "meaning": "动物",
+    "level": "N5"
+  },
+  {
+    "id": 365,
+    "word": "犬",
+    "reading": "いぬ",
+    "meaning": "狗",
+    "level": "N5"
+  },
+  {
+    "id": 366,
+    "word": "猫",
+    "reading": "ねこ",
+    "meaning": "猫",
+    "level": "N5"
+  },
+  {
+    "id": 367,
+    "word": "鳥",
+    "reading": "とり",
+    "meaning": "鸟",
+    "level": "N5"
+  },
+  {
+    "id": 368,
+    "word": "魚",
+    "reading": "さかな",
+    "meaning": "鱼",
+    "level": "N5"
+  },
+  {
+    "id": 369,
+    "word": "虫",
+    "reading": "むし",
+    "meaning": "虫",
+    "level": "N4"
+  },
+  {
+    "id": 370,
+    "word": "植物",
+    "reading": "しょくぶつ",
+    "meaning": "植物",
+    "level": "N3"
+  },
+  {
+    "id": 371,
+    "word": "食べ物",
+    "reading": "たべもの",
+    "meaning": "食物",
+    "level": "N5"
+  },
+  {
+    "id": 372,
+    "word": "飲み物",
+    "reading": "のみもの",
+    "meaning": "饮料",
+    "level": "N5"
+  },
+  {
+    "id": 373,
+    "word": "料理",
+    "reading": "りょうり",
+    "meaning": "菜/料理",
+    "level": "N5"
+  },
+  {
+    "id": 374,
+    "word": "食事",
+    "reading": "しょくじ",
+    "meaning": "餐/饭",
+    "level": "N4"
+  },
+  {
+    "id": 375,
+    "word": "朝ご飯",
+    "reading": "あさごはん",
+    "meaning": "早餐",
+    "level": "N5"
+  },
+  {
+    "id": 376,
+    "word": "昼ご飯",
+    "reading": "ひるごはん",
+    "meaning": "午餐",
+    "level": "N5"
+  },
+  {
+    "id": 377,
+    "word": "晩ご飯",
+    "reading": "ばんごはん",
+    "meaning": "晚餐",
+    "level": "N5"
+  },
+  {
+    "id": 378,
+    "word": "弁当",
+    "reading": "べんとう",
+    "meaning": "便当",
+    "level": "N3"
+  },
+  {
+    "id": 379,
+    "word": "おやつ",
+    "reading": "おやつ",
+    "meaning": "零食",
+    "level": "N2"
+  },
+  {
+    "id": 380,
+    "word": "ご飯",
+    "reading": "ごはん",
+    "meaning": "米饭/饭",
+    "level": "N5"
+  },
+  {
+    "id": 381,
+    "word": "パン",
+    "reading": "パン",
+    "meaning": "面包",
+    "level": "N5"
+  },
+  {
+    "id": 382,
+    "word": "麺",
+    "reading": "めん",
+    "meaning": "面条",
+    "level": "N3"
+  },
+  {
+    "id": 383,
+    "word": "肉",
+    "reading": "にく",
+    "meaning": "肉",
+    "level": "N5"
+  },
+  {
+    "id": 384,
+    "word": "牛肉",
+    "reading": "ぎゅうにく",
+    "meaning": "牛肉",
+    "level": "N5"
+  },
+  {
+    "id": 385,
+    "word": "豚肉",
+    "reading": "ぶたにく",
+    "meaning": "猪肉",
+    "level": "N5"
+  },
+  {
+    "id": 386,
+    "word": "鶏肉",
+    "reading": "とりにく",
+    "meaning": "鸡肉",
+    "level": "N5"
+  },
+  {
+    "id": 387,
+    "word": "野菜",
+    "reading": "やさい",
+    "meaning": "蔬菜",
+    "level": "N5"
+  },
+  {
+    "id": 388,
+    "word": "果物",
+    "reading": "くだもの",
+    "meaning": "水果",
+    "level": "N5"
+  },
+  {
+    "id": 389,
+    "word": "卵",
+    "reading": "たまご",
+    "meaning": "鸡蛋",
+    "level": "N5"
+  },
+  {
+    "id": 390,
+    "word": "豆腐",
+    "reading": "とうふ",
+    "meaning": "豆腐",
+    "level": "N4"
+  },
+  {
+    "id": 391,
+    "word": "味噌",
+    "reading": "みそ",
+    "meaning": "味噌",
+    "level": "N4"
+  },
+  {
+    "id": 392,
+    "word": "醤油",
+    "reading": "しょうゆ",
+    "meaning": "酱油",
+    "level": "N5"
+  },
+  {
+    "id": 393,
+    "word": "塩",
+    "reading": "しお",
+    "meaning": "盐",
+    "level": "N5"
+  },
+  {
+    "id": 394,
+    "word": "砂糖",
+    "reading": "さとう",
+    "meaning": "糖",
+    "level": "N5"
+  },
+  {
+    "id": 395,
+    "word": "酢",
+    "reading": "す",
+    "meaning": "醋",
+    "level": "N3"
+  },
+  {
+    "id": 396,
+    "word": "油",
+    "reading": "あぶら",
+    "meaning": "油",
+    "level": "N3"
+  },
+  {
+    "id": 397,
+    "word": "ソース",
+    "reading": "ソース",
+    "meaning": "酱汁",
+    "level": "N1"
+  },
+  {
+    "id": 398,
+    "word": "スープ",
+    "reading": "スープ",
+    "meaning": "汤",
+    "level": "N3"
+  },
+  {
+    "id": 399,
+    "word": "味",
+    "reading": "あじ",
+    "meaning": "味道",
+    "level": "N4"
+  },
+  {
+    "id": 400,
+    "word": "材料",
+    "reading": "ざいりょう",
+    "meaning": "材料",
+    "level": "N3"
+  },
+  {
+    "id": 401,
+    "word": "レシピ",
+    "reading": "レシピ",
+    "meaning": "食谱",
+    "level": "N3"
+  },
+  {
+    "id": 402,
+    "word": "寿司",
+    "reading": "すし",
+    "meaning": "寿司",
+    "level": "N4"
+  },
+  {
+    "id": 403,
+    "word": "刺身",
+    "reading": "さしみ",
+    "meaning": "生鱼片",
+    "level": "N2"
+  },
+  {
+    "id": 404,
+    "word": "天ぷら",
+    "reading": "てんぷら",
+    "meaning": "天妇罗",
+    "level": "N4"
+  },
+  {
+    "id": 405,
+    "word": "ラーメン",
+    "reading": "ラーメン",
+    "meaning": "拉面",
+    "level": "N4"
+  },
+  {
+    "id": 406,
+    "word": "うどん",
+    "reading": "うどん",
+    "meaning": "乌冬面",
+    "level": "N2"
+  },
+  {
+    "id": 407,
+    "word": "そば",
+    "reading": "そば",
+    "meaning": "荞麦面",
+    "level": "N5"
+  },
+  {
+    "id": 408,
+    "word": "カレー",
+    "reading": "カレー",
+    "meaning": "咖喱",
+    "level": "N5"
+  },
+  {
+    "id": 409,
+    "word": "丼",
+    "reading": "どんぶり",
+    "meaning": "盖饭",
+    "level": "N2"
+  },
+  {
+    "id": 410,
+    "word": "定食",
+    "reading": "ていしょく",
+    "meaning": "套餐",
+    "level": "N1"
+  },
+  {
+    "id": 411,
+    "word": "おにぎり",
+    "reading": "おにぎり",
+    "meaning": "饭团",
+    "level": "N4"
+  },
+  {
+    "id": 412,
+    "word": "餃子",
+    "reading": "ぎょうざ",
+    "meaning": "饺子",
+    "level": "N4"
+  },
+  {
+    "id": 413,
+    "word": "焼肉",
+    "reading": "やきにく",
+    "meaning": "烤肉",
+    "level": "N4"
+  },
+  {
+    "id": 414,
+    "word": "鍋",
+    "reading": "なべ",
+    "meaning": "火锅",
+    "level": "N3"
+  },
+  {
+    "id": 415,
+    "word": "デザート",
+    "reading": "デザート",
+    "meaning": "甜点",
+    "level": "N3"
+  },
+  {
+    "id": 416,
+    "word": "ケーキ",
+    "reading": "ケーキ",
+    "meaning": "蛋糕",
+    "level": "N4"
+  },
+  {
+    "id": 417,
+    "word": "アイスクリーム",
+    "reading": "アイスクリーム",
+    "meaning": "冰淇淋",
+    "level": "N3"
+  },
+  {
+    "id": 418,
+    "word": "チョコレート",
+    "reading": "チョコレート",
+    "meaning": "巧克力",
+    "level": "N4"
+  },
+  {
+    "id": 419,
+    "word": "お菓子",
+    "reading": "おかし",
+    "meaning": "点心/零食",
+    "level": "N5"
+  },
+  {
+    "id": 420,
+    "word": "お茶",
+    "reading": "おちゃ",
+    "meaning": "茶",
+    "level": "N5"
+  },
+  {
+    "id": 421,
+    "word": "コーヒー",
+    "reading": "コーヒー",
+    "meaning": "咖啡",
+    "level": "N5"
+  },
+  {
+    "id": 422,
+    "word": "紅茶",
+    "reading": "こうちゃ",
+    "meaning": "红茶",
+    "level": "N5"
+  },
+  {
+    "id": 423,
+    "word": "ジュース",
+    "reading": "ジュース",
+    "meaning": "果汁",
+    "level": "N3"
+  },
+  {
+    "id": 424,
+    "word": "牛乳",
+    "reading": "ぎゅうにゅう",
+    "meaning": "牛奶",
+    "level": "N5"
+  },
+  {
+    "id": 425,
+    "word": "ビール",
+    "reading": "ビール",
+    "meaning": "啤酒",
+    "level": "N3"
+  },
+  {
+    "id": 426,
+    "word": "ワイン",
+    "reading": "ワイン",
+    "meaning": "葡萄酒",
+    "level": "N3"
+  },
+  {
+    "id": 427,
+    "word": "日本酒",
+    "reading": "にほんしゅ",
+    "meaning": "日本酒",
+    "level": "N4"
+  },
+  {
+    "id": 428,
+    "word": "酒",
+    "reading": "さけ",
+    "meaning": "酒",
+    "level": "N3"
+  },
+  {
+    "id": 429,
+    "word": "物",
+    "reading": "もの",
+    "meaning": "东西",
+    "level": "N5"
+  },
+  {
+    "id": 430,
+    "word": "荷物",
+    "reading": "にもつ",
+    "meaning": "行李/物品",
+    "level": "N5"
+  },
+  {
+    "id": 431,
+    "word": "鍵",
+    "reading": "かぎ",
+    "meaning": "钥匙",
+    "level": "N5"
+  },
+  {
+    "id": 432,
+    "word": "財布",
+    "reading": "さいふ",
+    "meaning": "钱包",
+    "level": "N5"
+  },
+  {
+    "id": 433,
+    "word": "傘",
+    "reading": "かさ",
+    "meaning": "伞",
+    "level": "N5"
+  },
+  {
+    "id": 434,
+    "word": "鞄",
+    "reading": "かばん",
+    "meaning": "包",
+    "level": "N5"
+  },
+  {
+    "id": 435,
+    "word": "靴",
+    "reading": "くつ",
+    "meaning": "鞋",
+    "level": "N5"
+  },
+  {
+    "id": 436,
+    "word": "帽子",
+    "reading": "ぼうし",
+    "meaning": "帽子",
+    "level": "N5"
+  },
+  {
+    "id": 437,
+    "word": "眼鏡",
+    "reading": "めがね",
+    "meaning": "眼镜",
+    "level": "N5"
+  },
+  {
+    "id": 438,
+    "word": "時計",
+    "reading": "とけい",
+    "meaning": "钟/表",
+    "level": "N5"
+  },
+  {
+    "id": 439,
+    "word": "携帯",
+    "reading": "けいたい",
+    "meaning": "手机",
+    "level": "N3"
+  },
+  {
+    "id": 440,
+    "word": "スマホ",
+    "reading": "スマホ",
+    "meaning": "智能手机",
+    "level": "N4"
+  },
+  {
+    "id": 441,
+    "word": "パソコン",
+    "reading": "パソコン",
+    "meaning": "电脑",
+    "level": "N4"
+  },
+  {
+    "id": 442,
+    "word": "テレビ",
+    "reading": "テレビ",
+    "meaning": "电视",
+    "level": "N5"
+  },
+  {
+    "id": 443,
+    "word": "エアコン",
+    "reading": "エアコン",
+    "meaning": "空调",
+    "level": "N4"
+  },
+  {
+    "id": 444,
+    "word": "冷蔵庫",
+    "reading": "れいぞうこ",
+    "meaning": "冰箱",
+    "level": "N5"
+  },
+  {
+    "id": 445,
+    "word": "洗濯機",
+    "reading": "せんたくき",
+    "meaning": "洗衣机",
+    "level": "N3"
+  },
+  {
+    "id": 446,
+    "word": "掃除機",
+    "reading": "そうじき",
+    "meaning": "吸尘器",
+    "level": "N3"
+  },
+  {
+    "id": 447,
+    "word": "電子レンジ",
+    "reading": "でんしレンジ",
+    "meaning": "微波炉",
+    "level": "N3"
+  },
+  {
+    "id": 448,
+    "word": "カメラ",
+    "reading": "カメラ",
+    "meaning": "相机",
+    "level": "N5"
+  },
+  {
+    "id": 449,
+    "word": "電池",
+    "reading": "でんち",
+    "meaning": "电池",
+    "level": "N2"
+  },
+  {
+    "id": 450,
+    "word": "充電器",
+    "reading": "じゅうでんき",
+    "meaning": "充电器",
+    "level": "N3"
+  },
+  {
+    "id": 451,
+    "word": "ティッシュ",
+    "reading": "ティッシュ",
+    "meaning": "纸巾",
+    "level": "N4"
+  },
+  {
+    "id": 452,
+    "word": "タオル",
+    "reading": "タオル",
+    "meaning": "毛巾",
+    "level": "N3"
+  },
+  {
+    "id": 453,
+    "word": "石鹸",
+    "reading": "せっけん",
+    "meaning": "肥皂",
+    "level": "N5"
+  },
+  {
+    "id": 454,
+    "word": "シャンプー",
+    "reading": "シャンプー",
+    "meaning": "洗发水",
+    "level": "N4"
+  },
+  {
+    "id": 455,
+    "word": "歯ブラシ",
+    "reading": "はブラシ",
+    "meaning": "牙刷",
+    "level": "N4"
+  },
+  {
+    "id": 456,
+    "word": "ハンカチ",
+    "reading": "ハンカチ",
+    "meaning": "手帕",
+    "level": "N5"
+  },
+  {
+    "id": 457,
+    "word": "マスク",
+    "reading": "マスク",
+    "meaning": "口罩",
+    "level": "N2"
+  },
+  {
+    "id": 458,
+    "word": "ゴミ",
+    "reading": "ゴミ",
+    "meaning": "垃圾",
+    "level": "N5"
+  },
+  {
+    "id": 459,
+    "word": "ゴミ袋",
+    "reading": "ゴミぶくろ",
+    "meaning": "垃圾袋",
+    "level": "N4"
+  },
+  {
+    "id": 460,
+    "word": "袋",
+    "reading": "ふくろ",
+    "meaning": "袋子",
+    "level": "N3"
+  },
+  {
+    "id": 461,
+    "word": "箱",
+    "reading": "はこ",
+    "meaning": "箱子",
+    "level": "N5"
+  },
+  {
+    "id": 462,
+    "word": "瓶",
+    "reading": "びん",
+    "meaning": "瓶",
+    "level": "N3"
+  },
+  {
+    "id": 463,
+    "word": "缶",
+    "reading": "かん",
+    "meaning": "罐",
+    "level": "N3"
+  },
+  {
+    "id": 464,
+    "word": "皿",
+    "reading": "さら",
+    "meaning": "盘子",
+    "level": "N3"
+  },
+  {
+    "id": 465,
+    "word": "茶碗",
+    "reading": "ちゃわん",
+    "meaning": "碗",
+    "level": "N5"
+  },
+  {
+    "id": 466,
+    "word": "箸",
+    "reading": "はし",
+    "meaning": "筷子",
+    "level": "N5"
+  },
+  {
+    "id": 467,
+    "word": "スプーン",
+    "reading": "スプーン",
+    "meaning": "勺子",
+    "level": "N5"
+  },
+  {
+    "id": 468,
+    "word": "フォーク",
+    "reading": "フォーク",
+    "meaning": "叉子",
+    "level": "N5"
+  },
+  {
+    "id": 469,
+    "word": "コップ",
+    "reading": "コップ",
+    "meaning": "杯子",
+    "level": "N5"
+  },
+  {
+    "id": 470,
+    "word": "ナイフ",
+    "reading": "ナイフ",
+    "meaning": "刀",
+    "level": "N5"
+  },
+  {
+    "id": 471,
+    "word": "布団",
+    "reading": "ふとん",
+    "meaning": "被褥",
+    "level": "N4"
+  },
+  {
+    "id": 472,
+    "word": "枕",
+    "reading": "まくら",
+    "meaning": "枕头",
+    "level": "N2"
+  },
+  {
+    "id": 473,
+    "word": "椅子",
+    "reading": "いす",
+    "meaning": "椅子",
+    "level": "N5"
+  },
+  {
+    "id": 474,
+    "word": "机",
+    "reading": "つくえ",
+    "meaning": "桌子",
+    "level": "N5"
+  },
+  {
+    "id": 475,
+    "word": "テーブル",
+    "reading": "テーブル",
+    "meaning": "桌子",
+    "level": "N5"
+  },
+  {
+    "id": 476,
+    "word": "ベッド",
+    "reading": "ベッド",
+    "meaning": "床",
+    "level": "N5"
+  },
+  {
+    "id": 477,
+    "word": "ソファ",
+    "reading": "ソファ",
+    "meaning": "沙发",
+    "level": "N4"
+  },
+  {
+    "id": 478,
+    "word": "棚",
+    "reading": "たな",
+    "meaning": "架子",
+    "level": "N4"
+  },
+  {
+    "id": 479,
+    "word": "引き出し",
+    "reading": "ひきだし",
+    "meaning": "抽屉",
+    "level": "N4"
+  },
+  {
+    "id": 480,
+    "word": "ドア",
+    "reading": "ドア",
+    "meaning": "门",
+    "level": "N5"
+  },
+  {
+    "id": 481,
+    "word": "窓",
+    "reading": "まど",
+    "meaning": "窗",
+    "level": "N5"
+  },
+  {
+    "id": 482,
+    "word": "壁",
+    "reading": "かべ",
+    "meaning": "墙",
+    "level": "N4"
+  },
+  {
+    "id": 483,
+    "word": "床",
+    "reading": "ゆか",
+    "meaning": "地板",
+    "level": "N3"
+  },
+  {
+    "id": 484,
+    "word": "天井",
+    "reading": "てんじょう",
+    "meaning": "天花板",
+    "level": "N3"
+  },
+  {
+    "id": 485,
+    "word": "カーテン",
+    "reading": "カーテン",
+    "meaning": "窗帘",
+    "level": "N4"
+  },
+  {
+    "id": 486,
+    "word": "電気",
+    "reading": "でんき",
+    "meaning": "电/灯",
+    "level": "N5"
+  },
+  {
+    "id": 487,
+    "word": "ガス",
+    "reading": "ガス",
+    "meaning": "煤气",
+    "level": "N4"
+  },
+  {
+    "id": 488,
+    "word": "水道",
+    "reading": "すいどう",
+    "meaning": "自来水",
+    "level": "N4"
+  },
+  {
+    "id": 489,
+    "word": "服",
+    "reading": "ふく",
+    "meaning": "衣服",
+    "level": "N5"
+  },
+  {
+    "id": 490,
+    "word": "洋服",
+    "reading": "ようふく",
+    "meaning": "西式衣服",
+    "level": "N5"
+  },
+  {
+    "id": 491,
+    "word": "着物",
+    "reading": "きもの",
+    "meaning": "和服",
+    "level": "N4"
+  },
+  {
+    "id": 492,
+    "word": "浴衣",
+    "reading": "ゆかた",
+    "meaning": "浴衣",
+    "level": "N2"
+  },
+  {
+    "id": 493,
+    "word": "シャツ",
+    "reading": "シャツ",
+    "meaning": "衬衫",
+    "level": "N5"
+  },
+  {
+    "id": 494,
+    "word": "Tシャツ",
+    "reading": "Tシャツ",
+    "meaning": "T恤",
+    "level": "N4"
+  },
+  {
+    "id": 495,
+    "word": "セーター",
+    "reading": "セーター",
+    "meaning": "毛衣",
+    "level": "N5"
+  },
+  {
+    "id": 496,
+    "word": "ジャケット",
+    "reading": "ジャケット",
+    "meaning": "夹克",
+    "level": "N4"
+  },
+  {
+    "id": 497,
+    "word": "コート",
+    "reading": "コート",
+    "meaning": "大衣",
+    "level": "N5"
+  },
+  {
+    "id": 498,
+    "word": "スーツ",
+    "reading": "スーツ",
+    "meaning": "西装",
+    "level": "N4"
+  },
+  {
+    "id": 499,
+    "word": "ズボン",
+    "reading": "ズボン",
+    "meaning": "裤子",
+    "level": "N5"
+  },
+  {
+    "id": 500,
+    "word": "スカート",
+    "reading": "スカート",
+    "meaning": "裙子",
+    "level": "N5"
+  },
+  {
+    "id": 501,
+    "word": "ワンピース",
+    "reading": "ワンピース",
+    "meaning": "连衣裙",
+    "level": "N2"
+  },
+  {
+    "id": 502,
+    "word": "下着",
+    "reading": "したぎ",
+    "meaning": "内衣",
+    "level": "N4"
+  },
+  {
+    "id": 503,
+    "word": "靴下",
+    "reading": "くつした",
+    "meaning": "袜子",
+    "level": "N5"
+  },
+  {
+    "id": 504,
+    "word": "スニーカー",
+    "reading": "スニーカー",
+    "meaning": "运动鞋",
+    "level": "N4"
+  },
+  {
+    "id": 505,
+    "word": "サンダル",
+    "reading": "サンダル",
+    "meaning": "凉鞋",
+    "level": "N4"
+  },
+  {
+    "id": 506,
+    "word": "アクセサリー",
+    "reading": "アクセサリー",
+    "meaning": "饰品",
+    "level": "N4"
+  },
+  {
+    "id": 507,
+    "word": "指輪",
+    "reading": "ゆびわ",
+    "meaning": "戒指",
+    "level": "N4"
+  },
+  {
+    "id": 508,
+    "word": "ネックレス",
+    "reading": "ネックレス",
+    "meaning": "项链",
+    "level": "N2"
+  },
+  {
+    "id": 509,
+    "word": "ボタン",
+    "reading": "ボタン",
+    "meaning": "纽扣",
+    "level": "N5"
+  },
+  {
+    "id": 510,
+    "word": "ポケット",
+    "reading": "ポケット",
+    "meaning": "口袋",
+    "level": "N5"
+  },
+  {
+    "id": 511,
+    "word": "サイズ",
+    "reading": "サイズ",
+    "meaning": "尺码",
+    "level": "N1"
+  },
+  {
+    "id": 512,
+    "word": "電車",
+    "reading": "でんしゃ",
+    "meaning": "电车",
+    "level": "N5"
+  },
+  {
+    "id": 513,
+    "word": "地下鉄",
+    "reading": "ちかてつ",
+    "meaning": "地铁",
+    "level": "N5"
+  },
+  {
+    "id": 514,
+    "word": "新幹線",
+    "reading": "しんかんせん",
+    "meaning": "新干线",
+    "level": "N2"
+  },
+  {
+    "id": 515,
+    "word": "バス",
+    "reading": "バス",
+    "meaning": "公交",
+    "level": "N5"
+  },
+  {
+    "id": 516,
+    "word": "タクシー",
+    "reading": "タクシー",
+    "meaning": "出租车",
+    "level": "N5"
+  },
+  {
+    "id": 517,
+    "word": "飛行機",
+    "reading": "ひこうき",
+    "meaning": "飞机",
+    "level": "N5"
+  },
+  {
+    "id": 518,
+    "word": "船",
+    "reading": "ふね",
+    "meaning": "船",
+    "level": "N4"
+  },
+  {
+    "id": 519,
+    "word": "車",
+    "reading": "くるま",
+    "meaning": "车",
+    "level": "N5"
+  },
+  {
+    "id": 520,
+    "word": "自転車",
+    "reading": "じてんしゃ",
+    "meaning": "自行车",
+    "level": "N5"
+  },
+  {
+    "id": 521,
+    "word": "バイク",
+    "reading": "バイク",
+    "meaning": "摩托车",
+    "level": "N4"
+  },
+  {
+    "id": 522,
+    "word": "切符",
+    "reading": "きっぷ",
+    "meaning": "车票",
+    "level": "N5"
+  },
+  {
+    "id": 523,
+    "word": "定期券",
+    "reading": "ていきけん",
+    "meaning": "月票",
+    "level": "N2"
+  },
+  {
+    "id": 524,
+    "word": "片道",
+    "reading": "かたみち",
+    "meaning": "单程",
+    "level": "N2"
+  },
+  {
+    "id": 525,
+    "word": "往復",
+    "reading": "おうふく",
+    "meaning": "往返",
+    "level": "N2"
+  },
+  {
+    "id": 526,
+    "word": "乗り換え",
+    "reading": "のりかえ",
+    "meaning": "换乘",
+    "level": "N2"
+  },
+  {
+    "id": 527,
+    "word": "運賃",
+    "reading": "うんちん",
+    "meaning": "车费",
+    "level": "N1"
+  },
+  {
+    "id": 528,
+    "word": "終電",
+    "reading": "しゅうでん",
+    "meaning": "末班车",
+    "level": "N3"
+  },
+  {
+    "id": 529,
+    "word": "始発",
+    "reading": "しはつ",
+    "meaning": "始发车",
+    "level": "N1"
+  },
+  {
+    "id": 530,
+    "word": "急行",
+    "reading": "きゅうこう",
+    "meaning": "快车",
+    "level": "N4"
+  },
+  {
+    "id": 531,
+    "word": "各駅停車",
+    "reading": "かくえきていしゃ",
+    "meaning": "各站停车",
+    "level": "N3"
+  },
+  {
+    "id": 532,
+    "word": "特急",
+    "reading": "とっきゅう",
+    "meaning": "特快",
+    "level": "N4"
+  },
+  {
+    "id": 533,
+    "word": "指定席",
+    "reading": "していせき",
+    "meaning": "指定席",
+    "level": "N3"
+  },
+  {
+    "id": 534,
+    "word": "自由席",
+    "reading": "じゆうせき",
+    "meaning": "自由席",
+    "level": "N3"
+  },
+  {
+    "id": 535,
+    "word": "通勤",
+    "reading": "つうきん",
+    "meaning": "通勤",
+    "level": "N3"
+  },
+  {
+    "id": 536,
+    "word": "渋滞",
+    "reading": "じゅうたい",
+    "meaning": "堵车",
+    "level": "N3"
+  },
+  {
+    "id": 537,
+    "word": "事故",
+    "reading": "じこ",
+    "meaning": "事故",
+    "level": "N4"
+  },
+  {
+    "id": 538,
+    "word": "遅延",
+    "reading": "ちえん",
+    "meaning": "延迟/晚点",
+    "level": "N3"
+  },
+  {
+    "id": 539,
+    "word": "ラッシュ",
+    "reading": "ラッシュ",
+    "meaning": "高峰",
+    "level": "N3"
+  },
+  {
+    "id": 540,
+    "word": "信号無視",
+    "reading": "しんごうむし",
+    "meaning": "闯红灯",
+    "level": "N3"
+  },
+  {
+    "id": 541,
+    "word": "免許",
+    "reading": "めんきょ",
+    "meaning": "驾照",
+    "level": "N3"
+  },
+  {
+    "id": 542,
+    "word": "ガソリン",
+    "reading": "ガソリン",
+    "meaning": "汽油",
+    "level": "N4"
+  },
+  {
+    "id": 543,
+    "word": "スピード",
+    "reading": "スピード",
+    "meaning": "速度",
+    "level": "N4"
+  },
+  {
+    "id": 544,
+    "word": "距離",
+    "reading": "きょり",
+    "meaning": "距离",
+    "level": "N3"
+  },
+  {
+    "id": 545,
+    "word": "道路",
+    "reading": "どうろ",
+    "meaning": "道路",
+    "level": "N3"
+  },
+  {
+    "id": 546,
+    "word": "高速道路",
+    "reading": "こうそくどうろ",
+    "meaning": "高速公路",
+    "level": "N3"
+  },
+  {
+    "id": 547,
+    "word": "パスポート",
+    "reading": "パスポート",
+    "meaning": "护照",
+    "level": "N3"
+  },
+  {
+    "id": 548,
+    "word": "ビザ",
+    "reading": "ビザ",
+    "meaning": "签证",
+    "level": "N3"
+  },
+  {
+    "id": 549,
+    "word": "荷物",
+    "reading": "にもつ",
+    "meaning": "行李",
+    "level": "N5"
+  },
+  {
+    "id": 550,
+    "word": "スーツケース",
+    "reading": "スーツケース",
+    "meaning": "行李箱",
+    "level": "N4"
+  },
+  {
+    "id": 551,
+    "word": "仕事",
+    "reading": "しごと",
+    "meaning": "工作",
+    "level": "N5"
+  },
+  {
+    "id": 552,
+    "word": "職業",
+    "reading": "しょくぎょう",
+    "meaning": "职业",
+    "level": "N3"
+  },
+  {
+    "id": 553,
+    "word": "会議",
+    "reading": "かいぎ",
+    "meaning": "会议",
+    "level": "N4"
+  },
+  {
+    "id": 554,
+    "word": "打ち合わせ",
+    "reading": "うちあわせ",
+    "meaning": "碰头会",
+    "level": "N2"
+  },
+  {
+    "id": 555,
+    "word": "プレゼン",
+    "reading": "プレゼン",
+    "meaning": "演示",
+    "level": "N3"
+  },
+  {
+    "id": 556,
+    "word": "資料",
+    "reading": "しりょう",
+    "meaning": "资料",
+    "level": "N2"
+  },
+  {
+    "id": 557,
+    "word": "書類",
+    "reading": "しょるい",
+    "meaning": "文件",
+    "level": "N3"
+  },
+  {
+    "id": 558,
+    "word": "報告書",
+    "reading": "ほうこくしょ",
+    "meaning": "报告",
+    "level": "N3"
+  },
+  {
+    "id": 559,
+    "word": "企画",
+    "reading": "きかく",
+    "meaning": "企划",
+    "level": "N1"
+  },
+  {
+    "id": 560,
+    "word": "提案",
+    "reading": "ていあん",
+    "meaning": "提案",
+    "level": "N3"
+  },
+  {
+    "id": 561,
+    "word": "契約",
+    "reading": "けいやく",
+    "meaning": "合同",
+    "level": "N3"
+  },
+  {
+    "id": 562,
+    "word": "交渉",
+    "reading": "こうしょう",
+    "meaning": "谈判",
+    "level": "N1"
+  },
+  {
+    "id": 563,
+    "word": "商談",
+    "reading": "しょうだん",
+    "meaning": "商谈",
+    "level": "N3"
+  },
+  {
+    "id": 564,
+    "word": "取引",
+    "reading": "とりひき",
+    "meaning": "交易",
+    "level": "N1"
+  },
+  {
+    "id": 565,
+    "word": "営業",
+    "reading": "えいぎょう",
+    "meaning": "销售/营业",
+    "level": "N3"
+  },
+  {
+    "id": 566,
+    "word": "経理",
+    "reading": "けいり",
+    "meaning": "会计",
+    "level": "N3"
+  },
+  {
+    "id": 567,
+    "word": "人事",
+    "reading": "じんじ",
+    "meaning": "人事",
+    "level": "N2"
+  },
+  {
+    "id": 568,
+    "word": "総務",
+    "reading": "そうむ",
+    "meaning": "总务",
+    "level": "N3"
+  },
+  {
+    "id": 569,
+    "word": "開発",
+    "reading": "かいはつ",
+    "meaning": "开发",
+    "level": "N1"
+  },
+  {
+    "id": 570,
+    "word": "製造",
+    "reading": "せいぞう",
+    "meaning": "制造",
+    "level": "N3"
+  },
+  {
+    "id": 571,
+    "word": "品質",
+    "reading": "ひんしつ",
+    "meaning": "品质",
+    "level": "N1"
+  },
+  {
+    "id": 572,
+    "word": "管理",
+    "reading": "かんり",
+    "meaning": "管理",
+    "level": "N3"
+  },
+  {
+    "id": 573,
+    "word": "プロジェクト",
+    "reading": "プロジェクト",
+    "meaning": "项目",
+    "level": "N3"
+  },
+  {
+    "id": 574,
+    "word": "チーム",
+    "reading": "チーム",
+    "meaning": "团队",
+    "level": "N3"
+  },
+  {
+    "id": 575,
+    "word": "メンバー",
+    "reading": "メンバー",
+    "meaning": "成员",
+    "level": "N3"
+  },
+  {
+    "id": 576,
+    "word": "リーダー",
+    "reading": "リーダー",
+    "meaning": "领导",
+    "level": "N3"
+  },
+  {
+    "id": 577,
+    "word": "スケジュール",
+    "reading": "スケジュール",
+    "meaning": "日程",
+    "level": "N3"
+  },
+  {
+    "id": 578,
+    "word": "予定",
+    "reading": "よてい",
+    "meaning": "预定/计划",
+    "level": "N4"
+  },
+  {
+    "id": 579,
+    "word": "目標",
+    "reading": "もくひょう",
+    "meaning": "目标",
+    "level": "N3"
+  },
+  {
+    "id": 580,
+    "word": "成果",
+    "reading": "せいか",
+    "meaning": "成果",
+    "level": "N1"
+  },
+  {
+    "id": 581,
+    "word": "実績",
+    "reading": "じっせき",
+    "meaning": "业绩",
+    "level": "N2"
+  },
+  {
+    "id": 582,
+    "word": "売上",
+    "reading": "うりあげ",
+    "meaning": "销售额",
+    "level": "N2"
+  },
+  {
+    "id": 583,
+    "word": "利益",
+    "reading": "りえき",
+    "meaning": "利润",
+    "level": "N3"
+  },
+  {
+    "id": 584,
+    "word": "損失",
+    "reading": "そんしつ",
+    "meaning": "损失",
+    "level": "N1"
+  },
+  {
+    "id": 585,
+    "word": "予算",
+    "reading": "よさん",
+    "meaning": "预算",
+    "level": "N3"
+  },
+  {
+    "id": 586,
+    "word": "コスト",
+    "reading": "コスト",
+    "meaning": "成本",
+    "level": "N3"
+  },
+  {
+    "id": 587,
+    "word": "経費",
+    "reading": "けいひ",
+    "meaning": "经费",
+    "level": "N1"
+  },
+  {
+    "id": 588,
+    "word": "給料",
+    "reading": "きゅうりょう",
+    "meaning": "工资",
+    "level": "N3"
+  },
+  {
+    "id": 589,
+    "word": "ボーナス",
+    "reading": "ボーナス",
+    "meaning": "奖金",
+    "level": "N2"
+  },
+  {
+    "id": 590,
+    "word": "年収",
+    "reading": "ねんしゅう",
+    "meaning": "年收入",
+    "level": "N3"
+  },
+  {
+    "id": 591,
+    "word": "残業",
+    "reading": "ざんぎょう",
+    "meaning": "加班",
+    "level": "N3"
+  },
+  {
+    "id": 592,
+    "word": "有給休暇",
+    "reading": "ゆうきゅうきゅうか",
+    "meaning": "带薪休假",
+    "level": "N3"
+  },
+  {
+    "id": 593,
+    "word": "出張",
+    "reading": "しゅっちょう",
+    "meaning": "出差",
+    "level": "N2"
+  },
+  {
+    "id": 594,
+    "word": "転勤",
+    "reading": "てんきん",
+    "meaning": "调职",
+    "level": "N1"
+  },
+  {
+    "id": 595,
+    "word": "異動",
+    "reading": "いどう",
+    "meaning": "调动",
+    "level": "N3"
+  },
+  {
+    "id": 596,
+    "word": "昇進",
+    "reading": "しょうしん",
+    "meaning": "升职",
+    "level": "N1"
+  },
+  {
+    "id": 597,
+    "word": "降格",
+    "reading": "こうかく",
+    "meaning": "降级",
+    "level": "N3"
+  },
+  {
+    "id": 598,
+    "word": "転職",
+    "reading": "てんしょく",
+    "meaning": "跳槽",
+    "level": "N3"
+  },
+  {
+    "id": 599,
+    "word": "退職",
+    "reading": "たいしょく",
+    "meaning": "辞职/退休",
+    "level": "N1"
+  },
+  {
+    "id": 600,
+    "word": "解雇",
+    "reading": "かいこ",
+    "meaning": "解雇",
+    "level": "N3"
+  },
+  {
+    "id": 601,
+    "word": "面接",
+    "reading": "めんせつ",
+    "meaning": "面试",
+    "level": "N3"
+  },
+  {
+    "id": 602,
+    "word": "履歴書",
+    "reading": "りれきしょ",
+    "meaning": "简历",
+    "level": "N3"
+  },
+  {
+    "id": 603,
+    "word": "内定",
+    "reading": "ないてい",
+    "meaning": "内定",
+    "level": "N3"
+  },
+  {
+    "id": 604,
+    "word": "研修",
+    "reading": "けんしゅう",
+    "meaning": "培训",
+    "level": "N2"
+  },
+  {
+    "id": 605,
+    "word": "引き継ぎ",
+    "reading": "ひきつぎ",
+    "meaning": "交接",
+    "level": "N3"
+  },
+  {
+    "id": 606,
+    "word": "名刺",
+    "reading": "めいし",
+    "meaning": "名片",
+    "level": "N3"
+  },
+  {
+    "id": 607,
+    "word": "印鑑",
+    "reading": "いんかん",
+    "meaning": "印章",
+    "level": "N1"
+  },
+  {
+    "id": 608,
+    "word": "クレーム",
+    "reading": "クレーム",
+    "meaning": "投诉",
+    "level": "N3"
+  },
+  {
+    "id": 609,
+    "word": "ミス",
+    "reading": "ミス",
+    "meaning": "失误",
+    "level": "N3"
+  },
+  {
+    "id": 610,
+    "word": "トラブル",
+    "reading": "トラブル",
+    "meaning": "问题/麻烦",
+    "level": "N1"
+  },
+  {
+    "id": 611,
+    "word": "ノルマ",
+    "reading": "ノルマ",
+    "meaning": "指标",
+    "level": "N3"
+  },
+  {
+    "id": 612,
+    "word": "マニュアル",
+    "reading": "マニュアル",
+    "meaning": "操作手册",
+    "level": "N3"
+  },
+  {
+    "id": 613,
+    "word": "やりがい",
+    "reading": "やりがい",
+    "meaning": "成就感/值得做",
+    "level": "N3"
+  },
+  {
+    "id": 614,
+    "word": "授業",
+    "reading": "じゅぎょう",
+    "meaning": "课",
+    "level": "N5"
+  },
+  {
+    "id": 615,
+    "word": "講義",
+    "reading": "こうぎ",
+    "meaning": "讲座",
+    "level": "N4"
+  },
+  {
+    "id": 616,
+    "word": "科目",
+    "reading": "かもく",
+    "meaning": "科目",
+    "level": "N3"
+  },
+  {
+    "id": 617,
+    "word": "試験",
+    "reading": "しけん",
+    "meaning": "考试",
+    "level": "N4"
+  },
+  {
+    "id": 618,
+    "word": "テスト",
+    "reading": "テスト",
+    "meaning": "测验",
+    "level": "N5"
+  },
+  {
+    "id": 619,
+    "word": "成績",
+    "reading": "せいせき",
+    "meaning": "成绩",
+    "level": "N3"
+  },
+  {
+    "id": 620,
+    "word": "点数",
+    "reading": "てんすう",
+    "meaning": "分数",
+    "level": "N2"
+  },
+  {
+    "id": 621,
+    "word": "合格",
+    "reading": "ごうかく",
+    "meaning": "及格/合格",
+    "level": "N3"
+  },
+  {
+    "id": 622,
+    "word": "不合格",
+    "reading": "ふごうかく",
+    "meaning": "不及格",
+    "level": "N3"
+  },
+  {
+    "id": 623,
+    "word": "卒業",
+    "reading": "そつぎょう",
+    "meaning": "毕业",
+    "level": "N4"
+  },
+  {
+    "id": 624,
+    "word": "入学",
+    "reading": "にゅうがく",
+    "meaning": "入学",
+    "level": "N4"
+  },
+  {
+    "id": 625,
+    "word": "進学",
+    "reading": "しんがく",
+    "meaning": "升学",
+    "level": "N3"
+  },
+  {
+    "id": 626,
+    "word": "留学",
+    "reading": "りゅうがく",
+    "meaning": "留学",
+    "level": "N3"
+  },
+  {
+    "id": 627,
+    "word": "奨学金",
+    "reading": "しょうがくきん",
+    "meaning": "奖学金",
+    "level": "N3"
+  },
+  {
+    "id": 628,
+    "word": "学費",
+    "reading": "がくひ",
+    "meaning": "学费",
+    "level": "N3"
+  },
+  {
+    "id": 629,
+    "word": "宿題",
+    "reading": "しゅくだい",
+    "meaning": "作业",
+    "level": "N5"
+  },
+  {
+    "id": 630,
+    "word": "レポート",
+    "reading": "レポート",
+    "meaning": "报告",
+    "level": "N3"
+  },
+  {
+    "id": 631,
+    "word": "論文",
+    "reading": "ろんぶん",
+    "meaning": "论文",
+    "level": "N3"
+  },
+  {
+    "id": 632,
+    "word": "教科書",
+    "reading": "きょうかしょ",
+    "meaning": "教科书",
+    "level": "N3"
+  },
+  {
+    "id": 633,
+    "word": "参考書",
+    "reading": "さんこうしょ",
+    "meaning": "参考书",
+    "level": "N3"
+  },
+  {
+    "id": 634,
+    "word": "辞書",
+    "reading": "じしょ",
+    "meaning": "词典",
+    "level": "N5"
+  },
+  {
+    "id": 635,
+    "word": "文法",
+    "reading": "ぶんぽう",
+    "meaning": "语法",
+    "level": "N4"
+  },
+  {
+    "id": 636,
+    "word": "単語",
+    "reading": "たんご",
+    "meaning": "单词",
+    "level": "N3"
+  },
+  {
+    "id": 637,
+    "word": "発音",
+    "reading": "はつおん",
+    "meaning": "发音",
+    "level": "N4"
+  },
+  {
+    "id": 638,
+    "word": "会話",
+    "reading": "かいわ",
+    "meaning": "会话",
+    "level": "N4"
+  },
+  {
+    "id": 639,
+    "word": "文章",
+    "reading": "ぶんしょう",
+    "meaning": "文章",
+    "level": "N5"
+  },
+  {
+    "id": 640,
+    "word": "作文",
+    "reading": "さくぶん",
+    "meaning": "作文",
+    "level": "N5"
+  },
+  {
+    "id": 641,
+    "word": "翻訳",
+    "reading": "ほんやく",
+    "meaning": "翻译",
+    "level": "N4"
+  },
+  {
+    "id": 642,
+    "word": "通訳",
+    "reading": "つうやく",
+    "meaning": "口译",
+    "level": "N3"
+  },
+  {
+    "id": 643,
+    "word": "知識",
+    "reading": "ちしき",
+    "meaning": "知识",
+    "level": "N3"
+  },
+  {
+    "id": 644,
+    "word": "常識",
+    "reading": "じょうしき",
+    "meaning": "常识",
+    "level": "N3"
+  },
+  {
+    "id": 645,
+    "word": "経験",
+    "reading": "けいけん",
+    "meaning": "经验",
+    "level": "N4"
+  },
+  {
+    "id": 646,
+    "word": "能力",
+    "reading": "のうりょく",
+    "meaning": "能力",
+    "level": "N3"
+  },
+  {
+    "id": 647,
+    "word": "才能",
+    "reading": "さいのう",
+    "meaning": "才能",
+    "level": "N3"
+  },
+  {
+    "id": 648,
+    "word": "努力",
+    "reading": "どりょく",
+    "meaning": "努力",
+    "level": "N3"
+  },
+  {
+    "id": 649,
+    "word": "練習",
+    "reading": "れんしゅう",
+    "meaning": "练习",
+    "level": "N5"
+  },
+  {
+    "id": 650,
+    "word": "復習",
+    "reading": "ふくしゅう",
+    "meaning": "复习",
+    "level": "N4"
+  },
+  {
+    "id": 651,
+    "word": "予習",
+    "reading": "よしゅう",
+    "meaning": "预习",
+    "level": "N4"
+  },
+  {
+    "id": 652,
+    "word": "お金",
+    "reading": "おかね",
+    "meaning": "钱",
+    "level": "N5"
+  },
+  {
+    "id": 653,
+    "word": "現金",
+    "reading": "げんきん",
+    "meaning": "现金",
+    "level": "N3"
+  },
+  {
+    "id": 654,
+    "word": "小銭",
+    "reading": "こぜに",
+    "meaning": "零钱",
+    "level": "N3"
+  },
+  {
+    "id": 655,
+    "word": "お釣り",
+    "reading": "おつり",
+    "meaning": "找零",
+    "level": "N4"
+  },
+  {
+    "id": 656,
+    "word": "値段",
+    "reading": "ねだん",
+    "meaning": "价格",
+    "level": "N4"
+  },
+  {
+    "id": 657,
+    "word": "価格",
+    "reading": "かかく",
+    "meaning": "价格",
+    "level": "N3"
+  },
+  {
+    "id": 658,
+    "word": "費用",
+    "reading": "ひよう",
+    "meaning": "费用",
+    "level": "N3"
+  },
+  {
+    "id": 659,
+    "word": "料金",
+    "reading": "りょうきん",
+    "meaning": "费用/资费",
+    "level": "N3"
+  },
+  {
+    "id": 660,
+    "word": "手数料",
+    "reading": "てすうりょう",
+    "meaning": "手续费",
+    "level": "N3"
+  },
+  {
+    "id": 661,
+    "word": "家賃",
+    "reading": "やちん",
+    "meaning": "房租",
+    "level": "N3"
+  },
+  {
+    "id": 662,
+    "word": "光熱費",
+    "reading": "こうねつひ",
+    "meaning": "水电气费",
+    "level": "N1"
+  },
+  {
+    "id": 663,
+    "word": "生活費",
+    "reading": "せいかつひ",
+    "meaning": "生活费",
+    "level": "N3"
+  },
+  {
+    "id": 664,
+    "word": "交通費",
+    "reading": "こうつうひ",
+    "meaning": "交通费",
+    "level": "N3"
+  },
+  {
+    "id": 665,
+    "word": "食費",
+    "reading": "しょくひ",
+    "meaning": "伙食费",
+    "level": "N3"
+  },
+  {
+    "id": 666,
+    "word": "税金",
+    "reading": "ぜいきん",
+    "meaning": "税",
+    "level": "N3"
+  },
+  {
+    "id": 667,
+    "word": "消費税",
+    "reading": "しょうひぜい",
+    "meaning": "消费税",
+    "level": "N3"
+  },
+  {
+    "id": 668,
+    "word": "収入",
+    "reading": "しゅうにゅう",
+    "meaning": "收入",
+    "level": "N3"
+  },
+  {
+    "id": 669,
+    "word": "支出",
+    "reading": "ししゅつ",
+    "meaning": "支出",
+    "level": "N3"
+  },
+  {
+    "id": 670,
+    "word": "貯金",
+    "reading": "ちょきん",
+    "meaning": "存款",
+    "level": "N3"
+  },
+  {
+    "id": 671,
+    "word": "借金",
+    "reading": "しゃっきん",
+    "meaning": "债务",
+    "level": "N3"
+  },
+  {
+    "id": 672,
+    "word": "ローン",
+    "reading": "ローン",
+    "meaning": "贷款",
+    "level": "N3"
+  },
+  {
+    "id": 673,
+    "word": "保険",
+    "reading": "ほけん",
+    "meaning": "保险",
+    "level": "N1"
+  },
+  {
+    "id": 674,
+    "word": "口座",
+    "reading": "こうざ",
+    "meaning": "账户",
+    "level": "N3"
+  },
+  {
+    "id": 675,
+    "word": "振り込み",
+    "reading": "ふりこみ",
+    "meaning": "转账",
+    "level": "N3"
+  },
+  {
+    "id": 676,
+    "word": "引き落とし",
+    "reading": "ひきおとし",
+    "meaning": "自动扣款",
+    "level": "N3"
+  },
+  {
+    "id": 677,
+    "word": "領収書",
+    "reading": "りょうしゅうしょ",
+    "meaning": "收据",
+    "level": "N3"
+  },
+  {
+    "id": 678,
+    "word": "レシート",
+    "reading": "レシート",
+    "meaning": "小票",
+    "level": "N3"
+  },
+  {
+    "id": 679,
+    "word": "割引",
+    "reading": "わりびき",
+    "meaning": "折扣",
+    "level": "N2"
+  },
+  {
+    "id": 680,
+    "word": "セール",
+    "reading": "セール",
+    "meaning": "打折",
+    "level": "N1"
+  },
+  {
+    "id": 681,
+    "word": "無料",
+    "reading": "むりょう",
+    "meaning": "免费",
+    "level": "N3"
+  },
+  {
+    "id": 682,
+    "word": "有料",
+    "reading": "ゆうりょう",
+    "meaning": "收费",
+    "level": "N2"
+  },
+  {
+    "id": 683,
+    "word": "経済",
+    "reading": "けいざい",
+    "meaning": "经济",
+    "level": "N4"
+  },
+  {
+    "id": 684,
+    "word": "景気",
+    "reading": "けいき",
+    "meaning": "景气",
+    "level": "N3"
+  },
+  {
+    "id": 685,
+    "word": "株",
+    "reading": "かぶ",
+    "meaning": "股票",
+    "level": "N3"
+  },
+  {
+    "id": 686,
+    "word": "投資",
+    "reading": "とうし",
+    "meaning": "投资",
+    "level": "N1"
+  },
+  {
+    "id": 687,
+    "word": "社会",
+    "reading": "しゃかい",
+    "meaning": "社会",
+    "level": "N4"
+  },
+  {
+    "id": 688,
+    "word": "世界",
+    "reading": "せかい",
+    "meaning": "世界",
+    "level": "N4"
+  },
+  {
+    "id": 689,
+    "word": "国",
+    "reading": "くに",
+    "meaning": "国家",
+    "level": "N5"
+  },
+  {
+    "id": 690,
+    "word": "政府",
+    "reading": "せいふ",
+    "meaning": "政府",
+    "level": "N3"
+  },
+  {
+    "id": 691,
+    "word": "法律",
+    "reading": "ほうりつ",
+    "meaning": "法律",
+    "level": "N4"
+  },
+  {
+    "id": 692,
+    "word": "権利",
+    "reading": "けんり",
+    "meaning": "权利",
+    "level": "N3"
+  },
+  {
+    "id": 693,
+    "word": "義務",
+    "reading": "ぎむ",
+    "meaning": "义务",
+    "level": "N3"
+  },
+  {
+    "id": 694,
+    "word": "自由",
+    "reading": "じゆう",
+    "meaning": "自由",
+    "level": "N4"
+  },
+  {
+    "id": 695,
+    "word": "平和",
+    "reading": "へいわ",
+    "meaning": "和平",
+    "level": "N3"
+  },
+  {
+    "id": 696,
+    "word": "戦争",
+    "reading": "せんそう",
+    "meaning": "战争",
+    "level": "N4"
+  },
+  {
+    "id": 697,
+    "word": "事件",
+    "reading": "じけん",
+    "meaning": "事件",
+    "level": "N3"
+  },
+  {
+    "id": 698,
+    "word": "犯罪",
+    "reading": "はんざい",
+    "meaning": "犯罪",
+    "level": "N3"
+  },
+  {
+    "id": 699,
+    "word": "裁判",
+    "reading": "さいばん",
+    "meaning": "审判",
+    "level": "N3"
+  },
+  {
+    "id": 700,
+    "word": "選挙",
+    "reading": "せんきょ",
+    "meaning": "选举",
+    "level": "N3"
+  },
+  {
+    "id": 701,
+    "word": "政策",
+    "reading": "せいさく",
+    "meaning": "政策",
+    "level": "N1"
+  },
+  {
+    "id": 702,
+    "word": "制度",
+    "reading": "せいど",
+    "meaning": "制度",
+    "level": "N3"
+  },
+  {
+    "id": 703,
+    "word": "規則",
+    "reading": "きそく",
+    "meaning": "规则",
+    "level": "N4"
+  },
+  {
+    "id": 704,
+    "word": "ルール",
+    "reading": "ルール",
+    "meaning": "规则",
+    "level": "N3"
+  },
+  {
+    "id": 705,
+    "word": "マナー",
+    "reading": "マナー",
+    "meaning": "礼仪",
+    "level": "N3"
+  },
+  {
+    "id": 706,
+    "word": "文化",
+    "reading": "ぶんか",
+    "meaning": "文化",
+    "level": "N4"
+  },
+  {
+    "id": 707,
+    "word": "伝統",
+    "reading": "でんとう",
+    "meaning": "传统",
+    "level": "N3"
+  },
+  {
+    "id": 708,
+    "word": "歴史",
+    "reading": "れきし",
+    "meaning": "历史",
+    "level": "N4"
+  },
+  {
+    "id": 709,
+    "word": "宗教",
+    "reading": "しゅうきょう",
+    "meaning": "宗教",
+    "level": "N3"
+  },
+  {
+    "id": 710,
+    "word": "国際",
+    "reading": "こくさい",
+    "meaning": "国际",
+    "level": "N4"
+  },
+  {
+    "id": 711,
+    "word": "人口",
+    "reading": "じんこう",
+    "meaning": "人口",
+    "level": "N4"
+  },
+  {
+    "id": 712,
+    "word": "少子化",
+    "reading": "しょうしか",
+    "meaning": "少子化",
+    "level": "N3"
+  },
+  {
+    "id": 713,
+    "word": "高齢化",
+    "reading": "こうれいか",
+    "meaning": "老龄化",
+    "level": "N3"
+  },
+  {
+    "id": 714,
+    "word": "差別",
+    "reading": "さべつ",
+    "meaning": "歧视",
+    "level": "N3"
+  },
+  {
+    "id": 715,
+    "word": "平等",
+    "reading": "びょうどう",
+    "meaning": "平等",
+    "level": "N3"
+  },
+  {
+    "id": 716,
+    "word": "ボランティア",
+    "reading": "ボランティア",
+    "meaning": "志愿者",
+    "level": "N3"
+  },
+  {
+    "id": 717,
+    "word": "寄付",
+    "reading": "きふ",
+    "meaning": "捐款",
+    "level": "N3"
+  },
+  {
+    "id": 718,
+    "word": "ニュース",
+    "reading": "ニュース",
+    "meaning": "新闻",
+    "level": "N5"
+  },
+  {
+    "id": 719,
+    "word": "新聞",
+    "reading": "しんぶん",
+    "meaning": "报纸",
+    "level": "N5"
+  },
+  {
+    "id": 720,
+    "word": "記事",
+    "reading": "きじ",
+    "meaning": "报道/文章",
+    "level": "N3"
+  },
+  {
+    "id": 721,
+    "word": "情報",
+    "reading": "じょうほう",
+    "meaning": "信息",
+    "level": "N3"
+  },
+  {
+    "id": 722,
+    "word": "データ",
+    "reading": "データ",
+    "meaning": "数据",
+    "level": "N3"
+  },
+  {
+    "id": 723,
+    "word": "統計",
+    "reading": "とうけい",
+    "meaning": "统计",
+    "level": "N2"
+  },
+  {
+    "id": 724,
+    "word": "調査",
+    "reading": "ちょうさ",
+    "meaning": "调查",
+    "level": "N3"
+  },
+  {
+    "id": 725,
+    "word": "報告",
+    "reading": "ほうこく",
+    "meaning": "报告",
+    "level": "N3"
+  },
+  {
+    "id": 726,
+    "word": "発表",
+    "reading": "はっぴょう",
+    "meaning": "发表",
+    "level": "N3"
+  },
+  {
+    "id": 727,
+    "word": "意見",
+    "reading": "いけん",
+    "meaning": "意见",
+    "level": "N4"
+  },
+  {
+    "id": 728,
+    "word": "議論",
+    "reading": "ぎろん",
+    "meaning": "讨论",
+    "level": "N3"
+  },
+  {
+    "id": 729,
+    "word": "賛成",
+    "reading": "さんせい",
+    "meaning": "赞成",
+    "level": "N3"
+  },
+  {
+    "id": 730,
+    "word": "反対",
+    "reading": "はんたい",
+    "meaning": "反对",
+    "level": "N4"
+  },
+  {
+    "id": 731,
+    "word": "批判",
+    "reading": "ひはん",
+    "meaning": "批判",
+    "level": "N3"
+  },
+  {
+    "id": 732,
+    "word": "問題",
+    "reading": "もんだい",
+    "meaning": "问题",
+    "level": "N5"
+  },
+  {
+    "id": 733,
+    "word": "課題",
+    "reading": "かだい",
+    "meaning": "课题",
+    "level": "N3"
+  },
+  {
+    "id": 734,
+    "word": "対策",
+    "reading": "たいさく",
+    "meaning": "对策",
+    "level": "N2"
+  },
+  {
+    "id": 735,
+    "word": "解決",
+    "reading": "かいけつ",
+    "meaning": "解决",
+    "level": "N3"
+  },
+  {
+    "id": 736,
+    "word": "結果",
+    "reading": "けっか",
+    "meaning": "结果",
+    "level": "N3"
+  },
+  {
+    "id": 737,
+    "word": "原因",
+    "reading": "げんいん",
+    "meaning": "原因",
+    "level": "N4"
+  },
+  {
+    "id": 738,
+    "word": "理由",
+    "reading": "りゆう",
+    "meaning": "理由",
+    "level": "N4"
+  },
+  {
+    "id": 739,
+    "word": "影響",
+    "reading": "えいきょう",
+    "meaning": "影响",
+    "level": "N3"
+  },
+  {
+    "id": 740,
+    "word": "効果",
+    "reading": "こうか",
+    "meaning": "效果",
+    "level": "N3"
+  },
+  {
+    "id": 741,
+    "word": "可能性",
+    "reading": "かのうせい",
+    "meaning": "可能性",
+    "level": "N3"
+  },
+  {
+    "id": 742,
+    "word": "責任",
+    "reading": "せきにん",
+    "meaning": "责任",
+    "level": "N3"
+  },
+  {
+    "id": 743,
+    "word": "気持ち",
+    "reading": "きもち",
+    "meaning": "心情/感觉",
+    "level": "N4"
+  },
+  {
+    "id": 744,
+    "word": "気分",
+    "reading": "きぶん",
+    "meaning": "心情",
+    "level": "N4"
+  },
+  {
+    "id": 745,
+    "word": "感情",
+    "reading": "かんじょう",
+    "meaning": "感情",
+    "level": "N3"
+  },
+  {
+    "id": 746,
+    "word": "愛",
+    "reading": "あい",
+    "meaning": "爱",
+    "level": "N3"
+  },
+  {
+    "id": 747,
+    "word": "恋",
+    "reading": "こい",
+    "meaning": "恋爱",
+    "level": "N3"
+  },
+  {
+    "id": 748,
+    "word": "幸せ",
+    "reading": "しあわせ",
+    "meaning": "幸福",
+    "level": "N3"
+  },
+  {
+    "id": 749,
+    "word": "不幸",
+    "reading": "ふこう",
+    "meaning": "不幸",
+    "level": "N3"
+  },
+  {
+    "id": 750,
+    "word": "喜び",
+    "reading": "よろこび",
+    "meaning": "喜悦",
+    "level": "N3"
+  },
+  {
+    "id": 751,
+    "word": "悲しみ",
+    "reading": "かなしみ",
+    "meaning": "悲伤",
+    "level": "N3"
+  },
+  {
+    "id": 752,
+    "word": "怒り",
+    "reading": "いかり",
+    "meaning": "愤怒",
+    "level": "N3"
+  },
+  {
+    "id": 753,
+    "word": "恐怖",
+    "reading": "きょうふ",
+    "meaning": "恐惧",
+    "level": "N3"
+  },
+  {
+    "id": 754,
+    "word": "不安",
+    "reading": "ふあん",
+    "meaning": "不安",
+    "level": "N3"
+  },
+  {
+    "id": 755,
+    "word": "心配",
+    "reading": "しんぱい",
+    "meaning": "担心",
+    "level": "N4"
+  },
+  {
+    "id": 756,
+    "word": "安心",
+    "reading": "あんしん",
+    "meaning": "安心",
+    "level": "N4"
+  },
+  {
+    "id": 757,
+    "word": "驚き",
+    "reading": "おどろき",
+    "meaning": "惊讶",
+    "level": "N3"
+  },
+  {
+    "id": 758,
+    "word": "感動",
+    "reading": "かんどう",
+    "meaning": "感动",
+    "level": "N3"
+  },
+  {
+    "id": 759,
+    "word": "後悔",
+    "reading": "こうかい",
+    "meaning": "后悔",
+    "level": "N3"
+  },
+  {
+    "id": 760,
+    "word": "反省",
+    "reading": "はんせい",
+    "meaning": "反省",
+    "level": "N3"
+  },
+  {
+    "id": 761,
+    "word": "我慢",
+    "reading": "がまん",
+    "meaning": "忍耐",
+    "level": "N3"
+  },
+  {
+    "id": 762,
+    "word": "覚悟",
+    "reading": "かくご",
+    "meaning": "觉悟",
+    "level": "N3"
+  },
+  {
+    "id": 763,
+    "word": "自信",
+    "reading": "じしん",
+    "meaning": "自信",
+    "level": "N4"
+  },
+  {
+    "id": 764,
+    "word": "勇気",
+    "reading": "ゆうき",
+    "meaning": "勇气",
+    "level": "N3"
+  },
+  {
+    "id": 765,
+    "word": "希望",
+    "reading": "きぼう",
+    "meaning": "希望",
+    "level": "N3"
+  },
+  {
+    "id": 766,
+    "word": "絶望",
+    "reading": "ぜつぼう",
+    "meaning": "绝望",
+    "level": "N3"
+  },
+  {
+    "id": 767,
+    "word": "期待",
+    "reading": "きたい",
+    "meaning": "期待",
+    "level": "N3"
+  },
+  {
+    "id": 768,
+    "word": "失望",
+    "reading": "しつぼう",
+    "meaning": "失望",
+    "level": "N3"
+  },
+  {
+    "id": 769,
+    "word": "興味",
+    "reading": "きょうみ",
+    "meaning": "兴趣",
+    "level": "N4"
+  },
+  {
+    "id": 770,
+    "word": "関心",
+    "reading": "かんしん",
+    "meaning": "关心",
+    "level": "N3"
+  },
+  {
+    "id": 771,
+    "word": "好奇心",
+    "reading": "こうきしん",
+    "meaning": "好奇心",
+    "level": "N3"
+  },
+  {
+    "id": 772,
+    "word": "やる気",
+    "reading": "やるき",
+    "meaning": "干劲",
+    "level": "N3"
+  },
+  {
+    "id": 773,
+    "word": "根性",
+    "reading": "こんじょう",
+    "meaning": "毅力/骨气",
+    "level": "N3"
+  },
+  {
+    "id": 774,
+    "word": "プライド",
+    "reading": "プライド",
+    "meaning": "自尊心",
+    "level": "N3"
+  },
+  {
+    "id": 775,
+    "word": "コンプレックス",
+    "reading": "コンプレックス",
+    "meaning": "自卑感",
+    "level": "N3"
+  },
+  {
+    "id": 776,
+    "word": "ストレス",
+    "reading": "ストレス",
+    "meaning": "压力",
+    "level": "N3"
+  },
+  {
+    "id": 777,
+    "word": "プレッシャー",
+    "reading": "プレッシャー",
+    "meaning": "压迫感",
+    "level": "N3"
+  },
+  {
+    "id": 778,
+    "word": "リラックス",
+    "reading": "リラックス",
+    "meaning": "放松",
+    "level": "N3"
+  },
+  {
+    "id": 779,
+    "word": "思い出",
+    "reading": "おもいで",
+    "meaning": "回忆",
+    "level": "N3"
+  },
+  {
+    "id": 780,
+    "word": "記憶",
+    "reading": "きおく",
+    "meaning": "记忆",
+    "level": "N3"
+  },
+  {
+    "id": 781,
+    "word": "印象",
+    "reading": "いんしょう",
+    "meaning": "印象",
+    "level": "N3"
+  },
+  {
+    "id": 782,
+    "word": "イメージ",
+    "reading": "イメージ",
+    "meaning": "印象/形象",
+    "level": "N3"
+  },
+  {
+    "id": 783,
+    "word": "夢",
+    "reading": "ゆめ",
+    "meaning": "梦/梦想",
+    "level": "N4"
+  },
+  {
+    "id": 784,
+    "word": "目的",
+    "reading": "もくてき",
+    "meaning": "目的",
+    "level": "N3"
+  },
+  {
+    "id": 785,
+    "word": "理想",
+    "reading": "りそう",
+    "meaning": "理想",
+    "level": "N3"
+  },
+  {
+    "id": 786,
+    "word": "現実",
+    "reading": "げんじつ",
+    "meaning": "现实",
+    "level": "N3"
+  },
+  {
+    "id": 787,
+    "word": "事実",
+    "reading": "じじつ",
+    "meaning": "事实",
+    "level": "N3"
+  },
+  {
+    "id": 788,
+    "word": "真実",
+    "reading": "しんじつ",
+    "meaning": "真实",
+    "level": "N1"
+  },
+  {
+    "id": 789,
+    "word": "嘘",
+    "reading": "うそ",
+    "meaning": "谎言",
+    "level": "N4"
+  },
+  {
+    "id": 790,
+    "word": "秘密",
+    "reading": "ひみつ",
+    "meaning": "秘密",
+    "level": "N3"
+  },
+  {
+    "id": 791,
+    "word": "約束",
+    "reading": "やくそく",
+    "meaning": "约定",
+    "level": "N4"
+  },
+  {
+    "id": 792,
+    "word": "信頼",
+    "reading": "しんらい",
+    "meaning": "信赖",
+    "level": "N3"
+  },
+  {
+    "id": 793,
+    "word": "裏切り",
+    "reading": "うらぎり",
+    "meaning": "背叛",
+    "level": "N3"
+  },
+  {
+    "id": 794,
+    "word": "誤解",
+    "reading": "ごかい",
+    "meaning": "误解",
+    "level": "N3"
+  },
+  {
+    "id": 795,
+    "word": "偏見",
+    "reading": "へんけん",
+    "meaning": "偏见",
+    "level": "N1"
+  },
+  {
+    "id": 796,
+    "word": "常識",
+    "reading": "じょうしき",
+    "meaning": "常识",
+    "level": "N3"
+  },
+  {
+    "id": 797,
+    "word": "価値観",
+    "reading": "かちかん",
+    "meaning": "价值观",
+    "level": "N3"
+  },
+  {
+    "id": 798,
+    "word": "考え方",
+    "reading": "かんがえかた",
+    "meaning": "想法/思维方式",
+    "level": "N3"
+  },
+  {
+    "id": 799,
+    "word": "生き方",
+    "reading": "いきかた",
+    "meaning": "生活方式",
+    "level": "N3"
+  },
+  {
+    "id": 800,
+    "word": "人生",
+    "reading": "じんせい",
+    "meaning": "人生",
+    "level": "N3"
+  },
+  {
+    "id": 801,
+    "word": "運命",
+    "reading": "うんめい",
+    "meaning": "命运",
+    "level": "N1"
+  },
+  {
+    "id": 802,
+    "word": "運",
+    "reading": "うん",
+    "meaning": "运气",
+    "level": "N3"
+  },
+  {
+    "id": 803,
+    "word": "チャンス",
+    "reading": "チャンス",
+    "meaning": "机会",
+    "level": "N3"
+  },
+  {
+    "id": 804,
+    "word": "きっかけ",
+    "reading": "きっかけ",
+    "meaning": "契机",
+    "level": "N2"
+  },
+  {
+    "id": 805,
+    "word": "タイミング",
+    "reading": "タイミング",
+    "meaning": "时机",
+    "level": "N1"
+  },
+  {
+    "id": 806,
+    "word": "成功",
+    "reading": "せいこう",
+    "meaning": "成功",
+    "level": "N3"
+  },
+  {
+    "id": 807,
+    "word": "失敗",
+    "reading": "しっぱい",
+    "meaning": "失败",
+    "level": "N4"
+  },
+  {
+    "id": 808,
+    "word": "挑戦",
+    "reading": "ちょうせん",
+    "meaning": "挑战",
+    "level": "N3"
+  },
+  {
+    "id": 809,
+    "word": "冒険",
+    "reading": "ぼうけん",
+    "meaning": "冒险",
+    "level": "N3"
+  },
+  {
+    "id": 810,
+    "word": "成長",
+    "reading": "せいちょう",
+    "meaning": "成长",
+    "level": "N3"
+  },
+  {
+    "id": 811,
+    "word": "変化",
+    "reading": "へんか",
+    "meaning": "变化",
+    "level": "N3"
+  },
+  {
+    "id": 812,
+    "word": "進歩",
+    "reading": "しんぽ",
+    "meaning": "进步",
+    "level": "N3"
+  },
+  {
+    "id": 813,
+    "word": "苦労",
+    "reading": "くろう",
+    "meaning": "辛苦",
+    "level": "N3"
+  },
+  {
+    "id": 814,
+    "word": "工夫",
+    "reading": "くふう",
+    "meaning": "下工夫",
+    "level": "N2"
+  },
+  {
+    "id": 815,
+    "word": "コツ",
+    "reading": "コツ",
+    "meaning": "诀窍",
+    "level": "N3"
+  },
+  {
+    "id": 816,
+    "word": "限界",
+    "reading": "げんかい",
+    "meaning": "极限",
+    "level": "N3"
+  },
+  {
+    "id": 817,
+    "word": "余裕",
+    "reading": "よゆう",
+    "meaning": "余裕/从容",
+    "level": "N3"
+  },
+  {
+    "id": 818,
+    "word": "本音",
+    "reading": "ほんね",
+    "meaning": "真心话",
+    "level": "N1"
+  },
+  {
+    "id": 819,
+    "word": "建前",
+    "reading": "たてまえ",
+    "meaning": "场面话",
+    "level": "N1"
+  },
+  {
+    "id": 820,
+    "word": "空気",
+    "reading": "くうき",
+    "meaning": "氛围（比喻）",
+    "level": "N4"
+  },
+  {
+    "id": 821,
+    "word": "雰囲気",
+    "reading": "ふんいき",
+    "meaning": "氛围",
+    "level": "N3"
+  },
+  {
+    "id": 822,
+    "word": "存在",
+    "reading": "そんざい",
+    "meaning": "存在",
+    "level": "N3"
+  },
+  {
+    "id": 823,
+    "word": "意味",
+    "reading": "いみ",
+    "meaning": "意思/意义",
+    "level": "N5"
+  },
+  {
+    "id": 824,
+    "word": "目的",
+    "reading": "もくてき",
+    "meaning": "目的",
+    "level": "N3"
+  },
+  {
+    "id": 825,
+    "word": "理由",
+    "reading": "りゆう",
+    "meaning": "理由",
+    "level": "N4"
+  },
+  {
+    "id": 826,
+    "word": "状況",
+    "reading": "じょうきょう",
+    "meaning": "状况",
+    "level": "N3"
+  },
+  {
+    "id": 827,
+    "word": "状態",
+    "reading": "じょうたい",
+    "meaning": "状态",
+    "level": "N3"
+  },
+  {
+    "id": 828,
+    "word": "条件",
+    "reading": "じょうけん",
+    "meaning": "条件",
+    "level": "N3"
+  },
+  {
+    "id": 829,
+    "word": "基準",
+    "reading": "きじゅん",
+    "meaning": "标准",
+    "level": "N2"
+  },
+  {
+    "id": 830,
+    "word": "レベル",
+    "reading": "レベル",
+    "meaning": "水平",
+    "level": "N3"
+  },
+  {
+    "id": 831,
+    "word": "程度",
+    "reading": "ていど",
+    "meaning": "程度",
+    "level": "N3"
+  },
+  {
+    "id": 832,
+    "word": "割合",
+    "reading": "わりあい",
+    "meaning": "比例",
+    "level": "N4"
+  },
+  {
+    "id": 833,
+    "word": "傾向",
+    "reading": "けいこう",
+    "meaning": "趋势",
+    "level": "N3"
+  },
+  {
+    "id": 834,
+    "word": "特徴",
+    "reading": "とくちょう",
+    "meaning": "特征",
+    "level": "N3"
+  },
+  {
+    "id": 835,
+    "word": "種類",
+    "reading": "しゅるい",
+    "meaning": "种类",
+    "level": "N3"
+  },
+  {
+    "id": 836,
+    "word": "分野",
+    "reading": "ぶんや",
+    "meaning": "领域",
+    "level": "N3"
+  },
+  {
+    "id": 837,
+    "word": "範囲",
+    "reading": "はんい",
+    "meaning": "范围",
+    "level": "N3"
+  },
+  {
+    "id": 838,
+    "word": "立場",
+    "reading": "たちば",
+    "meaning": "立场",
+    "level": "N3"
+  },
+  {
+    "id": 839,
+    "word": "役割",
+    "reading": "やくわり",
+    "meaning": "角色",
+    "level": "N3"
+  },
+  {
+    "id": 840,
+    "word": "関係",
+    "reading": "かんけい",
+    "meaning": "关系",
+    "level": "N4"
+  },
+  {
+    "id": 841,
+    "word": "つながり",
+    "reading": "つながり",
+    "meaning": "联系/纽带",
+    "level": "N2"
+  },
+  {
+    "id": 842,
+    "word": "きずな",
+    "reading": "きずな",
+    "meaning": "羁绊",
+    "level": "N3"
+  },
+  {
+    "id": 843,
+    "word": "出会い",
+    "reading": "であい",
+    "meaning": "相遇",
+    "level": "N3"
+  },
+  {
+    "id": 844,
+    "word": "別れ",
+    "reading": "わかれ",
+    "meaning": "离别",
+    "level": "N3"
+  },
+  {
+    "id": 845,
+    "word": "始まり",
+    "reading": "はじまり",
+    "meaning": "开始",
+    "level": "N3"
+  },
+  {
+    "id": 846,
+    "word": "終わり",
+    "reading": "おわり",
+    "meaning": "结束",
+    "level": "N4"
+  },
+  {
+    "id": 847,
+    "word": "過程",
+    "reading": "かてい",
+    "meaning": "过程",
+    "level": "N3"
+  },
+  {
+    "id": 848,
+    "word": "結論",
+    "reading": "けつろん",
+    "meaning": "结论",
+    "level": "N3"
+  },
+  {
+    "id": 849,
+    "word": "方針",
+    "reading": "ほうしん",
+    "meaning": "方针",
+    "level": "N2"
+  },
+  {
+    "id": 850,
+    "word": "方法",
+    "reading": "ほうほう",
+    "meaning": "方法",
+    "level": "N3"
+  },
+  {
+    "id": 851,
+    "word": "手段",
+    "reading": "しゅだん",
+    "meaning": "手段",
+    "level": "N3"
+  },
+  {
+    "id": 852,
+    "word": "対応",
+    "reading": "たいおう",
+    "meaning": "对应/处理",
+    "level": "N1"
+  },
+  {
+    "id": 853,
+    "word": "趣味",
+    "reading": "しゅみ",
+    "meaning": "爱好",
+    "level": "N4"
+  },
+  {
+    "id": 854,
+    "word": "映画",
+    "reading": "えいが",
+    "meaning": "电影",
+    "level": "N5"
+  },
+  {
+    "id": 855,
+    "word": "ドラマ",
+    "reading": "ドラマ",
+    "meaning": "电视剧",
+    "level": "N3"
+  },
+  {
+    "id": 856,
+    "word": "アニメ",
+    "reading": "アニメ",
+    "meaning": "动漫",
+    "level": "N3"
+  },
+  {
+    "id": 857,
+    "word": "漫画",
+    "reading": "まんが",
+    "meaning": "漫画",
+    "level": "N4"
+  },
+  {
+    "id": 858,
+    "word": "小説",
+    "reading": "しょうせつ",
+    "meaning": "小说",
+    "level": "N4"
+  },
+  {
+    "id": 859,
+    "word": "本",
+    "reading": "ほん",
+    "meaning": "书",
+    "level": "N5"
+  },
+  {
+    "id": 860,
+    "word": "雑誌",
+    "reading": "ざっし",
+    "meaning": "杂志",
+    "level": "N5"
+  },
+  {
+    "id": 861,
+    "word": "音楽",
+    "reading": "おんがく",
+    "meaning": "音乐",
+    "level": "N5"
+  },
+  {
+    "id": 862,
+    "word": "歌",
+    "reading": "うた",
+    "meaning": "歌",
+    "level": "N5"
+  },
+  {
+    "id": 863,
+    "word": "曲",
+    "reading": "きょく",
+    "meaning": "曲子",
+    "level": "N3"
+  },
+  {
+    "id": 864,
+    "word": "楽器",
+    "reading": "がっき",
+    "meaning": "乐器",
+    "level": "N3"
+  },
+  {
+    "id": 865,
+    "word": "ピアノ",
+    "reading": "ピアノ",
+    "meaning": "钢琴",
+    "level": "N4"
+  },
+  {
+    "id": 866,
+    "word": "ギター",
+    "reading": "ギター",
+    "meaning": "吉他",
+    "level": "N5"
+  },
+  {
+    "id": 867,
+    "word": "ライブ",
+    "reading": "ライブ",
+    "meaning": "现场演出",
+    "level": "N3"
+  },
+  {
+    "id": 868,
+    "word": "コンサート",
+    "reading": "コンサート",
+    "meaning": "演唱会",
+    "level": "N4"
+  },
+  {
+    "id": 869,
+    "word": "ゲーム",
+    "reading": "ゲーム",
+    "meaning": "游戏",
+    "level": "N3"
+  },
+  {
+    "id": 870,
+    "word": "スポーツ",
+    "reading": "スポーツ",
+    "meaning": "运动",
+    "level": "N5"
+  },
+  {
+    "id": 871,
+    "word": "サッカー",
+    "reading": "サッカー",
+    "meaning": "足球",
+    "level": "N3"
+  },
+  {
+    "id": 872,
+    "word": "野球",
+    "reading": "やきゅう",
+    "meaning": "棒球",
+    "level": "N3"
+  },
+  {
+    "id": 873,
+    "word": "テニス",
+    "reading": "テニス",
+    "meaning": "网球",
+    "level": "N4"
+  },
+  {
+    "id": 874,
+    "word": "バスケ",
+    "reading": "バスケ",
+    "meaning": "篮球",
+    "level": "N3"
+  },
+  {
+    "id": 875,
+    "word": "水泳",
+    "reading": "すいえい",
+    "meaning": "游泳",
+    "level": "N4"
+  },
+  {
+    "id": 876,
+    "word": "スキー",
+    "reading": "スキー",
+    "meaning": "滑雪",
+    "level": "N3"
+  },
+  {
+    "id": 877,
+    "word": "マラソン",
+    "reading": "マラソン",
+    "meaning": "马拉松",
+    "level": "N2"
+  },
+  {
+    "id": 878,
+    "word": "試合",
+    "reading": "しあい",
+    "meaning": "比赛",
+    "level": "N4"
+  },
+  {
+    "id": 879,
+    "word": "旅行",
+    "reading": "りょこう",
+    "meaning": "旅行",
+    "level": "N5"
+  },
+  {
+    "id": 880,
+    "word": "観光",
+    "reading": "かんこう",
+    "meaning": "观光",
+    "level": "N3"
+  },
+  {
+    "id": 881,
+    "word": "お祭り",
+    "reading": "おまつり",
+    "meaning": "节日/庙会",
+    "level": "N4"
+  },
+  {
+    "id": 882,
+    "word": "花火",
+    "reading": "はなび",
+    "meaning": "烟花",
+    "level": "N2"
+  },
+  {
+    "id": 883,
+    "word": "花見",
+    "reading": "はなみ",
+    "meaning": "赏花",
+    "level": "N4"
+  },
+  {
+    "id": 884,
+    "word": "紅葉",
+    "reading": "こうよう",
+    "meaning": "红叶",
+    "level": "N2"
+  },
+  {
+    "id": 885,
+    "word": "写真",
+    "reading": "しゃしん",
+    "meaning": "照片",
+    "level": "N5"
+  },
+  {
+    "id": 886,
+    "word": "絵",
+    "reading": "え",
+    "meaning": "画",
+    "level": "N5"
+  },
+  {
+    "id": 887,
+    "word": "芸術",
+    "reading": "げいじゅつ",
+    "meaning": "艺术",
+    "level": "N3"
+  },
+  {
+    "id": 888,
+    "word": "作品",
+    "reading": "さくひん",
+    "meaning": "作品",
+    "level": "N3"
+  },
+  {
+    "id": 889,
+    "word": "番組",
+    "reading": "ばんぐみ",
+    "meaning": "节目",
+    "level": "N4"
+  },
+  {
+    "id": 890,
+    "word": "チャンネル",
+    "reading": "チャンネル",
+    "meaning": "频道",
+    "level": "N1"
+  },
+  {
+    "id": 891,
+    "word": "推し",
+    "reading": "おし",
+    "meaning": "推/喜欢的偶像",
+    "level": "N3"
+  },
+  {
+    "id": 892,
+    "word": "ファン",
+    "reading": "ファン",
+    "meaning": "粉丝",
+    "level": "N1"
+  },
+  {
+    "id": 893,
+    "word": "SNS",
+    "reading": "エスエヌエス",
+    "meaning": "社交媒体",
+    "level": "N3"
+  },
+  {
+    "id": 894,
+    "word": "動画",
+    "reading": "どうが",
+    "meaning": "视频",
+    "level": "N3"
+  },
+  {
+    "id": 895,
+    "word": "配信",
+    "reading": "はいしん",
+    "meaning": "直播/发布",
+    "level": "N3"
+  },
+  {
+    "id": 896,
+    "word": "アプリ",
+    "reading": "アプリ",
+    "meaning": "APP",
+    "level": "N3"
+  },
+  {
+    "id": 897,
+    "word": "サイト",
+    "reading": "サイト",
+    "meaning": "网站",
+    "level": "N3"
+  },
+  {
+    "id": 898,
+    "word": "ネット",
+    "reading": "ネット",
+    "meaning": "网络",
+    "level": "N3"
+  },
+  {
+    "id": 899,
+    "word": "パスワード",
+    "reading": "パスワード",
+    "meaning": "密码",
+    "level": "N3"
+  },
+  {
+    "id": 900,
+    "word": "アカウント",
+    "reading": "アカウント",
+    "meaning": "账号",
+    "level": "N3"
+  },
+  {
+    "id": 901,
+    "word": "通知",
+    "reading": "つうち",
+    "meaning": "通知",
+    "level": "N2"
+  },
+  {
+    "id": 902,
+    "word": "メッセージ",
+    "reading": "メッセージ",
+    "meaning": "消息",
+    "level": "N3"
+  },
+  {
+    "id": 903,
+    "word": "メール",
+    "reading": "メール",
+    "meaning": "邮件",
+    "level": "N3"
+  },
+  {
+    "id": 904,
+    "word": "LINE",
+    "reading": "ライン",
+    "meaning": "LINE",
+    "level": "N3"
+  },
+  {
+    "id": 905,
+    "word": "電話",
+    "reading": "でんわ",
+    "meaning": "电话",
+    "level": "N5"
+  },
+  {
+    "id": 906,
+    "word": "連絡",
+    "reading": "れんらく",
+    "meaning": "联系",
+    "level": "N4"
+  },
+  {
+    "id": 907,
+    "word": "トラブル",
+    "reading": "トラブル",
+    "meaning": "问题/麻烦",
+    "level": "N1"
+  },
+  {
+    "id": 908,
+    "word": "リスク",
+    "reading": "リスク",
+    "meaning": "风险",
+    "level": "N3"
+  },
+  {
+    "id": 909,
+    "word": "メリット",
+    "reading": "メリット",
+    "meaning": "优点",
+    "level": "N3"
+  },
+  {
+    "id": 910,
+    "word": "デメリット",
+    "reading": "デメリット",
+    "meaning": "缺点",
+    "level": "N3"
+  },
+  {
+    "id": 911,
+    "word": "バランス",
+    "reading": "バランス",
+    "meaning": "平衡",
+    "level": "N3"
+  },
+  {
+    "id": 912,
+    "word": "ポイント",
+    "reading": "ポイント",
+    "meaning": "要点/积分",
+    "level": "N1"
+  },
+  {
+    "id": 913,
+    "word": "テーマ",
+    "reading": "テーマ",
+    "meaning": "主题",
+    "level": "N2"
+  },
+  {
+    "id": 914,
+    "word": "ジャンル",
+    "reading": "ジャンル",
+    "meaning": "类型",
+    "level": "N1"
+  },
+  {
+    "id": 915,
+    "word": "パターン",
+    "reading": "パターン",
+    "meaning": "模式",
+    "level": "N2"
+  },
+  {
+    "id": 916,
+    "word": "ケース",
+    "reading": "ケース",
+    "meaning": "情况/案例",
+    "level": "N3"
+  },
+  {
+    "id": 917,
+    "word": "タイプ",
+    "reading": "タイプ",
+    "meaning": "类型",
+    "level": "N4"
+  },
+  {
+    "id": 918,
+    "word": "システム",
+    "reading": "システム",
+    "meaning": "系统",
+    "level": "N1"
+  },
+  {
+    "id": 919,
+    "word": "サービス",
+    "reading": "サービス",
+    "meaning": "服务",
+    "level": "N3"
+  },
+  {
+    "id": 920,
+    "word": "マナー",
+    "reading": "マナー",
+    "meaning": "礼仪",
+    "level": "N3"
+  },
+  {
+    "id": 921,
+    "word": "ルール",
+    "reading": "ルール",
+    "meaning": "规则",
+    "level": "N3"
+  },
+  {
+    "id": 922,
+    "word": "マニュアル",
+    "reading": "マニュアル",
+    "meaning": "手册",
+    "level": "N3"
+  },
+  {
+    "id": 923,
+    "word": "コミュニケーション",
+    "reading": "コミュニケーション",
+    "meaning": "沟通",
+    "level": "N3"
+  },
+  {
+    "id": 924,
+    "word": "モチベーション",
+    "reading": "モチベーション",
+    "meaning": "动力",
+    "level": "N3"
+  },
+  {
+    "id": 925,
+    "word": "コスパ",
+    "reading": "コスパ",
+    "meaning": "性价比",
+    "level": "N3"
+  },
+  {
+    "id": 926,
+    "word": "タイパ",
+    "reading": "タイパ",
+    "meaning": "时间性价比",
+    "level": "N3"
+  },
+  {
+    "id": 927,
+    "word": "ライフスタイル",
+    "reading": "ライフスタイル",
+    "meaning": "生活方式",
+    "level": "N3"
+  },
+  {
+    "id": 928,
+    "word": "ワークライフバランス",
+    "reading": "ワークライフバランス",
+    "meaning": "工作生活平衡",
+    "level": "N3"
+  },
+  {
+    "id": 929,
+    "word": "リモートワーク",
+    "reading": "リモートワーク",
+    "meaning": "远程办公",
+    "level": "N3"
+  },
+  {
+    "id": 930,
+    "word": "フリーランス",
+    "reading": "フリーランス",
+    "meaning": "自由职业",
+    "level": "N3"
+  },
+  {
+    "id": 931,
+    "word": "キャリア",
+    "reading": "キャリア",
+    "meaning": "职业生涯",
+    "level": "N1"
+  },
+  {
+    "id": 932,
+    "word": "スキル",
+    "reading": "スキル",
+    "meaning": "技能",
+    "level": "N3"
+  },
+  {
+    "id": 933,
+    "word": "グローバル",
+    "reading": "グローバル",
+    "meaning": "全球化",
+    "level": "N3"
+  },
+  {
+    "id": 934,
+    "word": "サステナブル",
+    "reading": "サステナブル",
+    "meaning": "可持续",
+    "level": "N3"
+  },
+  {
+    "id": 935,
+    "word": "ダイバーシティ",
+    "reading": "ダイバーシティ",
+    "meaning": "多样性",
+    "level": "N3"
+  },
+  {
+    "id": 936,
+    "word": "コンテンツ",
+    "reading": "コンテンツ",
+    "meaning": "内容",
+    "level": "N3"
+  },
+  {
+    "id": 937,
+    "word": "プラットフォーム",
+    "reading": "プラットフォーム",
+    "meaning": "平台",
+    "level": "N3"
+  },
+  {
+    "id": 938,
+    "word": "フィードバック",
+    "reading": "フィードバック",
+    "meaning": "反馈",
+    "level": "N3"
+  },
+  {
+    "id": 939,
+    "word": "アップデート",
+    "reading": "アップデート",
+    "meaning": "更新",
+    "level": "N3"
+  },
+  {
+    "id": 940,
+    "word": "インストール",
+    "reading": "インストール",
+    "meaning": "安装",
+    "level": "N3"
+  },
+  {
+    "id": 941,
+    "word": "ダウンロード",
+    "reading": "ダウンロード",
+    "meaning": "下载",
+    "level": "N3"
+  },
+  {
+    "id": 942,
+    "word": "クラウド",
+    "reading": "クラウド",
+    "meaning": "云",
+    "level": "N3"
+  },
+  {
+    "id": 943,
+    "word": "AI",
+    "reading": "エーアイ",
+    "meaning": "人工智能",
+    "level": "N3"
+  },
+  {
+    "id": 944,
+    "word": "エコ",
+    "reading": "エコ",
+    "meaning": "环保",
+    "level": "N3"
+  },
+  {
+    "id": 945,
+    "word": "リサイクル",
+    "reading": "リサイクル",
+    "meaning": "回收利用",
+    "level": "N3"
+  },
+  {
+    "id": 946,
+    "word": "サブスク",
+    "reading": "サブスク",
+    "meaning": "订阅制",
+    "level": "N3"
+  },
+  {
+    "id": 947,
+    "word": "キャッシュレス",
+    "reading": "キャッシュレス",
+    "meaning": "无现金",
+    "level": "N3"
+  },
+  {
+    "id": 948,
+    "word": "QRコード",
+    "reading": "キューアールコード",
+    "meaning": "二维码",
+    "level": "N3"
+  },
+  {
+    "id": 949,
+    "word": "小麦粉",
+    "reading": "こむぎこ",
+    "meaning": "面粉",
+    "meaningEn": "wheat flour",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 950,
+    "word": "片栗粉",
+    "reading": "かたくりこ",
+    "meaning": "淀粉",
+    "meaningEn": "potato starch",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 951,
+    "word": "だし",
+    "reading": "だし",
+    "meaning": "高汤",
+    "meaningEn": "soup stock/broth",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 952,
+    "word": "納豆",
+    "reading": "なっとう",
+    "meaning": "纳豆",
+    "meaningEn": "natto",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 953,
+    "word": "漬物",
+    "reading": "つけもの",
+    "meaning": "腌菜",
+    "meaningEn": "pickles",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 954,
+    "word": "おかず",
+    "reading": "おかず",
+    "meaning": "菜/配菜",
+    "meaningEn": "side dish",
+    "topic": "食物料理",
+    "level": "N2"
+  },
+  {
+    "id": 955,
+    "word": "弁当箱",
+    "reading": "べんとうばこ",
+    "meaning": "便当盒",
+    "meaningEn": "lunch box",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 956,
+    "word": "フライパン",
+    "reading": "フライパン",
+    "meaning": "平底锅",
+    "meaningEn": "frying pan",
+    "topic": "食物料理",
+    "level": "N2"
+  },
+  {
+    "id": 957,
+    "word": "包丁",
+    "reading": "ほうちょう",
+    "meaning": "菜刀",
+    "meaningEn": "kitchen knife",
+    "topic": "食物料理",
+    "level": "N2"
+  },
+  {
+    "id": 958,
+    "word": "まな板",
+    "reading": "まないた",
+    "meaning": "砧板",
+    "meaningEn": "cutting board",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 959,
+    "word": "炊飯器",
+    "reading": "すいはんき",
+    "meaning": "电饭煲",
+    "meaningEn": "rice cooker",
+    "topic": "食物料理",
+    "level": "N3"
+  },
+  {
+    "id": 960,
+    "word": "粗大ゴミ",
+    "reading": "そだいゴミ",
+    "meaning": "大件垃圾",
+    "meaningEn": "oversized trash",
+    "topic": "生活用品",
+    "level": "N2"
+  },
+  {
+    "id": 961,
+    "word": "押入れ",
+    "reading": "おしいれ",
+    "meaning": "壁橱",
+    "meaningEn": "closet",
+    "topic": "生活用品",
+    "level": "N4"
+  },
+  {
+    "id": 962,
+    "word": "物干し",
+    "reading": "ものほし",
+    "meaning": "晾衣架",
+    "meaningEn": "drying rack",
+    "topic": "生活用品",
+    "level": "N3"
+  },
+  {
+    "id": 963,
+    "word": "ハンガー",
+    "reading": "ハンガー",
+    "meaning": "衣架",
+    "meaningEn": "hanger",
+    "topic": "生活用品",
+    "level": "N1"
+  },
+  {
+    "id": 964,
+    "word": "蛇口",
+    "reading": "じゃぐち",
+    "meaning": "水龙头",
+    "meaningEn": "faucet",
+    "topic": "生活用品",
+    "level": "N2"
+  },
+  {
+    "id": 965,
+    "word": "コンセント",
+    "reading": "コンセント",
+    "meaning": "插座",
+    "meaningEn": "outlet/socket",
+    "topic": "生活用品",
+    "level": "N2"
+  },
+  {
+    "id": 966,
+    "word": "スイッチ",
+    "reading": "スイッチ",
+    "meaning": "开关",
+    "meaningEn": "switch",
+    "topic": "生活用品",
+    "level": "N3"
+  },
+  {
+    "id": 967,
+    "word": "照明",
+    "reading": "しょうめい",
+    "meaning": "照明",
+    "meaningEn": "lighting",
+    "topic": "生活用品",
+    "level": "N3"
+  },
+  {
+    "id": 968,
+    "word": "シンク",
+    "reading": "シンク",
+    "meaning": "水槽",
+    "meaningEn": "sink",
+    "topic": "生活用品",
+    "level": "N3"
+  },
+  {
+    "id": 969,
+    "word": "レジ",
+    "reading": "レジ",
+    "meaning": "收银台",
+    "meaningEn": "register/checkout",
+    "topic": "购物消费",
+    "level": "N4"
+  },
+  {
+    "id": 970,
+    "word": "半額",
+    "reading": "はんがく",
+    "meaning": "半价",
+    "meaningEn": "half price",
+    "topic": "购物消费",
+    "level": "N3"
+  },
+  {
+    "id": 971,
+    "word": "タイムセール",
+    "reading": "タイムセール",
+    "meaning": "限时特卖",
+    "meaningEn": "time sale",
+    "topic": "购物消费",
+    "level": "N3"
+  },
+  {
+    "id": 972,
+    "word": "まとめ買い",
+    "reading": "まとめがい",
+    "meaning": "批量购买",
+    "meaningEn": "bulk buying",
+    "topic": "购物消费",
+    "level": "N3"
+  },
+  {
+    "id": 973,
+    "word": "日用品",
+    "reading": "にちようひん",
+    "meaning": "日用品",
+    "meaningEn": "daily necessities",
+    "topic": "购物消费",
+    "level": "N2"
+  },
+  {
+    "id": 974,
+    "word": "頭痛",
+    "reading": "ずつう",
+    "meaning": "头痛",
+    "meaningEn": "headache",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 975,
+    "word": "腹痛",
+    "reading": "ふくつう",
+    "meaning": "肚子痛",
+    "meaningEn": "stomachache",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 976,
+    "word": "処方箋",
+    "reading": "しょほうせん",
+    "meaning": "处方",
+    "meaningEn": "prescription",
+    "topic": "健康医疗",
+    "level": "N2"
+  },
+  {
+    "id": 977,
+    "word": "保険証",
+    "reading": "ほけんしょう",
+    "meaning": "保险证",
+    "meaningEn": "insurance card",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 978,
+    "word": "診察",
+    "reading": "しんさつ",
+    "meaning": "看诊",
+    "meaningEn": "medical examination",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 979,
+    "word": "歯医者",
+    "reading": "はいしゃ",
+    "meaning": "牙医",
+    "meaningEn": "dentist",
+    "topic": "健康医疗",
+    "level": "N4"
+  },
+  {
+    "id": 980,
+    "word": "眼科",
+    "reading": "がんか",
+    "meaning": "眼科",
+    "meaningEn": "ophthalmology",
+    "topic": "健康医疗",
+    "level": "N1"
+  },
+  {
+    "id": 981,
+    "word": "皮膚科",
+    "reading": "ひふか",
+    "meaning": "皮肤科",
+    "meaningEn": "dermatology",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 982,
+    "word": "花粉症",
+    "reading": "かふんしょう",
+    "meaning": "花粉症",
+    "meaningEn": "hay fever",
+    "topic": "健康医疗",
+    "level": "N2"
+  },
+  {
+    "id": 983,
+    "word": "体温計",
+    "reading": "たいおんけい",
+    "meaning": "体温计",
+    "meaningEn": "thermometer",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 984,
+    "word": "絆創膏",
+    "reading": "ばんそうこう",
+    "meaning": "创可贴",
+    "meaningEn": "band-aid",
+    "topic": "健康医疗",
+    "level": "N3"
+  },
+  {
+    "id": 985,
+    "word": "消毒",
+    "reading": "しょうどく",
+    "meaning": "消毒",
+    "meaningEn": "disinfection",
+    "topic": "健康医疗",
+    "level": "N2"
+  },
+  {
+    "id": 986,
+    "word": "時刻表",
+    "reading": "じこくひょう",
+    "meaning": "时刻表",
+    "meaningEn": "timetable",
+    "topic": "交通出行",
+    "level": "N1"
+  },
+  {
+    "id": 987,
+    "word": "乗り遅れ",
+    "reading": "のりおくれ",
+    "meaning": "没赶上车",
+    "meaningEn": "missed the train",
+    "topic": "交通出行",
+    "level": "N3"
+  },
+  {
+    "id": 988,
+    "word": "有給",
+    "reading": "ゆうきゅう",
+    "meaning": "带薪假",
+    "meaningEn": "paid leave",
+    "topic": "工作职场",
+    "level": "N3"
+  },
+  {
+    "id": 989,
+    "word": "シフト",
+    "reading": "シフト",
+    "meaning": "排班",
+    "meaningEn": "shift",
+    "topic": "工作职场",
+    "level": "N3"
+  },
+  {
+    "id": 990,
+    "word": "承認",
+    "reading": "しょうにん",
+    "meaning": "批准/审批",
+    "meaningEn": "approval",
+    "topic": "工作职场",
+    "level": "N3"
+  },
+  {
+    "id": 991,
+    "word": "申請",
+    "reading": "しんせい",
+    "meaning": "申请",
+    "meaningEn": "application",
+    "topic": "工作职场",
+    "level": "N2"
+  },
+  {
+    "id": 992,
+    "word": "振込",
+    "reading": "ふりこみ",
+    "meaning": "转账",
+    "meaningEn": "bank transfer",
+    "topic": "行政手续",
+    "level": "N3"
+  },
+  {
+    "id": 993,
+    "word": "暗証番号",
+    "reading": "あんしょうばんごう",
+    "meaning": "密码",
+    "meaningEn": "PIN number",
+    "topic": "行政手续",
+    "level": "N3"
+  },
+  {
+    "id": 994,
+    "word": "届出",
+    "reading": "とどけで",
+    "meaning": "申报/申请书",
+    "meaningEn": "notification/report",
+    "topic": "行政手续",
+    "level": "N3"
+  },
+  {
+    "id": 995,
+    "word": "身分証",
+    "reading": "みぶんしょう",
+    "meaning": "身份证",
+    "meaningEn": "ID card",
+    "topic": "行政手续",
+    "level": "N3"
+  },
+  {
+    "id": 996,
+    "word": "住民票",
+    "reading": "じゅうみんひょう",
+    "meaning": "住民票",
+    "meaningEn": "residence certificate",
+    "topic": "行政手续",
+    "level": "N2"
+  },
+  {
+    "id": 997,
+    "word": "転出届",
+    "reading": "てんしゅつとどけ",
+    "meaning": "迁出申报",
+    "meaningEn": "moving-out notice",
+    "topic": "行政手续",
+    "level": "N2"
+  },
+  {
+    "id": 998,
+    "word": "転入届",
+    "reading": "てんにゅうとどけ",
+    "meaning": "迁入申报",
+    "meaningEn": "moving-in notice",
+    "topic": "行政手续",
+    "level": "N2"
+  },
+  {
+    "id": 999,
+    "word": "確定申告",
+    "reading": "かくていしんこく",
+    "meaning": "报税",
+    "meaningEn": "tax return",
+    "topic": "行政手续",
+    "level": "N2"
+  },
+  {
+    "id": 1000,
+    "word": "源泉徴収",
+    "reading": "げんせんちょうしゅう",
+    "meaning": "代扣代缴",
+    "meaningEn": "tax withholding",
+    "topic": "行政手续",
+    "level": "N2"
+  },
+  {
+    "id": 1001,
+    "word": "マイナンバー",
+    "reading": "マイナンバー",
+    "meaning": "个人编号",
+    "meaningEn": "My Number",
+    "topic": "行政手续",
+    "level": "N3"
+  },
+  {
+    "id": 1002,
+    "word": "梅雨",
+    "reading": "つゆ",
+    "meaning": "梅雨季",
+    "meaningEn": "rainy season",
+    "topic": "天气自然",
+    "level": "N3"
+  },
+  {
+    "id": 1003,
+    "word": "紫外線",
+    "reading": "しがいせん",
+    "meaning": "紫外线",
+    "meaningEn": "UV rays",
+    "topic": "天气自然",
+    "level": "N2"
+  },
+  {
+    "id": 1004,
+    "word": "日焼け",
+    "reading": "ひやけ",
+    "meaning": "晒伤/晒黑",
+    "meaningEn": "sunburn",
+    "topic": "天气自然",
+    "level": "N1"
+  },
+  {
+    "id": 1005,
+    "word": "猛暑",
+    "reading": "もうしょ",
+    "meaning": "酷暑",
+    "meaningEn": "extreme heat",
+    "topic": "天气自然",
+    "level": "N3"
+  },
+  {
+    "id": 1006,
+    "word": "真冬",
+    "reading": "まふゆ",
+    "meaning": "隆冬",
+    "meaningEn": "midwinter",
+    "topic": "天气自然",
+    "level": "N3"
+  },
+  {
+    "id": 1007,
+    "word": "充電",
+    "reading": "じゅうでん",
+    "meaning": "充电",
+    "meaningEn": "charging",
+    "topic": "通信数码",
+    "level": "N3"
+  },
+  {
+    "id": 1008,
+    "word": "電波",
+    "reading": "でんぱ",
+    "meaning": "信号",
+    "meaningEn": "radio wave/signal",
+    "topic": "通信数码",
+    "level": "N2"
+  },
+  {
+    "id": 1009,
+    "word": "圏外",
+    "reading": "けんがい",
+    "meaning": "没信号",
+    "meaningEn": "out of range",
+    "topic": "通信数码",
+    "level": "N3"
+  },
+  {
+    "id": 1010,
+    "word": "着信",
+    "reading": "ちゃくしん",
+    "meaning": "来电",
+    "meaningEn": "incoming call",
+    "topic": "通信数码",
+    "level": "N3"
+  },
+  {
+    "id": 1011,
+    "word": "不在着信",
+    "reading": "ふざいちゃくしん",
+    "meaning": "未接来电",
+    "meaningEn": "missed call",
+    "topic": "通信数码",
+    "level": "N3"
+  },
+  {
+    "id": 1012,
+    "word": "敷金",
+    "reading": "しききん",
+    "meaning": "押金",
+    "meaningEn": "security deposit",
+    "topic": "住房租房",
+    "level": "N3"
+  },
+  {
+    "id": 1013,
+    "word": "礼金",
+    "reading": "れいきん",
+    "meaning": "礼金",
+    "meaningEn": "key money",
+    "topic": "住房租房",
+    "level": "N3"
+  },
+  {
+    "id": 1014,
+    "word": "仲介",
+    "reading": "ちゅうかい",
+    "meaning": "中介",
+    "meaningEn": "agent/broker",
+    "topic": "住房租房",
+    "level": "N3"
+  },
+  {
+    "id": 1015,
+    "word": "管理費",
+    "reading": "かんりひ",
+    "meaning": "管理费",
+    "meaningEn": "maintenance fee",
+    "topic": "住房租房",
+    "level": "N3"
+  },
+  {
+    "id": 1016,
+    "word": "更新料",
+    "reading": "こうしんりょう",
+    "meaning": "续约费",
+    "meaningEn": "renewal fee",
+    "topic": "住房租房",
+    "level": "N1"
+  },
+  {
+    "id": 1017,
+    "word": "退去",
+    "reading": "たいきょ",
+    "meaning": "退房/搬出",
+    "meaningEn": "moving out",
+    "topic": "住房租房",
+    "level": "N3"
+  },
+  {
+    "id": 1018,
+    "word": "授業参観",
+    "reading": "じゅぎょうさんかん",
+    "meaning": "教学观摩",
+    "meaningEn": "class observation",
+    "topic": "学校教育",
+    "level": "N3"
+  },
+  {
+    "id": 1019,
+    "word": "保護者",
+    "reading": "ほごしゃ",
+    "meaning": "监护人",
+    "meaningEn": "guardian",
+    "topic": "学校教育",
+    "level": "N3"
+  },
+  {
+    "id": 1020,
+    "word": "学童",
+    "reading": "がくどう",
+    "meaning": "课后托管",
+    "meaningEn": "after-school care",
+    "topic": "学校教育",
+    "level": "N3"
+  },
+  {
+    "id": 1021,
+    "word": "首相",
+    "reading": "しゅしょう",
+    "meaning": "首相",
+    "meaningEn": "prime minister",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1022,
+    "word": "大臣",
+    "reading": "だいじん",
+    "meaning": "大臣",
+    "meaningEn": "minister",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1023,
+    "word": "被害",
+    "reading": "ひがい",
+    "meaning": "受灾/损害",
+    "meaningEn": "damage",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1024,
+    "word": "復旧",
+    "reading": "ふっきゅう",
+    "meaning": "恢复",
+    "meaningEn": "restoration",
+    "topic": "社会新闻",
+    "level": "N1"
+  },
+  {
+    "id": 1025,
+    "word": "避難",
+    "reading": "ひなん",
+    "meaning": "避难",
+    "meaningEn": "evacuation",
+    "topic": "社会新闻",
+    "level": "N1"
+  },
+  {
+    "id": 1026,
+    "word": "感染",
+    "reading": "かんせん",
+    "meaning": "感染",
+    "meaningEn": "infection",
+    "topic": "社会新闻",
+    "level": "N1"
+  },
+  {
+    "id": 1027,
+    "word": "増加",
+    "reading": "ぞうか",
+    "meaning": "增加",
+    "meaningEn": "increase",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1028,
+    "word": "減少",
+    "reading": "げんしょう",
+    "meaning": "减少",
+    "meaningEn": "decrease",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1029,
+    "word": "物価",
+    "reading": "ぶっか",
+    "meaning": "物价",
+    "meaningEn": "prices",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1030,
+    "word": "輸出",
+    "reading": "ゆしゅつ",
+    "meaning": "出口",
+    "meaningEn": "export",
+    "topic": "社会新闻",
+    "level": "N4"
+  },
+  {
+    "id": 1031,
+    "word": "輸入",
+    "reading": "ゆにゅう",
+    "meaning": "进口",
+    "meaningEn": "import",
+    "topic": "社会新闻",
+    "level": "N4"
+  },
+  {
+    "id": 1032,
+    "word": "訪問",
+    "reading": "ほうもん",
+    "meaning": "访问",
+    "meaningEn": "visit",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1033,
+    "word": "協力",
+    "reading": "きょうりょく",
+    "meaning": "合作",
+    "meaningEn": "cooperation",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1034,
+    "word": "条約",
+    "reading": "じょうやく",
+    "meaning": "条约",
+    "meaningEn": "treaty",
+    "topic": "社会新闻",
+    "level": "N1"
+  },
+  {
+    "id": 1035,
+    "word": "噴火",
+    "reading": "ふんか",
+    "meaning": "火山喷发",
+    "meaningEn": "eruption",
+    "topic": "社会新闻",
+    "level": "N2"
+  },
+  {
+    "id": 1036,
+    "word": "停電",
+    "reading": "ていでん",
+    "meaning": "停电",
+    "meaningEn": "power outage",
+    "topic": "社会新闻",
+    "level": "N3"
+  },
+  {
+    "id": 1037,
+    "word": "断水",
+    "reading": "だんすい",
+    "meaning": "停水",
+    "meaningEn": "water outage",
+    "topic": "社会新闻",
+    "level": "N2"
+  }
+]

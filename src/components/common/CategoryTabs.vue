@@ -1,15 +1,16 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useAppStore } from '@/stores/app'
 import { useLang } from '@/i18n'
 
 const store = useAppStore()
 const { t } = useLang()
 
-const categories = [
-  { key: 'sentences', labelKey: 'catSent', count: '1680' },
-  { key: 'nouns', labelKey: 'catNouns', count: '948' },
-  { key: 'kana', labelKey: 'catKana' },
-] as const
+const categories = computed(() => [
+  { key: 'sentences', labelKey: 'catSent', count: String(store.data.sentences.length) },
+  { key: 'nouns', labelKey: 'catNouns', count: String(store.data.nouns.length) },
+  { key: 'kana', labelKey: 'catKana', count: '' },
+])
 </script>
 
 <template>
@@ -39,7 +40,7 @@ const categories = [
         <span class="flex items-baseline gap-2 whitespace-nowrap">
           <span class="text-[13px] font-semibold tracking-wide">{{ t(cat.labelKey) }}</span>
           <span
-            v-if="'count' in cat"
+            v-if="cat.count"
             class="category-tab-count text-[11px] font-medium tabular-nums"
           >{{ cat.count }}</span>
         </span>

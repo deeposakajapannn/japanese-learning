@@ -2,8 +2,8 @@
  * 学习里程碑：听列表隐藏（遗留数据）、练习·认识、掌握测验。
  * 正式掌握测验的抽题范围以 `getQuizQueueKeys()`（`learning/quizQueue.ts`）为准，不得从全量词表抽题。
  */
-import { ref } from 'vue'
 import { makeItemKey } from './itemKey'
+import { milestoneStateTick } from './milestoneTick'
 import { listenDismissClear, isListenDismissed, listenDismissTick } from '@/composables/useListenListDismiss'
 import { recordItemSeen, delayItem } from '@/composables/useSpacedRepetition'
 import { useFirebase } from '@/composables/useFirebase'
@@ -14,8 +14,7 @@ const { debouncedSync } = useFirebase()
 const STORAGE_PRACTICE_RECOGNIZED = 'jp_practice_recognized'
 const STORAGE_MASTERY_QUIZ = 'jp_mastery_quiz_passed'
 
-/** 练习认识 / 掌握测验等标志变更时，供列表等订阅刷新（听列表仍用 listenDismissTick） */
-export const milestoneStateTick = ref(0)
+export { milestoneStateTick }
 
 function readTrueMap(key: string): Record<string, true> {
   try {
