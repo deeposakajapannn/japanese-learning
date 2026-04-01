@@ -6,6 +6,8 @@ import { useQuiz } from '../../composables/useQuiz'
 import { getActiveItems } from '../../composables/useSpacedRepetition'
 import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
 import { useVoiceRecorder } from '../../composables/useVoiceRecorder'
+import { useJaSpeechRecognition } from '../../composables/useJaSpeechRecognition'
+import { normalizeJpSpeech } from '@/utils/jpSpeechMatch'
 import { useLang } from '@/i18n'
 import QuizCard from '../quiz/QuizCard.vue'
 import QuizActions from '../quiz/QuizActions.vue'
@@ -93,15 +95,60 @@ const progressText = computed(() => {
 const hasQuizItems = computed(() => quizItems.value.length > 0)
 
 const { recording, audioUrl, startRecording, stopRecording, clearRecording } = useVoiceRecorder()
+const {
+  supported: sttSupported,
+  listening: sttListening,
+  start: startStt,
+  stopListening: stopStt,
+} = useJaSpeechRecognition()
+
 const playbackAudio = ref<HTMLAudioElement | null>(null)
 const playingBack = ref(false)
+const sttResult = ref('')
+const sttScore = ref<number | null>(null)
+
+/** 最长公共子序列长度 */
+function lcsLen(a: string, b: string): number {
+  const m = a.length, n = b.length
+  if (!m || !n) return 0
+  const prev = new Uint16Array(n + 1)
+  const curr = new Uint16Array(n + 1)
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      curr[j] = a[i - 1] === b[j - 1] ? prev[j - 1] + 1 : Math.max(prev[j], curr[j - 1])
+    }
+    prev.set(curr)
+  }
+  return curr[n]
+}
+
+function calcScore(transcript: string, item: { word: string; reading: string }): number {
+  const t = normalizeJpSpeech(transcript)
+  if (!t) return 0
+  const w = normalizeJpSpeech(item.word)
+  const r = normalizeJpSpeech(item.reading)
+  const scoreW = w.length ? lcsLen(t, w) / Math.max(t.length, w.length) : 0
+  const scoreR = r.length ? lcsLen(t, r) / Math.max(t.length, r.length) : 0
+  return Math.round(Math.max(scoreW, scoreR) * 100)
+}
+
+function onSttDone(text: string) {
+  sttResult.value = text
+  if (currentItem.value && text) {
+    sttScore.value = calcScore(text, currentItem.value)
+  }
+}
 
 function onRecordDown() {
+  sttResult.value = ''
+  sttScore.value = null
   startRecording()
+  if (sttSupported.value) startStt(onSttDone)
 }
 
 function onRecordUp() {
   if (recording.value) stopRecording()
+  if (sttListening.value) stopStt()
 }
 
 function playRecording() {
@@ -116,11 +163,13 @@ function playRecording() {
   playbackAudio.value.play()
 }
 
-// 切题时清除录音
+// 切题时清除录音和评分
 watch(quizIndex, () => {
   clearRecording()
   if (playbackAudio.value) playbackAudio.value.pause()
   playingBack.value = false
+  sttResult.value = ''
+  sttScore.value = null
 })
 
 // Auto-play audio when entering audio mode question
@@ -240,6 +289,7 @@ watch([quizIndex, quizMode], () => {
       >
         {{ recording ? t('sttListening') : t('sttHoldToRecord') }}
       </button>
+      <span class="shrink-0 text-[10px] theme-muted opacity-60 leading-tight">{{ t('sttChromeTip') }}</span>
       <button
         v-if="audioUrl"
         type="button"
@@ -252,6 +302,32 @@ watch([quizIndex, quizMode], () => {
         <svg v-if="playingBack" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
         <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
       </button>
+    </div>
+    <!-- 语音评分结果 -->
+    <div
+      v-if="sttScore !== null"
+      class="w-full max-w-[400px] rounded-xl px-4 py-3 theme-surface shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+    >
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="text-xs theme-muted">{{ t('sttHeard') }}</span>
+        <span
+          class="text-lg font-bold"
+          :class="sttScore >= 80 ? 'text-[#5b8a72]' : sttScore >= 50 ? 'text-[#b9793b]' : 'text-[#cf5a4a]'"
+        >
+          {{ sttScore }}分
+        </span>
+      </div>
+      <div class="text-sm theme-text leading-relaxed">{{ sttResult || '—' }}</div>
+      <div
+        class="mt-2 h-2 rounded-full overflow-hidden"
+        style="background: var(--bg-soft, #eee)"
+      >
+        <div
+          class="h-full rounded-full transition-all duration-500"
+          :class="sttScore >= 80 ? 'bg-[#5b8a72]' : sttScore >= 50 ? 'bg-[#b9793b]' : 'bg-[#cf5a4a]'"
+          :style="{ width: sttScore + '%' }"
+        />
+      </div>
     </div>
 
     <button
