@@ -15,7 +15,7 @@ function handleSpeak() {
 
 <template>
   <button
-    class="shrink-0 w-10 h-10 border-none rounded-full bg-[#fdf0ed] text-[#e8735a] text-lg cursor-pointer transition-all flex items-center justify-center active:bg-[#e8735a] active:text-white"
+    class="speak-btn shrink-0 w-10 h-10 border-none rounded-full theme-soft text-[#e8735a] text-lg cursor-pointer transition-all flex items-center justify-center"
     @click.stop="handleSpeak"
   >
     🔊

@@ -37,7 +37,7 @@ const progressText = computed(() => {
     />
     <button
       v-if="!isAnswered"
-      class="w-full max-w-[400px] py-3 rounded-[10px] border-2 border-[#e8735a] bg-[#e8735a] text-white text-base font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
+      class="w-full max-w-[400px] py-3 rounded-[10px] text-base font-semibold cursor-pointer transition-all btn-grad-primary"
       @click="showAnswer"
     >
       显示答案

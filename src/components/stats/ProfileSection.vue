@@ -20,7 +20,7 @@ function handleLogout() {
   <div v-if="!userId" class="theme-card p-4 mt-4 text-center">
     <div class="text-sm text-[#8a7040] mb-2">{{ t('syncBanner') }}</div>
     <button
-      class="px-5 py-2 rounded-full bg-[#e8735a] text-white text-sm font-semibold cursor-pointer hover:bg-[#c9563f] transition-colors"
+      class="px-5 py-2 rounded-full text-white text-sm font-semibold cursor-pointer transition-colors btn-grad-primary btn-grad-primary--borderless"
       @click="emit('login')"
     >{{ t('registerOrLogin') }}</button>
   </div>

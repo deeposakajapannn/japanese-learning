@@ -205,7 +205,7 @@ const progressText = computed(() => {
           type="button"
           class="w-full min-h-[48px] py-3 px-3 rounded-[10px] text-sm font-medium transition-all border-2 select-none"
           :class="sttListening
-            ? 'border-[#e8735a] bg-[#e8735a] text-white scale-[1.02]'
+            ? 'btn-grad-primary btn-grad-primary--pressed text-white scale-[1.02]'
             : 'theme-surface theme-muted hover:border-[#e8735a]'"
           @pointerdown.prevent="onRecordDown"
           @pointerup.prevent="onRecordUp"
@@ -235,7 +235,7 @@ const progressText = computed(() => {
         v-if="isAnswered"
         type="button"
         class="py-3 px-5 rounded-[10px] border-2 flex items-center justify-center cursor-pointer transition-all"
-        :class="looping ? 'border-[#e8735a] bg-[#e8735a] text-white' : 'border-[#e8e2dc] theme-surface hover:border-[#e8735a]'"
+        :class="looping ? 'btn-grad-primary text-white' : 'border-[#e8e2dc] theme-surface hover:border-[#e8735a]'"
         @click="toggleLoop"
       >
         <svg v-if="looping" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
@@ -243,7 +243,7 @@ const progressText = computed(() => {
       </button>
       <button
         type="button"
-        class="flex-1 py-3 rounded-[10px] border-2 border-[#e8735a] bg-[#e8735a] text-white text-base font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
+        class="flex-1 py-3 rounded-[10px] text-base font-semibold cursor-pointer transition-all btn-grad-primary"
         @click="handleNext"
       >
         {{ t('testNext') }}

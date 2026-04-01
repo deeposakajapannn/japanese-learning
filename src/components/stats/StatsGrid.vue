@@ -103,8 +103,9 @@ const studyStatus = computed(() => {
     </div>
 
     <div class="rounded-xl p-4 text-center text-white stat-card stat-card--cumulative">
-      <div class="text-xl font-bold leading-snug">{{ cumulativeListenHours }}{{ t('hour') }}</div>
-      <div class="text-xl font-bold leading-snug">{{ cumulativePractice }}</div>
+      <div class="text-xl font-bold leading-snug tabular-nums">
+        {{ cumulativeListenHours }}{{ t('hour') }} / {{ cumulativePractice }}
+      </div>
       <div class="text-xs opacity-90 mt-1">{{ t('cumulativeStats') }}</div>
     </div>
 

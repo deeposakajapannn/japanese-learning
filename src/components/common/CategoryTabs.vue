@@ -15,20 +15,35 @@ const categories = [
 <template>
   <div
     v-if="store.currentMode !== 'stats' && store.currentMode !== 'test'"
-    class="flex gap-2 px-4 pt-1 pb-3 flex-wrap md:px-10"
+    class="w-full px-4 pt-2 pb-4 md:px-10"
+    :class="store.currentMode === 'practice' ? 'md:max-w-[800px] md:mx-auto' : ''"
   >
-    <button
-      v-for="cat in categories"
-      :key="cat.key"
-      class="px-4 py-[7px] border-2 rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
-      :class="
-        store.currentCat === cat.key
-          ? 'theme-tab-active'
-          : 'border-[#e8e2dc] theme-surface theme-muted'
-      "
-      @click="store.switchCat(cat.key)"
+    <div
+      role="tablist"
+      class="category-tab-rail inline-flex max-w-full flex-wrap items-center gap-0.5 rounded-2xl p-1"
     >
-      {{ t(cat.labelKey) + ('count' in cat ? ' (' + cat.count + ')' : '') }}
-    </button>
+      <button
+        v-for="cat in categories"
+        :key="cat.key"
+        type="button"
+        role="tab"
+        :aria-selected="store.currentCat === cat.key"
+        class="category-tab-btn min-h-[40px] rounded-[11px] px-4 py-2 text-left transition-all duration-200 outline-none cursor-pointer focus-visible:ring-2 focus-visible:ring-[var(--primary)]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+        :class="
+          store.currentCat === cat.key
+            ? 'category-tab-btn--active'
+            : 'category-tab-btn--inactive'
+        "
+        @click="store.switchCat(cat.key)"
+      >
+        <span class="flex items-baseline gap-2 whitespace-nowrap">
+          <span class="text-[13px] font-semibold tracking-wide">{{ t(cat.labelKey) }}</span>
+          <span
+            v-if="'count' in cat"
+            class="category-tab-count text-[11px] font-medium tabular-nums"
+          >{{ cat.count }}</span>
+        </span>
+      </button>
+    </div>
   </div>
 </template>

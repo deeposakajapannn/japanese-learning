@@ -32,7 +32,7 @@ function onInputConfirm() {
 </script>
 
 <template>
-  <div class="flex items-center justify-center gap-3 py-4">
+  <div class="flex items-center justify-center gap-3 px-4 py-4 md:px-10">
     <button
       class="px-4 py-2 rounded-full border-2 border-[#e8e2dc] theme-surface theme-muted text-sm font-semibold cursor-pointer transition-all disabled:opacity-40 disabled:cursor-not-allowed"
       style="box-shadow: 0 2px 8px rgba(0,0,0,0.06)"
@@ -53,8 +53,7 @@ function onInputConfirm() {
       <span>/ {{ totalPages }}</span>
     </span>
     <button
-      class="px-4 py-2 rounded-full border-2 border-[#e8735a] bg-[#e8735a] text-white text-sm font-semibold cursor-pointer transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-      style="box-shadow: 0 4px 16px rgba(232,115,90,0.3)"
+      class="px-4 py-2 rounded-full text-sm font-semibold cursor-pointer transition-all btn-grad-primary disabled:opacity-40 disabled:cursor-not-allowed"
       :disabled="currentPage >= totalPages"
       @click="emit('page-change', 1)"
     >

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, watch, ref } from 'vue'
+import { useMenuAnchor } from '@/composables/useMenuAnchor'
 import { useAppStore } from '../../stores/app'
 import { useQuiz } from '../../composables/useQuiz'
 import { getActiveItems } from '../../composables/useSpacedRepetition'
@@ -32,6 +33,19 @@ const {
 const levelDropdownOpen = ref(false)
 const LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1']
 
+const levelTriggerRef = ref<HTMLElement | null>(null)
+const LEVEL_DROPDOWN_Z_BACKDROP = 450
+const levelMenuStyle = useMenuAnchor(levelDropdownOpen, levelTriggerRef, { minWidth: 100 })
+
+const levelPanelStyle = computed(() => ({
+  ...levelMenuStyle.value,
+  borderColor: 'var(--border)',
+}))
+
+function closeLevelDropdown() {
+  levelDropdownOpen.value = false
+}
+
 function toggleLevel(lv: string) {
   const cur = [...quizLevels.value]
   const idx = cur.indexOf(lv)
@@ -42,7 +56,7 @@ function toggleLevel(lv: string) {
 
 function clearLevels() {
   setQuizLevels([])
-  levelDropdownOpen.value = false
+  closeLevelDropdown()
 }
 
 const showLevelFilter = computed(() => store.currentCat === 'sentences' || store.currentCat === 'mix')
@@ -113,46 +127,60 @@ watch([quizIndex, quizMode], () => {
 
 <template>
   <!-- 级别筛选（句子）：紧贴分类 tab 下方 -->
-  <div v-if="showLevelFilter" class="px-4 pb-2 relative">
+  <div v-if="showLevelFilter" class="pb-2 relative">
     <button
-      class="px-3 py-1.5 rounded-full text-[13px] font-medium border transition-all cursor-pointer whitespace-nowrap"
-      :class="quizLevels.length > 0
-        ? 'bg-[#e8735a] text-white border-[#e8735a] shadow-[0_2px_8px_rgba(232,115,90,0.3)]'
-        : 'theme-surface theme-muted border-[#e8e2dc] hover:border-[#e8735a]'"
+      ref="levelTriggerRef"
+      type="button"
+      class="filter-chip px-3 py-1.5 rounded-full text-[13px] font-medium cursor-pointer whitespace-nowrap"
+      :class="quizLevels.length > 0 ? 'filter-chip--on' : 'filter-chip--off'"
       @click="levelDropdownOpen = !levelDropdownOpen"
     >
       {{ quizLevels.length > 0 ? quizLevels.join(' ') : t('levelSelect') }}
       <svg class="inline-block ml-1 -mr-0.5" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </button>
-    <div
-      v-if="levelDropdownOpen"
-      class="absolute left-4 top-full mt-1 z-[300] min-w-[100px] rounded-xl theme-surface shadow-[0_8px_32px_rgba(0,0,0,0.15)] border py-1"
-      style="border-color: var(--border)"
-    >
-      <button
-        class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10"
-        :class="quizLevels.length === 0 ? 'text-[#e8735a]' : 'theme-text'"
-        @click="clearLevels()"
-      >
-        {{ t('filterNone') }}
-      </button>
-      <button
-        v-for="lv in LEVELS"
-        :key="lv"
-        class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10 flex items-center gap-2"
-        @click="toggleLevel(lv)"
-      >
-        <svg v-if="quizLevels.includes(lv)" class="shrink-0 text-[#e8735a]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span v-else class="shrink-0 w-[14px]" />
-        <span :class="quizLevels.includes(lv) ? 'text-[#e8735a]' : ''">{{ lv }}</span>
-      </button>
-    </div>
-    <teleport to="body">
-      <div v-if="levelDropdownOpen" class="fixed inset-0 z-[299]" @click="levelDropdownOpen = false" />
-    </teleport>
+    <Teleport to="body">
+      <template v-if="levelDropdownOpen">
+        <div
+          class="fixed inset-0"
+          :style="{
+            position: 'fixed',
+            inset: 0,
+            zIndex: LEVEL_DROPDOWN_Z_BACKDROP,
+            background: 'var(--overlay-scrim)',
+          }"
+          aria-hidden="true"
+          @pointerdown.prevent="closeLevelDropdown"
+        />
+        <div
+          class="rounded-xl theme-surface shadow-[0_8px_32px_rgba(0,0,0,0.15)] border py-1"
+          :style="levelPanelStyle"
+          @pointerdown.stop
+        >
+          <button
+            type="button"
+            class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10"
+            :class="quizLevels.length === 0 ? 'text-[#e8735a]' : 'theme-text'"
+            @click="clearLevels()"
+          >
+            {{ t('filterNone') }}
+          </button>
+          <button
+            v-for="lv in LEVELS"
+            :key="lv"
+            type="button"
+            class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10 flex items-center gap-2"
+            @click="toggleLevel(lv)"
+          >
+            <svg v-if="quizLevels.includes(lv)" class="shrink-0 text-[#e8735a]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span v-else class="shrink-0 w-[14px]" />
+            <span :class="quizLevels.includes(lv) ? 'text-[#e8735a]' : ''">{{ lv }}</span>
+          </button>
+        </div>
+      </template>
+    </Teleport>
   </div>
 
-  <div class="flex flex-col items-center gap-4 px-4 py-6">
+  <div class="flex flex-col items-center gap-4 py-6">
     <!-- 学习过 / 全新的（内部仍用 heard | new 存 localStorage） -->
     <div class="flex gap-2 w-full max-w-[400px]">
       <button
@@ -160,7 +188,7 @@ watch([quizIndex, quizMode], () => {
         :key="s"
         class="flex-1 py-2 rounded-lg text-sm font-medium transition-all border-2"
         :class="quizScope === s
-          ? 'border-[#5b8a72] bg-[#5b8a72] text-white'
+          ? 'btn-grad-accent text-white'
           : 'theme-surface theme-muted hover:border-[#5b8a72]'"
         @click="setQuizScope(s)"
       >
@@ -175,7 +203,7 @@ watch([quizIndex, quizMode], () => {
         :key="m"
         class="flex-1 py-2 rounded-lg text-sm font-medium transition-all border-2"
         :class="quizMode === m
-          ? 'border-[#e8735a] bg-[#e8735a] text-white'
+          ? 'btn-grad-primary text-white'
           : 'theme-surface theme-muted hover:border-[#e8735a]'"
         @click="setQuizMode(m)"
       >
@@ -197,7 +225,7 @@ watch([quizIndex, quizMode], () => {
         type="button"
         class="flex-1 min-h-[44px] py-2 px-3 rounded-[10px] text-sm font-medium transition-all border-2 select-none"
         :class="recording
-          ? 'border-[#e8735a] bg-[#e8735a] text-white scale-[1.02]'
+          ? 'btn-grad-primary btn-grad-primary--pressed text-white scale-[1.02]'
           : 'theme-surface theme-muted hover:border-[#e8735a]'"
         @pointerdown.prevent="onRecordDown"
         @pointerup.prevent="onRecordUp"
@@ -218,7 +246,7 @@ watch([quizIndex, quizMode], () => {
 
     <button
       v-if="hasQuizItems && !isAnswered"
-      class="w-full max-w-[400px] py-3 rounded-[10px] border-2 border-[#e8735a] bg-[#e8735a] text-white text-base font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
+      class="w-full max-w-[400px] py-3 rounded-[10px] text-base font-semibold cursor-pointer transition-all btn-grad-primary"
       @click="showAnswer"
     >
       {{ t('showAnswer') }}

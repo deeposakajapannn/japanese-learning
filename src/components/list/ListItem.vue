@@ -61,7 +61,7 @@ const statsLine = computed(() => {
     </div>
     <button
       class="w-9 h-9 ml-2 shrink-0 rounded-full border-2 flex items-center justify-center cursor-pointer transition-all"
-      :class="isThisLooping ? 'border-[#e8735a] bg-[#e8735a] text-white' : 'border-[#e8e2dc] theme-surface hover:border-[#e8735a]'"
+      :class="isThisLooping ? 'btn-grad-primary text-white' : 'border-[#e8e2dc] theme-surface hover:border-[#e8735a]'"
       @click.stop="onToggleLoop"
     >
       <svg v-if="isThisLooping" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>

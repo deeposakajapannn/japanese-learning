@@ -104,7 +104,7 @@ async function onSubmit() {
       </div>
 
       <button
-        class="w-full mt-4 py-3 rounded-xl bg-[#e8735a] text-white font-semibold text-base cursor-pointer hover:bg-[#c9563f] transition-colors disabled:opacity-50"
+        class="w-full mt-4 py-3 rounded-xl text-white font-semibold text-base cursor-pointer transition-colors disabled:opacity-50 btn-grad-primary btn-grad-primary--borderless"
         :disabled="loading || !username.trim() || !password"
         @click="onSubmit"
       >

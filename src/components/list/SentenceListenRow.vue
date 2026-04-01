@@ -125,7 +125,7 @@ const cardTransitionClass = computed(() => {
         <button
           type="button"
           class="w-1/2 flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95"
-          :class="inQueue ? 'bg-[#999] cursor-default' : 'bg-[#e8735a]'"
+          :class="inQueue ? 'bg-[#999] cursor-default' : 'btn-grad-primary btn-grad-primary--borderless'"
           :disabled="inQueue"
           @click.stop="onAddQuiz"
         >
@@ -133,7 +133,7 @@ const cardTransitionClass = computed(() => {
         </button>
         <button
           type="button"
-          class="w-1/2 flex items-center justify-center bg-[#5b8a72] text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95"
+          class="w-1/2 flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95 btn-grad-accent btn-grad-accent--borderless"
           @click.stop="onClear"
         >
           {{ t('listenClear') }}

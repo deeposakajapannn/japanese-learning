@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col gap-3 px-4 pb-4">
+  <div class="flex flex-col gap-3 px-4 pb-4 md:px-10">
     <ListItem
       v-for="item in items"
       :key="item._cat + ':' + item.id"

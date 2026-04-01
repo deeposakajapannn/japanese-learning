@@ -54,17 +54,17 @@ const currentRows = () => tab.value === 'hiragana' ? hiragana : katakana
 </script>
 
 <template>
-  <div class="px-4 pt-2 pb-5 md:px-10 md:max-w-[600px] md:mx-auto">
+  <div class="px-4 pt-2 pb-5 md:px-10 md:max-w-[600px]">
     <!-- Hiragana / Katakana toggle -->
     <div class="flex justify-center gap-2 mb-4">
       <button
-        class="px-5 py-[7px] border-2 rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
-        :class="tab === 'hiragana' ? 'border-[#e8735a] bg-[#fdf0ed] text-[#e8735a]' : 'border-[#e8e2dc] bg-transparent text-[#777]'"
+        class="px-5 py-[7px] rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
+        :class="tab === 'hiragana' ? 'border-2 kana-tab-pill--active' : 'border-2 border-[#e8e2dc] bg-transparent text-[#777]'"
         @click="tab = 'hiragana'"
       >平仮名</button>
       <button
-        class="px-5 py-[7px] border-2 rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
-        :class="tab === 'katakana' ? 'border-[#e8735a] bg-[#fdf0ed] text-[#e8735a]' : 'border-[#e8e2dc] bg-transparent text-[#777]'"
+        class="px-5 py-[7px] rounded-full text-[13px] font-medium cursor-pointer transition-all duration-300"
+        :class="tab === 'katakana' ? 'border-2 kana-tab-pill--active' : 'border-2 border-[#e8e2dc] bg-transparent text-[#777]'"
         @click="tab = 'katakana'"
       >片仮名</button>
     </div>
@@ -81,12 +81,15 @@ const currentRows = () => tab.value === 'hiragana' ? hiragana : katakana
             v-if="ch"
             class="aspect-square rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all duration-150 active:scale-95"
             :class="activeKana === ch.kana
-              ? 'bg-[#e8735a] text-white shadow-md'
+              ? 'btn-grad-primary btn-grad-primary--borderless text-white shadow-md'
               : 'bg-[#faf7f4] hover:bg-[#fdf0ed] text-[#2d2d2d]'"
             @click="playKana(ch.kana)"
           >
             <span class="text-2xl font-bold leading-none">{{ ch.kana }}</span>
-            <span class="text-[11px] mt-1 text-[#e8735a]">{{ ch.romaji }}</span>
+            <span
+              class="text-[11px] mt-1"
+              :class="activeKana === ch.kana ? 'text-white/85' : 'text-[#e8735a]'"
+            >{{ ch.romaji }}</span>
           </button>
           <div v-else class="aspect-square" />
         </template>

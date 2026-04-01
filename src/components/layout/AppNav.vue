@@ -42,7 +42,7 @@ const navItems = [
       v-for="item in navItems"
       :key="item.mode"
       class="flex items-center gap-2.5 px-4 py-3.5 border-none bg-transparent rounded-[10px] text-[15px] font-semibold cursor-pointer transition-all text-left"
-      :class="store.currentMode === item.mode ? 'bg-[#fdf0ed] text-[#e8735a]' : 'text-[#777]'"
+      :class="store.currentMode === item.mode ? 'app-nav-pill--active' : 'text-[#777]'"
       @click="store.switchMode(item.mode)"
     >
       <span class="text-xl">{{ item.icon }}</span>

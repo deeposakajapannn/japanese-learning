@@ -52,7 +52,7 @@ function onSpeakRange() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 px-4 pb-3">
+  <div class="flex flex-col gap-2 px-4 pb-3 md:px-10">
     <div class="relative">
       <input
         v-model="searchQuery"
@@ -67,9 +67,9 @@ function onSpeakRange() {
     </div>
     <div class="w-full">
       <button
-        class="w-full py-3 border-0 text-white text-[15px] font-semibold cursor-pointer transition-all"
+        class="w-full py-3 text-white text-[15px] font-semibold cursor-pointer transition-all"
         :class="[
-          isSpeaking ? 'bg-[#c9563f]' : 'bg-[#e8735a] shadow-[0_4px_16px_rgba(232,115,90,0.3)]',
+          isSpeaking ? 'btn-grad-primary btn-grad-primary--pressed' : 'btn-grad-primary btn-grad-primary--borderless',
           canUseRange && showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
         ]"
         @click="onToggleSpeak"
@@ -104,7 +104,7 @@ function onSpeakRange() {
             {{ t('cancel') }}
           </button>
           <button
-            class="px-3 py-1.5 rounded-lg bg-[#e8735a] text-white text-xs font-semibold"
+            class="px-3 py-1.5 rounded-lg text-white text-xs font-semibold btn-grad-primary btn-grad-primary--borderless"
             @click="onSpeakRange"
           >
             {{ t('confirm') }}
