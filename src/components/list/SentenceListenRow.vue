@@ -162,10 +162,12 @@ const cardTransitionClass = computed(() => {
                 <span
                   v-for="(tk, i) in item.tokens"
                   :key="i"
-                  class="inline-block transition-colors duration-200"
+                  class="inline-block transition-colors duration-200 border-b"
                   :class="[
-                    highlightIndices.has(i) ? 'text-[#c45a3e] bg-[#e8735a]/10 rounded px-[1px]' : '',
-                    i > 0 ? 'ml-[3px]' : ''
+                    highlightIndices.has(i)
+                      ? 'text-[#c45a3e] bg-[#e8735a]/10 rounded-t px-[2px] border-[#e8735a]/40'
+                      : 'border-[#e8735a]/15',
+                    i > 0 ? 'ml-[5px]' : ''
                   ]"
                 >{{ tk }}</span>
               </template>

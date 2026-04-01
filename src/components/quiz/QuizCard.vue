@@ -28,7 +28,17 @@ defineEmits<{
   >
     <!-- MODE: word (original) — show Japanese word, recall meaning + reading -->
     <template v-if="mode === 'word'">
-      <div class="text-3xl font-bold theme-text mb-4">{{ item?.word ?? '' }}</div>
+      <div class="text-3xl font-bold theme-text mb-4 leading-relaxed">
+        <template v-if="item?.tokens && item.tokens.length">
+          <span
+            v-for="(tk, i) in item.tokens"
+            :key="i"
+            class="inline-block border-b border-[#e8735a]/15"
+            :class="i > 0 ? 'ml-[5px]' : ''"
+          >{{ tk }}</span>
+        </template>
+        <template v-else>{{ item?.word ?? '' }}</template>
+      </div>
       <div v-if="!isAnswered" class="flex items-center justify-center gap-2 text-sm theme-muted">
         <span>{{ t('quizHintWord') }}</span>
         <button
@@ -60,7 +70,17 @@ defineEmits<{
 
     <!-- ANSWER (all modes) -->
     <template v-if="isAnswered && item">
-      <div v-if="mode !== 'word'" class="text-3xl font-bold theme-text mb-2">{{ item.word }}</div>
+      <div v-if="mode !== 'word'" class="text-3xl font-bold theme-text mb-2 leading-relaxed">
+        <template v-if="item.tokens && item.tokens.length">
+          <span
+            v-for="(tk, i) in item.tokens"
+            :key="i"
+            class="inline-block border-b border-[#e8735a]/15"
+            :class="i > 0 ? 'ml-[5px]' : ''"
+          >{{ tk }}</span>
+        </template>
+        <template v-else>{{ item.word }}</template>
+      </div>
       <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ item.reading }}</div>
       <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(item, lang) }}</div>
       <div v-if="item.example" class="text-sm theme-muted leading-relaxed">
