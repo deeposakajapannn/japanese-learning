@@ -19,10 +19,11 @@ let syncTimer: ReturnType<typeof setTimeout> | null = null
 
 // --- Synced keys registry ---
 const SYNCED_KEYS = [
-  { local: 'jp_stats',        cloud: 'stats' },
-  { local: 'jp_item_counts',  cloud: 'counts' },
-  { local: 'jp_delays',       cloud: 'delays' },
-  { local: 'jp_listened',     cloud: 'listened' },
+  { local: 'jp_stats',              cloud: 'stats' },
+  { local: 'jp_item_counts',        cloud: 'counts' },
+  { local: 'jp_delays',             cloud: 'delays' },
+  { local: 'jp_listened',           cloud: 'listened' },
+  { local: 'jp_listen_dismissed',   cloud: 'listenDismissed' },
 ] as const
 
 // --- Merge utilities ---
@@ -43,6 +44,10 @@ function mergeMaxStrings(a: Record<string, string>, b: Record<string, string>): 
     }
   }
   return merged
+}
+
+function mergeDismissed(a: Record<string, true>, b: Record<string, true>): Record<string, true> {
+  return { ...a, ...b }
 }
 
 function mergeStats(a: Record<string, any>, b: Record<string, any>): Record<string, any> {
@@ -78,10 +83,11 @@ function writeLocal(data: Record<string, any>) {
 
 function mergeData(local: Record<string, any>, cloud: Record<string, any>): Record<string, any> {
   return {
-    stats:    mergeStats(local.stats || {}, cloud.stats || {}),
-    counts:   mergeMaxNumbers(local.counts || {}, cloud.counts || {}),
-    delays:   mergeMaxStrings(local.delays || {}, cloud.delays || {}),
-    listened: mergeMaxNumbers(local.listened || {}, cloud.listened || {}),
+    stats:            mergeStats(local.stats || {}, cloud.stats || {}),
+    counts:           mergeMaxNumbers(local.counts || {}, cloud.counts || {}),
+    delays:           mergeMaxStrings(local.delays || {}, cloud.delays || {}),
+    listened:         mergeMaxNumbers(local.listened || {}, cloud.listened || {}),
+    listenDismissed:  mergeDismissed(local.listenDismissed || {}, cloud.listenDismissed || {}),
   }
 }
 
@@ -106,7 +112,11 @@ function initFirebase() {
 function syncToCloud() {
   if (!userId.value || !db) return
   const data = readLocal()
-  if (Object.keys(data.stats).length === 0 && Object.keys(data.counts).length === 0) return
+  const hasPayload =
+    Object.keys(data.stats).length > 0 ||
+    Object.keys(data.counts).length > 0 ||
+    Object.keys(data.listenDismissed || {}).length > 0
+  if (!hasPayload) return
   db.ref('users/' + userId.value + '/data').set(data)
 }
 

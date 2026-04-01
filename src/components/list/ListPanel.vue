@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useAppStore } from '../../stores/app'
 import type { VocabItemWithCat } from '../../types'
+import { listenDismissTick, isListenDismissed } from '../../composables/useListenListDismiss'
 import ListToolbar from './ListToolbar.vue'
 import ListContainer from './ListContainer.vue'
 import PaginationBar from '../common/PaginationBar.vue'
@@ -42,6 +43,7 @@ const topics = computed(() => {
 })
 
 const filteredItems = computed<VocabItemWithCat[]>(() => {
+  listenDismissTick.value
   let items = allItems.value
 
   if (selectedTopic.value) {
@@ -49,13 +51,19 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
   }
 
   const q = searchQuery.value.toLowerCase()
-  if (!q) return items
-  return items.filter(it =>
-    it.word.toLowerCase().includes(q) ||
-    it.reading.includes(q) ||
-    it.meaning.includes(q) || (it.meaningEn && it.meaningEn.toLowerCase().includes(q)) || (it.meaningEs && it.meaningEs.toLowerCase().includes(q)) ||
-    (it.example && it.example.includes(q))
-  )
+  if (q) {
+    items = items.filter(it =>
+      it.word.toLowerCase().includes(q) ||
+      it.reading.includes(q) ||
+      it.meaning.includes(q) || (it.meaningEn && it.meaningEn.toLowerCase().includes(q)) || (it.meaningEs && it.meaningEs.toLowerCase().includes(q)) ||
+      (it.example && it.example.includes(q))
+    )
+  }
+
+  return items.filter(it => {
+    if (it._cat !== 'sentences') return true
+    return !isListenDismissed('sentences', it.id)
+  })
 })
 
 const canUseRange = computed(() => selectedTopic.value === '')

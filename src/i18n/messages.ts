@@ -141,6 +141,8 @@ export const messages: Record<LangKey, Record<string, string>> = {
     darkMode: '暗黑模式',
     darkModeOn: '已开启（全局）',
     darkModeOff: '已关闭（全局）',
+    listenClear: '听清了',
+    listenRemove: '删除',
   },
   en: {
     title: '日本語学習',
@@ -282,5 +284,7 @@ export const messages: Record<LangKey, Record<string, string>> = {
     darkMode: 'Dark Mode',
     darkModeOn: 'Enabled (global)',
     darkModeOff: 'Disabled (global)',
+    listenClear: 'Got it',
+    listenRemove: 'Hide',
   },
 }

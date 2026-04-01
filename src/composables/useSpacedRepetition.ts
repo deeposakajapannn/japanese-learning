@@ -59,6 +59,13 @@ export function isMastered(cat: string, id: number): boolean {
   return (c[cat + ':' + id] || 0) >= MASTERED_THRESHOLD
 }
 
+/** 直接标记为已掌握（用于听列表「听清了」等） */
+export function setItemMastered(cat: string, id: number) {
+  const c = getItemCounts()
+  c[cat + ':' + id] = MASTERED_THRESHOLD
+  saveItemCounts(c)
+}
+
 export function getItemCount(cat: string, id: number): number {
   const c = getItemCounts()
   return c[cat + ':' + id] || 0

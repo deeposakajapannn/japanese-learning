@@ -158,17 +158,16 @@ function playGapInBackground(delayMs: number, action: () => void) {
 
 function runNextStep(action: () => void, delayMs: number) {
   if (!loopPlaying.value || loopPaused.value) return
-  // iOS/WebKit may throttle timers when screen is locked.
-  // In background, use audio-driven silent gap to preserve pacing reliably.
-  if (typeof document !== 'undefined' && document.hidden) {
-    appendLoopDebug('run_next_background', `delayMs=${delayMs}`)
-    playGapInBackground(delayMs, action)
+  // Always schedule gaps via short silent audio — not setTimeout.
+  // Timers are heavily throttled when the screen locks; list play feels OK when
+  // lock happens mid-utterance, but 单曲循环 often hits the 500/800ms gaps while
+  // locked and only continues after unlock.
+  if (delayMs <= 0) {
+    action()
     return
   }
-  _loopTimers.push(setTimeout(() => {
-    if (!loopPlaying.value || loopPaused.value) return
-    action()
-  }, delayMs))
+  appendLoopDebug('run_next_gap', `delayMs=${delayMs}`)
+  playGapInBackground(delayMs, action)
 }
 
 function playCurrentAudio(src: string, onFail: () => void) {
@@ -181,14 +180,14 @@ function playCurrentAudio(src: string, onFail: () => void) {
   })
 }
 
-// Keep mediaSession in sync with actual audio state
+// 主轨 play/pause 事件会与锁屏不同步：句间切轨会短暂 pause，不能把锁屏打成「已暂停」
 audioEl.addEventListener('play', () => {
-  if (loopPlaying.value && 'mediaSession' in navigator) {
+  if (loopPlaying.value && !loopPaused.value && 'mediaSession' in navigator) {
     navigator.mediaSession.playbackState = 'playing'
   }
 })
 audioEl.addEventListener('pause', () => {
-  if (loopPlaying.value && 'mediaSession' in navigator) {
+  if (loopPlaying.value && loopPaused.value && 'mediaSession' in navigator) {
     navigator.mediaSession.playbackState = 'paused'
   }
 })
@@ -201,6 +200,20 @@ audioEl.addEventListener('error', () => {
 function clearLoopTimers() {
   _loopTimers.forEach(t => clearTimeout(t))
   _loopTimers = []
+}
+
+function clearPendingGap() {
+  if (!gapAudio) return
+  gapAudio.onended = null
+  gapAudio.pause()
+  gapAudio.src = ''
+  gapAudio = null
+}
+
+/** 取消待执行的 setTimeout 与进行中的间隙音（暂停 / 切歌 / 停止） */
+function clearLoopScheduling() {
+  clearLoopTimers()
+  clearPendingGap()
 }
 
 function startSilentKeepAlive() {
@@ -218,6 +231,38 @@ function stopSilentKeepAlive() {
   silentAudio.pause()
   silentAudio.src = ''
   silentAudio = null
+}
+
+/** 与主音频一起暂停，否则 iOS 仍认为有媒体在播，锁屏按钮状态会错位 */
+function pauseSilentKeepAlive() {
+  if (silentAudio) silentAudio.pause()
+}
+
+function resumeSilentKeepAlive() {
+  if (!silentAudio) return
+  silentAudio.play().catch(() => {
+    appendLoopDebug('keepalive_resume_failed')
+  })
+}
+
+function flushMediaSessionPaused() {
+  if (!('mediaSession' in navigator)) return
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (loopPlaying.value && loopPaused.value) {
+        navigator.mediaSession.playbackState = 'paused'
+      }
+    })
+  })
+}
+
+function flushMediaSessionPlaying() {
+  if (!('mediaSession' in navigator)) return
+  requestAnimationFrame(() => {
+    if (loopPlaying.value && !loopPaused.value) {
+      navigator.mediaSession.playbackState = 'playing'
+    }
+  })
 }
 
 function setupMediaSession() {
@@ -324,19 +369,28 @@ function togglePlay() {
   if (loopPaused.value) {
     appendLoopDebug('resume')
     loopPaused.value = false
+    resumeSilentKeepAlive()
     if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing'
     // Resume mid-playback audio, not restart
     if (audioEl.src && audioEl.paused && audioEl.currentTime > 0) {
-      audioEl.play().catch(() => {})
+      audioEl
+        .play()
+        .then(() => {
+          flushMediaSessionPlaying()
+        })
+        .catch(() => {})
     } else {
       playLoopItem()
+      flushMediaSessionPlaying()
     }
   } else {
     appendLoopDebug('pause')
     loopPaused.value = true
-    clearLoopTimers()
-    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused'
+    clearLoopScheduling()
+    pauseSilentKeepAlive()
     audioEl.pause()
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused'
+    flushMediaSessionPaused()
   }
 }
 
@@ -346,15 +400,9 @@ function stop() {
   loopPaused.value = false
   loopRepeat.value = false
   listSpeaking.value = false
-  clearLoopTimers()
+  clearLoopScheduling()
   audioEl.onended = null
   audioEl.pause()
-  if (gapAudio) {
-    gapAudio.pause()
-    gapAudio.onended = null
-    gapAudio.src = ''
-    gapAudio = null
-  }
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none'
   stopSilentKeepAlive()
 }
@@ -364,13 +412,13 @@ function toggleRepeat() {
 }
 
 function nextTrack() {
-  clearLoopTimers()
+  clearLoopScheduling()
   loopIndex.value = (loopIndex.value + 1) % loopPlaylist.value.length
   playLoopItem()
 }
 
 function prevTrack() {
-  clearLoopTimers()
+  clearLoopScheduling()
   loopIndex.value = (loopIndex.value - 1 + loopPlaylist.value.length) % loopPlaylist.value.length
   playLoopItem()
 }

@@ -5,6 +5,7 @@ import { isMastered, getItemCount } from '../../composables/useSpacedRepetition'
 import { speakWithExample, speakLoop, stopLoop, looping, loopingWord } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
+import SentenceListenRow from './SentenceListenRow.vue'
 
 const { t, currentLang } = useLang()
 
@@ -29,7 +30,9 @@ function onToggleLoop() {
 </script>
 
 <template>
+  <SentenceListenRow v-if="cat === 'sentences'" :item="item" />
   <div
+    v-else
     class="flex items-center relative theme-surface rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-4 cursor-pointer transition-all hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] active:shadow-[0_1px_4px_rgba(0,0,0,0.15)] active:scale-[0.98] animate-fadeUp"
     @click="onSpeak"
   >

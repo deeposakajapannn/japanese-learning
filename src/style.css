@@ -183,15 +183,15 @@ body > * {
 }
 
 :root.theme-dark .stat-card--practice {
-  background: linear-gradient(135deg, #914838 0%, #a75c44 100%);
+  background: linear-gradient(135deg, #6f372c 0%, #834836 100%);
 }
 
 :root.theme-dark .stat-card--listen {
-  background: linear-gradient(135deg, #79392d 0%, #925144 100%);
+  background: linear-gradient(135deg, #5e2d24 0%, #733b31 100%);
 }
 
 :root.theme-dark .stat-card--days {
-  background: linear-gradient(135deg, #4c3d8c 0%, #435592 100%);
+  background: linear-gradient(135deg, #382f6b 0%, #33457a 100%);
 }
 
 /* 次要操作：退出登录等，低对比不刺眼 */
