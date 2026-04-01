@@ -10,6 +10,7 @@ export interface DataItem {
   example?: string
   exampleCn?: string
   topic?: string
+  level?: string
   _cat?: string
 }
 

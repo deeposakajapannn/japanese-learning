@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { VocabItem, CategoryKey } from '../../types'
-import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick } from '../../composables/useSpacedRepetition'
+import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick, recordItemListened } from '../../composables/useSpacedRepetition'
 import { speakWithExample, speakLoop, stopLoop, looping, loopingWord } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
@@ -17,6 +17,7 @@ const props = defineProps<{
 
 function onSpeak() {
   speakWithExample(props.item.word, props.item.example)
+  recordItemListened(props.cat, props.item.id)
 }
 
 const isThisLooping = computed(() => looping.value && loopingWord.value === props.item.word)

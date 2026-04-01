@@ -12,7 +12,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(npx vue-tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(node -e \"const s=require\\(''./public/data/sentences.json''\\); const levels=new Set\\(s.map\\(x=>x.level\\).filter\\(Boolean\\)\\); console.log\\([...levels].sort\\(\\)\\)\")",
+      "Bash(node -e \"const s=require\\(''./public/data/nouns.json''\\); const levels=new Set\\(s.map\\(x=>x.level\\).filter\\(Boolean\\)\\); console.log\\([...levels].sort\\(\\)\\)\")"
     ]
   }
 }

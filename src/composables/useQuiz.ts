@@ -23,6 +23,7 @@ const quizItems = ref<any[]>([])
 const quizIndex = ref(0)
 const isAnswered = ref(false)
 const quizMode = ref<QuizMode>((localStorage.getItem('jp_quiz_mode') as QuizMode) || 'word')
+const quizLevels = ref<string[]>([])
 
 function migrateQuizScope(): QuizScope {
   const s = localStorage.getItem('jp_quiz_scope')
@@ -44,6 +45,11 @@ const newBatchKnown = ref<Record<string, boolean>>({})
 let lastCompletedNewBatchKeys: string[] = []
 /** 换分类时清空新词组 */
 let lastQuizCategory = ''
+
+function filterByLevel(items: any[]): any[] {
+  if (quizLevels.value.length === 0) return items
+  return items.filter((it) => it.level && quizLevels.value.includes(it.level))
+}
 
 function quizItemKey(it: { _cat?: string; id: number }, cat: string) {
   return makeItemKey(it._cat || cat, it.id)
@@ -107,7 +113,7 @@ function isBrandNewItem(it: { _cat?: string; id: number }, cat: string, snap: Qu
 }
 
 function pickNewBatch(cat: string, snap: QuizProgressSnapshot) {
-  const poolAll = getActiveItems(cat).filter((it) => isBrandNewItem(it, cat, snap))
+  const poolAll = filterByLevel(getActiveItems(cat)).filter((it) => isBrandNewItem(it, cat, snap))
   if (!poolAll.length) {
     newBatchKeysRef.value = []
     newBatchKnown.value = {}
@@ -139,7 +145,7 @@ function startQuiz() {
 
   if (quizScope.value === 'heard') {
     clearNewBatchState()
-    let items = [...getActiveItems(cat)].filter((it) => !isBrandNewItem(it, cat, snap))
+    let items = filterByLevel([...getActiveItems(cat)]).filter((it) => !isBrandNewItem(it, cat, snap))
     quizItems.value = sortStudiedPool(items, cat, snap)
     quizIndex.value = 0
     isAnswered.value = false
@@ -219,6 +225,11 @@ function submitAnswer(correct: boolean) {
   }
 }
 
+function setQuizLevels(levels: string[]) {
+  quizLevels.value = levels
+  startQuiz()
+}
+
 function setQuizMode(mode: QuizMode) {
   quizMode.value = mode
   localStorage.setItem('jp_quiz_mode', mode)
@@ -239,7 +250,9 @@ export function useQuiz() {
     quizScope,
     newBatchKnownCount,
     newBatchSize: computed(() => newBatchKeysRef.value.length),
+    quizLevels,
     startQuiz,
+    setQuizLevels,
     showAnswer,
     submitAnswer,
     setQuizMode,

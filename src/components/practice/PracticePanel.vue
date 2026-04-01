@@ -18,14 +18,34 @@ const {
   isAnswered,
   quizMode,
   quizScope,
+  quizLevels,
   newBatchKnownCount,
   newBatchSize,
   showAnswer,
   submitAnswer,
   setQuizMode,
   setQuizScope,
+  setQuizLevels,
   speakQuizCurrent,
 } = useQuiz()
+
+const levelDropdownOpen = ref(false)
+const LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1']
+
+function toggleLevel(lv: string) {
+  const cur = [...quizLevels.value]
+  const idx = cur.indexOf(lv)
+  if (idx >= 0) cur.splice(idx, 1)
+  else cur.push(lv)
+  setQuizLevels(cur)
+}
+
+function clearLevels() {
+  setQuizLevels([])
+  levelDropdownOpen.value = false
+}
+
+const showLevelFilter = computed(() => store.currentCat === 'sentences' || store.currentCat === 'mix')
 
 function onCardSpeak() {
   speakQuizCurrent()
@@ -92,6 +112,46 @@ watch([quizIndex, quizMode], () => {
 </script>
 
 <template>
+  <!-- 级别筛选（句子）：紧贴分类 tab 下方 -->
+  <div v-if="showLevelFilter" class="px-4 pb-2 relative">
+    <button
+      class="px-3 py-1.5 rounded-full text-[13px] font-medium border transition-all cursor-pointer whitespace-nowrap"
+      :class="quizLevels.length > 0
+        ? 'bg-[#e8735a] text-white border-[#e8735a] shadow-[0_2px_8px_rgba(232,115,90,0.3)]'
+        : 'theme-surface theme-muted border-[#e8e2dc] hover:border-[#e8735a]'"
+      @click="levelDropdownOpen = !levelDropdownOpen"
+    >
+      {{ quizLevels.length > 0 ? quizLevels.join(' ') : t('levelSelect') }}
+      <svg class="inline-block ml-1 -mr-0.5" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div
+      v-if="levelDropdownOpen"
+      class="absolute left-4 top-full mt-1 z-[300] min-w-[100px] rounded-xl theme-surface shadow-[0_8px_32px_rgba(0,0,0,0.15)] border py-1"
+      style="border-color: var(--border)"
+    >
+      <button
+        class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10"
+        :class="quizLevels.length === 0 ? 'text-[#e8735a]' : 'theme-text'"
+        @click="clearLevels()"
+      >
+        {{ t('filterNone') }}
+      </button>
+      <button
+        v-for="lv in LEVELS"
+        :key="lv"
+        class="w-full text-left px-3 py-2 text-[13px] font-medium cursor-pointer transition-colors hover:bg-[#e8735a]/10 flex items-center gap-2"
+        @click="toggleLevel(lv)"
+      >
+        <svg v-if="quizLevels.includes(lv)" class="shrink-0 text-[#e8735a]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span v-else class="shrink-0 w-[14px]" />
+        <span :class="quizLevels.includes(lv) ? 'text-[#e8735a]' : ''">{{ lv }}</span>
+      </button>
+    </div>
+    <teleport to="body">
+      <div v-if="levelDropdownOpen" class="fixed inset-0 z-[299]" @click="levelDropdownOpen = false" />
+    </teleport>
+  </div>
+
   <div class="flex flex-col items-center gap-4 px-4 py-6">
     <!-- 学习过 / 全新的（内部仍用 heard | new 存 localStorage） -->
     <div class="flex gap-2 w-full max-w-[400px]">

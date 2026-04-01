@@ -16,6 +16,7 @@ const searchQuery = ref('')
 const currentPage = ref(1)
 const isSpeaking = ref(false)
 const selectedTopic = ref('')
+const selectedLevels = ref<string[]>([])
 
 const emit = defineEmits<{
   speak: [items: VocabItemWithCat[], from: number, to: number]
@@ -43,12 +44,28 @@ const topics = computed(() => {
     .map(([t]) => t)
 })
 
+const levels = computed(() => {
+  const set = new Set<string>()
+  for (const it of allItems.value) {
+    if (it.level) set.add(it.level)
+  }
+  return [...set].sort((a, b) => {
+    const na = parseInt(a.replace(/\D/g, '')) || 0
+    const nb = parseInt(b.replace(/\D/g, '')) || 0
+    return nb - na // N5 first
+  })
+})
+
 const filteredItems = computed<VocabItemWithCat[]>(() => {
   listenDismissTick.value
   let items = allItems.value
 
   if (selectedTopic.value) {
     items = items.filter(it => it.topic === selectedTopic.value)
+  }
+
+  if (selectedLevels.value.length > 0) {
+    items = items.filter(it => it.level && selectedLevels.value.includes(it.level))
   }
 
   const q = searchQuery.value.toLowerCase()
@@ -69,7 +86,7 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
   })
 })
 
-const canUseRange = computed(() => selectedTopic.value === '')
+const canUseRange = computed(() => selectedTopic.value === '' && selectedLevels.value.length === 0)
 
 const totalPages = computed(() => Math.ceil(filteredItems.value.length / PAGE_SIZE))
 
@@ -85,6 +102,21 @@ function onSearch(q: string) {
 
 function onTopicSelect(topic: string) {
   selectedTopic.value = topic
+  currentPage.value = 1
+}
+
+function onLevelToggle(level: string) {
+  const idx = selectedLevels.value.indexOf(level)
+  if (idx >= 0) {
+    selectedLevels.value = selectedLevels.value.filter(l => l !== level)
+  } else {
+    selectedLevels.value = [...selectedLevels.value, level]
+  }
+  currentPage.value = 1
+}
+
+function onLevelClear() {
+  selectedLevels.value = []
   currentPage.value = 1
 }
 
@@ -114,10 +146,14 @@ defineExpose({ stopSpeaking: () => { isSpeaking.value = false } })
 <template>
   <div>
     <TopicChips
-      v-if="topics.length > 0"
+      v-if="topics.length > 0 || levels.length > 0"
       :topics="topics"
       :selected="selectedTopic"
+      :levels="levels"
+      :selected-levels="selectedLevels"
       @select="onTopicSelect"
+      @toggle-level="onLevelToggle"
+      @clear-levels="onLevelClear"
     />
     <ListToolbar
       :total-items="filteredItems.length"

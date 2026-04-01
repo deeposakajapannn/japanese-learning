@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import type { VocabItem } from '../../types'
-import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick } from '../../composables/useSpacedRepetition'
+import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick, recordItemListened } from '../../composables/useSpacedRepetition'
 import { speakWithExample } from '../../composables/useAudio'
 import { markListenCleared, isInQuizQueue, addToQuizQueue, quizQueueTick } from '@/learning'
 import { useLang } from '@/i18n'
@@ -69,6 +69,7 @@ function onWindowPointerUp(e: PointerEvent) {
 
 function onSpeak() {
   speakWithExample(props.item.word, props.item.example)
+  recordItemListened(cat, props.item.id)
 }
 
 function onClear() {

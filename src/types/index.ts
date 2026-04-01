@@ -8,6 +8,7 @@ export interface VocabItem {
   example?: string
   exampleCn?: string
   topic?: string
+  level?: string
 }
 
 export interface VocabItemWithCat extends VocabItem {
