@@ -111,7 +111,7 @@ function minimize() {
     class="fixed inset-0 z-[200] flex items-center justify-center bg-black/30"
   >
     <div
-      class="w-[95%] max-w-lg md:w-[90%] md:max-w-sm theme-loop-panel rounded-2xl overflow-hidden max-h-[min(92vh,900px)] flex flex-col"
+      class="w-[95%] max-w-lg md:w-[90%] md:max-w-sm theme-loop-panel rounded-2xl overflow-hidden max-h-[min(92svh,900px)] flex flex-col"
     >
       <!-- Info bar -->
       <div class="flex items-center justify-between px-4 pt-3 pb-2 md:px-5 shrink-0">

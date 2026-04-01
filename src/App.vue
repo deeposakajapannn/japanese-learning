@@ -80,7 +80,7 @@ onUnmounted(() => {
 
 <template>
   <AppHeader />
-  <div class="flex min-h-screen">
+  <div class="flex min-h-[100svh]">
     <AppNav />
     <div class="flex-1 min-w-0 pb-20 md:ml-[200px]">
       <CategoryTabs />

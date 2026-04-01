@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* 移动端 Chrome 等：地址栏显隐时 100vh 会变化，导致整页与 fixed 底栏「晃」；用 svh 更稳 */
+html {
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
 :root {
   --bg: #f5f0eb;
   --card: #ffffff;
@@ -32,8 +39,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
   background: var(--bg) url('/bg.jpg') center / 600px repeat;
   color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100vh; /* 旧浏览器回退 */
+  min-height: 100svh;
+  overflow-x: clip;
+  overscroll-behavior-y: none;
 }
 
 :root.theme-dark {
@@ -213,6 +222,12 @@ body::before {
 .theme-nav-desktop {
   background: var(--card);
   border-color: var(--border);
+}
+
+/* 移动底栏单独成层，减轻与地址栏联动时的闪动（仍无法禁止浏览器自身隐藏地址栏） */
+.theme-nav-mobile {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .theme-loop-panel {
