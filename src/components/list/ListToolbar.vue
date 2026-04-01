@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useLang } from '@/i18n'
+import { enableListSpeakSequenceRange } from '@/config/features'
 
 const { t } = useLang()
 
@@ -36,10 +37,10 @@ function onToggleSpeak() {
   if (props.isSpeaking) {
     emit('stop')
     showRange.value = false
-  } else if (!props.canUseRange) {
-    emit('speak', 1, props.totalItems)
-  } else {
+  } else if (enableListSpeakSequenceRange && props.canUseRange) {
     showRange.value = !showRange.value
+  } else {
+    emit('speak', 1, props.totalItems)
   }
 }
 
@@ -70,13 +71,16 @@ function onSpeakRange() {
         class="w-full py-3 text-white text-[15px] font-semibold cursor-pointer transition-all"
         :class="[
           isSpeaking ? 'btn-grad-primary btn-grad-primary--pressed' : 'btn-grad-primary btn-grad-primary--borderless',
-          canUseRange && showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
+          enableListSpeakSequenceRange && canUseRange && showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
         ]"
         @click="onToggleSpeak"
       >
         {{ isSpeaking ? t('listStop') : t('listSpeak') }}
       </button>
-      <div v-if="canUseRange && showRange" class="flex flex-col gap-2 px-3 py-2.5 theme-surface border-t-0 rounded-b-[10px]">
+      <div
+        v-if="enableListSpeakSequenceRange && canUseRange && showRange"
+        class="flex flex-col gap-2 px-3 py-2.5 theme-surface border-t-0 rounded-b-[10px]"
+      >
         <div class="flex items-center justify-center gap-2">
         <span class="text-[13px] theme-muted whitespace-nowrap">{{ t('from') }}</span>
         <input

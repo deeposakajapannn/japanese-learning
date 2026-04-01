@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { useLoopPlayer } from '../../composables/useLoopPlayer'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
+import { enablePlayerDebugLogButtons } from '@/config/features'
 
 const { t, currentLang } = useLang()
 
@@ -271,7 +272,10 @@ function minimize() {
         </button>
       </div>
 
-      <div class="flex items-center justify-end gap-2 px-4 pb-4 md:px-5 shrink-0">
+      <div
+        v-if="enablePlayerDebugLogButtons"
+        class="flex items-center justify-end gap-2 px-4 pb-4 md:px-5 shrink-0"
+      >
         <button
           class="px-3 py-1.5 rounded-lg border text-xs cursor-pointer theme-surface"
           style="border-color: var(--border); color: var(--text-secondary)"

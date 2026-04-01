@@ -15118,5 +15118,1598 @@
     "level": "N1",
     "meaningEn": "If you don't mind, could we hear your opinion?",
     "topic": "工作职场"
+  },
+  {
+    "id": 1681,
+    "word": "そんなに気にしなくてもいいんじゃない？",
+    "reading": "そんなにきにしなくてもいいんじゃない？",
+    "meaning": "不用那么在意吧？",
+    "level": "N2",
+    "meaningEn": "You don't have to worry about it that much, do you?",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1682,
+    "word": "それ、前にも聞いた気がするんだけど。",
+    "reading": "それ、まえにもきいたきがするんだけど。",
+    "meaning": "那个，我好像以前也听过。",
+    "level": "N2",
+    "meaningEn": "I feel like I've heard that before.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1683,
+    "word": "今さら言われても困るんだけど。",
+    "reading": "いまさらいわれてもこまるんだけど。",
+    "meaning": "事到如今再说我也很难办啊。",
+    "level": "N2",
+    "meaningEn": "Hearing that now puts me in a tough spot.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1684,
+    "word": "なんか今日、やたら眠くない？",
+    "reading": "なんかきょう、やたらねむくない？",
+    "meaning": "哎，你今天是不是特别困？",
+    "level": "N2",
+    "meaningEn": "Don't you feel super sleepy today for some reason?",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1685,
+    "word": "もう少し早く言ってくれればよかったのに。",
+    "reading": "もうすこしはやくいってくれればよかったのに。",
+    "meaning": "你要是能早点告诉我就好了。",
+    "level": "N2",
+    "meaningEn": "I wish you had told me a bit earlier.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1686,
+    "word": "そこまで深く考えなくてもいいと思うよ。",
+    "reading": "そこまでふかくかんがえなくてもいいとおもうよ。",
+    "meaning": "我觉得不用想得那么深啦。",
+    "level": "N2",
+    "meaningEn": "I don't think you need to think that deeply.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1687,
+    "word": "正直に言うと、あんまり期待してなかった。",
+    "reading": "しょうじきにいうと、あんまりきたいしてなかった。",
+    "meaning": "说实话，我没抱太大期待。",
+    "level": "N2",
+    "meaningEn": "To be honest, I didn't expect much.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1688,
+    "word": "そういうつもりで言ったんじゃないんだけど。",
+    "reading": "そういうつもりでいったんじゃないんだけど。",
+    "meaning": "我不是那个意思才那么说的。",
+    "level": "N2",
+    "meaningEn": "That's not what I meant when I said that.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1689,
+    "word": "気づいたらこんな時間になってた。",
+    "reading": "きづいたらこんなじかんになってた。",
+    "meaning": "回过神来已经这个点了。",
+    "level": "N2",
+    "meaningEn": "Before I knew it, it had gotten this late.",
+    "topic": "日常生活"
+  },
+  {
+    "id": 1690,
+    "word": "それって結局どういう意味なの？",
+    "reading": "それってけっきょくどういういみなの？",
+    "meaning": "所以那到底什么意思？",
+    "level": "N2",
+    "meaningEn": "So what does that actually mean in the end?",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1691,
+    "word": "なんとなく嫌な予感がするんだよね。",
+    "reading": "なんとなくいやなよかんがするんだよね。",
+    "meaning": "总有种不祥的预感。",
+    "level": "N2",
+    "meaningEn": "I've got a bad feeling about this.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1692,
+    "word": "無理して合わせる必要はないと思う。",
+    "reading": "むりしてあわせるひつようはないとおもう。",
+    "meaning": "我觉得没必要硬去配合。",
+    "level": "N2",
+    "meaningEn": "I don't think you need to force yourself to go along.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1693,
+    "word": "思ってたよりずっと良かった。",
+    "reading": "おもってたよりずっとよかった。",
+    "meaning": "比想象的好太多了。",
+    "level": "N2",
+    "meaningEn": "It was way better than I thought.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1694,
+    "word": "ちょっと考えさせてくれる？",
+    "reading": "ちょっとかんがえさせてくれる？",
+    "meaning": "能让我稍微想想吗？",
+    "level": "N2",
+    "meaningEn": "Could you give me a little time to think?",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1695,
+    "word": "その話、どこまで本当なの？",
+    "reading": "そのはなし、どこまでほんとうなの？",
+    "meaning": "那件事，到底有多少是真的？",
+    "level": "N2",
+    "meaningEn": "How much of that story is actually true?",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1696,
+    "word": "どうせなら最後までやり切りたい。",
+    "reading": "どうせならさいごまでやりきりたい。",
+    "meaning": "既然要做就做到最后吧。",
+    "level": "N2",
+    "meaningEn": "If we're doing it, I'd rather see it through.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1697,
+    "word": "そんな簡単に決めていいの？",
+    "reading": "そんなかんたんにきめていいの？",
+    "meaning": "能那么轻易就决定吗？",
+    "level": "N2",
+    "meaningEn": "Is it okay to decide that easily?",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1698,
+    "word": "今のところは問題なさそう。",
+    "reading": "いまのところはもんだいなさそう。",
+    "meaning": "目前看来没什么问题。",
+    "level": "N2",
+    "meaningEn": "So far it doesn't look like a problem.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1699,
+    "word": "さすがにそれはやりすぎじゃない？",
+    "reading": "さすがにそれはやりすぎじゃない？",
+    "meaning": "那也太过头了吧？",
+    "level": "N2",
+    "meaningEn": "Isn't that going a bit too far?",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1700,
+    "word": "なんでそうなるのか全然分からない。",
+    "reading": "なんでそうなるのかぜんぜんわからない。",
+    "meaning": "我完全搞不懂为什么会变成那样。",
+    "level": "N2",
+    "meaningEn": "I have no idea why it turned out that way.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1701,
+    "word": "もう少し様子を見たほうがいいかも。",
+    "reading": "もうすこしようすをみたほうがいいかも。",
+    "meaning": "最好再观望一下吧。",
+    "level": "N2",
+    "meaningEn": "Maybe you should wait and see a bit longer.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1702,
+    "word": "それ、言い方ちょっときつくない？",
+    "reading": "それ、いいかたちょっときつくない？",
+    "meaning": "你不觉得那说法有点冲吗？",
+    "level": "N2",
+    "meaningEn": "Don't you think that was a bit harsh?",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1703,
+    "word": "一回整理してから話そうか。",
+    "reading": "いっかいせいりしてからはなそうか。",
+    "meaning": "我们先理一理再聊吧。",
+    "level": "N2",
+    "meaningEn": "Let's sort things out before we talk.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1704,
+    "word": "そこまで言われる筋合いないんだけど。",
+    "reading": "そこまでいわれるすじあいいないんだけど。",
+    "meaning": "我可没义务被说到那份上。",
+    "level": "N2",
+    "meaningEn": "I don't deserve to be told that much.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1705,
+    "word": "なんか納得いかないなあ。",
+    "reading": "なんかなっとくいかないなあ。",
+    "meaning": "总觉得没法接受啊。",
+    "level": "N2",
+    "meaningEn": "Somehow I just can't accept it.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1706,
+    "word": "どっちにしても結果は同じだと思う。",
+    "reading": "どっちにしてもけっかはおなじだとおもう。",
+    "meaning": "反正结果都一样吧。",
+    "level": "N2",
+    "meaningEn": "Either way, I think the result would be the same.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1707,
+    "word": "そう言われると、確かにそうかも。",
+    "reading": "そういわれると、たしかにそうかも。",
+    "meaning": "被你这么一说，好像确实如此。",
+    "level": "N2",
+    "meaningEn": "Now that you mention it, maybe you're right.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1708,
+    "word": "できるだけ早めに対応するね。",
+    "reading": "できるだけはやめにたいおうするね。",
+    "meaning": "我会尽快处理的。",
+    "level": "N2",
+    "meaningEn": "I'll deal with it as soon as I can.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1709,
+    "word": "これ以上はちょっと厳しいかも。",
+    "reading": "これいじょうはちょっといかめしいかも。",
+    "meaning": "再往下就有点难了。",
+    "level": "N2",
+    "meaningEn": "Anything more would be pretty tough.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1710,
+    "word": "なんとなく流れでそうなっただけだよ。",
+    "reading": "なんとなくながれでそうなっただけだよ。",
+    "meaning": "不知不觉就变成那样了。",
+    "level": "N2",
+    "meaningEn": "It just kind of ended up that way.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1711,
+    "word": "今思えば、あれがきっかけだったのかも。",
+    "reading": "いまおもえば、あれがきっかけだったのかも。",
+    "meaning": "现在回想，也许那就是契机吧。",
+    "level": "N2",
+    "meaningEn": "Looking back, maybe that was the trigger.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1712,
+    "word": "とりあえず今日はここまでにしよう。",
+    "reading": "とりあえずこんにちはここまでにしよう。",
+    "meaning": "今天就先到这儿吧。",
+    "level": "N2",
+    "meaningEn": "Let's call it a day for today.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1713,
+    "word": "それ、あとで詳しく教えてくれる？",
+    "reading": "それ、あとでくわしくおしえてくれる？",
+    "meaning": "那个，你之后能详细跟我说说吗？",
+    "level": "N2",
+    "meaningEn": "Could you explain that in more detail later?",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1714,
+    "word": "いきなりそんなこと言われても無理だよ。",
+    "reading": "いきなりそんなこといわれてもむりだよ。",
+    "meaning": "突然跟我说那种事我也做不到啊。",
+    "level": "N2",
+    "meaningEn": "You can't just spring that on me.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1715,
+    "word": "そこはちゃんと説明してほしい。",
+    "reading": "そこはちゃんとせつめいしてほしい。",
+    "meaning": "那一点希望你能好好说明。",
+    "level": "N2",
+    "meaningEn": "I need you to explain that part properly.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1716,
+    "word": "なんか話が噛み合ってない気がする。",
+    "reading": "なんかはなしがかみあってないきがする。",
+    "meaning": "总觉得话对不上。",
+    "level": "N2",
+    "meaningEn": "I feel like we're not quite on the same page.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1717,
+    "word": "別のやり方も試してみたら？",
+    "reading": "べつのやりほうもためしてみたら？",
+    "meaning": "要不要试试别的方法？",
+    "level": "N2",
+    "meaningEn": "Why not try another way?",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1718,
+    "word": "ここまで来たらやるしかないでしょ。",
+    "reading": "ここまできたらやるしかないでしょ。",
+    "meaning": "都走到这步了，只能上了吧。",
+    "level": "N2",
+    "meaningEn": "We've come this far—we've got to do it.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1719,
+    "word": "ちょっとした勘違いだったみたい。",
+    "reading": "ちょっとしたかんちがいだったみたい。",
+    "meaning": "好像是个小误会。",
+    "level": "N2",
+    "meaningEn": "Looks like it was a small misunderstanding.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1720,
+    "word": "あんまり無理しないほうがいいよ。",
+    "reading": "あんまりむりしないほうがいいよ。",
+    "meaning": "别太勉强自己比较好哦。",
+    "level": "N2",
+    "meaningEn": "You'd better not push yourself too hard.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1721,
+    "word": "それ、本気で言ってるの？",
+    "reading": "それ、ほんきでいってるの？",
+    "meaning": "你是认真的吗？",
+    "level": "N2",
+    "meaningEn": "Are you serious about that?",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1722,
+    "word": "気持ちは分かるけど、現実は厳しいよね。",
+    "reading": "きもちはわかるけど、げんじつはいかめしいよね。",
+    "meaning": "心情我理解，但现实很残酷啊。",
+    "level": "N2",
+    "meaningEn": "I get how you feel, but reality is harsh.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1723,
+    "word": "もう少し柔軟に考えてもいいと思う。",
+    "reading": "もうすこしじゅうなんにかんがえてもいいとおもう。",
+    "meaning": "也可以再灵活一点想啦。",
+    "level": "N2",
+    "meaningEn": "You could think about it a bit more flexibly.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1724,
+    "word": "そういう考え方もありだと思うよ。",
+    "reading": "そういうかんがえかたもありだとおもうよ。",
+    "meaning": "那种想法也不错啊。",
+    "level": "N2",
+    "meaningEn": "That way of thinking works too.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1725,
+    "word": "なんだかんだでうまくいったね。",
+    "reading": "なんだかんだでうまくいったね。",
+    "meaning": "折腾归折腾，还算顺利啦。",
+    "level": "N2",
+    "meaningEn": "Somehow it all worked out in the end.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1726,
+    "word": "今はまだ何とも言えないかな。",
+    "reading": "いまはまだなんともいえないかな。",
+    "meaning": "现在还不好说呢。",
+    "level": "N2",
+    "meaningEn": "It's still too soon to say.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1727,
+    "word": "そこまで気を使わなくていいよ。",
+    "reading": "そこまできをつかわなくていいよ。",
+    "meaning": "不用照顾到那种程度啦。",
+    "level": "N2",
+    "meaningEn": "You don't have to be that considerate.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1728,
+    "word": "結果より過程のほうが大事な時もあるよ。",
+    "reading": "けっかよりかていのほうがだいじなときもあるよ。",
+    "meaning": "有时候过程比结果更重要哦。",
+    "level": "N2",
+    "meaningEn": "Sometimes the process matters more than the result.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1729,
+    "word": "行こうと思ったんだけど、急に予定が入って無理になった。",
+    "reading": "いこうとおもったんだけど、きゅうによていがいっってむりになった。",
+    "meaning": "本来想去，突然有事去不了了。",
+    "level": "N2",
+    "meaningEn": "I was going to go, but something came up and I can't.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1730,
+    "word": "やってみたはいいけど、思ったより難しかった。",
+    "reading": "やってみたはいいけど、おもったよりむずかしかった。",
+    "meaning": "试是试了，比想的难多了。",
+    "level": "N2",
+    "meaningEn": "I tried, but it was harder than I thought.",
+    "topic": "日语学习"
+  },
+  {
+    "id": 1731,
+    "word": "分かってはいるんだけど、なかなか行動できない。",
+    "reading": "わかってはいるんだけど、なかなかこうどうできない。",
+    "meaning": "道理我都懂，就是动不起来。",
+    "level": "N2",
+    "meaningEn": "I know it in my head, but I can't act on it.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1732,
+    "word": "行きたい気持ちはあるけど、今はちょっと余裕がない。",
+    "reading": "いきたいきもちはあるけど、いまはちょっとよゆうがない。",
+    "meaning": "想去是想去，现在有点腾不出空。",
+    "level": "N2",
+    "meaningEn": "I'd like to, but I don't have the bandwidth right now.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1733,
+    "word": "頑張ったつもりだけど、結果がついてこなかった。",
+    "reading": "がんばったつもりだけど、けっかがついてこなかった。",
+    "meaning": "我觉得自己挺努力了，可结果跟不上。",
+    "level": "N2",
+    "meaningEn": "I thought I was trying hard, but the results didn't follow.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1734,
+    "word": "安いのはいいんだけど、品質がちょっと心配だね。",
+    "reading": "やすいのはいいんだけど、ひんしつがちょっとしんぱいだね。",
+    "meaning": "便宜是便宜，质量有点让人担心。",
+    "level": "N2",
+    "meaningEn": "It's cheap, but I'm a bit worried about the quality.",
+    "topic": "购物"
+  },
+  {
+    "id": 1735,
+    "word": "悪くはないんだけど、何か物足りない感じがする。",
+    "reading": "わるくはないんだけど、なにかものたりないかんじがする。",
+    "meaning": "不算差，但总觉得少了点什么。",
+    "level": "N2",
+    "meaningEn": "It's not bad, but something feels missing.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1736,
+    "word": "理由は分かるけど、納得はできない。",
+    "reading": "りゆうはわかるけど、なっとくはできない。",
+    "meaning": "理由明白，但没法接受。",
+    "level": "N2",
+    "meaningEn": "I get the reason, but I can't agree.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1737,
+    "word": "時間はあったんだけど、結局何もできなかった。",
+    "reading": "じかんはあったんだけど、けっきょくなにもできなかった。",
+    "meaning": "时间其实是有的，结果什么也没做成。",
+    "level": "N2",
+    "meaningEn": "I had time, but in the end I did nothing.",
+    "topic": "日常生活"
+  },
+  {
+    "id": 1738,
+    "word": "早く寝ようと思ってたのに、気づいたらこんな時間。",
+    "reading": "はやくねようとおもってたのに、きづいたらこんなじかん。",
+    "meaning": "本想早点睡，一回神都这么晚了。",
+    "level": "N2",
+    "meaningEn": "I meant to sleep early, but look at the time now.",
+    "topic": "日常生活"
+  },
+  {
+    "id": 1739,
+    "word": "買うつもりはなかったけど、つい衝動買いしちゃった。",
+    "reading": "かうつもりはなかったけど、ついしょうどうがいしちゃった。",
+    "meaning": "没打算买的，一时冲动就买了。",
+    "level": "N2",
+    "meaningEn": "I wasn't planning to buy it, but I impulse-bought it.",
+    "topic": "购物"
+  },
+  {
+    "id": 1740,
+    "word": "行けると思ってたけど、電車が遅れて間に合わなかった。",
+    "reading": "いけるとおもってたけど、でんしゃがおくれてまにあわなかった。",
+    "meaning": "以为能赶上，电车晚点没赶上。",
+    "level": "N2",
+    "meaningEn": "I thought I'd make it, but the train was late.",
+    "topic": "交通出行"
+  },
+  {
+    "id": 1741,
+    "word": "そんなに期待してなかったけど、意外と面白かった。",
+    "reading": "そんなにきたいしてなかったけど、いがいとおもしろかった。",
+    "meaning": "没抱多大期待，意外挺有意思。",
+    "level": "N2",
+    "meaningEn": "I didn't expect much, but it was surprisingly fun.",
+    "topic": "兴趣娱乐"
+  },
+  {
+    "id": 1742,
+    "word": "別に嫌いじゃないけど、特に好きでもない。",
+    "reading": "べつにきらいじゃないけど、とくにすきでもない。",
+    "meaning": "不算讨厌，也称不上喜欢。",
+    "level": "N2",
+    "meaningEn": "I don't dislike it, but I don't especially like it either.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1743,
+    "word": "言おうと思えば言えたけど、あえて言わなかった。",
+    "reading": "いおうとおもえばいえたけど、あえていわなかった。",
+    "meaning": "想说其实能说的，但故意没说。",
+    "level": "N2",
+    "meaningEn": "I could have said it, but I chose not to.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1744,
+    "word": "チャンスはあったけど、自分から動けなかった。",
+    "reading": "ちゃんすはあったけど、じぶんからうごけなかった。",
+    "meaning": "机会是有的，可我自己没动。",
+    "level": "N2",
+    "meaningEn": "There was a chance, but I didn't take the step.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1745,
+    "word": "できなくはないけど、かなり時間がかかると思う。",
+    "reading": "できなくはないけど、かなりじかんがかかるとおもう。",
+    "meaning": "不是做不到，就是会很费时。",
+    "level": "N2",
+    "meaningEn": "It's not impossible, but it would take quite a while.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1746,
+    "word": "忙しいのは分かるけど、連絡くらいはしてほしい。",
+    "reading": "いそがしいのはわかるけど、れんらくくらいはしてほしい。",
+    "meaning": "知道你忙，至少联系一下吧。",
+    "level": "N2",
+    "meaningEn": "I know you're busy, but at least drop a message.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1747,
+    "word": "悪気はないんだろうけど、ちょっと失礼だと思う。",
+    "reading": "わるぎはないんだろうけど、ちょっとしつれいだとおもう。",
+    "meaning": "应该没恶意吧，但有点失礼。",
+    "level": "N2",
+    "meaningEn": "I don't think they meant harm, but it was a bit rude.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1748,
+    "word": "やるしかないとは思うけど、正直気が重い。",
+    "reading": "やるしかないとはおもうけど、しょうじききがおもい。",
+    "meaning": "只能做是只能做，说实话心里沉。",
+    "level": "N2",
+    "meaningEn": "I know I have to, but honestly it weighs on me.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1749,
+    "word": "もう終わったと思ったのに、また問題が出てきた。",
+    "reading": "もうおわったとおもったのに、またもんだいがでてきた。",
+    "meaning": "以为都结束了，问题又来了。",
+    "level": "N2",
+    "meaningEn": "I thought it was over, but another issue popped up.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1750,
+    "word": "うまくいくと思ってたのに、全然ダメだった。",
+    "reading": "うまくいくとおもってたのに、ぜんぜんだめだった。",
+    "meaning": "以为会顺利的，完全不行。",
+    "level": "N2",
+    "meaningEn": "I thought it would work out, but it totally didn't.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1751,
+    "word": "確かに便利だけど、使いすぎるのはよくない。",
+    "reading": "たしかにべんりだけど、つかいすぎるのはよくない。",
+    "meaning": "确实方便，用过头可不好。",
+    "level": "N2",
+    "meaningEn": "It's handy for sure, but using it too much isn't good.",
+    "topic": "科技网络"
+  },
+  {
+    "id": 1752,
+    "word": "話は分かるけど、自分には合わない気がする。",
+    "reading": "はなしはわかるけど、じぶんにはあわないきがする。",
+    "meaning": "话我懂，但感觉不适合我。",
+    "level": "N2",
+    "meaningEn": "I understand the idea, but it doesn't feel right for me.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1753,
+    "word": "行くかどうか迷ったけど、結局やめた。",
+    "reading": "いくかどうかまよったけど、けっきょくやめた。",
+    "meaning": "犹豫去不去，最后没去。",
+    "level": "N2",
+    "meaningEn": "I wasn't sure whether to go, and ended up not going.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1754,
+    "word": "会いたかったけど、タイミングが合わなかった。",
+    "reading": "あいたかったけど、たいみんぐがあわなかった。",
+    "meaning": "想见来着，时间对不上。",
+    "level": "N2",
+    "meaningEn": "I wanted to see them, but the timing didn't work.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1755,
+    "word": "頑張ればできるかもしれないけど、自信がない。",
+    "reading": "がんばればできるかもしれないけど、じしんがない。",
+    "meaning": "努力一下也许能行，但没信心。",
+    "level": "N2",
+    "meaningEn": "I might manage if I try, but I'm not confident.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1756,
+    "word": "無理だと思ってたけど、やってみたらできた。",
+    "reading": "むりだとおもってたけど、やってみたらできた。",
+    "meaning": "以为不行，试了试居然可以。",
+    "level": "N2",
+    "meaningEn": "I thought I couldn't, but when I tried, I could.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1757,
+    "word": "大したことないと思ってたけど、意外と影響が大きかった。",
+    "reading": "たいしたことないとおもってたけど、いがいとえいきょうがおーきかった。",
+    "meaning": "以为没什么大不了，影响挺大。",
+    "level": "N2",
+    "meaningEn": "I didn't think it was a big deal, but the impact was huge.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1758,
+    "word": "すぐ終わると思ったのに、思った以上に時間がかかった。",
+    "reading": "すぐおわるとおもったのに、おもったいじょうにじかんがかかった。",
+    "meaning": "以为很快搞定，花的时间比想的长。",
+    "level": "N2",
+    "meaningEn": "I thought it'd be quick, but it took way longer.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1759,
+    "word": "気にしないようにしてたけど、やっぱり気になる。",
+    "reading": "きにしないようにしてたけど、やっぱりきになる。",
+    "meaning": "试着不去在意，还是会在意。",
+    "level": "N2",
+    "meaningEn": "I tried not to care, but I still do.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1760,
+    "word": "忘れようとしたけど、なかなか忘れられない。",
+    "reading": "わすれようとしたけど、なかなかわすれられない。",
+    "meaning": "想忘掉，可怎么也忘不掉。",
+    "level": "N2",
+    "meaningEn": "I tried to forget, but I can't.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1761,
+    "word": "行きたくなかったけど、仕方なく行った。",
+    "reading": "いきたくなかったけど、しかたなくいった。",
+    "meaning": "其实不想去，没办法还是去了。",
+    "level": "N2",
+    "meaningEn": "I didn't want to go, but I had to.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1762,
+    "word": "簡単に見えるけど、コツをつかむのが難しい。",
+    "reading": "かんたんにみえるけど、こつをつかむのがむずかしい。",
+    "meaning": "看起来简单，掌握窍门却很难。",
+    "level": "N2",
+    "meaningEn": "It looks easy, but getting the hang of it is hard.",
+    "topic": "日语学习"
+  },
+  {
+    "id": 1763,
+    "word": "試してみたけど、自分には向いてなかった。",
+    "reading": "ためしてみたけど、じぶんにはむいてなかった。",
+    "meaning": "试了试，不适合我。",
+    "level": "N2",
+    "meaningEn": "I tried it, but it wasn't for me.",
+    "topic": "日常生活"
+  },
+  {
+    "id": 1764,
+    "word": "やめたほうがいいと思うけど、最終的には本人次第だね。",
+    "reading": "やめたほうがいいとおもうけど、さいしゅうてきにはほんにんしだいだね。",
+    "meaning": "我觉得最好停手，但最终看本人。",
+    "level": "N2",
+    "meaningEn": "I think you should stop, but it's up to them in the end.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1765,
+    "word": "分かってくれると思ってたのに、全然伝わってなかった。",
+    "reading": "わかってくれるとおもってたのに、ぜんぜんつたわってなかった。",
+    "meaning": "以为你能懂，完全没传达到。",
+    "level": "N2",
+    "meaningEn": "I thought you'd get it, but it didn't get across at all.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1766,
+    "word": "そんなつもりじゃなかったのに、誤解されてしまった。",
+    "reading": "そんなつもりじゃなかったのに、ごかいされてしまった。",
+    "meaning": "不是那个意思，却被误解了。",
+    "level": "N2",
+    "meaningEn": "I didn't mean it that way, but I was misunderstood.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1767,
+    "word": "いい案だと思うけど、実現するのは難しそう。",
+    "reading": "いいあんだとおもうけど、じつげんするのはむつかしそう。",
+    "meaning": "主意不错，实现起来很难。",
+    "level": "N2",
+    "meaningEn": "It's a good idea, but hard to pull off.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1768,
+    "word": "何とかなると思ってたけど、甘く見てた。",
+    "reading": "なんとかなるとおもってたけど、あまくみてた。",
+    "meaning": "以为总会有办法，想得太天真了。",
+    "level": "N2",
+    "meaningEn": "I thought it'd work out—I was naive.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1769,
+    "word": "行きたいのは山々だけど、今回は見送ることにする。",
+    "reading": "いきたいのはやまやまだけど、こんかいはみおくることにする。",
+    "meaning": "想去得不得了，这次就先不去了。",
+    "level": "N2",
+    "meaningEn": "I really want to go, but I'll sit this one out.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1770,
+    "word": "時間がないわけじゃないけど、やる気が出ない。",
+    "reading": "じかんがないわけじゃないけど、やるきがでない。",
+    "meaning": "不是没时间，就是没干劲。",
+    "level": "N2",
+    "meaningEn": "It's not that I have no time—I just have no motivation.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1771,
+    "word": "嫌ではないけど、積極的にやりたいわけでもない。",
+    "reading": "いやではないけど、せっきょくてきにやりたいわけでもない。",
+    "meaning": "不算讨厌，但也不想主动去做。",
+    "level": "N2",
+    "meaningEn": "I don't hate it, but I'm not eager to do it either.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1772,
+    "word": "悪くない提案だけど、もう少し検討したい。",
+    "reading": "わるくないていあんだけど、もうすこしけんとうしたい。",
+    "meaning": "提议不坏，想再考虑考虑。",
+    "level": "N2",
+    "meaningEn": "It's not a bad proposal—I want to think it over.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1773,
+    "word": "行こうとした瞬間に雨が降ってきて、結局やめた。",
+    "reading": "いこうとしたしゅんかんにあめがふってきて、けっきょくやめた。",
+    "meaning": "刚要走就下雨了，最后没去。",
+    "level": "N2",
+    "meaningEn": "The moment I tried to go, it rained, so I gave up.",
+    "topic": "天气自然"
+  },
+  {
+    "id": 1774,
+    "word": "大丈夫だと思ってたのに、思ったより体調が悪かった。",
+    "reading": "だいじょうぶだとおもってたのに、おもったよりたいちょうがわるかった。",
+    "meaning": "以为没事，身体比想的差。",
+    "level": "N2",
+    "meaningEn": "I thought I was fine, but I felt worse than expected.",
+    "topic": "健康医疗"
+  },
+  {
+    "id": 1775,
+    "word": "その場では納得したけど、後から考えると疑問が残る。",
+    "reading": "そのばではなっとくしたけど、のちからかんがえるとぎもんがのこる。",
+    "meaning": "当时接受了，事后又有疑问。",
+    "level": "N2",
+    "meaningEn": "I accepted it then, but later I had doubts.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1776,
+    "word": "手伝うつもりだったけど、結局何もできなかった。",
+    "reading": "てつだうつもりだったけど、けっきょくなにもできなかった。",
+    "meaning": "本想帮忙，结果什么也没做成。",
+    "level": "N2",
+    "meaningEn": "I meant to help, but ended up doing nothing.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1777,
+    "word": "無駄だと思いつつも、ついやってしまう。",
+    "reading": "むだだとおもいつつも、ついやってしまう。",
+    "meaning": "明知浪费，还是忍不住做了。",
+    "level": "N2",
+    "meaningEn": "I know it's pointless, but I still do it.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1778,
+    "word": "行けなくはないけど、ちょっと遠いんだよね。",
+    "reading": "いけなくはないけど、ちょっととおいんだよね。",
+    "meaning": "不是不能去，就是有点远。",
+    "level": "N2",
+    "meaningEn": "I could go, but it's a bit far.",
+    "topic": "交通出行"
+  },
+  {
+    "id": 1779,
+    "word": "やろうと思えばできるけど、今はその気になれない。",
+    "reading": "やろうとおもえばできるけど、いまはそのきになれない。",
+    "meaning": "想做是能做的，只是现在没心情。",
+    "level": "N2",
+    "meaningEn": "I could if I wanted to—I just don't feel like it now.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1780,
+    "word": "分からなくはないけど、納得はしてない。",
+    "reading": "わからなくはないけど、なっとくはしてない。",
+    "meaning": "不是不懂，就是不接受。",
+    "level": "N2",
+    "meaningEn": "It's not that I don't understand—I don't accept it.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1781,
+    "word": "良さそうに見えるけど、実際どうなんだろうね。",
+    "reading": "よさそうにみえるけど、じっさいどうなんだろうね。",
+    "meaning": "看起来不错，实际怎么样呢。",
+    "level": "N2",
+    "meaningEn": "It looks good, but how is it really?",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1782,
+    "word": "行きたいのは本当だけど、今回はやめとく。",
+    "reading": "いきたいのはほんとうだけど、こんかいはやめとく。",
+    "meaning": "想去是真的，这次就算了。",
+    "level": "N2",
+    "meaningEn": "I really want to go, but I'll pass this time.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1783,
+    "word": "簡単に見えたけど、意外と手間がかかった。",
+    "reading": "かんたんにみえたけど、いがいとてまがかかった。",
+    "meaning": "看起来简单，其实挺费事。",
+    "level": "N2",
+    "meaningEn": "It looked simple, but it was surprisingly tedious.",
+    "topic": "日常生活"
+  },
+  {
+    "id": 1784,
+    "word": "話は聞いたけど、まだ決めてない。",
+    "reading": "はなしはきいたけど、まだきめてない。",
+    "meaning": "话我听了，还没决定。",
+    "level": "N2",
+    "meaningEn": "I heard you out, but I haven't decided yet.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1785,
+    "word": "大丈夫だと思うけど、一応確認しておくね。",
+    "reading": "だいじょうぶだとおもうけど、いちおうかくにんしておくね。",
+    "meaning": "应该没问题，我再确认一下。",
+    "level": "N2",
+    "meaningEn": "I think it's fine, but I'll double-check just in case.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1786,
+    "word": "時間はあるけど、やる気が追いつかない。",
+    "reading": "じかんはあるけど、やるきがおいつかない。",
+    "meaning": "时间有，干劲跟不上。",
+    "level": "N2",
+    "meaningEn": "I have time, but my motivation can't keep up.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1787,
+    "word": "気にはなるけど、今すぐじゃなくてもいいかな。",
+    "reading": "きにはなるけど、いますぐじゃなくてもいいかな。",
+    "meaning": "会在意，但也不一定非要现在。",
+    "level": "N2",
+    "meaningEn": "It bothers me, but it doesn't have to be right now.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1788,
+    "word": "できれば行きたいけど、状況次第かな。",
+    "reading": "できればいきたいけど、じょうきょうしだいかな。",
+    "meaning": "能去的话想去，看情况吧。",
+    "level": "N2",
+    "meaningEn": "I'd like to if I can—it depends on the situation.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1789,
+    "word": "興味はあるけど、そこまで詳しくはない。",
+    "reading": "きょうみはあるけど、そこまでくわしくはない。",
+    "meaning": "有兴趣，但没那么了解。",
+    "level": "N2",
+    "meaningEn": "I'm interested, but I don't know the details.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1790,
+    "word": "悪いとは思わないけど、自分には合わない。",
+    "reading": "わるいとはおもわないけど、じぶんにはあわない。",
+    "meaning": "我不觉得坏，只是不适合我。",
+    "level": "N2",
+    "meaningEn": "I don't think it's bad—it just doesn't suit me.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1791,
+    "word": "一応やってみたけど、結果は微妙だった。",
+    "reading": "いちおうやってみたけど、けっかはびみょうだった。",
+    "meaning": "姑且试了，结果一般。",
+    "level": "N2",
+    "meaningEn": "I gave it a shot, but the result was so-so.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1792,
+    "word": "無理ではないけど、あまり現実的じゃない。",
+    "reading": "むりではないけど、あまりげんじつてきじゃない。",
+    "meaning": "不是不可能，就是不太现实。",
+    "level": "N2",
+    "meaningEn": "It's not impossible, but it's not very realistic.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1793,
+    "word": "そう言われると分かるけど、すぐには無理だよ。",
+    "reading": "そういわれるとわかるけど、すぐにはむりだよ。",
+    "meaning": "你那么一说我懂，但马上做不到。",
+    "level": "N2",
+    "meaningEn": "I get it when you put it that way, but I can't right away.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1794,
+    "word": "頑張りたい気持ちはあるけど、体がついてこない。",
+    "reading": "がんばりたいきもちはあるけど、からだがついてこない。",
+    "meaning": "想努力，身体跟不上。",
+    "level": "N2",
+    "meaningEn": "I want to try, but my body can't keep up.",
+    "topic": "健康医疗"
+  },
+  {
+    "id": 1795,
+    "word": "時間があればやるけど、今は優先度が低い。",
+    "reading": "じかんがあればやるけど、いまはゆうせんどがひくい。",
+    "meaning": "有时间会做，现在优先级低。",
+    "level": "N2",
+    "meaningEn": "I'll do it when I can—right now it's low priority.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1796,
+    "word": "行くつもりだったけど、急に予定が変わった。",
+    "reading": "いくつもりだったけど、きゅうによていがかわった。",
+    "meaning": "本来要去，计划突然变了。",
+    "level": "N2",
+    "meaningEn": "I was going to go, but plans changed suddenly.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1797,
+    "word": "面白そうではあるけど、今は余裕がない。",
+    "reading": "おもしろそうではあるけど、いまはよゆうがない。",
+    "meaning": "好像挺有意思，现在没空。",
+    "level": "N2",
+    "meaningEn": "It sounds fun, but I don't have the bandwidth now.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1798,
+    "word": "やったほうがいいのは分かってるけど、後回しにしがち。",
+    "reading": "やったほうがいいのはわかってるけど、あとまわしにしがち。",
+    "meaning": "知道该做，却总往后拖。",
+    "level": "N2",
+    "meaningEn": "I know I should, but I keep putting it off.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1799,
+    "word": "別に嫌じゃないけど、自分からはやらないかな。",
+    "reading": "べつにいやじゃないけど、じぶんからはやらないかな。",
+    "meaning": "不算讨厌，但我也不会主动做。",
+    "level": "N2",
+    "meaningEn": "I don't hate it, but I wouldn't do it on my own.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1800,
+    "word": "試してみたいけど、きっかけがないんだよね。",
+    "reading": "ためしてみたいけど、きっかけがないんだよね。",
+    "meaning": "想试试，就是没契机。",
+    "level": "N2",
+    "meaningEn": "I'd like to try—I just need a reason to start.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1801,
+    "word": "できる範囲ではやるけど、無理はしない。",
+    "reading": "できるはんいではやるけど、むりはしない。",
+    "meaning": "能做的就是做，但不勉强。",
+    "level": "N2",
+    "meaningEn": "I'll do what I can, but I won't overdo it.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1802,
+    "word": "確かに必要だけど、今じゃなくてもいい気がする。",
+    "reading": "たしかにひつようだけど、いまじゃなくてもいいきがする。",
+    "meaning": "确实需要，但也不一定非得现在。",
+    "level": "N2",
+    "meaningEn": "It is necessary, but maybe not right this minute.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1803,
+    "word": "分かってほしい気持ちはあるけど、うまく言えない。",
+    "reading": "わかってほしいきもちはあるけど、うまくいえない。",
+    "meaning": "希望你能懂我的心情，可我说不好。",
+    "level": "N2",
+    "meaningEn": "I want you to understand, but I can't put it into words.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1804,
+    "word": "そこは理解できるけど、完全には同意できない。",
+    "reading": "そこはりかいできるけど、かんぜんにはどういできない。",
+    "meaning": "那点我理解，但不能完全同意。",
+    "level": "N2",
+    "meaningEn": "I see that part, but I can't fully agree.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1805,
+    "word": "いいと思うけど、もう少し様子を見たい。",
+    "reading": "いいとおもうけど、もうすこしようすをみたい。",
+    "meaning": "我觉得行，想再观望一下。",
+    "level": "N2",
+    "meaningEn": "I think it's fine—I want to wait and see a bit more.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1806,
+    "word": "行けたら行くけど、あまり期待しないで。",
+    "reading": "いけたらいくけど、あまりきたいしないで。",
+    "meaning": "能去就去，别太期待。",
+    "level": "N2",
+    "meaningEn": "I'll go if I can—don't expect too much.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1807,
+    "word": "やる気はあるけど、まだ準備が足りてない。",
+    "reading": "やるきはあるけど、まだじゅんびがたりてない。",
+    "meaning": "有干劲，准备还不够。",
+    "level": "N2",
+    "meaningEn": "I'm motivated, but I'm not ready yet.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1808,
+    "word": "できなくはないけど、あまり自信はない。",
+    "reading": "できなくはないけど、あまりじしんはない。",
+    "meaning": "不是做不到，就是没信心。",
+    "level": "N2",
+    "meaningEn": "It's not that I can't—I just lack confidence.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1809,
+    "word": "見た目はいいけど、使い勝手は微妙かも。",
+    "reading": "みためはいいけど、つかいがってはびみょうかも。",
+    "meaning": "外观不错，用起来一般。",
+    "level": "N2",
+    "meaningEn": "It looks good, but usability is so-so.",
+    "topic": "购物"
+  },
+  {
+    "id": 1810,
+    "word": "悪くはないけど、決め手に欠ける。",
+    "reading": "わるくはないけど、きめてにかける。",
+    "meaning": "不算差，但缺少决定性。",
+    "level": "N2",
+    "meaningEn": "It's not bad, but it's missing a decisive edge.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1811,
+    "word": "理解はしてるけど、気持ちが追いつかない。",
+    "reading": "りかいはしてるけど、きもちがおいつかない。",
+    "meaning": "道理懂，心情跟不上。",
+    "level": "N2",
+    "meaningEn": "I get it in my head, but my heart can't follow.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1812,
+    "word": "行く価値はあるけど、わざわざ行くほどでもない。",
+    "reading": "いくかちはあるけど、わざわざいくほどでもない。",
+    "meaning": "值得去，但又不至于专程跑一趟。",
+    "level": "N2",
+    "meaningEn": "It's worth seeing, but not worth a special trip.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1813,
+    "word": "時間的には間に合うけど、余裕はあまりない。",
+    "reading": "じかんてきにはまにあうけど、よゆうはあまりない。",
+    "meaning": "时间上来得及，余裕不多。",
+    "level": "N2",
+    "meaningEn": "Time-wise I'm okay, but there's not much margin.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1814,
+    "word": "興味はあるけど、今は他に優先することがある。",
+    "reading": "きょうみはあるけど、いまはほかにゆうせんすることがある。",
+    "meaning": "有兴趣，但现在有别的事优先。",
+    "level": "N2",
+    "meaningEn": "I'm interested, but I have other priorities now.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1815,
+    "word": "やるべきなのは分かるけど、気が進まない。",
+    "reading": "やるべきなのはわかるけど、きがすすまない。",
+    "meaning": "该做我知道，就是提不起劲。",
+    "level": "N2",
+    "meaningEn": "I know I should, but I can't get myself to do it.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1816,
+    "word": "一応確認したけど、特に問題はなさそう。",
+    "reading": "いちおうかくにんしたけど、とくにもんだいはなさそう。",
+    "meaning": "我确认过了，暂时没什么问题。",
+    "level": "N2",
+    "meaningEn": "I checked—nothing obvious for now.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1817,
+    "word": "参加したいけど、スケジュール次第かな。",
+    "reading": "さんかしたいけど、すけじゅーるしだいかな。",
+    "meaning": "想参加，要看日程。",
+    "level": "N2",
+    "meaningEn": "I'd like to join—it depends on my schedule.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1818,
+    "word": "話としては面白いけど、現実的ではない。",
+    "reading": "はなしとしてはおもしろいけど、げんじつてきではない。",
+    "meaning": "当故事听挺有意思，不太现实。",
+    "level": "N2",
+    "meaningEn": "It's interesting as a story, but not realistic.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1819,
+    "word": "できるだけやるけど、保証はできない。",
+    "reading": "できるだけやるけど、ほしょうはできない。",
+    "meaning": "能办多少办多少，不保证。",
+    "level": "N2",
+    "meaningEn": "I'll do what I can, but I can't promise.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1820,
+    "word": "行く方向で考えてるけど、まだ確定じゃない。",
+    "reading": "ゆくえこうでかんがえてるけど、まだかくていじゃない。",
+    "meaning": "我是打算去，还没定死。",
+    "level": "N2",
+    "meaningEn": "I'm leaning toward going, but it's not final yet.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1821,
+    "word": "無理とは言わないけど、かなり厳しい。",
+    "reading": "むりとはいわないけど、かなりいかめしい。",
+    "meaning": "不是说不行，就是挺严的。",
+    "level": "N2",
+    "meaningEn": "I'm not saying no, but it's pretty strict.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1822,
+    "word": "やってみないと分からないけど、可能性はある。",
+    "reading": "やってみないとわからないけど、かのうせいはある。",
+    "meaning": "不试不知道，不过有可能。",
+    "level": "N2",
+    "meaningEn": "You won't know until you try—but there's a chance.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1823,
+    "word": "悪くないアイデアだけど、リスクもあるよね。",
+    "reading": "わるくないあいであだけど、りすくもあるよね。",
+    "meaning": "主意不坏，也有风险哦。",
+    "level": "N2",
+    "meaningEn": "It's not a bad idea, but there's risk too.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1824,
+    "word": "一見簡単そうだけど、実は奥が深い。",
+    "reading": "いっけんかんたんそうだけど、じつはおくがふかい。",
+    "meaning": "乍一看简单，其实很深。",
+    "level": "N2",
+    "meaningEn": "It looks simple at first glance, but it's deep.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1825,
+    "word": "納得はしてないけど、とりあえず従うよ。",
+    "reading": "なっとくはしてないけど、とりあえずしたがうよ。",
+    "meaning": "不接受，但先照办吧。",
+    "level": "N2",
+    "meaningEn": "I don't agree, but I'll go along for now.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1826,
+    "word": "そうするつもりだけど、状況を見て判断する。",
+    "reading": "そうするつもりだけど、じょうきょうをみてはんだんする。",
+    "meaning": "我是那么打算，看情况再定。",
+    "level": "N2",
+    "meaningEn": "That's my plan, but I'll decide based on how things go.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1827,
+    "word": "完璧じゃないけど、今のところはこれでいいと思う。",
+    "reading": "かんぺきじゃないけど、いまのところはこれでいいとおもう。",
+    "meaning": "不完美，但目前这样就行吧。",
+    "level": "N2",
+    "meaningEn": "It's not perfect, but this is fine for now.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1828,
+    "word": "分からないわけじゃないけど、納得はしてない。",
+    "reading": "わからないわけじゃないけど、なっとくはしてない。",
+    "meaning": "不是不明白，但没法接受。",
+    "level": "N1",
+    "meaningEn": "It's not that I don't get it—I just can't agree.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1829,
+    "word": "やるしかないとはいえ、気が進まないのが本音だ。",
+    "reading": "やるしかないとはいえ、きがすすまないのがほんねだ。",
+    "meaning": "虽说只能做，真心话是不想动。",
+    "level": "N1",
+    "meaningEn": "I know I have to do it, but honestly I don't want to.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1830,
+    "word": "無理だと思っていたわりに、意外とうまくいった。",
+    "reading": "むりだとおもっていたわりに、いがいとうまくいった。",
+    "meaning": "本以为不行，结果还挺顺利。",
+    "level": "N1",
+    "meaningEn": "I thought it was impossible, but it actually went well.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1831,
+    "word": "全く問題がないとは言い切れないけど、許容範囲だと思う。",
+    "reading": "まったくもんだいがないとはいいきれないけど、きょようはんいだとおもう。",
+    "meaning": "不能说完全没问题，但我觉得在可接受范围内。",
+    "level": "N1",
+    "meaningEn": "I can't say there's zero issue, but I think it's within tolerance.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1832,
+    "word": "行けないこともないけど、あえて行く理由もない。",
+    "reading": "いけないこともないけど、あえていくりゆうもない。",
+    "meaning": "也不是不能去，只是没有非去不可的理由。",
+    "level": "N1",
+    "meaningEn": "I could go if I had to, but I don't have a strong reason to.",
+    "topic": "日常场景"
+  },
+  {
+    "id": 1833,
+    "word": "期待していなかったとはいえ、ここまでとは思わなかった。",
+    "reading": "きたいしていなかったとはいえ、ここまでとはおもわなかった。",
+    "meaning": "虽说没抱期待，也没想到会到这一步。",
+    "level": "N1",
+    "meaningEn": "I wasn't expecting much, but I didn't think it would go this far.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1834,
+    "word": "理解できなくもないが、共感できるかは別の話だ。",
+    "reading": "りかいできなくもないが、きょうかんできるかはべつのはなしだ。",
+    "meaning": "不是不能理解，但能不能共鸣是另一回事。",
+    "level": "N1",
+    "meaningEn": "I can understand it, but whether I can sympathize is another matter.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1835,
+    "word": "そう言われればその通りだけど、それだけでは説明が足りない。",
+    "reading": "そういわれればそのとうりだけど、それだけではせつめいがたりない。",
+    "meaning": "话是那么说没错，但光这样解释不够。",
+    "level": "N1",
+    "meaningEn": "That may be true as far as it goes, but that alone doesn't explain enough.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1836,
+    "word": "絶対に無理というわけではないが、現実的ではない。",
+    "reading": "ぜったいにむりというわけではないが、げんじつてきではない。",
+    "meaning": "倒也不是绝对不行，只是不现实。",
+    "level": "N1",
+    "meaningEn": "It's not absolutely impossible, but it's not realistic.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1837,
+    "word": "結果的には良かったものの、過程には問題があった。",
+    "reading": "けっかてきにはよかったものの、かていにはもんだいがあった。",
+    "meaning": "结果虽好，过程有问题。",
+    "level": "N1",
+    "meaningEn": "The outcome was good, but there were problems along the way.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1838,
+    "word": "やるべきだと分かってはいるものの、なかなか踏み出せない。",
+    "reading": "やるべきだとわかってはいるものの、なかなかふみだせない。",
+    "meaning": "明知该做，却迟迟迈不出步。",
+    "level": "N1",
+    "meaningEn": "I know I should, but I can hardly take the first step.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1839,
+    "word": "認めたくはないけど、事実として受け入れるしかない。",
+    "reading": "みとめたくはないけど、じじつとしてうけいれるしかない。",
+    "meaning": "不想承认，也只能当事实接受。",
+    "level": "N1",
+    "meaningEn": "I hate to admit it, but I have no choice but to accept the facts.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1840,
+    "word": "一概に否定はできないが、全面的に賛成する気にもなれない。",
+    "reading": "いちがいにひていはできないが、ぜんめんてきにさんせいするきにもなれない。",
+    "meaning": "不能一概否定，但也没法全盘赞成。",
+    "level": "N1",
+    "meaningEn": "I can't reject it outright, but I can't fully endorse it either.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1841,
+    "word": "今さら後悔したところで、どうにもならない。",
+    "reading": "いまさらこうかいしたところで、どうにもならない。",
+    "meaning": "事到如今后悔也改变不了什么。",
+    "level": "N1",
+    "meaningEn": "Regretting it now won't change anything.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1842,
+    "word": "可能性がないわけではないが、かなり低いと思う。",
+    "reading": "かのうせいがないわけではないが、かなりひくいとおもう。",
+    "meaning": "不是毫无可能，但我觉得概率很低。",
+    "level": "N1",
+    "meaningEn": "It's not impossible, but I think the odds are pretty low.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1843,
+    "word": "納得できる説明がない限り、受け入れるつもりはない。",
+    "reading": "なっとくできるせつめいがないかぎり、うけいれるつもりはない。",
+    "meaning": "除非给出能让我信服的说法，否则我不会接受。",
+    "level": "N1",
+    "meaningEn": "Unless there's a convincing explanation, I won't accept it.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1844,
+    "word": "うまくいく保証はないにしても、試してみる価値はある。",
+    "reading": "うまくいくほしょうはないにしても、ためしてみるかちはある。",
+    "meaning": "虽说没有成功的把握，值得一试。",
+    "level": "N1",
+    "meaningEn": "There's no guarantee it'll work, but it's worth trying.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1845,
+    "word": "そう簡単に割り切れる話ではないと思う。",
+    "reading": "そうかんたんにわりきれるはなしではないとおもう。",
+    "meaning": "我觉得这不是能轻易一刀切的事。",
+    "level": "N1",
+    "meaningEn": "I don't think this is something you can neatly settle that easily.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1846,
+    "word": "表面上は問題なさそうに見えるが、実際はそうでもない。",
+    "reading": "ひょうめんじょうはもんだいなさそうにみえるが、じっさいはそうでもない。",
+    "meaning": "表面看起来没问题，实际并非如此。",
+    "level": "N1",
+    "meaningEn": "It looks fine on the surface, but that's not really the case.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1847,
+    "word": "今のままでいいとは思わないが、すぐに変えるのも難しい。",
+    "reading": "いまのままでいいとはおもわないが、すぐにかえるのもむずかしい。",
+    "meaning": "我不觉得维持现状就好，但立刻改也很难。",
+    "level": "N1",
+    "meaningEn": "I don't think staying as we are is fine, but changing right away is hard too.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1848,
+    "word": "言いたいことは分かるつもりだけど、少し極端じゃない？",
+    "reading": "いいたいことはわかるつもりだけど、すこしきょくたんじゃない？",
+    "meaning": "你想说的我懂，是不是有点极端？",
+    "level": "N1",
+    "meaningEn": "I think I get what you're saying—isn't it a bit extreme?",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1849,
+    "word": "無理にとは言わないけど、一度くらい試してみてもいいんじゃない？",
+    "reading": "むりにとはいわないけど、いちどくらいためしてみてもいいんじゃない？",
+    "meaning": "我不强迫你，不过试一次也无妨吧？",
+    "level": "N1",
+    "meaningEn": "I'm not forcing you, but why not give it a try once?",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1850,
+    "word": "全部が間違っているとは思わないけど、改善の余地はある。",
+    "reading": "ぜんぶがまちがっているとはおもわないけど、かいぜんのよちはある。",
+    "meaning": "我不认为全错，但有改进空间。",
+    "level": "N1",
+    "meaningEn": "I don't think everything is wrong, but there's room to improve.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1851,
+    "word": "時間をかければ解決できるかもしれないが、今は余裕がない。",
+    "reading": "じかんをかければかいけつできるかもしれないが、いまはよゆうがない。",
+    "meaning": "花时间也许能解决，但现在没那个余力。",
+    "level": "N1",
+    "meaningEn": "We might fix it with time, but I don't have the bandwidth now.",
+    "topic": "工作职场"
+  },
+  {
+    "id": 1852,
+    "word": "やめたほうがいい気もするが、簡単には諦めきれない。",
+    "reading": "やめたほうがいいきもするが、かんたんにはあきらめきれない。",
+    "meaning": "也觉得该停手，可又没法轻易死心。",
+    "level": "N1",
+    "meaningEn": "Part of me says I should quit, but I can't let go that easily.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1853,
+    "word": "特に不満があるわけではないが、満足しているわけでもない。",
+    "reading": "とくにふまんがあるわけではないが、まんぞくしているわけでもない。",
+    "meaning": "谈不上特别不满，也称不上满意。",
+    "level": "N1",
+    "meaningEn": "I'm not particularly unhappy, but I'm not satisfied either.",
+    "topic": "情绪心理"
+  },
+  {
+    "id": 1854,
+    "word": "条件さえ整えば可能だが、現状では難しい。",
+    "reading": "じょうけんさえととのえばかのうだが、げんじょうではむずかしい。",
+    "meaning": "条件齐备的话可行，以现状来说很难。",
+    "level": "N1",
+    "meaningEn": "It's possible if conditions are met, but it's hard as things stand.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1855,
+    "word": "あえて言うまでもないけど、それは当然の結果だと思う。",
+    "reading": "あえていうまでもないけど、それはとうぜんのけっかだとおもう。",
+    "meaning": "不用说也知道，我觉得那是理所当然的结果。",
+    "level": "N1",
+    "meaningEn": "It goes without saying—I think that outcome was only natural.",
+    "topic": "思考议论"
+  },
+  {
+    "id": 1856,
+    "word": "気持ちは分からなくもないけど、現実的に考えるべきだ。",
+    "reading": "きもちはわからなくもないけど、げんじつてきにかんがえるべきだ。",
+    "meaning": "心情不是不懂，但该现实一点。",
+    "level": "N1",
+    "meaningEn": "I can see how you feel, but you need to be realistic.",
+    "topic": "人际关系"
+  },
+  {
+    "id": 1857,
+    "word": "理想を言えばきりがないが、今は現実を優先するしかない。",
+    "reading": "りそうをいえばきりがないが、いまはげんじつをゆうせんするしかない。",
+    "meaning": "理想说起来没完没了，现在只能优先现实。",
+    "level": "N1",
+    "meaningEn": "We could talk ideals forever—for now reality has to come first.",
+    "topic": "思考议论"
   }
 ]
