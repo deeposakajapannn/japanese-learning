@@ -7,6 +7,11 @@ html {
   overscroll-behavior-y: none;
 }
 
+/* iOS 点击输入框时防止页面缩放：font-size < 16px 会触发自动缩放 */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
 :root {
   --bg: #f5f0eb;
   --card: #ffffff;
