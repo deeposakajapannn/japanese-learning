@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useLang } from '@/i18n'
 import { quizQueueTick, isInQuizQueue, addToQuizQueue } from '@/learning'
-import { itemCountsTick, listenedCountsTick } from '@/composables/useSpacedRepetition'
 
 const { t } = useLang()
 
@@ -10,16 +9,13 @@ const props = withDefaults(
   defineProps<{
     cat: string
     id: number
-    eligible?: boolean
     slim?: boolean
   }>(),
-  { eligible: true, slim: false },
+  { slim: false },
 )
 
 const inQueue = computed(() => {
   quizQueueTick.value
-  itemCountsTick.value
-  listenedCountsTick.value
   return isInQuizQueue(props.cat, props.id)
 })
 
@@ -58,14 +54,6 @@ function onAdd(e: Event) {
       </svg>
       {{ t('quizQueueReady') }}
     </div>
-
-    <!-- 条件不足 -->
-    <p
-      v-else-if="!eligible"
-      class="text-[10px] theme-muted leading-snug text-center max-w-[20rem] px-1"
-    >
-      {{ t('quizQueueNeedListenPractice') }}
-    </p>
 
     <!-- 可加入：小号次要按钮，非全宽，降低误触 -->
     <button

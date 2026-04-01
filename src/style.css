@@ -194,6 +194,22 @@ body > * {
   background: linear-gradient(135deg, #382f6b 0%, #33457a 100%);
 }
 
+.stat-card--cumulative {
+  background: linear-gradient(135deg, #7a6340 0%, #9a7d50 100%);
+}
+
+.stat-card--mastered {
+  background: linear-gradient(135deg, #4f7a5e 0%, #5b8a6a 100%);
+}
+
+:root.theme-dark .stat-card--cumulative {
+  background: linear-gradient(135deg, #3d3220 0%, #4d3f28 100%);
+}
+
+:root.theme-dark .stat-card--mastered {
+  background: linear-gradient(135deg, #2a4032 0%, #304838 100%);
+}
+
 /* 次要操作：退出登录等，低对比不刺眼 */
 .btn-soft-secondary {
   margin-top: 0.75rem;

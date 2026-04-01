@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { VocabItem, CategoryKey } from '../../types'
-import { getListenedCount, getItemCount, itemCountsTick } from '../../composables/useSpacedRepetition'
+import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick } from '../../composables/useSpacedRepetition'
 import { speakWithExample, speakLoop, stopLoop, looping, loopingWord } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
 import SentenceListenRow from './SentenceListenRow.vue'
+import ListQuizQueueBar from './ListQuizQueueBar.vue'
 
 const { t, currentLang } = useLang()
 
@@ -30,6 +31,7 @@ function onToggleLoop() {
 
 const statsLine = computed(() => {
   itemCountsTick.value
+  listenedCountsTick.value
   return t('listStatsCounts')
     .replace('{listen}', String(getListenedCount(props.cat, props.item.id)))
     .replace('{practice}', String(getItemCount(props.cat, props.item.id)))
@@ -67,5 +69,6 @@ const statsLine = computed(() => {
     <div class="absolute top-2 right-12 theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none">
       {{ statsLine }}
     </div>
+    <ListQuizQueueBar :cat="cat" :id="item.id" slim class="col-span-full" @click.stop />
   </div>
 </template>

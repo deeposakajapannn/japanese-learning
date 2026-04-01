@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import { useAppStore } from '../../stores/app'
 import type { VocabItemWithCat } from '../../types'
-import { listenDismissTick, hasListenCleared } from '@/learning'
+import { listenDismissTick, hasListenCleared, hasMasteryQuizPassed, milestoneStateTick } from '@/learning'
 import ListToolbar from './ListToolbar.vue'
 import ListContainer from './ListContainer.vue'
 import PaginationBar from '../common/PaginationBar.vue'
@@ -61,9 +61,11 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
     )
   }
 
+  milestoneStateTick.value
   return items.filter(it => {
-    if (it._cat !== 'sentences') return true
-    return !hasListenCleared('sentences', it.id)
+    if (hasMasteryQuizPassed(it._cat, it.id)) return false
+    if (it._cat === 'sentences' && hasListenCleared('sentences', it.id)) return false
+    return true
   })
 })
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, watch, ref } from 'vue'
 import { useAppStore } from '../../stores/app'
 import { useQuiz } from '../../composables/useQuiz'
-import { getActiveItems, itemCountsTick, listenedCountsTick } from '../../composables/useSpacedRepetition'
+import { getActiveItems, itemCountsTick } from '../../composables/useSpacedRepetition'
 import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
-import { canJoinQuizQueue } from '@/learning'
+import { useVoiceRecorder } from '../../composables/useVoiceRecorder'
 import { useLang } from '@/i18n'
 import QuizCard from '../quiz/QuizCard.vue'
 import QuizActions from '../quiz/QuizActions.vue'
@@ -58,14 +58,29 @@ const progressText = computed(() => {
 
 const hasQuizItems = computed(() => quizItems.value.length > 0)
 
-/** 听过≥1 且 练过≥1 才可点「加入测验」 */
-const quizQueueEligible = computed(() => {
-  itemCountsTick.value
-  listenedCountsTick.value
-  const it = currentItem.value
-  if (!it) return false
-  const cat = it._cat || store.currentCat
-  return canJoinQuizQueue(cat, it.id)
+const { recording, audioUrl, startRecording, stopRecording, clearRecording } = useVoiceRecorder()
+const playbackAudio = ref<HTMLAudioElement | null>(null)
+
+function onRecordDown() {
+  startRecording()
+}
+
+function onRecordUp() {
+  if (recording.value) stopRecording()
+}
+
+function playRecording() {
+  if (!audioUrl.value) return
+  if (playbackAudio.value) {
+    playbackAudio.value.pause()
+  }
+  playbackAudio.value = new Audio(audioUrl.value)
+  playbackAudio.value.play()
+}
+
+// 切题时清除录音
+watch(quizIndex, () => {
+  clearRecording()
 })
 
 // Auto-play audio when entering audio mode question
@@ -116,6 +131,31 @@ watch([quizIndex, quizMode], () => {
       @speak="speakQuizCurrent"
       @card-click="onCardSpeak"
     />
+    <!-- 录音 + 回放 -->
+    <div v-if="hasQuizItems" class="w-full max-w-[400px] flex items-center gap-2">
+      <button
+        type="button"
+        class="flex-1 min-h-[44px] py-2 px-3 rounded-[10px] text-sm font-medium transition-all border-2 select-none"
+        :class="recording
+          ? 'border-[#e8735a] bg-[#e8735a] text-white scale-[1.02]'
+          : 'theme-surface theme-muted hover:border-[#e8735a]'"
+        @pointerdown.prevent="onRecordDown"
+        @pointerup.prevent="onRecordUp"
+        @pointerleave="onRecordUp"
+        @contextmenu.prevent
+      >
+        {{ recording ? t('sttListening') : t('sttHoldToRecord') }}
+      </button>
+      <button
+        v-if="audioUrl"
+        type="button"
+        class="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#5b8a72] text-[#5b8a72] bg-transparent cursor-pointer transition-all hover:bg-[#5b8a72]/10 active:scale-95"
+        @click="playRecording"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
+      </button>
+    </div>
+
     <button
       v-if="hasQuizItems && !isAnswered"
       class="w-full max-w-[400px] py-3 rounded-[10px] border-2 border-[#e8735a] bg-[#e8735a] text-white text-base font-semibold cursor-pointer transition-all shadow-[0_4px_16px_rgba(232,115,90,0.3)]"
@@ -135,7 +175,6 @@ watch([quizIndex, quizMode], () => {
       class="w-full max-w-[400px] mx-auto px-1"
       :cat="currentItem._cat || store.currentCat"
       :id="currentItem.id"
-      :eligible="quizQueueEligible"
     />
   </div>
 </template>

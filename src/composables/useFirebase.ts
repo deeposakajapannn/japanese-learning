@@ -29,6 +29,8 @@ const SYNCED_KEYS = [
   { local: 'jp_practice_recognized', cloud: 'practiceRecognized' },
   { local: 'jp_mastery_quiz_passed', cloud: 'masteryQuizPassed' },
   { local: 'jp_quiz_queue',          cloud: 'quizQueue' },
+  { local: 'jp_quiz_fails',          cloud: 'quizFails' },
+  { local: 'jp_quiz_phase1',         cloud: 'quizPhase1' },
 ] as const
 
 // --- Merge utilities ---

@@ -4,12 +4,14 @@ import ProfileSection from './ProfileSection.vue'
 import StatsGrid from './StatsGrid.vue'
 import WeeklyChart from './WeeklyChart.vue'
 import WrongWordsList from './WrongWordsList.vue'
+import MasteredList from './MasteredList.vue'
 import LoginOverlay from '../auth/LoginOverlay.vue'
 import { useFirebase } from '../../composables/useFirebase'
 import { useLang } from '@/i18n'
 import { useTheme } from '@/composables/useTheme'
 
 const { t } = useLang()
+const showMasteredList = ref(false)
 const { flushDataToCloud, SYNCED_KEYS } = useFirebase()
 const { themeMode, toggleTheme } = useTheme()
 const showLogin = ref(false)
@@ -43,6 +45,8 @@ function resetStats() {
 
 <template>
   <div class="pb-8">
+    <MasteredList v-if="showMasteredList" @back="showMasteredList = false" />
+    <template v-else>
     <div class="theme-card mt-4 p-4 flex items-center justify-between">
       <div>
         <div class="text-sm font-semibold">{{ t('darkMode') }}</div>
@@ -58,7 +62,7 @@ function resetStats() {
       </button>
     </div>
     <ProfileSection @login="showLogin = true" />
-    <StatsGrid />
+    <StatsGrid @mastered="showMasteredList = true" />
     <WeeklyChart />
     <WrongWordsList />
 
@@ -105,5 +109,6 @@ function resetStats() {
         </div>
       </div>
     </div>
+    </template>
   </div>
 </template>

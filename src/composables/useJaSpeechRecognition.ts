@@ -123,6 +123,16 @@ export function useJaSpeechRecognition() {
     destroyRecognition()
   })
 
+  /** 正常结束录音（等待最终结果后触发 onDone） */
+  function stopListening() {
+    if (!recInst) return
+    try {
+      recInst.stop()
+    } catch {
+      /* ignore */
+    }
+  }
+
   return {
     supported,
     listening,
@@ -130,6 +140,7 @@ export function useJaSpeechRecognition() {
     lastFinalText,
     lastError,
     start,
+    stopListening,
     abortListening,
     resetSessionText,
   }

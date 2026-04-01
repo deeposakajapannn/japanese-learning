@@ -5,6 +5,11 @@ import {
   removeFromQuizQueue,
   markMasteryQuizPassed,
   parseItemKey,
+  recordQuizFail,
+  clearQuizFails,
+  markPhase1Passed,
+  hasPhase1Passed,
+  clearPhase1,
 } from '@/learning'
 import { speakWithExample, stopLoop } from './useAudio'
 
@@ -15,6 +20,8 @@ const currentItem = ref<QueueItem | null>(null)
 const isAnswered = ref(false)
 const passedCount = ref(0)
 const totalCount = ref(0)
+/** 当前词的测验阶段，由持久化状态决定 */
+const testPhase = ref<'read' | 'recall'>('read')
 
 function rebuildItems() {
   const store = useAppStore()
@@ -49,6 +56,17 @@ function pickRandom() {
     currentItem.value = next
   }
   isAnswered.value = false
+  // 根据持久化状态决定阶段
+  const it = currentItem.value
+  testPhase.value = it && hasPhase1Passed(it._cat, it.id) ? 'recall' : 'read'
+}
+
+/** 第一步通过：标记持久化，回到随机池 */
+function passPhase1() {
+  const it = currentItem.value
+  if (!it) return
+  markPhase1Passed(it._cat, it.id)
+  pickRandom()
 }
 
 function markPassed() {
@@ -57,6 +75,8 @@ function markPassed() {
   isAnswered.value = true
   const it = currentItem.value
   if (!it) return
+  clearQuizFails(it._cat, it.id)
+  clearPhase1(it._cat, it.id)
   markMasteryQuizPassed(it._cat, it.id)
   removeFromQuizQueue(it._cat, it.id)
   // rebuild to remove passed item from pool
@@ -74,9 +94,19 @@ function markPassed() {
   items.value = next
 }
 
+/** 跳过 = 不通过，累计 3 次打回（移出队列） */
 function skip() {
   stopLoop()
   totalCount.value++
+  const it = currentItem.value
+  if (it) {
+    const removed = recordQuizFail(it._cat, it.id)
+    if (removed) {
+      clearPhase1(it._cat, it.id)
+      rebuildItems()
+      return
+    }
+  }
   pickRandom()
 }
 
@@ -100,9 +130,11 @@ export function useMasteryTest() {
     passedCount,
     totalCount,
     hasItems,
+    testPhase,
     rebuildItems,
     pickRandom,
     markPassed,
+    passPhase1,
     skip,
     nextAfterPass,
     speakCurrent,

@@ -19,4 +19,10 @@ export {
   isInQuizQueue,
   addToQuizQueue,
   removeFromQuizQueue,
+  recordQuizFail,
+  getQuizFailCount,
+  clearQuizFails,
+  markPhase1Passed,
+  hasPhase1Passed,
+  clearPhase1,
 } from './quizQueue'

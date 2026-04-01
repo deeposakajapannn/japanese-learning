@@ -18,6 +18,7 @@ const {
   lastFinalText: sttFinal,
   lastError: sttLastError,
   start: startJaStt,
+  stopListening: stopJaStt,
   abortListening: abortJaStt,
   resetSessionText: resetJaStt,
 } = useJaSpeechRecognition()
@@ -31,9 +32,10 @@ const {
   passedCount,
   totalCount,
   hasItems,
+  testPhase,
   rebuildItems,
-  pickRandom,
   markPassed,
+  passPhase1,
   skip,
   nextAfterPass,
   speakCurrent,
@@ -84,16 +86,29 @@ function onSttDone(full: string) {
   }
   if (speechMatchesVocab(full, item)) {
     sttMismatch.value = false
-    justPassed.value = true
-    markPassed()
+    if (testPhase.value === 'read') {
+      // 第一步通过，标记并回到随机池
+      passPhase1()
+      resetJaStt()
+      lastHeard.value = ''
+      return
+    } else {
+      // 第二步也通过，整体通过
+      justPassed.value = true
+      markPassed()
+    }
   } else {
     sttMismatch.value = true
   }
 }
 
-function startStt() {
+function onRecordDown() {
   sttMismatch.value = false
   startJaStt(onSttDone)
+}
+
+function onRecordUp() {
+  if (sttListening.value) stopJaStt()
 }
 
 function handleNext() {
@@ -121,27 +136,48 @@ const progressText = computed(() => {
 
 <template>
   <div class="flex flex-col items-center gap-4 px-4 py-6">
-    <p class="text-xs theme-muted text-center max-w-[22rem] leading-relaxed">
-      {{ t('testIntro') }}
-    </p>
-
     <div v-if="progressText" class="text-sm theme-muted font-medium text-center px-1">{{ progressText }}</div>
 
-    <!-- Card: show word + reading + meaning + example -->
+    <!-- Phase indicator -->
+    <div v-if="currentItem && hasItems && !isAnswered" class="text-xs font-medium px-3 py-1 rounded-full" :class="testPhase === 'read' ? 'bg-[#e8735a]/10 text-[#e8735a]' : 'bg-[#5b8a72]/10 text-[#5b8a72]'">
+      {{ testPhase === 'read' ? t('testPhaseRead') : t('testPhaseRecall') }}
+    </div>
+
+    <!-- Card -->
     <div
       v-if="currentItem && hasItems"
       class="w-full max-w-[400px] mx-auto rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.10)] theme-surface p-10 text-center animate-fadeUp"
       :class="isAnswered ? '' : 'cursor-pointer active:scale-[0.98]'"
       @click="speakCurrent"
     >
-      <div class="text-3xl font-bold theme-text mb-3">{{ currentItem.word }}</div>
-      <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
-      <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(currentItem, lang) }}</div>
-      <div v-if="currentItem.example" class="text-sm theme-muted leading-relaxed">
-        {{ currentItem.example }}
-        <br v-if="currentItem.exampleCn" />
-        <span v-if="currentItem.exampleCn" class="text-[13px]" style="color: var(--accent)">{{ currentItem.exampleCn }}</span>
-      </div>
+      <!-- Phase 1 read: 显示日文原文 -->
+      <template v-if="testPhase === 'read' && !isAnswered">
+        <div class="text-3xl font-bold theme-text mb-3">{{ currentItem.word }}</div>
+        <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
+        <div v-if="currentItem.example" class="text-sm theme-muted leading-relaxed">
+          {{ currentItem.example }}
+        </div>
+      </template>
+
+      <!-- Phase 2 recall: 只显示释义 -->
+      <template v-else-if="testPhase === 'recall' && !isAnswered">
+        <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(currentItem, lang) }}</div>
+        <div v-if="currentItem.exampleCn" class="text-sm theme-muted leading-relaxed">
+          {{ currentItem.exampleCn }}
+        </div>
+      </template>
+
+      <!-- 通过后：显示全部 -->
+      <template v-else>
+        <div class="text-3xl font-bold theme-text mb-3">{{ currentItem.word }}</div>
+        <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
+        <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(currentItem, lang) }}</div>
+        <div v-if="currentItem.example" class="text-sm theme-muted leading-relaxed">
+          {{ currentItem.example }}
+          <br v-if="currentItem.exampleCn" />
+          <span v-if="currentItem.exampleCn" class="text-[13px]" style="color: var(--accent)">{{ currentItem.exampleCn }}</span>
+        </div>
+      </template>
 
       <!-- Pass indicator -->
       <div
@@ -165,24 +201,19 @@ const progressText = computed(() => {
         {{ t('sttNotSupported') }}
       </p>
       <template v-else>
-        <div class="flex gap-2 items-stretch">
-          <button
-            type="button"
-            class="flex-1 min-h-[44px] py-2 px-3 rounded-[10px] text-sm font-medium transition-all border-2 theme-surface theme-muted hover:border-[#e8735a] disabled:opacity-60 disabled:cursor-not-allowed"
-            :disabled="sttListening"
-            @click="startStt"
-          >
-            {{ sttListening ? t('sttListening') : t('sttStart') }}
-          </button>
-          <button
-            v-if="sttListening"
-            type="button"
-            class="shrink-0 min-w-[5rem] py-2 px-3 rounded-[10px] text-sm font-medium border-2 theme-surface theme-muted hover:border-[#e8735a]"
-            @click="abortJaStt()"
-          >
-            {{ t('sttStop') }}
-          </button>
-        </div>
+        <button
+          type="button"
+          class="w-full min-h-[48px] py-3 px-3 rounded-[10px] text-sm font-medium transition-all border-2 select-none"
+          :class="sttListening
+            ? 'border-[#e8735a] bg-[#e8735a] text-white scale-[1.02]'
+            : 'theme-surface theme-muted hover:border-[#e8735a]'"
+          @pointerdown.prevent="onRecordDown"
+          @pointerup.prevent="onRecordUp"
+          @pointerleave="onRecordUp"
+          @contextmenu.prevent
+        >
+          {{ sttListening ? t('sttListening') : t('sttHoldToRecord') }}
+        </button>
         <p v-if="sttListening && sttLiveText" class="text-xs theme-muted break-words">
           {{ t('sttHeard') }}：{{ sttLiveText }}
         </p>
