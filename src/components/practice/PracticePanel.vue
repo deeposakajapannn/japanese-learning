@@ -4,6 +4,7 @@ import { useMenuAnchor } from '@/composables/useMenuAnchor'
 import { useAppStore } from '../../stores/app'
 import { useQuiz } from '../../composables/useQuiz'
 import { getActiveItems } from '../../composables/useSpacedRepetition'
+import { quizQueueTick } from '@/learning'
 import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
 import { useVoiceRecorder } from '../../composables/useVoiceRecorder'
 import { useJaSpeechRecognition } from '../../composables/useJaSpeechRecognition'
@@ -78,6 +79,7 @@ function toggleLoop() {
 
 const currentItem = computed(() => quizItems.value[quizIndex.value] ?? null)
 const progressText = computed(() => {
+  quizQueueTick.value
   if (quizItems.value.length) {
     const base = `${quizIndex.value + 1} / ${quizItems.value.length}`
     if (quizScope.value === 'new' && newBatchSize.value > 0) {

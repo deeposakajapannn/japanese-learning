@@ -76,6 +76,7 @@ const TOPIC_I18N_KEYS: Record<string, string> = {
   '思考议论': 'topicThinkingDiscussion',
   '日常生活': 'topicDailyLife',
   '日常场景': 'topicDailyScenes',
+  '地名观光': 'topicGeoSightseeing',
 }
 
 const TOPIC_ICONS: Record<string, string> = {
@@ -98,6 +99,7 @@ const TOPIC_ICONS: Record<string, string> = {
   '思考议论': '🧠',
   '日常生活': '🏠',
   '日常场景': '💬',
+  '地名观光': '🗾',
 }
 
 function getTopicLabel(topic: string): string {

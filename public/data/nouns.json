@@ -7435,5 +7435,493 @@
     "meaningEn": "water outage",
     "topic": "社会新闻",
     "level": "N2"
+  },
+  {
+    "id": 1038,
+    "word": "札幌市",
+    "reading": "さっぽろし",
+    "meaning": "北海道首府",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1039,
+    "word": "仙台市",
+    "reading": "せんだいし",
+    "meaning": "宫城县县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1040,
+    "word": "東京都",
+    "reading": "とうきょうと",
+    "meaning": "东京都",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1041,
+    "word": "横浜市",
+    "reading": "よこはまし",
+    "meaning": "神奈川县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1042,
+    "word": "名古屋市",
+    "reading": "なごやし",
+    "meaning": "爱知县县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1043,
+    "word": "京都市",
+    "reading": "きょうとし",
+    "meaning": "京都府首府",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1044,
+    "word": "大阪市",
+    "reading": "おおさかし",
+    "meaning": "大阪府首府",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1045,
+    "word": "神戸市",
+    "reading": "こうべし",
+    "meaning": "兵库县重镇",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1046,
+    "word": "広島市",
+    "reading": "ひろしまし",
+    "meaning": "广岛县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1047,
+    "word": "福岡市",
+    "reading": "ふくおかし",
+    "meaning": "福冈县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1048,
+    "word": "那覇市",
+    "reading": "なはし",
+    "meaning": "冲绳县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1049,
+    "word": "川崎市",
+    "reading": "かわさきし",
+    "meaning": "神奈川县",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1050,
+    "word": "埼玉市",
+    "reading": "さいたまし",
+    "meaning": "埼玉县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1051,
+    "word": "千葉市",
+    "reading": "ちばし",
+    "meaning": "千叶县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1052,
+    "word": "堺市",
+    "reading": "さかいし",
+    "meaning": "大阪府",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1053,
+    "word": "新潟市",
+    "reading": "にいがたし",
+    "meaning": "新潟县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1054,
+    "word": "浜松市",
+    "reading": "はままつし",
+    "meaning": "静冈县",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1055,
+    "word": "静岡市",
+    "reading": "しずおかし",
+    "meaning": "静冈县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1056,
+    "word": "岡山市",
+    "reading": "おかやまし",
+    "meaning": "冈山县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1057,
+    "word": "熊本市",
+    "reading": "くまもとし",
+    "meaning": "熊本县厅所在地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1058,
+    "word": "銀座",
+    "reading": "ぎんざ",
+    "meaning": "东京繁华街",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1059,
+    "word": "表参道",
+    "reading": "おもてさんどう",
+    "meaning": "青山表参道",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1060,
+    "word": "竹下通り",
+    "reading": "たけしたどおり",
+    "meaning": "原宿竹下通",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1061,
+    "word": "歌舞伎町",
+    "reading": "かぶきちょう",
+    "meaning": "新宿歌舞伎町",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1062,
+    "word": "六本木ヒルズ周辺",
+    "reading": "ろっぽんぎひるずしゅうへん",
+    "meaning": "六本木之丘一带",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1063,
+    "word": "お台場海浜公園通り",
+    "reading": "おだいばかいひんこうえんどおり",
+    "meaning": "台场海滨公园一带道路",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1064,
+    "word": "丸の内仲通り",
+    "reading": "まるのうちなかどおり",
+    "meaning": "东京丸之内仲通",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1065,
+    "word": "秋葉原電気街",
+    "reading": "あきはばらでんきがい",
+    "meaning": "秋叶原电器街",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1066,
+    "word": "道頓堀",
+    "reading": "どうとんぼり",
+    "meaning": "大阪道顿堀",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1067,
+    "word": "心斎橋筋",
+    "reading": "しんさいばしすじ",
+    "meaning": "大阪心斋桥筋商店街",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1068,
+    "word": "御堂筋",
+    "reading": "みどうすじ",
+    "meaning": "大阪御堂筋",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1069,
+    "word": "祇園",
+    "reading": "ぎおん",
+    "meaning": "京都祇园",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1070,
+    "word": "花見小路",
+    "reading": "はなみこうじ",
+    "meaning": "京都花见小路",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1071,
+    "word": "先斗町",
+    "reading": "ぽんとちょう",
+    "meaning": "京都先斗町",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1072,
+    "word": "哲学の道",
+    "reading": "てつがくのみち",
+    "meaning": "京都哲学之道",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1073,
+    "word": "倉敷美観地区",
+    "reading": "くらしきびかんちく",
+    "meaning": "冈山仓敷美观地区",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1074,
+    "word": "元町通り（神戸）",
+    "reading": "もとまちどおり（こうべ）",
+    "meaning": "神户元町通",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1075,
+    "word": "東京スカイツリー",
+    "reading": "とうきょうすかいつりー",
+    "meaning": "晴空塔",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1076,
+    "word": "東京タワー",
+    "reading": "とうきょうたわー",
+    "meaning": "东京塔",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1077,
+    "word": "浅草寺",
+    "reading": "せんそうじ",
+    "meaning": "东京浅草寺",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1078,
+    "word": "明治神宮",
+    "reading": "めいじじんぐう",
+    "meaning": "东京明治神宫",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1079,
+    "word": "皇居外苑",
+    "reading": "こうきょがいえん",
+    "meaning": "皇居外苑",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1080,
+    "word": "上野公園",
+    "reading": "うえのこうえん",
+    "meaning": "东京上野公园",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1081,
+    "word": "富士山",
+    "reading": "ふじさん",
+    "meaning": "富士山",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1082,
+    "word": "箱根",
+    "reading": "はこね",
+    "meaning": "箱根温泉胜地",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1083,
+    "word": "日光東照宮",
+    "reading": "にっこうとうしょうぐう",
+    "meaning": "栃木日光东照宫",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1084,
+    "word": "兼六園",
+    "reading": "けんろくえん",
+    "meaning": "金泽兼六园",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1085,
+    "word": "白川郷",
+    "reading": "しらかわごう",
+    "meaning": "岐阜白川乡",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1086,
+    "word": "金閣寺",
+    "reading": "きんかくじ",
+    "meaning": "京都金阁寺",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1087,
+    "word": "銀閣寺",
+    "reading": "ぎんかくじ",
+    "meaning": "京都银阁寺",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1088,
+    "word": "清水寺",
+    "reading": "きよみずでら",
+    "meaning": "京都清水寺",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1089,
+    "word": "伏見稲荷大社",
+    "reading": "ふしみいなりたいしゃ",
+    "meaning": "京都伏见稻荷大社",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1090,
+    "word": "嵐山",
+    "reading": "あらしやま",
+    "meaning": "京都岚山",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1091,
+    "word": "東大寺",
+    "reading": "とうだいじ",
+    "meaning": "奈良东大寺",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1092,
+    "word": "奈良公園",
+    "reading": "ならこうえん",
+    "meaning": "奈良公园",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1093,
+    "word": "大阪城",
+    "reading": "おおさかじょう",
+    "meaning": "大阪城",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1094,
+    "word": "姫路城",
+    "reading": "ひめじじょう",
+    "meaning": "姬路城",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1095,
+    "word": "厳島神社",
+    "reading": "いつくしまじんじゃ",
+    "meaning": "广岛宫岛严岛神社",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1096,
+    "word": "原爆ドーム",
+    "reading": "げんばくドーム",
+    "meaning": "广岛原爆圆顶馆",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1097,
+    "word": "太宰府天満宮",
+    "reading": "だざいふてんまんぐう",
+    "meaning": "福冈太宰府天满宫",
+    "level": "N5",
+    "topic": "地名观光"
+  },
+  {
+    "id": 1098,
+    "word": "首里城跡",
+    "reading": "しゅりじょうあと",
+    "meaning": "冲绳首里城遗址",
+    "level": "N5",
+    "topic": "地名观光"
   }
 ]

@@ -14,11 +14,12 @@ import StatsPanel from '@/components/stats/StatsPanel.vue'
 import LoopBar from '@/components/loop/LoopBar.vue'
 import KanaGrid from '@/components/kana/KanaGrid.vue'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
+import { stopLoop as stopPracticeAudioLoop } from '@/composables/useAudio'
 import { useTheme } from '@/composables/useTheme'
 import { restoreListenListHiddenOnTestMode } from '@/learning'
 
 const store = useAppStore()
-const { loopPlaying, startListPlayback, stop: stopLoop } = useLoopPlayer()
+const { loopPlaying, startListPlayback, stop: stopListPlayback } = useLoopPlayer()
 const listPanelRef = ref<InstanceType<typeof ListPanel> | null>(null)
 
 watch(loopPlaying, (val) => {
@@ -35,8 +36,17 @@ watch(() => [store.currentMode, store.currentCat], () => {
 
 watch(
   () => store.currentMode,
-  (mode) => {
+  (mode, prev) => {
     if (mode === 'test') restoreListenListHiddenOnTestMode()
+    // 离开「听」：停列表循环，避免与测/练争用全局 audioEl
+    if (prev === 'list' && mode !== 'list') {
+      stopListPlayback()
+      listPanelRef.value?.stopSpeaking()
+    }
+    // 离开「测」「练」：停单曲循环与保活（v-show 下面板仍挂载，否则会抢主轨或让 iOS 上后续 play 失败）
+    if ((prev === 'test' || prev === 'practice') && mode !== prev) {
+      stopPracticeAudioLoop()
+    }
   },
 )
 
@@ -90,7 +100,7 @@ onUnmounted(() => {
           v-else
           ref="listPanelRef"
           @speak="(items, from, to) => startListPlayback(items, from, to)"
-          @stop="() => { stopLoop(); listPanelRef?.stopSpeaking() }"
+          @stop="() => { stopListPlayback(); listPanelRef?.stopSpeaking() }"
         />
       </div>
       <div v-show="store.currentMode === 'practice'" class="px-4 pb-5 md:px-10 md:max-w-[800px] md:mx-auto">

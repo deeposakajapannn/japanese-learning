@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { useAppStore, type DataItem } from '../stores/app'
-import { audioEl } from './useAudio'
+import { audioEl, playMainTrack } from './useAudio'
 import { recordListenTime } from './useStats'
 import { recordItemListened } from './useSpacedRepetition'
 import { t } from '@/i18n'
@@ -120,10 +120,8 @@ function runNextStep(session: number, action: () => void, delayMs: number) {
 
 function playCurrentAudio(src: string, session: number, onFail: () => void) {
   if (session !== loopPlaySession) return
-  audioEl.pause()
-  audioEl.src = src
   appendLoopDebug('play_audio', safeAudioSrc(src))
-  audioEl.play().catch(() => {
+  playMainTrack(src, () => {
     appendLoopDebug('play_audio_failed', safeAudioSrc(src))
     if (session !== loopPlaySession) return
     if (!loopPlaying.value || loopPaused.value) return

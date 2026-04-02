@@ -38,6 +38,7 @@ const {
   passPhase1,
   skip,
   nextAfterPass,
+  returnToListenPractice,
   speakCurrent,
 } = useMasteryTest()
 
@@ -231,6 +232,15 @@ const progressText = computed(() => {
         </p>
       </template>
     </div>
+
+    <button
+      v-if="hasItems && currentItem && !isAnswered"
+      type="button"
+      class="w-full max-w-[400px] py-2.5 px-3 rounded-[10px] text-sm font-medium border-2 cursor-pointer transition-all theme-surface theme-muted hover:border-[#5b8a72]"
+      @click="returnToListenPractice"
+    >
+      {{ t('quizReturnToListenPractice') }}
+    </button>
 
     <!-- Action buttons -->
     <div v-if="hasItems" class="flex items-center gap-3 w-full max-w-[400px]">

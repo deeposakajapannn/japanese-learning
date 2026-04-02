@@ -699,54 +699,52 @@
   },
   {
     "id": 50,
-    "word": "右に曲がってください。",
-    "reading": "みぎにまがってください。",
-    "meaning": "请右转。",
+    "word": "右でお願いします。",
+    "reading": "みぎでおねがいします。",
+    "meaning": "请往右。",
     "level": "N5",
-    "meaningEn": "Please turn right.",
+    "meaningEn": "Right, please.",
     "topic": "交通出行",
     "grammar": [
       {
-        "pattern": "〜てください",
+        "pattern": "〜でお願いします",
         "level": "N4",
-        "note": "请…",
-        "noteEn": "please do",
+        "note": "（指路、打车等）请往…",
+        "noteEn": "Please (direction), e.g. in a taxi",
         "highlight": [
-          1,
-          2
+          0,
+          1
         ]
       }
     ],
     "tokens": [
-      "右に",
-      "曲がって",
-      "ください。"
+      "右で",
+      "お願いします。"
     ]
   },
   {
     "id": 51,
-    "word": "左に曲がってください。",
-    "reading": "ひだりにまがってください。",
-    "meaning": "请左转。",
+    "word": "左でお願いします。",
+    "reading": "ひだりでおねがいします。",
+    "meaning": "请往左。",
     "level": "N5",
-    "meaningEn": "Please turn left.",
+    "meaningEn": "Left, please.",
     "topic": "交通出行",
     "grammar": [
       {
-        "pattern": "〜てください",
+        "pattern": "〜でお願いします",
         "level": "N4",
-        "note": "请…",
-        "noteEn": "please do",
+        "note": "（指路、打车等）请往…",
+        "noteEn": "Please (direction), e.g. in a taxi",
         "highlight": [
-          1,
-          2
+          0,
+          1
         ]
       }
     ],
     "tokens": [
-      "左に",
-      "曲がって",
-      "ください。"
+      "左で",
+      "お願いします。"
     ]
   },
   {

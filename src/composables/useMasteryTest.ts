@@ -72,6 +72,7 @@ function passPhase1() {
 function markPassed() {
   stopLoop()
   passedCount.value++
+  totalCount.value++
   isAnswered.value = true
   const it = currentItem.value
   if (!it) return
@@ -111,8 +112,18 @@ function skip() {
 }
 
 function nextAfterPass() {
-  totalCount.value++
   pickRandom()
+}
+
+/** 从掌握测验队列移出，词条重新出现在「听」「练」 */
+function returnToListenPractice() {
+  const it = currentItem.value
+  if (!it) return
+  stopLoop()
+  clearQuizFails(it._cat, it.id)
+  clearPhase1(it._cat, it.id)
+  removeFromQuizQueue(it._cat, it.id)
+  rebuildItems()
 }
 
 function speakCurrent() {
@@ -137,6 +148,7 @@ export function useMasteryTest() {
     passPhase1,
     skip,
     nextAfterPass,
+    returnToListenPractice,
     speakCurrent,
   }
 }

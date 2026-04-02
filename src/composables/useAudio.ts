@@ -13,6 +13,24 @@ function audioPath(fn: string): string {
 
 export { audioEl }
 
+/**
+ * 主轨播放：测页用过麦克风后，部分移动浏览器需 load + 重试 play 才能恢复。
+ * onBothFailed：两次 play 均失败时回调（如列表循环里跳过当前条）。
+ */
+export function playMainTrack(src: string, onBothFailed?: () => void): void {
+  audioEl.pause()
+  audioEl.src = src
+  try {
+    audioEl.load()
+  } catch {
+    /* ignore */
+  }
+  const fail = onBothFailed ?? (() => {})
+  void audioEl.play().catch(() => {
+    void audioEl.play().catch(() => fail())
+  })
+}
+
 export function speakTTS(text: string) {
   speechSynthesis.cancel()
   const u = new SpeechSynthesisUtterance(text)
@@ -26,8 +44,7 @@ export function speak(word: string) {
   const fn = store.audioMap[word]
   if (!fn) { speakTTS(word); return }
   audioEl.onended = null
-  audioEl.src = audioPath(fn)
-  audioEl.play().catch(() => {})
+  playMainTrack(audioPath(fn))
 }
 
 export function speakWithExample(word: string, example?: string) {
@@ -41,12 +58,10 @@ export function speakWithExample(word: string, example?: string) {
         recordListenTime(audioEl.duration)
         audioEl.onended = null
       }
-      audioEl.src = audioPath(store.audioMap[example])
-      audioEl.play().catch(() => {})
+      playMainTrack(audioPath(store.audioMap[example]))
     }
   }
-  audioEl.src = audioPath(fn1)
-  audioEl.play().catch(() => {})
+  playMainTrack(audioPath(fn1))
 }
 
 export const looping = ref(false)
@@ -129,16 +144,12 @@ export function speakLoop(word: string, example?: string) {
           if (!looping.value) return
           schedulePracticeGap(800, session, playOnce)
         }
-        audioEl.pause()
-        audioEl.src = audioPath(store.audioMap[example])
-        audioEl.play().catch(() => {})
+        playMainTrack(audioPath(store.audioMap[example]))
       } else {
         schedulePracticeGap(800, session, playOnce)
       }
     }
-    audioEl.pause()
-    audioEl.src = audioPath(fn1)
-    audioEl.play().catch(() => {})
+    playMainTrack(audioPath(fn1))
   }
   playOnce()
 }
@@ -151,6 +162,11 @@ export function stopLoop() {
   audioEl.onended = null
   audioEl.pause()
   stopPracticeKeepAlive()
+  try {
+    audioEl.currentTime = 0
+  } catch {
+    /* ignore */
+  }
 }
 
 

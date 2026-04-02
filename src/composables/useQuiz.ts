@@ -2,7 +2,8 @@ import { ref, computed, watch } from 'vue'
 import { useAppStore } from '../stores/app'
 import { speakWithExample, stopLoop } from './useAudio'
 import { recordQuiz } from './useStats'
-import { makeItemKey } from '@/learning/itemKey'
+import { makeItemKey, parseItemKey } from '@/learning/itemKey'
+import { isInQuizQueue, quizQueueTick } from '@/learning'
 import { markPracticeAnswerKnown, markPracticeAnswerUnknown, milestoneStateTick, hasMasteryQuizPassed } from '@/learning/milestones'
 import {
   getActiveItems,
@@ -242,12 +243,33 @@ function speakQuizCurrent() {
   speakWithExample(it.word, it.example)
 }
 
-// 云端同步后掌握数据可能变化，实时过滤掉已掌握的题目
-watch(milestoneStateTick, () => {
+// 云端同步 / 加入掌握队列后，实时过滤已掌握与「仅在测」队列中的题目
+watch([milestoneStateTick, quizQueueTick], () => {
+  const store = useAppStore()
+  const cat = store.currentCat
+
+  if (newBatchKeysRef.value.length) {
+    const nk = newBatchKeysRef.value.filter((k) => {
+      const p = parseItemKey(k)
+      if (!p) return false
+      if (hasMasteryQuizPassed(p.cat, p.id)) return false
+      if (isInQuizQueue(p.cat, p.id)) return false
+      return true
+    })
+    if (nk.length !== newBatchKeysRef.value.length) {
+      newBatchKeysRef.value = nk
+      const known: Record<string, boolean> = {}
+      for (const k of nk) {
+        if (newBatchKnown.value[k]) known[k] = true
+      }
+      newBatchKnown.value = known
+    }
+  }
+
   const before = quizItems.value.length
   quizItems.value = quizItems.value.filter((it) => {
-    const cat = it._cat || useAppStore().currentCat
-    return !hasMasteryQuizPassed(cat, it.id)
+    const c = it._cat || cat
+    return !hasMasteryQuizPassed(c, it.id) && !isInQuizQueue(c, it.id)
   })
   if (quizItems.value.length !== before && quizIndex.value >= quizItems.value.length) {
     quizIndex.value = Math.max(0, quizItems.value.length - 1)

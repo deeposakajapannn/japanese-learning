@@ -52,7 +52,7 @@ export function useJaSpeechRecognition() {
   }
 
   /**
-   * 开始一次识别（continuous=false，停顿后自动结束）。
+   * 开始一次识别（continuous=true，停顿不会结束会话；须调用 stopListening 才结束）。
    * 结束后调用 onDone(合并后的识别文本)。
    */
   function start(onDone?: (fullText: string) => void) {
@@ -68,7 +68,7 @@ export function useJaSpeechRecognition() {
 
     const rec = new Ctor()
     rec.lang = 'ja-JP'
-    rec.continuous = false
+    rec.continuous = true
     rec.interimResults = true
 
     rec.onresult = (event: SpeechRecognitionEvent) => {

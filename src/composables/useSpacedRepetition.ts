@@ -3,7 +3,7 @@ import { useAppStore, type DataItem } from '../stores/app'
 import { useFirebase } from './useFirebase'
 import { todayKey } from './useStats'
 import { coerceListenCount } from '@/utils/listenCount'
-import { hasMasteryQuizPassed } from '@/learning'
+import { hasMasteryQuizPassed, isInQuizQueue } from '@/learning'
 
 const { debouncedSync } = useFirebase()
 
@@ -43,7 +43,11 @@ export function getActiveItems(cat: string): (DataItem & { _cat?: string })[] {
     for (const k of ['nouns', 'sentences'] as const) {
       store.data[k].forEach((it: DataItem) => {
         const key = k + ':' + it.id
-        if (!(delays[key] > today) && !hasMasteryQuizPassed(k, it.id)) {
+        if (
+          !(delays[key] > today) &&
+          !hasMasteryQuizPassed(k, it.id) &&
+          !isInQuizQueue(k, it.id)
+        ) {
           all.push({ ...it, _cat: k })
         }
       })
@@ -59,7 +63,11 @@ export function getActiveItems(cat: string): (DataItem & { _cat?: string })[] {
   if (!items) return []
   return items.filter((it: DataItem) => {
     const key = cat + ':' + it.id
-    return !(delays[key] > today) && !hasMasteryQuizPassed(cat, it.id)
+    return (
+      !(delays[key] > today) &&
+      !hasMasteryQuizPassed(cat, it.id) &&
+      !isInQuizQueue(cat, it.id)
+    )
   })
 }
 
