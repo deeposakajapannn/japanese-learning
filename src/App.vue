@@ -13,6 +13,7 @@ import MasteryTestPanel from '@/components/mastery/MasteryTestPanel.vue'
 import StatsPanel from '@/components/stats/StatsPanel.vue'
 import LoopBar from '@/components/loop/LoopBar.vue'
 import KanaGrid from '@/components/kana/KanaGrid.vue'
+import ArticlesPanel from '@/components/articles/ArticlesPanel.vue'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
 import { stopLoop as stopPracticeAudioLoop } from '@/composables/useAudio'
 import { useTheme } from '@/composables/useTheme'
@@ -96,6 +97,7 @@ onUnmounted(() => {
       <CategoryTabs />
       <div v-show="store.currentMode === 'list'">
         <KanaGrid v-if="store.currentCat === 'kana'" />
+        <ArticlesPanel v-else-if="store.currentCat === 'articles'" />
         <ListPanel
           v-else
           ref="listPanelRef"

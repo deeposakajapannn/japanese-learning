@@ -95,7 +95,7 @@ body::before {
   z-index: 1;
 }
 
-/* 顶部分类 Tab（句子/名词/50音）：浅色用暖杏底 + 主色勾边，避免灰轨 */
+/* 顶部分类 Tab（句子/单词/50音）：浅色用暖杏底 + 主色勾边，避免灰轨 */
 .category-tab-rail {
   background: linear-gradient(
     180deg,

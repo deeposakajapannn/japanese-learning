@@ -66,20 +66,36 @@ function onSpeakRange() {
         <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
       </svg>
     </div>
-    <div class="w-full">
-      <button
-        class="w-full py-3 text-white text-[15px] font-semibold cursor-pointer transition-all"
-        :class="[
-          isSpeaking ? 'btn-grad-primary btn-grad-primary--pressed' : 'btn-grad-primary btn-grad-primary--borderless',
-          enableListSpeakSequenceRange && canUseRange && showRange ? 'rounded-t-[10px]' : 'rounded-[10px]'
-        ]"
-        @click="onToggleSpeak"
-      >
-        {{ isSpeaking ? t('listStop') : t('listSpeak') }}
-      </button>
+    <div class="w-full flex flex-col gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <button
+          v-if="!isSpeaking"
+          type="button"
+          class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors"
+          :class="
+            totalItems < 1
+              ? 'opacity-40 cursor-not-allowed border-[var(--border)] theme-muted'
+              : enableListSpeakSequenceRange && canUseRange && showRange
+                ? 'bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e] cursor-pointer'
+                : 'theme-muted border-[var(--border)] bg-transparent hover:theme-text cursor-pointer'
+          "
+          :disabled="totalItems < 1"
+          @click="onToggleSpeak"
+        >
+          {{ t('listSpeak') }}
+        </button>
+        <button
+          v-else
+          type="button"
+          class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e]"
+          @click="onToggleSpeak"
+        >
+          {{ t('listStop') }}
+        </button>
+      </div>
       <div
         v-if="enableListSpeakSequenceRange && canUseRange && showRange"
-        class="flex flex-col gap-2 px-3 py-2.5 theme-surface border-t-0 rounded-b-[10px]"
+        class="flex flex-col gap-2 px-3 py-2.5 rounded-xl theme-surface border border-[var(--border)]"
       >
         <div class="flex items-center justify-center gap-2">
         <span class="text-[13px] theme-muted whitespace-nowrap">{{ t('from') }}</span>

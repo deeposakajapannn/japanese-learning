@@ -225,13 +225,13 @@ const cardTransitionClass = computed(() => {
           </div>
           <button
             type="button"
-            class="text-xl ml-2 shrink-0 bg-transparent border-none cursor-pointer"
+            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer theme-muted border-[var(--border)] bg-transparent hover:theme-text ml-2 shrink-0"
             @click.stop="onSpeak"
           >
-            🔊
+            {{ t('articlePlayAll') }}
           </button>
           <div
-            class="absolute top-0 right-10 theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none"
+            class="absolute top-0 right-[7.5rem] theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none"
           >
             {{ statsLine }}
           </div>

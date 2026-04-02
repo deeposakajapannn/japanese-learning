@@ -7,6 +7,7 @@ const store = useAppStore()
 const { t } = useLang()
 
 const categories = computed(() => [
+  { key: 'articles', labelKey: 'catArticles', count: String(store.articles.length) },
   { key: 'sentences', labelKey: 'catSent', count: String(store.data.sentences.length) },
   { key: 'nouns', labelKey: 'catNouns', count: String(store.data.nouns.length) },
   { key: 'kana', labelKey: 'catKana', count: '' },

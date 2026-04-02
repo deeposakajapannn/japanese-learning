@@ -25,7 +25,46 @@ export interface VocabItemWithCat extends VocabItem {
   _cat: CategoryKey
 }
 
-export type CategoryKey = 'nouns' | 'sentences' | 'kana'
+export type CategoryKey = 'nouns' | 'sentences' | 'kana' | 'articles'
+
+/** 精读文章：短文或对话，按句分段，含注音与译文；audioKey 可选，对应 audio_map */
+export interface ArticleSegment {
+  jp: string
+  reading: string
+  zh: string
+  audioKey?: string
+}
+
+export interface ArticleDialogueLine extends ArticleSegment {
+  speaker: 'A' | 'B'
+}
+
+export interface ArticleDialogueSection {
+  badge?: string
+  headingJa: string
+  headingZh: string
+  lines: ArticleDialogueLine[]
+}
+
+export interface ArticleEssay {
+  id: string
+  level: string
+  format: 'essay'
+  titleJa: string
+  titleZh: string
+  segments: ArticleSegment[]
+}
+
+export interface ArticleDialogue {
+  id: string
+  level: string
+  format: 'dialogue'
+  titleJa: string
+  titleZh: string
+  sections: ArticleDialogueSection[]
+}
+
+export type ArticleItem = ArticleEssay | ArticleDialogue
 export type ModeKey = 'list' | 'practice' | 'test' | 'stats'
 export type LangKey = 'zh' | 'en'
 

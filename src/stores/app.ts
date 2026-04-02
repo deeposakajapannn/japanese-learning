@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import type { ArticleItem } from '@/types'
 
 export interface DataItem {
   id: number
@@ -119,30 +120,41 @@ const KANA_DATA: DataItem[] = [
 
 export const useAppStore = defineStore('app', () => {
   const currentMode = ref<string>('list')
-  const currentCat = ref<string>('sentences')
+  const currentCat = ref<string>('articles')
   const data = ref<AppData>({ nouns: [], sentences: [], kana: KANA_DATA })
   const audioMap = ref<Record<string, string>>({})
+  /** 精读文章（短文 / 对话），见 public/data/articles.json */
+  const articles = ref<ArticleItem[]>([])
   const isDataLoaded = ref(false)
 
   function switchMode(mode: string) {
+    // 「文章」无听练测题库，切到练/测时回到句子以免空队列
+    if ((mode === 'practice' || mode === 'test') && currentCat.value === 'articles') {
+      currentCat.value = 'sentences'
+    }
     currentMode.value = mode
   }
 
   function switchCat(cat: string) {
+    if (cat === 'articles') {
+      currentMode.value = 'list'
+    }
     currentCat.value = cat
   }
 
   async function loadData() {
     try {
       const base = import.meta.env.BASE_URL
-      const [nouns, sentences, audioMapData] = await Promise.all([
+      const [nouns, sentences, audioMapData, articlesData] = await Promise.all([
         fetch(`${base}data/nouns.json`).then(r => r.json()),
         fetch(`${base}data/sentences.json`).then(r => r.json()),
         fetch(`${base}data/audio_map.json`).then(r => r.json()),
+        fetch(`${base}data/articles.json`).then(r => r.json()),
       ])
       data.value.nouns = nouns
       data.value.sentences = sentences
       audioMap.value = audioMapData
+      articles.value = Array.isArray(articlesData?.items) ? articlesData.items : []
       isDataLoaded.value = true
     } catch (e) {
       console.error('Failed to load data', e)
@@ -155,6 +167,7 @@ export const useAppStore = defineStore('app', () => {
     currentCat,
     data,
     audioMap,
+    articles,
     isDataLoaded,
     switchMode,
     switchCat,
