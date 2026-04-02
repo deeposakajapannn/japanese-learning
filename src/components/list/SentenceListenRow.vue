@@ -52,12 +52,15 @@ let activePointerId: number | null = null
 /** 方向锁定：一旦判定水平/垂直就不再切换 */
 let dragAxis: 'x' | 'y' | null = null
 
+/** 斜向滑动时略偏向横向，避免想左滑时被判成纵向而导致「滑不动」 */
+const HORIZONTAL_BIAS = 1.35
+
 function onWindowPointerMove(e: PointerEvent) {
   if (!dragging.value || activePointerId !== e.pointerId) return
   const dx = e.clientX - touchStartX
   const dy = e.clientY - touchStartY
-  if (!dragAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
-    dragAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y'
+  if (!dragAxis && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+    dragAxis = Math.abs(dx) * HORIZONTAL_BIAS >= Math.abs(dy) ? 'x' : 'y'
   }
   if (dragAxis === 'x') {
     e.preventDefault()
@@ -69,12 +72,17 @@ function onWindowPointerMove(e: PointerEvent) {
   }
 }
 
-function onWindowPointerUp(e: PointerEvent) {
+function detachWindowPointerListeners() {
+  window.removeEventListener('pointermove', onWindowPointerMove)
+  window.removeEventListener('pointerup', onWindowPointerEnd)
+  window.removeEventListener('pointercancel', onWindowPointerEnd)
+}
+
+function onWindowPointerEnd(e: PointerEvent) {
   if (!dragging.value || activePointerId !== e.pointerId) return
   dragging.value = false
   activePointerId = null
-  window.removeEventListener('pointermove', onWindowPointerMove)
-  window.removeEventListener('pointerup', onWindowPointerUp)
+  detachWindowPointerListeners()
   if (offsetPx.value < -40) {
     offsetPx.value = -ACTION_W
   } else {
@@ -94,6 +102,7 @@ const inQueue = computed(() => {
 
 function onAddQuiz() {
   addToQuizQueue(cat, props.item.id)
+  offsetPx.value = 0
 }
 
 function onPointerDown(e: PointerEvent) {
@@ -105,8 +114,17 @@ function onPointerDown(e: PointerEvent) {
   touchStartX = e.clientX
   touchStartY = e.clientY
   touchStartOffset = offsetPx.value
-  window.addEventListener('pointermove', onWindowPointerMove)
-  window.addEventListener('pointerup', onWindowPointerUp)
+  const el = e.currentTarget
+  if (el instanceof HTMLElement) {
+    try {
+      el.setPointerCapture(e.pointerId)
+    } catch {
+      /* ignore */
+    }
+  }
+  window.addEventListener('pointermove', onWindowPointerMove, { passive: false })
+  window.addEventListener('pointerup', onWindowPointerEnd)
+  window.addEventListener('pointercancel', onWindowPointerEnd)
 }
 
 function onCardClick() {
