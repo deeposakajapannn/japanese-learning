@@ -226,8 +226,25 @@ function setupMediaSession() {
     ],
   })
   navigator.mediaSession.playbackState = loopPaused.value ? 'paused' : 'playing'
+  // iOS 锁屏/控制中心常会直接 pause 主轨而不触发本回调，导致 loopPaused 仍为 false；
+  // 此时用户点「播放」必须恢复主轨，不能只依赖 togglePlay（其仅在 loopPaused 时继续）。
   navigator.mediaSession.setActionHandler('play', () => {
-    if (loopPaused.value) togglePlay()
+    if (!loopPlaying.value) return
+    if (loopPaused.value) {
+      togglePlay()
+      return
+    }
+    // 句间间隙主轨常为 ended+paused，此时应由 gap 音推进，勿对主轨 play（避免误重播）
+    if (audioEl.paused && !audioEl.ended) {
+      appendLoopDebug('media_session_play_desync')
+      resumeSilentKeepAlive()
+      void audioEl.play().catch(() => {
+        void audioEl.play().catch(() => {
+          appendLoopDebug('media_session_play_desync_failed')
+        })
+      })
+      flushMediaSessionPlaying()
+    }
   })
   navigator.mediaSession.setActionHandler('pause', () => {
     if (!loopPaused.value) togglePlay()
