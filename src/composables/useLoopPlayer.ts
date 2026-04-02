@@ -24,6 +24,9 @@ let gapAudio: HTMLAudioElement | null = null
 /** 每次开始播一条（含切歌）递增，用于丢弃上一轨残留的 play().catch / 旧闭包 */
 let loopPlaySession = 0
 
+/** iOS 上每次 setActionHandler 会触发锁屏界面重绘；与曲目无关，只注册一次 */
+let mediaSessionActionsRegistered = false
+
 type LoopDebugEntry = {
   ts: string
   event: string
@@ -214,18 +217,9 @@ function flushMediaSessionPlaying() {
   })
 }
 
-function setupMediaSession() {
-  if (!('mediaSession' in navigator)) return
-  const it = loopPlaylist.value[loopIndex.value]
-  if (!it) return
-  navigator.mediaSession.metadata = new MediaMetadata({
-    title: it.word + ' - ' + it.meaning,
-    artist: t('loopRound') + loopRound.value + t('loopRoundSuffix') + ' · ' + (loopIndex.value + 1) + '/' + loopPlaylist.value.length,
-    artwork: [
-      { src: 'cover.jpg', sizes: '1024x1024', type: 'image/jpeg' },
-    ],
-  })
-  navigator.mediaSession.playbackState = loopPaused.value ? 'paused' : 'playing'
+function registerMediaSessionActionsOnce() {
+  if (!('mediaSession' in navigator) || mediaSessionActionsRegistered) return
+  mediaSessionActionsRegistered = true
   // iOS 锁屏/控制中心常会直接 pause 主轨而不触发本回调，导致 loopPaused 仍为 false；
   // 此时用户点「播放」必须恢复主轨，不能只依赖 togglePlay（其仅在 loopPaused 时继续）。
   navigator.mediaSession.setActionHandler('play', () => {
@@ -251,6 +245,32 @@ function setupMediaSession() {
   })
   navigator.mediaSession.setActionHandler('nexttrack', () => nextTrack())
   navigator.mediaSession.setActionHandler('previoustrack', () => prevTrack())
+}
+
+/** 仅更新当前曲目标题与进度；勿在每条重复 registerActionHandler，避免锁屏「一直刷」 */
+function updateMediaSessionMetadata() {
+  if (!('mediaSession' in navigator)) return
+  const it = loopPlaylist.value[loopIndex.value]
+  if (!it) return
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: it.word + ' - ' + it.meaning,
+    artist:
+      t('loopRound') +
+      loopRound.value +
+      t('loopRoundSuffix') +
+      ' · ' +
+      (loopIndex.value + 1) +
+      '/' +
+      loopPlaylist.value.length,
+    album: t('title'),
+    artwork: [{ src: 'cover.jpg', sizes: '1024x1024', type: 'image/jpeg' }],
+  })
+  navigator.mediaSession.playbackState = loopPaused.value ? 'paused' : 'playing'
+}
+
+function setupMediaSession() {
+  registerMediaSessionActionsOnce()
+  updateMediaSessionMetadata()
 }
 
 function playLoopItem() {
