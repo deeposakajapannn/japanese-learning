@@ -95,7 +95,7 @@ const flatSentences = computed(() => {
   const it = selected.value
   if (!it) return [] as { jp: string; reading: string; zh: string; speaker?: string }[]
   if (it.format === 'essay') {
-    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh }))
+    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh, speaker: (s as any).speaker as string | undefined }))
   }
   const out: { jp: string; reading: string; zh: string; speaker?: string }[] = []
   for (const sec of it.sections) {
