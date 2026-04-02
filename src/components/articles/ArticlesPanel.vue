@@ -2,11 +2,14 @@
 import { ref, computed, onUnmounted, watch } from 'vue'
 import { useAppStore } from '@/stores/app'
 import { useLang } from '@/i18n'
-import { playMainTrack, audioEl } from '@/composables/useAudio'
+import { audioEl } from '@/composables/useAudio'
+import { useLoopPlayer } from '@/composables/useLoopPlayer'
 import type { ArticleItem, ArticleEssay, ArticleDialogue } from '@/types'
+import type { DataItem } from '@/stores/app'
 
 const store = useAppStore()
 const { t, currentLang } = useLang()
+const { startLoop, stop: stopLoop, loopPlaying, loopIndex } = useLoopPlayer()
 
 const selectedId = ref<string | null>(null)
 
@@ -16,6 +19,30 @@ let articlePlaySession = 0
 const playingAll = ref(false)
 /** 当前正在播的原文（连播时高亮） */
 const playingJp = ref<string | null>(null)
+
+/** 单句/全文模式 */
+const LS_ARTICLE_MODE = 'jp_article_mode'
+const singleMode = ref(readStoredBool(LS_ARTICLE_MODE, false))
+
+/** 构建从指定索引开始的 LoopPlayer 播放列表 */
+function buildLoopItems(fromIndex: number) {
+  const sentences = flatSentences.value
+  const items: (DataItem & { _cat: string })[] = []
+  for (let i = fromIndex; i < sentences.length; i++) {
+    const s = sentences[i]
+    if (store.audioMap[s.jp]) {
+      items.push({ id: i, word: s.jp, reading: s.reading, meaning: s.zh, _cat: 'articles' })
+    }
+  }
+  // 把 fromIndex 之前的也追加到末尾，形成完整循环
+  for (let i = 0; i < fromIndex; i++) {
+    const s = sentences[i]
+    if (store.audioMap[s.jp]) {
+      items.push({ id: i, word: s.jp, reading: s.reading, meaning: s.zh, _cat: 'articles' })
+    }
+  }
+  return items
+}
 
 const LS_ARTICLE_ZH = 'jp_article_show_zh'
 const LS_ARTICLE_READING = 'jp_article_show_reading'
@@ -48,6 +75,13 @@ watch(showReading, (v) => {
     /* ignore */
   }
 })
+watch(singleMode, (v) => {
+  try {
+    localStorage.setItem(LS_ARTICLE_MODE, v ? '1' : '0')
+  } catch {
+    /* ignore */
+  }
+})
 
 const list = computed(() => store.articles)
 
@@ -56,25 +90,41 @@ const selected = computed(() => {
   return list.value.find((a) => a.id === selectedId.value) ?? null
 })
 
-/** 当前篇按顺序的朗读单元（用于连播） */
-const playbackUnits = computed(() => {
+/** 扁平化的所有句子（用于单句模式和连播） */
+const flatSentences = computed(() => {
   const it = selected.value
-  if (!it) return [] as { jp: string }[]
+  if (!it) return [] as { jp: string; reading: string; zh: string; speaker?: string }[]
   if (it.format === 'essay') {
-    return it.segments.map((s) => ({ jp: s.jp }))
+    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh }))
   }
-  const out: { jp: string }[] = []
+  const out: { jp: string; reading: string; zh: string; speaker?: string }[] = []
   for (const sec of it.sections) {
     for (const line of sec.lines) {
-      out.push({ jp: line.jp })
+      out.push({ jp: line.jp, reading: line.reading, zh: line.zh, speaker: line.speaker })
     }
   }
   return out
 })
 
+/** 当前篇按顺序的朗读单元（用于连播） */
+const playbackUnits = computed(() => {
+  return flatSentences.value.map((s) => ({ jp: s.jp }))
+})
+
 const canPlayAll = computed(() =>
   playbackUnits.value.some((u) => !!store.audioMap[u.jp]),
 )
+
+const copied = ref(false)
+async function copyFullText() {
+  const sentences = flatSentences.value
+  const text = sentences.map((s) => s.jp).join('\n')
+  try {
+    await navigator.clipboard.writeText(text)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 1500)
+  } catch { /* ignore */ }
+}
 
 function invalidateArticlePlayback() {
   articlePlaySession++
@@ -84,36 +134,17 @@ function invalidateArticlePlayback() {
   audioEl.onended = null
 }
 
-function playAllSequential() {
+function playAllWithLoopPlayer() {
   invalidateArticlePlayback()
-  const session = articlePlaySession
-  const units = playbackUnits.value
-  let i = 0
-  function next() {
-    if (session !== articlePlaySession) return
-    while (i < units.length && !store.audioMap[units[i].jp]) {
-      i++
-    }
-    if (i >= units.length) {
-      invalidateArticlePlayback()
-      return
-    }
-    const jp = units[i].jp
-    playingJp.value = jp
-    playingAll.value = true
-    i++
-    const fn = store.audioMap[jp]
-    const base = import.meta.env.BASE_URL
-    audioEl.onended = () => {
-      if (session !== articlePlaySession) return
-      next()
-    }
-    playMainTrack(`${base}audio/${fn}`, () => {
-      if (session !== articlePlaySession) return
-      next()
-    })
-  }
-  next()
+  const items = buildLoopItems(0)
+  if (items.length) startLoop(items)
+}
+
+/** 单句模式：点击某句，从该句开始启动 LoopPlayer */
+function playSentenceAt(index: number) {
+  invalidateArticlePlayback()
+  const items = buildLoopItems(index)
+  if (items.length) startLoop(items)
 }
 
 function openItem(id: string) {
@@ -122,6 +153,7 @@ function openItem(id: string) {
 
 function back() {
   invalidateArticlePlayback()
+  stopLoop()
   selectedId.value = null
 }
 
@@ -143,6 +175,11 @@ function isDialogue(it: ArticleItem | null): it is ArticleDialogue {
 }
 
 function linePlaying(jp: string) {
+  if (loopPlaying.value) {
+    const items = playbackUnits.value.filter((u) => !!store.audioMap[u.jp])
+    const current = items[loopIndex.value]
+    return current?.jp === jp
+  }
   return playingAll.value && playingJp.value === jp
 }
 
@@ -217,10 +254,10 @@ onUnmounted(() => {
           </button>
           <template v-if="canPlayAll">
             <button
-              v-if="!playingAll"
+              v-if="!loopPlaying"
               type="button"
               class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer theme-muted border-[var(--border)] bg-transparent hover:theme-text"
-              @click="playAllSequential"
+              @click="playAllWithLoopPlayer"
             >
               {{ t('articlePlayAll') }}
             </button>
@@ -228,71 +265,130 @@ onUnmounted(() => {
               v-else
               type="button"
               class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e]"
-              @click="invalidateArticlePlayback()"
+              @click="stopLoop"
             >
               {{ t('articleStopPlayback') }}
             </button>
           </template>
+          <button
+            type="button"
+            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer"
+            :class="copied
+              ? 'bg-[#5b8a72]/15 border-[#5b8a72]/40 text-[#5b8a72]'
+              : 'theme-muted border-[var(--border)] bg-transparent hover:theme-text'"
+            @click="copyFullText"
+          >
+            {{ copied ? t('articleCopied') : t('articleCopy') }}
+          </button>
+
+          <!-- 单句/全文 切换滑块 -->
+          <div
+            class="inline-flex items-center rounded-full border border-[var(--border)] p-0.5 ml-auto cursor-pointer select-none text-xs font-medium"
+            @click="singleMode = !singleMode"
+          >
+            <span
+              class="px-2 py-0.5 rounded-full transition-colors"
+              :class="!singleMode ? 'bg-[#e8735a]/15 text-[#c45a3e]' : 'theme-muted'"
+            >{{ t('articleModeFull') }}</span>
+            <span
+              class="px-2 py-0.5 rounded-full transition-colors"
+              :class="singleMode ? 'bg-[#e8735a]/15 text-[#c45a3e]' : 'theme-muted'"
+            >{{ t('articleModeSingle') }}</span>
+          </div>
         </div>
       </header>
 
-      <!-- 短文：连续正文，段与段之间仅留白（数据里一段即自然段） -->
-      <article
-        v-if="isEssay(selected)"
-        class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)]"
-      >
-        <span
-          class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"
-          aria-hidden="true"
-          >{{ selected.level }}</span>
-        <div class="space-y-6">
-          <div
-            v-for="(seg, i) in selected.segments"
-            :key="i"
-            class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
-            :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/10' : ''"
-          >
-            <p class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
-            <p v-if="showReading" class="text-sm theme-muted mt-2 leading-relaxed">{{ seg.reading }}</p>
-            <template v-if="showTranslation">
-              <p v-if="currentLang === 'zh'" class="text-sm mt-3 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
-              <p v-else class="text-sm mt-3 leading-relaxed theme-muted">{{ seg.zh }}</p>
-            </template>
+      <!-- ====== 单句列表模式 ====== -->
+      <div v-if="singleMode" class="space-y-3">
+        <div
+          v-for="(seg, i) in flatSentences"
+          :key="i"
+          class="relative rounded-2xl theme-surface p-4 md:p-5 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-colors"
+          :class="linePlaying(seg.jp) ? 'ring-2 ring-[#e8735a]/40' : ''"
+        >
+          <div class="flex items-start gap-3">
+            <div class="flex-1 min-w-0">
+              <div v-if="seg.speaker" class="text-xs font-bold mb-1" style="color: var(--primary)">{{ seg.speaker }}</div>
+              <p class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
+              <p v-if="showReading" class="text-sm theme-muted mt-1.5 leading-relaxed">{{ seg.reading }}</p>
+              <template v-if="showTranslation">
+                <p v-if="currentLang === 'zh'" class="text-sm mt-2 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
+                <p v-else class="text-sm mt-2 leading-relaxed theme-muted">{{ seg.zh }}</p>
+              </template>
+            </div>
+            <button
+              v-if="store.audioMap[seg.jp]"
+              type="button"
+              class="shrink-0 w-9 h-9 mt-0.5 rounded-full flex items-center justify-center cursor-pointer border-0 transition-transform active:scale-95"
+              style="background: linear-gradient(135deg, #e8735a 0%, #d4624d 100%); color: #fff;"
+              @click="playSentenceAt(i)"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <!-- 对话：同一张卡片内连续排版，小节之间留白；句与句不再画线分隔 -->
-      <article
-        v-else-if="isDialogue(selected)"
-        class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] space-y-10"
-      >
-        <span
-          class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"
-          aria-hidden="true"
-          >{{ selected.level }}</span>
-        <section v-for="(sec, si) in selected.sections" :key="si" class="space-y-4">
-          <div class="flex items-center gap-2 flex-wrap">
-            <span v-if="sec.badge" class="text-lg" aria-hidden="true">{{ sec.badge }}</span>
-            <span class="text-sm font-semibold theme-text">{{ sec.headingJa }}</span>
-            <span v-if="showTranslation && currentLang === 'zh'" class="text-xs theme-muted">（{{ sec.headingZh }}）</span>
+      <!-- ====== 全文模式 ====== -->
+      <template v-else-if="!singleMode">
+        <!-- 短文 -->
+        <article
+          v-if="isEssay(selected)"
+          class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)]"
+        >
+          <span
+            class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"
+            aria-hidden="true"
+            >{{ selected!.level }}</span>
+          <div class="space-y-6">
+            <div
+              v-for="(seg, i) in (selected as ArticleEssay).segments"
+              :key="i"
+              class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
+              :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/10' : ''"
+            >
+              <p class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
+              <p v-if="showReading" class="text-sm theme-muted mt-2 leading-relaxed">{{ seg.reading }}</p>
+              <template v-if="showTranslation">
+                <p v-if="currentLang === 'zh'" class="text-sm mt-3 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
+                <p v-else class="text-sm mt-3 leading-relaxed theme-muted">{{ seg.zh }}</p>
+              </template>
+            </div>
           </div>
-          <div
-            v-for="(line, li) in sec.lines"
-            :key="li"
-            class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
-            :class="linePlaying(line.jp) ? 'bg-[#e8735a]/10' : ''"
-          >
-            <div class="text-xs font-bold mb-0.5" style="color: var(--primary)">{{ line.speaker }}</div>
-            <p class="text-[15px] theme-text leading-relaxed">{{ line.jp }}</p>
-            <p v-if="showReading" class="text-sm theme-muted mt-1 leading-relaxed">{{ line.reading }}</p>
-            <template v-if="showTranslation">
-              <p v-if="currentLang === 'zh'" class="text-sm mt-2" style="color: var(--accent)">{{ line.zh }}</p>
-              <p v-else class="text-sm mt-2 theme-muted">{{ line.zh }}</p>
-            </template>
-          </div>
-        </section>
-      </article>
+        </article>
+
+        <!-- 对话 -->
+        <article
+          v-else-if="isDialogue(selected)"
+          class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] space-y-10"
+        >
+          <span
+            class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"
+            aria-hidden="true"
+            >{{ selected!.level }}</span>
+          <section v-for="(sec, si) in (selected as ArticleDialogue).sections" :key="si" class="space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span v-if="sec.badge" class="text-lg" aria-hidden="true">{{ sec.badge }}</span>
+              <span class="text-sm font-semibold theme-text">{{ sec.headingJa }}</span>
+              <span v-if="showTranslation && currentLang === 'zh'" class="text-xs theme-muted">（{{ sec.headingZh }}）</span>
+            </div>
+            <div
+              v-for="(line, li) in sec.lines"
+              :key="li"
+              class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
+              :class="linePlaying(line.jp) ? 'bg-[#e8735a]/10' : ''"
+            >
+              <div class="text-xs font-bold mb-0.5" style="color: var(--primary)">{{ line.speaker }}</div>
+              <p class="text-[15px] theme-text leading-relaxed">{{ line.jp }}</p>
+              <p v-if="showReading" class="text-sm theme-muted mt-1 leading-relaxed">{{ line.reading }}</p>
+              <template v-if="showTranslation">
+                <p v-if="currentLang === 'zh'" class="text-sm mt-2" style="color: var(--accent)">{{ line.zh }}</p>
+                <p v-else class="text-sm mt-2 theme-muted">{{ line.zh }}</p>
+              </template>
+            </div>
+          </section>
+        </article>
+      </template>
     </div>
   </div>
 </template>

@@ -230,11 +230,11 @@ const cardTransitionClass = computed(() => {
           >
             {{ t('articlePlayAll') }}
           </button>
-          <div
-            class="absolute top-0 right-[7.5rem] theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none"
-          >
-            {{ statsLine }}
-          </div>
+        </div>
+        <div
+          class="absolute top-2 right-3 theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none"
+        >
+          {{ statsLine }}
         </div>
       </div>
     </div>

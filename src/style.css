@@ -38,6 +38,8 @@ input, select, textarea {
   --grad-kana-tab: linear-gradient(135deg, #fff8f4 0%, #ffe8df 100%);
   /* 下拉遮罩：Teleport 到 body 的元素不能受下方 #app 规则误伤 */
   --overlay-scrim: rgba(20, 18, 16, 0.2);
+  --kana-cell: #faf7f4;
+  --kana-cell-hover: #fdf0ed;
 }
 
 body {
@@ -70,6 +72,8 @@ body {
   --grad-nav-pill: linear-gradient(135deg, color-mix(in srgb, var(--primary) 16%, var(--card)) 0%, color-mix(in srgb, var(--primary) 8%, var(--card)) 100%);
   --grad-kana-tab: linear-gradient(135deg, color-mix(in srgb, var(--primary) 14%, var(--card)) 0%, color-mix(in srgb, var(--primary) 7%, var(--card)) 100%);
   --overlay-scrim: rgba(0, 0, 0, 0.48);
+  --kana-cell: #2a2d30;
+  --kana-cell-hover: #33373b;
 }
 
 body::before {
@@ -287,6 +291,13 @@ body::before {
 
 .theme-soft {
   background: var(--primary-light);
+}
+
+.kana-cell {
+  background: var(--kana-cell);
+}
+.kana-cell:hover {
+  background: var(--kana-cell-hover);
 }
 
 .theme-tab-active {
