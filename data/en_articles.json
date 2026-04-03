@@ -1,0 +1,1944 @@
+{
+  "items": [
+    {
+      "id": "a1-morning-routine",
+      "level": "A1",
+      "format": "essay",
+      "titleWord": "My Morning Routine",
+      "titleJp": "私の朝の日課",
+      "titleEn": "My Morning Routine",
+      "titleZh": "我的早晨日常",
+      "segments": [
+        {
+          "word": "I wake up at seven o'clock every morning.",
+          "jp": "私は毎朝7時に起きます。",
+          "en": "I wake up at seven o'clock every morning.",
+          "zh": "我每天早上七点起床。",
+          "reading": ""
+        },
+        {
+          "word": "First, I brush my teeth and wash my face.",
+          "jp": "まず、歯を磨き、顔を洗います。",
+          "en": "First, I brush my teeth and wash my face.",
+          "zh": "首先，我刷牙洗脸。",
+          "reading": ""
+        },
+        {
+          "word": "Then I eat breakfast with my family.",
+          "jp": "それから家族と一緒に朝食を食べます。",
+          "en": "Then I eat breakfast with my family.",
+          "zh": "然后和家人一起吃早餐。",
+          "reading": ""
+        },
+        {
+          "word": "I usually have bread, eggs, and a glass of milk.",
+          "jp": "私は通常、パン、卵、牛乳を一杯食べます。",
+          "en": "I usually have bread, eggs, and a glass of milk.",
+          "zh": "我通常吃面包、鸡蛋，喝一杯牛奶。",
+          "reading": ""
+        },
+        {
+          "word": "After breakfast, I take the bus to school.",
+          "jp": "朝食後、バスに乗って学校へ行きます。",
+          "en": "After breakfast, I take the bus to school.",
+          "zh": "早餐后，我坐公交去学校。",
+          "reading": ""
+        },
+        {
+          "word": "The bus ride takes about twenty minutes.",
+          "jp": "バスの所要時間は約 20 分です。",
+          "en": "The bus ride takes about twenty minutes.",
+          "zh": "坐公交大约需要二十分钟。",
+          "reading": ""
+        },
+        {
+          "word": "I arrive at school before eight thirty.",
+          "jp": "私は8時半前に学校に到着します。",
+          "en": "I arrive at school before eight thirty.",
+          "zh": "我在八点半之前到达学校。",
+          "reading": ""
+        },
+        {
+          "word": "I like mornings because everything feels fresh and new.",
+          "jp": "すべてが新鮮で新鮮に感じられるので、私は朝が好きです。",
+          "en": "I like mornings because everything feels fresh and new.",
+          "zh": "我喜欢早晨，因为一切都感觉清新而崭新。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "a1-my-family",
+      "level": "A1",
+      "format": "essay",
+      "titleWord": "My Family",
+      "titleJp": "私の家族",
+      "titleEn": "My Family",
+      "titleZh": "我的家人",
+      "segments": [
+        {
+          "word": "There are four people in my family.",
+          "jp": "私の家族には4人います。",
+          "en": "There are four people in my family.",
+          "zh": "我家有四口人。",
+          "reading": ""
+        },
+        {
+          "word": "My father is a teacher. He teaches math.",
+          "jp": "私の父は教師です。彼は数学を教えています。",
+          "en": "My father is a teacher. He teaches math.",
+          "zh": "我爸爸是老师，他教数学。",
+          "reading": ""
+        },
+        {
+          "word": "My mother works at a hospital. She is a nurse.",
+          "jp": "私の母は病院で働いています。彼女は看護師です。",
+          "en": "My mother works at a hospital. She is a nurse.",
+          "zh": "我妈妈在医院工作，她是护士。",
+          "reading": ""
+        },
+        {
+          "word": "I have one brother. His name is Tom.",
+          "jp": "私には兄弟が一人います。彼の名前はトムです。",
+          "en": "I have one brother. His name is Tom.",
+          "zh": "我有一个哥哥，他叫汤姆。",
+          "reading": ""
+        },
+        {
+          "word": "Tom is older than me. He is in college.",
+          "jp": "トムは私より年上です。彼は大学生です。",
+          "en": "Tom is older than me. He is in college.",
+          "zh": "汤姆比我大，他在上大学。",
+          "reading": ""
+        },
+        {
+          "word": "We have a pet dog named Lucky.",
+          "jp": "私たちはラッキーという名前の愛犬を飼っています。",
+          "en": "We have a pet dog named Lucky.",
+          "zh": "我们有一只宠物狗叫幸运。",
+          "reading": ""
+        },
+        {
+          "word": "On weekends, we often go to the park together.",
+          "jp": "週末にはよく一緒に公園に行きます。",
+          "en": "On weekends, we often go to the park together.",
+          "zh": "周末我们经常一起去公园。",
+          "reading": ""
+        },
+        {
+          "word": "I love my family very much.",
+          "jp": "私は家族をとても愛しています。",
+          "en": "I love my family very much.",
+          "zh": "我非常爱我的家人。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "a1-at-restaurant",
+      "level": "A1",
+      "format": "dialogue",
+      "titleWord": "At the Restaurant",
+      "titleJp": "レストランで",
+      "titleEn": "At the Restaurant",
+      "titleZh": "在餐厅",
+      "sections": [
+        {
+          "headingWord": "Ordering Food",
+          "headingJp": "食べ物の注文",
+          "headingEn": "Ordering Food",
+          "headingZh": "点餐",
+          "lines": [
+            {
+              "word": "Good evening. A table for two, please.",
+              "jp": "こんばんは。 2人用のテーブルをお願いします。",
+              "en": "Good evening. A table for two, please.",
+              "zh": "晚上好，两位，谢谢。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Sure, right this way. Here's the menu.",
+              "jp": "はい、こちらです。こちらがメニューです。",
+              "en": "Sure, right this way. Here's the menu.",
+              "zh": "好的，这边请。这是菜单。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Thank you. What do you recommend?",
+              "jp": "ありがとう。おすすめは何ですか？",
+              "en": "Thank you. What do you recommend?",
+              "zh": "谢谢。你推荐什么？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Our steak is very popular today.",
+              "jp": "本日はステーキが大人気です。",
+              "en": "Our steak is very popular today.",
+              "zh": "我们的牛排今天很受欢迎。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I'll have the steak, please. And a salad.",
+              "jp": "ステーキをお願いします。そしてサラダ。",
+              "en": "I'll have the steak, please. And a salad.",
+              "zh": "请给我来份牛排，再加一份沙拉。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Would you like something to drink?",
+              "jp": "何かお飲み物はいかがですか？",
+              "en": "Would you like something to drink?",
+              "zh": "您要喝点什么吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Just water, please.",
+              "jp": "水だけください。",
+              "en": "Just water, please.",
+              "zh": "请来杯水就好。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Great. Your order will be ready in fifteen minutes.",
+              "jp": "素晴らしい。ご注文は 15 分以内に準備が整います。",
+              "en": "Great. Your order will be ready in fifteen minutes.",
+              "zh": "好的，您的餐大约十五分钟就好。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-travel-london",
+      "level": "A2",
+      "format": "essay",
+      "titleWord": "A Trip to London",
+      "titleJp": "ロンドンへの旅",
+      "titleEn": "A Trip to London",
+      "titleZh": "伦敦之旅",
+      "segments": [
+        {
+          "word": "Last summer, I traveled to London for the first time.",
+          "jp": "去年の夏、初めてロンドンへ旅行しました。",
+          "en": "Last summer, I traveled to London for the first time.",
+          "zh": "去年夏天，我第一次去了伦敦。",
+          "reading": ""
+        },
+        {
+          "word": "The flight from Beijing took about eleven hours.",
+          "jp": "北京からの飛行時間は約11時間だった。",
+          "en": "The flight from Beijing took about eleven hours.",
+          "zh": "从北京飞过去大约需要十一个小时。",
+          "reading": ""
+        },
+        {
+          "word": "When I arrived, I was surprised by how green the city was.",
+          "jp": "到着して街の緑の多さに驚きました。",
+          "en": "When I arrived, I was surprised by how green the city was.",
+          "zh": "到达时，我惊讶于这座城市多么绿意盎然。",
+          "reading": ""
+        },
+        {
+          "word": "I visited Big Ben and the Tower of London on the first day.",
+          "jp": "初日はビッグベンとロンドン塔を訪れました。",
+          "en": "I visited Big Ben and the Tower of London on the first day.",
+          "zh": "第一天我参观了大本钟和伦敦塔。",
+          "reading": ""
+        },
+        {
+          "word": "The British Museum was my favorite place.",
+          "jp": "大英博物館は私のお気に入りの場所でした。",
+          "en": "The British Museum was my favorite place.",
+          "zh": "大英博物馆是我最喜欢的地方。",
+          "reading": ""
+        },
+        {
+          "word": "It has so many things from all over the world.",
+          "jp": "世界中からたくさんのものが揃っています。",
+          "en": "It has so many things from all over the world.",
+          "zh": "那里有来自世界各地的很多展品。",
+          "reading": ""
+        },
+        {
+          "word": "I tried fish and chips, which is a famous British dish.",
+          "jp": "イギリスの名物料理であるフィッシュアンドチップスを食べてみました。",
+          "en": "I tried fish and chips, which is a famous British dish.",
+          "zh": "我尝了炸鱼薯条，这是著名的英国菜。",
+          "reading": ""
+        },
+        {
+          "word": "The weather was cloudy most days, but I didn't mind.",
+          "jp": "天気はほとんど曇っていましたが、私は気にしませんでした。",
+          "en": "The weather was cloudy most days, but I didn't mind.",
+          "zh": "大多数时候天气阴沉，但我不介意。",
+          "reading": ""
+        },
+        {
+          "word": "I took the Underground to get around the city.",
+          "jp": "市内を移動するために地下鉄に乗りました。",
+          "en": "I took the Underground to get around the city.",
+          "zh": "我坐地铁在城市里穿梭。",
+          "reading": ""
+        },
+        {
+          "word": "I hope to visit London again someday.",
+          "jp": "いつかまたロンドンを訪れたいと思っています。",
+          "en": "I hope to visit London again someday.",
+          "zh": "我希望有一天能再去伦敦。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "a2-job-interview",
+      "level": "A2",
+      "format": "dialogue",
+      "titleWord": "A Job Interview",
+      "titleJp": "就職面接",
+      "titleEn": "A Job Interview",
+      "titleZh": "工作面试",
+      "sections": [
+        {
+          "headingWord": "The Interview",
+          "headingJp": "インタビュー",
+          "headingEn": "The Interview",
+          "headingZh": "面试",
+          "lines": [
+            {
+              "word": "Please have a seat. Tell me about yourself.",
+              "jp": "お座りください。自己紹介をお願いします。",
+              "en": "Please have a seat. Tell me about yourself.",
+              "zh": "请坐。介绍一下你自己。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Thank you. I graduated from Beijing University last year.",
+              "jp": "ありがとう。私は昨年北京大学を卒業しました。",
+              "en": "Thank you. I graduated from Beijing University last year.",
+              "zh": "谢谢。我去年从北京大学毕业。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I studied business management for four years.",
+              "jp": "私は4年間経営学を学びました。",
+              "en": "I studied business management for four years.",
+              "zh": "我学了四年的工商管理。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Do you have any work experience?",
+              "jp": "実務経験はありますか？",
+              "en": "Do you have any work experience?",
+              "zh": "你有工作经验吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, I worked as an intern at a tech company last summer.",
+              "jp": "はい、私は昨年の夏にテクノロジー企業でインターンとして働きました。",
+              "en": "Yes, I worked as an intern at a tech company last summer.",
+              "zh": "有的，去年夏天我在一家科技公司实习过。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "What are your strengths?",
+              "jp": "あなたの強みは何ですか？",
+              "en": "What are your strengths?",
+              "zh": "你的优势是什么？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I'm a fast learner and I work well in a team.",
+              "jp": "私は物覚えが早く、チームでうまく仕事ができます。",
+              "en": "I'm a fast learner and I work well in a team.",
+              "zh": "我学东西很快，而且善于团队合作。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Very good. We'll get back to you by next Friday.",
+              "jp": "とても良い。来週の金曜日までにご連絡させていただきます。",
+              "en": "Very good. We'll get back to you by next Friday.",
+              "zh": "很好。我们会在下周五前回复你。",
+              "reading": "",
+              "speaker": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-social-media",
+      "level": "B1",
+      "format": "essay",
+      "titleWord": "Social Media and Daily Life",
+      "titleJp": "ソーシャルメディアと日常生活",
+      "titleEn": "Social Media and Daily Life",
+      "titleZh": "社交媒体与日常生活",
+      "segments": [
+        {
+          "word": "Social media has become a huge part of our daily lives.",
+          "jp": "ソーシャルメディアは私たちの日常生活の大きな部分を占めています。",
+          "en": "Social media has become a huge part of our daily lives.",
+          "zh": "社交媒体已经成为我们日常生活的重要组成部分。",
+          "reading": ""
+        },
+        {
+          "word": "Most people check their phones first thing in the morning.",
+          "jp": "ほとんどの人は朝一番に携帯電話をチェックします。",
+          "en": "Most people check their phones first thing in the morning.",
+          "zh": "大多数人早上第一件事就是看手机。",
+          "reading": ""
+        },
+        {
+          "word": "Apps like Instagram and TikTok are especially popular among young people.",
+          "jp": "InstagramやTikTokなどのアプリは特に若者の間で人気があります。",
+          "en": "Apps like Instagram and TikTok are especially popular among young people.",
+          "zh": "Instagram 和 TikTok 等应用在年轻人中特别受欢迎。",
+          "reading": ""
+        },
+        {
+          "word": "On one hand, social media helps us stay connected with friends.",
+          "jp": "一方で、ソーシャルメディアは友人とのつながりを保つのに役立ちます。",
+          "en": "On one hand, social media helps us stay connected with friends.",
+          "zh": "一方面，社交媒体帮助我们与朋友保持联系。",
+          "reading": ""
+        },
+        {
+          "word": "We can share photos, videos, and messages instantly.",
+          "jp": "写真、ビデオ、メッセージを即座に共有できます。",
+          "en": "We can share photos, videos, and messages instantly.",
+          "zh": "我们可以即时分享照片、视频和消息。",
+          "reading": ""
+        },
+        {
+          "word": "On the other hand, spending too much time online can be harmful.",
+          "jp": "一方で、オンラインで時間を費やしすぎると有害になる可能性があります。",
+          "en": "On the other hand, spending too much time online can be harmful.",
+          "zh": "另一方面，在网上花太多时间可能是有害的。",
+          "reading": ""
+        },
+        {
+          "word": "Some studies show that it can increase anxiety and loneliness.",
+          "jp": "いくつかの研究では、それが不安や孤独感を増大させる可能性があることを示しています。",
+          "en": "Some studies show that it can increase anxiety and loneliness.",
+          "zh": "一些研究表明它可能增加焦虑和孤独感。",
+          "reading": ""
+        },
+        {
+          "word": "Many people compare themselves to others and feel unhappy.",
+          "jp": "多くの人は自分と他人を比べて不幸だと感じます。",
+          "en": "Many people compare themselves to others and feel unhappy.",
+          "zh": "许多人与他人比较，感到不开心。",
+          "reading": ""
+        },
+        {
+          "word": "It is important to find a healthy balance.",
+          "jp": "健康的なバランスを見つけることが重要です。",
+          "en": "It is important to find a healthy balance.",
+          "zh": "找到一个健康的平衡很重要。",
+          "reading": ""
+        },
+        {
+          "word": "Try to limit screen time and enjoy real-life moments.",
+          "jp": "スクリーンタイムを制限して、現実の瞬間を楽しむようにしてください。",
+          "en": "Try to limit screen time and enjoy real-life moments.",
+          "zh": "试着限制屏幕时间，享受现实生活的时刻。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "b1-shopping",
+      "level": "B1",
+      "format": "dialogue",
+      "titleWord": "Returning a Product",
+      "titleJp": "製品の返品",
+      "titleEn": "Returning a Product",
+      "titleZh": "退货",
+      "sections": [
+        {
+          "headingWord": "At the Store",
+          "headingJp": "店舗で",
+          "headingEn": "At the Store",
+          "headingZh": "在商店",
+          "lines": [
+            {
+              "word": "Hi, I'd like to return this jacket, please.",
+              "jp": "こんにちは、このジャケットを返品したいのですが、お願いします。",
+              "en": "Hi, I'd like to return this jacket, please.",
+              "zh": "你好，我想退这件夹克。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Of course. May I ask what the problem is?",
+              "jp": "もちろん。何が問題なのか聞いてもいいですか？",
+              "en": "Of course. May I ask what the problem is?",
+              "zh": "当然可以。请问是什么问题？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "The zipper is broken. I just bought it three days ago.",
+              "jp": "ジッパーが壊れています。 3日前に買ったばかりです。",
+              "en": "The zipper is broken. I just bought it three days ago.",
+              "zh": "拉链坏了。我三天前刚买的。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Do you have the receipt?",
+              "jp": "領収書はありますか？",
+              "en": "Do you have the receipt?",
+              "zh": "您有收据吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Yes, here it is.",
+              "jp": "はい、こちらです。",
+              "en": "Yes, here it is.",
+              "zh": "有的，在这里。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Would you prefer a refund or an exchange?",
+              "jp": "返金または交換をご希望ですか?",
+              "en": "Would you prefer a refund or an exchange?",
+              "zh": "您想退款还是换货？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I'd like to exchange it for the same one, if possible.",
+              "jp": "可能であれば同じものと交換していただきたいです。",
+              "en": "I'd like to exchange it for the same one, if possible.",
+              "zh": "如果可以的话，我想换一件同款的。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Let me check if we have it in stock. One moment, please.",
+              "jp": "在庫があるか確認させていただきます。ちょっとお待ちください。",
+              "en": "Let me check if we have it in stock. One moment, please.",
+              "zh": "让我查一下是否有库存。请稍等。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Sure, take your time.",
+              "jp": "もちろん、ゆっくりしてください。",
+              "en": "Sure, take your time.",
+              "zh": "好的，不急。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Good news! We have one left. Here you go.",
+              "jp": "朗報です！残り 1 つです。どうぞ。",
+              "en": "Good news! We have one left. Here you go.",
+              "zh": "好消息！还剩一件。给您。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-climate-change",
+      "level": "B2",
+      "format": "essay",
+      "titleWord": "Understanding Climate Change",
+      "titleJp": "気候変動を理解する",
+      "titleEn": "Understanding Climate Change",
+      "titleZh": "理解气候变化",
+      "segments": [
+        {
+          "word": "Climate change is one of the greatest challenges facing humanity today.",
+          "jp": "気候変動は、今日人類が直面している最大の課題の 1 つです。",
+          "en": "Climate change is one of the greatest challenges facing humanity today.",
+          "zh": "气候变化是当今人类面临的最大挑战之一。",
+          "reading": ""
+        },
+        {
+          "word": "The Earth's average temperature has risen by about 1.1 degrees Celsius since the late 1800s.",
+          "jp": "地球の平均気温は、1800 年代後半以来、摂氏約 1.1 度上昇しました。",
+          "en": "The Earth's average temperature has risen by about 1.1 degrees Celsius since the late 1800s.",
+          "zh": "自19世纪末以来，地球的平均温度已上升了约1.1摄氏度。",
+          "reading": ""
+        },
+        {
+          "word": "This warming is mainly caused by burning fossil fuels like coal, oil, and gas.",
+          "jp": "この温暖化は主に、石炭、石油、ガスなどの化石燃料の燃焼によって引き起こされます。",
+          "en": "This warming is mainly caused by burning fossil fuels like coal, oil, and gas.",
+          "zh": "这种变暖主要是由燃烧煤炭、石油和天然气等化石燃料引起的。",
+          "reading": ""
+        },
+        {
+          "word": "These fuels release carbon dioxide and other greenhouse gases into the atmosphere.",
+          "jp": "これらの燃料は、二酸化炭素やその他の温室効果ガスを大気中に放出します。",
+          "en": "These fuels release carbon dioxide and other greenhouse gases into the atmosphere.",
+          "zh": "这些燃料向大气中释放二氧化碳和其他温室气体。",
+          "reading": ""
+        },
+        {
+          "word": "The effects of climate change are already visible around the world.",
+          "jp": "気候変動の影響はすでに世界中で目に見えています。",
+          "en": "The effects of climate change are already visible around the world.",
+          "zh": "气候变化的影响在世界各地已经显而易见。",
+          "reading": ""
+        },
+        {
+          "word": "Sea levels are rising, glaciers are melting, and extreme weather events are becoming more frequent.",
+          "jp": "海面は上昇し、氷河は溶け、異常気象はより頻繁になっています。",
+          "en": "Sea levels are rising, glaciers are melting, and extreme weather events are becoming more frequent.",
+          "zh": "海平面在上升，冰川在融化，极端天气事件变得更加频繁。",
+          "reading": ""
+        },
+        {
+          "word": "Scientists agree that we must reduce emissions dramatically to avoid catastrophic consequences.",
+          "jp": "科学者たちは、壊滅的な結果を避けるために排出量を大幅に削減する必要があることに同意しています。",
+          "en": "Scientists agree that we must reduce emissions dramatically to avoid catastrophic consequences.",
+          "zh": "科学家们一致认为，我们必须大幅减少排放以避免灾难性后果。",
+          "reading": ""
+        },
+        {
+          "word": "Renewable energy sources such as solar and wind power offer a path forward.",
+          "jp": "太陽光発電や風力発電などの再生可能エネルギー源が前進への道を提供します。",
+          "en": "Renewable energy sources such as solar and wind power offer a path forward.",
+          "zh": "太阳能和风能等可再生能源提供了一条前进的道路。",
+          "reading": ""
+        },
+        {
+          "word": "Individual actions matter too — using public transport, reducing waste, and eating less meat all help.",
+          "jp": "個人の行動も重要です。公共交通機関の利用、廃棄物の削減、肉の摂取量の削減はすべて役に立ちます。",
+          "en": "Individual actions matter too — using public transport, reducing waste, and eating less meat all help.",
+          "zh": "个人行动也很重要——使用公共交通、减少浪费和少吃肉都有帮助。",
+          "reading": ""
+        },
+        {
+          "word": "The time to act is now, before the damage becomes irreversible.",
+          "jp": "被害が回復不能になる前に、今が行動を起こす時です。",
+          "en": "The time to act is now, before the damage becomes irreversible.",
+          "zh": "行动的时间就是现在，在损害变得不可逆转之前。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "b2-doctor-visit",
+      "level": "B2",
+      "format": "dialogue",
+      "titleWord": "Visiting the Doctor",
+      "titleJp": "医師の診察",
+      "titleEn": "Visiting the Doctor",
+      "titleZh": "看医生",
+      "sections": [
+        {
+          "headingWord": "Describing Symptoms",
+          "headingJp": "症状の説明",
+          "headingEn": "Describing Symptoms",
+          "headingZh": "描述症状",
+          "lines": [
+            {
+              "word": "Good morning. What seems to be the problem?",
+              "jp": "おはよう。何が問題だと思われますか?",
+              "en": "Good morning. What seems to be the problem?",
+              "zh": "早上好。哪里不舒服？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I've had a persistent headache for the past week.",
+              "jp": "ここ一週間、頭痛が続いています。",
+              "en": "I've had a persistent headache for the past week.",
+              "zh": "过去一周我一直头疼。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I've also been feeling dizzy, especially in the mornings.",
+              "jp": "また、特に朝にめまいを感じるようになりました。",
+              "en": "I've also been feeling dizzy, especially in the mornings.",
+              "zh": "我还一直感到头晕，特别是早上。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Have you been under a lot of stress recently?",
+              "jp": "最近大きなストレスを感じていませんか?",
+              "en": "Have you been under a lot of stress recently?",
+              "zh": "你最近压力大吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, I've been working overtime almost every day.",
+              "jp": "はい、ほぼ毎日残業しています。",
+              "en": "Yes, I've been working overtime almost every day.",
+              "zh": "是的，我几乎每天都在加班。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "That could be a contributing factor. How's your sleep?",
+              "jp": "それが要因である可能性があります。睡眠はどうですか？",
+              "en": "That could be a contributing factor. How's your sleep?",
+              "zh": "这可能是一个因素。你睡眠怎么样？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Not great. I usually only get about five hours a night.",
+              "jp": "素晴らしいとは言えません。だいたい一晩に5時間くらいしか時間が取れないんです。",
+              "en": "Not great. I usually only get about five hours a night.",
+              "zh": "不太好。我通常每晚只睡大约五个小时。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I'd recommend getting at least seven hours. Let me check your blood pressure.",
+              "jp": "少なくとも7時間は取ることをお勧めします。血圧を測らせてください。",
+              "en": "I'd recommend getting at least seven hours. Let me check your blood pressure.",
+              "zh": "我建议你至少睡七个小时。让我量一下你的血压。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Your blood pressure is a bit high. I'll prescribe some medication.",
+              "jp": "血圧が少し高いですね。薬を処方します。",
+              "en": "Your blood pressure is a bit high. I'll prescribe some medication.",
+              "zh": "你的血压有点高。我给你开些药。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Thank you, doctor. Should I come back for a follow-up?",
+              "jp": "ありがとう、博士。経過観察のためにまた来るべきでしょうか？",
+              "en": "Thank you, doctor. Should I come back for a follow-up?",
+              "zh": "谢谢医生。我需要来复诊吗？",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-checking-in-hotel",
+      "level": "A1",
+      "format": "dialogue",
+      "titleWord": "Checking In at a Hotel",
+      "titleJp": "ホテルにチェックインする",
+      "titleEn": "Checking In at a Hotel",
+      "titleZh": "酒店入住",
+      "sections": [
+        {
+          "headingWord": "At the Front Desk",
+          "headingJp": "フロントデスクにて",
+          "headingEn": "At the Front Desk",
+          "headingZh": "在前台",
+          "lines": [
+            {
+              "word": "Hello, I have a reservation under the name Li Wei.",
+              "jp": "こんにちは、Li Wei という名前で予約しています。",
+              "en": "Hello, I have a reservation under the name Li Wei.",
+              "zh": "你好，我预订了房间，名字是李伟。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Let me check. Yes, a single room for three nights.",
+              "jp": "確認させてください。はい、シングルルームで 3 泊可能です。",
+              "en": "Let me check. Yes, a single room for three nights.",
+              "zh": "让我查一下。是的，单人间，三晚。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "That's correct. Is breakfast included?",
+              "jp": "それは正しいです。朝食は含まれていますか？",
+              "en": "That's correct. Is breakfast included?",
+              "zh": "没错。包含早餐吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, breakfast is served from 7 to 10 in the morning.",
+              "jp": "はい、朝食は朝 7 時から 10 時までお召し上がりいただけます。",
+              "en": "Yes, breakfast is served from 7 to 10 in the morning.",
+              "zh": "是的，早餐供应时间是早上7点到10点。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Great. What floor is my room on?",
+              "jp": "素晴らしい。私の部屋は何階ですか?",
+              "en": "Great. What floor is my room on?",
+              "zh": "好的。我的房间在几楼？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Room 508, on the fifth floor. Here's your key card.",
+              "jp": "5階508号室。これがカードキーです。",
+              "en": "Room 508, on the fifth floor. Here's your key card.",
+              "zh": "508房，在五楼。这是您的房卡。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Is there Wi-Fi in the room?",
+              "jp": "部屋にWi-Fiはありますか？",
+              "en": "Is there Wi-Fi in the room?",
+              "zh": "房间里有Wi-Fi吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, the password is on the card. Enjoy your stay!",
+              "jp": "はい、パスワードはカードに記載されています。ご滞在をお楽しみください。",
+              "en": "Yes, the password is on the card. Enjoy your stay!",
+              "zh": "有的，密码在卡上。祝您入住愉快！",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-asking-directions",
+      "level": "A1",
+      "format": "dialogue",
+      "titleWord": "Asking for Directions",
+      "titleJp": "道を尋ねる",
+      "titleEn": "Asking for Directions",
+      "titleZh": "问路",
+      "sections": [
+        {
+          "headingWord": "On the Street",
+          "headingJp": "路上で",
+          "headingEn": "On the Street",
+          "headingZh": "在街上",
+          "lines": [
+            {
+              "word": "Excuse me, could you tell me how to get to the train station?",
+              "jp": "すみません、駅への行き方を教えていただけますか？",
+              "en": "Excuse me, could you tell me how to get to the train station?",
+              "zh": "打扰一下，请问怎么去火车站？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Sure. Go straight ahead for two blocks.",
+              "jp": "もちろん。 2ブロック直進してください。",
+              "en": "Sure. Go straight ahead for two blocks.",
+              "zh": "好的。一直往前走两个路口。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Then turn left at the traffic light.",
+              "jp": "その後、信号を左折してください。",
+              "en": "Then turn left at the traffic light.",
+              "zh": "然后在红绿灯那里左转。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Turn left at the traffic light. Got it.",
+              "jp": "信号を左折してください。わかった。",
+              "en": "Turn left at the traffic light. Got it.",
+              "zh": "在红绿灯左转。明白了。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "You'll see the station on your right. It's about a five-minute walk.",
+              "jp": "右手に駅が見えてきます。歩いて五分ほどです。",
+              "en": "You'll see the station on your right. It's about a five-minute walk.",
+              "zh": "你会看到车站在右手边。大约走五分钟。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Is it far from here?",
+              "jp": "それはここから遠いですか？",
+              "en": "Is it far from here?",
+              "zh": "离这里远吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "No, not at all. You can't miss it.",
+              "jp": "いいえ、まったくそうではありません。直ぐに見つけられます。",
+              "en": "No, not at all. You can't miss it.",
+              "zh": "不远，一点都不远。你不会错过的。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Thank you so much for your help!",
+              "jp": "ご協力ありがとうございました！",
+              "en": "Thank you so much for your help!",
+              "zh": "非常感谢你的帮助！",
+              "reading": "",
+              "speaker": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-seeing-doctor",
+      "level": "A2",
+      "format": "dialogue",
+      "titleWord": "At the Pharmacy",
+      "titleJp": "薬局で",
+      "titleEn": "At the Pharmacy",
+      "titleZh": "在药店",
+      "sections": [
+        {
+          "headingWord": "Buying Medicine",
+          "headingJp": "薬を買う",
+          "headingEn": "Buying Medicine",
+          "headingZh": "买药",
+          "lines": [
+            {
+              "word": "Hi, I have a bad cold. Can you recommend something?",
+              "jp": "こんにちは、ひどい風邪をひいています。何かお勧めできますか？",
+              "en": "Hi, I have a bad cold. Can you recommend something?",
+              "zh": "你好，我感冒很严重。能推荐点什么吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Do you have a fever or just a runny nose?",
+              "jp": "熱はありますか、それともただの鼻水ですか？",
+              "en": "Do you have a fever or just a runny nose?",
+              "zh": "你发烧了还是只是流鼻涕？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I have a sore throat and a bit of a cough.",
+              "jp": "喉が痛くて少し咳が出る。",
+              "en": "I have a sore throat and a bit of a cough.",
+              "zh": "我嗓子疼，还有点咳嗽。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I'd suggest these throat lozenges and this cough syrup.",
+              "jp": "こののど飴と咳止めシロップをお勧めします。",
+              "en": "I'd suggest these throat lozenges and this cough syrup.",
+              "zh": "我建议用这些润喉糖和这个止咳糖浆。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "How often should I take the cough syrup?",
+              "jp": "どれくらいの頻度で咳止めシロップを服用すればよいですか?",
+              "en": "How often should I take the cough syrup?",
+              "zh": "止咳糖浆多久吃一次？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Three times a day, after meals.",
+              "jp": "1日3回、食後に。",
+              "en": "Three times a day, after meals.",
+              "zh": "一天三次，饭后服用。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Are there any side effects?",
+              "jp": "副作用はありますか?",
+              "en": "Are there any side effects?",
+              "zh": "有什么副作用吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "It may cause some drowsiness. Avoid driving after taking it.",
+              "jp": "眠気を引き起こす可能性があります。服用後は運転を避けてください。",
+              "en": "It may cause some drowsiness. Avoid driving after taking it.",
+              "zh": "可能会引起一些困倦。服用后不要开车。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Okay, I'll take both. How much is it?",
+              "jp": "わかりました、両方受け取ります。いくらですか？",
+              "en": "Okay, I'll take both. How much is it?",
+              "zh": "好的，两样都要。多少钱？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That'll be twelve pounds fifty. Get well soon!",
+              "jp": "それは12ポンド50になります。お早い回復を願っております！",
+              "en": "That'll be twelve pounds fifty. Get well soon!",
+              "zh": "一共12.5英镑。祝早日康复！",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-airport",
+      "level": "A2",
+      "format": "dialogue",
+      "titleWord": "At the Airport",
+      "titleJp": "空港で",
+      "titleEn": "At the Airport",
+      "titleZh": "在机场",
+      "sections": [
+        {
+          "headingWord": "Check-in Counter",
+          "headingJp": "チェックインカウンター",
+          "headingEn": "Check-in Counter",
+          "headingZh": "值机柜台",
+          "lines": [
+            {
+              "word": "Good morning. Can I see your passport and booking confirmation?",
+              "jp": "おはよう。パスポートと予約確認書を見せてもらえますか？",
+              "en": "Good morning. Can I see your passport and booking confirmation?",
+              "zh": "早上好。请出示您的护照和预订确认。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Here you go.",
+              "jp": "どうぞ。",
+              "en": "Here you go.",
+              "zh": "给你。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Would you like a window seat or an aisle seat?",
+              "jp": "窓側の席と通路側の席どちらがご希望ですか？",
+              "en": "Would you like a window seat or an aisle seat?",
+              "zh": "您想要靠窗还是靠过道的座位？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "A window seat, please.",
+              "jp": "窓側の席をお願いします。",
+              "en": "A window seat, please.",
+              "zh": "靠窗的，谢谢。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "How many bags are you checking in?",
+              "jp": "チェックインする荷物は何個ありますか?",
+              "en": "How many bags are you checking in?",
+              "zh": "您要托运几件行李？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Just one suitcase.",
+              "jp": "スーツケースひとつだけ。",
+              "en": "Just one suitcase.",
+              "zh": "只有一个箱子。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Please place it on the scale. It's within the weight limit.",
+              "jp": "体重計の上に置いてください。体重制限内ですよ。",
+              "en": "Please place it on the scale. It's within the weight limit.",
+              "zh": "请放到秤上。没有超重。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Which gate do I go to?",
+              "jp": "どのゲートに行けばいいですか？",
+              "en": "Which gate do I go to?",
+              "zh": "我该去哪个登机口？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Gate 23. Boarding starts at 10:45. Have a pleasant flight!",
+              "jp": "ゲート23。搭乗開始は10:45です。楽しいフライトをお過ごしください！",
+              "en": "Gate 23. Boarding starts at 10:45. Have a pleasant flight!",
+              "zh": "23号登机口。10:45开始登机。祝您旅途愉快！",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Thank you very much!",
+              "jp": "どうもありがとうございます！",
+              "en": "Thank you very much!",
+              "zh": "非常感谢！",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-renting-apartment",
+      "level": "B1",
+      "format": "dialogue",
+      "titleWord": "Renting an Apartment",
+      "titleJp": "アパートを借りる",
+      "titleEn": "Renting an Apartment",
+      "titleZh": "租房",
+      "sections": [
+        {
+          "headingWord": "Viewing the Apartment",
+          "headingJp": "アパートメントを見る",
+          "headingEn": "Viewing the Apartment",
+          "headingZh": "看房",
+          "lines": [
+            {
+              "word": "Welcome! Let me show you around the apartment.",
+              "jp": "いらっしゃいませ！アパートの中を案内しましょう。",
+              "en": "Welcome! Let me show you around the apartment.",
+              "zh": "欢迎！让我带您看看这间公寓。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "It looks nice. How big is it?",
+              "jp": "見た目もいいですね。どれくらいの大きさですか?",
+              "en": "It looks nice. How big is it?",
+              "zh": "看起来不错。有多大？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "It's about 60 square meters. One bedroom, one living room.",
+              "jp": "約60平方メートルです。ベッドルーム 1 つ、リビング ルーム 1 つ。",
+              "en": "It's about 60 square meters. One bedroom, one living room.",
+              "zh": "大约60平米。一室一厅。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Is the kitchen fully equipped?",
+              "jp": "キッチンには設備が整っていますか？",
+              "en": "Is the kitchen fully equipped?",
+              "zh": "厨房设备齐全吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Yes, there's a fridge, an oven, and a washing machine.",
+              "jp": "はい、冷蔵庫、オーブン、洗濯機がございます。",
+              "en": "Yes, there's a fridge, an oven, and a washing machine.",
+              "zh": "是的，有冰箱、烤箱和洗衣机。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "What's the monthly rent?",
+              "jp": "月々の家賃はいくらですか？",
+              "en": "What's the monthly rent?",
+              "zh": "月租多少？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "It's 800 pounds per month, utilities not included.",
+              "jp": "月額800ポンドで、光熱費は含まれません。",
+              "en": "It's 800 pounds per month, utilities not included.",
+              "zh": "每月800英镑，不含水电费。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Is there a minimum lease period?",
+              "jp": "最低リース期間はありますか?",
+              "en": "Is there a minimum lease period?",
+              "zh": "有最短租期吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Yes, the minimum is six months. You'll also need a deposit.",
+              "jp": "はい、最低でも 6 か月です。デポジットも必要になります。",
+              "en": "Yes, the minimum is six months. You'll also need a deposit.",
+              "zh": "有的，最短六个月。还需要交押金。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I'm interested. Can I think about it and get back to you tomorrow?",
+              "jp": "興味があります。検討して明日ご連絡させていただいてもよろしいでしょうか？",
+              "en": "I'm interested. Can I think about it and get back to you tomorrow?",
+              "zh": "我有兴趣。我能考虑一下明天回复您吗？",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-bank-account",
+      "level": "B1",
+      "format": "dialogue",
+      "titleWord": "Opening a Bank Account",
+      "titleJp": "銀行口座の開設",
+      "titleEn": "Opening a Bank Account",
+      "titleZh": "开银行账户",
+      "sections": [
+        {
+          "headingWord": "At the Bank",
+          "headingJp": "銀行で",
+          "headingEn": "At the Bank",
+          "headingZh": "在银行",
+          "lines": [
+            {
+              "word": "Good afternoon. How can I help you today?",
+              "jp": "こんにちは。今日はどのようにお手伝いできますか?",
+              "en": "Good afternoon. How can I help you today?",
+              "zh": "下午好。请问需要什么帮助？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I'd like to open a current account, please.",
+              "jp": "当座預金口座を開設したいのですが、お願いします。",
+              "en": "I'd like to open a current account, please.",
+              "zh": "我想开一个活期账户。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Sure. Do you have any identification with you?",
+              "jp": "もちろん。何か身分証明書をお持ちですか？",
+              "en": "Sure. Do you have any identification with you?",
+              "zh": "好的。您带身份证件了吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, here's my passport and a proof of address.",
+              "jp": "はい、これが私のパスポートと住所証明書です。",
+              "en": "Yes, here's my passport and a proof of address.",
+              "zh": "有的，这是我的护照和地址证明。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Would you like to set up online banking as well?",
+              "jp": "オンラインバンキングも設定してみませんか？",
+              "en": "Would you like to set up online banking as well?",
+              "zh": "您也想开通网上银行吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Yes, that would be very convenient.",
+              "jp": "はい、それはとても便利です。",
+              "en": "Yes, that would be very convenient.",
+              "zh": "好的，那会很方便。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "You'll receive your debit card within five working days.",
+              "jp": "デビット カードは 5 営業日以内に届きます。",
+              "en": "You'll receive your debit card within five working days.",
+              "zh": "您将在五个工作日内收到借记卡。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Can I transfer money internationally with this account?",
+              "jp": "この口座を使って海外送金できますか?",
+              "en": "Can I transfer money internationally with this account?",
+              "zh": "用这个账户可以国际转账吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Yes, but there's a small fee for international transfers.",
+              "jp": "はい。ただし、国際送金には少額の手数料がかかります。",
+              "en": "Yes, but there's a small fee for international transfers.",
+              "zh": "可以，但国际转账有少量手续费。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That's fine. Let's go ahead and set it up.",
+              "jp": "それはいいです。先に進んで設定してみましょう。",
+              "en": "That's fine. Let's go ahead and set it up.",
+              "zh": "没关系。那就办吧。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-work-meeting",
+      "level": "B2",
+      "format": "dialogue",
+      "titleWord": "A Team Meeting",
+      "titleJp": "チームミーティング",
+      "titleEn": "A Team Meeting",
+      "titleZh": "团队会议",
+      "sections": [
+        {
+          "headingWord": "Discussing the Project",
+          "headingJp": "プロジェクトについて話し合う",
+          "headingEn": "Discussing the Project",
+          "headingZh": "讨论项目",
+          "lines": [
+            {
+              "word": "Let's get started. The deadline for the project has been moved up to next month.",
+              "jp": "始めましょう。そのプロジェクトの締め切りは来月に繰り上げられました。",
+              "en": "Let's get started. The deadline for the project has been moved up to next month.",
+              "zh": "我们开始吧。项目截止日期已经提前到下个月了。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That's quite tight. Do we have enough resources to handle it?",
+              "jp": "それはかなりきついですね。それに対処するのに十分なリソースはありますか?",
+              "en": "That's quite tight. Do we have enough resources to handle it?",
+              "zh": "时间很紧。我们有足够的资源来应对吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I've requested two additional team members from the design department.",
+              "jp": "設計部門にチームメンバーを 2 名追加するよう依頼しました。",
+              "en": "I've requested two additional team members from the design department.",
+              "zh": "我已经向设计部门申请了两名额外的团队成员。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "What about the budget? Will we need to cut any features?",
+              "jp": "予算はどうですか？何か機能をカットする必要があるでしょうか?",
+              "en": "What about the budget? Will we need to cut any features?",
+              "zh": "预算呢？我们需要砍掉一些功能吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "The client wants to keep all core features. We might simplify the reporting module.",
+              "jp": "クライアントはすべてのコア機能を維持したいと考えています。レポートモジュールを簡素化する可能性があります。",
+              "en": "The client wants to keep all core features. We might simplify the reporting module.",
+              "zh": "客户希望保留所有核心功能。我们可能会简化报告模块。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I think that's reasonable. The reporting module can be enhanced in phase two.",
+              "jp": "それは合理的だと思います。レポート モジュールはフェーズ 2 で強化できます。",
+              "en": "I think that's reasonable. The reporting module can be enhanced in phase two.",
+              "zh": "我觉得这很合理。报告模块可以在第二阶段再增强。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Exactly. Let's prioritize the user-facing features first.",
+              "jp": "その通り。まずはユーザー向けの機能を優先しましょう。",
+              "en": "Exactly. Let's prioritize the user-facing features first.",
+              "zh": "没错。我们先优先处理面向用户的功能。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Should we switch to daily stand-ups to track progress more closely?",
+              "jp": "進捗状況をより綿密に追跡するために、毎日のスタンドアップに切り替える必要がありますか?",
+              "en": "Should we switch to daily stand-ups to track progress more closely?",
+              "zh": "我们是否应该改为每日站会来更紧密地跟踪进度？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Good idea. Let's start that from tomorrow.",
+              "jp": "良いアイデア。明日からそれを始めましょう。",
+              "en": "Good idea. Let's start that from tomorrow.",
+              "zh": "好主意。我们从明天开始。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "I'll send out a revised timeline by end of day.",
+              "jp": "今日の終わりまでに改訂されたタイムラインを送信します。",
+              "en": "I'll send out a revised timeline by end of day.",
+              "zh": "我会在今天下班前发出修改后的时间表。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-debate",
+      "level": "B2",
+      "format": "dialogue",
+      "titleWord": "Should University Be Free?",
+      "titleJp": "大学は無償であるべきなのか？",
+      "titleEn": "Should University Be Free?",
+      "titleZh": "大学应该免费吗？",
+      "sections": [
+        {
+          "headingWord": "A Friendly Debate",
+          "headingJp": "友好的な討論",
+          "headingEn": "A Friendly Debate",
+          "headingZh": "友好辩论",
+          "lines": [
+            {
+              "word": "I believe university education should be free for everyone.",
+              "jp": "私は大学教育はすべての人に無料であるべきだと信じています。",
+              "en": "I believe university education should be free for everyone.",
+              "zh": "我认为大学教育应该对所有人免费。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That sounds ideal, but who would pay for it?",
+              "jp": "それは理想的に聞こえますが、誰がその費用を支払うのでしょうか？",
+              "en": "That sounds ideal, but who would pay for it?",
+              "zh": "听起来很理想，但谁来买单？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "The government could fund it through higher taxes on the wealthy.",
+              "jp": "政府は富裕層への増税を通じて資金を賄えるだろう。",
+              "en": "The government could fund it through higher taxes on the wealthy.",
+              "zh": "政府可以通过对富人加税来资助。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "But wouldn't that discourage investment and economic growth?",
+              "jp": "しかし、それは投資や経済成長を阻害するのではないだろうか？",
+              "en": "But wouldn't that discourage investment and economic growth?",
+              "zh": "但那不会抑制投资和经济增长吗？",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Not necessarily. An educated population actually drives innovation and productivity.",
+              "jp": "必ずしもそうとは限りません。教育を受けた人々は実際にイノベーションと生産性を推進します。",
+              "en": "Not necessarily. An educated population actually drives innovation and productivity.",
+              "zh": "不一定。受过教育的人口实际上推动了创新和生产力。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That's a fair point. But some countries with free tuition still have quality issues.",
+              "jp": "それは妥当な指摘だ。しかし、授業料が無料の国の中には、依然として質の問題を抱えている国もあります。",
+              "en": "That's a fair point. But some countries with free tuition still have quality issues.",
+              "zh": "这倒是。但有些免学费的国家仍然存在质量问题。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "True, funding alone isn't enough. You need proper management and accountability.",
+              "jp": "確かに、資金だけでは十分ではありません。適切な管理と説明責任が必要です。",
+              "en": "True, funding alone isn't enough. You need proper management and accountability.",
+              "zh": "确实，光有资金还不够。还需要合理的管理和问责。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Maybe a middle ground would work — reduced fees with scholarships for those in need.",
+              "jp": "おそらく、中間点がうまくいくかもしれません - 困っている人のための奨学金で料金を軽減します。",
+              "en": "Maybe a middle ground would work — reduced fees with scholarships for those in need.",
+              "zh": "也许折中方案可行——降低学费，同时为有需要的人提供奖学金。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I could live with that. Equal access to education is what matters most.",
+              "jp": "それで生きていける。教育への平等なアクセスが最も重要です。",
+              "en": "I could live with that. Equal access to education is what matters most.",
+              "zh": "我可以接受。平等的教育机会才是最重要的。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Agreed. Everyone deserves a fair chance, regardless of their background.",
+              "jp": "同意しました。背景に関係なく、誰もが公平なチャンスを得る権利があります。",
+              "en": "Agreed. Everyone deserves a fair chance, regardless of their background.",
+              "zh": "同意。每个人都应该有公平的机会，不论出身。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-epistemology-sketch",
+      "level": "C1",
+      "format": "essay",
+      "titleWord": "Certainty, Doubt, and the Limits of What We See",
+      "titleJp": "確実性、疑い、そして私たちが見ているものの限界",
+      "titleEn": "Certainty, Doubt, and the Limits of What We See",
+      "titleZh": "确定性、怀疑与所见之界",
+      "segments": [
+        {
+          "word": "Human beings rarely confront raw facts; we interpret signals through habits, language, and institutions that we did not individually invent.",
+          "jp": "人間が生の事実に直面することはめったにありません。私たちは、個人が発明したわけではない習慣、言語、制度を通じてシグナルを解釈します。",
+          "en": "Human beings rarely confront raw facts; we interpret signals through habits, language, and institutions that we did not individually invent.",
+          "zh": "人很少直面「原始事实」；我们借助习惯、语言以及并非由个人发明的制度来解读信号。",
+          "reading": ""
+        },
+        {
+          "word": "This does not mean that knowledge is merely opinion, but it does mean that every claim rests on assumptions that can, in principle, be questioned.",
+          "jp": "これは、知識が単なる意見であるという意味ではありませんが、すべての主張は原理的に疑問の余地がある仮定に基づいているということを意味します。",
+          "en": "This does not mean that knowledge is merely opinion, but it does mean that every claim rests on assumptions that can, in principle, be questioned.",
+          "zh": "这并不意味着知识只是意见，但的确意味着每个断言都建立在原则上可被质疑的假设之上。",
+          "reading": ""
+        },
+        {
+          "word": "Skepticism, taken to an extreme, paralyses judgment; taken seriously, however, it disciplines it.",
+          "jp": "懐疑主義が極端になると判断力が麻痺します。しかし、それは真剣に受け止められますが、それはそれを規律します。",
+          "en": "Skepticism, taken to an extreme, paralyses judgment; taken seriously, however, it disciplines it.",
+          "zh": "怀疑论若走极端会瘫痪判断；但若认真对待，它却能约束判断。",
+          "reading": ""
+        },
+        {
+          "word": "The productive stance lies between dogmatism, which refuses revision, and cynicism, which refuses the effort of justification altogether.",
+          "jp": "生産的な立場は、修正を拒否する独断主義と、正当化の努力を完全に拒否する冷笑主義の間にあります。",
+          "en": "The productive stance lies between dogmatism, which refuses revision, and cynicism, which refuses the effort of justification altogether.",
+          "zh": "富有成效的立场介于教条主义（拒绝修正）与犬儒主义（根本不愿费力论证）之间。",
+          "reading": ""
+        },
+        {
+          "word": "Scientific method institutionalises this middle path: hypotheses are advanced, tested, and abandoned when the weight of evidence demands it.",
+          "jp": "科学的手法は、この中間の道を制度化しています。つまり、仮説は前進し、検証され、証拠の重みによって必要に応じて放棄されます。",
+          "en": "Scientific method institutionalises this middle path: hypotheses are advanced, tested, and abandoned when the weight of evidence demands it.",
+          "zh": "科学方法将这种中间道路制度化：提出假设、加以检验，并在证据分量要求时予以放弃。",
+          "reading": ""
+        },
+        {
+          "word": "Yet even science operates within paradigms—shared frameworks that determine which questions appear meaningful and which instruments count as reliable.",
+          "jp": "しかし、科学ですらパラダイム、つまりどの質問が意味があると思われ、どの手段が信頼できるものとしてみなされるかを決定する共有フレームワークの中で機能します。",
+          "en": "Yet even science operates within paradigms—shared frameworks that determine which questions appear meaningful and which instruments count as reliable.",
+          "zh": "然而即便科学也在范式之内运作——共享的框架决定着哪些问题显得有意义、哪些工具被视为可靠。",
+          "reading": ""
+        },
+        {
+          "word": "To recognise such framing is not to collapse into relativism; it is to become more precise about where our confidence is warranted and where it is borrowed.",
+          "jp": "そのような枠組みを認識することは、相対主義に陥ることではありません。それは、私たちの自信がどこに保証され、どこに借りられるのかをより正確にすることです。",
+          "en": "To recognise such framing is not to collapse into relativism; it is to become more precise about where our confidence is warranted and where it is borrowed.",
+          "zh": "承认这种框架并非滑向相对主义；而是更精确地分辨信心在何处有据、在何处只是承袭。",
+          "reading": ""
+        },
+        {
+          "word": "In everyday life, we outsource much of our epistemic labour to experts, communities, and media whose incentives do not always align with accuracy.",
+          "jp": "日常生活において、私たちは認識論的な労働の多くを専門家、コミュニティ、メディアに委託していますが、それらのインセンティブは必ずしも正確さと一致するとは限りません。",
+          "en": "In everyday life, we outsource much of our epistemic labour to experts, communities, and media whose incentives do not always align with accuracy.",
+          "zh": "在日常生活中，我们把大量认识论劳动外包给专家、社群与媒体，而其激励未必与准确性一致。",
+          "reading": ""
+        },
+        {
+          "word": "Critical literacy therefore involves not only evaluating isolated claims but mapping the architecture of trust on which those claims depend.",
+          "jp": "したがって、批判的リテラシーには、孤立したクレームを評価するだけでなく、それらのクレームが依存する信頼のアーキテクチャをマッピングすることも含まれます。",
+          "en": "Critical literacy therefore involves not only evaluating isolated claims but mapping the architecture of trust on which those claims depend.",
+          "zh": "因此批判性读写能力不仅要评估孤立断言，还要勾勒那些断言所依赖的信任结构。",
+          "reading": ""
+        },
+        {
+          "word": "Wisdom, in this sense, is less a stockpile of answers than a cultivated awareness of how little any single vantage point can see.",
+          "jp": "この意味での知恵とは、答えの備蓄というよりは、単一の有利な地点からはどれだけしか見えないかについて培われた認識です。",
+          "en": "Wisdom, in this sense, is less a stockpile of answers than a cultivated awareness of how little any single vantage point can see.",
+          "zh": "在此意义上，智慧与其说是答案的储备，不如说是对单一视角所见何其有限的一种涵养自觉。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "c1-moral-responsibility-diffusion",
+      "level": "C1",
+      "format": "essay",
+      "titleWord": "When Nobody Feels Responsible",
+      "titleJp": "誰も責任を感じていないとき",
+      "titleEn": "When Nobody Feels Responsible",
+      "titleZh": "当没有人感到有责任",
+      "segments": [
+        {
+          "word": "Large organisations diffuse agency: decisions emerge from chains of committees, algorithms, and subcontractors whose individual contributions feel negligible.",
+          "jp": "大規模な組織は主体性を拡散させます。意思決定は、個々の貢献が取るに足らないと感じられる委員会、アルゴリズム、および下請け業者の連鎖から生まれます。",
+          "en": "Large organisations diffuse agency: decisions emerge from chains of committees, algorithms, and subcontractors whose individual contributions feel negligible.",
+          "zh": "大型组织会分散能动性：决策产生于委员会链条、算法与分包商，单个人的贡献显得微不足道。",
+          "reading": ""
+        },
+        {
+          "word": "Psychologists have long observed that responsibility perceived as shared often evaporates in practice, leaving harmful outcomes that no one claims authorship over.",
+          "jp": "心理学者は、共有されていると認識された責任が実際には蒸発し、誰も責任を主張しない有害な結果を残すことがよくあることを長い間観察してきました。",
+          "en": "Psychologists have long observed that responsibility perceived as shared often evaporates in practice, leaving harmful outcomes that no one claims authorship over.",
+          "zh": "心理学家早已指出，被视为共同承担的责任在实践中常常消散，留下无人认领的有害后果。",
+          "reading": ""
+        },
+        {
+          "word": "The moral puzzle is not merely legal but phenomenological: guilt and shame require a narrative in which one's own hand moved the lever.",
+          "jp": "道徳的なパズルは、単に法律的なものではなく、現象学的なものです。罪悪感と恥辱には、自分の手でレバーを動かしたという物語が必要です。",
+          "en": "The moral puzzle is not merely legal but phenomenological: guilt and shame require a narrative in which one's own hand moved the lever.",
+          "zh": "这一道德难题不仅是法学的，更是现象学的：内疚与羞耻需要一种叙事，其中「自己的手推动了操纵杆」。",
+          "reading": ""
+        },
+        {
+          "word": "When causation is statistical rather than theatrical—when harm results from aggregated choices distributed across millions—those emotions rarely ignite.",
+          "jp": "因果関係が演劇的なものではなく統計的なものである場合、つまり害が数百万人に分散した集合的な選択から生じる場合、そのような感情が燃え上がることはめったにありません。",
+          "en": "When causation is statistical rather than theatrical—when harm results from aggregated choices distributed across millions—those emotions rarely ignite.",
+          "zh": "当因果是统计性的而非戏剧性的——当伤害来自分布在数百万人身上的聚合选择时——那些情绪很少被点燃。",
+          "reading": ""
+        },
+        {
+          "word": "Some philosophers argue that moral responsibility must be reconstructed at the level of roles: what a parent, engineer, or regulator ought to foresee, given their position.",
+          "jp": "一部の哲学者は、道徳的責任は役割のレベルで再構築される必要がある、つまり親、技術者、または規制当局がその立場を考慮して予見すべきものを再構築する必要があると主張しています。",
+          "en": "Some philosophers argue that moral responsibility must be reconstructed at the level of roles: what a parent, engineer, or regulator ought to foresee, given their position.",
+          "zh": "一些哲学家主张必须在角色层面重构道德责任：鉴于其职位，父母、工程师或监管者本当预见什么。",
+          "reading": ""
+        },
+        {
+          "word": "Others insist that without individual accountability, rhetoric about ethics becomes a veneer over structural incentives that reward indifference.",
+          "jp": "個人の責任がなければ、倫理に関するレトリックは無関心に報いる構造的インセンティブを覆い隠すものになる、と主張する人もいる。",
+          "en": "Others insist that without individual accountability, rhetoric about ethics becomes a veneer over structural incentives that reward indifference.",
+          "zh": "另一些人坚持，若无个人问责，伦理话语便成为一层饰面，掩盖着奖励冷漠的结构性激励。",
+          "reading": ""
+        },
+        {
+          "word": "A plausible synthesis holds both individuals and systems answerable: institutions should align rewards with care, while professionals refuse the alibi of mere compliance.",
+          "jp": "もっともらしい統合は、個人とシステムの両方に責任があることを意味します。機関は報酬を慎重に調整する必要がありますが、専門家は単なる遵守というアリバイを拒否します。",
+          "en": "A plausible synthesis holds both individuals and systems answerable: institutions should align rewards with care, while professionals refuse the alibi of mere compliance.",
+          "zh": "一种可信的综合看法是让个人与系统同时担责：制度应使回报与审慎一致，而专业人士则拒绝仅以「合规」为借口。",
+          "reading": ""
+        },
+        {
+          "word": "The difficulty is that such refusal carries personal cost when organisational culture punishes dissent as disloyalty or inefficiency.",
+          "jp": "難しいのは、組織文化が反対者を不誠実または非効率として罰する場合、そのような拒否が個人的な犠牲を伴うことです。",
+          "en": "The difficulty is that such refusal carries personal cost when organisational culture punishes dissent as disloyalty or inefficiency.",
+          "zh": "困难在于，当组织文化把异议惩罚为不忠或低效时，这种拒绝会带来个人代价。",
+          "reading": ""
+        },
+        {
+          "word": "Ethical maturity may therefore require courage as much as clarity: the willingness to name harm even when the crowd prefers the comfort of abstraction.",
+          "jp": "したがって、倫理的な成熟には、明晰さと同じくらい勇気、つまり、たとえ群衆が抽象化の快適さを好む場合でも、害悪を名指しする意欲が必要である可能性があります。",
+          "en": "Ethical maturity may therefore require courage as much as clarity: the willingness to name harm even when the crowd prefers the comfort of abstraction.",
+          "zh": "因此伦理上的成熟或许既需要清醒也需要勇气：即便众人更愿躲在抽象之中，仍愿指认伤害。",
+          "reading": ""
+        },
+        {
+          "word": "Abstract nouns—optimisation, growth, disruption—can launder concrete suffering unless someone insists on translating them back into faces and neighbourhoods.",
+          "jp": "最適化、成長、破壊などの抽象名詞は、誰かがそれを顔や近所に置き換えようと主張しない限り、具体的な苦しみを洗い流すことができます。",
+          "en": "Abstract nouns—optimisation, growth, disruption—can launder concrete suffering unless someone insists on translating them back into faces and neighbourhoods.",
+          "zh": "抽象名词——优化、增长、颠覆——可以把具体的苦难洗白，除非有人坚持把它们译回面孔与街区。",
+          "reading": ""
+        },
+        {
+          "word": "The question for any reflective citizen is not only what policies they support but what habits of attention keep responsibility from dissolving into the air.",
+          "jp": "思慮深い国民にとって問題となるのは、どのような政策を支持しているかということだけではなく、どのような注意の習慣が責任の霧散を妨げているかということである。",
+          "en": "The question for any reflective citizen is not only what policies they support but what habits of attention keep responsibility from dissolving into the air.",
+          "zh": "对任何善于反思的公民而言，问题不仅在于支持什么政策，还在于何种注意习惯能防止责任消散于无形。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "c1-consciousness-hard-problem",
+      "level": "C1",
+      "format": "essay",
+      "titleWord": "The Puzzle of Inner Experience",
+      "titleJp": "内なる経験のパズル",
+      "titleEn": "The Puzzle of Inner Experience",
+      "titleZh": "内在经验的谜题",
+      "segments": [
+        {
+          "word": "You can describe the brain in exquisite biochemical detail and still wonder why any of it feels like something from the inside.",
+          "jp": "脳を精緻な生化学的詳細で描写することはできますが、なぜ脳が内部から何かのように感じられるのか不思議に思うでしょう。",
+          "en": "You can describe the brain in exquisite biochemical detail and still wonder why any of it feels like something from the inside.",
+          "zh": "你可以极尽细致地描述大脑的生化学细节，却仍会疑惑：为何这一切从内部「像某种东西」？",
+          "reading": ""
+        },
+        {
+          "word": "This gap between third-person mechanism and first-person qualia is what some philosophers call the hard problem of consciousness.",
+          "jp": "三人称のメカニズムと一人称のクオリアの間のこのギャップは、一部の哲学者が意識の困難な問題と呼ぶものです。",
+          "en": "This gap between third-person mechanism and first-person qualia is what some philosophers call the hard problem of consciousness.",
+          "zh": "第三人称机制与第一人称感质之间的这一裂隙，被一些哲学家称为意识的「困难问题」。",
+          "reading": ""
+        },
+        {
+          "word": "Materialists contend that once we map information processing thoroughly, the feeling of mystery will dissipate much as the mystery of life did after Darwin.",
+          "jp": "唯物論者は、一度情報処理を徹底的にマッピングすれば、ダーウィン以降の生命の謎と同じように、謎の感情も消えるだろうと主張する。",
+          "en": "Materialists contend that once we map information processing thoroughly, the feeling of mystery will dissipate much as the mystery of life did after Darwin.",
+          "zh": "唯物论者主张，一旦我们彻底描绘信息处理，神秘感便会消散，正如达尔文之后生命的神秘消退那样。",
+          "reading": ""
+        },
+        {
+          "word": "Critics reply that explanatory gaps are not always temporary; some distinctions may mark real limits to what a given conceptual scheme can capture.",
+          "jp": "批評家は、説明上のギャップは必ずしも一時的なものではないと答えます。いくつかの区別は、特定の概念スキームが捉えることができるものに実際の限界を示す可能性があります。",
+          "en": "Critics reply that explanatory gaps are not always temporary; some distinctions may mark real limits to what a given conceptual scheme can capture.",
+          "zh": "批评者回应说，解释鸿沟并非总是暂时的；有些区分可能标志着特定概念框架所能把握的真实界限。",
+          "reading": ""
+        },
+        {
+          "word": "Phenomenology attempts to bracket metaphysical speculation and attend carefully to the textures of experience as lived—time, embodiment, mood.",
+          "jp": "現象学は、形而上学的な思索を一括りにして、生きた経験の質感、つまり時間、具体化、気分に注意深く注意を向けようとします。",
+          "en": "Phenomenology attempts to bracket metaphysical speculation and attend carefully to the textures of experience as lived—time, embodiment, mood.",
+          "zh": "现象学试图悬置形而上学思辨，仔细关注被体验的时间、具身性与情绪等经验质地。",
+          "reading": ""
+        },
+        {
+          "word": "Cognitive science, meanwhile, models attention, memory, and prediction error, often suggesting that the self is a constructed narrative rather than a simple substance.",
+          "jp": "一方、認知科学は注意、記憶、予測誤差をモデル化し、自己とは単純な物質ではなく構築された物語であることを示唆することがよくあります。",
+          "en": "Cognitive science, meanwhile, models attention, memory, and prediction error, often suggesting that the self is a constructed narrative rather than a simple substance.",
+          "zh": "与此同时，认知科学为注意、记忆与预测误差建模，常暗示自我是一种建构的叙事，而非简单的实体。",
+          "reading": ""
+        },
+        {
+          "word": "These approaches need not contradict one another if we distinguish levels of description: the same storm can be spoken of as pressure gradients and as dread on a ship.",
+          "jp": "説明のレベルを区別する場合、これらのアプローチは互いに矛盾する必要はありません。同じ嵐を気圧勾配として、また船上の恐怖として語ることができます。",
+          "en": "These approaches need not contradict one another if we distinguish levels of description: the same storm can be spoken of as pressure gradients and as dread on a ship.",
+          "zh": "若区分描述层次，这些进路未必矛盾：同一场风暴既可说成气压梯度，也可说成船上人的恐惧。",
+          "reading": ""
+        },
+        {
+          "word": "What remains controversial is whether subjective experience adds an ontological ingredient or merely marks a peculiar mode of access to the same physical facts.",
+          "jp": "依然として議論の余地があるのは、主観的経験が存在論的要素を追加するのか、それとも同じ物理的事実へのアクセスの特異な様式を示すだけなのかということです。",
+          "en": "What remains controversial is whether subjective experience adds an ontological ingredient or merely marks a peculiar mode of access to the same physical facts.",
+          "zh": "仍有争议的是：主观经验是否在本体论上增添了某种成分，抑或只是通向同一物理事实的一种特殊通道。",
+          "reading": ""
+        },
+        {
+          "word": "Educationally, the puzzle matters because it shapes how we imagine minds—our own and others'—and therefore how we assign dignity, blame, and mercy.",
+          "jp": "教育上、このパズルは、私たちが自分自身や他人の心をどのように想像するか、そしてそれによって尊厳、非難、慈悲をどのように割り当てるかを形作るため、重要です。",
+          "en": "Educationally, the puzzle matters because it shapes how we imagine minds—our own and others'—and therefore how we assign dignity, blame, and mercy.",
+          "zh": "在教育上，这一谜题之所以重要，是因为它塑造我们想象心灵（自己与他人的）的方式，从而塑造尊严、责备与仁慈的分配。",
+          "reading": ""
+        },
+        {
+          "word": "Humility before the unsolved may be more honest than premature closure dressed up as sophistication.",
+          "jp": "未解決の問題を前に謙虚になることは、洗練されたものを装って時期尚早に終わらせるよりも誠実である可能性があります。",
+          "en": "Humility before the unsolved may be more honest than premature closure dressed up as sophistication.",
+          "zh": "在未解之谜面前保持谦逊，或许比把过早的定论装扮成老练更为诚实。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "c1-institutions-legitimacy",
+      "level": "C1",
+      "format": "essay",
+      "titleWord": "Why Institutions Need Legitimacy, Not Just Power",
+      "titleJp": "なぜ組織には権力だけではなく正当性が必要なのか",
+      "titleEn": "Why Institutions Need Legitimacy, Not Just Power",
+      "titleZh": "为何制度需要合法性，而非仅有权力",
+      "segments": [
+        {
+          "word": "Power can compel obedience in the short run; legitimacy elicits cooperation that outlasts the visible presence of enforcement.",
+          "jp": "権力は短期的には服従を強いることがある。正当性は、目に見える執行の存在を超えて持続する協力を引き出します。",
+          "en": "Power can compel obedience in the short run; legitimacy elicits cooperation that outlasts the visible presence of enforcement.",
+          "zh": "权力可以在短期内强迫服从；合法性却能唤起在执法力量不在场时仍延续的合作。",
+          "reading": ""
+        },
+        {
+          "word": "Max Weber famously distinguished traditional, charismatic, and legal-rational sources of authority, each with characteristic strengths and pathologies.",
+          "jp": "マックス・ウェーバーは、伝統的でカリスマ的で法的に合理的な権威の源泉を区別したことで有名であり、それぞれが特徴的な長所と病理を持っています。",
+          "en": "Max Weber famously distinguished traditional, charismatic, and legal-rational sources of authority, each with characteristic strengths and pathologies.",
+          "zh": "韦伯著名地区分了传统的、卡里斯玛的与法理型的权威来源，各有其典型的长处与病态。",
+          "reading": ""
+        },
+        {
+          "word": "Legal-rational legitimacy rests on the belief that rules are enacted through procedures widely accepted as fair, even when outcomes disappoint particular groups.",
+          "jp": "法的合理性の正当性は、結果が特定のグループを失望させる場合でも、公正であると広く受け入れられている手順を通じてルールが制定されるという信念に基づいています。",
+          "en": "Legal-rational legitimacy rests on the belief that rules are enacted through procedures widely accepted as fair, even when outcomes disappoint particular groups.",
+          "zh": "法理型合法性建立在这样一种信念上：规则经由被广泛认为公平的程序制定，即便结果令某些群体失望。",
+          "reading": ""
+        },
+        {
+          "word": "When procedural faith erodes—through corruption, selective enforcement, or opaque algorithmic scoring—people may comply cynically while withholding civic energy.",
+          "jp": "汚職、選択的執行、不透明なアルゴリズムによる採点などを通じて手続き上の信仰が損なわれると、人々は市民のエネルギーを差し控えながら冷笑的に従う可能性がある。",
+          "en": "When procedural faith erodes—through corruption, selective enforcement, or opaque algorithmic scoring—people may comply cynically while withholding civic energy.",
+          "zh": "当对程序的信任因腐败、选择性执法或不透明的算法评分而侵蚀时，人们可能犬儒式地服从，却不再投入公共精力。",
+          "reading": ""
+        },
+        {
+          "word": "Trust, unlike information, is not merely transmitted; it is cultivated through repeated interactions in which institutions prove reliable under stress.",
+          "jp": "情報とは異なり、信頼は単に伝達されるだけではありません。それは、機関がストレス下でも信頼できることを証明する相互作用を繰り返すことによって培われます。",
+          "en": "Trust, unlike information, is not merely transmitted; it is cultivated through repeated interactions in which institutions prove reliable under stress.",
+          "zh": "信任不同于信息，它不能仅靠传递；它通过在压力下仍证明可靠的反复互动而涵养。",
+          "reading": ""
+        },
+        {
+          "word": "Abstract principles such as equality before the law must be instantiated in concrete practices—court accessibility, linguistic rights, timely redress—or they decay into slogans.",
+          "jp": "法の下の平等などの抽象的な原則は、法廷へのアクセス、言語的権利、適時の救済などの具体的な実践に具体化されなければ、スローガンに堕落してしまいます。",
+          "en": "Abstract principles such as equality before the law must be instantiated in concrete practices—court accessibility, linguistic rights, timely redress—or they decay into slogans.",
+          "zh": "法律面前平等等抽象原则必须落实为具体实践——司法可及性、语言权利、及时救济——否则便会沦为口号。",
+          "reading": ""
+        },
+        {
+          "word": "Globalisation complicates legitimacy because populations compare their institutions to foreign models, sometimes idealised, sometimes demonised, through fragmented media ecologies.",
+          "jp": "グローバリゼーションは、人々が自分たちの制度を、断片化されたメディア生態学を通じて、時には理想化され、時には悪魔化された外国のモデルと比較するため、正当性を複雑にします。",
+          "en": "Globalisation complicates legitimacy because populations compare their institutions to foreign models, sometimes idealised, sometimes demonised, through fragmented media ecologies.",
+          "zh": "全球化使合法性复杂化：人们把本国制度与外国模式比较，而经由碎片化的媒体生态，那些模式有时被理想化，有时被妖魔化。",
+          "reading": ""
+        },
+        {
+          "word": "Democratic theorists disagree on how much participation legitimacy requires, but most agree that periodic elections alone cannot nourish a thick democratic culture.",
+          "jp": "民主主義理論家の間では、参加の正当性がどの程度必要なのかについては意見が分かれているが、定期的な選挙だけでは厚みのある民主主義文化を育むことはできないという点では大方の意見が一致している。",
+          "en": "Democratic theorists disagree on how much participation legitimacy requires, but most agree that periodic elections alone cannot nourish a thick democratic culture.",
+          "zh": "民主理论家对合法性需要多少参与意见不一，但多数人同意：仅有周期性选举不足以滋养深厚的民主文化。",
+          "reading": ""
+        },
+        {
+          "word": "In sum, legitimacy is the bridge between coercion and consent; maintaining it is less spectacular than winning elections but often more decisive for long-term stability.",
+          "jp": "要約すると、正当性は強制と同意の間の架け橋です。それを維持することは、選挙に勝つほど華々しいものではありませんが、多くの場合、長期的な安定にとってはより決定的です。",
+          "en": "In sum, legitimacy is the bridge between coercion and consent; maintaining it is less spectacular than winning elections but often more decisive for long-term stability.",
+          "zh": "总之，合法性是强制与同意之间的桥梁；维系它不如赢得选举抢眼，却常常对长期稳定更为关键。",
+          "reading": ""
+        }
+      ]
+    },
+    {
+      "id": "c1-dialogue-ai-ethics",
+      "level": "C1",
+      "format": "dialogue",
+      "titleWord": "After the Model Ships",
+      "titleJp": "モデルの出荷後",
+      "titleEn": "After the Model Ships",
+      "titleZh": "模型上线之后",
+      "sections": [
+        {
+          "headingWord": "Post-Deployment Ethics",
+          "headingJp": "導入後の倫理",
+          "headingEn": "Post-Deployment Ethics",
+          "headingZh": "部署后的伦理",
+          "lines": [
+            {
+              "word": "The benchmark scores were stellar, yet within a week we saw subtle demographic skew in who receives the premium tier recommendations.",
+              "jp": "ベンチマーク スコアは優れていましたが、1 週間以内に、誰がプレミアム層の推奨を受け取るかについて、人口統計上の微妙な偏りがあることがわかりました。",
+              "en": "The benchmark scores were stellar, yet within a week we saw subtle demographic skew in who receives the premium tier recommendations.",
+              "zh": "基准分数很漂亮，可一周内我们就看到谁能拿到「高级档」推荐存在细微的人口统计学偏差。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "That is precisely what I feared: optimisation against a proxy metric can launder structural bias unless the loss function encodes fairness constraints explicitly.",
+              "jp": "それはまさに私が懸念していたことです。損失関数が公平性制約を明示的にエンコードしない限り、プロキシ メトリックに対する最適化は構造的なバイアスを洗浄する可能性があります。",
+              "en": "That is precisely what I feared: optimisation against a proxy metric can launder structural bias unless the loss function encodes fairness constraints explicitly.",
+              "zh": "这正是我所担心的：对代理指标做优化会把结构性偏见洗白，除非损失函数明确编码公平约束。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Legal is asking whether we can demonstrate disparate impact below a threshold; I am more worried about whether the threshold captures lived disadvantage.",
+              "jp": "法務では、しきい値を下回るさまざまな影響を実証できるかどうかが問われています。それよりも、閾値が生活上の不利益を捉えるかどうかの方が心配です。",
+              "en": "Legal is asking whether we can demonstrate disparate impact below a threshold; I am more worried about whether the threshold captures lived disadvantage.",
+              "zh": "法务问我们能否证明差别影响低于某阈值；我更担心这阈值是否捕捉了现实中的不利处境。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "A threshold is a political choice dressed in statistical clothing; we should document whose voices were absent when that number was chosen.",
+              "jp": "閾値は統計的な衣装を着た政治的選択です。その番号が選ばれたときに誰の声がなかったのかを記録する必要があります。",
+              "en": "A threshold is a political choice dressed in statistical clothing; we should document whose voices were absent when that number was chosen.",
+              "zh": "阈值是披着统计外衣的政治选择；我们应当记录选定该数字时缺席了哪些人的声音。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Product wants a hotfix by Friday; research wants longitudinal audits. How do we avoid sacrificing depth to velocity?",
+              "jp": "製品には金曜日までにホットフィックスが必要です。研究には長期的な監査が必要です。速度のために深さを犠牲にしないようにするにはどうすればよいでしょうか?",
+              "en": "Product wants a hotfix by Friday; research wants longitudinal audits. How do we avoid sacrificing depth to velocity?",
+              "zh": "产品希望周五前热修复；研究想要纵向审计。我们如何避免为速度牺牲深度？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Ship a narrow guardrail now—hard caps on certain features—but fund a parallel workstream that traces error propagation through the pipeline.",
+              "jp": "今は狭いガードレールを出荷し、特定の機能には厳しい制限を設けますが、パイプラインを介したエラーの伝播を追跡する並行ワークストリームに資金を提供します。",
+              "en": "Ship a narrow guardrail now—hard caps on certain features—but fund a parallel workstream that traces error propagation through the pipeline.",
+              "zh": "先上线狭窄的护栏——对某些特征设硬上限——但要资助一条并行工作线，追踪误差在流水线中的传播。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Will leadership accept the budget hit when quarterly narratives privilege growth metrics?",
+              "jp": "四半期ごとのナラティブが成長指標に特権を与える場合、経営陣は予算の打撃を受け入れるだろうか?",
+              "en": "Will leadership accept the budget hit when quarterly narratives privilege growth metrics?",
+              "zh": "当季度叙事偏爱增长指标时，领导层会接受预算冲击吗？",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "If they do not, we should be candid that reputational risk is not external noise but an endogenous variable we are choosing to ignore.",
+              "jp": "そうでない場合、風評リスクは外部のノイズではなく、無視することを選択している内生変数であることを率直に言うべきです。",
+              "en": "If they do not, we should be candid that reputational risk is not external noise but an endogenous variable we are choosing to ignore.",
+              "zh": "若他们不接受，我们应坦率说明：声誉风险不是外部噪音，而是我们选择忽略的内生变量。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "I will draft a memo that separates what we know, what we assume, and what would falsify our assumptions—no rhetorical fog.",
+              "jp": "私は、私たちが知っていること、私たちが仮定していること、そして私たちの仮定を反証するものを区別するメモの草案を作成します。修辞的な霧は含まれません。",
+              "en": "I will draft a memo that separates what we know, what we assume, and what would falsify our assumptions—no rhetorical fog.",
+              "zh": "我会起草一份备忘录，区分我们已知的、我们假定的、以及何种证据会证伪这些假定——不要修辞迷雾。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Good. Clarity is a moral technology here; ambiguity too often functions as plausible deniability downstream.",
+              "jp": "良い。ここでは明晰さは道徳的な技術です。曖昧さは、下流でもっともらしい否定として機能することが多すぎます。",
+              "en": "Good. Clarity is a moral technology here; ambiguity too often functions as plausible deniability downstream.",
+              "zh": "好。此处清晰是一种道德技术；模糊往往在下游充当「看似合理的推诿」。",
+              "reading": "",
+              "speaker": "B"
+            },
+            {
+              "word": "Let us also invite the civil-society partners we sidelined during training data collection; their scepticism is data we failed to label.",
+              "jp": "訓練データ収集中に参加しなかった市民社会のパートナーも招待しましょう。彼らの懐疑は、私たちがラベル付けできなかったデータです。",
+              "en": "Let us also invite the civil-society partners we sidelined during training data collection; their scepticism is data we failed to label.",
+              "zh": "还应邀请我们在训练数据收集阶段边缘化的公民社会伙伴；他们的怀疑是我们未能标注的数据。",
+              "reading": "",
+              "speaker": "A"
+            },
+            {
+              "word": "Agreed. Otherwise we risk mistaking silence for consent when it is merely exhaustion.",
+              "jp": "同意しました。そうしないと、単に疲れ果てているだけなのに、沈黙を同意と誤解する危険があります。",
+              "en": "Agreed. Otherwise we risk mistaking silence for consent when it is merely exhaustion.",
+              "zh": "同意。否则我们容易把沉默当成同意，而它其实只是疲惫。",
+              "reading": "",
+              "speaker": "B"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
