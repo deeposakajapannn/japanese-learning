@@ -285,19 +285,17 @@ function playLoopItem() {
 
   setupMediaSession()
 
-  const fn1 = store.audioMap[it.word]
+  const fn1 = it._audioFn ?? store.audioMap[it.word]
   if (!fn1) {
     appendLoopDebug('missing_audio', it.word)
     nextLoopItemInternal()
     return
   }
 
-  /** 文章连播：句间停顿略短；单词/例句仍用较长间隔（锁屏保活更稳） */
-  const isArticle = it._cat === 'articles'
-  const gapAfterMain = isArticle ? 160 : 500
-  const gapBeforeNext = isArticle ? 220 : 800
+  /** 仅播一条音频（词条/句子），句间一段静音；文章略短、听列表略长（锁屏仍走静音轨） */
+  const gapMs = it._cat === 'articles' ? 0 : 500
 
-  // 「听过」仅在主词音频完整播完时 +1；部分环境会重复触发 ended，只计一次
+  // 「听过」仅在主音频完整播完时 +1；部分环境会重复触发 ended，只计一次
   let wordListenCounted = false
   audioEl.onended = () => {
     if (session !== loopPlaySession) return
@@ -307,24 +305,7 @@ function playLoopItem() {
     }
     recordListenTime(audioEl.duration)
     if (!loopPlaying.value || loopPaused.value) return
-    runNextStep(session, () => {
-      if (session !== loopPlaySession) return
-      if (it.example && store.audioMap[it.example]) {
-        audioEl.onended = () => {
-          if (session !== loopPlaySession) return
-          recordListenTime(audioEl.duration)
-          if (!loopPlaying.value || loopPaused.value) return
-          runNextStep(session, () => nextLoopItemInternal(), gapBeforeNext)
-        }
-        playCurrentAudio(
-          `${import.meta.env.BASE_URL}audio/` + store.audioMap[it.example],
-          session,
-          () => nextLoopItemInternal(),
-        )
-      } else {
-        runNextStep(session, () => nextLoopItemInternal(), gapBeforeNext)
-      }
-    }, gapAfterMain)
+    runNextStep(session, () => nextLoopItemInternal(), gapMs)
   }
   playCurrentAudio(`${import.meta.env.BASE_URL}audio/` + fn1, session, () => nextLoopItemInternal())
 }

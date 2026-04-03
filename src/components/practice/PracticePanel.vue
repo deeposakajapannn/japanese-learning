@@ -73,7 +73,7 @@ function toggleLoop() {
     stopLoop()
   } else {
     const it = quizItems.value[quizIndex.value]
-    if (it) speakLoop(it.word, it.example)
+    if (it) speakLoop(it.word)
   }
 }
 

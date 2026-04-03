@@ -30,15 +30,31 @@ function buildLoopItems(fromIndex: number) {
   const items: (DataItem & { _cat: string })[] = []
   for (let i = fromIndex; i < sentences.length; i++) {
     const s = sentences[i]
-    if (store.audioMap[s.jp]) {
-      items.push({ id: i, word: s.jp, reading: s.reading, meaning: s.zh, _cat: 'articles' })
+    const fn = audioFnForJp(s.jp)
+    if (fn) {
+      items.push({
+        id: i,
+        word: s.jp,
+        reading: s.reading,
+        meaning: s.zh,
+        _cat: 'articles',
+        _audioFn: fn,
+      })
     }
   }
   // 把 fromIndex 之前的也追加到末尾，形成完整循环
   for (let i = 0; i < fromIndex; i++) {
     const s = sentences[i]
-    if (store.audioMap[s.jp]) {
-      items.push({ id: i, word: s.jp, reading: s.reading, meaning: s.zh, _cat: 'articles' })
+    const fn = audioFnForJp(s.jp)
+    if (fn) {
+      items.push({
+        id: i,
+        word: s.jp,
+        reading: s.reading,
+        meaning: s.zh,
+        _cat: 'articles',
+        _audioFn: fn,
+      })
     }
   }
   return items
@@ -46,6 +62,7 @@ function buildLoopItems(fromIndex: number) {
 
 const LS_ARTICLE_ZH = 'jp_article_show_zh'
 const LS_ARTICLE_READING = 'jp_article_show_reading'
+const LS_ARTICLE_VOICE = 'jp_article_tts_voice'
 
 function readStoredBool(key: string, defaultVal: boolean): boolean {
   try {
@@ -56,6 +73,42 @@ function readStoredBool(key: string, defaultVal: boolean): boolean {
   } catch {
     return defaultVal
   }
+}
+
+function readStoredVoice(): 'female' | 'male' {
+  try {
+    if (typeof localStorage === 'undefined') return 'female'
+    const v = localStorage.getItem(LS_ARTICLE_VOICE)
+    return v === 'male' ? 'male' : 'female'
+  } catch {
+    return 'female'
+  }
+}
+
+const articleVoiceMale = ref(readStoredVoice() === 'male')
+
+watch(articleVoiceMale, (isMale) => {
+  try {
+    localStorage.setItem(LS_ARTICLE_VOICE, isMale ? 'male' : 'female')
+  } catch {
+    /* ignore */
+  }
+  invalidateArticlePlayback()
+  stopLoop()
+})
+
+/** 当前篇是否有至少一句男声资源（仅 N2 及以下篇目会带齐） */
+const articleOffersMaleVoice = computed(() =>
+  flatSentences.value.some((s) => !!store.articleAudioMapMale[s.jp]),
+)
+
+/** 文章朗读用文件名：男声优先（有键时），否则女声 */
+function audioFnForJp(jp: string): string | undefined {
+  if (articleVoiceMale.value) {
+    const m = store.articleAudioMapMale[jp]
+    if (m) return m
+  }
+  return store.audioMap[jp]
 }
 
 const showTranslation = ref(readStoredBool(LS_ARTICLE_ZH, true))
@@ -140,9 +193,7 @@ const playbackUnits = computed(() => {
   return flatSentences.value.map((s) => ({ jp: s.jp }))
 })
 
-const canPlayAll = computed(() =>
-  playbackUnits.value.some((u) => !!store.audioMap[u.jp]),
-)
+const canPlayAll = computed(() => playbackUnits.value.some((u) => !!audioFnForJp(u.jp)))
 
 const copied = ref(false)
 async function copyFullText() {
@@ -205,7 +256,7 @@ function isDialogue(it: ArticleItem | null): it is ArticleDialogue {
 
 function linePlaying(jp: string) {
   if (loopPlaying.value) {
-    const items = playbackUnits.value.filter((u) => !!store.audioMap[u.jp])
+    const items = playbackUnits.value.filter((u) => !!audioFnForJp(u.jp))
     const current = items[loopIndex.value]
     return current?.jp === jp
   }
@@ -281,6 +332,20 @@ onUnmounted(() => {
           >
             {{ t('articleToggleReading') }}
           </button>
+          <div
+            v-if="articleOffersMaleVoice"
+            class="inline-flex items-center rounded-full border border-[var(--border)] p-0.5 text-xs font-medium cursor-pointer select-none"
+            @click="articleVoiceMale = !articleVoiceMale"
+          >
+            <span
+              class="px-2 py-0.5 rounded-full transition-colors"
+              :class="!articleVoiceMale ? 'bg-[#e8735a]/15 text-[#c45a3e]' : 'theme-muted'"
+            >{{ t('articleVoiceFemale') }}</span>
+            <span
+              class="px-2 py-0.5 rounded-full transition-colors"
+              :class="articleVoiceMale ? 'bg-[#e8735a]/15 text-[#c45a3e]' : 'theme-muted'"
+            >{{ t('articleVoiceMale') }}</span>
+          </div>
           <template v-if="canPlayAll">
             <button
               v-if="!loopPlaying"
@@ -346,7 +411,7 @@ onUnmounted(() => {
               </template>
             </div>
             <button
-              v-if="store.audioMap[seg.jp]"
+              v-if="audioFnForJp(seg.jp)"
               type="button"
               class="shrink-0 w-9 h-9 mt-0.5 rounded-full flex items-center justify-center cursor-pointer border-0 transition-transform active:scale-95"
               style="background: linear-gradient(135deg, #e8735a 0%, #d4624d 100%); color: #fff;"

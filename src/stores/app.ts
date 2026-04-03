@@ -13,6 +13,8 @@ export interface DataItem {
   topic?: string
   level?: string
   _cat?: string
+  /** 文章连播：若设置则优先于 audioMap[word] 的文件名 */
+  _audioFn?: string
 }
 
 export interface AppData {
@@ -123,6 +125,8 @@ export const useAppStore = defineStore('app', () => {
   const currentCat = ref<string>('articles')
   const data = ref<AppData>({ nouns: [], sentences: [], kana: KANA_DATA })
   const audioMap = ref<Record<string, string>>({})
+  /** 文章句男声（Keita），仅 N2 及以下篇目有键；见 public/data/article_audio_map_male.json */
+  const articleAudioMapMale = ref<Record<string, string>>({})
   /** 精读文章（短文 / 对话），见 public/data/articles.json */
   const articles = ref<ArticleItem[]>([])
   const isDataLoaded = ref(false)
@@ -145,15 +149,25 @@ export const useAppStore = defineStore('app', () => {
   async function loadData() {
     try {
       const base = import.meta.env.BASE_URL
-      const [nouns, sentences, audioMapData, articlesData] = await Promise.all([
+      const [nouns, sentences, audioMapData, articlesData, maleMapRes] = await Promise.all([
         fetch(`${base}data/nouns.json`).then(r => r.json()),
         fetch(`${base}data/sentences.json`).then(r => r.json()),
         fetch(`${base}data/audio_map.json`).then(r => r.json()),
         fetch(`${base}data/articles.json`).then(r => r.json()),
+        fetch(`${base}data/article_audio_map_male.json`).then(async (r) => {
+          if (!r.ok) return {}
+          try {
+            return await r.json()
+          } catch {
+            return {}
+          }
+        }),
       ])
       data.value.nouns = nouns
       data.value.sentences = sentences
       audioMap.value = audioMapData
+      articleAudioMapMale.value =
+        maleMapRes && typeof maleMapRes === 'object' && !Array.isArray(maleMapRes) ? maleMapRes : {}
       articles.value = Array.isArray(articlesData?.items) ? articlesData.items : []
       isDataLoaded.value = true
     } catch (e) {
@@ -167,6 +181,7 @@ export const useAppStore = defineStore('app', () => {
     currentCat,
     data,
     audioMap,
+    articleAudioMapMale,
     articles,
     isDataLoaded,
     switchMode,

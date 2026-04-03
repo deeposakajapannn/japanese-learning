@@ -73,6 +73,7 @@ const {
           class="w-full flex items-center justify-center text-white text-xs font-semibold px-2 leading-tight border-0 cursor-pointer active:opacity-90 hover:opacity-95"
           :class="inQueue ? 'bg-[#999] cursor-default' : 'btn-grad-primary btn-grad-primary--borderless'"
           :disabled="inQueue"
+          @pointerdown.stop
           @click.stop="onAddQuiz"
         >
           {{ inQueue ? t('quizQueueReady') : t('quizQueueAdd') }}
@@ -150,6 +151,7 @@ const {
               type="button"
               class="w-10 h-10 rounded-full border-2 flex items-center justify-center cursor-pointer transition-all border-[#e8e2dc] theme-surface text-[#e8735a] shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:border-[#e8735a] hover:shadow-[0_4px_12px_rgba(232,115,90,0.2)] active:scale-[0.96]"
               :aria-label="t('listPlayFromHere')"
+              @pointerdown.stop
               @click.stop="onPlayListFromRow"
             >
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>

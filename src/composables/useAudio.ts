@@ -47,19 +47,14 @@ export function speak(word: string) {
   playMainTrack(audioPath(fn))
 }
 
-export function speakWithExample(word: string, example?: string) {
+/** 仅播词条主音频（数据无例句音频链时可忽略第二参数） */
+export function speakWithExample(word: string, _example?: string) {
   const store = useAppStore()
   const fn1 = store.audioMap[word]
   if (!fn1) { speakTTS(word); return }
   audioEl.onended = () => {
     recordListenTime(audioEl.duration)
-    if (example && store.audioMap[example]) {
-      audioEl.onended = () => {
-        recordListenTime(audioEl.duration)
-        audioEl.onended = null
-      }
-      playMainTrack(audioPath(store.audioMap[example]))
-    }
+    audioEl.onended = null
   }
   playMainTrack(audioPath(fn1))
 }
@@ -116,7 +111,7 @@ function schedulePracticeGap(delayMs: number, session: number, action: () => voi
   })
 }
 
-export function speakLoop(word: string, example?: string) {
+export function speakLoop(word: string, _example?: string) {
   clearPracticeGap()
   practiceLoopSession++
   const session = practiceLoopSession
@@ -137,17 +132,7 @@ export function speakLoop(word: string, example?: string) {
       recordListenTime(audioEl.duration)
       if (session !== practiceLoopSession) return
       if (!looping.value) return
-      if (example && store.audioMap[example]) {
-        audioEl.onended = () => {
-          recordListenTime(audioEl.duration)
-          if (session !== practiceLoopSession) return
-          if (!looping.value) return
-          schedulePracticeGap(800, session, playOnce)
-        }
-        playMainTrack(audioPath(store.audioMap[example]))
-      } else {
-        schedulePracticeGap(800, session, playOnce)
-      }
+      schedulePracticeGap(800, session, playOnce)
     }
     playMainTrack(audioPath(fn1))
   }

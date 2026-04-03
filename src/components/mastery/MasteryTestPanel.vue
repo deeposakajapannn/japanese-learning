@@ -125,7 +125,7 @@ function toggleLoop() {
     stopLoop()
   } else {
     const it = currentItem.value
-    if (it) speakLoop(it.word, it.example)
+    if (it) speakLoop(it.word)
   }
 }
 
