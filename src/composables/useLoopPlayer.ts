@@ -292,6 +292,11 @@ function playLoopItem() {
     return
   }
 
+  /** 文章连播：句间停顿略短；单词/例句仍用较长间隔（锁屏保活更稳） */
+  const isArticle = it._cat === 'articles'
+  const gapAfterMain = isArticle ? 160 : 500
+  const gapBeforeNext = isArticle ? 220 : 800
+
   // 「听过」仅在主词音频完整播完时 +1；部分环境会重复触发 ended，只计一次
   let wordListenCounted = false
   audioEl.onended = () => {
@@ -309,7 +314,7 @@ function playLoopItem() {
           if (session !== loopPlaySession) return
           recordListenTime(audioEl.duration)
           if (!loopPlaying.value || loopPaused.value) return
-          runNextStep(session, () => nextLoopItemInternal(), 800)
+          runNextStep(session, () => nextLoopItemInternal(), gapBeforeNext)
         }
         playCurrentAudio(
           `${import.meta.env.BASE_URL}audio/` + store.audioMap[it.example],
@@ -317,9 +322,9 @@ function playLoopItem() {
           () => nextLoopItemInternal(),
         )
       } else {
-        runNextStep(session, () => nextLoopItemInternal(), 800)
+        runNextStep(session, () => nextLoopItemInternal(), gapBeforeNext)
       }
-    }, 500)
+    }, gapAfterMain)
   }
   playCurrentAudio(`${import.meta.env.BASE_URL}audio/` + fn1, session, () => nextLoopItemInternal())
 }

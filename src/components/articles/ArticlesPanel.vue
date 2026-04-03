@@ -4,7 +4,7 @@ import { useAppStore } from '@/stores/app'
 import { useLang } from '@/i18n'
 import { audioEl } from '@/composables/useAudio'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
-import type { ArticleItem, ArticleEssay, ArticleDialogue } from '@/types'
+import type { ArticleItem, ArticleEssay, ArticleDialogue, ArticleSegment } from '@/types'
 import type { DataItem } from '@/stores/app'
 
 const store = useAppStore()
@@ -88,6 +88,35 @@ const list = computed(() => store.articles)
 const selected = computed(() => {
   if (!selectedId.value) return null
   return list.value.find((a) => a.id === selectedId.value) ?? null
+})
+
+/**
+ * 短文按「段」分组显示：细切 segment 合并为一段，长段保持单段一段。
+ * 不改变 segment / audio_map 键，仅影响全文排版。
+ */
+function groupEssayIntoParagraphs(segments: ArticleSegment[]): ArticleSegment[][] {
+  const out: ArticleSegment[][] = []
+  let cur: ArticleSegment[] = []
+  let runLen = 0
+  const maxChars = 120
+  const maxPerGroup = 3
+  for (const s of segments) {
+    cur.push(s)
+    runLen += s.jp.length
+    if (runLen >= maxChars || cur.length >= maxPerGroup) {
+      out.push(cur)
+      cur = []
+      runLen = 0
+    }
+  }
+  if (cur.length) out.push(cur)
+  return out
+}
+
+const essayParagraphGroups = computed(() => {
+  const it = selected.value
+  if (!it || it.format !== 'essay') return [] as ArticleSegment[][]
+  return groupEssayIntoParagraphs(it.segments)
 })
 
 /** 扁平化的所有句子（用于单句模式和连播） */
@@ -340,18 +369,34 @@ onUnmounted(() => {
             class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"
             aria-hidden="true"
             >{{ selected!.level }}</span>
-          <div class="space-y-6">
+          <div class="space-y-5">
             <div
-              v-for="(seg, i) in (selected as ArticleEssay).segments"
-              :key="i"
-              class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
-              :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/10' : ''"
+              v-for="(para, pi) in essayParagraphGroups"
+              :key="pi"
+              class="rounded-md -mx-0.5 px-0.5 py-0.5"
             >
-              <p class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
-              <p v-if="showReading" class="text-sm theme-muted mt-2 leading-relaxed">{{ seg.reading }}</p>
+              <p class="text-[15px] font-medium theme-text leading-[1.85] [text-indent:1em]">
+                <span
+                  v-for="(seg, si) in para"
+                  :key="`${pi}-${si}`"
+                  class="rounded-sm"
+                  :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
+                >{{ seg.jp }}</span>
+              </p>
+              <p
+                v-if="showReading"
+                class="text-sm theme-muted mt-1.5 leading-relaxed pl-[1em]"
+              >{{ para.map((s) => s.reading).join('') }}</p>
               <template v-if="showTranslation">
-                <p v-if="currentLang === 'zh'" class="text-sm mt-3 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
-                <p v-else class="text-sm mt-3 leading-relaxed theme-muted">{{ seg.zh }}</p>
+                <p
+                  v-if="currentLang === 'zh'"
+                  class="text-sm mt-2 leading-relaxed pl-[1em]"
+                  style="color: var(--accent)"
+                >{{ para.map((s) => s.zh).join('') }}</p>
+                <p
+                  v-else
+                  class="text-sm mt-2 leading-relaxed theme-muted pl-[1em]"
+                >{{ para.map((s) => s.zh).join('') }}</p>
               </template>
             </div>
           </div>
@@ -360,7 +405,7 @@ onUnmounted(() => {
         <!-- 对话 -->
         <article
           v-else-if="isDialogue(selected)"
-          class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] space-y-10"
+          class="relative rounded-2xl theme-surface p-5 md:p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] space-y-6"
         >
           <span
             class="pointer-events-none absolute top-3 right-4 z-[1] text-[9px] font-medium tabular-nums leading-none theme-muted opacity-[0.38] md:top-4 md:right-5 md:text-[10px]"

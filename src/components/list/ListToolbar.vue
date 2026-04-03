@@ -71,26 +71,28 @@ function onSpeakRange() {
         <button
           v-if="!isSpeaking"
           type="button"
-          class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors"
+          class="inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all shadow-[0_2px_10px_rgba(0,0,0,0.06)]"
           :class="
             totalItems < 1
               ? 'opacity-40 cursor-not-allowed border-[var(--border)] theme-muted'
               : enableListSpeakSequenceRange && canUseRange && showRange
-                ? 'bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e] cursor-pointer'
-                : 'theme-muted border-[var(--border)] bg-transparent hover:theme-text cursor-pointer'
+                ? 'bg-[#e8735a]/15 border-[#e8735a]/45 text-[#c45a3e] cursor-pointer'
+                : 'border-[#e8e2dc] theme-surface theme-text hover:border-[#e8735a]/50 hover:shadow-[0_4px_14px_rgba(232,115,90,0.12)] cursor-pointer'
           "
           :disabled="totalItems < 1"
           @click="onToggleSpeak"
         >
-          {{ t('listSpeak') }}
+          <svg class="w-5 h-5 shrink-0 text-[#e8735a]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>{{ t('listSpeak') }}</span>
         </button>
         <button
           v-else
           type="button"
-          class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e]"
+          class="inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all cursor-pointer bg-[#e8735a]/12 border-[#e8735a]/45 text-[#c45a3e] shadow-[0_2px_10px_rgba(232,115,90,0.15)]"
           @click="onToggleSpeak"
         >
-          {{ t('listStop') }}
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+          <span>{{ t('listStop') }}</span>
         </button>
       </div>
       <div

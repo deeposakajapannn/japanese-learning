@@ -4,7 +4,8 @@ import { useLang } from '@/i18n'
 import { useMenuAnchor } from '@/composables/useMenuAnchor'
 
 const props = defineProps<{
-  topics: string[]
+  /** 主题及在当前词表中的条数（仅统计 JSON 里带了 topic 的条目） */
+  topics: { topic: string; count: number }[]
   selected: string
   levels?: string[]
   selectedLevels?: string[]
@@ -77,6 +78,14 @@ const TOPIC_I18N_KEYS: Record<string, string> = {
   '日常生活': 'topicDailyLife',
   '日常场景': 'topicDailyScenes',
   '地名观光': 'topicGeoSightseeing',
+  '社会新闻': 'topicNewsSociety',
+  '食物料理': 'topicFoodCooking',
+  '行政手续': 'topicAdminProcedures',
+  '生活用品': 'topicDailyGoods',
+  '住房租房': 'topicHousingRent',
+  '购物消费': 'topicShoppingSpending',
+  '通信数码': 'topicCommsDigital',
+  '学校教育': 'topicSchoolEducation',
 }
 
 const TOPIC_ICONS: Record<string, string> = {
@@ -100,6 +109,14 @@ const TOPIC_ICONS: Record<string, string> = {
   '日常生活': '🏠',
   '日常场景': '💬',
   '地名观光': '🗾',
+  '社会新闻': '📰',
+  '食物料理': '🍱',
+  '行政手续': '📋',
+  '生活用品': '🧴',
+  '住房租房': '🏠',
+  '购物消费': '🛒',
+  '通信数码': '📱',
+  '学校教育': '🎓',
 }
 
 function getTopicLabel(topic: string): string {
@@ -196,14 +213,15 @@ function onLevelClear() {
             {{ t('filterNone') }}
           </button>
           <button
-            v-for="topic in topics"
-            :key="topic"
+            v-for="row in topics"
+            :key="row.topic"
             type="button"
-            class="w-full min-w-0 text-left pl-3 pr-2 py-2 text-[13px] font-medium leading-snug break-words cursor-pointer transition-colors hover:bg-[#e8735a]/10"
-            :class="selected === topic ? 'text-[#e8735a]' : 'theme-text'"
-            @click="onSelect(topic)"
+            class="w-full min-w-0 text-left pl-3 pr-2 py-2 text-[13px] font-medium leading-snug break-words cursor-pointer transition-colors hover:bg-[#e8735a]/10 flex items-baseline justify-between gap-2"
+            :class="selected === row.topic ? 'text-[#e8735a]' : 'theme-text'"
+            @click="onSelect(row.topic)"
           >
-            {{ TOPIC_ICONS[topic] || '📝' }} {{ getTopicLabel(topic) }}
+            <span class="min-w-0">{{ TOPIC_ICONS[row.topic] || '📝' }} {{ getTopicLabel(row.topic) }}</span>
+            <span class="shrink-0 text-[11px] font-medium tabular-nums opacity-70">{{ row.count }}</span>
           </button>
         </div>
         <div

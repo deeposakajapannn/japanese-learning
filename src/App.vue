@@ -95,7 +95,10 @@ onUnmounted(() => {
     <AppNav />
     <div class="flex-1 min-w-0 pb-20 md:ml-[200px]">
       <CategoryTabs />
-      <div v-show="store.currentMode === 'list'">
+      <div
+        v-show="store.currentMode === 'list'"
+        class="w-full min-w-0 md:max-w-[800px] md:mx-auto"
+      >
         <KanaGrid v-if="store.currentCat === 'kana'" />
         <ArticlesPanel v-else-if="store.currentCat === 'articles'" />
         <ListPanel

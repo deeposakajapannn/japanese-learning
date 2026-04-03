@@ -3,6 +3,7 @@
 node_modules/
 dist/
 *.local
+*.bak
 .DS_Store
 *.py
 !scripts/*.py

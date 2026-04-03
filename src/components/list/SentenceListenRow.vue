@@ -1,21 +1,16 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import type { VocabItem } from '../../types'
+import type { GrammarPoint, VocabItem } from '../../types'
 import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick, recordItemListened } from '../../composables/useSpacedRepetition'
 import { speakWithExample } from '../../composables/useAudio'
-import { isInQuizQueue, addToQuizQueue, quizQueueTick } from '@/learning'
+import { useListenListCardSwipe } from '@/composables/useListenListCardSwipe'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
-import type { GrammarPoint } from '../../types'
-
-/** 左滑露出的操作区宽度（仅「加入测验」） */
-const ACTION_W = 100
 
 const { t, currentLang } = useLang()
 
 const expandedGrammar = ref<GrammarPoint | null>(null)
 
-/** 当前展开的语法点高亮的 token indices */
 const highlightIndices = computed(() => {
   const g = expandedGrammar.value
   if (!g || !g.highlight) return new Set<number>()
@@ -29,7 +24,16 @@ function onGrammarTag(g: GrammarPoint, e: Event) {
 
 const props = defineProps<{
   item: VocabItem
+  rowNumber: number
 }>()
+
+const emit = defineEmits<{
+  playListFrom: [rowNumber: number]
+}>()
+
+function onPlayListFromRow() {
+  emit('playListFrom', props.rowNumber)
+}
 
 const cat = 'sentences' as const
 
@@ -41,110 +45,23 @@ const statsLine = computed(() => {
     .replace('{practice}', String(getItemCount(cat, props.item.id)))
 })
 
-const offsetPx = ref(0)
-const dragging = ref(false)
-let touchStartX = 0
-let touchStartY = 0
-let touchStartOffset = 0
-/** 桌面鼠标拖移后避免误触朗读 */
-let hadHorizontalDrag = false
-let activePointerId: number | null = null
-/** 方向锁定：一旦判定水平/垂直就不再切换 */
-let dragAxis: 'x' | 'y' | null = null
-
-/** 斜向滑动时略偏向横向，避免想左滑时被判成纵向而导致「滑不动」 */
-const HORIZONTAL_BIAS = 1.35
-
-function onWindowPointerMove(e: PointerEvent) {
-  if (!dragging.value || activePointerId !== e.pointerId) return
-  const dx = e.clientX - touchStartX
-  const dy = e.clientY - touchStartY
-  if (!dragAxis && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
-    dragAxis = Math.abs(dx) * HORIZONTAL_BIAS >= Math.abs(dy) ? 'x' : 'y'
-  }
-  if (dragAxis === 'x') {
-    e.preventDefault()
-    if (Math.abs(dx) > 10) hadHorizontalDrag = true
-    let next = touchStartOffset + dx
-    if (next > 0) next = 0
-    if (next < -ACTION_W) next = -ACTION_W
-    offsetPx.value = next
-  }
-}
-
-function detachWindowPointerListeners() {
-  window.removeEventListener('pointermove', onWindowPointerMove)
-  window.removeEventListener('pointerup', onWindowPointerEnd)
-  window.removeEventListener('pointercancel', onWindowPointerEnd)
-}
-
-function onWindowPointerEnd(e: PointerEvent) {
-  if (!dragging.value || activePointerId !== e.pointerId) return
-  dragging.value = false
-  activePointerId = null
-  detachWindowPointerListeners()
-  if (offsetPx.value < -40) {
-    offsetPx.value = -ACTION_W
-  } else {
-    offsetPx.value = 0
-  }
-}
-
 function onSpeak() {
   speakWithExample(props.item.word, props.item.example)
   recordItemListened(cat, props.item.id)
 }
 
-const inQueue = computed(() => {
-  quizQueueTick.value
-  return isInQuizQueue(cat, props.item.id)
-})
-
-function onAddQuiz() {
-  addToQuizQueue(cat, props.item.id)
-  offsetPx.value = 0
-}
-
-function onPointerDown(e: PointerEvent) {
-  if (e.pointerType === 'mouse' && e.button !== 0) return
-  dragging.value = true
-  hadHorizontalDrag = false
-  dragAxis = null
-  activePointerId = e.pointerId
-  touchStartX = e.clientX
-  touchStartY = e.clientY
-  touchStartOffset = offsetPx.value
-  const el = e.currentTarget
-  if (el instanceof HTMLElement) {
-    try {
-      el.setPointerCapture(e.pointerId)
-    } catch {
-      /* ignore */
-    }
-  }
-  window.addEventListener('pointermove', onWindowPointerMove, { passive: false })
-  window.addEventListener('pointerup', onWindowPointerEnd)
-  window.addEventListener('pointercancel', onWindowPointerEnd)
-}
-
-function onCardClick() {
-  if (hadHorizontalDrag) {
-    hadHorizontalDrag = false
-    return
-  }
-  if (offsetPx.value < -20) {
-    offsetPx.value = 0
-    return
-  }
-  onSpeak()
-}
-
-const cardTransform = computed(() => ({ transform: `translateX(${offsetPx.value}px)` }))
-
-const cardTransitionClass = computed(() => {
-  if (dragging.value) return ''
-  return 'transition-transform duration-200 ease-out'
-})
+const {
+  onPointerDown,
+  onCardClick,
+  onAddQuiz,
+  inQueue,
+  cardTransform,
+  cardTransitionClass,
+} = useListenListCardSwipe(
+  () => 'sentences',
+  () => props.item.id,
+  onSpeak,
+)
 </script>
 
 <template>
@@ -168,13 +85,13 @@ const cardTransitionClass = computed(() => {
         @click="onCardClick"
         @pointerdown="onPointerDown"
       >
-        <div class="flex items-center relative">
+        <div class="flex items-start gap-3 -mt-2">
           <div
-            class="w-9 h-9 rounded-full theme-soft text-[#e8735a] flex items-center justify-center text-xs font-bold shrink-0 mr-3"
+            class="min-w-9 h-9 max-w-[3.25rem] px-1 rounded-full theme-soft text-[#e8735a] flex items-center justify-center text-xs font-bold tabular-nums shrink-0 leading-none mt-0.5"
           >
-            {{ item.id }}
+            {{ rowNumber }}
           </div>
-          <div class="flex-1 min-w-0">
+          <div class="flex-1 min-w-0 min-h-0">
             <div class="text-base font-bold theme-text leading-relaxed">
               <template v-if="item.tokens && item.tokens.length">
                 <span
@@ -223,18 +140,21 @@ const cardTransitionClass = computed(() => {
               <span v-if="item.exampleCn" class="text-[#5b8a72]">{{ item.exampleCn }}</span>
             </div>
           </div>
-          <button
-            type="button"
-            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer theme-muted border-[var(--border)] bg-transparent hover:theme-text ml-2 shrink-0"
-            @click.stop="onSpeak"
-          >
-            {{ t('articlePlayAll') }}
-          </button>
-        </div>
-        <div
-          class="absolute top-2 right-3 theme-muted text-[10px] leading-tight text-right max-w-[6rem] pointer-events-none"
-        >
-          {{ statsLine }}
+          <div class="flex flex-col items-end shrink-0 gap-2">
+            <div
+              class="theme-muted text-[10px] leading-tight tabular-nums text-right whitespace-nowrap pointer-events-none"
+            >
+              {{ statsLine }}
+            </div>
+            <button
+              type="button"
+              class="w-10 h-10 rounded-full border-2 flex items-center justify-center cursor-pointer transition-all border-[#e8e2dc] theme-surface text-[#e8735a] shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:border-[#e8735a] hover:shadow-[0_4px_12px_rgba(232,115,90,0.2)] active:scale-[0.96]"
+              :aria-label="t('listPlayFromHere')"
+              @click.stop="onPlayListFromRow"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

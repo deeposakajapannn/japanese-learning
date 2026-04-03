@@ -17,8 +17,7 @@ const categories = computed(() => [
 <template>
   <div
     v-if="store.currentMode !== 'stats' && store.currentMode !== 'test'"
-    class="w-full px-4 pt-2 pb-4 md:px-10"
-    :class="store.currentMode === 'practice' ? 'md:max-w-[800px] md:mx-auto' : ''"
+    class="w-full min-w-0 px-4 pt-2 pb-4 md:px-10 md:max-w-[800px] md:mx-auto"
   >
     <div
       role="tablist"

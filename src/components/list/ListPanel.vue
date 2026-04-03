@@ -48,7 +48,7 @@ const topics = computed(() => {
   }
   return Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
-    .map(([t]) => t)
+    .map(([topic, count]) => ({ topic, count }))
 })
 
 const levels = computed(() => {
@@ -144,6 +144,14 @@ function onSpeak(from: number, to: number) {
   emit('speak', filteredItems.value, from, to)
 }
 
+/** 卡片上「播放」：从当前条播放到筛选列表末尾（与工具栏列表播放同一套连播） */
+function onPlayListFrom(rowNumber: number) {
+  const total = filteredItems.value.length
+  if (total < 1 || rowNumber < 1 || rowNumber > total) return
+  isSpeaking.value = true
+  emit('speak', filteredItems.value, rowNumber, total)
+}
+
 function onStop() {
   isSpeaking.value = false
   emit('stop')
@@ -172,7 +180,11 @@ defineExpose({ stopSpeaking: () => { isSpeaking.value = false } })
       @speak="onSpeak"
       @stop="onStop"
     />
-    <ListContainer :items="pagedItems" />
+    <ListContainer
+      :items="pagedItems"
+      :row-offset="(currentPage - 1) * PAGE_SIZE"
+      @play-list-from="onPlayListFrom"
+    />
     <PaginationBar
       v-if="totalPages > 1"
       :current-page="currentPage"
