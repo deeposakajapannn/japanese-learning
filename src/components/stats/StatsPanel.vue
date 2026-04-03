@@ -8,8 +8,21 @@ import LoginOverlay from '../auth/LoginOverlay.vue'
 import { useFirebase } from '../../composables/useFirebase'
 import { useLang } from '@/i18n'
 import { useTheme } from '@/composables/useTheme'
+import { useAppStore } from '@/stores/app'
 
-const { t } = useLang()
+const { t, currentLang, switchLang } = useLang()
+const store = useAppStore()
+
+const studyLangs = [
+  { key: 'ja' as const, icon: '🇯🇵', label: '日本語' },
+  { key: 'en' as const, icon: '🇬🇧', label: 'English' },
+]
+
+const uiLangs = [
+  { key: 'zh' as const, label: '中' },
+  { key: 'en' as const, label: 'EN' },
+  { key: 'ja' as const, label: 'JP' },
+]
 const showMasteredList = ref(false)
 const { flushDataToCloud, SYNCED_KEYS } = useFirebase()
 const { themeMode, toggleTheme } = useTheme()
@@ -46,6 +59,44 @@ function resetStats() {
   <div class="pb-8">
     <MasteredList v-if="showMasteredList" @back="showMasteredList = false" />
     <template v-else>
+    <div class="theme-card mt-4 p-4 flex items-center justify-between">
+      <div>
+        <div class="text-sm font-semibold">学习语言</div>
+        <div class="text-xs opacity-75">{{ store.studyLang === 'ja' ? '🇯🇵 日本語' : '🇬🇧 English' }}</div>
+      </div>
+      <div class="study-lang-toggle">
+        <button
+          v-for="sl in studyLangs"
+          :key="sl.key"
+          type="button"
+          class="study-lang-toggle-btn"
+          :class="{ 'study-lang-toggle-btn--active': store.studyLang === sl.key }"
+          @click="store.switchStudyLang(sl.key)"
+        >
+          {{ sl.icon }}
+        </button>
+      </div>
+    </div>
+
+    <div class="theme-card mt-4 p-4 flex items-center justify-between">
+      <div>
+        <div class="text-sm font-semibold">界面语言</div>
+        <div class="text-xs opacity-75">{{ currentLang === 'zh' ? '中文' : currentLang === 'ja' ? '日本語' : 'English' }}</div>
+      </div>
+      <div class="study-lang-toggle">
+        <button
+          v-for="ul in uiLangs"
+          :key="ul.key"
+          type="button"
+          class="study-lang-toggle-btn study-lang-toggle-btn--text"
+          :class="{ 'study-lang-toggle-btn--active': currentLang === ul.key }"
+          @click="switchLang(ul.key)"
+        >
+          {{ ul.label }}
+        </button>
+      </div>
+    </div>
+
     <div class="theme-card mt-4 p-4 flex items-center justify-between">
       <div>
         <div class="text-sm font-semibold">{{ t('darkMode') }}</div>

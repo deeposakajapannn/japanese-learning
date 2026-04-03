@@ -66,7 +66,8 @@ export interface ArticleDialogue {
 
 export type ArticleItem = ArticleEssay | ArticleDialogue
 export type ModeKey = 'list' | 'practice' | 'stats'
-export type LangKey = 'zh' | 'en'
+export type LangKey = 'zh' | 'en' | 'ja'
+export type StudyLang = 'ja' | 'en'
 
 export interface DayStats {
   studied: number

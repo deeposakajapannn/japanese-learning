@@ -220,6 +220,44 @@ body::before {
   color: var(--header-title);
 }
 
+/* Study language toggle (in stats panel) */
+.study-lang-toggle {
+  display: flex;
+  gap: 4px;
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.study-lang-toggle-btn {
+  width: 36px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.study-lang-toggle-btn--active {
+  background: var(--card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.study-lang-toggle-btn--text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.study-lang-toggle-btn--text.study-lang-toggle-btn--active {
+  color: var(--primary);
+}
+
 .theme-card {
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -353,6 +391,29 @@ body::before {
 .btn-grad-accent--borderless {
   border: none;
   box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+/* Nav flag background decoration */
+.nav-flag-bg {
+  position: absolute;
+  bottom: -60px;
+  right: -160px;
+  width: 600px;
+  height: 400px;
+  pointer-events: none;
+  opacity: 0.12;
+  transform: rotate(-27deg);
+  transition: opacity 0.3s ease;
+}
+
+.nav-flag-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
+}
+
+:root.theme-dark .nav-flag-bg {
+  opacity: 0.07;
 }
 
 /* 侧栏当前项、假名平/片假名 Tab：软实心渐变 */

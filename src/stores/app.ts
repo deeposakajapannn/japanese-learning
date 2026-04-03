@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { ArticleItem } from '@/types'
+import type { ArticleItem, StudyLang } from '@/types'
 
 export interface DataItem {
   id: number
@@ -122,6 +122,13 @@ const KANA_DATA: DataItem[] = [
 ]
 
 export const useAppStore = defineStore('app', () => {
+  const studyLang = ref<StudyLang>((localStorage.getItem('study_lang') as StudyLang) || 'ja')
+
+  function switchStudyLang(lang: StudyLang) {
+    studyLang.value = lang
+    localStorage.setItem('study_lang', lang)
+  }
+
   const currentMode = ref<string>('list')
   const currentCat = ref<string>('articles')
   const data = ref<AppData>({ nouns: [], sentences: [], kana: KANA_DATA })
@@ -178,6 +185,8 @@ export const useAppStore = defineStore('app', () => {
   }
 
   return {
+    studyLang,
+    switchStudyLang,
     currentMode,
     currentCat,
     data,

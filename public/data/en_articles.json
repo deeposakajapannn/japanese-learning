@@ -1,0 +1,1131 @@
+{
+  "items": [
+    {
+      "id": "a1-morning-routine",
+      "level": "A1",
+      "format": "essay",
+      "titleJa": "My Morning Routine",
+      "titleZh": "我的早晨日常",
+      "segments": [
+        {
+          "jp": "I wake up at seven o'clock every morning.",
+          "reading": "",
+          "zh": "我每天早上七点起床。"
+        },
+        {
+          "jp": "First, I brush my teeth and wash my face.",
+          "reading": "",
+          "zh": "首先，我刷牙洗脸。"
+        },
+        {
+          "jp": "Then I eat breakfast with my family.",
+          "reading": "",
+          "zh": "然后和家人一起吃早餐。"
+        },
+        {
+          "jp": "I usually have bread, eggs, and a glass of milk.",
+          "reading": "",
+          "zh": "我通常吃面包、鸡蛋，喝一杯牛奶。"
+        },
+        {
+          "jp": "After breakfast, I take the bus to school.",
+          "reading": "",
+          "zh": "早餐后，我坐公交去学校。"
+        },
+        {
+          "jp": "The bus ride takes about twenty minutes.",
+          "reading": "",
+          "zh": "坐公交大约需要二十分钟。"
+        },
+        {
+          "jp": "I arrive at school before eight thirty.",
+          "reading": "",
+          "zh": "我在八点半之前到达学校。"
+        },
+        {
+          "jp": "I like mornings because everything feels fresh and new.",
+          "reading": "",
+          "zh": "我喜欢早晨，因为一切都感觉清新而崭新。"
+        }
+      ]
+    },
+    {
+      "id": "a1-my-family",
+      "level": "A1",
+      "format": "essay",
+      "titleJa": "My Family",
+      "titleZh": "我的家人",
+      "segments": [
+        {
+          "jp": "There are four people in my family.",
+          "reading": "",
+          "zh": "我家有四口人。"
+        },
+        {
+          "jp": "My father is a teacher. He teaches math.",
+          "reading": "",
+          "zh": "我爸爸是老师，他教数学。"
+        },
+        {
+          "jp": "My mother works at a hospital. She is a nurse.",
+          "reading": "",
+          "zh": "我妈妈在医院工作，她是护士。"
+        },
+        {
+          "jp": "I have one brother. His name is Tom.",
+          "reading": "",
+          "zh": "我有一个哥哥，他叫汤姆。"
+        },
+        {
+          "jp": "Tom is older than me. He is in college.",
+          "reading": "",
+          "zh": "汤姆比我大，他在上大学。"
+        },
+        {
+          "jp": "We have a pet dog named Lucky.",
+          "reading": "",
+          "zh": "我们有一只宠物狗叫幸运。"
+        },
+        {
+          "jp": "On weekends, we often go to the park together.",
+          "reading": "",
+          "zh": "周末我们经常一起去公园。"
+        },
+        {
+          "jp": "I love my family very much.",
+          "reading": "",
+          "zh": "我非常爱我的家人。"
+        }
+      ]
+    },
+    {
+      "id": "a1-at-restaurant",
+      "level": "A1",
+      "format": "dialogue",
+      "titleJa": "At the Restaurant",
+      "titleZh": "在餐厅",
+      "sections": [
+        {
+          "headingJa": "Ordering Food",
+          "headingZh": "点餐",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Good evening. A table for two, please.",
+              "reading": "",
+              "zh": "晚上好，两位，谢谢。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Sure, right this way. Here's the menu.",
+              "reading": "",
+              "zh": "好的，这边请。这是菜单。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Thank you. What do you recommend?",
+              "reading": "",
+              "zh": "谢谢。你推荐什么？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Our steak is very popular today.",
+              "reading": "",
+              "zh": "我们的牛排今天很受欢迎。"
+            },
+            {
+              "speaker": "A",
+              "jp": "I'll have the steak, please. And a salad.",
+              "reading": "",
+              "zh": "请给我来份牛排，再加一份沙拉。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Would you like something to drink?",
+              "reading": "",
+              "zh": "您要喝点什么吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Just water, please.",
+              "reading": "",
+              "zh": "请来杯水就好。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Great. Your order will be ready in fifteen minutes.",
+              "reading": "",
+              "zh": "好的，您的餐大约十五分钟就好。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-travel-london",
+      "level": "A2",
+      "format": "essay",
+      "titleJa": "A Trip to London",
+      "titleZh": "伦敦之旅",
+      "segments": [
+        {
+          "jp": "Last summer, I traveled to London for the first time.",
+          "reading": "",
+          "zh": "去年夏天，我第一次去了伦敦。"
+        },
+        {
+          "jp": "The flight from Beijing took about eleven hours.",
+          "reading": "",
+          "zh": "从北京飞过去大约需要十一个小时。"
+        },
+        {
+          "jp": "When I arrived, I was surprised by how green the city was.",
+          "reading": "",
+          "zh": "到达时，我惊讶于这座城市多么绿意盎然。"
+        },
+        {
+          "jp": "I visited Big Ben and the Tower of London on the first day.",
+          "reading": "",
+          "zh": "第一天我参观了大本钟和伦敦塔。"
+        },
+        {
+          "jp": "The British Museum was my favorite place.",
+          "reading": "",
+          "zh": "大英博物馆是我最喜欢的地方。"
+        },
+        {
+          "jp": "It has so many things from all over the world.",
+          "reading": "",
+          "zh": "那里有来自世界各地的很多展品。"
+        },
+        {
+          "jp": "I tried fish and chips, which is a famous British dish.",
+          "reading": "",
+          "zh": "我尝了炸鱼薯条，这是著名的英国菜。"
+        },
+        {
+          "jp": "The weather was cloudy most days, but I didn't mind.",
+          "reading": "",
+          "zh": "大多数时候天气阴沉，但我不介意。"
+        },
+        {
+          "jp": "I took the Underground to get around the city.",
+          "reading": "",
+          "zh": "我坐地铁在城市里穿梭。"
+        },
+        {
+          "jp": "I hope to visit London again someday.",
+          "reading": "",
+          "zh": "我希望有一天能再去伦敦。"
+        }
+      ]
+    },
+    {
+      "id": "a2-job-interview",
+      "level": "A2",
+      "format": "dialogue",
+      "titleJa": "A Job Interview",
+      "titleZh": "工作面试",
+      "sections": [
+        {
+          "headingJa": "The Interview",
+          "headingZh": "面试",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Please have a seat. Tell me about yourself.",
+              "reading": "",
+              "zh": "请坐。介绍一下你自己。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Thank you. I graduated from Beijing University last year.",
+              "reading": "",
+              "zh": "谢谢。我去年从北京大学毕业。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I studied business management for four years.",
+              "reading": "",
+              "zh": "我学了四年的工商管理。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Do you have any work experience?",
+              "reading": "",
+              "zh": "你有工作经验吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, I worked as an intern at a tech company last summer.",
+              "reading": "",
+              "zh": "有的，去年夏天我在一家科技公司实习过。"
+            },
+            {
+              "speaker": "A",
+              "jp": "What are your strengths?",
+              "reading": "",
+              "zh": "你的优势是什么？"
+            },
+            {
+              "speaker": "B",
+              "jp": "I'm a fast learner and I work well in a team.",
+              "reading": "",
+              "zh": "我学东西很快，而且善于团队合作。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Very good. We'll get back to you by next Friday.",
+              "reading": "",
+              "zh": "很好。我们会在下周五前回复你。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-social-media",
+      "level": "B1",
+      "format": "essay",
+      "titleJa": "Social Media and Daily Life",
+      "titleZh": "社交媒体与日常生活",
+      "segments": [
+        {
+          "jp": "Social media has become a huge part of our daily lives.",
+          "reading": "",
+          "zh": "社交媒体已经成为我们日常生活的重要组成部分。"
+        },
+        {
+          "jp": "Most people check their phones first thing in the morning.",
+          "reading": "",
+          "zh": "大多数人早上第一件事就是看手机。"
+        },
+        {
+          "jp": "Apps like Instagram and TikTok are especially popular among young people.",
+          "reading": "",
+          "zh": "Instagram 和 TikTok 等应用在年轻人中特别受欢迎。"
+        },
+        {
+          "jp": "On one hand, social media helps us stay connected with friends.",
+          "reading": "",
+          "zh": "一方面，社交媒体帮助我们与朋友保持联系。"
+        },
+        {
+          "jp": "We can share photos, videos, and messages instantly.",
+          "reading": "",
+          "zh": "我们可以即时分享照片、视频和消息。"
+        },
+        {
+          "jp": "On the other hand, spending too much time online can be harmful.",
+          "reading": "",
+          "zh": "另一方面，在网上花太多时间可能是有害的。"
+        },
+        {
+          "jp": "Some studies show that it can increase anxiety and loneliness.",
+          "reading": "",
+          "zh": "一些研究表明它可能增加焦虑和孤独感。"
+        },
+        {
+          "jp": "Many people compare themselves to others and feel unhappy.",
+          "reading": "",
+          "zh": "许多人与他人比较，感到不开心。"
+        },
+        {
+          "jp": "It is important to find a healthy balance.",
+          "reading": "",
+          "zh": "找到一个健康的平衡很重要。"
+        },
+        {
+          "jp": "Try to limit screen time and enjoy real-life moments.",
+          "reading": "",
+          "zh": "试着限制屏幕时间，享受现实生活的时刻。"
+        }
+      ]
+    },
+    {
+      "id": "b1-shopping",
+      "level": "B1",
+      "format": "dialogue",
+      "titleJa": "Returning a Product",
+      "titleZh": "退货",
+      "sections": [
+        {
+          "headingJa": "At the Store",
+          "headingZh": "在商店",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Hi, I'd like to return this jacket, please.",
+              "reading": "",
+              "zh": "你好，我想退这件夹克。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Of course. May I ask what the problem is?",
+              "reading": "",
+              "zh": "当然可以。请问是什么问题？"
+            },
+            {
+              "speaker": "A",
+              "jp": "The zipper is broken. I just bought it three days ago.",
+              "reading": "",
+              "zh": "拉链坏了。我三天前刚买的。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Do you have the receipt?",
+              "reading": "",
+              "zh": "您有收据吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Yes, here it is.",
+              "reading": "",
+              "zh": "有的，在这里。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Would you prefer a refund or an exchange?",
+              "reading": "",
+              "zh": "您想退款还是换货？"
+            },
+            {
+              "speaker": "A",
+              "jp": "I'd like to exchange it for the same one, if possible.",
+              "reading": "",
+              "zh": "如果可以的话，我想换一件同款的。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Let me check if we have it in stock. One moment, please.",
+              "reading": "",
+              "zh": "让我查一下是否有库存。请稍等。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Sure, take your time.",
+              "reading": "",
+              "zh": "好的，不急。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Good news! We have one left. Here you go.",
+              "reading": "",
+              "zh": "好消息！还剩一件。给您。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-climate-change",
+      "level": "B2",
+      "format": "essay",
+      "titleJa": "Understanding Climate Change",
+      "titleZh": "理解气候变化",
+      "segments": [
+        {
+          "jp": "Climate change is one of the greatest challenges facing humanity today.",
+          "reading": "",
+          "zh": "气候变化是当今人类面临的最大挑战之一。"
+        },
+        {
+          "jp": "The Earth's average temperature has risen by about 1.1 degrees Celsius since the late 1800s.",
+          "reading": "",
+          "zh": "自19世纪末以来，地球的平均温度已上升了约1.1摄氏度。"
+        },
+        {
+          "jp": "This warming is mainly caused by burning fossil fuels like coal, oil, and gas.",
+          "reading": "",
+          "zh": "这种变暖主要是由燃烧煤炭、石油和天然气等化石燃料引起的。"
+        },
+        {
+          "jp": "These fuels release carbon dioxide and other greenhouse gases into the atmosphere.",
+          "reading": "",
+          "zh": "这些燃料向大气中释放二氧化碳和其他温室气体。"
+        },
+        {
+          "jp": "The effects of climate change are already visible around the world.",
+          "reading": "",
+          "zh": "气候变化的影响在世界各地已经显而易见。"
+        },
+        {
+          "jp": "Sea levels are rising, glaciers are melting, and extreme weather events are becoming more frequent.",
+          "reading": "",
+          "zh": "海平面在上升，冰川在融化，极端天气事件变得更加频繁。"
+        },
+        {
+          "jp": "Scientists agree that we must reduce emissions dramatically to avoid catastrophic consequences.",
+          "reading": "",
+          "zh": "科学家们一致认为，我们必须大幅减少排放以避免灾难性后果。"
+        },
+        {
+          "jp": "Renewable energy sources such as solar and wind power offer a path forward.",
+          "reading": "",
+          "zh": "太阳能和风能等可再生能源提供了一条前进的道路。"
+        },
+        {
+          "jp": "Individual actions matter too — using public transport, reducing waste, and eating less meat all help.",
+          "reading": "",
+          "zh": "个人行动也很重要——使用公共交通、减少浪费和少吃肉都有帮助。"
+        },
+        {
+          "jp": "The time to act is now, before the damage becomes irreversible.",
+          "reading": "",
+          "zh": "行动的时间就是现在，在损害变得不可逆转之前。"
+        }
+      ]
+    },
+    {
+      "id": "b2-doctor-visit",
+      "level": "B2",
+      "format": "dialogue",
+      "titleJa": "Visiting the Doctor",
+      "titleZh": "看医生",
+      "sections": [
+        {
+          "headingJa": "Describing Symptoms",
+          "headingZh": "描述症状",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Good morning. What seems to be the problem?",
+              "reading": "",
+              "zh": "早上好。哪里不舒服？"
+            },
+            {
+              "speaker": "B",
+              "jp": "I've had a persistent headache for the past week.",
+              "reading": "",
+              "zh": "过去一周我一直头疼。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I've also been feeling dizzy, especially in the mornings.",
+              "reading": "",
+              "zh": "我还一直感到头晕，特别是早上。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Have you been under a lot of stress recently?",
+              "reading": "",
+              "zh": "你最近压力大吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, I've been working overtime almost every day.",
+              "reading": "",
+              "zh": "是的，我几乎每天都在加班。"
+            },
+            {
+              "speaker": "A",
+              "jp": "That could be a contributing factor. How's your sleep?",
+              "reading": "",
+              "zh": "这可能是一个因素。你睡眠怎么样？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Not great. I usually only get about five hours a night.",
+              "reading": "",
+              "zh": "不太好。我通常每晚只睡大约五个小时。"
+            },
+            {
+              "speaker": "A",
+              "jp": "I'd recommend getting at least seven hours. Let me check your blood pressure.",
+              "reading": "",
+              "zh": "我建议你至少睡七个小时。让我量一下你的血压。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Your blood pressure is a bit high. I'll prescribe some medication.",
+              "reading": "",
+              "zh": "你的血压有点高。我给你开些药。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Thank you, doctor. Should I come back for a follow-up?",
+              "reading": "",
+              "zh": "谢谢医生。我需要来复诊吗？"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-checking-in-hotel",
+      "level": "A1",
+      "format": "dialogue",
+      "titleJa": "Checking In at a Hotel",
+      "titleZh": "酒店入住",
+      "sections": [
+        {
+          "headingJa": "At the Front Desk",
+          "headingZh": "在前台",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Hello, I have a reservation under the name Li Wei.",
+              "reading": "",
+              "zh": "你好，我预订了房间，名字是李伟。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Let me check. Yes, a single room for three nights.",
+              "reading": "",
+              "zh": "让我查一下。是的，单人间，三晚。"
+            },
+            {
+              "speaker": "A",
+              "jp": "That's correct. Is breakfast included?",
+              "reading": "",
+              "zh": "没错。包含早餐吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, breakfast is served from 7 to 10 in the morning.",
+              "reading": "",
+              "zh": "是的，早餐供应时间是早上7点到10点。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Great. What floor is my room on?",
+              "reading": "",
+              "zh": "好的。我的房间在几楼？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Room 508, on the fifth floor. Here's your key card.",
+              "reading": "",
+              "zh": "508房，在五楼。这是您的房卡。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Is there Wi-Fi in the room?",
+              "reading": "",
+              "zh": "房间里有Wi-Fi吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, the password is on the card. Enjoy your stay!",
+              "reading": "",
+              "zh": "有的，密码在卡上。祝您入住愉快！"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-asking-directions",
+      "level": "A1",
+      "format": "dialogue",
+      "titleJa": "Asking for Directions",
+      "titleZh": "问路",
+      "sections": [
+        {
+          "headingJa": "On the Street",
+          "headingZh": "在街上",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Excuse me, could you tell me how to get to the train station?",
+              "reading": "",
+              "zh": "打扰一下，请问怎么去火车站？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Sure. Go straight ahead for two blocks.",
+              "reading": "",
+              "zh": "好的。一直往前走两个路口。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Then turn left at the traffic light.",
+              "reading": "",
+              "zh": "然后在红绿灯那里左转。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Turn left at the traffic light. Got it.",
+              "reading": "",
+              "zh": "在红绿灯左转。明白了。"
+            },
+            {
+              "speaker": "B",
+              "jp": "You'll see the station on your right. It's about a five-minute walk.",
+              "reading": "",
+              "zh": "你会看到车站在右手边。大约走五分钟。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Is it far from here?",
+              "reading": "",
+              "zh": "离这里远吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "No, not at all. You can't miss it.",
+              "reading": "",
+              "zh": "不远，一点都不远。你不会错过的。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Thank you so much for your help!",
+              "reading": "",
+              "zh": "非常感谢你的帮助！"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-seeing-doctor",
+      "level": "A2",
+      "format": "dialogue",
+      "titleJa": "At the Pharmacy",
+      "titleZh": "在药店",
+      "sections": [
+        {
+          "headingJa": "Buying Medicine",
+          "headingZh": "买药",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Hi, I have a bad cold. Can you recommend something?",
+              "reading": "",
+              "zh": "你好，我感冒很严重。能推荐点什么吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Do you have a fever or just a runny nose?",
+              "reading": "",
+              "zh": "你发烧了还是只是流鼻涕？"
+            },
+            {
+              "speaker": "A",
+              "jp": "I have a sore throat and a bit of a cough.",
+              "reading": "",
+              "zh": "我嗓子疼，还有点咳嗽。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I'd suggest these throat lozenges and this cough syrup.",
+              "reading": "",
+              "zh": "我建议用这些润喉糖和这个止咳糖浆。"
+            },
+            {
+              "speaker": "A",
+              "jp": "How often should I take the cough syrup?",
+              "reading": "",
+              "zh": "止咳糖浆多久吃一次？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Three times a day, after meals.",
+              "reading": "",
+              "zh": "一天三次，饭后服用。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Are there any side effects?",
+              "reading": "",
+              "zh": "有什么副作用吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "It may cause some drowsiness. Avoid driving after taking it.",
+              "reading": "",
+              "zh": "可能会引起一些困倦。服用后不要开车。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Okay, I'll take both. How much is it?",
+              "reading": "",
+              "zh": "好的，两样都要。多少钱？"
+            },
+            {
+              "speaker": "B",
+              "jp": "That'll be twelve pounds fifty. Get well soon!",
+              "reading": "",
+              "zh": "一共12.5英镑。祝早日康复！"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-airport",
+      "level": "A2",
+      "format": "dialogue",
+      "titleJa": "At the Airport",
+      "titleZh": "在机场",
+      "sections": [
+        {
+          "headingJa": "Check-in Counter",
+          "headingZh": "值机柜台",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Good morning. Can I see your passport and booking confirmation?",
+              "reading": "",
+              "zh": "早上好。请出示您的护照和预订确认。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Here you go.",
+              "reading": "",
+              "zh": "给你。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Would you like a window seat or an aisle seat?",
+              "reading": "",
+              "zh": "您想要靠窗还是靠过道的座位？"
+            },
+            {
+              "speaker": "B",
+              "jp": "A window seat, please.",
+              "reading": "",
+              "zh": "靠窗的，谢谢。"
+            },
+            {
+              "speaker": "A",
+              "jp": "How many bags are you checking in?",
+              "reading": "",
+              "zh": "您要托运几件行李？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Just one suitcase.",
+              "reading": "",
+              "zh": "只有一个箱子。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Please place it on the scale. It's within the weight limit.",
+              "reading": "",
+              "zh": "请放到秤上。没有超重。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Which gate do I go to?",
+              "reading": "",
+              "zh": "我该去哪个登机口？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Gate 23. Boarding starts at 10:45. Have a pleasant flight!",
+              "reading": "",
+              "zh": "23号登机口。10:45开始登机。祝您旅途愉快！"
+            },
+            {
+              "speaker": "B",
+              "jp": "Thank you very much!",
+              "reading": "",
+              "zh": "非常感谢！"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-renting-apartment",
+      "level": "B1",
+      "format": "dialogue",
+      "titleJa": "Renting an Apartment",
+      "titleZh": "租房",
+      "sections": [
+        {
+          "headingJa": "Viewing the Apartment",
+          "headingZh": "看房",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Welcome! Let me show you around the apartment.",
+              "reading": "",
+              "zh": "欢迎！让我带您看看这间公寓。"
+            },
+            {
+              "speaker": "B",
+              "jp": "It looks nice. How big is it?",
+              "reading": "",
+              "zh": "看起来不错。有多大？"
+            },
+            {
+              "speaker": "A",
+              "jp": "It's about 60 square meters. One bedroom, one living room.",
+              "reading": "",
+              "zh": "大约60平米。一室一厅。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Is the kitchen fully equipped?",
+              "reading": "",
+              "zh": "厨房设备齐全吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Yes, there's a fridge, an oven, and a washing machine.",
+              "reading": "",
+              "zh": "是的，有冰箱、烤箱和洗衣机。"
+            },
+            {
+              "speaker": "B",
+              "jp": "What's the monthly rent?",
+              "reading": "",
+              "zh": "月租多少？"
+            },
+            {
+              "speaker": "A",
+              "jp": "It's 800 pounds per month, utilities not included.",
+              "reading": "",
+              "zh": "每月800英镑，不含水电费。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Is there a minimum lease period?",
+              "reading": "",
+              "zh": "有最短租期吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Yes, the minimum is six months. You'll also need a deposit.",
+              "reading": "",
+              "zh": "有的，最短六个月。还需要交押金。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I'm interested. Can I think about it and get back to you tomorrow?",
+              "reading": "",
+              "zh": "我有兴趣。我能考虑一下明天回复您吗？"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-bank-account",
+      "level": "B1",
+      "format": "dialogue",
+      "titleJa": "Opening a Bank Account",
+      "titleZh": "开银行账户",
+      "sections": [
+        {
+          "headingJa": "At the Bank",
+          "headingZh": "在银行",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Good afternoon. How can I help you today?",
+              "reading": "",
+              "zh": "下午好。请问需要什么帮助？"
+            },
+            {
+              "speaker": "B",
+              "jp": "I'd like to open a current account, please.",
+              "reading": "",
+              "zh": "我想开一个活期账户。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Sure. Do you have any identification with you?",
+              "reading": "",
+              "zh": "好的。您带身份证件了吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, here's my passport and a proof of address.",
+              "reading": "",
+              "zh": "有的，这是我的护照和地址证明。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Would you like to set up online banking as well?",
+              "reading": "",
+              "zh": "您也想开通网上银行吗？"
+            },
+            {
+              "speaker": "B",
+              "jp": "Yes, that would be very convenient.",
+              "reading": "",
+              "zh": "好的，那会很方便。"
+            },
+            {
+              "speaker": "A",
+              "jp": "You'll receive your debit card within five working days.",
+              "reading": "",
+              "zh": "您将在五个工作日内收到借记卡。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Can I transfer money internationally with this account?",
+              "reading": "",
+              "zh": "用这个账户可以国际转账吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Yes, but there's a small fee for international transfers.",
+              "reading": "",
+              "zh": "可以，但国际转账有少量手续费。"
+            },
+            {
+              "speaker": "B",
+              "jp": "That's fine. Let's go ahead and set it up.",
+              "reading": "",
+              "zh": "没关系。那就办吧。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-work-meeting",
+      "level": "B2",
+      "format": "dialogue",
+      "titleJa": "A Team Meeting",
+      "titleZh": "团队会议",
+      "sections": [
+        {
+          "headingJa": "Discussing the Project",
+          "headingZh": "讨论项目",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "Let's get started. The deadline for the project has been moved up to next month.",
+              "reading": "",
+              "zh": "我们开始吧。项目截止日期已经提前到下个月了。"
+            },
+            {
+              "speaker": "B",
+              "jp": "That's quite tight. Do we have enough resources to handle it?",
+              "reading": "",
+              "zh": "时间很紧。我们有足够的资源来应对吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "I've requested two additional team members from the design department.",
+              "reading": "",
+              "zh": "我已经向设计部门申请了两名额外的团队成员。"
+            },
+            {
+              "speaker": "B",
+              "jp": "What about the budget? Will we need to cut any features?",
+              "reading": "",
+              "zh": "预算呢？我们需要砍掉一些功能吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "The client wants to keep all core features. We might simplify the reporting module.",
+              "reading": "",
+              "zh": "客户希望保留所有核心功能。我们可能会简化报告模块。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I think that's reasonable. The reporting module can be enhanced in phase two.",
+              "reading": "",
+              "zh": "我觉得这很合理。报告模块可以在第二阶段再增强。"
+            },
+            {
+              "speaker": "A",
+              "jp": "Exactly. Let's prioritize the user-facing features first.",
+              "reading": "",
+              "zh": "没错。我们先优先处理面向用户的功能。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Should we switch to daily stand-ups to track progress more closely?",
+              "reading": "",
+              "zh": "我们是否应该改为每日站会来更紧密地跟踪进度？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Good idea. Let's start that from tomorrow.",
+              "reading": "",
+              "zh": "好主意。我们从明天开始。"
+            },
+            {
+              "speaker": "B",
+              "jp": "I'll send out a revised timeline by end of day.",
+              "reading": "",
+              "zh": "我会在今天下班前发出修改后的时间表。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-debate",
+      "level": "B2",
+      "format": "dialogue",
+      "titleJa": "Should University Be Free?",
+      "titleZh": "大学应该免费吗？",
+      "sections": [
+        {
+          "headingJa": "A Friendly Debate",
+          "headingZh": "友好辩论",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "I believe university education should be free for everyone.",
+              "reading": "",
+              "zh": "我认为大学教育应该对所有人免费。"
+            },
+            {
+              "speaker": "B",
+              "jp": "That sounds ideal, but who would pay for it?",
+              "reading": "",
+              "zh": "听起来很理想，但谁来买单？"
+            },
+            {
+              "speaker": "A",
+              "jp": "The government could fund it through higher taxes on the wealthy.",
+              "reading": "",
+              "zh": "政府可以通过对富人加税来资助。"
+            },
+            {
+              "speaker": "B",
+              "jp": "But wouldn't that discourage investment and economic growth?",
+              "reading": "",
+              "zh": "但那不会抑制投资和经济增长吗？"
+            },
+            {
+              "speaker": "A",
+              "jp": "Not necessarily. An educated population actually drives innovation and productivity.",
+              "reading": "",
+              "zh": "不一定。受过教育的人口实际上推动了创新和生产力。"
+            },
+            {
+              "speaker": "B",
+              "jp": "That's a fair point. But some countries with free tuition still have quality issues.",
+              "reading": "",
+              "zh": "这倒是。但有些免学费的国家仍然存在质量问题。"
+            },
+            {
+              "speaker": "A",
+              "jp": "True, funding alone isn't enough. You need proper management and accountability.",
+              "reading": "",
+              "zh": "确实，光有资金还不够。还需要合理的管理和问责。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Maybe a middle ground would work — reduced fees with scholarships for those in need.",
+              "reading": "",
+              "zh": "也许折中方案可行——降低学费，同时为有需要的人提供奖学金。"
+            },
+            {
+              "speaker": "A",
+              "jp": "I could live with that. Equal access to education is what matters most.",
+              "reading": "",
+              "zh": "我可以接受。平等的教育机会才是最重要的。"
+            },
+            {
+              "speaker": "B",
+              "jp": "Agreed. Everyone deserves a fair chance, regardless of their background.",
+              "reading": "",
+              "zh": "同意。每个人都应该有公平的机会，不论出身。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
