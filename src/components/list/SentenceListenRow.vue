@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import type { GrammarPoint, VocabItem } from '../../types'
+import { computed } from 'vue'
+import type { VocabItem } from '../../types'
+import RubyText from '@/components/common/RubyText.vue'
 import { getListenedCount, getItemCount, itemCountsTick, listenedCountsTick, recordItemListened } from '../../composables/useSpacedRepetition'
 import { speakWithExample } from '../../composables/useAudio'
 import { useListenListCardSwipe } from '@/composables/useListenListCardSwipe'
@@ -8,19 +9,6 @@ import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
 
 const { t, currentLang } = useLang()
-
-const expandedGrammar = ref<GrammarPoint | null>(null)
-
-const highlightIndices = computed(() => {
-  const g = expandedGrammar.value
-  if (!g || !g.highlight) return new Set<number>()
-  return new Set(g.highlight)
-})
-
-function onGrammarTag(g: GrammarPoint, e: Event) {
-  e.stopPropagation()
-  expandedGrammar.value = expandedGrammar.value?.pattern === g.pattern ? null : g
-}
 
 const props = defineProps<{
   item: VocabItem
@@ -93,48 +81,13 @@ const {
             {{ rowNumber }}
           </div>
           <div class="flex-1 min-w-0 min-h-0">
-            <div class="text-base font-bold theme-text leading-relaxed">
-              <template v-if="item.tokens && item.tokens.length">
-                <span
-                  v-for="(tk, i) in item.tokens"
-                  :key="i"
-                  class="inline-block transition-colors duration-200 border-b"
-                  :class="[
-                    highlightIndices.has(i)
-                      ? 'text-[#c45a3e] bg-[#e8735a]/10 rounded-t px-[2px] border-[#e8735a]/40'
-                      : 'border-[#e8735a]/15',
-                    i > 0 ? 'ml-[5px]' : ''
-                  ]"
-                >{{ tk }}</span>
+            <div class="text-base font-bold theme-text">
+              <template v-if="item.ruby && item.ruby.length">
+                <RubyText :tokens="item.ruby" />
               </template>
               <template v-else>{{ item.word }}</template>
             </div>
-            <div class="text-sm theme-muted">{{ item.reading }}</div>
             <div class="text-sm theme-text mt-0.5">{{ localMeaning(item, currentLang) }}</div>
-            <div v-if="item.grammar && item.grammar.length" class="flex flex-wrap gap-1 mt-1.5">
-              <button
-                v-for="g in item.grammar"
-                :key="g.pattern"
-                type="button"
-                class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[11px] leading-tight border cursor-pointer transition-colors"
-                :class="expandedGrammar?.pattern === g.pattern
-                  ? 'bg-[#e8735a]/15 border-[#e8735a]/40 text-[#c45a3e]'
-                  : 'theme-soft border-transparent theme-muted hover:border-[#e8735a]/30'"
-                @click="onGrammarTag(g, $event)"
-              >
-                <span class="font-medium">{{ g.pattern }}</span>
-                <span class="opacity-60">{{ g.level }}</span>
-              </button>
-            </div>
-            <div
-              v-if="expandedGrammar"
-              class="mt-1 px-2 py-1.5 rounded-lg text-xs leading-relaxed theme-soft"
-              @click.stop
-            >
-              <span class="font-medium text-[#c45a3e]">{{ expandedGrammar.pattern }}</span>
-              <span class="theme-muted ml-1">{{ expandedGrammar.level }}</span>
-              <div class="mt-0.5 theme-text">{{ currentLang === 'en' ? expandedGrammar.noteEn : expandedGrammar.note }}</div>
-            </div>
             <div v-if="item.example" class="text-xs theme-muted mt-1 leading-relaxed">
               {{ item.example }}
               <br v-if="item.exampleCn" />

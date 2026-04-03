@@ -7,6 +7,7 @@ import { useListenListCardSwipe } from '@/composables/useListenListCardSwipe'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
 import SentenceListenRow from './SentenceListenRow.vue'
+import RubyText from '@/components/common/RubyText.vue'
 
 const { t, currentLang } = useLang()
 
@@ -89,8 +90,10 @@ const {
             {{ rowNumber }}
           </div>
           <div class="flex-1 min-w-0 min-h-0">
-            <div class="text-base font-bold theme-text">{{ item.word }}</div>
-            <div class="text-sm theme-muted">{{ item.reading }}</div>
+            <div class="text-base font-bold theme-text">
+              <RubyText v-if="item.ruby" :tokens="item.ruby" />
+              <template v-else>{{ item.word }}</template>
+            </div>
             <div class="text-sm theme-text mt-0.5">{{ localMeaning(item, currentLang) }}</div>
             <div v-if="item.example" class="text-xs theme-muted mt-1 leading-relaxed">
               {{ item.example }}

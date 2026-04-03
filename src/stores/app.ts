@@ -12,6 +12,7 @@ export interface DataItem {
   exampleCn?: string
   topic?: string
   level?: string
+  ruby?: { t: string; r?: string }[]
   _cat?: string
   /** 文章连播：若设置则优先于 audioMap[word] 的文件名 */
   _audioFn?: string
@@ -132,8 +133,8 @@ export const useAppStore = defineStore('app', () => {
   const isDataLoaded = ref(false)
 
   function switchMode(mode: string) {
-    // 「文章」无听练测题库，切到练/测时回到句子以免空队列
-    if ((mode === 'practice' || mode === 'test') && currentCat.value === 'articles') {
+    // 「文章」无练题库，切到练时回到句子
+    if (mode === 'practice' && currentCat.value === 'articles') {
       currentCat.value = 'sentences'
     }
     currentMode.value = mode

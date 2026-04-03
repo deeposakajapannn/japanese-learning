@@ -1,9 +1,6 @@
-export interface GrammarPoint {
-  pattern: string
-  level: string
-  note: string
-  noteEn: string
-  highlight?: number[]
+export interface RubyToken {
+  t: string
+  r?: string
 }
 
 export interface VocabItem {
@@ -17,7 +14,7 @@ export interface VocabItem {
   exampleCn?: string
   topic?: string
   level?: string
-  grammar?: GrammarPoint[]
+  ruby?: RubyToken[]
   tokens?: string[]
 }
 
@@ -32,6 +29,7 @@ export interface ArticleSegment {
   jp: string
   reading: string
   zh: string
+  ruby?: RubyToken[]
   audioKey?: string
 }
 
@@ -52,6 +50,7 @@ export interface ArticleEssay {
   format: 'essay'
   titleJa: string
   titleZh: string
+  titleRuby?: RubyToken[]
   segments: ArticleSegment[]
 }
 
@@ -61,11 +60,12 @@ export interface ArticleDialogue {
   format: 'dialogue'
   titleJa: string
   titleZh: string
+  titleRuby?: RubyToken[]
   sections: ArticleDialogueSection[]
 }
 
 export type ArticleItem = ArticleEssay | ArticleDialogue
-export type ModeKey = 'list' | 'practice' | 'test' | 'stats'
+export type ModeKey = 'list' | 'practice' | 'stats'
 export type LangKey = 'zh' | 'en'
 
 export interface DayStats {
@@ -73,6 +73,7 @@ export interface DayStats {
   quizzed: number
   correct: number
   listened?: number
+  recorded?: number
   wrong: Record<string, number>
 }
 

@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import ProfileSection from './ProfileSection.vue'
 import StatsGrid from './StatsGrid.vue'
 import WeeklyChart from './WeeklyChart.vue'
-import WrongWordsList from './WrongWordsList.vue'
 import MasteredList from './MasteredList.vue'
 import LoginOverlay from '../auth/LoginOverlay.vue'
 import { useFirebase } from '../../composables/useFirebase'
@@ -64,7 +63,6 @@ function resetStats() {
     <ProfileSection @login="showLogin = true" />
     <StatsGrid @mastered="showMasteredList = true" />
     <WeeklyChart />
-    <WrongWordsList />
 
     <button
       type="button"

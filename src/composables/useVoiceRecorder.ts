@@ -1,4 +1,5 @@
 import { ref, onUnmounted } from 'vue'
+import { recordReadTime } from './useStats'
 
 export function useVoiceRecorder() {
   const recording = ref(false)
@@ -7,6 +8,7 @@ export function useVoiceRecorder() {
   let mediaRecorder: MediaRecorder | null = null
   let chunks: Blob[] = []
   let stream: MediaStream | null = null
+  let recordStartTime = 0
 
   function revokeOldUrl() {
     if (audioUrl.value) {
@@ -31,6 +33,7 @@ export function useVoiceRecorder() {
         stream = null
       }
       mediaRecorder.start()
+      recordStartTime = Date.now()
       recording.value = true
     } catch {
       recording.value = false
@@ -40,6 +43,8 @@ export function useVoiceRecorder() {
   function stopRecording() {
     if (mediaRecorder && mediaRecorder.state === 'recording') {
       mediaRecorder.stop()
+      const duration = (Date.now() - recordStartTime) / 1000
+      if (duration > 0.5) recordReadTime(duration)
     }
     recording.value = false
   }

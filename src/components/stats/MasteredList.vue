@@ -5,6 +5,7 @@ import { hasMasteryQuizPassed, milestoneStateTick } from '@/learning'
 import { speakWithExample } from '../../composables/useAudio'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
+import RubyText from '@/components/common/RubyText.vue'
 
 const { t, currentLang } = useLang()
 const store = useAppStore()
@@ -59,8 +60,10 @@ function onSpeak(item: MasteredItem) {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
         <div class="flex-1 min-w-0">
-          <div class="text-base font-bold theme-text">{{ item.word }}</div>
-          <div class="text-sm theme-muted">{{ item.reading }}</div>
+          <div class="text-base font-bold theme-text">
+            <RubyText v-if="item.ruby" :tokens="item.ruby" />
+            <template v-else>{{ item.word }}</template>
+          </div>
           <div class="text-sm theme-text mt-0.5">{{ localMeaning(item, currentLang) }}</div>
           <div v-if="item.example" class="text-xs theme-muted mt-1 leading-relaxed">
             {{ item.example }}

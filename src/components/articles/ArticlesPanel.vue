@@ -4,7 +4,8 @@ import { useAppStore } from '@/stores/app'
 import { useLang } from '@/i18n'
 import { audioEl } from '@/composables/useAudio'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
-import type { ArticleItem, ArticleEssay, ArticleDialogue, ArticleSegment } from '@/types'
+import type { ArticleItem, ArticleEssay, ArticleDialogue, ArticleSegment, RubyToken } from '@/types'
+import RubyText from '@/components/common/RubyText.vue'
 import type { DataItem } from '@/stores/app'
 
 const store = useAppStore()
@@ -37,6 +38,7 @@ function buildLoopItems(fromIndex: number) {
         word: s.jp,
         reading: s.reading,
         meaning: s.zh,
+        ruby: s.ruby,
         _cat: 'articles',
         _audioFn: fn,
       })
@@ -52,6 +54,7 @@ function buildLoopItems(fromIndex: number) {
         word: s.jp,
         reading: s.reading,
         meaning: s.zh,
+        ruby: s.ruby,
         _cat: 'articles',
         _audioFn: fn,
       })
@@ -175,14 +178,14 @@ const essayParagraphGroups = computed(() => {
 /** 扁平化的所有句子（用于单句模式和连播） */
 const flatSentences = computed(() => {
   const it = selected.value
-  if (!it) return [] as { jp: string; reading: string; zh: string; speaker?: string }[]
+  if (!it) return [] as { jp: string; reading: string; zh: string; speaker?: string; ruby?: RubyToken[] }[]
   if (it.format === 'essay') {
-    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh, speaker: (s as any).speaker as string | undefined }))
+    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh, ruby: s.ruby, speaker: (s as any).speaker as string | undefined }))
   }
-  const out: { jp: string; reading: string; zh: string; speaker?: string }[] = []
+  const out: { jp: string; reading: string; zh: string; speaker?: string; ruby?: RubyToken[] }[] = []
   for (const sec of it.sections) {
     for (const line of sec.lines) {
-      out.push({ jp: line.jp, reading: line.reading, zh: line.zh, speaker: line.speaker })
+      out.push({ jp: line.jp, reading: line.reading, zh: line.zh, ruby: line.ruby, speaker: line.speaker })
     }
   }
   return out
@@ -195,16 +198,6 @@ const playbackUnits = computed(() => {
 
 const canPlayAll = computed(() => playbackUnits.value.some((u) => !!audioFnForJp(u.jp)))
 
-const copied = ref(false)
-async function copyFullText() {
-  const sentences = flatSentences.value
-  const text = sentences.map((s) => s.jp).join('\n')
-  try {
-    await navigator.clipboard.writeText(text)
-    copied.value = true
-    setTimeout(() => { copied.value = false }, 1500)
-  } catch { /* ignore */ }
-}
 
 function invalidateArticlePlayback() {
   articlePlaySession++
@@ -299,7 +292,8 @@ onUnmounted(() => {
       </button>
 
       <header class="mb-6">
-        <h1 class="text-xl font-bold theme-text leading-snug">{{ selected!.titleJa }}</h1>
+        <h1 v-if="showReading && selected!.titleRuby" class="text-xl font-bold theme-text"><RubyText :tokens="selected!.titleRuby" /></h1>
+        <h1 v-else class="text-xl font-bold theme-text leading-snug">{{ selected!.titleJa }}</h1>
         <template v-if="showTranslation">
           <p v-if="currentLang === 'zh'" class="text-base mt-2" style="color: var(--accent)">{{ selected!.titleZh }}</p>
           <p v-else class="text-base mt-2 theme-muted">{{ selected!.titleZh }}</p>
@@ -364,17 +358,6 @@ onUnmounted(() => {
               {{ t('articleStopPlayback') }}
             </button>
           </template>
-          <button
-            type="button"
-            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer"
-            :class="copied
-              ? 'bg-[#5b8a72]/15 border-[#5b8a72]/40 text-[#5b8a72]'
-              : 'theme-muted border-[var(--border)] bg-transparent hover:theme-text'"
-            @click="copyFullText"
-          >
-            {{ copied ? t('articleCopied') : t('articleCopy') }}
-          </button>
-
           <!-- 单句/全文 切换滑块 -->
           <div
             class="inline-flex items-center rounded-full border border-[var(--border)] p-0.5 ml-auto cursor-pointer select-none text-xs font-medium"
@@ -403,8 +386,8 @@ onUnmounted(() => {
           <div class="flex items-start gap-3">
             <div class="flex-1 min-w-0">
               <div v-if="seg.speaker" class="text-xs font-bold mb-1" style="color: var(--primary)">{{ seg.speaker }}</div>
-              <p class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
-              <p v-if="showReading" class="text-sm theme-muted mt-1.5 leading-relaxed">{{ seg.reading }}</p>
+              <p v-if="showReading && seg.ruby" class="text-[15px] font-medium theme-text"><RubyText :tokens="seg.ruby" /></p>
+              <p v-else class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
               <template v-if="showTranslation">
                 <p v-if="currentLang === 'zh'" class="text-sm mt-2 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
                 <p v-else class="text-sm mt-2 leading-relaxed theme-muted">{{ seg.zh }}</p>
@@ -440,18 +423,22 @@ onUnmounted(() => {
               :key="pi"
               class="rounded-md -mx-0.5 px-0.5 py-0.5"
             >
-              <p class="text-[15px] font-medium theme-text leading-[1.85] [text-indent:1em]">
+              <p v-if="showReading" class="text-[15px] font-medium theme-text leading-[1.85] [text-indent:1em]">
                 <span
                   v-for="(seg, si) in para"
                   :key="`${pi}-${si}`"
                   class="rounded-sm"
                   :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
+                ><RubyText v-if="seg.ruby" :tokens="seg.ruby" /><template v-else>{{ seg.jp }}</template></span>
+              </p>
+              <p v-else class="text-[15px] font-medium theme-text leading-[1.85] [text-indent:1em]">
+                <span
+                  v-for="(seg, si) in para"
+                  :key="`${pi}-${si}-nr`"
+                  class="rounded-sm"
+                  :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
                 >{{ seg.jp }}</span>
               </p>
-              <p
-                v-if="showReading"
-                class="text-sm theme-muted mt-1.5 leading-relaxed pl-[1em]"
-              >{{ para.map((s) => s.reading).join('') }}</p>
               <template v-if="showTranslation">
                 <p
                   v-if="currentLang === 'zh'"
@@ -489,8 +476,8 @@ onUnmounted(() => {
               :class="linePlaying(line.jp) ? 'bg-[#e8735a]/10' : ''"
             >
               <div class="text-xs font-bold mb-0.5" style="color: var(--primary)">{{ line.speaker }}</div>
-              <p class="text-[15px] theme-text leading-relaxed">{{ line.jp }}</p>
-              <p v-if="showReading" class="text-sm theme-muted mt-1 leading-relaxed">{{ line.reading }}</p>
+              <p v-if="showReading && line.ruby" class="text-[15px] theme-text"><RubyText :tokens="line.ruby" /></p>
+              <p v-else class="text-[15px] theme-text leading-relaxed">{{ line.jp }}</p>
               <template v-if="showTranslation">
                 <p v-if="currentLang === 'zh'" class="text-sm mt-2" style="color: var(--accent)">{{ line.zh }}</p>
                 <p v-else class="text-sm mt-2 theme-muted">{{ line.zh }}</p>

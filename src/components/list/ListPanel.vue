@@ -7,8 +7,6 @@ import {
   hasListenCleared,
   hasMasteryQuizPassed,
   milestoneStateTick,
-  quizQueueTick,
-  isInQuizQueue,
 } from '@/learning'
 import ListToolbar from './ListToolbar.vue'
 import ListContainer from './ListContainer.vue'
@@ -86,10 +84,8 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
   }
 
   milestoneStateTick.value
-  quizQueueTick.value
   return items.filter(it => {
     if (hasMasteryQuizPassed(it._cat, it.id)) return false
-    if (isInQuizQueue(it._cat, it.id)) return false
     if (it._cat === 'sentences' && hasListenCleared('sentences', it.id)) return false
     return true
   })

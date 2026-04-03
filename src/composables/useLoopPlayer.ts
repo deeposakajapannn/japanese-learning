@@ -15,6 +15,7 @@ const loopRound = ref(1)
 const loopPlaying = ref(false)
 const loopPaused = ref(false)
 const loopRepeat = ref(false)
+const loopPauseAutoAdvance = ref(false)
 const listSpeaking = ref(false)
 
 let _loopTimers: ReturnType<typeof setTimeout>[] = []
@@ -312,6 +313,11 @@ function playLoopItem() {
 
 function nextLoopItemInternal() {
   if (!loopPlaying.value) return
+  if (loopPauseAutoAdvance.value) {
+    // 跟读模式：播完不跳，暂停等用户操作
+    loopPaused.value = true
+    return
+  }
   if (!loopRepeat.value) {
     loopIndex.value++
     if (loopIndex.value >= loopPlaylist.value.length) {
@@ -417,6 +423,7 @@ export function useLoopPlayer() {
     loopPlaying,
     loopPaused,
     loopRepeat,
+    loopPauseAutoAdvance,
     listSpeaking,
     clearLoopTimers,
     startLoop,

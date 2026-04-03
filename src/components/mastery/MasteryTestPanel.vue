@@ -8,6 +8,7 @@ import { speakLoop, stopLoop, looping } from '../../composables/useAudio'
 import { useLang, currentLang } from '@/i18n'
 import { speechMatchesVocab } from '@/utils/jpSpeechMatch'
 import { localMeaning } from '@/utils/helpers'
+import RubyText from '@/components/common/RubyText.vue'
 
 const { t } = useLang()
 const lang = computed(() => currentLang.value)
@@ -156,8 +157,10 @@ const progressText = computed(() => {
     >
       <!-- Phase 1 read: 显示日文原文 -->
       <template v-if="testPhase === 'read' && !isAnswered">
-        <div class="text-3xl font-bold theme-text mb-3">{{ currentItem.word }}</div>
-        <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
+        <div class="text-3xl font-bold theme-text mb-3">
+          <RubyText v-if="currentItem.ruby" :tokens="currentItem.ruby" />
+          <template v-else>{{ currentItem.word }}</template>
+        </div>
         <div v-if="currentItem.example" class="text-sm theme-muted leading-relaxed">
           {{ currentItem.example }}
         </div>
@@ -173,8 +176,10 @@ const progressText = computed(() => {
 
       <!-- 通过后：显示全部 -->
       <template v-else>
-        <div class="text-3xl font-bold theme-text mb-3">{{ currentItem.word }}</div>
-        <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ currentItem.reading }}</div>
+        <div class="text-3xl font-bold theme-text mb-3">
+          <RubyText v-if="currentItem.ruby" :tokens="currentItem.ruby" />
+          <template v-else>{{ currentItem.word }}</template>
+        </div>
         <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(currentItem, lang) }}</div>
         <div v-if="currentItem.example" class="text-sm theme-muted leading-relaxed">
           {{ currentItem.example }}

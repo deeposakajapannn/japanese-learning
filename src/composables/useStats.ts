@@ -51,11 +51,30 @@ export function recordListenTime(seconds: number) {
   saveStats(s)
 }
 
+export function recordReadTime(seconds: number) {
+  if (!seconds || !isFinite(seconds)) return
+  const s = getStats()
+  const d = todayKey()
+  if (!s[d]) s[d] = { studied: 0, quizzed: 0, correct: 0, wrong: {} }
+  s[d].recorded = Math.round(((s[d].recorded || 0) + seconds) * 10) / 10
+  saveStats(s)
+}
+
+export function recordFollowComplete(itemCount: number) {
+  const s = getStats()
+  const d = todayKey()
+  if (!s[d]) s[d] = { studied: 0, quizzed: 0, correct: 0, wrong: {} }
+  s[d].followCompleted = (s[d].followCompleted || 0) + 1
+  s[d].followSentences = (s[d].followSentences || 0) + itemCount
+  saveStats(s)
+}
+
 export function useStats() {
   return {
     recordStudy,
     recordQuiz,
     recordListenTime,
+    recordReadTime,
     getStats,
     saveStats,
     todayKey,

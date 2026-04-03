@@ -4,6 +4,7 @@ import type { VocabItem } from '../../types'
 import type { QuizMode } from '../../composables/useQuiz'
 import { useLang, currentLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
+import RubyText from '@/components/common/RubyText.vue'
 
 const { t } = useLang()
 const lang = computed(() => currentLang.value)
@@ -39,12 +40,8 @@ defineEmits<{
         </template>
         <template v-else>{{ item?.word ?? '' }}</template>
       </div>
-      <div v-if="!isAnswered" class="flex items-center justify-center gap-2 text-sm theme-muted">
+      <div v-if="!isAnswered" class="text-sm theme-muted">
         <span>{{ t('quizHintWord') }}</span>
-        <button
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#e8e2dc] theme-surface text-base cursor-pointer transition-all hover:border-[#e8735a]"
-          @click.stop="$emit('speak')"
-        >🔊</button>
       </div>
     </template>
 
@@ -71,17 +68,9 @@ defineEmits<{
     <!-- ANSWER (all modes) -->
     <template v-if="isAnswered && item">
       <div v-if="mode !== 'word'" class="text-3xl font-bold theme-text mb-2 leading-relaxed">
-        <template v-if="item.tokens && item.tokens.length">
-          <span
-            v-for="(tk, i) in item.tokens"
-            :key="i"
-            class="inline-block border-b border-[#e8735a]/15"
-            :class="i > 0 ? 'ml-[5px]' : ''"
-          >{{ tk }}</span>
-        </template>
+        <RubyText v-if="item.ruby" :tokens="item.ruby" />
         <template v-else>{{ item.word }}</template>
       </div>
-      <div class="text-lg font-semibold mb-2" style="color: var(--primary)">{{ item.reading }}</div>
       <div class="text-xl font-bold theme-text mb-4">{{ localMeaning(item, lang) }}</div>
       <div v-if="item.example" class="text-sm theme-muted leading-relaxed">
         {{ item.example }}
