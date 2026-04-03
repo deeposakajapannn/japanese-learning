@@ -1,8 +1,8 @@
 import { ref } from 'vue'
 import { makeItemKey } from '@/learning/itemKey'
 import { useFirebase } from './useFirebase'
-
-const STORAGE_KEY = 'jp_listen_dismissed'
+import { readSyncedJson, writeSyncedJson } from '@/learning/learnStorage'
+import { useAppStore } from '@/stores/app'
 
 const { debouncedSync } = useFirebase()
 
@@ -11,14 +11,16 @@ export const listenDismissTick = ref(0)
 
 function readDismissed(): Record<string, true> {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
+    const p = readSyncedJson(useAppStore().studyLang, 'listenDismissed')
+    if (!p || typeof p !== 'object' || Array.isArray(p)) return {}
+    return p as Record<string, true>
   } catch {
     return {}
   }
 }
 
 function writeDismissed(r: Record<string, true>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(r))
+  writeSyncedJson(useAppStore().studyLang, 'listenDismissed', r)
   debouncedSync()
 }
 

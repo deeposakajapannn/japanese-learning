@@ -2,6 +2,12 @@ import { ref } from 'vue'
 import { useAppStore, type DataItem } from '../stores/app'
 import { useFirebase } from './useFirebase'
 import { todayKey } from './useStats'
+import {
+  readSyncedJson,
+  writeSyncedJson,
+  readListenedTodayRaw,
+  writeListenedTodayRaw,
+} from '@/learning/learnStorage'
 import { coerceListenCount } from '@/utils/listenCount'
 import { hasMasteryQuizPassed, isInQuizQueue } from '@/learning'
 
@@ -14,11 +20,11 @@ export const itemCountsTick = ref(0)
 export const listenedCountsTick = ref(0)
 
 function getItemCounts(): Record<string, number> {
-  return JSON.parse(localStorage.getItem('jp_item_counts') || '{}')
+  return readSyncedJson(useAppStore().studyLang, 'counts') as Record<string, number>
 }
 
 function saveItemCounts(c: Record<string, number>) {
-  localStorage.setItem('jp_item_counts', JSON.stringify(c))
+  writeSyncedJson(useAppStore().studyLang, 'counts', c)
   debouncedSync()
 }
 
@@ -77,11 +83,11 @@ export function getItemCount(cat: string, id: number): number {
 }
 
 export function getDelays(): Record<string, string> {
-  return JSON.parse(localStorage.getItem('jp_delays') || '{}')
+  return readSyncedJson(useAppStore().studyLang, 'delays') as Record<string, string>
 }
 
 function saveDelays(d: Record<string, string>) {
-  localStorage.setItem('jp_delays', JSON.stringify(d))
+  writeSyncedJson(useAppStore().studyLang, 'delays', d)
   debouncedSync()
 }
 
@@ -94,22 +100,21 @@ export function delayItem(cat: string, id: number, days: number) {
 }
 
 function getListenedItems(): Record<string, number> {
-  return JSON.parse(localStorage.getItem('jp_listened') || '{}')
+  return readSyncedJson(useAppStore().studyLang, 'listened') as Record<string, number>
 }
 
 function saveListenedItems(l: Record<string, number>) {
-  localStorage.setItem('jp_listened', JSON.stringify(l))
+  writeSyncedJson(useAppStore().studyLang, 'listened', l)
   debouncedSync()
 }
-
-const LISTENED_TODAY_KEY = 'jp_listened_today'
 
 type ListenedTodayStore = { date: string; keys: Record<string, true> }
 
 function loadListenedToday(): ListenedTodayStore {
   const d = todayKey()
+  const lang = useAppStore().studyLang
   try {
-    const raw = localStorage.getItem(LISTENED_TODAY_KEY)
+    const raw = readListenedTodayRaw(lang)
     if (!raw) return { date: d, keys: {} }
     const p = JSON.parse(raw) as ListenedTodayStore
     if (!p || p.date !== d || !p.keys || typeof p.keys !== 'object') return { date: d, keys: {} }
@@ -120,7 +125,7 @@ function loadListenedToday(): ListenedTodayStore {
 }
 
 function saveListenedToday(p: ListenedTodayStore) {
-  localStorage.setItem(LISTENED_TODAY_KEY, JSON.stringify(p))
+  writeListenedTodayRaw(useAppStore().studyLang, JSON.stringify(p))
 }
 
 export function markListenedToday(cat: string, id: number) {

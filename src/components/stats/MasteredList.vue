@@ -15,8 +15,11 @@ type MasteredItem = DataItem & { _cat: string }
 
 const masteredItems = computed<MasteredItem[]>(() => {
   milestoneStateTick.value
+  store.studyLang
   const result: MasteredItem[] = []
-  for (const cat of ['sentences', 'nouns', 'kana'] as const) {
+  const categories =
+    store.studyLang === 'en' ? (['sentences', 'nouns'] as const) : (['sentences', 'nouns', 'kana'] as const)
+  for (const cat of categories) {
     for (const it of store.data[cat]) {
       if (hasMasteryQuizPassed(cat, it.id)) {
         result.push({ ...it, _cat: cat })

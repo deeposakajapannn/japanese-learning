@@ -78,7 +78,10 @@ const filteredItems = computed<VocabItemWithCat[]>(() => {
     items = items.filter(it =>
       it.word.toLowerCase().includes(q) ||
       it.reading.includes(q) ||
-      it.meaning.includes(q) || (it.meaningEn && it.meaningEn.toLowerCase().includes(q)) || (it.meaningEs && it.meaningEs.toLowerCase().includes(q)) ||
+      it.meaning.includes(q) ||
+      (it.meaningEn && it.meaningEn.toLowerCase().includes(q)) ||
+      (it.meaningEs && it.meaningEs.toLowerCase().includes(q)) ||
+      (it.meaningJp && it.meaningJp.toLowerCase().includes(q)) ||
       (it.example && it.example.includes(q))
     )
   }

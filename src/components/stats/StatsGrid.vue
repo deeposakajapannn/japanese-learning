@@ -4,19 +4,27 @@ import { getStats, todayKey, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
 import { milestoneStateTick } from '@/learning'
+import { useAppStore } from '@/stores/app'
+import { readSyncedJson } from '@/learning/learnStorage'
 
 const { t } = useLang()
 const emit = defineEmits<{ mastered: [] }>()
+const store = useAppStore()
 
-const stats = computed(() => { statsVersion.value; return getStats() })
+const stats = computed(() => {
+  statsVersion.value
+  store.studyLang
+  return getStats()
+})
 const today = computed(() => todayKey())
 const todayData = computed(() => stats.value[today.value] || { studied: 0, quizzed: 0, correct: 0, wrong: {}, listened: 0, recorded: 0 })
 
 /** 已掌握词数 */
 const masteredCount = computed(() => {
   milestoneStateTick.value
+  store.studyLang
   try {
-    const m = JSON.parse(localStorage.getItem('jp_mastery_quiz_passed') || '{}')
+    const m = readSyncedJson(store.studyLang, 'masteryQuizPassed') as Record<string, unknown>
     return Object.keys(m).length
   } catch { return 0 }
 })

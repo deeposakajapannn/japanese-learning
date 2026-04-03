@@ -6,6 +6,7 @@ import WeeklyChart from './WeeklyChart.vue'
 import MasteredList from './MasteredList.vue'
 import LoginOverlay from '../auth/LoginOverlay.vue'
 import { useFirebase } from '../../composables/useFirebase'
+import { clearAllLearnProgressLocal } from '@/learning/learnStorage'
 import { useLang } from '@/i18n'
 import { useTheme } from '@/composables/useTheme'
 import { useAppStore } from '@/stores/app'
@@ -24,7 +25,7 @@ const uiLangs = [
   { key: 'ja' as const, label: 'JP' },
 ]
 const showMasteredList = ref(false)
-const { flushDataToCloud, SYNCED_KEYS } = useFirebase()
+const { flushDataToCloud } = useFirebase()
 const { themeMode, toggleTheme } = useTheme()
 const showLogin = ref(false)
 const confirmStep = ref<0 | 1 | 2>(0)
@@ -43,8 +44,7 @@ function onConfirmReset() {
     return
   }
 
-  for (const k of SYNCED_KEYS) localStorage.removeItem(k.local)
-  localStorage.removeItem('jp_listened_today')
+  clearAllLearnProgressLocal()
   flushDataToCloud()
   confirmStep.value = 0
   window.location.reload()

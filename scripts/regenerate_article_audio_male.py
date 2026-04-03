@@ -24,7 +24,7 @@ import sys
 import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ARTICLES_PATH = os.path.join(ROOT, "public", "data", "articles.json")
+ARTICLES_PATH = os.path.join(ROOT, "public", "data", "ja_articles.json")
 AUDIO_MAP_PATH = os.path.join(ROOT, "public", "data", "audio_map.json")
 OUT_MAP_PATH = os.path.join(ROOT, "public", "data", "article_audio_map_male.json")
 AUDIO_DIR = os.path.join(ROOT, "public", "audio")
@@ -42,15 +42,15 @@ def article_jp_lines(item: dict) -> list[str]:
     out: list[str] = []
     if item.get("format") == "essay":
         for seg in item.get("segments") or []:
-            jp = (seg.get("jp") or "").strip()
-            if jp:
-                out.append(jp)
+            text = (seg.get("word") or seg.get("jp") or "").strip()
+            if text:
+                out.append(text)
     else:
         for sec in item.get("sections") or []:
             for line in sec.get("lines") or []:
-                jp = (line.get("jp") or "").strip()
-                if jp:
-                    out.append(jp)
+                text = (line.get("word") or line.get("jp") or "").strip()
+                if text:
+                    out.append(text)
     return out
 
 

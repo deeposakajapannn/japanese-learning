@@ -8,6 +8,7 @@ export interface DataItem {
   reading: string
   meaning: string
   meaningEn?: string
+  meaningJp?: string
   example?: string
   exampleCn?: string
   topic?: string
@@ -124,9 +125,15 @@ const KANA_DATA: DataItem[] = [
 export const useAppStore = defineStore('app', () => {
   const studyLang = ref<StudyLang>((localStorage.getItem('study_lang') as StudyLang) || 'ja')
 
-  function switchStudyLang(lang: StudyLang) {
+
+  async function switchStudyLang(lang: StudyLang) {
+    if (studyLang.value === lang && isDataLoaded.value) return
     studyLang.value = lang
     localStorage.setItem('study_lang', lang)
+    if (lang === 'en' && currentCat.value === 'kana') {
+      currentCat.value = 'articles'
+    }
+    await loadData()
   }
 
   const currentMode = ref<string>('list')
@@ -135,7 +142,7 @@ export const useAppStore = defineStore('app', () => {
   const audioMap = ref<Record<string, string>>({})
   /** 文章句男声（Keita），仅 N2 及以下篇目有键；见 public/data/article_audio_map_male.json */
   const articleAudioMapMale = ref<Record<string, string>>({})
-  /** 精读文章（短文 / 对话），见 public/data/articles.json */
+  /** 精读文章（短文 / 对话）：日语 ja_articles.json，英语 en_articles.json */
   const articles = ref<ArticleItem[]>([])
   const isDataLoaded = ref(false)
 
@@ -157,12 +164,17 @@ export const useAppStore = defineStore('app', () => {
   async function loadData() {
     try {
       const base = import.meta.env.BASE_URL
+      const ja = studyLang.value === 'ja'
+
+      const nounPath = ja ? 'data/nouns.json' : 'data/en_nouns.json'
+      const sentPath = ja ? 'data/sentences.json' : 'data/en_sentences.json'
+      const artPath = ja ? 'data/ja_articles.json' : 'data/en_articles.json'
+      const audioPath = ja ? 'data/audio_map.json' : 'data/en_audio_map.json'
+
       const [nouns, sentences, audioMapData, articlesData, maleMapRes] = await Promise.all([
-        fetch(`${base}data/nouns.json`).then(r => r.json()),
-        fetch(`${base}data/sentences.json`).then(r => r.json()),
-        fetch(`${base}data/audio_map.json`).then(r => r.json()),
-        fetch(`${base}data/articles.json`).then(r => r.json()),
-        fetch(`${base}data/article_audio_map_male.json`).then(async (r) => {
+        fetch(`${base}${nounPath}`).then(r => r.json()),
+        fetch(`${base}${sentPath}`).then(r => r.json()),
+        fetch(`${base}${audioPath}`).then(async (r) => {
           if (!r.ok) return {}
           try {
             return await r.json()
@@ -170,10 +182,24 @@ export const useAppStore = defineStore('app', () => {
             return {}
           }
         }),
+        fetch(`${base}${artPath}`).then(r => r.json()),
+        ja
+          ? fetch(`${base}data/article_audio_map_male.json`).then(async (r) => {
+              if (!r.ok) return {}
+              try {
+                return await r.json()
+              } catch {
+                return {}
+              }
+            })
+          : Promise.resolve({}),
       ])
       data.value.nouns = nouns
       data.value.sentences = sentences
-      audioMap.value = audioMapData
+      audioMap.value =
+        audioMapData && typeof audioMapData === 'object' && !Array.isArray(audioMapData)
+          ? audioMapData
+          : {}
       articleAudioMapMale.value =
         maleMapRes && typeof maleMapRes === 'object' && !Array.isArray(maleMapRes) ? maleMapRes : {}
       articles.value = Array.isArray(articlesData?.items) ? articlesData.items : []

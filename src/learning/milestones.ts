@@ -8,24 +8,28 @@ import { listenDismissClear, isListenDismissed, listenDismissTick } from '@/comp
 import { recordItemSeen, delayItem } from '@/composables/useSpacedRepetition'
 import { useFirebase } from '@/composables/useFirebase'
 import { practice as practiceThresholds } from '@/config/thresholds'
+import { readSyncedJson, writeSyncedJson } from '@/learning/learnStorage'
+import { useAppStore } from '@/stores/app'
 
 const { debouncedSync } = useFirebase()
 
-const STORAGE_PRACTICE_RECOGNIZED = 'jp_practice_recognized'
-const STORAGE_MASTERY_QUIZ = 'jp_mastery_quiz_passed'
-
 export { milestoneStateTick }
 
-function readTrueMap(key: string): Record<string, true> {
+type TrueMapKey = 'practiceRecognized' | 'masteryQuizPassed'
+
+function readTrueMapFor(ck: TrueMapKey): Record<string, true> {
   try {
-    return JSON.parse(localStorage.getItem(key) || '{}')
+    const lang = useAppStore().studyLang
+    const p = readSyncedJson(lang, ck)
+    if (!p || typeof p !== 'object' || Array.isArray(p)) return {}
+    return p as Record<string, true>
   } catch {
     return {}
   }
 }
 
-function writeTrueMap(storageKey: string, r: Record<string, true>) {
-  localStorage.setItem(storageKey, JSON.stringify(r))
+function writeTrueMapFor(ck: TrueMapKey, r: Record<string, true>) {
+  writeSyncedJson(useAppStore().studyLang, ck, r)
   debouncedSync()
   milestoneStateTick.value++
 }
@@ -47,9 +51,9 @@ export function markListenCleared(cat: string, id: number): void {
 /** 练习中点「✓ 认识」：计次 + 短期推迟 + 写入「曾认识」里程碑（供将来掌握条件） */
 export function markPracticeAnswerKnown(cat: string, id: number): void {
   const k = makeItemKey(cat, id)
-  const r = readTrueMap(STORAGE_PRACTICE_RECOGNIZED)
+  const r = readTrueMapFor('practiceRecognized')
   r[k] = true
-  writeTrueMap(STORAGE_PRACTICE_RECOGNIZED, r)
+  writeTrueMapFor('practiceRecognized', r)
   recordItemSeen(cat, id)
   delayItem(cat, id, practiceThresholds.knownDelayDays)
 }
@@ -61,21 +65,21 @@ export function markPracticeAnswerUnknown(cat: string, id: number): void {
 
 /** 是否曾在练习中点过「认识」（持久标志，与当日 delay 无关） */
 export function hasPracticeRecognized(cat: string, id: number): boolean {
-  return !!readTrueMap(STORAGE_PRACTICE_RECOGNIZED)[makeItemKey(cat, id)]
+  return !!readTrueMapFor('practiceRecognized')[makeItemKey(cat, id)]
 }
 
 // --- 掌握测验（预留：测验通过后调用 markMasteryQuizPassed）---
 
 export function hasMasteryQuizPassed(cat: string, id: number): boolean {
-  return !!readTrueMap(STORAGE_MASTERY_QUIZ)[makeItemKey(cat, id)]
+  return !!readTrueMapFor('masteryQuizPassed')[makeItemKey(cat, id)]
 }
 
 /** 掌握测验通过时由测验模块调用；合并策略与「听清了」一致（多设备取并集） */
 export function markMasteryQuizPassed(cat: string, id: number): void {
   const k = makeItemKey(cat, id)
-  const r = readTrueMap(STORAGE_MASTERY_QUIZ)
+  const r = readTrueMapFor('masteryQuizPassed')
   r[k] = true
-  writeTrueMap(STORAGE_MASTERY_QUIZ, r)
+  writeTrueMapFor('masteryQuizPassed', r)
 }
 
 /**

@@ -1,6 +1,7 @@
 import { ref, watch } from 'vue'
 import { useAppStore } from '../stores/app'
 import { recordQuiz } from './useStats'
+import { readQuizScopeRaw, writeQuizScopeRaw, studyLangFromLocalStorage } from '@/learning/learnStorage'
 import { makeItemKey } from '@/learning/itemKey'
 import { quizQueueTick, getQuizQueueKeys, addToQuizQueue, removeFromQuizQueue, recordQuizFail, clearQuizFails } from '@/learning'
 import { markPracticeAnswerKnown, markPracticeAnswerUnknown, milestoneStateTick, hasMasteryQuizPassed, markMasteryQuizPassed } from '@/learning/milestones'
@@ -25,7 +26,7 @@ const isAnswered = ref(false)
 const quizLevels = ref<string[]>([])
 
 function migrateQuizScope(): QuizScope {
-  const s = localStorage.getItem('jp_quiz_scope')
+  const s = readQuizScopeRaw(studyLangFromLocalStorage())
   if (s === 'practice' || s === 'test') return s
   return 'practice'
 }
@@ -108,7 +109,7 @@ function startQuiz() {
 function setQuizScope(scope: QuizScope) {
   if (quizScope.value === scope) return
   quizScope.value = scope
-  localStorage.setItem('jp_quiz_scope', scope)
+  writeQuizScopeRaw(useAppStore().studyLang, scope)
   startQuiz()
 }
 
@@ -184,21 +185,36 @@ function setQuizLevels(levels: string[]) {
   startQuiz()
 }
 
-// 实时过滤已掌握
-watch([milestoneStateTick, quizQueueTick], () => {
-  const store = useAppStore()
-  const cat = store.currentCat
-  const before = quizItems.value.length
-  quizItems.value = quizItems.value.filter((it) => {
-    const c = it._cat || cat
-    return !hasMasteryQuizPassed(c, it.id)
+let quizWatchersBound = false
+
+function bindQuizWatchersOnce() {
+  if (quizWatchersBound) return
+  quizWatchersBound = true
+
+  watch(
+    () => useAppStore().studyLang,
+    () => {
+      quizScope.value = migrateQuizScope()
+      startQuiz()
+    },
+  )
+
+  watch([milestoneStateTick, quizQueueTick], () => {
+    const store = useAppStore()
+    const cat = store.currentCat
+    const before = quizItems.value.length
+    quizItems.value = quizItems.value.filter((it) => {
+      const c = it._cat || cat
+      return !hasMasteryQuizPassed(c, it.id)
+    })
+    if (quizItems.value.length !== before && quizIndex.value >= quizItems.value.length) {
+      quizIndex.value = Math.max(0, quizItems.value.length - 1)
+    }
   })
-  if (quizItems.value.length !== before && quizIndex.value >= quizItems.value.length) {
-    quizIndex.value = Math.max(0, quizItems.value.length - 1)
-  }
-})
+}
 
 export function useQuiz() {
+  bindQuizWatchersOnce()
   return {
     quizItems,
     quizIndex,

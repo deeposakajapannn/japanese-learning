@@ -1,3 +1,5 @@
+import { useAppStore } from '@/stores/app'
+
 export function escHtml(s: string): string {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -18,8 +20,16 @@ export function generateId(): string {
   return word + '-' + num
 }
 
-export function localMeaning(item: { meaning: string; meaningEn?: string }, lang: string): string {
-  if (lang === 'en' && item.meaningEn) return item.meaningEn
+/** uiLang：界面语言。学英语且界面为日语时优先显示 meaningJp。 */
+export function localMeaning(
+  item: { meaning: string; meaningEn?: string; meaningJp?: string },
+  uiLang: string,
+): string {
+  const studyLang = useAppStore().studyLang
+  if (studyLang === 'en' && uiLang === 'ja' && item.meaningJp?.trim()) {
+    return item.meaningJp
+  }
+  if (uiLang === 'en' && item.meaningEn) return item.meaningEn
   return item.meaning
 }
 

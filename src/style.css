@@ -401,7 +401,7 @@ body::before {
   width: 600px;
   height: 400px;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.03;
   transform: rotate(-27deg);
   transition: opacity 0.3s ease;
 }

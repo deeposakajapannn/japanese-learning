@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useAppStore } from '../../stores/app'
-import { getStats } from '../../composables/useStats'
+import { getStats, statsVersion } from '../../composables/useStats'
 import { useLang } from '@/i18n'
 import { localMeaning } from '@/utils/helpers'
 import { wrongWords as wrongWordsThresholds } from '@/config/thresholds'
@@ -11,6 +11,8 @@ const { t, currentLang } = useLang()
 const store = useAppStore()
 
 const wrongWords = computed(() => {
+  statsVersion.value
+  store.studyLang
   const stats = getStats()
   const wrongMap: Record<string, number> = {}
   for (const d of Object.values(stats)) {
@@ -26,9 +28,25 @@ const wrongWords = computed(() => {
       const [cat, id] = key.split(':')
       const items = (store.data as any)[cat] as any[] | undefined
       const item = items?.find((it: any) => it.id === parseInt(id))
-      return item ? { word: item.word, meaning: item.meaning, meaningEn: item.meaningEn, meaningEs: item.meaningEs, count } : null
+      return item
+        ? {
+            word: item.word,
+            meaning: item.meaning,
+            meaningEn: item.meaningEn,
+            meaningEs: item.meaningEs,
+            meaningJp: item.meaningJp,
+            count,
+          }
+        : null
     })
-    .filter(Boolean) as { word: string; meaning: string; meaningEn?: string; meaningEs?: string; count: number }[]
+    .filter(Boolean) as {
+      word: string
+      meaning: string
+      meaningEn?: string
+      meaningEs?: string
+      meaningJp?: string
+      count: number
+    }[]
 })
 
 const wrongTitleText = computed(() =>

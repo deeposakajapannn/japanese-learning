@@ -83,18 +83,20 @@ def make_ruby(sentence: str) -> list[dict]:
 
 
 def process_articles(path: str):
-    """Add ruby to articles.json segments."""
+    """Add ruby to ja_articles.json segments (Japanese text in `word`)."""
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     count = 0
     for item in data['items']:
         for seg in item.get('segments', []):
-            seg['ruby'] = make_ruby(seg['jp'])
+            text = (seg.get('word') or seg.get('jp') or '').strip()
+            seg['ruby'] = make_ruby(text) if text else []
             count += 1
         for sec in item.get('sections', []):
             for line in sec.get('lines', []):
-                line['ruby'] = make_ruby(line['jp'])
+                text = (line.get('word') or line.get('jp') or '').strip()
+                line['ruby'] = make_ruby(text) if text else []
                 count += 1
 
     with open(path, 'w', encoding='utf-8') as f:
@@ -140,7 +142,7 @@ if __name__ == '__main__':
     base = 'public/data'
 
     if target in ('articles', 'all'):
-        process_articles(f'{base}/articles.json')
+        process_articles(f'{base}/ja_articles.json')
     if target in ('sentences', 'all'):
         process_sentences(f'{base}/sentences.json')
     if target in ('nouns', 'all'):

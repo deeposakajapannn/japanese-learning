@@ -6,9 +6,9 @@
 import { ref } from 'vue'
 import { makeItemKey } from './itemKey'
 import { useFirebase } from '@/composables/useFirebase'
+import { readSyncedJson, writeSyncedJson } from '@/learning/learnStorage'
+import { useAppStore } from '@/stores/app'
 
-const STORAGE = 'jp_quiz_queue'
-const STORAGE_FAILS = 'jp_quiz_fails'
 const MAX_FAILS = 3
 
 const { debouncedSync } = useFirebase()
@@ -18,11 +18,11 @@ export const quizQueueTick = ref(0)
 
 function readStore(): Record<string, number> {
   try {
-    const p = JSON.parse(localStorage.getItem(STORAGE) || '{}')
+    const p = readSyncedJson(useAppStore().studyLang, 'quizQueue')
     if (!p || typeof p !== 'object' || Array.isArray(p)) return {}
     const out: Record<string, number> = {}
     for (const k of Object.keys(p)) {
-      const n = Number(p[k])
+      const n = Number((p as Record<string, unknown>)[k])
       if (k && Number.isFinite(n)) out[k] = n
     }
     return out
@@ -32,7 +32,7 @@ function readStore(): Record<string, number> {
 }
 
 function writeStore(r: Record<string, number>) {
-  localStorage.setItem(STORAGE, JSON.stringify(r))
+  writeSyncedJson(useAppStore().studyLang, 'quizQueue', r)
   debouncedSync()
   quizQueueTick.value++
 }
@@ -41,14 +41,21 @@ function writeStore(r: Record<string, number>) {
 
 function readFails(): Record<string, number> {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_FAILS) || '{}')
+    const p = readSyncedJson(useAppStore().studyLang, 'quizFails')
+    if (!p || typeof p !== 'object' || Array.isArray(p)) return {}
+    const out: Record<string, number> = {}
+    for (const k of Object.keys(p)) {
+      const n = Number((p as Record<string, unknown>)[k])
+      if (k && Number.isFinite(n)) out[k] = n
+    }
+    return out
   } catch {
     return {}
   }
 }
 
 function writeFails(r: Record<string, number>) {
-  localStorage.setItem(STORAGE_FAILS, JSON.stringify(r))
+  writeSyncedJson(useAppStore().studyLang, 'quizFails', r)
   debouncedSync()
 }
 
@@ -81,18 +88,18 @@ export function clearQuizFails(cat: string, id: number): void {
 
 // --- 第一步（读原文）通过记录 ---
 
-const STORAGE_PHASE1 = 'jp_quiz_phase1'
-
 function readPhase1(): Record<string, true> {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_PHASE1) || '{}')
+    const p = readSyncedJson(useAppStore().studyLang, 'quizPhase1')
+    if (!p || typeof p !== 'object' || Array.isArray(p)) return {}
+    return p as Record<string, true>
   } catch {
     return {}
   }
 }
 
 function writePhase1(r: Record<string, true>) {
-  localStorage.setItem(STORAGE_PHASE1, JSON.stringify(r))
+  writeSyncedJson(useAppStore().studyLang, 'quizPhase1', r)
   debouncedSync()
 }
 

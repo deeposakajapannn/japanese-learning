@@ -5,6 +5,13 @@ import { t } from '@/i18n'
 import { mergeListenCountMaps } from '@/utils/listenCount'
 import { cloudSync } from '@/config/thresholds'
 import { milestoneStateTick } from '@/learning/milestoneTick'
+import {
+  readLangBundle,
+  writeLangBundleFull,
+  SYNCED_CLOUD_KEYS,
+  type LangBundle,
+} from '@/learning/learnStorage'
+import type { StudyLang } from '@/types'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCZa2CyskF8bM_CU0l2UaT7Wwq25cz30Q",
@@ -20,21 +27,49 @@ const userId = ref(localStorage.getItem('jp_user_id') || '')
 let db: firebase.database.Database | null = null
 let syncTimer: ReturnType<typeof setTimeout> | null = null
 
-// --- Synced keys registry ---
-const SYNCED_KEYS = [
-  { local: 'jp_stats',              cloud: 'stats' },
-  { local: 'jp_item_counts',        cloud: 'counts' },
-  { local: 'jp_delays',             cloud: 'delays' },
-  { local: 'jp_listened',           cloud: 'listened' },
-  { local: 'jp_listen_dismissed',   cloud: 'listenDismissed' },
-  { local: 'jp_practice_recognized', cloud: 'practiceRecognized' },
-  { local: 'jp_mastery_quiz_passed', cloud: 'masteryQuizPassed' },
-  { local: 'jp_quiz_queue',          cloud: 'quizQueue' },
-  { local: 'jp_quiz_fails',          cloud: 'quizFails' },
-  { local: 'jp_quiz_phase1',         cloud: 'quizPhase1' },
-] as const
+function emptyBundle(): LangBundle {
+  const b = {} as LangBundle
+  for (const ck of SYNCED_CLOUD_KEYS) {
+    b[ck] = {}
+  }
+  return b
+}
 
-// --- Merge utilities ---
+function asFullBundle(partial: Partial<LangBundle> | undefined | null): LangBundle {
+  const e = emptyBundle()
+  if (!partial) return e
+  for (const ck of SYNCED_CLOUD_KEYS) {
+    const v = partial[ck]
+    if (v != null && typeof v === 'object' && !Array.isArray(v)) {
+      e[ck] = v
+    }
+  }
+  return e
+}
+
+/** 只认 schemaVersion:2 + langs；其余形状视为空桶 */
+function parseCloudLangs(cloud: unknown): Record<StudyLang, LangBundle> {
+  const blank = (): Record<StudyLang, LangBundle> => ({ ja: emptyBundle(), en: emptyBundle() })
+  if (!cloud || typeof cloud !== 'object' || Array.isArray(cloud)) {
+    return blank()
+  }
+  const c = cloud as Record<string, unknown>
+  if (c.schemaVersion !== 2 || !c.langs || typeof c.langs !== 'object' || Array.isArray(c.langs)) {
+    return blank()
+  }
+  const L = c.langs as Record<string, unknown>
+  return {
+    ja: asFullBundle(L.ja as Partial<LangBundle>),
+    en: asFullBundle(L.en as Partial<LangBundle>),
+  }
+}
+
+function rawResetAtMs(cloud: unknown): number {
+  if (!cloud || typeof cloud !== 'object' || Array.isArray(cloud)) return 0
+  const v = (cloud as Record<string, unknown>).resetAt
+  const n = typeof v === 'number' ? v : Number(v)
+  return Number.isFinite(n) && n > 0 ? n : 0
+}
 
 function mergeMaxNumbers(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
   const merged = { ...a }
@@ -44,7 +79,6 @@ function mergeMaxNumbers(a: Record<string, number>, b: Record<string, number>): 
   return merged
 }
 
-/** 合并推迟复习日期：值为 YYYY-MM-DD（见 useSpacedRepetition），字典序与日期先后一致，取较晚一天 */
 function mergeLaterReviewDates(a: Record<string, string>, b: Record<string, string>): Record<string, string> {
   const merged = { ...a }
   for (const key in b) {
@@ -65,45 +99,60 @@ function mergeStats(a: Record<string, any>, b: Record<string, any>): Record<stri
     const da = a[day] || {}
     const db = b[day] || {}
     merged[day] = {
-      studied:  Math.max(da.studied || 0, db.studied || 0),
-      quizzed:  Math.max(da.quizzed || 0, db.quizzed || 0),
-      correct:  Math.max(da.correct || 0, db.correct || 0),
+      studied: Math.max(da.studied || 0, db.studied || 0),
+      quizzed: Math.max(da.quizzed || 0, db.quizzed || 0),
+      correct: Math.max(da.correct || 0, db.correct || 0),
       listened: Math.max(da.listened || 0, db.listened || 0),
-      wrong:    mergeMaxNumbers(da.wrong || {}, db.wrong || {}),
+      wrong: mergeMaxNumbers(da.wrong || {}, db.wrong || {}),
     }
   }
   return merged
 }
 
-function readLocal(): Record<string, any> {
-  const data: Record<string, any> = {}
-  for (const k of SYNCED_KEYS) {
-    data[k.cloud] = JSON.parse(localStorage.getItem(k.local) || '{}')
+function mergeLangBundle(local: LangBundle, cloud: LangBundle): LangBundle {
+  return {
+    stats: mergeStats((local.stats || {}) as any, (cloud.stats || {}) as any),
+    counts: mergeMaxNumbers((local.counts || {}) as any, (cloud.counts || {}) as any),
+    delays: mergeLaterReviewDates((local.delays || {}) as any, (cloud.delays || {}) as any),
+    listened: mergeListenCountMaps((local.listened || {}) as any, (cloud.listened || {}) as any),
+    listenDismissed: mergeDismissed((local.listenDismissed || {}) as any, (cloud.listenDismissed || {}) as any),
+    practiceRecognized: mergeDismissed((local.practiceRecognized || {}) as any, (cloud.practiceRecognized || {}) as any),
+    masteryQuizPassed: mergeDismissed((local.masteryQuizPassed || {}) as any, (cloud.masteryQuizPassed || {}) as any),
+    quizQueue: mergeMaxNumbers((local.quizQueue || {}) as any, (cloud.quizQueue || {}) as any),
+    quizFails: mergeMaxNumbers((local.quizFails || {}) as any, (cloud.quizFails || {}) as any),
+    quizPhase1: mergeDismissed((local.quizPhase1 || {}) as any, (cloud.quizPhase1 || {}) as any),
   }
-  return data
 }
 
-function writeLocal(data: Record<string, any>) {
-  for (const k of SYNCED_KEYS) {
-    localStorage.setItem(k.local, JSON.stringify(data[k.cloud] || {}))
+function langBundleHasAny(b: LangBundle): boolean {
+  for (const ck of SYNCED_CLOUD_KEYS) {
+    const v = b[ck]
+    if (v && typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length > 0) return true
   }
+  return false
+}
+
+function readBothBundlesFromLS(): Record<StudyLang, LangBundle> {
+  return {
+    ja: readLangBundle('ja'),
+    en: readLangBundle('en'),
+  }
+}
+
+function writeBothBundlesToLS(ja: LangBundle, en: LangBundle) {
+  writeLangBundleFull('ja', ja)
+  writeLangBundleFull('en', en)
   milestoneStateTick.value++
 }
 
-function mergeData(local: Record<string, any>, cloud: Record<string, any>): Record<string, any> {
-  return {
-    stats:            mergeStats(local.stats || {}, cloud.stats || {}),
-    counts:           mergeMaxNumbers(local.counts || {}, cloud.counts || {}),
-    delays:           mergeLaterReviewDates(local.delays || {}, cloud.delays || {}),
-    listened:         mergeListenCountMaps(local.listened || {}, cloud.listened || {}),
-    listenDismissed:  mergeDismissed(local.listenDismissed || {}, cloud.listenDismissed || {}),
-    practiceRecognized: mergeDismissed(local.practiceRecognized || {}, cloud.practiceRecognized || {}),
-    masteryQuizPassed: mergeDismissed(local.masteryQuizPassed || {}, cloud.masteryQuizPassed || {}),
-    quizQueue: mergeMaxNumbers(local.quizQueue || {}, cloud.quizQueue || {}),
+function buildV2Payload(ja: LangBundle, en: LangBundle, resetAt?: number) {
+  const payload: Record<string, unknown> = {
+    schemaVersion: 2,
+    langs: { ja, en },
   }
+  if (resetAt != null && resetAt > 0) payload.resetAt = resetAt
+  return payload
 }
-
-// --- Password hashing ---
 
 async function hashPassword(password: string): Promise<string> {
   const encoder = new TextEncoder()
@@ -111,8 +160,6 @@ async function hashPassword(password: string): Promise<string> {
   const hash = await crypto.subtle.digest('SHA-256', data)
   return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('')
 }
-
-// --- Firebase core ---
 
 function initFirebase() {
   if (!firebase.apps.length) {
@@ -123,32 +170,50 @@ function initFirebase() {
 
 function syncToCloud() {
   if (!userId.value || !db) return
-  const data = readLocal()
-  const hasPayload =
-    Object.keys(data.stats).length > 0 ||
-    Object.keys(data.counts).length > 0 ||
-    Object.keys(data.delays || {}).length > 0 ||
-    Object.keys(data.listened || {}).length > 0 ||
-    Object.keys(data.listenDismissed || {}).length > 0 ||
-    Object.keys(data.practiceRecognized || {}).length > 0 ||
-    Object.keys(data.masteryQuizPassed || {}).length > 0 ||
-    Object.keys(data.quizQueue || {}).length > 0
-  if (!hasPayload) return
-  db.ref('users/' + userId.value + '/data').set(data)
+  const { ja, en } = readBothBundlesFromLS()
+  if (!langBundleHasAny(ja) && !langBundleHasAny(en)) return
+  const resetAt = Number(localStorage.getItem('jp_reset_at') || '0')
+  const payload = buildV2Payload(ja, en, resetAt > 0 ? resetAt : undefined)
+  db.ref('users/' + userId.value + '/data').set(payload)
 }
 
-/** 整包写入云端（含全空对象），用于清除本地后覆盖云端，避免下次拉取又恢复旧数据 */
 function flushDataToCloud() {
   if (!userId.value || !db) return
-  const payload = readLocal()
-  payload.resetAt = Date.now()
+  const { ja, en } = readBothBundlesFromLS()
+  const resetAt = Date.now()
+  const payload = buildV2Payload(ja, en, resetAt)
   db.ref('users/' + userId.value + '/data').set(payload)
-  localStorage.setItem('jp_reset_at', String(payload.resetAt))
+  localStorage.setItem('jp_reset_at', String(resetAt))
 }
 
 function debouncedSync() {
   if (syncTimer) clearTimeout(syncTimer)
   syncTimer = setTimeout(syncToCloud, cloudSync.debounceMs)
+}
+
+/** 将云端 v2 数据合并进本地并写回同结构；非 v2 的学习字段忽略，resetAt 仍从原始节点读取 */
+function mergeCloudIntoLocal(cloudRaw: unknown): { uploaded: Record<string, unknown> } {
+  const localResetAt = Number(localStorage.getItem('jp_reset_at') || '0')
+  const cloudResetAt = rawResetAtMs(cloudRaw)
+  const cloudLangs = parseCloudLangs(cloudRaw)
+
+  if (cloudResetAt > localResetAt) {
+    writeBothBundlesToLS(cloudLangs.ja, cloudLangs.en)
+    localStorage.setItem('jp_reset_at', String(cloudResetAt))
+    return { uploaded: buildV2Payload(cloudLangs.ja, cloudLangs.en, cloudResetAt) }
+  }
+
+  const localJa = readLangBundle('ja')
+  const localEn = readLangBundle('en')
+  const mergedJa = mergeLangBundle(localJa, cloudLangs.ja)
+  const mergedEn = mergeLangBundle(localEn, cloudLangs.en)
+  writeBothBundlesToLS(mergedJa, mergedEn)
+
+  const resetAt =
+    cloudResetAt > 0 ? cloudResetAt : Number(localStorage.getItem('jp_reset_at') || '0')
+  return {
+    uploaded: buildV2Payload(mergedJa, mergedEn, resetAt > 0 ? resetAt : undefined),
+  }
 }
 
 async function pullAndMerge(): Promise<boolean> {
@@ -157,21 +222,8 @@ async function pullAndMerge(): Promise<boolean> {
     const snap = await db.ref('users/' + userId.value + '/data').once('value')
     if (!snap.exists()) return false
     const cloud = snap.val()
-    const localResetAt = Number(localStorage.getItem('jp_reset_at') || '0')
-    const cloudResetAt = Number(cloud.resetAt || 0)
-
-    // Cloud was reset after our last known reset → wipe local to match
-    if (cloudResetAt > localResetAt) {
-      writeLocal(cloud)
-      localStorage.setItem('jp_reset_at', String(cloudResetAt))
-      return true
-    }
-
-    const local = readLocal()
-    const merged = mergeData(local, cloud)
-    if (cloudResetAt) merged.resetAt = cloudResetAt
-    writeLocal(merged)
-    await db.ref('users/' + userId.value + '/data').set(merged)
+    const { uploaded } = mergeCloudIntoLocal(cloud)
+    await db.ref('users/' + userId.value + '/data').set(uploaded)
     return true
   } catch {
     return false
@@ -202,10 +254,12 @@ async function register(username: string, password: string): Promise<{ success: 
     const hash = await hashPassword(password)
     await db.ref('users/' + name + '/profile').set({ passwordHash: hash })
 
-    // Upload local data to new account
-    const local = readLocal()
-    if (Object.keys(local.stats).length > 0 || Object.keys(local.counts).length > 0) {
-      await db.ref('users/' + name + '/data').set(local)
+    const { ja, en } = readBothBundlesFromLS()
+    if (langBundleHasAny(ja) || langBundleHasAny(en)) {
+      const resetAt = Number(localStorage.getItem('jp_reset_at') || '0')
+      await db
+        .ref('users/' + name + '/data')
+        .set(buildV2Payload(ja, en, resetAt > 0 ? resetAt : undefined))
     }
 
     userId.value = name
@@ -243,24 +297,11 @@ async function login(username: string, password: string): Promise<{ success: boo
     userId.value = name
     localStorage.setItem('jp_user_id', name)
 
-    // Pull and merge cloud data
     const cloudSnap = await db.ref('users/' + name + '/data').once('value')
     if (cloudSnap.exists()) {
       const cloud = cloudSnap.val()
-      const localResetAt = Number(localStorage.getItem('jp_reset_at') || '0')
-      const cloudResetAt = Number(cloud.resetAt || 0)
-
-      if (cloudResetAt > localResetAt) {
-        // Cloud was reset more recently → adopt cloud state (which is empty)
-        writeLocal(cloud)
-        localStorage.setItem('jp_reset_at', String(cloudResetAt))
-      } else {
-        const local = readLocal()
-        const merged = mergeData(local, cloud)
-        if (cloudResetAt) merged.resetAt = cloudResetAt
-        writeLocal(merged)
-        await db.ref('users/' + name + '/data').set(merged)
-      }
+      const { uploaded } = mergeCloudIntoLocal(cloud)
+      await db.ref('users/' + name + '/data').set(uploaded)
     }
 
     return { success: true, message: t('loginFound') }
@@ -285,6 +326,5 @@ export function useFirebase() {
     logout,
     pullAndMerge,
     initFirebase,
-    SYNCED_KEYS,
   }
 }

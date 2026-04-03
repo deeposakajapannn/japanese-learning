@@ -4,13 +4,19 @@ import { getStats, statsVersion } from '../../composables/useStats'
 import { formatListenTime } from '../../utils/helpers'
 import { useLang } from '@/i18n'
 import { weeklyChart } from '@/config/thresholds'
+import { useAppStore } from '@/stores/app'
 
 const { t } = useLang()
+const store = useAppStore()
 
 const showAll = ref(false)
 const tappedDay = ref<string | null>(null)
 
-const stats = computed(() => { statsVersion.value; return getStats() })
+const stats = computed(() => {
+  statsVersion.value
+  store.studyLang
+  return getStats()
+})
 
 const recentDays = computed(() => {
   const result: string[] = []

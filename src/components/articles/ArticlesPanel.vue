@@ -4,9 +4,10 @@ import { useAppStore } from '@/stores/app'
 import { useLang } from '@/i18n'
 import { audioEl } from '@/composables/useAudio'
 import { useLoopPlayer } from '@/composables/useLoopPlayer'
-import type { ArticleItem, ArticleEssay, ArticleDialogue, ArticleSegment, RubyToken } from '@/types'
+import type { ArticleItem, ArticleEssay, ArticleDialogue, ArticleSegment } from '@/types'
 import RubyText from '@/components/common/RubyText.vue'
 import type { DataItem } from '@/stores/app'
+import { readArticlePrefRaw, writeArticlePrefRaw } from '@/learning/learnStorage'
 
 const store = useAppStore()
 const { t, currentLang } = useLang()
@@ -18,12 +19,32 @@ const selectedId = ref<string | null>(null)
 let articlePlaySession = 0
 
 const playingAll = ref(false)
-/** 当前正在播的原文（连播时高亮） */
-const playingJp = ref<string | null>(null)
+/** 当前正在播的原文行（与 audio_map 键一致，即 segment.word） */
+const playingWord = ref<string | null>(null)
 
-/** 单句/全文模式 */
-const LS_ARTICLE_MODE = 'jp_article_mode'
-const singleMode = ref(readStoredBool(LS_ARTICLE_MODE, false))
+function readArticleBool(id: 'mode' | 'show_zh' | 'show_reading', defaultVal: boolean): boolean {
+  try {
+    if (typeof localStorage === 'undefined') return defaultVal
+    const v = readArticlePrefRaw(store.studyLang, id)
+    if (v === null) return defaultVal
+    return v === '1' || v === 'true'
+  } catch {
+    return defaultVal
+  }
+}
+
+function readStoredVoice(): 'female' | 'male' {
+  try {
+    if (typeof localStorage === 'undefined') return 'female'
+    const v = readArticlePrefRaw(store.studyLang, 'voice')
+    return v === 'male' ? 'male' : 'female'
+  } catch {
+    return 'female'
+  }
+}
+
+/** 单句/全文模式（偏好按学习语言存储） */
+const singleMode = ref(readArticleBool('mode', false))
 
 /** 构建从指定索引开始的 LoopPlayer 播放列表 */
 function buildLoopItems(fromIndex: number) {
@@ -31,11 +52,11 @@ function buildLoopItems(fromIndex: number) {
   const items: (DataItem & { _cat: string })[] = []
   for (let i = fromIndex; i < sentences.length; i++) {
     const s = sentences[i]
-    const fn = audioFnForJp(s.jp)
+    const fn = audioFnForJp(s.word)
     if (fn) {
       items.push({
         id: i,
-        word: s.jp,
+        word: s.word,
         reading: s.reading,
         meaning: s.zh,
         ruby: s.ruby,
@@ -47,11 +68,11 @@ function buildLoopItems(fromIndex: number) {
   // 把 fromIndex 之前的也追加到末尾，形成完整循环
   for (let i = 0; i < fromIndex; i++) {
     const s = sentences[i]
-    const fn = audioFnForJp(s.jp)
+    const fn = audioFnForJp(s.word)
     if (fn) {
       items.push({
         id: i,
-        word: s.jp,
+        word: s.word,
         reading: s.reading,
         meaning: s.zh,
         ruby: s.ruby,
@@ -63,36 +84,11 @@ function buildLoopItems(fromIndex: number) {
   return items
 }
 
-const LS_ARTICLE_ZH = 'jp_article_show_zh'
-const LS_ARTICLE_READING = 'jp_article_show_reading'
-const LS_ARTICLE_VOICE = 'jp_article_tts_voice'
-
-function readStoredBool(key: string, defaultVal: boolean): boolean {
-  try {
-    if (typeof localStorage === 'undefined') return defaultVal
-    const v = localStorage.getItem(key)
-    if (v === null) return defaultVal
-    return v === '1' || v === 'true'
-  } catch {
-    return defaultVal
-  }
-}
-
-function readStoredVoice(): 'female' | 'male' {
-  try {
-    if (typeof localStorage === 'undefined') return 'female'
-    const v = localStorage.getItem(LS_ARTICLE_VOICE)
-    return v === 'male' ? 'male' : 'female'
-  } catch {
-    return 'female'
-  }
-}
-
 const articleVoiceMale = ref(readStoredVoice() === 'male')
 
 watch(articleVoiceMale, (isMale) => {
   try {
-    localStorage.setItem(LS_ARTICLE_VOICE, isMale ? 'male' : 'female')
+    writeArticlePrefRaw(store.studyLang, 'voice', isMale ? 'male' : 'female')
   } catch {
     /* ignore */
   }
@@ -102,7 +98,7 @@ watch(articleVoiceMale, (isMale) => {
 
 /** 当前篇是否有至少一句男声资源（仅 N2 及以下篇目会带齐） */
 const articleOffersMaleVoice = computed(() =>
-  flatSentences.value.some((s) => !!store.articleAudioMapMale[s.jp]),
+  flatSentences.value.some((s) => !!store.articleAudioMapMale[s.word]),
 )
 
 /** 文章朗读用文件名：男声优先（有键时），否则女声 */
@@ -114,30 +110,42 @@ function audioFnForJp(jp: string): string | undefined {
   return store.audioMap[jp]
 }
 
-const showTranslation = ref(readStoredBool(LS_ARTICLE_ZH, true))
-const showReading = ref(readStoredBool(LS_ARTICLE_READING, true))
+const showTranslation = ref(readArticleBool('show_zh', true))
+const showReading = ref(readArticleBool('show_reading', true))
 
 watch(showTranslation, (v) => {
   try {
-    localStorage.setItem(LS_ARTICLE_ZH, v ? '1' : '0')
+    writeArticlePrefRaw(store.studyLang, 'show_zh', v ? '1' : '0')
   } catch {
     /* ignore */
   }
 })
 watch(showReading, (v) => {
   try {
-    localStorage.setItem(LS_ARTICLE_READING, v ? '1' : '0')
+    writeArticlePrefRaw(store.studyLang, 'show_reading', v ? '1' : '0')
   } catch {
     /* ignore */
   }
 })
 watch(singleMode, (v) => {
   try {
-    localStorage.setItem(LS_ARTICLE_MODE, v ? '1' : '0')
+    writeArticlePrefRaw(store.studyLang, 'mode', v ? '1' : '0')
   } catch {
     /* ignore */
   }
 })
+
+watch(
+  () => store.studyLang,
+  () => {
+    singleMode.value = readArticleBool('mode', false)
+    articleVoiceMale.value = readStoredVoice() === 'male'
+    showTranslation.value = readArticleBool('show_zh', true)
+    showReading.value = readArticleBool('show_reading', true)
+    invalidateArticlePlayback()
+    stopLoop()
+  },
+)
 
 const list = computed(() => store.articles)
 
@@ -158,7 +166,7 @@ function groupEssayIntoParagraphs(segments: ArticleSegment[]): ArticleSegment[][
   const maxPerGroup = 3
   for (const s of segments) {
     cur.push(s)
-    runLen += s.jp.length
+    runLen += s.word.length
     if (runLen >= maxChars || cur.length >= maxPerGroup) {
       out.push(cur)
       cur = []
@@ -176,16 +184,16 @@ const essayParagraphGroups = computed(() => {
 })
 
 /** 扁平化的所有句子（用于单句模式和连播） */
-const flatSentences = computed(() => {
+const flatSentences = computed((): (ArticleSegment & { speaker?: 'A' | 'B' })[] => {
   const it = selected.value
-  if (!it) return [] as { jp: string; reading: string; zh: string; speaker?: string; ruby?: RubyToken[] }[]
+  if (!it) return []
   if (it.format === 'essay') {
-    return it.segments.map((s) => ({ jp: s.jp, reading: s.reading, zh: s.zh, ruby: s.ruby, speaker: (s as any).speaker as string | undefined }))
+    return it.segments.map((s) => ({ ...s }))
   }
-  const out: { jp: string; reading: string; zh: string; speaker?: string; ruby?: RubyToken[] }[] = []
+  const out: (ArticleSegment & { speaker?: 'A' | 'B' })[] = []
   for (const sec of it.sections) {
     for (const line of sec.lines) {
-      out.push({ jp: line.jp, reading: line.reading, zh: line.zh, ruby: line.ruby, speaker: line.speaker })
+      out.push({ ...line })
     }
   }
   return out
@@ -193,16 +201,16 @@ const flatSentences = computed(() => {
 
 /** 当前篇按顺序的朗读单元（用于连播） */
 const playbackUnits = computed(() => {
-  return flatSentences.value.map((s) => ({ jp: s.jp }))
+  return flatSentences.value.map((s) => ({ word: s.word }))
 })
 
-const canPlayAll = computed(() => playbackUnits.value.some((u) => !!audioFnForJp(u.jp)))
+const canPlayAll = computed(() => playbackUnits.value.some((u) => !!audioFnForJp(u.word)))
 
 
 function invalidateArticlePlayback() {
   articlePlaySession++
   playingAll.value = false
-  playingJp.value = null
+  playingWord.value = null
   audioEl.pause()
   audioEl.onended = null
 }
@@ -247,13 +255,13 @@ function isDialogue(it: ArticleItem | null): it is ArticleDialogue {
   return it !== null && it.format === 'dialogue'
 }
 
-function linePlaying(jp: string) {
+function linePlaying(w: string) {
   if (loopPlaying.value) {
-    const items = playbackUnits.value.filter((u) => !!audioFnForJp(u.jp))
+    const items = playbackUnits.value.filter((u) => !!audioFnForJp(u.word))
     const current = items[loopIndex.value]
-    return current?.jp === jp
+    return current?.word === w
   }
-  return playingAll.value && playingJp.value === jp
+  return playingAll.value && playingWord.value === w
 }
 
 onUnmounted(() => {
@@ -274,8 +282,9 @@ onUnmounted(() => {
         @click="openItem(it.id)"
       >
         <div class="text-xs font-medium theme-muted mb-1">{{ formatLabel(it) }}</div>
-        <div class="text-base font-bold theme-text leading-snug">{{ it.titleJa }}</div>
+        <div class="text-base font-bold theme-text leading-snug">{{ it.titleWord }}</div>
         <div v-if="currentLang === 'zh'" class="text-sm mt-1" style="color: var(--accent)">{{ it.titleZh }}</div>
+        <div v-else-if="currentLang === 'en'" class="text-sm mt-1 theme-muted">{{ it.titleEn }}</div>
         <div v-else class="text-sm mt-1 theme-muted">{{ it.titleZh }}</div>
       </button>
       <p v-if="!list.length" class="text-sm theme-muted py-8 text-center">{{ t('articleEmpty') }}</p>
@@ -293,10 +302,12 @@ onUnmounted(() => {
 
       <header class="mb-6">
         <h1 v-if="showReading && selected!.titleRuby" class="text-xl font-bold theme-text"><RubyText :tokens="selected!.titleRuby" /></h1>
-        <h1 v-else class="text-xl font-bold theme-text leading-snug">{{ selected!.titleJa }}</h1>
+        <h1 v-else class="text-xl font-bold theme-text leading-snug">{{ selected!.titleWord }}</h1>
         <template v-if="showTranslation">
           <p v-if="currentLang === 'zh'" class="text-base mt-2" style="color: var(--accent)">{{ selected!.titleZh }}</p>
           <p v-else class="text-base mt-2 theme-muted">{{ selected!.titleZh }}</p>
+          <p v-if="store.studyLang === 'ja' && selected!.titleEn" class="text-sm mt-1.5 theme-muted leading-snug">{{ selected!.titleEn }}</p>
+          <p v-if="store.studyLang === 'en' && selected!.titleJp" class="text-sm mt-1.5 theme-muted leading-snug">{{ selected!.titleJp }}</p>
         </template>
 
         <div class="flex flex-wrap items-center gap-2 mt-4">
@@ -381,20 +392,22 @@ onUnmounted(() => {
           v-for="(seg, i) in flatSentences"
           :key="i"
           class="relative rounded-2xl theme-surface p-4 md:p-5 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-colors"
-          :class="linePlaying(seg.jp) ? 'ring-2 ring-[#e8735a]/40' : ''"
+          :class="linePlaying(seg.word) ? 'ring-2 ring-[#e8735a]/40' : ''"
         >
           <div class="flex items-start gap-3">
             <div class="flex-1 min-w-0">
               <div v-if="seg.speaker" class="text-xs font-bold mb-1" style="color: var(--primary)">{{ seg.speaker }}</div>
               <p v-if="showReading && seg.ruby" class="text-[15px] font-medium theme-text"><RubyText :tokens="seg.ruby" /></p>
-              <p v-else class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.jp }}</p>
+              <p v-else class="text-[15px] font-medium theme-text leading-relaxed">{{ seg.word }}</p>
               <template v-if="showTranslation">
                 <p v-if="currentLang === 'zh'" class="text-sm mt-2 leading-relaxed" style="color: var(--accent)">{{ seg.zh }}</p>
                 <p v-else class="text-sm mt-2 leading-relaxed theme-muted">{{ seg.zh }}</p>
+                <p v-if="store.studyLang === 'ja' && seg.en" class="text-xs mt-1.5 leading-relaxed theme-muted opacity-90">{{ seg.en }}</p>
+                <p v-if="store.studyLang === 'en' && seg.jp" class="text-xs mt-1.5 leading-relaxed theme-muted opacity-90">{{ seg.jp }}</p>
               </template>
             </div>
             <button
-              v-if="audioFnForJp(seg.jp)"
+              v-if="audioFnForJp(seg.word)"
               type="button"
               class="shrink-0 w-9 h-9 mt-0.5 rounded-full flex items-center justify-center cursor-pointer border-0 transition-transform active:scale-95"
               style="background: linear-gradient(135deg, #e8735a 0%, #d4624d 100%); color: #fff;"
@@ -428,16 +441,16 @@ onUnmounted(() => {
                   v-for="(seg, si) in para"
                   :key="`${pi}-${si}`"
                   class="rounded-sm"
-                  :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
-                ><RubyText v-if="seg.ruby" :tokens="seg.ruby" /><template v-else>{{ seg.jp }}</template></span>
+                  :class="linePlaying(seg.word) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
+                ><RubyText v-if="seg.ruby" :tokens="seg.ruby" /><template v-else>{{ seg.word }}</template></span>
               </p>
               <p v-else class="text-[15px] font-medium theme-text leading-[1.85] [text-indent:1em]">
                 <span
                   v-for="(seg, si) in para"
                   :key="`${pi}-${si}-nr`"
                   class="rounded-sm"
-                  :class="linePlaying(seg.jp) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
-                >{{ seg.jp }}</span>
+                  :class="linePlaying(seg.word) ? 'bg-[#e8735a]/25 ring-1 ring-[#e8735a]/30' : ''"
+                >{{ seg.word }}</span>
               </p>
               <template v-if="showTranslation">
                 <p
@@ -449,6 +462,14 @@ onUnmounted(() => {
                   v-else
                   class="text-sm mt-2 leading-relaxed theme-muted pl-[1em]"
                 >{{ para.map((s) => s.zh).join('') }}</p>
+                <p
+                  v-if="store.studyLang === 'ja' && para.some((s) => s.en)"
+                  class="text-xs mt-1.5 leading-relaxed theme-muted pl-[1em] opacity-90"
+                >{{ para.map((s) => s.en).join('') }}</p>
+                <p
+                  v-if="store.studyLang === 'en' && para.some((s) => s.jp)"
+                  class="text-xs mt-1.5 leading-relaxed theme-muted pl-[1em] opacity-90"
+                >{{ para.map((s) => s.jp).join('') }}</p>
               </template>
             </div>
           </div>
@@ -466,21 +487,25 @@ onUnmounted(() => {
           <section v-for="(sec, si) in (selected as ArticleDialogue).sections" :key="si" class="space-y-4">
             <div class="flex items-center gap-2 flex-wrap">
               <span v-if="sec.badge" class="text-lg" aria-hidden="true">{{ sec.badge }}</span>
-              <span class="text-sm font-semibold theme-text">{{ sec.headingJa }}</span>
+              <span class="text-sm font-semibold theme-text">{{ sec.headingWord }}</span>
               <span v-if="showTranslation && currentLang === 'zh'" class="text-xs theme-muted">（{{ sec.headingZh }}）</span>
+              <span v-if="showTranslation && store.studyLang === 'en' && sec.headingJp" class="text-xs theme-muted ml-1">· {{ sec.headingJp }}</span>
+              <span v-if="showTranslation && store.studyLang === 'ja' && sec.headingEn" class="text-xs theme-muted ml-1">· {{ sec.headingEn }}</span>
             </div>
             <div
               v-for="(line, li) in sec.lines"
               :key="li"
               class="transition-colors rounded-md -mx-0.5 px-0.5 py-0.5"
-              :class="linePlaying(line.jp) ? 'bg-[#e8735a]/10' : ''"
+              :class="linePlaying(line.word) ? 'bg-[#e8735a]/10' : ''"
             >
               <div class="text-xs font-bold mb-0.5" style="color: var(--primary)">{{ line.speaker }}</div>
               <p v-if="showReading && line.ruby" class="text-[15px] theme-text"><RubyText :tokens="line.ruby" /></p>
-              <p v-else class="text-[15px] theme-text leading-relaxed">{{ line.jp }}</p>
+              <p v-else class="text-[15px] theme-text leading-relaxed">{{ line.word }}</p>
               <template v-if="showTranslation">
                 <p v-if="currentLang === 'zh'" class="text-sm mt-2" style="color: var(--accent)">{{ line.zh }}</p>
                 <p v-else class="text-sm mt-2 theme-muted">{{ line.zh }}</p>
+                <p v-if="store.studyLang === 'ja' && line.en" class="text-xs mt-1 theme-muted opacity-90">{{ line.en }}</p>
+                <p v-if="store.studyLang === 'en' && line.jp" class="text-xs mt-1 theme-muted opacity-90">{{ line.jp }}</p>
               </template>
             </div>
           </section>
